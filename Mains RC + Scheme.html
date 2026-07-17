@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Mains RC + Scheme</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        :root {
+            --bg: #f0f4f8;
+            --text: #0a0c12;
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --accent: #f97316;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --header-gradient: linear-gradient(135deg, #0f172a, #1e1b4b, #4c1d95);
+            --shadow-lg: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
+            --radius-xl: 24px;
+            --bottom-bar-height: 74px;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: 66px;
+            background: var(--header-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 56vw;
+        }
+        .logo span {
+            color: #facc15;
+        }
+        .sponsor {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 700;
+            max-width: 30vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        #timer {
+            background: #1e293b;
+            color: #facc15;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 18px;
+            min-width: 90px;
+            text-align: center;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: var(--bottom-bar-height);
+        }
+        .passage-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 18px 30px;
+            background: #ffffff;
+            margin: 12px 14px 0;
+            border-radius: 28px;
+            box-shadow: var(--shadow-lg);
+        }
+        .passage-container h2 {
+            color: #1e1b4b;
+            margin-bottom: 14px;
+            border-left: 5px solid #4f46e5;
+            padding-left: 14px;
+            font-size: 20px;
+        }
+        .passage-container p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 14px;
+            color: #1e293b;
+        }
+        .highlight {
+            background: #fef9c3;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #854d0e;
+        }
+
+        /* Fixed Bottom Bar */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: var(--bottom-bar-height);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 1000;
+            box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.1);
+            gap: 16px;
+        }
+        .btn-toggle-question,
+        .btn-submit-bottom,
+        .btn-palette {
+            border: none;
+            border-radius: 60px;
+            padding: 12px 24px;
+            font-weight: 800;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.1s ease;
+        }
+        .btn-toggle-question:active,
+        .btn-submit-bottom:active,
+        .btn-palette:active {
+            transform: scale(0.96);
+        }
+        .btn-toggle-question {
+            background: #1e293b;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .btn-submit-bottom {
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .btn-palette {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Question Drawer */
+        .question-drawer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: var(--bottom-bar-height);
+            max-height: 78vh;
+            background: white;
+            z-index: 999;
+            border-radius: 32px 32px 0 0;
+            box-shadow: 0 -20px 45px rgba(0, 0, 0, 0.25);
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            transform: translateY(100%);
+            display: flex;
+            flex-direction: column;
+        }
+        .question-drawer.open {
+            transform: translateY(0);
+        }
+        .drawer-handle {
+            width: 50px;
+            height: 5px;
+            background: #cbd5e1;
+            border-radius: 20px;
+            margin: 12px auto 8px;
+            cursor: grab;
+        }
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 20px 10px;
+        }
+        .drawer-header .q-no {
+            font-weight: 800;
+            color: #4f46e5;
+            background: #e0e7ff;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 14px;
+        }
+        .drawer-close {
+            background: #f1f5f9;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 30px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        .drawer-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px 20px 20px;
+        }
+        .drawer-question {
+            font-weight: 800;
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 24px;
+        }
+        .drawer-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .drawer-option {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 14px 18px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .drawer-option.selected {
+            background: #eef2ff;
+            border-color: #4f46e5;
+            color: #1e1b4b;
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+        }
+        .drawer-option.selected::after {
+            content: "✓";
+            float: right;
+            font-weight: bold;
+            color: #4f46e5;
+            font-size: 18px;
+        }
+        .drawer-controls {
+            background: linear-gradient(135deg, #ffe7de, #defcff);
+            padding: 14px 20px;
+            border-top: 1px solid #eef2ff;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: sticky;
+            bottom: 0;
+        }
+        .drawer-controls .btn {
+            border-radius: 60px;
+            padding: 10px 20px;
+            font-weight: 800;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            transition: 0.2s;
+        }
+        .btn-prev {
+            background: #475569;
+        }
+        .btn-clear {
+            background: #ef4444;
+        }
+        .btn-next {
+            background: #3b82f6;
+        }
+        .btn-mark {
+            background: #f59e0b;
+        }
+        .btn-unmark {
+            background: #9ca3af;
+            color: #1e293b;
+        }
+
+        /* Palette Panel - Larger boxes */
+        .palette-panel {
+            position: fixed;
+            right: 0;
+            top: 70px;
+            width: 300px;
+            background: white;
+            border-radius: 28px 0 0 28px;
+            box-shadow: -8px 8px 28px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: 0.3s ease;
+            padding: 22px;
+            overflow-y: auto;
+            max-height: 85vh;
+            border-left: 5px solid #f97316;
+        }
+        .palette-panel.open {
+            transform: translateX(0);
+        }
+        .palette-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            z-index: 998;
+            display: none;
+        }
+        .palette-backdrop.active {
+            display: block;
+        }
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+            margin-top: 18px;
+        }
+        .qbox {
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 18px;
+            border: 2px solid #cbd5e1;
+            cursor: pointer;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .qbox.answered {
+            background: #10b981;
+            color: white;
+            border-color: #047857;
+        }
+        .qbox.review {
+            background: #f59e0b;
+            color: white;
+            border-color: #d97706;
+        }
+        .qbox.visited {
+            background: #e2e8f0;
+            border-color: #94a3b8;
+            color: #334155;
+        }
+        .qbox.current {
+            box-shadow: 0 0 0 4px #4f46e5;
+            transform: scale(1.03);
+            border-color: #4f46e5;
+        }
+
+        /* Result Page - Landscape ready */
+        .result-container {
+            display: none;
+            padding: 20px;
+            background: #f1f5f9;
+        }
+        .result-card {
+            background: white;
+            border-radius: 36px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-lg);
+        }
+        .download-btn {
+            background: #1e293b;
+            color: white;
+            border: none;
+            border-radius: 60px;
+            padding: 14px 28px;
+            font-weight: 800;
+            cursor: pointer;
+            margin-bottom: 12px;
+            display: inline-block;
+            font-size: 15px;
+            margin-right: 12px;
+        }
+        .download-btn-scheme {
+            background: linear-gradient(135deg, #44008c, #fa8a00);
+            color: white;
+            border: none;
+            border-radius: 60px;
+            padding: 14px 28px;
+            font-weight: 800;
+            cursor: pointer;
+            margin-bottom: 12px;
+            display: inline-block;
+            font-size: 15px;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+            transition: transform 0.1s ease;
+        }
+        .download-btn-scheme:active {
+            transform: scale(2.96);
+        }
+        .download-btn-scheme::before {
+            content: "🖼️ ";
+        }
+        .solutions-title {
+            color: #1e1b4f;
+            margin: 8px 0 16px;
+            font-size: 15px;
+            border-left: 5px solid #4f46e5;
+            padding-left: 14px;
+        }
+        .passage-recap {
+            background: #f8fafc;
+            padding: 16px 18px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            border: 1px solid #e2e8f0;
+        }
+        .passage-recap strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #1e1b4b;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .passage-recap p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+        .solution {
+            background: #ffffff;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef1f5;
+        }
+        .solution.correct {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+        .solution.wrong {
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+        .solution.skipped {
+            background: #f8fafc;
+            border-color: #e2e8f0;
+        }
+        .sol-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .sol-badge {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: white;
+            font-weight: 800;
+        }
+        .solution.correct .sol-badge {
+            background: #10b981;
+        }
+        .solution.wrong .sol-badge {
+            background: #ef4444;
+        }
+        .solution.skipped .sol-badge {
+            background: #94a3b8;
+        }
+        .solution h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.45;
+        }
+        .sol-answers {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin: 6px 0 10px;
+            font-size: 13.5px;
+        }
+        .sol-answers .your-ans {
+            color: #475569;
+        }
+        .sol-answers .your-ans b {
+            color: #0f172a;
+        }
+        .sol-answers .correct-ans b {
+            color: #047857;
+        }
+        .exp {
+            background: #fffbeb;
+            padding: 12px 14px;
+            border-radius: 14px;
+            color: #92400e;
+            font-size: 13.5px;
+            line-height: 1.55;
+            border: 1px solid #fde68a;
+        }
+
+        /* Table container with scroll and landscape optimization */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 18px;
+            border-radius: 20px;
+        }
+        .type-table {
+            width: 100%;
+            min-width: 500px;
+            border-collapse: collapse;
+            background: white;
+        }
+        .type-table th,
+        .type-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px 16px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .type-table th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 800;
+        }
+
+        /* ===================== START SCREEN (redesigned) ===================== */
+        .start-screen {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 20% 30%, #0f172a, #0b0a2a, #020617);
+            z-index: 9999;
+            padding: 24px 16px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .start-card {
+            background: rgba(20, 20, 50, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 32px 24px;
+            border-radius: 32px;
+            text-align: left;
+            color: white;
+            width: 100%;
+            max-width: 560px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+            margin: 0 auto;
+        }
+        .start-card .brand-row {
+            text-align: center;
+            margin-bottom: 4px;
+            font-size: 30px;
+        }
+        .start-card h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-align: center;
+            line-height: 1.25;
+            word-wrap: break-word;
+        }
+        .start-card .sub-badge {
+            display: block;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #a5b4fc;
+            text-transform: uppercase;
+        }
+        .meta-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 22px 0 18px;
+        }
+        .meta-chip {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 14px 8px;
+            text-align: center;
+        }
+        .meta-chip .val {
+            font-size: 20px;
+            font-weight: 800;
+            color: #facc15;
+        }
+        .meta-chip .lbl {
+            font-size: 11px;
+            opacity: 0.75;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .marking-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            border-radius: 20px;
+            padding: 16px 18px;
+            margin-bottom: 20px;
+        }
+        .marking-box h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #6ee7b7;
+            margin-bottom: 10px;
+        }
+        .marking-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            padding: 4px 0;
+            opacity: 0.95;
+        }
+        .marking-row b {
+            color: #facc15;
+        }
+        .instructions-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 16px 18px;
+            margin-bottom: 26px;
+        }
+        .instructions-box h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #93c5fd;
+            margin-bottom: 10px;
+        }
+        .instructions-box ol {
+            padding-left: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .instructions-box li {
+            font-size: 13.5px;
+            line-height: 1.5;
+            opacity: 0.92;
+        }
+        .start-btn {
+            background: linear-gradient(95deg, #10b981, #059669);
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .start-btn:hover {
+            transform: scale(1.02);
+            background: linear-gradient(95deg, #059669, #047857);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-box {
+            background: white;
+            border-radius: 40px;
+            padding: 28px;
+            max-width: 360px;
+            width: 85%;
+            text-align: center;
+        }
+        .stats-chip {
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 40px;
+            margin: 12px 0;
+            font-weight: 700;
+        }
+        .modal-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .modal-actions button {
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+        }
+        .result-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .result-buttons button {
+            background: #0f172a;
+            color: white;
+            border: none;
+            padding: 12px 26px;
+            border-radius: 60px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===================== DETAILED ANALYSIS ===================== */
+        .analysis-section-title {
+            color: #1e1b4f;
+            margin: 32px 0 16px;
+            font-size: 19px;
+            border-left: 5px solid #4f46e5;
+            padding-left: 14px;
+        }
+
+        .analysis-box {
+            border-radius: 22px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .analysis-box h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .ab-indigo {
+            background: #eef2ff;
+        }
+        .ab-indigo h4 {
+            color: #4338ca;
+        }
+        .ab-emerald {
+            background: #ecfdf5;
+        }
+        .ab-emerald h4 {
+            color: #047857;
+        }
+        .ab-amber {
+            background: #fff7ed;
+        }
+        .ab-amber h4 {
+            color: #c2410c;
+        }
+        .ab-sky {
+            background: #f0f9ff;
+        }
+        .ab-sky h4 {
+            color: #0369a1;
+        }
+        .ab-rose {
+            background: #fff1f2;
+        }
+        .ab-rose h4 {
+            color: #be123c;
+        }
+        .ab-violet {
+            background: #f5f3ff;
+        }
+        .ab-violet h4 {
+            color: #6d28d9;
+        }
+        .ab-cyan {
+            background: #ecfeff;
+        }
+        .ab-cyan h4 {
+            color: #0e7490;
+        }
+        .ab-yellow {
+            background: #fefce8;
+        }
+        .ab-yellow h4 {
+            color: #a16207;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin-bottom: 4px;
+        }
+        .insight-card {
+            border-radius: 18px;
+            padding: 16px 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .insight-card .ic-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            opacity: 0.75;
+            font-weight: 700;
+        }
+        .insight-card .ic-value {
+            font-size: 18px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+        .insight-card.c1 {
+            background: #dcfce7;
+        }
+        .insight-card.c1 .ic-value {
+            color: #166534;
+        }
+        .insight-card.c2 {
+            background: #e0f2fe;
+        }
+        .insight-card.c2 .ic-value {
+            color: #075985;
+        }
+        .insight-card.c3 {
+            background: #fee2e2;
+        }
+        .insight-card.c3 .ic-value {
+            color: #991b1b;
+        }
+        .insight-card.c4 {
+            background: #ede9fe;
+        }
+        .insight-card.c4 .ic-value {
+            color: #5b21b6;
+        }
+
+        .reco-box p {
+            font-size: 14px;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        .chart-box-single {
+            max-width: 380px;
+            margin: 0 auto;
+        }
+
+        /* ===================== SCHEME POPUP ===================== */
+        .scheme-popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .scheme-popup-overlay.active {
+            display: flex;
+        }
+        .scheme-popup-box {
+            background: white;
+            border-radius: 40px;
+            padding: 36px 32px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            animation: popIn 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .scheme-popup-box .icon {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+        .scheme-popup-box h2 {
+            font-size: 20px;
+            color: #1e1b4b;
+            margin-bottom: 8px;
+        }
+        .scheme-popup-box p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+        .scheme-popup-box .timer-ring {
+            display: inline-block;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: #4f46e5;
+            margin: 6px auto 10px;
+            border: 4px solid #4f46e5;
+            animation: pulseRing 1s ease-in-out infinite;
+        }
+        .scheme-popup-box .loader-bar {
+            width: 100%;
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+        .scheme-popup-box .loader-bar .fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4f46e5, #f97316);
+            border-radius: 10px;
+            width: 0%;
+            animation: loadFill 5s linear forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes popIn {
+            from {
+                transform: scale(0.85);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes pulseRing {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.06);
+            }
+        }
+        @keyframes loadFill {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 550px) {
+            .bottom-bar {
+                padding: 0 12px;
+                gap: 8px;
+            }
+            .btn-toggle-question,
+            .btn-submit-bottom,
+            .btn-palette {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            .palette-panel {
+                width: 270px;
+                padding: 16px;
+            }
+            .qbox {
+                font-size: 16px;
+            }
+            .result-card {
+                padding: 16px;
+            }
+            .start-card {
+                padding: 24px 16px;
+                border-radius: 26px;
+            }
+            .start-card h1 {
+                font-size: 21px;
+            }
+            .meta-strip {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+            }
+            .meta-chip {
+                padding: 10px 4px;
+            }
+            .meta-chip .val {
+                font-size: 17px;
+            }
+            .meta-chip .lbl {
+                font-size: 9.5px;
+            }
+            .marking-box,
+            .instructions-box {
+                padding: 12px 14px;
+            }
+            .instructions-box li {
+                font-size: 12.5px;
+            }
+            .solution {
+                padding: 14px;
+            }
+            .solution h3 {
+                font-size: 14.5px;
+            }
+            .download-btn,
+            .download-btn-scheme {
+                padding: 12px 20px;
+                font-size: 13px;
+                margin-right: 6px;
+                margin-bottom: 8px;
+                width: calc(50% - 6px);
+            }
+            .scheme-popup-box {
+                padding: 28px 20px;
+            }
+            .scheme-popup-box h2 {
+                font-size: 17px;
+            }
+        }
+        @media (max-width: 380px) {
+            .start-card h1 {
+                font-size: 18px;
+            }
+            .meta-strip {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .download-btn,
+            .download-btn-scheme {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+        .btn-cancel-modal {
+            background: #ef4444 !important;
+            color: #ffffff !important;
+        }
+
+        .btn-confirm-modal {
+            background: #3b82f6 !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="start-screen" id="startScreen">
+        <div class="start-card">
+            <div class="brand-row">📖</div>
+            <h1 id="startTitle">Mains RC <span style="color:#facc15;">Premium</span></h1>
+            <span class="sub-badge" id="startSub">Bankers Alliance · RC Mock 07</span>
+
+            <div class="meta-strip">
+                <div class="meta-chip"><div class="val" id="metaQCount">20</div><div class="lbl">Questions</div></div>
+                <div class="meta-chip"><div class="val" id="metaMins">20</div><div class="lbl">Minutes</div></div>
+                <div class="meta-chip"><div class="val" id="metaMaxMarks">20</div><div class="lbl">Max Marks</div></div>
+            </div>
+
+            <div class="marking-box">
+                <h3>🏷 Marking Scheme</h3>
+                <div class="marking-row"><span>Correct Answer</span><b id="markPos">+1.00</b></div>
+                <div class="marking-row"><span>Wrong Answer</span><b id="markNeg">-0.25</b></div>
+                <div class="marking-row"><span>Unattempted</span><b>0.00</b></div>
+            </div>
+
+            <div class="instructions-box">
+                <h3>📋 Instructions</h3>
+                <ol>
+                    <li id="instrLine1">The test contains 20 questions based on Reading Comprehension &amp; Critical Reasoning, to be completed in 20 minutes.</li>
+                    <li>Read the passage carefully in the top panel before opening the questions drawer.</li>
+                    <li>Tap <b>Questions</b> to answer, navigate with Prev/Next, or jump directly using the <b>Palette</b>.</li>
+                    <li>Use <b>Mark for Review</b> on questions you wish to revisit before final submission.</b></li>
+                    <li>The timer starts as soon as you click Start and the test auto-submits when time runs out.</li>
+                    <li>Once submitted, you'll get a detailed performance analysis with charts, topic-wise breakdown, and full solutions.</li>
+                </ol>
+            </div>
+
+            <button class="start-btn" id="startMockBtn">🚀 Start Test</button>
+        </div>
+    </div>
+    <header>
+        <div class="logo" id="hdrLogo">📖 <span>Mains RC Premium</span></div>
+        <div class="sponsor" id="hdrSponsor">Bankers Alliance</div>
+        <div id="timer">20:00</div>
+    </header>
+    <div class="main-content" id="mainContent">
+        <div class="passage-container" id="passageContainer">
+            <h2>📄 Reading Comprehension</h2>
+            <div id="passageBody"></div>
+        </div>
+        <div class="bottom-bar">
+            <button class="btn-toggle-question" id="openDrawerBtn">✒️ Questions</button>
+            <button class="btn-submit-bottom" id="submitBottomBtn">📤 Submit Test</button>
+            <button class="btn-palette" id="openPaletteBtn">📋 Palette</button>
+        </div>
+        <div class="question-drawer" id="questionDrawer">
+            <div class="drawer-handle"></div>
+            <div class="drawer-header"><span class="q-no" id="drawerQno">Question 1</span><button class="drawer-close" id="closeDrawerBtn">✕</button></div>
+            <div class="drawer-content"><div class="drawer-question" id="drawerQuestionText"></div><div class="drawer-options" id="drawerOptionsArea"></div></div>
+            <div class="drawer-controls"><button class="btn btn-prev" id="prevBtn">⬅ Prev</button><button class="btn btn-clear" id="clearBtn">🗑 Clear</button><button class="btn btn-next" id="nextBtn">Next ➡</button><button class="btn btn-mark" id="markBtn">📌 Mark</button></div>
+        </div>
+    </div>
+    <div class="palette-backdrop" id="paletteBackdrop"></div>
+    <div class="palette-panel" id="palettePanel"><h3 style="margin-bottom:12px;">🎯 Question Palette</h3><div class="palette-grid" id="paletteGrid"></div></div>
+
+    <!-- ===== RESULT PAGE ===== -->
+    <div class="result-container" id="resultPage">
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+            <button class="download-btn" id="downloadBtn">📸 Download Result</button>
+            <button class="download-btn-scheme" id="downloadSchemeBtn">Download Scheme</button>
+        </div>
+        <div class="result-card" id="analysisCard">
+            <h1 style="color:#1e1b4f;" id="analysisTitle">📊 Mains RC Premium — RC MOCK 07 Analysis</h1>
+
+            <div class="analysis-box ab-indigo">
+                <h4>🏆 Score Summary</h4>
+                <div id="scoreSummary"></div>
+            </div>
+
+            <div class="analysis-box ab-emerald">
+                <h4>📈 Response Breakdown</h4>
+                <div style="display:flex; flex-wrap:wrap; gap:20px;">
+                    <div style="flex:1; min-width:200px;"><canvas id="chartPie" width="280" height="280"></canvas></div>
+                    <div style="flex:1; min-width:200px;"><canvas id="chartBar" width="280" height="280"></canvas></div>
+                </div>
+            </div>
+
+            <div class="analysis-box ab-amber">
+                <h4>🗂 Topic-wise Performance</h4>
+                <div id="typeTableContainer"></div>
+            </div>
+
+            <h2 class="analysis-section-title">🔎 Detailed Performance Analysis</h2>
+            <div class="insight-grid" id="insightGrid"></div>
+
+            <div class="analysis-box ab-cyan" style="margin-top:16px;">
+                <h4>🕸 Topic Strength Radar</h4>
+                <div class="chart-box-single"><canvas id="chartRadar" width="280" height="280"></canvas></div>
+            </div>
+
+            <div class="analysis-box ab-yellow reco-box">
+                <h4>💡 Recommendation</h4>
+                <div id="recoBox"></div>
+            </div>
+        </div>
+        <div id="solutionsList"></div>
+        <div class="result-buttons"><button id="topBtn">⬆ Back to Top</button><button id="reattemptBtn">🔄 Reattempt</button></div>
+    </div>
+
+    <!-- ===== SCHEME POPUP ===== -->
+    <div class="scheme-popup-overlay" id="schemePopup">
+        <div class="scheme-popup-box">
+            <div class="icon">📖</div>
+            <h2>Read in Detailed About the Scheme</h2>
+            <p>We are preparing your scheme image for download. Please wait a moment.</p>
+            <div class="timer-ring" id="schemeCountdown">5</div>
+            <div class="loader-bar"><div class="fill"></div></div>
+            <p style="font-size:13px; color:#94a3b8; margin-top:12px;">Downloading in 5 seconds…</p>
+        </div>
+    </div>
+
+    <!-- ===== SUBMIT MODAL ===== -->
+    <div class="modal-overlay" id="submitModal" style="display:none;">
+        <div class="modal-box">
+            <h3>✅ Submit Test?</h3>
+            <div class="stats-chip" id="modalAttemptedInfo"></div>
+            <div class="modal-actions"><button class="btn-cancel-modal" id="cancelModalBtn">Cancel</button><button class="btn-confirm-modal" id="confirmModalBtn">Yes, Submit</button></div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const TITLE = "Mains RC + Scheme";
+            const CHANNEL = "Bankers Alliance";
+            const TIME_MINS = 15;
+            const POS_MARK = 1;
+            const NEG_MARK = 0.25;
+            const PASSAGE_HTML =
+                "<p>Street vendors are an indispensable part of India's urban economy, supplying affordable goods and essential services while supporting local markets and neighbourhood supply chains. Despite their significant contribution, most vendors historically depended on informal moneylenders charging exorbitant interest because they lacked access to institutional finance. To address this challenge, the Government of India launched the Prime Minister Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi) scheme in June 2020. It is the country's first dedicated micro-credit programme for street vendors, offering collateral-free working capital loans backed by a government credit guarantee. The initiative aims to promote &quot;Swarozgar, Svavlamban and Swabhimaan&quot; by enabling vendors to rebuild and expand their businesses while gradually integrating them into the formal financial system.</p><p>Since its launch, PM SVANidhi has evolved beyond a credit scheme into a comprehensive programme for financial inclusion, digital empowerment and social security. As of May 2026, more than 75.5 lakh beneficiaries across the country have availed over 1.12 crore collateral-free loans, with total disbursements exceeding ₹17,800 crore. More than 55 lakh vendors have been digitally onboarded, collectively conducting over 841 crore digital transactions worth nearly ₹8.96 lakh crore. The scheme also rewards responsible borrowers through interest subsidies and digital cashback incentives, under which beneficiaries have received nearly ₹800 crore. Vendors who repay their loans on time become eligible for progressively larger loan amounts, encouraging credit discipline and helping them expand their enterprises sustainably.</p><p>The success of PM SVANidhi demonstrates how targeted public policy can transform livelihoods by combining affordable credit with digital technology and financial literacy. The programme complements India's broader Digital Public Infrastructure by encouraging QR-code payments, formal banking access and inclusion in government welfare systems. Analysts believe that increased digital transactions improve transparency, create a financial history for borrowers and enhance their future access to institutional credit. The scheme has also strengthened <span class=\"highlight\">Resilience</span> among small entrepreneurs who were severely affected during the COVID-19 pandemic, enabling many to restore their incomes and improve household financial security. By empowering millions of street vendors to become self-reliant and digitally connected, PM SVANidhi is contributing to inclusive urban development and supporting India's long-term vision of a stronger, more formal and technology-driven economy.</p>";
+            const questions = [{
+                "q": "Which of the following best captures the central objective of the passage?",
+                "options": ["To argue that informal lending should be completely abolished in urban India.", "To demonstrate how PM SVANidhi has transformed street vendors through financial inclusion, digital adoption and institutional credit.",
+                    "To compare India's street vendor policies with those of developed economies.", "To establish that digital payments alone can eliminate poverty among street vendors.",
+                    "To emphasize that government subsidies are the only solution for urban unemployment."
+                ],
+                "correct": 1,
+                "type": "main_idea",
+                "exp": "The passage consistently explains how PM SVANidhi provides collateral-free credit, promotes digital payments and strengthens financial inclusion for street vendors. These three aspects together form the central theme."
+            }, {
+                "q": "Consider the following statements: \n\n I. PM SVANidhi was introduced primarily to provide collateral-free working capital loans to street vendors. \n\n II. The scheme allows borrowers with timely repayment records to access higher-value loans. \n\n III. Digital onboarding under the scheme has replaced the need for institutional banking. Which of the following is correct?",
+                "options": ["Only I", "Only II", "Only I and II", "Only II and III", "I, II and III"],
+                "correct": 2,
+                "type": "statement_based",
+                "exp": "Statements I and II are correct because the passage highlights collateral-free working capital loans and progressively larger loans for timely repayment. Statement III is incorrect because digital onboarding complements, rather than replaces, institutional banking."
+            }, {
+                "q": "Which of the following statements is NOT supported by the passage?",
+                "options": ["PM SVANidhi promotes financial inclusion alongside credit access.", "The scheme provides incentives for digital transactions.",
+                    "Institutional finance reduces dependence on informal moneylenders.", "Every beneficiary receives the same loan amount irrespective of repayment behaviour.",
+                    "Digital transaction history may improve future access to formal credit."
+                ],
+                "correct": 3,
+                "type": "incorrect_statement",
+                "exp": "The passage clearly states that vendors with timely repayment become eligible for progressively larger loans. Therefore, loan amounts are not the same for every beneficiary."
+            }, {
+                "q": "The author's tone throughout the passage can best be described as:",
+                "options": ["Skeptical and cautionary", "Analytical and appreciative", "Critical and sarcastic", "Emotional and nostalgic",
+                    "Indifferent and descriptive"
+                ],
+                "correct": 1,
+                "type": "tone",
+                "exp": "The author presents facts, statistics and analysis while appreciating the achievements of the scheme. Hence, the tone is analytical and appreciative."
+            }, {
+                "q": "The word 'Resilience', as used in the last paragraph, most nearly means:",
+                "options": ["Vulnerability", "Adaptability", "Dependence", "Hesitation", "Isolation"],
+                "correct": 1,
+                "type": "vocab",
+                "exp": "In the passage, resilience refers to the ability of street vendors to recover from the economic impact of the COVID-19 pandemic and continue their livelihoods."
+            }, {
+                "q": "Which of the following can reasonably be inferred from the passage?",
+                "options": ["Vendors with a formal financial history may find it easier to obtain future institutional credit.",
+                    "Digital payments completely eliminate financial fraud.", "Street vendors no longer require government support after receiving the first loan.",
+                    "The scheme is restricted only to metropolitan cities.", "Interest subsidies are available only after the third loan cycle."
+                ],
+                "correct": 0,
+                "type": "inference",
+                "exp": "The passage mentions that digital transaction records create a financial history, which may improve access to future institutional credit. The remaining options are unsupported."
+            }, {
+                "q": "Which of the following observations is most consistent with the data presented in the passage?",
+                "options": ["The value of digital transactions is lower than the total loan disbursement.",
+                    "Digital transactions under the scheme indicate increasing acceptance of formal digital payment systems.",
+                    "Less than half of the beneficiaries have adopted digital platforms.", "Cashback incentives exceed the total value of interest subsidies.",
+                    "The scheme has benefited only those vendors who previously had bank accounts."
+                ],
+                "correct": 1,
+                "type": "data_based",
+                "exp": "The passage reports over 841 crore digital transactions worth nearly ₹8.96 lakh crore, indicating widespread acceptance of digital payments among beneficiaries."
+            }, {
+                "q": "If the objectives of PM SVANidhi continue to be achieved as described, which of the following outcomes is most likely?",
+                "options": ["Informal lending networks will immediately disappear.", "Street vendors will increasingly participate in the formal financial ecosystem.",
+                    "Digital transactions will become compulsory for all citizens.", "Government expenditure on urban welfare will cease.",
+                    "Every street vendor will become eligible for unlimited institutional credit."
+                ],
+                "correct": 1,
+                "type": "conclusion",
+                "exp": "The scheme promotes banking access, digital payments and financial inclusion. Therefore, the most logical conclusion is greater participation of street vendors in the formal financial ecosystem."
+            }, {
+                "q": "The expression 'financial inclusion', as used in the passage, primarily refers to:",
+                "options": ["Increasing tax collections from small businesses.", "Bringing  underserved individuals into the formal financial system.",
+                    "Providing free financial assistance without repayment.", "Restricting access to digital payment platforms.",
+                    "Eliminating private banks from rural and urban markets."
+                ],
+                "correct": 1,
+                "type": "vocab",
+                "exp": "The passage uses financial inclusion to describe bringing street vendors into the formal banking system through institutional credit, digital payments and banking access."
+            }, {
+                "q": "Consider the following statements:\n\nI. PM SVANidhi combines credit support with digital empowerment and financial literacy.\n\nII. Timely repayment is encouraged through incentives such as interest subsidies and cashback.\n\nIII. The passage suggests that digital transaction records may strengthen borrowers' future creditworthiness. Which of the following is correct?",
+                "options": ["Only I", "Only II", "Only I and III", "Only II and III", "I, II and III"],
+                "correct": 4,
+                "type": "statement_based",
+                "exp": "All three statements are correct. The passage highlights credit support, digital empowerment, interest subsidy, cashback incentives and the role of digital transaction history in improving future creditworthiness."
+            }];
+
+            let current = 0,
+                answers = new Array(questions.length).fill(null);
+            let statusArr = new Array(questions.length).fill("unvisited");
+            let timerInterval = null,
+                totalSeconds = TIME_MINS * 60,
+                elapsedSeconds = 0,
+                mockActive = false;
+            let drawerOpen = false,
+                charts = { pie: null, bar: null, radar: null };
+
+            const drawer = document.getElementById('questionDrawer');
+            const drawerQno = document.getElementById('drawerQno');
+            const drawerQuestionText = document.getElementById('drawerQuestionText');
+            const drawerOptionsArea = document.getElementById('drawerOptionsArea');
+            const markBtn = document.getElementById('markBtn');
+            const timerEl = document.getElementById('timer');
+            const palettePanel = document.getElementById('palettePanel');
+            const paletteBackdrop = document.getElementById('paletteBackdrop');
+            const paletteGrid = document.getElementById('paletteGrid');
+            const resultPage = document.getElementById('resultPage');
+            const mainContent = document.getElementById('mainContent');
+            const submitModal = document.getElementById('submitModal');
+            const startScreen = document.getElementById('startScreen');
+
+            function loadQuestion(idx) {
+                if (!mockActive && resultPage.style.display !== 'block') return;
+                current = idx;
+                if (statusArr[current] === 'unvisited') statusArr[current] = 'visited';
+                const q = questions[current];
+                drawerQno.innerText = `Question ${current+1} of ${questions.length}`;
+                drawerQuestionText.innerText = q.q;
+                drawerOptionsArea.innerHTML = '';
+                q.options.forEach((opt, i) => {
+                    const div = document.createElement('div');
+                    div.className = 'drawer-option';
+                    if (answers[current] === i) div.classList.add('selected');
+                    div.innerText = `${String.fromCharCode(65+i)}. ${opt}`;
+                    div.onclick = () => { if (mockActive) selectOption(i); };
+                    drawerOptionsArea.appendChild(div);
+                });
+                updateMarkButton();
+                renderPalette();
+            }
+
+            function selectOption(i) { answers[current] = i; if (statusArr[current] !== 'review') statusArr[current] = 'answered';
+                loadQuestion(current); }
+
+            function clearResponse() { answers[current] = null; if (statusArr[current] !== 'review') statusArr[current] = 'visited';
+                loadQuestion(current); }
+
+            function toggleMark() { if (statusArr[current] === 'review') { statusArr[current] = answers[current] !== null ?
+                        'answered' : 'visited'; } else { statusArr[current] = 'review'; } updateMarkButton();
+                renderPalette(); }
+
+            function updateMarkButton() { if (statusArr[current] === 'review') { markBtn.innerText = '📌 Unmark';
+                    markBtn.className = 'btn btn-unmark'; } else { markBtn.innerText = '📌 Mark';
+                    markBtn.className = 'btn btn-mark'; } }
+
+            function nextQuestion() { if (current + 1 < questions.length) loadQuestion(current + 1); }
+
+            function prevQuestion() { if (current - 1 >= 0) loadQuestion(current - 1); }
+
+            function toggleQuestionDrawer() { if (!mockActive) return;
+                drawerOpen = !drawerOpen;
+                drawerOpen ? (drawer.classList.add('open'), loadQuestion(current)) : drawer.classList.remove('open'); }
+
+            function closePalette() { palettePanel.classList.remove('open');
+                paletteBackdrop.classList.remove('active'); }
+
+            function togglePalette() { if (!mockActive) return;
+                palettePanel.classList.toggle('open');
+                paletteBackdrop.classList.toggle('active'); }
+
+            function renderPalette() {
+                paletteGrid.innerHTML = '';
+                for (let i = 0; i < questions.length; i++) {
+                    let cls = statusArr[i];
+                    if (i === current) cls += ' current';
+                    const box = document.createElement('div');
+                    box.className = `qbox ${cls}`;
+                    box.innerText = i + 1;
+                    box.onclick = () => { if (mockActive) { loadQuestion(i);
+                            closePalette(); if (!drawerOpen) toggleQuestionDrawer(); } };
+                    paletteGrid.appendChild(box);
+                }
+            }
+
+            function startTimer(dur) {
+                let time = dur;
+                updateTimerDisplay(time);
+                timerInterval = setInterval(() => {
+                    if (!mockActive) return;
+                    time--;
+                    elapsedSeconds++;
+                    updateTimerDisplay(time);
+                    if (time <= 300) timerEl.style.background = '#b91c1c';
+                    if (time <= 0) { clearInterval(timerInterval); if (mockActive) submitTest(); }
+                }, 1000);
+            }
+
+            function fmtTime(sec) { let m = Math.floor(sec / 60),
+                    s = sec % 60; return `${m}:${s<10?'0'+s:s}`; }
+
+            function updateTimerDisplay(sec) { let m = Math.floor(sec / 60),
+                    s = sec % 60;
+                timerEl.innerText = `${m}:${s<10?'0'+s:s}`; }
+
+            function handleSubmit() { if (!mockActive) return;
+                let attempted = answers.filter(a => a !== null).length,
+                    unattempted = questions.length - attempted,
+                    reviewCount = statusArr.filter(s => s === 'review').length;
+                document.getElementById('modalAttemptedInfo').innerHTML =
+                    `📊 Attempted: ${attempted}<br>⏭ Not Attempted: ${unattempted}<br>🏷 Marked Review: ${reviewCount}<br>⏱ Time left: ${timerEl.innerText}`;
+                submitModal.style.display = 'flex'; }
+
+            function closeSubmitModal() { submitModal.style.display = 'none'; }
+
+            function confirmSubmit() { submitModal.style.display = 'none'; if (mockActive) submitTest(); }
+
+            function submitTest() {
+                if (!mockActive) return;
+                mockActive = false;
+                clearInterval(timerInterval);
+                drawer.classList.remove('open');
+                mainContent.style.display = 'none';
+                resultPage.style.display = 'block';
+                window.scrollTo(0, 0);
+                computeResults();
+            }
+
+            function computeResults() {
+                let correct = 0,
+                    wrong = 0,
+                    skipped = 0;
+                let typeMap = {};
+                questions.forEach((q, i) => {
+                    if (!typeMap[q.type]) typeMap[q.type] = { total: 0, correct: 0, wrong: 0, skipped: 0 };
+                    typeMap[q.type].total++;
+                    if (answers[i] === null) { skipped++;
+                        typeMap[q.type].skipped++; } else if (answers[i] === q.correct) { correct++;
+                        typeMap[q.type].correct++; } else { wrong++;
+                        typeMap[q.type].wrong++; }
+                });
+                const score = (correct * POS_MARK) - (wrong * NEG_MARK);
+                const maxMarks = (questions.length * POS_MARK);
+                const accuracy = ((correct / questions.length) * 100).toFixed(1);
+                const netAcc = (correct + wrong) > 0 ? ((correct / (correct + wrong)) * 100).toFixed(1) : '0.0';
+                document.getElementById('scoreSummary').innerHTML =
+                    `<div style="text-align:center"><h2>🏆 Score: ${score.toFixed(2)} / ${maxMarks.toFixed(2)}</h2><p>✅ Correct: ${correct} | ❌ Wrong: ${wrong} | ⏭ Skipped: ${skipped}</p><p>📈 Accuracy: ${accuracy}% | Net Accuracy: ${netAcc}% | ⏱ Time: ${fmtTime(elapsedSeconds)}</p></div>`;
+                renderCharts(correct, wrong, skipped, typeMap);
+                renderTypeTable(typeMap);
+                renderSolutions();
+                renderDetailedAnalysis(correct, wrong, skipped, typeMap, score);
+            }
+
+            function renderCharts(c, w, s, typeMap) {
+                if (charts.pie) charts.pie.destroy();
+                if (charts.bar) charts.bar.destroy();
+                charts.pie = new Chart(document.getElementById('chartPie'), {
+                    type: 'doughnut',
+                    data: { labels: ['Correct', 'Wrong', 'Skipped'], datasets: [{ data: [c, w, s], backgroundColor: [
+                                '#10b981', '#ef4444', '#94a3b8'
+                            ] }] },
+                    options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'bottom' } } }
+                });
+                const types = Object.keys(typeMap);
+                charts.bar = new Chart(document.getElementById('chartBar'), {
+                    type: 'bar',
+                    data: {
+                        labels: types,
+                        datasets: [{ label: 'Correct', data: types.map(t => typeMap[t].correct), backgroundColor: '#10b981' },
+                            { label: 'Wrong', data: types.map(t => typeMap[t].wrong), backgroundColor: '#ef4444' },
+                            { label: 'Skipped', data: types.map(t => typeMap[t].skipped), backgroundColor: '#94a3b8' }
+                        ]
+                    },
+                    options: { responsive: true, maintainAspectRatio: true, scales: { x: { stacked: true }, y: { stacked: true } } }
+                });
+            }
+
+            function renderTypeTable(tm) {
+                let html =
+                    `<div class="table-wrapper"><table class="type-table"><thead><tr><th>Type</th><th>Total</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th></tr></thead><tbody>`;
+                Object.keys(tm).forEach(t => {
+                    const d = tm[t];
+                    const acc = ((d.correct / d.total) * 100).toFixed(1);
+                    html +=
+                        `<tr><td><strong>${t}</strong></td><td>${d.total}</td><td style="color:#10b981; font-weight:800;">${d.correct}</td><td style="color:#ef4444;">${d.wrong}</td><td>${d.skipped}</td><td>${acc}%</td></tr>`;
+                });
+                html += `</tbody></table></div>`;
+                document.getElementById('typeTableContainer').innerHTML = html;
+            }
+
+            function renderSolutions() {
+                let passageHTML = document.getElementById('passageContainer').innerHTML;
+                let html = '<h2 class="solutions-title">📝 Solutions &amp; Explanations</h2>';
+                html += `<div class="passage-recap"><strong>📄 Passage Recap</strong>${passageHTML}</div>`;
+                questions.forEach((q, i) => {
+                    let cls = 'skipped',
+                        badge = '➖',
+                        yourAnsLabel = 'Not Attempted';
+                    if (answers[i] === null) { cls = 'skipped';
+                        badge = '➖'; } else if (answers[i] === q.correct) { cls = 'correct';
+                        badge = '✅';
+                        yourAnsLabel = q.options[answers[i]]; } else { cls = 'wrong';
+                        badge = '❌';
+                        yourAnsLabel = q.options[answers[i]]; }
+                    html += `<div class="solution ${cls}">
+                <div class="sol-head"><div class="sol-badge">${badge}</div><h3>Q${i+1}. ${q.q}</h3></div>
+                <div class="sol-answers">
+                    <div class="your-ans">Your Answer: <b>${yourAnsLabel}</b></div>
+                    <div class="correct-ans">Correct Answer: <b>${q.options[q.correct]}</b></div>
+                </div>
+                <div class="exp">💡 ${q.exp}</div>
+            </div>`;
+                });
+                document.getElementById('solutionsList').innerHTML = html;
+            }
+
+            function renderDetailedAnalysis(correct, wrong, skipped, typeMap, score) {
+                let types = Object.keys(typeMap);
+                let accByType = types.map(t => ({ t, acc: (typeMap[t].correct / typeMap[t].total) * 100 }));
+                accByType.sort((a, b) => b.acc - a.acc);
+                let strongest = accByType[0];
+                let weakest = accByType[accByType.length - 1];
+                let attemptRate = (((correct + wrong) / questions.length) * 100).toFixed(0);
+                let maxMarksG = questions.length * POS_MARK;
+                let scorePct = maxMarksG > 0 ? (score / maxMarksG) * 100 : 0;
+                let grade = scorePct >= 80 ? 'Excellent (A+)' : scorePct >= 60 ? 'Good (B+)' : scorePct >= 40 ? 'Average (C)' :
+                    'Needs Work (D)';
+
+                document.getElementById('insightGrid').innerHTML = `
+            <div class="insight-card c1"><div class="ic-label">Strongest Area</div><div class="ic-value">${strongest ? strongest.t : '-'} (${strongest ? strongest.acc.toFixed(0) : 0}%)</div></div>
+            <div class="insight-card c3"><div class="ic-label">Weakest Area</div><div class="ic-value">${weakest ? weakest.t : '-'} (${weakest ? weakest.acc.toFixed(0) : 0}%)</div></div>
+            <div class="insight-card c2"><div class="ic-label">Attempt Rate</div><div class="ic-value">${attemptRate}%</div></div>
+            <div class="insight-card c4"><div class="ic-label">Overall Grade</div><div class="ic-value">${grade}</div></div>
+        `;
+
+                document.getElementById('recoBox').innerHTML = `
+            <p>You performed best in <b>${strongest ? strongest.t : 'N/A'}</b> type questions and struggled most with <b>${weakest ? weakest.t : 'N/A'}</b> type questions.
+            ${wrong > 0 ? `With ${wrong} incorrect attempt(s) costing ${(wrong*NEG_MARK).toFixed(2)} marks to negative marking, focus on accuracy before speed on ${weakest ? weakest.t : 'weaker'} questions.` : 'Great control over negative marking — no incorrect attempts.'}
+            ${skipped > 0 ? ` You left ${skipped} question(s) unattempted; revisit the passage-based inference questions first as they usually carry the most partial cues.` : ''}
+            Practice more ${weakest ? weakest.t : 'weaker-area'} passages this week to convert your next attempt into a stronger score.</p>
+        `;
+
+                renderAdvancedCharts(typeMap);
+            }
+
+            function renderAdvancedCharts(typeMap) {
+                if (charts.radar) charts.radar.destroy();
+                const types = Object.keys(typeMap);
+                const accData = types.map(t => ((typeMap[t].correct / typeMap[t].total) * 100).toFixed(1));
+
+                charts.radar = new Chart(document.getElementById('chartRadar'), {
+                    type: 'radar',
+                    data: {
+                        labels: types,
+                        datasets: [{
+                            label: 'Accuracy %',
+                            data: accData,
+                            backgroundColor: 'rgba(79,70,229,0.25)',
+                            borderColor: '#4f46e5',
+                            borderWidth: 2,
+                            pointBackgroundColor: '#4338ca'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: { r: { suggestedMin: 0, suggestedMax: 100, angleLines: { color: '#e2e8f0' }, grid: { color: '#e2e8f0' } } },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            }
+
+            function downloadLandscapeImage() {
+                const card = document.getElementById('analysisCard');
+                const originalWidth = card.style.width;
+                const originalOverflow = document.body.style.overflow;
+                card.style.width = '1200px';
+                document.body.style.overflow = 'hidden';
+                html2canvas(card, { scale: 2, backgroundColor: '#ffffff', logging: false, useCORS: true }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = (TITLE.replace(/[^\w\- ]/g, '').trim().replace(/\s+/g, '_').substring(0, 60) ||
+                        'RC_Mock') + '_Analysis_Landscape.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                    card.style.width = originalWidth;
+                    document.body.style.overflow = originalOverflow;
+                }).catch(() => {
+                    card.style.width = originalWidth;
+                    document.body.style.overflow = originalOverflow;
+                });
+            }
+// ============== SCHEME IMAGE DOWNLOAD (IMMEDIATE) ==============
+function downloadSchemeImage() {
+    const imageUrl = 'https://drive.usercontent.google.com/download?id=1H37gyLsACOABnWZrZl4btZ9ILlNIZUZr&export=download';
+    const filename = 'PMSvanidhi_Scheme';
+    
+    fetch(imageUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            const blobUrl = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = blobUrl;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(blobUrl); // Clean up memory
+        })
+        .catch(error => {
+            console.error('Download failed:', error);
+            // Fallback: try opening in new tab as last resort
+            window.open(imageUrl, '_blank');
+        });
+}
+// ============== END SCHEME DOWNLOAD ==============
+
+            function initMock() {
+                startScreen.style.display = 'none';
+                mockActive = true;
+                loadQuestion(0);
+                startTimer(totalSeconds);
+                renderPalette();
+            }
+
+            function applyMeta() {
+                document.title = TITLE;
+                const maxMarks = questions.length * POS_MARK;
+                const hl = document.getElementById('hdrLogo');
+                if (hl) hl.innerHTML = '📖 <span>' + TITLE + '</span>';
+                const hs = document.getElementById('hdrSponsor');
+                if (hs) hs.textContent = CHANNEL;
+                const st = document.getElementById('startTitle');
+                if (st) st.textContent = TITLE;
+                const ss = document.getElementById('startSub');
+                if (ss) ss.textContent = CHANNEL + ' · RC Mock';
+                const mq = document.getElementById('metaQCount');
+                if (mq) mq.textContent = questions.length;
+                const mm = document.getElementById('metaMins');
+                if (mm) mm.textContent = TIME_MINS;
+                const mk = document.getElementById('metaMaxMarks');
+                if (mk) mk.textContent = maxMarks;
+                const mp = document.getElementById('markPos');
+                if (mp) mp.textContent = '+' + POS_MARK.toFixed(2);
+                const mn = document.getElementById('markNeg');
+                if (mn) mn.textContent = '-' + NEG_MARK.toFixed(2);
+                const il = document.getElementById('instrLine1');
+                if (il) il.textContent =
+                    `The test contains ${questions.length} questions based on Reading Comprehension & Critical Reasoning, to be completed in ${TIME_MINS} minutes.`;
+                const pb = document.getElementById('passageBody');
+                if (pb) pb.innerHTML = PASSAGE_HTML;
+                const at = document.getElementById('analysisTitle');
+                if (at) at.innerHTML = '📊 ' + TITLE + ' Analysis';
+                timerEl.textContent = TIME_MINS + ':00';
+            }
+            applyMeta();
+
+            document.getElementById('startMockBtn').addEventListener('click', initMock);
+            document.getElementById('openDrawerBtn').addEventListener('click', () => { if (mockActive) toggleQuestionDrawer(); });
+            document.getElementById('closeDrawerBtn').addEventListener('click', () => { if (drawerOpen) toggleQuestionDrawer(); });
+            document.getElementById('submitBottomBtn').addEventListener('click', handleSubmit);
+            document.getElementById('openPaletteBtn').addEventListener('click', () => { if (mockActive) togglePalette(); });
+            document.getElementById('cancelModalBtn').addEventListener('click', closeSubmitModal);
+            document.getElementById('confirmModalBtn').addEventListener('click', confirmSubmit);
+            document.getElementById('prevBtn').addEventListener('click', prevQuestion);
+            document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+            document.getElementById('clearBtn').addEventListener('click', clearResponse);
+            markBtn.addEventListener('click', toggleMark);
+            document.getElementById('downloadBtn').addEventListener('click', downloadLandscapeImage);
+            document.getElementById('downloadSchemeBtn').addEventListener('click', downloadSchemeImage);
+            document.getElementById('topBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            document.getElementById('reattemptBtn').addEventListener('click', () => location.reload());
+            paletteBackdrop.addEventListener('click', closePalette);
+        })();
+    </script>
+</body>
+</html>
