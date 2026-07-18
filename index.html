@@ -1883,7 +1883,7 @@ function fmtMs(s){ s=Math.max(0,Math.round(s)); var m=Math.floor(s/60),sc=s%60; 
 
 function sendResultToSheet(payload){
   var box=$$$("saveStatus");
-  if(!GOOGLE_SHEET_WEBHOOK_URL || GOOGLE_SHEET_WEBHOOK_URL.indexOf("https://script.google.com/macros/s/AKfycbyxKwGTLDrkLah_l-fD4lj33NK6LhGmH9UcQIQi0cKSRRRzGzxLNQ5aBLW5xhoUmUZf/exec")!==-1){
+  if(!GOOGLE_SHEET_WEBHOOK_URL || GOOGLE_SHEET_WEBHOOK_URL.indexOf("PASTE_YOUR")!==-1){
     if(box){box.className="save-status err";box.style.display="block";box.textContent="\u26A0\uFE0F Result not saved: Google Sheet link not configured.";}
     return;
   }
