@@ -96,6 +96,8 @@ header{background:linear-gradient(135deg,#000787,#127DE5);box-shadow:0 4px 20px 
 .ss-att{background:linear-gradient(135deg,#dbeafe,#bfdbfe);color:#1e40af;border:2px solid #93c5fd}
 .ss-not{background:linear-gradient(135deg,#fee2e2,#fecaca);color:#991b1b;border:2px solid #f87171}
 .ss-ns{background:linear-gradient(135deg,#f1f5f9,#e2e8f0);color:#475569;border:2px solid #cbd5e1}
+#resumeModal{position:fixed;inset:0;background:rgba(0,0,50,.6);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:500}
+.bp.ghost{background:#fff;color:var(--acc);border:2px solid var(--acc)}
 .bp{background:linear-gradient(135deg,var(--acc),var(--adk));color:#fff;border:none;padding:10px 24px;border-radius:999px;font-weight:800;cursor:pointer;font-size:14px;transition:all .18s}
 .bp:hover{transform:translateY(-2px)}
 .bp-warn{background:linear-gradient(135deg,#f59e0b,#ef4444)}
@@ -319,8 +321,8 @@ header{background:linear-gradient(135deg,#000787,#127DE5);box-shadow:0 4px 20px 
   </div>
   <div class="start-card" style="max-width:620px;width:100%">
     <h2>&#128100; Candidate Details</h2>
-    <input type="text" class="name-input" id="candName" placeholder="Enter your full name" autocomplete="off" maxlength="60" oninput="checkReady()"/>
-    <div class="name-hint" id="nameHint">Please enter your name to start the test.</div>
+    <input type="text" class="name-input" id="candName" placeholder="Enter your full name (e.g. Rakesh Sharma)" autocomplete="off" maxlength="60" oninput="sanitizeName(this)" />
+<div class="name-hint" id="nameHint">Please enter a valid name using alphabets only (e.g. Rakesh Sharma).</div>
   </div>
   <div class="start-card" style="max-width:620px;width:100%">
     <div class="agree" onclick="toggleAgree()">
@@ -401,6 +403,14 @@ header{background:linear-gradient(135deg,#000787,#127DE5);box-shadow:0 4px 20px 
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:4px">
       <button class="btn-o" onclick="closeSecEnd()">Cancel</button>
       <button class="bp bp-warn" id="secEndOkBtn" onclick="confirmSecEnd()">Submit &amp; Continue &#8594;</button>
+      <div id="resumeModal" role="dialog" aria-modal="true">
+  <div class="sec-end-box">
+    <div style="font-size:40px;margin-bottom:6px">&#128260;</div>
+    <h3>Unfinished Test Found</h3>
+    <p id="resumeMsg">It looks like you left a mock test in progress. Would you like to resume where you left off, or start fresh?</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:4px">
+      <button class="bp ghost" onclick="startFreshFromModal()">Start Fresh</button>
+      <button class="bp" onclick="resumeProgress()">Resume Mock Test &#8594;</button>
     </div>
   </div>
 </div>
@@ -1874,7 +1884,7 @@ var LT=["A","B","C","D","E"];
 var curSec=0,curQ=0,ans={},secDone=[],secTimes=[],tick=null,secSecs=0,charts=[];
 var qStartTime={};  /* track time per question */
 var qTimeSpent={}; /* qTimeSpent[si][qi] = seconds */
-
+var AUTOSAVE_KEY="ibpsPoMockProgress_v1";
 SECTIONS.forEach(function(_,si){ ans[si]={}; secDone.push(false); secTimes.push(0); qTimeSpent[si]={}; });
 
 function $$$(id){ return document.getElementById(id); }
@@ -2000,18 +2010,23 @@ document.addEventListener("click",function(e){
   if(p&&p.style.display==="flex"&&!p.contains(e.target)&&pb&&!pb.contains(e.target))closePal();
 });
 
-function startTick(){
-  if(tick)clearInterval(tick);
-  secSecs=0;
-  var limit=SECTIONS[curSec].time_secs;
-  tick=setInterval(function(){
-    secSecs++;
-    var rem=limit-secSecs,el=$$$("timerEl"),tt=$$$("timerTxt");
-    if(rem<=300&&rem>0){el.classList.add("warn");tt.textContent=fmtT(rem);}
-    else{el.classList.remove("warn");tt.textContent=fmtT(rem>=0?rem:0);}
-    if(secSecs>=limit){clearInterval(tick);secTimes[curSec]=secSecs;autoAdvance();}
-  },1000);
+function startTick(resumeSecs){
+if(tick)clearInterval(tick);
+secSecs=resumeSecs||0;
+var limit=SECTIONS[curSec].time_secs;
+updateTimerDisplay(limit-secSecs);
+tick=setInterval(function(){
+secSecs++;
+updateTimerDisplay(limit-secSecs);
+saveProgress();
+if(secSecs>=limit){clearInterval(tick);secTimes[curSec]=secSecs;autoAdvance();}
+},1000);
 }
+function updateTimerDisplay(rem){
+var el=$$$("timerEl"),tt=$$$("timerTxt");
+if(rem<=300&&rem>0){el.classList.add("warn");tt.textContent=fmtT(rem);}
+  else{el.classList.remove("warn");tt.textContent=fmtT(rem>=0?rem:0);}
+  }
 function stopTick(){if(tick){clearInterval(tick);tick=null;}secTimes[curSec]=secSecs;}
 
 function recordQTime(qi){
@@ -2029,7 +2044,7 @@ function autoAdvance(){
     $$$("qCard").style.display="none";$$$("fbar").style.display="none";$$$("pal").style.display="none";
     $$$("timeOverArea").style.display="block";return;
   }
-  curSec=next;curQ=0;buildPal();syncSecBar();render(0);startTick();
+  curSec=next;curQ=0;buildPal();syncSecBar();render(0);startTick();saveProgress();
 }
 
 function render(qi){
@@ -2061,10 +2076,10 @@ function render(qi){
 function pick(qi,val,div){
   ans[curSec][qi]=val;
   Array.from($$$("opts").children).forEach(function(o){o.classList.remove("sel","cor","wrg");});
-  div.classList.add("sel");syncPal();
+  div.classList.add("sel");syncPal();saveProgress();
 }
 function nav(d){var n=curQ+d;if(n>=0&&n<SECTIONS[curSec].questions.length)render(n);}
-function clrAns(){delete ans[curSec][curQ];render(curQ);}
+function clrAns(){delete ans[curSec][curQ];render(curQ);saveProgress();}
 
 function openSecEnd(){
   var sec=SECTIONS[curSec],tot=sec.questions.length,done=Object.keys(ans[curSec]).length,left=tot-done;
@@ -2093,7 +2108,7 @@ function confirmSecEnd(){
   closeSecEnd();stopTick();secDone[curSec]=true;syncSecBar();
   var next=curSec+1;
   if(next>=SECTIONS.length){doSubmit();return;}
-  curSec=next;curQ=0;buildPal();syncSecBar();render(0);startTick();
+  curSec=next;curQ=0;buildPal();syncSecBar();render(0);startTick();saveProgress();
 }
 function syncSubmitBtn(){
   var btn=$$$("subSecBtn");if(!btn)return;
@@ -2103,8 +2118,9 @@ function syncSubmitBtn(){
 
 /* ── RESULTS ── */
 function doSubmit(){
-  recordQTime(curQ);
-  stopTick();
+recordQTime(curQ);
+clearProgress();
+stopTick();
   SECTIONS.forEach(function(_,si){secDone[si]=true;});
   syncSecBar();
   $$$("qCard").style.display="none";$$$("fbar").style.display="none";
@@ -2482,20 +2498,96 @@ function renderCharts(secStats,cor,wrg,skp){
 }
 
 function toggleAgree(){var c=$$$("agreeChk");c.checked=!c.checked;checkReady();}
+
+function sanitizeName(input){
+var cleaned=input.value.replace(/[^A-Za-z ]/g,"").replace(/\s{2,}/g," ");
+if(cleaned!==input.value){ input.value=cleaned; }
+checkReady();
+}
+function isValidName(s){
+s=(s||"").trim();
+return s.length>=2 && /^[A-Za-z]+( [A-Za-z]+)*$/.test(s);
+}
+
 function checkReady(){
-  var b=$$$("startBtn");
-  var nameOk=$$$("candName").value.trim().length>0;
-  var agreeOk=$$$("agreeChk").checked;
-  $$$("nameHint").style.display=(nameOk||$$$("candName").value.length===0)?"none":"block";
-  (nameOk&&agreeOk)?b.classList.add("ready"):b.classList.remove("ready");
+var b=$$$("startBtn");
+var nameVal=$$$("candName").value.trim();
+var nameOk=isValidName(nameVal);
+var agreeOk=$$$("agreeChk").checked;
+$$$("nameHint").style.display=(nameOk||nameVal.length===0)?"none":"block";
+(nameOk&&agreeOk)?b.classList.add("ready"):b.classList.remove("ready");
 }
 
 var candidateName="";
 var testStartedAt=null;
 
+function saveProgress(){
+try{
+var state={
+v:1,
+name:candidateName,
+testStartedAt:testStartedAt?testStartedAt.toISOString():null,
+curSec:curSec,
+curQ:curQ,
+ans:ans,
+secDone:secDone,
+secTimes:secTimes,
+qTimeSpent:qTimeSpent,
+secSecs:secSecs,
+totalSections:SECTIONS.length,
+savedAt:Date.now()
+};
+localStorage.setItem(AUTOSAVE_KEY,JSON.stringify(state));
+}catch(e){}
+}
+
+function clearProgress(){
+try{ localStorage.removeItem(AUTOSAVE_KEY); }catch(e){}
+}
+
+function checkResume(){
+var raw=null;
+try{ raw=localStorage.getItem(AUTOSAVE_KEY); }catch(e){}
+if(!raw) return;
+var saved;
+try{ saved=JSON.parse(raw); }catch(e){ return; }
+if(!saved||saved.totalSections!==SECTIONS.length) { clearProgress(); return; }
+window._savedProgress=saved;
+$$$("resumeModal").style.display="flex";
+}
+
+function startFreshFromModal(){
+clearProgress();
+window._savedProgress=null;
+$$$("resumeModal").style.display="none";
+}
+
+function resumeProgress(){
+var saved=window._savedProgress;
+if(!saved){ $$$("resumeModal").style.display="none"; return; }
+candidateName=saved.name||"";
+testStartedAt=saved.testStartedAt?new Date(saved.testStartedAt):new Date();
+ans=saved.ans||{};
+secDone=saved.secDone||[];
+secTimes=saved.secTimes||[];
+qTimeSpent=saved.qTimeSpent||{};
+curSec=saved.curSec||0;
+curQ=saved.curQ||0;
+
+$$$("resumeModal").style.display="none";
+$$$("startScr").style.display="none";
+$$$("quizUI").style.display="block";
+$$$("hdrTitle").textContent=(candidateName?candidateName+" \u2014 ":"")+$$$("hdrTitle").textContent;
+
+buildSecBar();buildPal();syncSecBar();
+qStartTime[curSec+"_"+curQ]=Date.now();
+render(curQ);
+startTick(saved.secSecs||0);
+}
+
 function startQuiz(){
   candidateName=$$$("candName").value.trim();
-  if(!candidateName){ $$$("nameHint").style.display="block"; $$$("candName").focus(); return; }
+if(!isValidName(candidateName)){ $$$("nameHint").style.display="block"; $$$("candName").focus(); return; }
   if(!$$$("agreeChk").checked){ return; }
   testStartedAt=new Date();
   $$$("startScr").style.display="none";
@@ -2504,6 +2596,7 @@ function startQuiz(){
   buildSecBar();buildPal();syncSecBar();
   qStartTime[0+"_"+0]=Date.now();
   render(0);startTick();
+  saveProgress();
 }
 
 document.addEventListener("keydown",function(e){
@@ -2512,6 +2605,7 @@ document.addEventListener("keydown",function(e){
   if(e.key==="ArrowLeft"&&curQ>0)render(curQ-1);
   if(e.key==="Escape")closePal();
 });
+checkResume();
 </script>
 </body>
 </html>
