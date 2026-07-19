@@ -1898,10 +1898,10 @@ function fmtMs(s){ s=Math.max(0,Math.round(s)); var m=Math.floor(s/60),sc=s%60; 
 function sendResultToSheet(payload){
   var box=$$$("saveStatus");
   if(!GOOGLE_SHEET_WEBHOOK_URL || GOOGLE_SHEET_WEBHOOK_URL.indexOf("PASTE_YOUR")!==-1){
-    if(box){box.className="save-status err";box.style.display="block";box.textContent="\u26A0\uFE0F Result not saved: Google Sheet link not configured.";}
+    if(box){box.className="save-status err";box.style.display="block";box.textContent="\u26A0\uFE0F Result not saved: Google link not configured.";}
     return;
   }
-  if(box){box.className="save-status pending";box.style.display="block";box.textContent="\u23F3 Saving your result to the sheet\u2026";}
+  if(box){box.className="save-status pending";box.style.display="block";box.textContent="\u23F3 Saving your result\u2026";}
   try{
     var form=document.createElement("form");
     form.method="POST";
@@ -1919,7 +1919,7 @@ function sendResultToSheet(payload){
     form.submit();
     setTimeout(function(){ if(form.parentNode) form.parentNode.removeChild(form); },2000);
 
-    if(box){box.className="save-status ok";box.textContent="\u2705 Result submitted. Check your Google Sheet in a few seconds.";}
+    if(box){box.className="save-status ok";box.textContent="\u2705 Result submitted Successfully.";}
   }catch(err){
     if(box){box.className="save-status err";box.textContent="\u26A0\uFE0F Could not submit result: "+err.message;}
   }
