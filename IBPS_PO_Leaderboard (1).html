@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bankers Alliance — IBPS PO Live Mock Leaderboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --saffron:#FF9933;
+    --saffron-deep:#E06E00;
+    --white:#FFFFFF;
+    --india-green:#0B8A45;
+    --india-green-deep:#046A34;
+    --chakra:#0B3C8C;
+    --cream:#FFF9F0;
+    --ink:#1C1A17;
+    --ink-soft:#5B564D;
+    --gold:#D4A017;
+    --silver:#8C949C;
+    --bronze:#B5651D;
+    --card-border:#EDE3D0;
+    --shadow: 0 10px 30px -12px rgba(28,26,23,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Manrope', sans-serif;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(255,153,51,0.10), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(11,138,69,0.10), transparent 40%),
+      var(--cream);
+    color:var(--ink);
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  #particle-canvas{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    pointer-events:none;
+    z-index:999;
+  }
+
+  .tricolor-bar{
+    height:6px;
+    width:100%;
+    background:linear-gradient(90deg, var(--saffron) 0%, var(--saffron) 33.3%, var(--white) 33.3%, var(--white) 66.6%, var(--india-green) 66.6%, var(--india-green) 100%);
+  }
+
+  header.top{
+    padding:28px 6vw 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:var(--white);
+    border-bottom:1px solid var(--card-border);
+    position:relative;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .brand-mark{
+    width:46px;height:46px;
+    border-radius:12px;
+    background:linear-gradient(180deg, var(--saffron) 0%, var(--saffron) 33.3%, var(--white) 33.3%, var(--white) 66.6%, var(--india-green) 66.6%, var(--india-green) 100%);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+    box-shadow: var(--shadow);
+    border:1px solid var(--card-border);
+  }
+  .brand-mark::after{
+    content:'';
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--chakra);
+    box-shadow:0 0 0 1px rgba(255,255,255,0.6);
+  }
+  .brand-name{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.35rem;
+    letter-spacing:0.01em;
+    color:var(--ink);
+    line-height:1.1;
+  }
+  .brand-name span{
+    display:block;
+    font-family:'Manrope', sans-serif;
+    font-size:0.68rem;
+    font-weight:700;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--india-green-deep);
+    margin-top:2px;
+  }
+  .chakra-spin{
+    width:34px;height:34px;
+    border-radius:50%;
+    border:2.5px solid var(--chakra);
+    position:relative;
+    animation:spin 8s linear infinite;
+    display:none;
+  }
+  @keyframes spin{ to{ transform:rotate(30deg);} }
+
+  .hero{
+    text-align:center;
+    padding:52px 6vw 40px;
+    position:relative;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:9px 22px;
+    border-radius:999px;
+    background:linear-gradient(90deg, rgba(255,153,51,0.14), rgba(11,138,69,0.14));
+    border:1px solid var(--card-border);
+    font-weight:700;
+    font-size:0.82rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--saffron-deep);
+    margin-bottom:22px;
+  }
+  .eyebrow b{color:var(--india-green-deep);}
+  h1.title{
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
+    margin:0 0 14px;
+    line-height:1;
+    background: linear-gradient(315deg, #214284 0.000%, #172a9b 20.000%, #2420b5 40.000%, #4525cd 60.000%, #7239dc 80.000%, #a157df 100.000%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    letter-spacing:-0.02em;
+  }
+  .sub{
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    font-weight:600;
+    max-width:600px;
+    margin:0 auto;
+  }
+  .sub .flag{font-size:1.15rem;}
+  .sub .date{
+    display:block;
+    margin-top:6px;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+    font-size:0.92rem;
+    color:var(--chakra);
+    letter-spacing:0.03em;
+  }
+
+  section.podium{
+    max-width:1080px;
+    margin:0 auto;
+    padding:10px 6vw 10px;
+  }
+  .board-title{
+    text-align:center;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.5rem;
+    margin-bottom:28px;
+    color:var(--ink);
+  }
+  .top3{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:18px;
+    align-items:end;
+    margin-bottom:38px;
+  }
+  .podium-card{
+    background:var(--white);
+    border-radius:20px;
+    padding:26px 18px 22px;
+    text-align:center;
+    border:1px solid var(--card-border);
+    box-shadow:var(--shadow);
+    position:relative;
+    transition:transform .25s ease;
+  }
+  .podium-card:hover{ transform:translateY(-6px); }
+  .p1{ order:2; padding-top:6px; border-top:6px solid var(--gold); }
+  .p2{ order:1; border-top:6px solid var(--silver); align-self:end;}
+  .p3{ order:3; border-top:6px solid var(--bronze); align-self:end;}
+  .medal{
+    width:58px;height:58px;
+    margin:0 auto 12px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.6rem;
+    font-weight:800;
+    color:#fff;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,0.35);
+  }
+  .p1 .medal{ width:72px;height:72px; font-size:2rem; background:radial-gradient(circle at 30% 30%, #FFE18A, var(--gold)); }
+  .p2 .medal{ background:radial-gradient(circle at 30% 30%, #F1F3F5, var(--silver)); }
+  .p3 .medal{ background:radial-gradient(circle at 30% 30%, #E8A165, var(--bronze)); }
+  .rank-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .p-name{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.15rem;
+    margin:2px 0 6px;
+    word-break:break-word;
+  }
+  .p-score{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    font-size:1.6rem;
+    color:var(--india-green-deep);
+  }
+  .p-score span{ font-size:0.85rem; color:var(--ink-soft); font-weight:500; }
+  .p-grade{
+    display:inline-block;
+    margin-top:8px;
+    padding:3px 12px;
+    border-radius:999px;
+    font-size:0.75rem;
+    font-weight:800;
+    background:rgba(11,138,69,0.12);
+    color:var(--india-green-deep);
+  }
+
+  .table-wrap{
+    background:var(--white);
+    border-radius:18px;
+    border:1px solid var(--card-border);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    margin-bottom:16px;
+  }
+  table.lead-table{
+    width:100%;
+    border-collapse:collapse;
+  }
+  table.lead-table thead th{
+    background: linear-gradient(315deg, #214284 0.000%, #172a9b 20.000%, #2420b5 40.000%, #4525cd 60.000%, #7239dc 80.000%, #a157df 100.000%);
+    color:#fff;
+    text-align:left;
+    padding:14px 18px;
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-weight:700;
+  }
+  table.lead-table tbody td{
+    padding:14px 18px;
+    border-bottom:1px solid var(--card-border);
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  table.lead-table tbody tr:last-child td{ border-bottom:none; }
+  table.lead-table tbody tr:hover{ background:#FFFBF2; }
+  .rank-pill{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;height:34px;
+    border-radius:10px;
+    font-weight:800;
+    color:#fff;
+    font-family:'JetBrains Mono', monospace;
+  }
+  .rk-1{ background:var(--gold); }
+  .rk-2{ background:var(--silver); }
+  .rk-3{ background:var(--bronze); }
+  .rk-4, .rk-5{ background:var(--chakra); }
+  .score-cell{ font-family:'JetBrains Mono', monospace; font-weight:700; color:var(--india-green-deep); }
+  .grade-chip{
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:999px;
+    font-size:0.75rem;
+    font-weight:800;
+    background:rgba(255,153,51,0.15);
+    color:var(--saffron-deep);
+  }
+
+  .encourage{
+    max-width:820px;
+    margin:0 auto 56px;
+    text-align:center;
+    padding:24px 28px;
+    border-radius:16px;
+    background:linear-gradient(90deg, rgba(255,153,51,0.10), rgba(255,255,255,0.5), rgba(11,138,69,0.10));
+    border:1px dashed var(--card-border);
+    font-size:1rem;
+    color:var(--ink-soft);
+    font-weight:600;
+    line-height:1.6;
+  }
+  .encourage b{ color:var(--india-green-deep); }
+  .encourage .sf{ color:var(--saffron-deep); }
+
+  section.search-section{
+    max-width:820px;
+    margin:0 auto 80px;
+    padding:0 6vw;
+  }
+  .search-title{
+    text-align:center;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.5rem;
+    margin-bottom:8px;
+  }
+  .search-hint{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+    margin-bottom:22px;
+  }
+  .search-box{
+    position:relative;
+  }
+  #searchInput{
+    width:100%;
+    padding:16px 20px 16px 52px;
+    border-radius:14px;
+    border:2px solid var(--card-border);
+    font-size:1.05rem;
+    font-family:'Manrope', sans-serif;
+    font-weight:600;
+    background:var(--white);
+    outline:none;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  #searchInput:focus{
+    border-color:var(--saffron);
+    box-shadow:0 0 0 4px rgba(255,153,51,0.15);
+  }
+  .search-icon{
+    position:absolute;
+    left:18px; top:50%;
+    transform:translateY(-50%);
+    font-size:1.15rem;
+    opacity:0.55;
+  }
+  #suggestions{
+    margin-top:10px;
+    background:var(--white);
+    border-radius:12px;
+    border:1px solid var(--card-border);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    display:none;
+  }
+  #suggestions.show{ display:block; }
+  .suggestion-item{
+    padding:12px 20px;
+    cursor:pointer;
+    font-weight:600;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--card-border);
+  }
+  .suggestion-item:last-child{ border-bottom:none; }
+  .suggestion-item:hover{ background:#FFF6E8; }
+  .suggestion-item small{
+    color:var(--ink-soft);
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+  }
+
+  #scorecard{ margin-top:30px; display:none; }
+  #scorecard.show{ display:block; animation:fadeUp .4s ease; }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+
+  .sc-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    padding:22px 26px;
+    border-radius:16px 16px 0 0;
+    background: linear-gradient(315deg, #214284 0.000%, #172a9b 20.000%, #2420b5 40.000%, #4525cd 60.000%, #7239dc 80.000%, #a157df 100.000%);
+    color:#fff;
+  }
+  .sc-header h3{
+    margin:0;
+    font-family:'Fraunces', serif;
+    font-size:1.5rem;
+  }
+  .sc-header .sc-meta{
+    font-size:0.82rem;
+    opacity:0.9;
+    font-family:'JetBrains Mono', monospace;
+    margin-top:4px;
+  }
+  .sc-header .sc-grade-badge{
+    font-size:2.1rem;
+    font-weight:900;
+    font-family:'Fraunces', serif;
+    background:rgba(255,255,255,0.18);
+    padding:6px 20px;
+    border-radius:14px;
+  }
+
+  .sc-body{
+    background:var(--white);
+    border:1px solid var(--card-border);
+    border-top:none;
+    border-radius:0 0 16px 16px;
+    padding:26px;
+  }
+  .sc-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:14px;
+    margin-bottom:24px;
+  }
+  .sc-box{
+    border-radius:14px;
+    padding:16px;
+    color:#fff;
+    box-shadow:0 8px 18px -8px rgba(0,0,0,0.25);
+  }
+  .sc-box .lbl{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.07em;
+    font-weight:700;
+    opacity:0.85;
+    margin-bottom:6px;
+  }
+  .sc-box .val{
+    font-family:'JetBrains Mono', monospace;
+    font-size:1.5rem;
+    font-weight:800;
+  }
+  .bx-1{ background:linear-gradient(135deg,#FF9933,#E06E00); }
+  .bx-2{ background:linear-gradient(135deg,#0B8A45,#046A34); }
+  .bx-3{ background:linear-gradient(135deg,#0B3C8C,#123E8F); }
+  .bx-4{ background:linear-gradient(135deg,#D4A017,#B5651D); }
+  .bx-5{ background:linear-gradient(135deg,#8C949C,#5B565D); }
+  .bx-6{ background:linear-gradient(135deg,#046A34,#0B3C8C); }
+
+  .sc-section-title{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.05rem;
+    margin:20px 0 12px;
+    color:var(--ink);
+    border-left:4px solid var(--saffron);
+    padding-left:10px;
+  }
+  .sc-subjects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:14px;
+  }
+  .subj-card{
+    border-radius:14px;
+    padding:16px 18px;
+    border:1px solid var(--card-border);
+    background:#FFFDF8;
+  }
+  .subj-card h4{
+    margin:0 0 10px;
+    font-size:0.95rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .subj-dot{ width:10px;height:10px;border-radius:50%; display:inline-block;}
+  .qa-dot{ background:var(--saffron); }
+  .ra-dot{ background:var(--chakra); }
+  .el-dot{ background:var(--india-green); }
+  .subj-stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 16px;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  .subj-stats b{ color:var(--ink); }
+  .bar-track{
+    height:8px;
+    background:#EFE8D9;
+    border-radius:999px;
+    margin-top:10px;
+    overflow:hidden;
+  }
+  .bar-fill{ height:100%; border-radius:999px; }
+
+  .no-match{
+    text-align:center;
+    padding:16px 20px;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+
+  .download-wrap{
+    text-align:center;
+    margin-top:26px;
+    padding-top:22px;
+    border-top:1px dashed var(--card-border);
+  }
+  .global-download-section{
+    max-width:820px;
+    margin:0 auto 60px;
+    padding:0 6vw;
+  }
+  .global-download-section .download-wrap{
+    margin-top:0;
+    padding-top:0;
+    border-top:none;
+  }
+  .download-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 30px;
+    border-radius:12px;
+    background:linear-gradient(90deg, var(--saffron), var(--saffron-deep));
+    color:#fff;
+    font-weight:800;
+    font-size:1rem;
+    text-decoration:none;
+    box-shadow:0 10px 22px -8px rgba(224,110,0,0.45);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .download-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 26px -8px rgba(224,110,0,0.55);
+  }
+  .download-btn span{ font-size:1.1rem; }
+
+  footer{
+    text-align:center;
+    padding:30px;
+    color:var(--ink-soft);
+    font-size:0.82rem;
+    font-weight:600;
+    border-top:1px solid var(--card-border);
+  }
+
+  @media (max-width:720px){
+    .top3{ grid-template-columns:1fr; }
+    .p1,.p2,.p3{ order:initial; align-self:auto; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particle-canvas"></canvas>
+<div class="tricolor-bar"></div>
+
+<header class="top">
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-name">Bankers Alliance
+      <span>Mock Test Series</span>
+    </div>
+  </div>
+  <div class="chakra-spin"></div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow"><span class="flag">🇮🇳</span> Independence Day Special <span class="flag">🇮🇳</span></div>
+  <h1 class="title">Leaderboard</h1>
+  <p class="sub">IBPS PO Live Mock <span class="date">15 August 2026</span></p>
+</section>
+
+<section class="podium">
+  <div class="board-title">Top 5 Performers</div>
+  <div class="top3" id="podium"></div>
+  <div class="table-wrap">
+    <table class="lead-table">
+      <thead>
+        <tr><th>Rank</th><th>Candidate</th><th>Overall Score</th><th>Grade</th></tr>
+      </thead>
+      <tbody id="top5-rest"></tbody>
+    </table>
+  </div>
+
+  <div class="encourage">
+    🎉 <b>Huge congratulations to our top scorers!</b> And to every single candidate who sat for this Independence Day Special mock — <span class="sf">every attempt counts.</span> Whether you scored high or you're still building momentum, showing up and testing yourself is how real results are made. <b>Keep practicing, keep improving — the next leaderboard could have your name at the top! 🇮🇳</b>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="search-title">Find Your Scorecard</div>
+  <p class="search-hint">Type at least 2 letters of your name (any case) — select your name from the list to view your scorecard</p>
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Enter candidate name...">
+    <div id="suggestions"></div>
+  </div>
+  <div id="scorecard"></div>
+</section>
+
+<section class="global-download-section">
+  <div class="download-wrap">
+    <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1q875QlKpLa1pbAp9aY4V7f8GAFSJ6F0H" target="_blank" rel="noopener">
+      <span>⬇</span> Download Mock Solutions
+    </a>
+  </div>
+</section>
+
+<footer>Bankers Alliance · IBPS PO Live Mock · 15 August 2026 · Data reflects official test results</footer>
+
+<script>
+// ---------- DATA ----------
+const candidates = [
+  {name:"Dd", ts:"07/08/2026 20:29:48", score:10.49, max:100, pct:12, acc:85.7, grade:"D", time:"11:47", correct:12, wrong:2, skipped:86,
+    qa:{s:5.74,m:35,a:87.5,t:"09:27"}, ra:{s:0,m:35,a:0,t:"00:40"}, el:{s:4.75,m:30,a:83.3,t:"01:40"}},
+  {name:"monika", ts:"08/08/2026 17:02:45", score:45.51, max:100, pct:48, acc:80, grade:"C", time:"60:00:00", correct:48, wrong:12, skipped:40,
+    qa:{s:11.27,m:35,a:82.4,t:"20:00"}, ra:{s:20.24,m:35,a:94.7,t:"20:00"}, el:{s:14,m:30,a:66.7,t:"20:00"}},
+  {name:"Ramesha", ts:"15/08/2026 09:50:23", score:0, max:100, pct:0, acc:0, grade:"D", time:"00:43", correct:0, wrong:0, skipped:100,
+    qa:{s:0,m:35,a:0,t:"00:31"}, ra:{s:0,m:35,a:0,t:"00:03"}, el:{s:0,m:30,a:0,t:"00:09"}},
+  {name:"sayma shaikh", ts:"15/08/2026 10:15:15", score:10, max:100, pct:13, acc:72.2, grade:"D", time:"15:43", correct:13, wrong:5, skipped:82,
+    qa:{s:10,m:35,a:72.2,t:"15:40"}, ra:{s:0,m:35,a:0,t:"00:02"}, el:{s:0,m:30,a:0,t:"00:01"}},
+  {name:"Narmatha", ts:"15/08/2026 10:53:58", score:34.26, max:100, pct:37, acc:84.1, grade:"D", time:"55:22:00", correct:37, wrong:7, skipped:56,
+    qa:{s:14.03,m:35,a:89.5,t:"20:00"}, ra:{s:11.98,m:35,a:84.6,t:"20:00"}, el:{s:8.25,m:30,a:75,t:"15:22"}},
+  {name:"Narmatha", ts:"15/08/2026 10:58:03", score:0, max:100, pct:0, acc:0, grade:"D", time:"00:08", correct:0, wrong:0, skipped:100,
+    qa:{s:0,m:35,a:0,t:"00:06"}, ra:{s:0,m:35,a:0,t:"00:01"}, el:{s:0,m:30,a:0,t:"00:01"}},
+  {name:"Narmatha", ts:"15/08/2026 10:59:34", score:0, max:100, pct:0, acc:0, grade:"D", time:"00:05", correct:0, wrong:0, skipped:100,
+    qa:{s:0,m:35,a:0,t:"00:02"}, ra:{s:0,m:35,a:0,t:"00:02"}, el:{s:0,m:30,a:0,t:"00:01"}},
+  {name:"Avinash", ts:"15/08/2026 11:23:46", score:59.25, max:100, pct:61, acc:87.1, grade:"B", time:"60:00:00", correct:61, wrong:9, skipped:30,
+    qa:{s:15.09,m:35,a:94.7,t:"20:00"}, ra:{s:25.66,m:35,a:92,t:"20:00"}, el:{s:18.5,m:30,a:76.9,t:"20:00"}},
+  {name:"Monali Pisal", ts:"15/08/2026 11:34:50", score:19.05, max:100, pct:20, acc:80, grade:"D", time:"38:18:00", correct:20, wrong:5, skipped:75,
+    qa:{s:5.74,m:35,a:87.5,t:"17:09"}, ra:{s:10.56,m:35,a:76.9,t:"16:21"}, el:{s:2.75,m:30,a:75,t:"04:48"}},
+  {name:"JAYASREE V", ts:"15/08/2026 11:48:45", score:63.22, max:100, pct:64, acc:91.4, grade:"B", time:"56:04:00", correct:64, wrong:6, skipped:30,
+    qa:{s:14.03,m:35,a:89.5,t:"20:00"}, ra:{s:25.94,m:35,a:95.8,t:"20:00"}, el:{s:23.25,m:30,a:88.9,t:"16:04"}},
+  {name:"Amit Dey", ts:"15/08/2026 11:51:42", score:43.88, max:100, pct:47, acc:81, grade:"C", time:"60:00:00", correct:47, wrong:11, skipped:42,
+    qa:{s:12.12,m:35,a:83.3,t:"20:00"}, ra:{s:14.26,m:35,a:86.7,t:"20:00"}, el:{s:17.5,m:30,a:76,t:"20:00"}},
+  {name:"Parth", ts:"15/08/2026 12:52:21", score:44, max:100, pct:49, acc:76.6, grade:"C", time:"60:00:00", correct:49, wrong:15, skipped:36,
+    qa:{s:15.52,m:35,a:86.4,t:"20:00"}, ra:{s:11.98,m:35,a:84.6,t:"20:00"}, el:{s:16.5,m:30,a:65.5,t:"20:00"}},
+  {name:"Vineeta Maddeshiya", ts:"15/08/2026 12:54:23", score:33.87, max:100, pct:36, acc:80, grade:"D", time:"38:35:00", correct:36, wrong:9, skipped:55,
+    qa:{s:13.61,m:35,a:81,t:"20:00"}, ra:{s:20.26,m:35,a:79.2,t:"18:31"}, el:{s:0,m:30,a:0,t:"00:04"}},
+  {name:"Nimi", ts:"15/08/2026 12:57:57", score:52.2, max:100, pct:55, acc:80.9, grade:"C", time:"60:00:00", correct:55, wrong:13, skipped:32,
+    qa:{s:13.4,m:35,a:77.3,t:"20:00"}, ra:{s:22.8,m:35,a:100,t:"20:00"}, el:{s:16,m:30,a:69.2,t:"20:00"}},
+  {name:"SNEHA DAS", ts:"15/08/2026 14:12:43", score:45.09, max:100, pct:47, acc:83.9, grade:"C", time:"56:12:00", correct:47, wrong:9, skipped:44,
+    qa:{s:11.27,m:35,a:82.4,t:"20:00"}, ra:{s:18.82,m:35,a:89.5,t:"20:00"}, el:{s:15,m:30,a:80,t:"16:12"}},
+  {name:"sumit ravate", ts:"15/08/2026 15:48:01", score:21.71, max:100, pct:26, acc:59.1, grade:"D", time:"55:59:00", correct:26, wrong:18, skipped:56,
+    qa:{s:2.77,m:35,a:57.1,t:"15:59"}, ra:{s:5.44,m:35,a:54.5,t:"20:00"}, el:{s:13.5,m:30,a:61.5,t:"20:00"}},
+  {name:"Anurag Bhushan", ts:"15/08/2026 15:57:42", score:50.2, max:100, pct:53, acc:81.5, grade:"C", time:"60:00:00", correct:53, wrong:12, skipped:35,
+    qa:{s:11.91,m:35,a:78.9,t:"20:00"}, ra:{s:18.54,m:35,a:85,t:"20:00"}, el:{s:19.75,m:30,a:80.8,t:"20:00"}},
+  {name:"abhay walia", ts:"15/08/2026 16:01:23", score:41.47, max:100, pct:45, acc:76.3, grade:"C", time:"40:55:00", correct:45, wrong:14, skipped:41,
+    qa:{s:10.43,m:35,a:66.7,t:"17:41"}, ra:{s:14.54,m:35,a:92.9,t:"13:37"}, el:{s:16.5,m:30,a:75,t:"09:37"}},
+  {name:"Abhishek yadav", ts:"15/08/2026 17:15:38", score:-0.7, max:100, pct:19, acc:19, grade:"D", time:"02:18", correct:19, wrong:81, skipped:0,
+    qa:{s:0.07,m:35,a:20,t:"00:53"}, ra:{s:2.98,m:35,a:25.7,t:"00:49"}, el:{s:-3.75,m:30,a:10,t:"00:36"}},
+  {name:"Abhishek jha", ts:"15/08/2026 17:28:58", score:49.6, max:100, pct:53, acc:80.3, grade:"C", time:"57:17:00", correct:53, wrong:13, skipped:34,
+    qa:{s:12.12,m:35,a:83.3,t:"20:00"}, ra:{s:15.98,m:35,a:78.9,t:"19:18"}, el:{s:21.5,m:30,a:79.3,t:"17:59"}},
+  {name:"Sanket Malkar", ts:"15/08/2026 17:49:22", score:55.79, max:100, pct:57, acc:91.9, grade:"C", time:"53:45:00", correct:57, wrong:5, skipped:38,
+    qa:{s:14.88,m:35,a:90,t:"20:00"}, ra:{s:21.66,m:35,a:100,t:"19:25"}, el:{s:19.25,m:30,a:87,t:"14:20"}},
+  {name:"Girdhar", ts:"15/08/2026 17:59:01", score:11.21, max:100, pct:14, acc:77.8, grade:"D", time:"28:37:00", correct:14, wrong:4, skipped:82,
+    qa:{s:10.63,m:35,a:86.7,t:"20:00"}, ra:{s:0.58,m:35,a:33.3,t:"08:36"}, el:{s:0,m:30,a:0,t:"00:01"}},
+  {name:"Kk", ts:"15/08/2026 18:18:12", score:14, max:100, pct:17, acc:58.6, grade:"D", time:"17:39", correct:17, wrong:12, skipped:71,
+    qa:{s:0,m:35,a:0,t:"00:03"}, ra:{s:0,m:35,a:0,t:"00:01"}, el:{s:14,m:30,a:58.6,t:"17:35"}},
+  {name:"Kkm", ts:"15/08/2026 18:25:51", score:6.75, max:100, pct:7, acc:87.5, grade:"D", time:"06:10", correct:7, wrong:1, skipped:92,
+    qa:{s:0,m:35,a:0,t:"00:02"}, ra:{s:0,m:35,a:0,t:"00:01"}, el:{s:6.75,m:30,a:87.5,t:"06:07"}},
+  {name:"Shraddha Singh", ts:"15/08/2026 18:28:44", score:33.02, max:100, pct:35, acc:79.5, grade:"D", time:"40:01:00", correct:35, wrong:9, skipped:56,
+    qa:{s:12.76,m:35,a:80,t:"20:00"}, ra:{s:20.26,m:35,a:79.2,t:"20:00"}, el:{s:0,m:30,a:0,t:"00:01"}},
+  {name:"parmpreet kaur", ts:"15/08/2026 18:40:52", score:44.39, max:100, pct:46, acc:82.1, grade:"C", time:"55:59:00", correct:46, wrong:10, skipped:44,
+    qa:{s:8.29,m:35,a:90.9,t:"18:28"}, ra:{s:19.1,m:35,a:94.4,t:"20:00"}, el:{s:17,m:30,a:70.4,t:"17:31"}},
+  {name:"UNNATI", ts:"15/08/2026 18:46:48", score:30.29, max:100, pct:32, acc:86.5, grade:"D", time:"38:46:00", correct:32, wrong:5, skipped:63,
+    qa:{s:14.03,m:35,a:89.5,t:"20:00"}, ra:{s:16.26,m:35,a:83.3,t:"18:44"}, el:{s:0,m:30,a:0,t:"00:02"}},
+  {name:"Rinki", ts:"15/08/2026 18:56:27", score:11.81, max:100, pct:20, acc:38.5, grade:"D", time:"56:06:00", correct:20, wrong:32, skipped:48,
+    qa:{s:2.99,m:35,a:45.5,t:"19:16"}, ra:{s:2.32,m:35,a:33.3,t:"20:00"}, el:{s:6.5,m:30,a:37.9,t:"16:50"}},
+  {name:"Saurabh", ts:"15/08/2026 19:19:12", score:68.68, max:100, pct:74, acc:80.4, grade:"B", time:"55:40:00", correct:74, wrong:18, skipped:8,
+    qa:{s:20.84,m:35,a:81.3,t:"20:00"}, ra:{s:22.84,m:35,a:73.3,t:"20:00"}, el:{s:25,m:30,a:86.7,t:"15:40"}},
+  {name:"JYOTI PRAKASH M S", ts:"15/08/2026 19:52:23", score:2.27, max:100, pct:3, acc:75, grade:"D", time:"04:46", correct:3, wrong:1, skipped:96,
+    qa:{s:2.55,m:35,a:100,t:"03:51"}, ra:{s:-0.28,m:35,a:0,t:"00:51"}, el:{s:0,m:30,a:0,t:"00:04"}},
+  {name:"Msk", ts:"15/08/2026 21:18:35", score:28.74, max:100, pct:31, acc:72.1, grade:"D", time:"52:47:00", correct:31, wrong:12, skipped:57,
+    qa:{s:7.45,m:35,a:66.7,t:"20:00"}, ra:{s:16.54,m:35,a:88.2,t:"20:00"}, el:{s:4.75,m:30,a:54.5,t:"12:47"}},
+  {name:"Palak", ts:"15/08/2026 21:24:45", score:45.1, max:100, pct:52, acc:72.2, grade:"C", time:"60:00:00", correct:52, wrong:20, skipped:28,
+    qa:{s:17.86,m:35,a:84.6,t:"20:00"}, ra:{s:9.74,m:35,a:52.4,t:"20:00"}, el:{s:17.5,m:30,a:76,t:"20:00"}},
+  {name:"Priya", ts:"15/08/2026 22:03:39", score:26.28, max:100, pct:27, acc:90, grade:"D", time:"44:31:00", correct:27, wrong:3, skipped:70,
+    qa:{s:9.99,m:35,a:92.3,t:"19:33"}, ra:{s:14.54,m:35,a:92.9,t:"19:30"}, el:{s:1.75,m:30,a:66.7,t:"05:28"}},
+  {name:"ANNU DEVARA", ts:"15/08/2026 22:24:14", score:33.59, max:100, pct:37, acc:66.1, grade:"D", time:"60:00:00", correct:37, wrong:19, skipped:44,
+    qa:{s:4.69,m:35,a:53.8,t:"20:00"}, ra:{s:17.4,m:35,a:84.2,t:"20:00"}, el:{s:11.5,m:30,a:58.3,t:"20:00"}},
+  {name:"Arav", ts:"15/08/2026 22:37:34", score:54.58, max:100, pct:54, acc:93.1, grade:"C", time:"60:00:00", correct:54, wrong:4, skipped:42,
+    qa:{s:9.14,m:35,a:91.7,t:"20:00"}, ra:{s:25.94,m:35,a:95.8,t:"20:00"}, el:{s:19.5,m:30,a:90.9,t:"20:00"}},
+  {name:"Pradeep", ts:"15/08/2026 22:40:51", score:17.01, max:100, pct:21, acc:84, grade:"D", time:"24:17:00", correct:21, wrong:4, skipped:75,
+    qa:{s:17.01,m:35,a:84,t:"20:00"}, ra:{s:0,m:35,a:0,t:"04:14"}, el:{s:0,m:30,a:0,t:"00:03"}},
+  {name:"suruchi", ts:"15/08/2026 22:59:42", score:39.66, max:100, pct:43, acc:74.1, grade:"C", time:"56:42:00", correct:43, wrong:15, skipped:42,
+    qa:{s:11.7,m:35,a:75,t:"20:00"}, ra:{s:19.96,m:35,a:90,t:"20:00"}, el:{s:8,m:30,a:55.6,t:"16:42"}},
+  {name:"Shubham Vishwanath Mandalkar", ts:"15/08/2026 23:59:55", score:4.26, max:100, pct:6, acc:60, grade:"D", time:"10:47", correct:6, wrong:4, skipped:90,
+    qa:{s:4.26,m:35,a:60,t:"10:39"}, ra:{s:0,m:35,a:0,t:"00:07"}, el:{s:0,m:30,a:0,t:"00:01"}},
+  {name:"Abhi", ts:"16/08/2026 01:08:55", score:54.75, max:100, pct:57, acc:80.3, grade:"C", time:"60:00:00", correct:57, wrong:14, skipped:29,
+    qa:{s:11.06,m:35,a:77.8,t:"20:00"}, ra:{s:25.94,m:35,a:95.8,t:"20:00"}, el:{s:17.75,m:30,a:69,t:"20:00"}},
+  {name:"kanchan maggu", ts:"16/08/2026 07:16:33", score:37.77, max:100, pct:40, acc:80, grade:"C", time:"60:00:00", correct:40, wrong:10, skipped:50,
+    qa:{s:7.87,m:35,a:76.9,t:"20:00"}, ra:{s:13.4,m:35,a:92.3,t:"20:00"}, el:{s:16.5,m:30,a:75,t:"20:00"}},
+  {name:"sumit choudhary", ts:"16/08/2026 07:16:55", score:30.89, max:100, pct:35, acc:66, grade:"D", time:"60:00:00", correct:35, wrong:18, skipped:47,
+    qa:{s:7.24,m:35,a:62.5,t:"20:00"}, ra:{s:13.4,m:35,a:92.3,t:"20:00"}, el:{s:10.25,m:30,a:54.2,t:"20:00"}},
+  {name:"ps", ts:"16/08/2026 07:43:54", score:36.54, max:100, pct:37, acc:94.9, grade:"D", time:"32:21:00", correct:37, wrong:2, skipped:61,
+    qa:{s:14.88,m:35,a:90,t:"20:00"}, ra:{s:21.66,m:35,a:100,t:"12:16"}, el:{s:0,m:30,a:0,t:"00:05"}},
+  {name:"saS", ts:"16/08/2026 09:11:37", score:0, max:100, pct:0, acc:0, grade:"D", time:"01:08", correct:0, wrong:0, skipped:100,
+    qa:{s:0,m:35,a:0,t:"00:51"}, ra:{s:0,m:35,a:0,t:"00:09"}, el:{s:0,m:30,a:0,t:"00:08"}},
+  {name:"Vaishali", ts:"16/08/2026 09:54:40", score:22.17, max:100, pct:24, acc:80, grade:"D", time:"53:21:00", correct:24, wrong:6, skipped:70,
+    qa:{s:5.11,m:35,a:63.6,t:"20:00"}, ra:{s:4.56,m:35,a:100,t:"13:21"}, el:{s:12.5,m:30,a:86.7,t:"20:00"}},
+  {name:"Bharath", ts:"16/08/2026 10:23:57", score:41.29, max:100, pct:43, acc:93.5, grade:"C", time:"39:29:00", correct:43, wrong:3, skipped:54,
+    qa:{s:20.19,m:35,a:96,t:"20:00"}, ra:{s:21.1,m:35,a:90.5,t:"19:21"}, el:{s:0,m:30,a:0,t:"00:08"}},
+];
+
+const ranked = [...candidates].sort((a,b)=>b.score-a.score);
+const top5 = ranked.slice(0,5);
+const medalEmoji = ["🥇","🥈","🥉"];
+
+// ---------- PODIUM (top 3) ----------
+const podiumEl = document.getElementById('podium');
+const order = [1,0,2]; // silver, gold, bronze visual order (CSS handles actual order via classes)
+top5.slice(0,3).forEach((c, i)=>{
+  const div = document.createElement('div');
+  div.className = 'podium-card p'+(i+1);
+  div.innerHTML = `
+    <div class="rank-label">${i===0?'Champion':'Rank #'+(i+1)}</div>
+    <div class="medal">${medalEmoji[i]}</div>
+    <div class="p-name">${c.name}</div>
+    <div class="p-score">${c.score}<span> / ${c.max}</span></div>
+    <div class="p-grade">Grade ${c.grade}</div>
+  `;
+  podiumEl.appendChild(div);
+});
+
+// ---------- TABLE (rank 4 & 5, plus all top5 for clarity) ----------
+const tbody = document.getElementById('top5-rest');
+top5.forEach((c, i)=>{
+  const rank = i+1;
+  const rankDisplay = rank<=3 ? medalEmoji[rank-1] : rank;
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td><span class="rank-pill rk-${rank}">${rankDisplay}</span></td>
+    <td>${c.name}</td>
+    <td class="score-cell">${c.score} / ${c.max}</td>
+    <td><span class="grade-chip">${c.grade}</span></td>
+  `;
+  tbody.appendChild(tr);
+});
+
+// ---------- SEARCH ----------
+const searchInput = document.getElementById('searchInput');
+const suggestionsBox = document.getElementById('suggestions');
+const scorecardBox = document.getElementById('scorecard');
+
+function matches(name, query){
+  return name.toLowerCase().includes(query.toLowerCase());
+}
+
+searchInput.addEventListener('input', ()=>{
+  const q = searchInput.value.trim();
+  scorecardBox.classList.remove('show');
+  scorecardBox.innerHTML = '';
+
+  if(q.length < 2){
+    suggestionsBox.classList.remove('show');
+    suggestionsBox.innerHTML = '';
+    return;
+  }
+
+  const found = candidates.filter(c => matches(c.name, q));
+
+  if(found.length === 0){
+    suggestionsBox.innerHTML = `<div class="no-match">No candidate found matching "${q}"</div>`;
+    suggestionsBox.classList.add('show');
+    return;
+  }
+
+  // Always show the matching names list — never auto-open a scorecard.
+  // The candidate must be selected from this list to view their scorecard.
+  suggestionsBox.innerHTML = found.map(c =>
+    `<div class="suggestion-item" data-name="${c.name}" data-ts="${c.ts}">${c.name} <small>${c.ts}</small></div>`
+  ).join('');
+  suggestionsBox.classList.add('show');
+});
+
+suggestionsBox.addEventListener('click', (e)=>{
+  const item = e.target.closest('.suggestion-item');
+  if(!item) return;
+  const name = item.dataset.name;
+  const ts = item.dataset.ts;
+  const c = candidates.find(x=>x.name === name && x.ts === ts);
+  searchInput.value = name;
+  suggestionsBox.classList.remove('show');
+  suggestionsBox.innerHTML = '';
+  if(c) renderScorecard(c);
+});
+
+function barColor(acc){
+  if(acc >= 80) return 'var(--india-green)';
+  if(acc >= 50) return 'var(--saffron)';
+  return '#C0392B';
+}
+
+function renderScorecard(c){
+  scorecardBox.innerHTML = `
+    <div class="sc-header">
+      <div>
+        <h3>${c.name}</h3>
+        <div class="sc-meta">Submitted: ${c.ts}</div>
+      </div>
+      <div class="sc-grade-badge">${c.grade}</div>
+    </div>
+    <div class="sc-body">
+      <div class="sc-grid">
+        <div class="sc-box bx-1"><div class="lbl">Overall Score</div><div class="val">${c.score} / ${c.max}</div></div>
+        <div class="sc-box bx-2"><div class="lbl">Percentage</div><div class="val">${c.pct}%</div></div>
+        <div class="sc-box bx-3"><div class="lbl">Accuracy</div><div class="val">${c.acc}%</div></div>
+        <div class="sc-box bx-4"><div class="lbl">Time Used</div><div class="val">${c.time}</div></div>
+        <div class="sc-box bx-5"><div class="lbl">Correct / Wrong</div><div class="val">${c.correct} / ${c.wrong}</div></div>
+        <div class="sc-box bx-6"><div class="lbl">Skipped</div><div class="val">${c.skipped}</div></div>
+      </div>
+
+      <div class="sc-section-title">Section-wise Performance</div>
+      <div class="sc-subjects">
+        ${subjectCard('Quantitative Aptitude', c.qa, 'qa-dot')}
+        ${subjectCard('Reasoning Ability', c.ra, 'ra-dot')}
+        ${subjectCard('English Language', c.el, 'el-dot')}
+      </div>
+    </div>
+  `;
+  scorecardBox.classList.add('show');
+  scorecardBox.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function subjectCard(label, subj, dotClass){
+  const pctOfMax = Math.max(0, Math.min(100, (subj.s/subj.m)*100));
+  return `
+    <div class="subj-card">
+      <h4><span class="subj-dot ${dotClass}"></span>${label}</h4>
+      <div class="subj-stats">
+        <span>Score: <b>${subj.s} / ${subj.m}</b></span>
+        <span>Accuracy: <b>${subj.a}%</b></span>
+        <span>Time: <b>${subj.t}</b></span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pctOfMax}%; background:${barColor(subj.a)};"></div></div>
+    </div>
+  `;
+}
+
+// close suggestions on outside click
+document.addEventListener('click', (e)=>{
+  if(!e.target.closest('.search-box')){
+    suggestionsBox.classList.remove('show');
+  }
+});
+
+// ---------- CELEBRATION PARTICLES ----------
+(function(){
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const colors = ['#FF9933','#FFFFFF','#0B8A45','#D4A017','#0B3C8C'];
+  const N = 130;
+  const particles = [];
+
+  function spawn(){
+    return {
+      x: Math.random()*W,
+      y: -20 - Math.random()*H,
+      size: 5 + Math.random()*7,
+      speedY: 1.2 + Math.random()*2.2,
+      speedX: (Math.random()-0.5)*1.4,
+      rot: Math.random()*360,
+      rotSpeed: (Math.random()-0.5)*6,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      shape: Math.random() > 0.5 ? 'rect' : 'circle',
+      life: 1
+    };
+  }
+  for(let i=0;i<N;i++) particles.push(spawn());
+
+  let elapsed = 0;
+  const duration = 6500; // ms of active falling before thinning out
+  let lastTime = performance.now();
+
+  function draw(now){
+    const dt = now - lastTime;
+    lastTime = now;
+    elapsed += dt;
+    ctx.clearRect(0,0,W,H);
+
+    particles.forEach(p=>{
+      p.y += p.speedY * (dt/16);
+      p.x += p.speedX * (dt/16);
+      p.rot += p.rotSpeed;
+
+      if(elapsed < duration && p.y > H + 30){
+        Object.assign(p, spawn(), {y: -20});
+      }
+
+      if(elapsed >= duration){
+        p.life -= 0.002;
+      }
+      if(p.life <= 0) return;
+
+      ctx.save();
+      ctx.globalAlpha = Math.max(0, p.life);
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI/180);
+      ctx.fillStyle = p.color;
+      if(p.shape === 'rect'){
+        ctx.fillRect(-p.size/2, -p.size/3, p.size, p.size*0.65);
+      } else {
+        ctx.beginPath();
+        ctx.arc(0,0,p.size/2,0,Math.PI*2);
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+
+    if(elapsed < duration + 2500){
+      requestAnimationFrame(draw);
+    } else {
+      ctx.clearRect(0,0,W,H);
+    }
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
