@@ -1,0 +1,3099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victory Banker - Descriptive Test</title>
+<style>
+  :root{
+    --navy:#3d4b66;
+    --navy-dark:#2f3b52;
+    --navy-darker:#28324a;
+    --light-bg:#eef1f5;
+    --panel-border:#dfe3e8;
+    --green:#7cb342;
+    --orange:#e2622f;
+    --gray-chip:#cfd6dd;
+    --purple:#5e3a99;
+    --text-dark:#2b2f38;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;font-family:'Segoe UI',Arial,Helvetica,sans-serif;background:var(--light-bg);color:var(--text-dark);}
+  button{font-family:inherit;cursor:pointer;}
+  input[type=text]{font-family:inherit;}
+  .hidden{display:none !important;}
+
+  /* ---------- Mobile / Orientation warning ---------- */
+  #mobileWarning{
+    position:fixed;inset:0;background:rgba(20,24,32,.92);z-index:9999;
+    display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;
+  }
+  #mobileWarning .box{background:#fff;border-radius:10px;padding:30px 24px;max-width:380px;}
+  #mobileWarning .box h2{margin:0 0 10px;color:var(--navy);}
+  #mobileWarning .box p{margin:0 0 18px;line-height:1.5;color:#444;font-size:14px;}
+  #mobileWarning .icon{font-size:40px;margin-bottom:10px;}
+  #mobileWarning button{background:var(--navy);color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:14px;}
+
+  /* ---------- Fullscreen notice ---------- */
+  #fsNotice{position:fixed;top:14px;left:50%;transform:translateX(-50%) translateY(-20px);background:#1e2430;
+    color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:8000;opacity:0;
+    transition:all .3s ease;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.3);}
+  #fsNotice.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* ---------- Start Page ---------- */
+  #startPage{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-darker) 100%);padding:30px 10px;}
+  .start-card{background:#fff;border-radius:14px;padding:42px 44px;width:520px;max-width:92vw;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);text-align:center;}
+  .brand-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px;}
+  .brand-logo .mark{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;}
+  .brand-logo .name{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:.3px;}
+  .brand-tag{color:#8a93a3;font-size:13px;margin-bottom:20px;letter-spacing:.5px;text-transform:uppercase;}
+  .start-card h1{font-size:19px;margin:0 0 16px;color:var(--text-dark);font-weight:700;}
+  .start-meta-row{display:flex;gap:12px;margin-bottom:18px;}
+  .meta-box{flex:1;background:#f4f6f9;border-radius:8px;padding:12px 6px;}
+  .meta-box .meta-num{font-size:19px;font-weight:800;color:var(--navy);}
+  .meta-box .meta-lbl{font-size:10.5px;color:#828a97;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+  table.instr-table{border-collapse:collapse;width:100%;margin:0 0 20px;font-size:13px;}
+  table.instr-table th,table.instr-table td{border:1px solid #e3e6ea;padding:8px 10px;text-align:left;}
+  table.instr-table th{background:#f4f6f9;}
+  .start-card label{display:block;text-align:left;font-size:13px;color:#666;margin-bottom:6px;font-weight:600;}
+  .start-card input[type=text]{width:100%;padding:12px 14px;border:1.5px solid #d7dbe2;border-radius:8px;
+    font-size:15px;margin-bottom:8px;outline:none;transition:border-color .15s;}
+  .start-card input[type=text]:focus{border-color:var(--navy);}
+  #nameError{color:#c0392b;font-size:12px;text-align:left;min-height:16px;margin-bottom:6px;}
+  .btn-primary{background:var(--navy);color:#fff;border:none;padding:13px 20px;border-radius:8px;
+    font-size:15px;font-weight:600;width:100%;margin-top:10px;transition:background .15s;}
+  .btn-primary:hover{background:var(--navy-dark);}
+  .btn-primary:disabled{background:#a9b1bd;cursor:not-allowed;}
+
+  /* ---------- Instructions Page ---------- */
+  #instructionsPage{min-height:100vh;background:#fff;display:flex;flex-direction:column;}
+  .instr-topbar{background:var(--navy);color:#fff;padding:14px 24px;text-align:center;font-weight:700;font-size:16px;}
+  .instr-wrap{display:flex;max-width:1200px;margin:0 auto;flex:1;width:100%;min-height:0;}
+  .instr-main{flex:1;display:flex;flex-direction:column;border-right:1px solid #eee;min-height:0;}
+  .instr-scroll{flex:1;overflow-y:auto;padding:26px 40px 10px;min-height:0;}
+  .instr-scroll h2{font-size:20px;margin-top:0;}
+  .instr-scroll h3{font-size:16px;color:var(--navy);margin:22px 0 10px;}
+  .instr-scroll ul{margin:0 0 6px;padding-left:22px;line-height:1.7;font-size:14.5px;color:#333;}
+  .legend-row-instr{display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 6px;padding:14px 16px;background:#f7f8fa;border-radius:8px;}
+  .instr-footer-fixed{padding:16px 40px 22px;border-top:1px solid #eee;background:#fff;}
+  .instr-checkline{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;font-size:14px;line-height:1.5;}
+  .instr-checkline input{margin-top:3px;width:16px;height:16px;flex-shrink:0;}
+  .instr-nav-row{display:flex;justify-content:space-between;align-items:center;}
+  .btn-back{background:#fff;color:var(--navy);border:1.5px solid var(--navy);padding:10px 22px;border-radius:6px;font-size:14px;font-weight:600;}
+  .btn-next{background:var(--navy);color:#fff;border:none;padding:10px 26px;border-radius:6px;font-size:14px;font-weight:600;}
+  .btn-next:disabled{background:#b7bec8;cursor:not-allowed;}
+  .instr-side{width:230px;padding:30px 20px;text-align:center;flex-shrink:0;}
+  .avatar-circle{width:80px;height:80px;border-radius:50%;background:#3a3f4b;margin:0 auto 10px;
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;}
+  .instr-side .cname{font-weight:700;font-size:16px;}
+
+  /* ---------- Legend (shared: instructions + exam side panel) ---------- */
+  .legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#444;}
+  .legend-swatch{width:26px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:11px;font-weight:700;flex-shrink:0;}
+  .sw-answered{background:var(--green);}
+  .sw-notanswered{background:var(--orange);clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);}
+  .sw-notvisited{background:#e3e6ea;color:#555;}
+  .sw-review{background:var(--purple);border-radius:50%;}
+  .sw-ansreview{background:var(--purple);border-radius:50%;position:relative;}
+  .sw-ansreview::after{content:'';position:absolute;bottom:-2px;right:-2px;width:8px;height:8px;background:var(--green);
+    border-radius:50%;border:1px solid #fff;}
+  .legend-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+
+  /* ---------- Exam Page ---------- */
+  #examPage{min-height:100vh;display:flex;flex-direction:column;background:#f7f8fa;}
+  .exam-header{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;
+    padding:10px 20px;flex-wrap:wrap;gap:8px;}
+  .exam-header .left-title{font-weight:700;font-size:16px;}
+  .exam-header .mid{display:flex;align-items:center;gap:18px;}
+  .exam-header .brandmini{display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px;}
+  .exam-header .brandmini .dot{width:20px;height:20px;border-radius:50%;background:#fff;color:var(--navy);
+    display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;}
+  .exam-header .testtype{font-size:13px;opacity:.9;}
+  .exam-header .right{display:flex;align-items:center;gap:12px;}
+  .exam-header .avatar-mini{width:38px;height:38px;border-radius:50%;background:#57647d;display:flex;align-items:center;
+    justify-content:center;font-size:16px;}
+  .exam-header .cname-mini{font-weight:700;font-size:14px;}
+
+  .subheader{background:#fff;border-bottom:1px solid var(--panel-border);display:flex;align-items:center;
+    padding:0 10px;gap:2px;}
+  .subheader .timeleft{font-size:13px;color:#333;padding:8px 10px;display:flex;align-items:center;gap:6px;white-space:nowrap;}
+  .subheader .timeleft b{font-family:monospace;font-size:14px;}
+  .pausebtn{border:1px solid #ccc;background:#fff;border-radius:3px;width:22px;height:22px;font-size:11px;
+    display:flex;align-items:center;justify-content:center;}
+  .fsbtn{border:1px solid #ccc;background:#fff;border-radius:4px;width:30px;height:30px;font-size:15px;
+    display:flex;align-items:center;justify-content:center;margin-left:8px;color:var(--navy);}
+  .fsbtn:hover{background:#eef1f5;}
+  .tabscroll{display:flex;align-items:center;flex:1;overflow:hidden;}
+  .navarrow{background:none;border:none;color:var(--navy);font-size:18px;padding:6px 6px;}
+  .tabs{display:flex;overflow-x:auto;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab-btn{padding:12px 18px;background:#eef1f5;border:none;font-size:13.5px;color:#333;white-space:nowrap;
+    border-right:1px solid #dfe3e8;position:relative;font-weight:600;}
+  .tab-btn.active{background:var(--navy);color:#fff;}
+  .tab-btn .info-i{display:inline-block;margin-left:5px;width:14px;height:14px;border-radius:50%;background:#9aa5b5;
+    color:#fff;font-size:10px;line-height:14px;text-align:center;font-style:normal;}
+  .tab-btn.active .info-i{background:rgba(255,255,255,.4);}
+
+  .exam-body{flex:1;display:flex;overflow:hidden;}
+  .exam-content{flex:1;display:flex;flex-direction:column;background:#fff;overflow-y:auto;padding:18px 26px;min-width:0;}
+  .qno{font-weight:700;font-size:14px;margin-bottom:10px;color:#333;}
+  .qtext{font-size:14.5px;font-weight:600;line-height:1.6;margin-bottom:14px;color:#1e2430;white-space:pre-wrap;}
+  .choice-box{border:1px solid #e0e4ea;border-radius:6px;padding:14px 16px;margin-bottom:14px;background:#fafbfc;
+    display:flex;gap:12px;cursor:pointer;}
+  .choice-box.selected{border-color:var(--navy);background:#eef1fa;}
+  .choice-box input{margin-top:4px;}
+  .choice-box .clabel{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:4px;}
+  .choice-box .ctext{font-size:13.5px;line-height:1.55;color:#333;white-space:pre-wrap;}
+
+  .answerbox{flex:1;width:100%;height:260px;min-height:200px;max-height:260px;border:1px solid #c9cfd8;border-radius:4px;
+    padding:14px;font-size:14.5px;line-height:1.6;font-family:'Courier New',monospace;resize:none;outline:none;
+    white-space:pre;overflow-x:auto;overflow-y:auto;
+    scrollbar-width:thin;scrollbar-color:#b7bec8 #f0f2f5;}
+  .answerbox:focus{border-color:var(--navy);}
+  .answerbox::-webkit-scrollbar{width:8px;height:8px;}
+  .answerbox::-webkit-scrollbar-thumb{background:#b7bec8;border-radius:4px;}
+  .answerbox::-webkit-scrollbar-track{background:#f0f2f5;}
+  .typing-note{font-size:11px;color:#9aa1ab;margin-bottom:6px;}
+  .wordcount-row{display:flex;justify-content:flex-end;padding:8px 2px;font-size:13px;color:#555;}
+  .wordcount-row.limit-hit{color:#c0392b;font-weight:700;}
+  .changeq-link{font-size:12.5px;color:var(--navy);text-decoration:underline;cursor:pointer;margin-bottom:10px;display:inline-block;}
+
+  .bottom-actions{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;
+    background:#fff;border-top:1px solid var(--panel-border);}
+  .bottom-actions .left-btns,.bottom-actions .mid-btns{display:flex;gap:10px;}
+  .bbtn{padding:10px 16px;border-radius:5px;font-size:13.5px;font-weight:600;border:1px solid transparent;}
+  .bbtn-mark{background:var(--purple);color:#fff;}
+  .bbtn-clear{background:#fff;color:#333;border-color:#c7cdd6;}
+  .bbtn-prev{background:#fff;color:#333;border-color:#c7cdd6;}
+  .bbtn-prev:disabled{color:#bbb;cursor:not-allowed;}
+  .bbtn-save{background:var(--navy);color:#fff;}
+  .bbtn-submit{background:var(--navy-darker);color:#fff;padding:10px 24px;}
+
+  .panel-toggle-col{width:26px;display:flex;align-items:center;justify-content:center;background:#f2f4f7;
+    border-left:1px solid var(--panel-border);border-right:1px solid var(--panel-border);}
+  .panel-toggle-btn{background:var(--navy);color:#fff;border:none;width:22px;height:44px;border-radius:4px;
+    font-size:13px;display:flex;align-items:center;justify-content:center;}
+
+  .side-panel{width:290px;background:#fff;overflow-y:auto;transition:width .2s ease;flex-shrink:0;}
+  .side-panel.closed{width:0;overflow:hidden;}
+  .side-inner{width:290px;padding:16px;}
+  .side-profile{display:flex;flex-direction:column;align-items:center;padding:8px 0 18px;}
+  .side-profile .avatar-circle2{width:56px;height:56px;border-radius:50%;background:#3a3f4b;color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:8px;}
+  .side-profile .sname{font-weight:700;font-size:15px;}
+
+  .sec-block{margin-bottom:2px;}
+  .sec-header{background:var(--navy);color:#fff;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;}
+  .sec-header.inactive{background:#57647d;}
+  .sec-body{padding:10px 4px 16px;}
+  .sec-body .choose-label{font-size:12px;color:#777;margin-bottom:8px;}
+  .qchip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .qchip{width:36px;height:36px;border-radius:5px;display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;color:#fff;border:none;position:relative;}
+  .qchip.st-notvisited{background:#e3e6ea;color:#555;}
+  .qchip.st-notanswered{background:var(--orange);clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);}
+  .qchip.st-answered{background:var(--green);}
+  .qchip.st-marked{background:var(--purple);border-radius:50%;}
+  .qchip.st-answeredmarked{background:var(--purple);border-radius:50%;}
+  .qchip.st-answeredmarked::after{content:'';position:absolute;bottom:-3px;right:-3px;width:9px;height:9px;
+    background:var(--green);border-radius:50%;border:1.5px solid #fff;}
+  .qchip.current{outline:2px solid #1e2430;outline-offset:1px;}
+
+  /* ---------- Toast ---------- */
+  #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:#28324a;
+    color:#fff;padding:12px 20px;border-radius:8px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.25);
+    z-index:5000;opacity:0;pointer-events:none;transition:all .25s ease;max-width:420px;text-align:center;}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* ---------- Modal ---------- */
+  .modal-overlay{position:fixed;inset:0;background:rgba(20,24,32,.55);display:flex;align-items:center;
+    justify-content:center;z-index:6000;}
+  .modal-box{background:#fff;border-radius:10px;padding:26px 26px;width:380px;max-width:90vw;text-align:center;}
+  .modal-box h3{margin:0 0 10px;color:var(--navy);}
+  .modal-box p{font-size:13.5px;color:#444;line-height:1.5;margin-bottom:20px;}
+  .modal-btns{display:flex;gap:10px;justify-content:center;}
+  .modal-btns button{padding:9px 18px;border-radius:6px;font-size:13.5px;font-weight:600;border:1px solid #ccc;background:#fff;}
+  .modal-btns .confirm{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .summary-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;}
+  .summary-table th,.summary-table td{border:1px solid #e6e9ee;padding:8px 10px;text-align:left;}
+  .summary-table th{background:#f4f6f9;}
+
+  /* ---------- Result Page ---------- */
+  #resultPage{min-height:100vh;background:var(--light-bg);padding:30px 0 60px;}
+  .result-wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+  .disclaimer-banner{background:#fdecec;border:1px solid #f3b9b9;color:#8a1f1f;font-size:13.5px;line-height:1.6;
+    padding:14px 18px;border-radius:8px;margin-bottom:20px;}
+  .result-header{background:linear-gradient(120deg,#3d4b66 0%,#2f7ed8 60%,#1f9c8a 100%);border-radius:10px;
+    padding:26px 30px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:16px;box-shadow:0 6px 18px rgba(0,0,0,.15);color:#fff;}
+  .result-header .brand-logo .name{font-size:20px;color:#fff;}
+  .result-header .brand-logo .mark{background:#fff;color:var(--navy);}
+  .result-header .brand-tag{display:none;}
+  .score-badge{text-align:center;background:rgba(255,255,255,.15);padding:10px 22px;border-radius:10px;}
+  .score-badge .num{font-size:34px;font-weight:800;color:#fff;}
+  .score-badge .lbl{font-size:12px;color:#eef1f5;}
+  .result-note{background:#fff8e6;border:1px solid #f0dca0;color:#8a6d1a;font-size:13px;padding:10px 14px;
+    border-radius:6px;margin-bottom:20px;}
+  .analysis-card{background:#fff;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.05);
+    border-top:4px solid #cfd6e0;}
+  .analysis-card h3{margin:0 0 14px;font-size:16px;color:var(--navy);}
+  table.analysis-table{border-collapse:collapse;width:100%;font-size:13.5px;}
+  table.analysis-table th,table.analysis-table td{border:1px solid #e6e9ee;padding:9px 12px;text-align:left;}
+  table.analysis-table th{background:#f4f6f9;}
+  .answer-section{margin-bottom:16px;}
+  .answer-section h4{font-size:14px;color:#333;margin:14px 0 6px;display:flex;justify-content:space-between;align-items:center;}
+  .copy-btn{background:#eef1f5;border:1px solid #d7dbe2;color:var(--navy);font-size:12px;padding:5px 12px;
+    border-radius:5px;font-weight:600;}
+  .copy-btn.copied{background:var(--green);color:#fff;border-color:var(--green);}
+  .answer-text-box{border:1px solid #e6e9ee;border-radius:6px;padding:12px 14px;font-size:13.5px;line-height:1.6;
+    background:#fafbfc;white-space:pre-wrap;min-height:40px;user-select:text;}
+  .restart-row{text-align:center;margin-top:24px;}
+  .restart-row button{background:var(--navy);color:#fff;border:none;padding:11px 26px;border-radius:6px;font-size:14px;font-weight:600;}
+</style>
+</head>
+<body>
+
+<!-- MOBILE / ORIENTATION WARNING -->
+<div id="mobileWarning" class="hidden">
+  <div class="box">
+    <div class="icon">🖥️</div>
+    <h2 id="viewportWarningTitle">Desktop (Landscape) View Required</h2>
+    <p id="viewportWarningText">Victory Banker's Descriptive Test Simulator is designed for desktop screens in landscape orientation. Please switch to Desktop Mode / rotate your device for the exam interface to work correctly.</p>
+    <button onclick="dismissMobileWarning()">Continue Anyway</button>
+  </div>
+</div>
+
+<div id="fsNotice">You are now in fullscreen mode. Press <b>Esc</b> anytime to exit fullscreen.</div>
+
+<!-- START PAGE -->
+<div id="startPage">
+  <div class="start-card">
+    <div class="brand-logo"><div class="mark">VB</div><div class="name">Victory Banker</div></div>
+    <div class="brand-tag">Descriptive Test Platform</div>
+    <h1 id="startExamTitle">SBI PO Mains Descriptive Test No 2</h1>
+    <div class="start-meta-row">
+      <div class="meta-box"><div class="meta-num" id="startDuration">30 min</div><div class="meta-lbl">Duration</div></div>
+      <div class="meta-box"><div class="meta-num" id="startTotalMarks">30</div><div class="meta-lbl">Total Marks</div></div>
+      <div class="meta-box"><div class="meta-num" id="startSecCount">3</div><div class="meta-lbl">Sections</div></div>
+    </div>
+    <table class="instr-table" id="startPatternTable"></table>
+    <label for="candidateNameInput">Candidate Name</label>
+    <input type="text" id="candidateNameInput" placeholder="e.g. Gagan Sharma" maxlength="40">
+    <div id="nameError"></div>
+    <button class="btn-primary" onclick="goToInstructions()">Start Test</button>
+  </div>
+</div>
+
+<!-- INSTRUCTIONS PAGE -->
+<div id="instructionsPage" class="hidden">
+  <div class="instr-topbar" id="instrTitle">Descriptive Test No 2</div>
+  <div class="instr-wrap">
+    <div class="instr-main">
+      <div class="instr-scroll">
+        <h2>Instructions</h2>
+        <h3>Duration &amp; Auto-Submission</h3>
+        <ul>
+          <li>The total duration of the Descriptive Test is <b id="durText">30 minutes</b>.</li>
+          <li>The countdown timer in the <b>top right corner</b> of the screen will display the <b>remaining time</b>, and will continue running throughout the test.</li>
+          <li>Once the timer reaches zero, the test will <b>auto-submit</b>. You do not need to manually submit your answers.</li>
+        </ul>
+        <h3>Test Structure</h3>
+        <p style="font-size:14.5px;">The Descriptive Writing Test consists of <b id="secCountText">3</b> questions:</p>
+        <table class="instr-table" id="structureTable"></table>
+        <ul>
+          <li>The <b>total marks</b> for the Descriptive Test are <b id="totalMarksText">30 marks</b>.</li>
+          <li>Marks will be allotted based on the <b>evaluation criteria</b> mentioned below.</li>
+        </ul>
+        <h3>Navigation Rules</h3>
+        <ul>
+          <li>Do not click the <b>"Submit"</b> button until you have attempted all questions, as the test cannot be resumed once submitted.</li>
+          <li>The <b>word count</b> for each answer is displayed at the bottom-right corner of the answer box.</li>
+          <li>You may switch between sections at any time before the timer ends using the section tabs.</li>
+        </ul>
+        <h3>Scoring Criteria</h3>
+        <ul>
+          <li>Your score will be calculated based on the following three criteria:</li>
+          <li><b>Format</b> – Adherence to the required structure (Email, Report, Situation Analysis, and Precis).</li>
+          <li><b>Content</b> – Relevance, clarity, and completeness of the response.</li>
+          <li><b>Language</b> – Grammar, coherence, fluency, vocabulary, and sentence structure.</li>
+          <li>Marks will be deducted for exceeding or falling short of the word limit.</li>
+          <li><b>Email Writing</b> will be evaluated on professionalism, tone, and clarity.</li>
+          <li><b>Report Writing</b> will be assessed on organization, factual accuracy, and logical flow.</li>
+          <li><b>Situation Analysis</b> will be judged on problem identification, analysis, and the solution suggested.</li>
+          <li><b>Precis Writing</b> will be checked for conciseness, accuracy, and retention of key points from the passage.</li>
+        </ul>
+        <h3>Post-Test Information</h3>
+        <ul>
+          <li>After submitting the test, you will be able to view your score and a section-wise analysis.</li>
+        </ul>
+        <h3>Question Palette Color Key</h3>
+        <div class="legend-row-instr">
+          <div class="legend-item"><div class="legend-swatch sw-answered">✓</div> Green — Answered</div>
+          <div class="legend-item"><div class="legend-swatch sw-notanswered"></div> Red — Not Answered</div>
+          <div class="legend-item"><div class="legend-swatch sw-review"></div> Dark Purple — Mark for Review</div>
+        </div>
+      </div>
+      <div class="instr-footer-fixed">
+        <div class="instr-checkline">
+          <input type="checkbox" id="agreeCheck" onchange="toggleStartExamBtn()">
+          <label for="agreeCheck">I have read and understood all the instructions mentioned above, including the scoring criteria, and I agree to attempt the test accordingly.</label>
+        </div>
+        <div class="instr-nav-row">
+          <button class="btn-back" onclick="backToStart()">&lt; Back</button>
+          <button class="btn-next" id="startExamBtn" disabled onclick="beginExam()">I am Ready to Begin &gt;</button>
+        </div>
+      </div>
+    </div>
+    <div class="instr-side">
+      <div class="avatar-circle">👤</div>
+      <div class="cname" id="instrCandidateName">Candidate</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAM PAGE -->
+<div id="examPage" class="hidden">
+  <div class="exam-header">
+    <div class="left-title" id="examTitle">SBI PO Mains Descriptive Test No 2</div>
+    <div class="mid">
+      <div class="brandmini"><div class="dot">VB</div> Victory Banker</div>
+      <div class="testtype">Descriptive Test</div>
+    </div>
+    <div class="right">
+      <div class="avatar-mini">👤</div>
+      <div class="cname-mini" id="examCandidateName">Candidate</div>
+    </div>
+  </div>
+
+  <div class="subheader">
+    <button class="navarrow" onclick="scrollTabs(-1)">&#9664;</button>
+    <div class="tabscroll"><div class="tabs" id="tabsRow"></div></div>
+    <button class="navarrow" onclick="scrollTabs(1)">&#9654;</button>
+    <button class="fsbtn" id="fsToggleBtn" onclick="toggleFullscreen()" title="Toggle Fullscreen">⛶</button>
+    <div class="timeleft">Time Left :
+      <b id="timerDisplay">00:30:00</b>
+    </div>
+  </div>
+
+  <div class="exam-body">
+    <div class="exam-content" id="examContent"></div>
+
+    <div class="panel-toggle-col">
+      <button class="panel-toggle-btn" id="panelToggleBtn" onclick="togglePanel()">&#9654;</button>
+    </div>
+
+    <div class="side-panel" id="sidePanel">
+      <div class="side-inner">
+        <div class="side-profile">
+          <div class="avatar-circle2">👤</div>
+          <div class="sname" id="sideCandidateName">Candidate</div>
+        </div>
+        <div class="legend-grid">
+          <div class="legend-item"><div class="legend-swatch sw-answered" id="cntAnswered">0</div> Answered</div>
+          <div class="legend-item"><div class="legend-swatch sw-notanswered" id="cntNotAnswered">0</div> Not Answered</div>
+          <div class="legend-item"><div class="legend-swatch sw-notvisited" id="cntNotVisited">0</div> Not Visited</div>
+          <div class="legend-item"><div class="legend-swatch sw-review" id="cntReview">0</div> Mark For Review</div>
+          <div class="legend-item"><div class="legend-swatch sw-ansreview" id="cntAnsReview">0</div> Answered &amp; Mark for Review</div>
+        </div>
+        <div id="sectionListPanel"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-actions">
+    <div class="left-btns">
+      <button class="bbtn bbtn-mark" onclick="markForReview()">Mark for Review &amp; Next</button>
+      <button class="bbtn bbtn-clear" onclick="clearResponse()">Clear Response</button>
+    </div>
+    <div class="mid-btns">
+      <button class="bbtn bbtn-prev" id="prevBtn" onclick="prevQuestion()">Previous</button>
+      <button class="bbtn bbtn-save" onclick="saveAndNext()">Save &amp; Next</button>
+    </div>
+    <button class="bbtn bbtn-submit" onclick="confirmSubmit()">SUBMIT</button>
+  </div>
+</div>
+
+<!-- RESULT PAGE -->
+<div id="resultPage" class="hidden">
+  <div class="result-wrap">
+    <div class="disclaimer-banner">
+      <b>⚠️ Note:</b> This website does not have any AI or bot integrated to evaluate your answers automatically. To get a deep, accurate analysis of your writing, select your answer text below, click <b>Copy</b>, and paste it into any AI tool of your choice (ChatGPT, Gemini, Claude, etc.) — it will analyze your answer in depth and can give you a proper score and feedback.
+    </div>
+    <div class="result-header">
+      <div>
+        <div class="brand-logo"><div class="mark">VB</div><div class="name">Victory Banker</div></div>
+        <div style="font-size:13px;color:#777;margin-top:4px;">Test Submitted — <span id="resultCandidateName">Candidate</span></div>
+      </div>
+      <div class="score-badge">
+        <div class="num" id="scoreNum">0/30</div>
+        <div class="lbl">Completion Score</div>
+      </div>
+    </div>
+    <div class="result-note">Descriptive answers are evaluated manually by subject experts. The score above reflects <b>completion &amp; word-count adequacy</b> only, not final evaluated marks.</div>
+    <div class="analysis-card">
+      <h3>Section-wise Analysis</h3>
+      <table class="analysis-table" id="analysisTable"></table>
+    </div>
+    <div class="analysis-card">
+      <h3>Your Answers</h3>
+      <div id="answersContainer"></div>
+    </div>
+    <div class="restart-row"><button onclick="location.reload()">Take Another Test</button></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ================= DATA ================= */
+const examConfig = {
+  testTitle: "SBI PO Mains Descriptive Test No 2",
+  instructionsTitle: "Descriptive Test No 2",
+  durationMinutes: 30,
+  sections: [
+    {
+      id:'email', name:'Email Writing', marks:10,
+      info:'Write a professional email in response to the given scenario.',
+      type:'single',
+      questions:[
+        {id:'email-1', text:"You are Ram Sharma who has secured admission in Amity university for a Masters program. Write an email to your bank manager requesting a loan for higher education regarding the same.", wordLimit:150}
+      ]
+    },
+    {
+      id:'situation', name:'Situation Analysis', marks:10,
+      info:'Analyze the given situation and write a well-reasoned response.',
+      type:'single',
+      questions:[
+        {id:'situation-1', text:"Your branch has received multiple customer complaints regarding delays in loan processing. As the Branch Manager, analyze the situation and outline the steps you would take to resolve it and prevent recurrence.", wordLimit:150}
+      ]
+    },
+    {
+      id:'report', name:'Report Writing / Precis Writing', marks:10,
+      info:'Choose either Report Writing or Precis Writing and answer accordingly.',
+      type:'choice',
+      questions:[
+        {id:'report-1', label:'Report Writing', text:"You are Manager of SBI Bengaluru. Write a report to the RBI stating the impact of digital banking on traditional banking services and suggest ways to improve customer adoption.", wordLimit:250},
+        {id:'report-2', label:'Precis Writing', text:"Write a precis of the following passage.\n\nUnemployment remains a significant challenge for many economies, often resulting from a mismatch between job market demands and the skills possessed by job seekers. Traditional education systems focus primarily on theoretical knowledge, leaving many graduates without the practical skills required by industries. This gap between education and employability highlights the need for skill development as a crucial strategy for reducing unemployment.\n\nSkill development equips individuals with industry-relevant expertise, making them more employable. Technical skills, such as coding, data analysis, and digital marketing, are in high demand across sectors. Similarly, vocational training in fields like plumbing, electrical work, and healthcare opens doors to stable employment opportunities. By acquiring these skills, individuals enhance their job prospects and contribute to economic growth.\n\nMoreover, entrepreneurship can thrive through skill development. Many unemployed individuals can create their own businesses if they are trained in areas like financial management, communication, and problem-solving. Skilled workers drive innovation, boost productivity, and generate employment for others, reducing dependence on limited job openings.\n\nGovernments and educational institutions must prioritize integrating practical, industry-relevant training into curricula to bridge this gap effectively.", wordLimit:250}
+      ]
+    }
+  ]
+};
+
+/* ================= STATE ================= */
+let candidateName = "Candidate";
+let items = [];
+let currentItemId = 1;
+let timeRemaining = examConfig.durationMinutes*60;
+let timerInterval = null;
+let panelOpen = true;
+let sectionTimeSpent = {};
+let toastTimer = null;
+let examSubmitted = false;
+
+function buildItems(){
+  items = [];
+  examConfig.sections.forEach((sec, sIdx)=>{
+    sectionTimeSpent[sIdx] = 0;
+    if(sec.type==='single'){
+      items.push({ id: items.length+1, sectionIdx:sIdx, kind:'single', question: sec.questions[0], status:'not-visited', text:'', wordCount:0 });
+    } else {
+      items.push({ id: items.length+1, sectionIdx:sIdx, kind:'choice', options: sec.questions, chosenIndex:null, tempChoice:null, status:'not-visited', text:'', wordCount:0 });
+    }
+  });
+}
+
+function buildStructureTableHtml(){
+  let html = '<tr><th>SL. No.</th><th>Name of the Test</th><th>No. of Questions</th><th>Maximum Marks</th></tr>';
+  examConfig.sections.forEach((s,i)=>{
+    const qcount = s.type==='choice' ? 1 : s.questions.length;
+    html += '<tr><td>'+(i+1)+'</td><td>'+s.name+'</td><td>'+qcount+'</td><td>'+s.marks+'</td></tr>';
+  });
+  return html;
+}
+
+/* ================= INIT ================= */
+function initStaticInfo(){
+  document.getElementById('startExamTitle').textContent = examConfig.testTitle;
+  document.getElementById('startDuration').textContent = examConfig.durationMinutes+' min';
+  document.getElementById('startTotalMarks').textContent = examConfig.sections.reduce((a,s)=>a+s.marks,0);
+  document.getElementById('startSecCount').textContent = examConfig.sections.length;
+  document.getElementById('startPatternTable').innerHTML = buildStructureTableHtml();
+
+  document.getElementById('instrTitle').textContent = examConfig.instructionsTitle;
+  document.getElementById('durText').textContent = examConfig.durationMinutes+' minutes';
+  document.getElementById('secCountText').textContent = examConfig.sections.length;
+  document.getElementById('totalMarksText').textContent = (examConfig.sections.reduce((a,s)=>a+s.marks,0))+' marks';
+  document.getElementById('structureTable').innerHTML = buildStructureTableHtml();
+  document.getElementById('examTitle').textContent = examConfig.testTitle;
+}
+window.addEventListener('load', ()=>{ initStaticInfo(); checkViewport(); });
+
+/* ================= VIEWPORT CHECK ================= */
+function checkViewport(){
+  const warn = document.getElementById('mobileWarning');
+  const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+  const tooNarrow = window.innerWidth < 900;
+  if(tooNarrow || isPortrait){ warn.classList.remove('hidden'); }
+  else { warn.classList.add('hidden'); }
+}
+function dismissMobileWarning(){ document.getElementById('mobileWarning').classList.add('hidden'); }
+/* Viewport warning is checked once on load (Start page) only, per spec — never re-checked on later pages. */
+
+/* ================= START PAGE ================= */
+function goToInstructions(){
+  const val = document.getElementById('candidateNameInput').value.trim();
+  const err = document.getElementById('nameError');
+  if(!val){ err.textContent = 'Please enter your name to continue.'; return; }
+  err.textContent = '';
+  candidateName = val;
+  document.getElementById('instrCandidateName').textContent = candidateName;
+  document.getElementById('examCandidateName').textContent = candidateName;
+  document.getElementById('sideCandidateName').textContent = candidateName;
+  document.getElementById('resultCandidateName').textContent = candidateName;
+
+  document.getElementById('startPage').classList.add('hidden');
+  document.getElementById('instructionsPage').classList.remove('hidden');
+}
+function backToStart(){
+  document.getElementById('instructionsPage').classList.add('hidden');
+  document.getElementById('startPage').classList.remove('hidden');
+}
+function toggleStartExamBtn(){
+  document.getElementById('startExamBtn').disabled = !document.getElementById('agreeCheck').checked;
+}
+
+/* ================= EXAM START ================= */
+function beginExam(){
+  buildItems();
+  currentItemId = 1;
+  timeRemaining = examConfig.durationMinutes*60;
+  document.getElementById('instructionsPage').classList.add('hidden');
+  document.getElementById('examPage').classList.remove('hidden');
+  renderTabs();
+  renderPanel();
+  renderContent();
+  updateTimerDisplay();
+  startTimer();
+  enterFullscreen();
+}
+function enterFullscreen(){
+  const el = document.documentElement;
+  const req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+  if(req){ req.call(el).then(showFsNotice).catch(showFsNotice); } else { showFsNotice(); }
+}
+function showFsNotice(){
+  const n = document.getElementById('fsNotice');
+  n.classList.add('show');
+  setTimeout(()=> n.classList.remove('show'), 4000);
+}
+
+function startTimer(){
+  if(timerInterval) clearInterval(timerInterval);
+  timerInterval = setInterval(()=>{
+    if(examSubmitted) return;
+    timeRemaining--;
+    const curItem = items[currentItemId-1];
+    if(curItem) sectionTimeSpent[curItem.sectionIdx] = (sectionTimeSpent[curItem.sectionIdx]||0) + 1;
+    updateTimerDisplay();
+    if(timeRemaining<=0){
+      clearInterval(timerInterval);
+      showToast('Time is up! Auto-submitting your test...');
+      setTimeout(submitTest, 1200);
+    }
+  },1000);
+}
+function toggleFullscreen(){
+  const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+  if(isFs){
+    (document.exitFullscreen || document.webkitExitFullscreen || function(){}).call(document);
+  } else {
+    const el = document.documentElement;
+    const req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+    if(req){ req.call(el).catch(()=>{}); }
+  }
+}
+document.addEventListener('fullscreenchange', updateFsBtnIcon);
+document.addEventListener('webkitfullscreenchange', updateFsBtnIcon);
+function updateFsBtnIcon(){
+  const btn = document.getElementById('fsToggleBtn');
+  if(!btn) return;
+  const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+  btn.textContent = isFs ? '⤢' : '⛶';
+  btn.title = isFs ? 'Exit Fullscreen' : 'Enter Fullscreen';
+}
+function updateTimerDisplay(){
+  const h = Math.floor(timeRemaining/3600);
+  const m = Math.floor((timeRemaining%3600)/60);
+  const s = timeRemaining%60;
+  const pad = n=>String(n).padStart(2,'0');
+  document.getElementById('timerDisplay').textContent = pad(h)+':'+pad(m)+':'+pad(s);
+}
+
+/* ================= TABS ================= */
+function renderTabs(){
+  const row = document.getElementById('tabsRow');
+  row.innerHTML = '';
+  examConfig.sections.forEach((sec, idx)=>{
+    const curSec = items[currentItemId-1].sectionIdx;
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (idx===curSec ? ' active':'');
+    btn.innerHTML = sec.name + ' <span class="info-i" title="'+sec.info+'">i</span>';
+    btn.onclick = ()=> switchSection(idx);
+    row.appendChild(btn);
+  });
+}
+function scrollTabs(dir){ document.getElementById('tabsRow').scrollBy({left: dir*150, behavior:'smooth'}); }
+function switchSection(sIdx){
+  const target = items.find(it=>it.sectionIdx===sIdx);
+  if(target) goToItem(target.id);
+}
+
+/* ================= PANEL ================= */
+function togglePanel(){
+  panelOpen = !panelOpen;
+  document.getElementById('sidePanel').classList.toggle('closed', !panelOpen);
+  document.getElementById('panelToggleBtn').innerHTML = panelOpen ? '&#9654;' : '&#9664;';
+}
+function renderPanel(){
+  const counts = {answered:0, notanswered:0, notvisited:0, marked:0, answeredmarked:0};
+  items.forEach(it=>{
+    if(it.status==='answered') counts.answered++;
+    else if(it.status==='not-answered') counts.notanswered++;
+    else if(it.status==='not-visited') counts.notvisited++;
+    else if(it.status==='marked') counts.marked++;
+    else if(it.status==='answered-marked') counts.answeredmarked++;
+  });
+  document.getElementById('cntAnswered').textContent = counts.answered;
+  document.getElementById('cntNotAnswered').textContent = counts.notanswered;
+  document.getElementById('cntNotVisited').textContent = counts.notvisited;
+  document.getElementById('cntReview').textContent = counts.marked;
+  document.getElementById('cntAnsReview').textContent = counts.answeredmarked;
+
+  const listEl = document.getElementById('sectionListPanel');
+  listEl.innerHTML = '';
+  const curSecIdx = items[currentItemId-1].sectionIdx;
+  examConfig.sections.forEach((sec, sIdx)=>{
+    const block = document.createElement('div');
+    block.className = 'sec-block';
+    const header = document.createElement('div');
+    header.className = 'sec-header' + (sIdx===curSecIdx ? '' : ' inactive');
+    header.innerHTML = '<span>'+sec.name+'</span>';
+    header.onclick = ()=> switchSection(sIdx);
+    block.appendChild(header);
+    if(sIdx===curSecIdx){
+      const body = document.createElement('div');
+      body.className = 'sec-body';
+      body.innerHTML = '<div class="choose-label">Choose a Question</div>';
+      const row = document.createElement('div');
+      row.className = 'qchip-row';
+      items.filter(it=>it.sectionIdx===sIdx).forEach(it=>{
+        const chip = document.createElement('button');
+        chip.className = 'qchip st-' + statusClass(it.status) + (it.id===currentItemId ? ' current':'');
+        chip.textContent = it.id;
+        chip.onclick = ()=> goToItem(it.id);
+        row.appendChild(chip);
+      });
+      body.appendChild(row);
+      block.appendChild(body);
+    }
+    listEl.appendChild(block);
+  });
+}
+function statusClass(status){
+  return { 'not-visited':'notvisited','not-answered':'notanswered','answered':'answered','marked':'marked','answered-marked':'answeredmarked' }[status];
+}
+
+/* ================= CONTENT RENDER ================= */
+function goToItem(id){
+  const item = items[id-1];
+  if(item.status==='not-visited') item.status='not-answered';
+  currentItemId = id;
+  renderTabs();
+  renderPanel();
+  renderContent();
+}
+
+function wordCount(text){
+  const t = text.trim();
+  return t.length ? t.split(/\s+/).filter(Boolean).length : 0;
+}
+
+function renderContent(){
+  const item = items[currentItemId-1];
+  const content = document.getElementById('examContent');
+  content.innerHTML = '';
+
+  const qno = document.createElement('div');
+  qno.className = 'qno';
+  qno.textContent = 'Question No ' + item.id;
+  content.appendChild(qno);
+
+  if(item.kind==='single'){
+    const qtext = document.createElement('div');
+    qtext.className = 'qtext';
+    qtext.textContent = item.question.text;
+    content.appendChild(qtext);
+    appendAnswerArea(content, item, item.question.wordLimit);
+  } else {
+    if(item.chosenIndex===null){
+      const label = document.createElement('div');
+      label.className = 'qtext';
+      label.textContent = 'Choose one of the following and provide your answer:';
+      content.appendChild(label);
+      item.options.forEach((opt, oIdx)=>{
+        const box = document.createElement('label');
+        box.className = 'choice-box' + (oIdx===item.tempChoice ? ' selected' : '');
+        box.innerHTML = '<input type="radio" name="choiceq" '+(oIdx===item.tempChoice?'checked':'')+'>'+
+          '<div><div class="clabel">'+opt.label+'</div><div class="ctext">Question:<br>'+opt.text+'</div></div>';
+        box.querySelector('input').onclick = ()=>{ item.tempChoice = oIdx; renderContent(); };
+        content.appendChild(box);
+      });
+      const cbtn = document.createElement('button');
+      cbtn.className = 'bbtn bbtn-save';
+      cbtn.style.alignSelf = 'flex-start';
+      cbtn.textContent = 'Continue';
+      cbtn.disabled = (item.tempChoice===undefined || item.tempChoice===null);
+      cbtn.onclick = ()=>{ item.chosenIndex = item.tempChoice; renderContent(); };
+      content.appendChild(cbtn);
+    } else {
+      const chosen = item.options[item.chosenIndex];
+      const changeLink = document.createElement('span');
+      changeLink.className = 'changeq-link';
+      changeLink.textContent = '← Change Question';
+      changeLink.onclick = ()=>{
+        if(item.text.trim().length && !confirm('Switching the question will clear your current answer. Continue?')) return;
+        item.chosenIndex = null; item.tempChoice = null; item.text=''; item.wordCount=0;
+        item.status = 'not-answered';
+        renderContent(); renderPanel();
+      };
+      content.appendChild(changeLink);
+      const qtext = document.createElement('div');
+      qtext.className = 'qtext';
+      qtext.textContent = chosen.label + ' — Question:\n' + chosen.text;
+      content.appendChild(qtext);
+      appendAnswerArea(content, item, chosen.wordLimit);
+    }
+  }
+}
+
+/* ---- restricted typing answer box ---- */
+function appendAnswerArea(container, item, limit){
+  const note = document.createElement('div');
+  note.className = 'typing-note';
+  note.textContent = 'Note: Click-to-position, mouse wheel scroll, paste and select-all are disabled in this box. Use arrow keys to navigate and Backspace to delete.';
+  container.appendChild(note);
+
+  const box = document.createElement('textarea');
+  box.className = 'answerbox';
+  box.placeholder = 'Type your answer here...';
+  box.value = item.text;
+  container.appendChild(box);
+
+  const wcRow = document.createElement('div');
+  wcRow.className = 'wordcount-row';
+  wcRow.textContent = 'Words: ' + item.wordCount + ' / ' + limit;
+  if(item.wordCount>=limit) wcRow.classList.add('limit-hit');
+  container.appendChild(wcRow);
+
+  attachRestrictedTextarea(box, item, limit, wcRow);
+  document.getElementById('prevBtn').disabled = (currentItemId===1);
+  setTimeout(()=> box.focus(), 0);
+}
+
+function syncFromBox(box, item, limit, wcRow){
+  item.text = box.value;
+  item.wordCount = wordCount(box.value);
+  wcRow.textContent = 'Words: ' + item.wordCount + ' / ' + limit;
+  wcRow.classList.toggle('limit-hit', item.wordCount>=limit);
+}
+function flashLimit(wcRow){
+  wcRow.classList.add('limit-hit');
+  showToast('Word limit reached for this answer.');
+}
+
+function attachRestrictedTextarea(box, item, limit, wcRow){
+  box.addEventListener('contextmenu', e=> e.preventDefault());
+  box.addEventListener('paste', e=> e.preventDefault());
+  box.addEventListener('drop', e=> e.preventDefault());
+  box.addEventListener('wheel', e=> e.preventDefault(), {passive:false});
+
+  box.addEventListener('mousedown', e=>{
+    const rect = box.getBoundingClientRect();
+    const scrollbarZone = 16;
+    const nearRightEdge = (rect.right - e.clientX) <= scrollbarZone;
+    const nearBottomEdge = (rect.bottom - e.clientY) <= scrollbarZone;
+    if(!nearRightEdge && !nearBottomEdge){
+      e.preventDefault();
+      box.focus();
+    }
+  });
+
+  box.addEventListener('keydown', e=>{
+    if(e.code==='CapsLock' || e.code==='NumLock'){ e.preventDefault(); return; }
+    if((e.ctrlKey||e.metaKey) && ['v','s','a','V','S','A'].indexOf(e.key)!==-1){ e.preventDefault(); return; }
+
+    const navKeys = ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','Tab','PageUp','PageDown'];
+    if(navKeys.indexOf(e.key)!==-1) return;
+
+    if(e.key==='Backspace' || e.key==='Delete'){
+      setTimeout(()=> syncFromBox(box, item, limit, wcRow), 0);
+      return;
+    }
+
+    if(e.key==='Enter'){
+      e.preventDefault();
+      const pos = box.selectionStart;
+      const before = box.value.slice(0,pos), after = box.value.slice(pos);
+      if(before.endsWith('\n')) return;
+      if(wordCount(box.value) >= limit){ flashLimit(wcRow); return; }
+      box.value = before + '\n' + after;
+      box.selectionStart = box.selectionEnd = pos+1;
+      syncFromBox(box, item, limit, wcRow);
+      return;
+    }
+
+    if(e.key===' '){
+      e.preventDefault();
+      const pos = box.selectionStart;
+      const before = box.value.slice(0,pos);
+      if(before.endsWith(' ')){
+        box.selectionStart = box.selectionEnd = box.value.length;
+        return;
+      }
+      const after = box.value.slice(pos);
+      box.value = before + ' ' + after;
+      box.selectionStart = box.selectionEnd = pos+1;
+      syncFromBox(box, item, limit, wcRow);
+      return;
+    }
+
+    if(e.key.length===1 && !e.ctrlKey && !e.metaKey && !e.altKey){
+      e.preventDefault();
+      let ch = e.key;
+      if(/^[a-zA-Z]$/.test(ch)){ ch = e.shiftKey ? ch.toUpperCase() : ch.toLowerCase(); }
+      const pos = box.selectionStart;
+      const before = box.value.slice(0,pos), after = box.value.slice(pos);
+      const testVal = before + ch + after;
+      if(wordCount(testVal) > limit){ flashLimit(wcRow); return; }
+      box.value = testVal;
+      box.selectionStart = box.selectionEnd = pos+1;
+      syncFromBox(box, item, limit, wcRow);
+      return;
+    }
+  });
+}
+
+/* ================= ACTIONS ================= */
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=> t.classList.remove('show'), 2800);
+}
+
+function saveCurrentStatus(newStatus){
+  const item = items[currentItemId-1];
+  if(item.kind==='choice' && item.chosenIndex===null){
+    showToast('Please select a question before saving.');
+    return false;
+  }
+  const hasText = item.text.trim().length>0;
+  if(newStatus==='answer'){ item.status = hasText ? 'answered' : 'not-answered'; }
+  else if(newStatus==='mark'){ item.status = hasText ? 'answered-marked' : 'marked'; }
+  return true;
+}
+
+function saveAndNext(){
+  if(!saveCurrentStatus('answer')) return;
+  showToast('Answer saved.');
+  renderPanel();
+  goToNext();
+}
+function markForReview(){
+  if(!saveCurrentStatus('mark')) return;
+  showToast('Answer saved & marked for review.');
+  renderPanel();
+  goToNext();
+}
+function clearResponse(){
+  const item = items[currentItemId-1];
+  item.text=''; item.wordCount=0; item.status='not-answered';
+  renderContent(); renderPanel();
+  showToast('Response cleared.');
+}
+function goToNext(){
+  if(currentItemId < items.length){ goToItem(currentItemId+1); }
+  else { renderContent(); renderPanel(); }
+}
+function prevQuestion(){ if(currentItemId>1) goToItem(currentItemId-1); }
+
+/* ================= SUBMIT ================= */
+function confirmSubmit(){
+  let answered=0, notAnswered=0, skipped=0, marked=0;
+  items.forEach(it=>{
+    if(it.status==='answered' || it.status==='answered-marked') answered++;
+    if(it.status==='marked') marked++;
+    else if(it.status==='not-answered') notAnswered++;
+    else if(it.status==='not-visited') skipped++;
+  });
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.innerHTML = '<div class="modal-box" style="width:420px;">'+
+    '<h3>Test Summary</h3>'+
+    '<table class="summary-table">'+
+      '<tr><th>Status</th><th>Count</th></tr>'+
+      '<tr><td>Answered</td><td>'+answered+'</td></tr>'+
+      '<tr><td>Marked for Review</td><td>'+marked+'</td></tr>'+
+      '<tr><td>Not Answered</td><td>'+notAnswered+'</td></tr>'+
+      '<tr><td>Not Visited / Skipped</td><td>'+skipped+'</td></tr>'+
+      '<tr><td><b>Total Questions</b></td><td><b>'+items.length+'</b></td></tr>'+
+    '</table>'+
+    '<p style="font-size:13px;color:#555;">Once submitted, you cannot resume or edit your answers.</p>'+
+    '<div class="modal-btns">'+
+      '<button id="cancelSubmit">Go Back</button>'+
+      '<button class="confirm" id="okSubmit">Submit Exam</button>'+
+    '</div></div>';
+  document.body.appendChild(overlay);
+  overlay.querySelector('#cancelSubmit').onclick = ()=> overlay.remove();
+  overlay.querySelector('#okSubmit').onclick = ()=>{ overlay.remove(); submitTest(); };
+}
+
+/* ================= AI EVALUATION PROMPT BUILDER ================= */
+const PROMPT_TEMPLATES = {
+  email: `E-mail Writing Evaluation Prompt
+
+You are an expert evaluator for competitive-exam E-mail Writing, such as SBI PO, IBPS PO, RBI, NABARD and other banking examinations.
+
+Your task is to evaluate the candidate's E-mail Writing response strictly on the basis of the question/situation provided and the candidate's actual answer.
+
+Do NOT judge the answer merely by comparing it with a model answer. Evaluate whether the candidate has successfully fulfilled the requirements of the given situation.
+
+---
+
+QUESTION
+
+[PASTE THE E-MAIL WRITING QUESTION HERE]
+
+---
+
+CANDIDATE'S ANSWER
+
+[PASTE THE CANDIDATE'S ANSWER HERE]
+
+---
+
+EVALUATION INSTRUCTIONS
+
+First understand the situation, purpose, recipient, sender's role, required information, tone, word limit and specific instructions given in the question.
+
+Then evaluate the candidate's answer using the following three major criteria.
+
+1. FORMAT — 3 Marks
+
+Evaluate whether the candidate has followed an appropriate professional e-mail structure.
+
+Check:
+
+- Appropriate To/recipient information, if required.
+- Appropriate Subject line.
+- Appropriate salutation.
+- Proper opening/introduction.
+- Logical paragraph organization.
+- Proper closing.
+- Appropriate sign-off/name/designation, wherever required.
+- Professional e-mail presentation.
+- Whether the format is suitable for the specific situation.
+- Whether unnecessary elements have been included.
+- Whether the candidate has followed any specific formatting instruction in the question.
+
+Do not deduct marks merely because a field such as To/CC/BCC is absent if the question does not require it.
+
+---
+
+2. CONTENT — 4 Marks
+
+Evaluate the actual substance of the response.
+
+Check:
+
+- Does the candidate directly address the situation?
+- Has the purpose of the e-mail been clearly communicated?
+- Has every important point/instruction mentioned in the question been addressed?
+- Is the information relevant?
+- Is the information factually consistent with the given situation?
+- Is the explanation clear and complete?
+- Has the candidate maintained logical flow?
+- Has the candidate included appropriate action/request/suggestion wherever required?
+- Is the response sufficiently detailed without unnecessary information?
+- Does the response achieve the intended purpose of the e-mail?
+
+Give higher marks when the candidate covers the important requirements comprehensively and logically.
+
+---
+
+3. LANGUAGE — 3 Marks
+
+Evaluate the quality and correctness of the candidate's language.
+
+Check:
+
+- Grammar.
+- Tense.
+- Subject-verb agreement.
+- Articles.
+- Prepositions.
+- Pronouns.
+- Sentence construction.
+- Vocabulary.
+- Spelling.
+- Punctuation.
+- Clarity.
+- Coherence.
+- Fluency.
+- Professional/business vocabulary.
+- Appropriate tone.
+- Politeness and courtesy.
+- Whether sentences are natural and easy to understand.
+
+For an e-mail, particularly consider whether the language is professional, polite, concise and appropriate for the recipient.
+
+Do not penalize the candidate for using simple language if it is grammatically correct, clear and professional.
+
+---
+
+WORD LIMIT EVALUATION
+
+Identify the required word limit from the question.
+
+Calculate or reasonably estimate the word count of the candidate's response.
+
+Then determine whether the candidate:
+
+- Is within the required word limit.
+- Is slightly below the limit.
+- Is slightly above the limit.
+- Is substantially below the limit.
+- Is substantially above the limit.
+
+If the question specifies a strict word limit, apply an appropriate deduction.
+
+Do NOT excessively penalize a candidate for a very minor deviation.
+
+If no word limit is provided, do not invent one.
+
+Mention the approximate word count separately.
+
+---
+
+SITUATION & TONE EVALUATION
+
+Check whether the candidate's response matches the situation.
+
+For example:
+
+- Complaint → polite but firm.
+- Apology → sincere and professional.
+- Delay notification → transparent, responsible and reassuring.
+- Request → courteous and respectful.
+- Official communication → formal and precise.
+- Customer communication → professional, empathetic and solution-oriented.
+- Workplace communication → appropriate hierarchy and professional tone.
+
+Identify any inappropriate, rude, casual, emotional, vague or overly informal language.
+
+---
+
+MARKING SCALE
+
+Award marks using this structure:
+
+Format: X/3
+
+Content: X/4
+
+Language: X/3
+
+Final Score: X/10
+
+Do not award marks mechanically. Use professional judgment based on the overall quality of the response.
+
+Use decimal marks when appropriate, such as 7.5/10 or 8.25/10.
+
+---
+
+IMPORTANT EVALUATION RULES
+
+1. Evaluate the candidate's actual answer, not an imagined improved version.
+2. Do not assume that missing information was intended correctly.
+3. Do not invent facts that are not present in the question or answer.
+4. Do not penalize the candidate for points that were not required by the question.
+5. Do not reward irrelevant information merely because it is grammatically correct.
+6. Grammar mistakes should affect the Language score.
+7. Missing important points should primarily affect the Content score.
+8. Incorrect or inappropriate e-mail structure should affect the Format score.
+9. Inappropriate tone should affect Language and/or Content depending on its impact.
+10. Repetition, unnecessary details and excessive verbosity should reduce Content effectiveness.
+11. A concise answer can receive full marks if it completely satisfies the question.
+12. Simple vocabulary is acceptable if the language is correct, clear and professional.
+13. Do not compare the candidate's wording with a model answer word-for-word.
+14. Focus on whether the candidate successfully communicates the required message.
+15. If the answer contains a serious misunderstanding of the situation, clearly mention it and reduce the Content score accordingly.
+16. If the answer is incomplete, clearly identify which required points are missing.
+17. If there are spelling, grammar or punctuation mistakes, quote only short examples and provide the corrected version.
+18. If the candidate has exceeded the word limit, explain the extent of the deviation and its likely impact.
+19. If the candidate has written an excellent answer, do not manufacture mistakes merely to reduce the score.
+20. Be strict enough for a competitive banking examination but fair and objective.
+
+---
+
+REQUIRED OUTPUT FORMAT
+
+📊 Overall Evaluation
+
+Final Score: X/10
+
+Criterion| Marks| Evaluation
+Format| X/3| Brief evaluation
+Content| X/4| Brief evaluation
+Language| X/3| Brief evaluation
+Total| X/10| Overall assessment
+
+📝 Word Count
+
+Required: [word limit from question]
+Candidate: Approximately [word count] words
+Status: Within / Slightly Above / Slightly Below / Significantly Above / Significantly Below
+
+🎯 Situation & Tone
+
+Explain whether the candidate appropriately understood and handled the situation, recipient and purpose of the e-mail.
+
+✅ What the Candidate Did Well
+
+Mention the 3–5 strongest aspects of the response.
+
+❌ Areas That Need Improvement
+
+Mention the most important weaknesses, prioritizing issues that actually affected the score.
+
+✍️ Language & Grammar Corrections
+
+List important errors in this format:
+
+Candidate: "incorrect sentence/phrase"
+Better: "corrected sentence/phrase"
+Reason: Brief explanation.
+
+Only mention meaningful errors. Do not overwhelm the candidate with trivial corrections.
+
+🔍 Missing/Weak Content
+
+Identify any important requirement from the question that was:
+
+- Completely missed.
+- Partially addressed.
+- Vaguely addressed.
+- Incorrectly addressed.
+
+💡 How to Improve the Answer
+
+Give specific, actionable suggestions for improving:
+
+1. Format
+2. Content
+3. Language
+4. Professional tone
+5. Conciseness/word-limit management
+
+🏆 Examiner's Final Verdict
+
+Give a short competitive-exam-style verdict such as:
+
+Excellent / Very Good / Good / Average / Needs Improvement / Poor
+
+Then explain in 2–4 sentences why the answer received the awarded score.
+
+⭐ Score Justification
+
+Finally, explain why the candidate received exactly X/10, mentioning the biggest factors that increased and decreased the score.
+
+Do NOT rewrite the entire candidate's answer unless specifically asked.
+
+---
+
+FINAL INSTRUCTION
+
+Be an objective examiner, not a teacher who automatically gives high marks.
+
+The final score must reflect the actual quality of the candidate's response against the specific question and situation provided.
+
+Evaluate Format + Content + Language + Professionalism + Relevance + Completeness + Word Limit + Situation Handling, while keeping the official scoring structure:
+
+Format = 3 marks
+Content = 4 marks
+Language = 3 marks
+Total = 10 marks`,
+  precis: `Precis Writing Evaluation Prompt
+
+You are an expert evaluator for competitive-exam Precis Writing, especially for SBI PO, IBPS PO, RBI, NABARD and other banking examinations.
+
+Your task is to evaluate the candidate's Precis Writing response strictly on the basis of the original passage, the required word limit and the candidate's precis.
+
+Do NOT judge the answer merely by comparing it with a model precis. Evaluate whether the candidate has successfully understood, condensed and accurately represented the original passage.
+
+---
+
+QUESTION
+
+Original Passage:
+
+[PASTE THE ORIGINAL PASSAGE HERE]
+
+Precis Writing Instruction:
+
+[PASTE THE EXACT QUESTION/WORD-LIMIT INSTRUCTION HERE]
+
+---
+
+CANDIDATE'S PRECIS
+
+[PASTE THE CANDIDATE'S PRECIS HERE]
+
+---
+
+EVALUATION INSTRUCTIONS
+
+First carefully understand the central idea, major arguments, supporting points, logical relationship between ideas, tone and conclusion of the original passage.
+
+Then compare the candidate's precis with the original passage and evaluate whether the candidate has successfully captured its essence in a concise and coherent form.
+
+Evaluate using the following three major criteria.
+
+---
+
+1. FORMAT — 3 Marks
+
+Evaluate whether the candidate has followed the conventions of a proper precis.
+
+Check:
+
+- Appropriate and meaningful title.
+- Title accurately reflects the central theme of the passage.
+- Precis is written as a coherent paragraph unless the question specifies otherwise.
+- Candidate has not unnecessarily copied the question or instructions.
+- Proper sentence and paragraph structure.
+- Logical organization of ideas.
+- Appropriate beginning and ending.
+- No unnecessary headings, bullet points or conversational elements.
+- The writing follows the required precis format.
+
+Title Evaluation
+
+Specifically assess:
+
+- Relevance.
+- Conciseness.
+- Accuracy.
+- Whether it represents the central idea, rather than a minor point.
+- Whether it is original rather than unnecessarily copied from a sentence in the passage.
+
+If the title is missing or clearly inappropriate, deduct marks accordingly.
+
+---
+
+2. CONTENT — 4 Marks
+
+This is the most important criterion.
+
+Evaluate whether the candidate has correctly understood and condensed the original passage.
+
+Check:
+
+A. Central Idea
+
+- Has the candidate identified the main idea of the passage?
+- Does the precis communicate the overall message?
+
+B. Important Points
+
+- Are the major arguments and essential points included?
+- Has the candidate omitted important information?
+- Has excessive space been given to minor examples or details?
+
+C. Accuracy
+
+- Are the facts and ideas represented correctly?
+- Has the candidate changed the meaning of the original passage?
+- Has any information been added that is not supported by the passage?
+
+D. Conciseness
+
+- Has unnecessary information been removed?
+- Are examples, illustrations, repetitions, anecdotes and minor details appropriately condensed?
+- Is the precis genuinely a summary rather than a shortened copy of the passage?
+
+E. Coherence
+
+- Do the ideas connect logically?
+- Is the sequence of ideas sensible?
+- Can the reader understand the original argument from the precis alone?
+
+F. Completeness
+
+- Does the precis retain the essential message and major supporting ideas?
+- Has the candidate omitted a conclusion or important qualification that changes the meaning?
+
+---
+
+3. LANGUAGE — 3 Marks
+
+Evaluate the quality of the candidate's language.
+
+Check:
+
+- Grammar.
+- Sentence structure.
+- Tense.
+- Subject-verb agreement.
+- Articles.
+- Prepositions.
+- Pronouns.
+- Vocabulary.
+- Spelling.
+- Punctuation.
+- Clarity.
+- Coherence.
+- Fluency.
+- Formality.
+- Appropriate use of conjunctions and transitions.
+- Whether the language is concise and precise.
+
+A good precis should use clear, formal and economical language.
+
+Do not penalize simple vocabulary if the candidate expresses the ideas accurately and clearly.
+
+---
+
+PRECIS WORD-LIMIT EVALUATION
+
+Determine the required word limit from the question.
+
+Calculate or reasonably estimate:
+
+1. Original passage word count.
+2. Required precis word count.
+3. Candidate's precis word count.
+
+If the instruction says the precis should be approximately one-third of the original passage, independently determine the appropriate target range.
+
+Then classify the candidate's word count as:
+
+- Within the required limit.
+- Slightly below the required limit.
+- Slightly above the required limit.
+- Significantly below the required limit.
+- Significantly above the required limit.
+
+Consider whether the deviation affects the quality of the precis.
+
+Important
+
+Do not judge word count in isolation.
+
+A precis that is within the word limit but misses the central idea should not receive a high score.
+
+Likewise, a very slightly longer/shorter precis should not be heavily penalized if the deviation is minor and the content is otherwise excellent.
+
+---
+
+ORIGINAL PASSAGE vs CANDIDATE'S PRECIS
+
+Perform an internal comparison between the two.
+
+Identify:
+
+Essential Ideas Retained
+
+List the major ideas correctly captured by the candidate.
+
+Important Ideas Missing
+
+Identify important ideas from the original passage that were omitted.
+
+Unnecessary Details
+
+Identify examples, repetitions, explanations or minor details that should have been removed or condensed.
+
+Meaning Distortion
+
+Identify any place where the candidate has changed, exaggerated, weakened or misunderstood the original meaning.
+
+Unnecessary Additions
+
+Identify ideas or opinions introduced by the candidate that are not present or supported in the original passage.
+
+---
+
+PARAPHRASING & COPYING EVALUATION
+
+A good precis should generally express the author's ideas in concise language, rather than simply copying large portions of the passage.
+
+Check:
+
+- Excessive copying of original sentences.
+- Unnecessary repetition of original wording.
+- Whether the candidate has sufficiently condensed the material.
+- Whether ideas have been appropriately paraphrased where necessary.
+
+Do NOT penalize commonly necessary words or unavoidable technical terms merely because they appear in the original passage.
+
+---
+
+TONE & AUTHOR'S INTENTION
+
+Check whether the candidate has preserved:
+
+- The author's intended meaning.
+- The overall tone.
+- The author's viewpoint.
+- Important qualifications or conditions.
+- The conclusion or overall inference.
+
+The candidate must not insert personal opinions unless the original passage itself expresses that opinion.
+
+For example, if the passage discusses an issue neutrally, the candidate should not turn the precis into an argumentative or personal response.
+
+---
+
+MARKING SCALE
+
+Award marks using this structure:
+
+Format: X/3
+
+Content: X/4
+
+Language: X/3
+
+Final Score: X/10
+
+Use decimal marks when appropriate, such as:
+
+- 7.5/10
+- 8.25/10
+- 9/10
+
+Do not award marks mechanically. Use professional examiner judgment.
+
+---
+
+IMPORTANT EVALUATION RULES
+
+1. Evaluate the candidate's actual precis, not an imagined improved version.
+2. The original passage is the primary source of truth.
+3. Do not invent information that is absent from the passage.
+4. Do not penalize the candidate for omitting minor details that are appropriate to remove in a precis.
+5. Missing the central idea should result in a significant Content deduction.
+6. Including too many minor examples should reduce Content/conciseness.
+7. Changing the author's meaning should be treated as a serious Content problem.
+8. Personal opinions not supported by the passage should be penalized.
+9. Excessive copying should reduce the quality assessment.
+10. Grammar and spelling mistakes should primarily affect Language.
+11. Poor organization and inappropriate precis structure should affect Format.
+12. An inappropriate or missing title should affect Format.
+13. A precis must be concise but should still preserve the essential meaning.
+14. Do not reward a candidate merely for using sophisticated vocabulary.
+15. Simple and accurate language is preferable to complicated but unclear language.
+16. Do not compare the candidate's wording with a model answer word-for-word.
+17. Evaluate whether the candidate has captured the essence of the passage.
+18. Do not manufacture errors in an otherwise excellent response.
+19. If the candidate has substantially misunderstood the passage, clearly explain the misunderstanding.
+20. Be strict enough for a competitive banking examination but fair and objective.
+
+---
+
+REQUIRED OUTPUT FORMAT
+
+📊 Overall Evaluation
+
+Final Score: X/10
+
+Criterion| Marks| Evaluation
+Format| X/3| Brief evaluation
+Content| X/4| Brief evaluation
+Language| X/3| Brief evaluation
+Total| X/10| Overall assessment
+
+---
+
+📝 Word Count Analysis
+
+Original Passage: Approximately [X] words
+Required Precis: [X] words / Approximately one-third
+Candidate's Precis: Approximately [X] words
+
+Status: Within / Slightly Above / Slightly Below / Significantly Above / Significantly Below
+
+Word-Limit Assessment:
+Explain whether the candidate has maintained appropriate brevity and whether the word-count deviation materially affects the score.
+
+---
+
+🎯 Central Idea Assessment
+
+Central Idea of Original Passage:
+Explain the main message/theme of the passage in 1–3 sentences.
+
+Has the Candidate Captured It?
+Yes / Partially / No
+
+Explain why.
+
+---
+
+✅ Important Points Successfully Covered
+
+List the major ideas from the original passage that the candidate has successfully included.
+
+---
+
+❌ Important Points Missing
+
+List the important ideas that should have been included but were omitted or inadequately represented.
+
+---
+
+⚠️ Meaning Distortion / Incorrect Interpretation
+
+Identify any statement in the candidate's precis that:
+
+- Changes the original meaning.
+- Misinterprets the author's argument.
+- Adds an unsupported conclusion.
+- Removes an important qualification.
+
+For each major issue:
+
+Candidate's idea: [Briefly identify it]
+Original meaning: [Explain what the passage actually says]
+Problem: [Explain the difference]
+
+If there is no meaningful distortion, explicitly state:
+
+No significant distortion of the original meaning was found.
+
+---
+
+🗑️ Unnecessary Information
+
+Identify details that could have been removed or condensed, such as:
+
+- Examples.
+- Repetition.
+- Minor explanations.
+- Statistics/details that are not essential.
+- Redundant phrases.
+
+---
+
+📌 Title Evaluation
+
+Candidate's Title: [Title]
+
+Title Score/Assessment: Excellent / Good / Average / Weak / Missing
+
+Evaluate:
+
+- Relevance
+- Accuracy
+- Conciseness
+- Representation of central idea
+
+If necessary, provide 2–3 better title suggestions.
+
+---
+
+✍️ Language & Grammar Corrections
+
+List only meaningful errors.
+
+Candidate: "incorrect phrase/sentence"
+Better: "corrected phrase/sentence"
+Reason: Brief explanation.
+
+Check particularly:
+
+- Grammar
+- Vocabulary
+- Sentence structure
+- Spelling
+- Punctuation
+- Conciseness
+
+---
+
+🔄 Conciseness & Coherence
+
+Explain:
+
+- Whether the candidate has genuinely summarized the passage.
+- Whether the ideas flow logically.
+- Whether any sentence is unnecessarily long or repetitive.
+- Whether the precis can be understood independently.
+
+---
+
+💡 How to Improve
+
+Give specific suggestions under:
+
+1. Format
+
+What should be changed in structure/title/presentation?
+
+2. Content
+
+Which essential ideas should be retained or added?
+
+3. Conciseness
+
+What should be removed or compressed?
+
+4. Language
+
+What grammatical, vocabulary or sentence-structure improvements are required?
+
+5. Accuracy
+
+How can the candidate preserve the author's exact meaning?
+
+6. Exam Strategy
+
+Give 2–4 practical suggestions for writing a better precis under examination time pressure.
+
+---
+
+🏆 Examiner's Final Verdict
+
+Give one rating:
+
+Excellent / Very Good / Good / Average / Needs Improvement / Poor
+
+Then provide a concise 2–4 sentence examiner-style assessment.
+
+---
+
+⭐ SCORE JUSTIFICATION
+
+Finally, explain why the candidate received exactly X/10.
+
+Clearly identify:
+
+What increased the score:
+
+- [Point 1]
+- [Point 2]
+- [Point 3]
+
+What reduced the score:
+
+- [Point 1]
+- [Point 2]
+- [Point 3]
+
+---
+
+FINAL INSTRUCTION
+
+Act as a strict but fair competitive-exam examiner.
+
+Evaluate the candidate on:
+
+Format + Central Idea + Important Points + Accuracy + Conciseness + Coherence + Title + Language + Grammar + Word Limit + Author's Tone/Intention
+
+Use the official scoring structure:
+
+Format = 3 marks
+Content = 4 marks
+Language = 3 marks
+Total = 10 marks
+
+The most important principle is:
+
+«A good precis must be substantially shorter than the original passage while preserving its central idea, essential points, logical flow and original meaning.»
+
+Do not rewrite the candidate's complete precis unless specifically asked.`,
+  situation: `Situation Analysis Writing Evaluation Prompt
+
+You are an expert evaluator for competitive-exam Situation Analysis Writing, especially for SBI PO, IBPS PO, RBI, NABARD and other banking examinations.
+
+Your task is to evaluate the candidate's Situation Analysis response strictly on the basis of the situation/problem provided and the candidate's actual answer.
+
+Do NOT judge the answer merely by comparing it with a model answer. Evaluate whether the candidate has correctly understood the situation, identified the core problem, analysed the relevant factors, considered practical consequences and proposed an appropriate, realistic and well-justified solution.
+
+---
+
+QUESTION
+
+Situation / Case:
+
+[PASTE THE SITUATION ANALYSIS QUESTION HERE]
+
+Specific Instructions / Word Limit:
+
+[PASTE THE EXACT INSTRUCTION AND WORD LIMIT HERE]
+
+---
+
+CANDIDATE'S ANSWER
+
+[PASTE THE CANDIDATE'S ANSWER HERE]
+
+---
+
+EVALUATION INSTRUCTIONS
+
+First carefully understand the situation, stakeholders, problem, constraints, risks, objectives and specific task given in the question.
+
+Then evaluate whether the candidate has:
+
+1. Correctly understood the situation.
+2. Identified the central problem.
+3. Analysed the causes and relevant factors.
+4. Considered the interests of affected stakeholders.
+5. Evaluated possible consequences.
+6. Proposed appropriate and practical solutions.
+7. Justified the recommended course of action.
+8. Maintained professionalism, objectivity and ethical judgment.
+9. Followed the required format and word limit.
+10. Communicated the analysis clearly and logically.
+
+Evaluate using the following three major criteria.
+
+---
+
+1. FORMAT — 3 Marks
+
+Evaluate whether the candidate has presented the situation analysis in an appropriate and organized structure.
+
+Check:
+
+- Appropriate introduction to the situation.
+- Clear identification of the issue/problem.
+- Logical organization of analysis.
+- Proper separation of problem, causes, implications and solution where appropriate.
+- Clear and meaningful conclusion/recommendation.
+- Appropriate paragraph structure.
+- Professional presentation.
+- Whether the response directly follows the task/instructions.
+- Whether unnecessary headings, repetition or irrelevant sections have been avoided.
+- Whether the answer is structured in a way that makes the reasoning easy to follow.
+
+A strong Situation Analysis will generally demonstrate a logical flow such as:
+
+Situation → Problem Identification → Analysis → Stakeholder/Impact Consideration → Alternatives → Recommended Solution → Conclusion
+
+Do not require these exact headings if the candidate has achieved the same logical structure through well-written paragraphs.
+
+---
+
+2. CONTENT — 4 Marks
+
+This is the most important criterion.
+
+Evaluate the quality of the candidate's reasoning and decision-making.
+
+A. Understanding of the Situation
+
+Check:
+
+- Has the candidate understood what is actually happening?
+- Has the candidate identified the relevant facts?
+- Has the candidate avoided misunderstanding or oversimplifying the situation?
+- Has the candidate addressed the exact problem asked in the question?
+
+B. Problem Identification
+
+Check:
+
+- Has the core problem been clearly identified?
+- Has the candidate distinguished the main problem from secondary issues?
+- Has the candidate identified the root cause where relevant?
+
+C. Analysis
+
+Evaluate whether the candidate has considered:
+
+- Causes of the problem.
+- Consequences.
+- Risks.
+- Practical constraints.
+- Short-term implications.
+- Long-term implications.
+- Operational impact.
+- Financial impact where relevant.
+- Customer/public impact where relevant.
+- Organizational impact.
+- Ethical considerations where relevant.
+
+The candidate does not need to discuss every possible factor. Evaluate whether the factors considered are relevant and important to the given situation.
+
+D. Stakeholder Consideration
+
+Where applicable, assess whether the candidate considers the interests of relevant stakeholders, such as:
+
+- Customers.
+- Employees.
+- Management.
+- Organization.
+- Government/regulators.
+- Public.
+- Business partners.
+- Shareholders.
+- Other affected parties.
+
+A strong answer should avoid focusing on only one stakeholder when the situation clearly involves competing interests.
+
+E. Alternatives / Possible Solutions
+
+Check whether the candidate:
+
+- Identifies practical alternatives where appropriate.
+- Considers advantages and disadvantages.
+- Avoids unrealistic solutions.
+- Demonstrates balanced judgment.
+
+F. Recommended Solution
+
+Evaluate whether the proposed solution is:
+
+- Relevant.
+- Practical.
+- Realistic.
+- Ethical.
+- Feasible.
+- Proportionate to the problem.
+- Consistent with the facts given.
+
+The candidate should ideally explain why the recommended solution is preferable.
+
+G. Completeness
+
+Check whether the response adequately addresses all major requirements of the question.
+
+Missing an important aspect should reduce the Content score.
+
+---
+
+3. LANGUAGE — 3 Marks
+
+Evaluate the quality and correctness of the candidate's language.
+
+Check:
+
+- Grammar.
+- Sentence structure.
+- Tense.
+- Subject-verb agreement.
+- Articles.
+- Prepositions.
+- Pronouns.
+- Vocabulary.
+- Spelling.
+- Punctuation.
+- Clarity.
+- Coherence.
+- Fluency.
+- Professional vocabulary.
+- Formality.
+- Precision.
+- Appropriate tone.
+
+For Situation Analysis, the language should be:
+
+Professional + Objective + Analytical + Clear + Concise + Solution-oriented
+
+Do not penalize simple vocabulary if the candidate communicates the analysis clearly and correctly.
+
+---
+
+SITUATION HANDLING & DECISION-MAKING
+
+This is a critical part of the evaluation.
+
+Determine whether the candidate demonstrates:
+
+Problem-Solving Ability
+
+Does the candidate move beyond merely describing the problem and actually analyse it?
+
+Critical Thinking
+
+Does the candidate consider different factors before reaching a conclusion?
+
+Practical Judgment
+
+Are the recommendations realistic in the real-world context?
+
+Ethical Judgment
+
+Does the candidate avoid unethical, discriminatory, irresponsible or legally questionable recommendations?
+
+Balanced Approach
+
+Does the candidate consider competing interests rather than taking an extreme position without justification?
+
+Prioritization
+
+Does the candidate identify what should be addressed first?
+
+Action Orientation
+
+Does the candidate explain what should actually be done?
+
+Give additional qualitative emphasis to these factors while assigning the official marks under Format, Content and Language.
+
+---
+
+WORD-LIMIT EVALUATION
+
+Identify the required word limit from the question.
+
+Calculate or reasonably estimate the candidate's word count.
+
+Then classify it as:
+
+- Within the required limit.
+- Slightly below.
+- Slightly above.
+- Significantly below.
+- Significantly above.
+
+If the question specifies a strict word limit, apply an appropriate deduction where the deviation materially affects the response.
+
+Do NOT heavily penalize a very minor deviation.
+
+If no word limit is provided, do not invent one.
+
+Also evaluate whether the candidate has used the available words effectively.
+
+A response should not receive a high Content score merely because it is long.
+
+---
+
+FACTUAL & LOGICAL CONSISTENCY
+
+Check whether:
+
+- The candidate's reasoning is logically sound.
+- The proposed solution follows from the analysis.
+- There are contradictions within the answer.
+- The candidate has introduced unsupported assumptions.
+- The candidate has ignored important facts given in the situation.
+- The conclusion is consistent with the analysis.
+
+If the candidate makes a reasonable assumption that does not contradict the situation, do not automatically penalize it.
+
+---
+
+PROFESSIONAL & ETHICAL APPROACH
+
+Evaluate whether the candidate's response demonstrates:
+
+- Responsibility.
+- Integrity.
+- Fairness.
+- Accountability.
+- Customer/public interest where relevant.
+- Respect for rules and procedures.
+- Appropriate escalation where necessary.
+- Confidentiality where relevant.
+- Avoidance of personal bias.
+- Avoidance of arbitrary or discriminatory decisions.
+
+Do not impose personal opinions on the candidate. Evaluate ethics in the context of the situation provided.
+
+---
+
+MARKING SCALE
+
+Award marks using exactly this structure:
+
+Format: X/3
+
+Content: X/4
+
+Language: X/3
+
+Final Score: X/10
+
+Use decimal marks when appropriate, such as:
+
+- 7.5/10
+- 8.25/10
+- 9/10
+
+Do not award marks mechanically. Use professional examiner judgment.
+
+---
+
+IMPORTANT EVALUATION RULES
+
+1. Evaluate the candidate's actual answer, not an imagined improved version.
+2. The situation provided in the question is the primary source of truth.
+3. Do not invent facts that are absent from the question.
+4. Do not penalize a candidate for not discussing irrelevant issues.
+5. Missing the central problem should result in a significant Content deduction.
+6. Merely describing the situation without analysis should receive limited Content marks.
+7. A solution without adequate reasoning should not receive full Content marks.
+8. An unrealistic solution should reduce the Content score.
+9. An unethical or clearly inappropriate solution should be treated as a serious Content weakness.
+10. Contradictory reasoning should reduce Content.
+11. Grammar, spelling and sentence-structure errors should primarily affect Language.
+12. Poor organization should affect Format.
+13. Repetition and unnecessary information should reduce Content effectiveness.
+14. Do not reward complicated vocabulary if the reasoning is weak.
+15. Simple, precise and professional language is acceptable.
+16. Do not compare the candidate's wording with a model answer word-for-word.
+17. Different solutions can receive high marks if they are reasonable, practical and well justified.
+18. Do not assume that there is only one correct solution unless the question explicitly requires one.
+19. If the candidate proposes a different approach from the expected answer, evaluate the quality of reasoning, not merely whether it matches the expected approach.
+20. If the candidate has made a serious factual or situational misunderstanding, clearly identify it.
+21. If the response is excellent, do not manufacture weaknesses merely to reduce the score.
+22. Be strict enough for a competitive banking examination but fair and objective.
+
+---
+
+REQUIRED OUTPUT FORMAT
+
+📊 Overall Evaluation
+
+Final Score: X/10
+
+Criterion| Marks| Evaluation
+Format| X/3| Brief evaluation
+Content| X/4| Brief evaluation
+Language| X/3| Brief evaluation
+Total| X/10| Overall assessment
+
+---
+
+📝 Word Count Analysis
+
+Required: [Word limit from question]
+Candidate: Approximately [X] words
+Status: Within / Slightly Above / Slightly Below / Significantly Above / Significantly Below
+
+Assessment:
+Explain whether the candidate has managed the word limit effectively.
+
+---
+
+🎯 Situation Understanding
+
+Core Situation:
+Briefly explain what the situation is about.
+
+Candidate's Understanding:
+Excellent / Good / Partial / Weak / Incorrect
+
+Explain whether the candidate has correctly understood the situation.
+
+---
+
+🔴 Problem Identification
+
+Main Problem:
+Identify the central problem in the situation.
+
+Candidate's Identification:
+Correct / Partially Correct / Incorrect
+
+Explain whether the candidate has identified the right problem and, where relevant, its root cause.
+
+---
+
+🔍 Quality of Analysis
+
+Evaluate:
+
+Causes:
+Did the candidate identify relevant causes?
+
+Consequences:
+Did the candidate consider important consequences?
+
+Risks:
+Did the candidate identify relevant risks?
+
+Stakeholders:
+Did the candidate consider the interests of relevant stakeholders?
+
+Priorities:
+Did the candidate identify what should be addressed first?
+
+Give a concise assessment of the candidate's analytical depth.
+
+---
+
+💡 Solution & Recommendation Analysis
+
+Candidate's Main Recommendation
+
+Summarize the candidate's proposed solution.
+
+Practicality
+
+Excellent / Good / Moderate / Weak / Unrealistic
+
+Explain whether it can realistically be implemented.
+
+Relevance
+
+Does it directly address the central problem?
+
+Justification
+
+Has the candidate adequately explained why the proposed solution should be adopted?
+
+Ethical & Professional Suitability
+
+Is the recommendation responsible, fair, ethical and professionally appropriate?
+
+---
+
+⚖️ Alternatives & Balanced Judgment
+
+Explain whether the candidate:
+
+- Considered alternative approaches.
+- Recognized competing interests.
+- Weighed advantages and disadvantages.
+- Avoided an overly simplistic solution.
+
+If alternatives were not necessary for the specific question, state that explicitly rather than penalizing the candidate.
+
+---
+
+✅ What the Candidate Did Well
+
+Mention the 3–5 strongest aspects of the response.
+
+Focus on:
+
+- Problem identification.
+- Analytical thinking.
+- Relevant factors.
+- Stakeholder awareness.
+- Practical solution.
+- Logical reasoning.
+- Professional judgment.
+
+---
+
+❌ Areas That Need Improvement
+
+Identify the most important weaknesses.
+
+Prioritize issues that actually affected the score, such as:
+
+- Weak problem identification.
+- Superficial analysis.
+- Missing stakeholder perspective.
+- Missing consequences.
+- Unrealistic recommendation.
+- Poor justification.
+- Lack of prioritization.
+- Unsupported assumptions.
+- Repetition.
+- Weak conclusion.
+
+---
+
+✍️ Language & Grammar Corrections
+
+List only meaningful errors.
+
+Candidate: "incorrect phrase/sentence"
+Better: "corrected phrase/sentence"
+Reason: Brief explanation.
+
+Do not overwhelm the candidate with trivial corrections.
+
+---
+
+🔗 Logic & Coherence
+
+Evaluate:
+
+- Whether each point logically follows from the previous one.
+- Whether the analysis supports the recommendation.
+- Whether there are contradictions.
+- Whether the conclusion is consistent with the reasoning.
+- Whether transitions between ideas are effective.
+
+---
+
+💡 How to Improve the Answer
+
+Give specific, actionable suggestions under:
+
+1. Format
+
+How can the structure be improved?
+
+2. Problem Identification
+
+What should the candidate identify more clearly?
+
+3. Analysis
+
+What additional factors or consequences should be considered?
+
+4. Stakeholder Perspective
+
+Whose interests should be considered?
+
+5. Solution
+
+How can the recommendation become more practical and effective?
+
+6. Justification
+
+How should the candidate explain why the chosen solution is preferable?
+
+7. Language
+
+What language improvements are needed?
+
+8. Exam Strategy
+
+Give 2–4 practical strategies for writing a strong Situation Analysis under time pressure.
+
+---
+
+🏆 Examiner's Final Verdict
+
+Give one rating:
+
+Excellent / Very Good / Good / Average / Needs Improvement / Poor
+
+Then provide a concise 2–4 sentence examiner-style assessment.
+
+---
+
+⭐ SCORE JUSTIFICATION
+
+Finally, explain why the candidate received exactly X/10.
+
+What Increased the Score
+
+- [Point 1]
+- [Point 2]
+- [Point 3]
+
+What Reduced the Score
+
+- [Point 1]
+- [Point 2]
+- [Point 3]
+
+---
+
+FINAL INSTRUCTION
+
+Act as a strict but fair competitive-exam Situation Analysis evaluator.
+
+Evaluate the candidate on:
+
+Format + Situation Understanding + Problem Identification + Analysis + Critical Thinking + Stakeholder Consideration + Consequences + Practicality + Solution + Justification + Ethical Judgment + Language + Grammar + Word Limit + Coherence
+
+Use the official scoring structure:
+
+Format = 3 marks
+Content = 4 marks
+Language = 3 marks
+Total = 10 marks
+
+The most important principle is:
+
+«A strong Situation Analysis should not merely describe the problem. It should identify the core issue, analyse relevant factors and consequences, consider stakeholders, and present a practical, ethical and well-justified course of action.»
+
+Do not rewrite the candidate's complete answer unless specifically asked.`,
+  report: `Report Writing Evaluation Prompt
+
+You are an expert evaluator for competitive-exam Report Writing, especially for SBI PO, IBPS PO, RBI, NABARD and other banking examinations.
+
+Your task is to evaluate the candidate's Report Writing response strictly on the basis of the topic, situation, facts/information provided, required format and word limit.
+
+Do NOT judge the answer merely by comparing it with a model report. Evaluate whether the candidate has successfully understood the topic, presented relevant facts, organized the information logically, maintained objectivity and written the report in an appropriate formal style.
+
+---
+
+QUESTION
+
+Report Writing Topic / Situation:
+
+[PASTE THE REPORT WRITING QUESTION HERE]
+
+Specific Instructions / Word Limit:
+
+[PASTE THE EXACT INSTRUCTION AND WORD LIMIT HERE]
+
+---
+
+CANDIDATE'S REPORT
+
+[PASTE THE CANDIDATE'S ANSWER HERE]
+
+---
+
+EVALUATION INSTRUCTIONS
+
+First carefully understand the topic, purpose of the report, target audience, situation/event, required information, perspective, facts, reporting requirements and word limit.
+
+Then evaluate whether the candidate has:
+
+1. Correctly understood the topic/situation.
+2. Followed an appropriate report format.
+3. Provided a suitable title/headline.
+4. Presented relevant and accurate information.
+5. Covered the important aspects of the topic.
+6. Maintained factual and objective reporting.
+7. Organized information logically.
+8. Avoided unnecessary personal opinions and exaggeration.
+9. Used appropriate formal/reporting language.
+10. Followed the required word limit.
+11. Provided a meaningful conclusion/recommendation where appropriate.
+
+Evaluate using the following three major criteria.
+
+---
+
+1. FORMAT — 3 Marks
+
+Evaluate whether the candidate has followed the conventions of formal Report Writing.
+
+Check:
+
+- Appropriate and relevant title/headline.
+- Suitable byline/date/place, if required or appropriate.
+- Appropriate opening/introduction.
+- Clear identification of the event/topic.
+- Proper report structure.
+- Logical paragraph organization.
+- Appropriate sequencing of information.
+- Clear conclusion/end of report.
+- Formal presentation.
+- Whether the format matches the specific requirements of the question.
+
+A strong report will generally follow a logical structure such as:
+
+Title → Introduction → What/When/Where/Who → Main Details → Important Findings/Impact → Conclusion/Recommendations
+
+Do not require these exact headings if the candidate has achieved the same structure naturally.
+
+Important
+
+Do not penalize the candidate for omitting a particular formatting element if it was not required by the question and its absence does not affect the report's clarity.
+
+---
+
+2. CONTENT — 4 Marks
+
+This is the most important criterion.
+
+Evaluate the quality, relevance, completeness and accuracy of the report.
+
+A. Understanding of the Topic
+
+Check:
+
+- Has the candidate correctly understood the topic?
+- Does the report directly address the given subject?
+- Has the candidate maintained the required perspective?
+- Has the candidate avoided going off-topic?
+
+B. Coverage of Important Information
+
+Check whether the candidate has covered the relevant 5W + 1H where applicable:
+
+- What happened?
+- When did it happen?
+- Where did it happen?
+- Who was involved?
+- Why did it happen?
+- How did it happen?
+
+Not every report requires all six elements. Evaluate them according to the question.
+
+Also check whether the candidate has included:
+
+- Major facts.
+- Key developments.
+- Important observations.
+- Relevant outcomes.
+- Impact/consequences.
+- Important statistics or data, if provided.
+- Recommendations or future action, if relevant.
+
+C. Relevance
+
+Check:
+
+- Is the information directly relevant to the topic?
+- Has the candidate avoided unnecessary details?
+- Has the candidate avoided repeating the same point?
+- Has the candidate used the available words effectively?
+
+D. Accuracy & Factual Consistency
+
+Check:
+
+- Are facts consistent with the question?
+- Has the candidate invented information unnecessarily?
+- Has the candidate changed dates, names, figures or circumstances?
+- Are conclusions supported by the information provided?
+
+If the question requires creative reporting around a hypothetical situation, reasonable details may be acceptable provided they do not contradict the given facts.
+
+E. Organization & Logical Flow
+
+Evaluate whether the report progresses naturally:
+
+Introduction → Main Facts → Details → Findings/Impact → Conclusion
+
+Check whether the reader can easily understand what happened and why it matters.
+
+F. Completeness
+
+Determine whether the report adequately covers the important requirements of the question.
+
+Missing major information should result in a Content deduction.
+
+---
+
+3. LANGUAGE — 3 Marks
+
+Evaluate the quality and correctness of the candidate's language.
+
+Check:
+
+- Grammar.
+- Sentence structure.
+- Tense.
+- Subject-verb agreement.
+- Articles.
+- Prepositions.
+- Pronouns.
+- Vocabulary.
+- Spelling.
+- Punctuation.
+- Clarity.
+- Coherence.
+- Fluency.
+- Formality.
+- Precision.
+- Appropriate reporting vocabulary.
+- Professional tone.
+
+Report Writing should generally use:
+
+Formal + Objective + Clear + Precise + Factual + Concise language
+
+Avoid rewarding unnecessary complexity.
+
+Simple, grammatically correct and professional English should receive strong Language marks.
+
+---
+
+OBJECTIVITY & REPORTING STYLE
+
+This is a critical part of Report Writing.
+
+Evaluate whether the candidate:
+
+- Reports facts objectively.
+- Avoids excessive personal opinions.
+- Avoids emotional or dramatic language.
+- Avoids unsupported accusations.
+- Distinguishes facts from opinions.
+- Maintains a neutral/professional tone.
+- Uses appropriate reporting verbs.
+- Avoids conversational language.
+- Avoids informal expressions.
+
+If the question specifically asks for the candidate's opinion, recommendation or analysis, allow appropriate opinion while ensuring it remains relevant and professionally expressed.
+
+---
+
+TITLE / HEADLINE EVALUATION
+
+Evaluate the candidate's title separately.
+
+Check:
+
+- Relevance.
+- Accuracy.
+- Conciseness.
+- Specificity.
+- Whether it immediately communicates the subject.
+- Whether it represents the central theme rather than a minor detail.
+
+A good title should be:
+
+Short + Relevant + Informative + Specific
+
+If the title is missing or inappropriate, deduct marks under Format.
+
+If appropriate, provide 2–3 alternative title suggestions.
+
+---
+
+FACTUAL CONSISTENCY
+
+Compare the candidate's report with the information provided in the question.
+
+Identify:
+
+- Incorrect facts.
+- Incorrect figures.
+- Incorrect dates.
+- Incorrect names/designations.
+- Contradictions.
+- Unsupported claims.
+- Missing important facts.
+
+Clearly distinguish between:
+
+Factually incorrect information and reasonable elaboration.
+
+Do not penalize reasonable elaboration in a hypothetical report unless it contradicts the question or makes the report implausible.
+
+---
+
+WORD-LIMIT EVALUATION
+
+Identify the required word limit from the question.
+
+Calculate or reasonably estimate the candidate's word count.
+
+Then classify it as:
+
+- Within the required limit.
+- Slightly below.
+- Slightly above.
+- Significantly below.
+- Significantly above.
+
+If the question specifies a strict word limit, apply an appropriate deduction where the deviation materially affects the response.
+
+Do NOT heavily penalize a very minor deviation.
+
+Also evaluate whether the candidate has used the available words effectively.
+
+A long report is not automatically a good report.
+
+---
+
+CONCLUSION / RECOMMENDATIONS
+
+Where the question requires or reasonably benefits from a conclusion, assess whether the candidate:
+
+- Provides an appropriate conclusion.
+- Summarizes the outcome.
+- Highlights the significance of the event.
+- Provides relevant recommendations or future action where appropriate.
+- Avoids introducing an unrelated new topic.
+
+If a conclusion or recommendation is not required by the question, do not penalize its absence.
+
+---
+
+MARKING SCALE
+
+Award marks using exactly this structure:
+
+Format: X/3
+
+Content: X/4
+
+Language: X/3
+
+Final Score: X/10
+
+Use decimal marks when appropriate, such as:
+
+- 7.5/10
+- 8.25/10
+- 9/10
+
+Do not award marks mechanically. Use professional examiner judgment.
+
+---
+
+IMPORTANT EVALUATION RULES
+
+1. Evaluate the candidate's actual report, not an imagined improved version.
+2. The question is the primary source of truth.
+3. Do not invent facts while evaluating.
+4. Do not penalize reasonable elaboration in a hypothetical report unless it contradicts the given situation.
+5. Missing major facts should reduce Content marks.
+6. Going off-topic should significantly reduce Content marks.
+7. Poor report structure should affect Format.
+8. An inappropriate title should affect Format.
+9. Grammar and spelling mistakes should primarily affect Language.
+10. Excessive personal opinion should reduce Content and/or Language depending on its impact.
+11. Unsupported claims should reduce Content.
+12. Repetition and unnecessary details should reduce Content effectiveness.
+13. A report can receive high marks even with simple vocabulary if it is clear, accurate and professional.
+14. Do not reward complicated vocabulary merely because it sounds sophisticated.
+15. Do not compare the candidate's wording with a model answer word-for-word.
+16. Different wording and organization can receive full marks if the required information is correctly communicated.
+17. If the candidate uses a different but reasonable structure, do not penalize it merely for being different.
+18. If the candidate makes a factual error, explain exactly what is wrong and why.
+19. If the answer is excellent, do not manufacture weaknesses merely to reduce the score.
+20. Be strict enough for a competitive banking examination but fair and objective.
+
+---
+
+REQUIRED OUTPUT FORMAT
+
+📊 Overall Evaluation
+
+Final Score: X/10
+
+Criterion| Marks| Evaluation
+Format| X/3| Brief evaluation
+Content| X/4| Brief evaluation
+Language| X/3| Brief evaluation
+Total| X/10| Overall assessment
+
+---
+
+📝 Word Count Analysis
+
+Required: [Word limit from question]
+Candidate: Approximately [X] words
+
+Status: Within / Slightly Above / Slightly Below / Significantly Above / Significantly Below
+
+Assessment:
+Explain whether the candidate has managed the word limit effectively.
+
+---
+
+🎯 Topic Understanding
+
+Topic: [Briefly identify the topic]
+
+Candidate's Understanding:
+Excellent / Good / Partial / Weak / Incorrect
+
+Explain whether the candidate has correctly understood the subject and purpose of the report.
+
+---
+
+📰 Title Evaluation
+
+Candidate's Title: "[Title]"
+
+Assessment:
+Excellent / Good / Average / Weak / Missing
+
+Evaluate:
+
+- Relevance
+- Accuracy
+- Conciseness
+- Specificity
+- Representation of the central theme
+
+If necessary, provide 2–3 better title suggestions.
+
+---
+
+🔎 5W + 1H Coverage
+
+Element| Covered?| Evaluation
+What| Yes/Partially/No| Brief assessment
+When| Yes/Partially/No/Not Required| Brief assessment
+Where| Yes/Partially/No/Not Required| Brief assessment
+Who| Yes/Partially/No/Not Required| Brief assessment
+Why| Yes/Partially/No/Not Required| Brief assessment
+How| Yes/Partially/No/Not Required| Brief assessment
+
+Do not penalize missing elements that are not relevant to the particular report.
+
+---
+
+📌 Important Information Covered
+
+List the major facts, developments, observations or requirements that the candidate has successfully included.
+
+---
+
+❌ Important Information Missing
+
+Identify the important information that:
+
+- Was completely omitted.
+- Was only partially addressed.
+- Was mentioned vaguely.
+- Needed greater explanation.
+
+---
+
+⚠️ Factual Accuracy Check
+
+Identify:
+
+- Incorrect facts.
+- Incorrect figures.
+- Incorrect dates/names.
+- Contradictions.
+- Unsupported claims.
+
+For each meaningful issue:
+
+Candidate: "[Brief statement]"
+Issue: [What is wrong]
+Correct/Expected: [What should have been stated]
+
+If no significant issue exists, state:
+
+No significant factual inconsistency was found.
+
+---
+
+🎯 Relevance & Organization
+
+Evaluate:
+
+- Whether the report stays on topic.
+- Whether the information is logically ordered.
+- Whether paragraphs are appropriately connected.
+- Whether the introduction is effective.
+- Whether the report develops naturally.
+- Whether the conclusion is appropriate.
+- Whether there is unnecessary repetition.
+
+---
+
+🧑‍💼 Objectivity & Professionalism
+
+Evaluate whether the candidate has maintained:
+
+- Objectivity.
+- Formal tone.
+- Neutral reporting.
+- Professional vocabulary.
+- Appropriate reporting style.
+- Absence of unnecessary personal opinions.
+- Absence of emotional or exaggerated language.
+
+Give a concise assessment.
+
+---
+
+✅ What the Candidate Did Well
+
+Mention the 3–5 strongest aspects of the response.
+
+Focus on:
+
+- Format.
+- Topic understanding.
+- Relevant facts.
+- Organization.
+- Accuracy.
+- Objectivity.
+- Language.
+- Conclusion/recommendation.
+
+---
+
+❌ Areas That Need Improvement
+
+Identify the most important weaknesses.
+
+Prioritize issues that actually affected the score, such as:
+
+- Weak title.
+- Poor format.
+- Missing facts.
+- Irrelevant information.
+- Weak organization.
+- Factual errors.
+- Excessive opinion.
+- Weak conclusion.
+- Word-limit problems.
+- Grammar problems.
+
+---
+
+✍️ Language & Grammar Corrections
+
+List only meaningful errors.
+
+Candidate: "incorrect phrase/sentence"
+Better: "corrected phrase/sentence"
+Reason: Brief explanation.
+
+Do not overwhelm the candidate with trivial corrections.
+
+---
+
+🔗 Coherence & Logical Flow
+
+Evaluate:
+
+- Whether ideas progress logically.
+- Whether paragraphs connect naturally.
+- Whether the report has a clear beginning, middle and ending.
+- Whether the conclusion follows from the information presented.
+- Whether any information appears misplaced or repetitive.
+
+---
+
+💡 How to Improve the Report
+
+Give specific, actionable suggestions under:
+
+1. Format
+
+How can the report structure be improved?
+
+2. Content
+
+Which important facts or aspects should be added?
+
+3. Organization
+
+How should the information be arranged?
+
+4. Objectivity
+
+How can personal or emotional language be reduced?
+
+5. Language
+
+Which grammar, vocabulary or sentence-structure improvements are required?
+
+6. Conciseness
+
+What information can be removed or compressed?
+
+7. Conclusion
+
+How can the ending be made more effective?
+
+8. Exam Strategy
+
+Give 2–4 practical strategies for writing a high-scoring report under examination time pressure.
+
+---
+
+🏆 Examiner's Final Verdict
+
+Give one rating:
+
+Excellent / Very Good / Good / Average / Needs Improvement / Poor
+
+Then provide a concise 2–4 sentence examiner-style assessment.
+
+---
+
+⭐ SCORE JUSTIFICATION
+
+Finally, explain why the candidate received exactly X/10.
+
+What Increased the Score
+
+- [Point 1]
+- [Point 2]
+- [Point 3]
+
+What Reduced the Score
+
+- [Point 1]
+- [Point 2]
+- [Point 3]
+
+---
+
+FINAL INSTRUCTION
+
+Act as a strict but fair competitive-exam Report Writing evaluator.
+
+Evaluate the candidate on:
+
+Format + Title + Topic Understanding + Relevant Facts + 5W1H Coverage + Accuracy + Completeness + Organization + Objectivity + Professionalism + Conclusion + Language + Grammar + Word Limit + Coherence
+
+Use the official scoring structure:
+
+Format = 3 marks
+Content = 4 marks
+Language = 3 marks
+Total = 10 marks
+
+The most important principle is:
+
+«A strong report should present relevant and accurate information in a clear, organized, objective and professional manner while following the required format and word limit.»
+
+Do not rewrite the candidate's complete report unless specifically asked.`
+};
+
+function fillPlaceholder(tpl, placeholder, value){
+  return tpl.split(placeholder).join(value);
+}
+
+function buildEvaluationPrompt(item){
+  const sec = examConfig.sections[item.sectionIdx];
+  const answer = item.text.trim();
+  if(sec.id === 'email'){
+    let p = PROMPT_TEMPLATES.email;
+    p = fillPlaceholder(p, '[PASTE THE E-MAIL WRITING QUESTION HERE]', sec.questions[0].text + ' (Word limit: ' + sec.questions[0].wordLimit + ' words)');
+    p = fillPlaceholder(p, "[PASTE THE CANDIDATE'S ANSWER HERE]", answer);
+    return p;
+  }
+  if(sec.id === 'situation'){
+    let p = PROMPT_TEMPLATES.situation;
+    p = fillPlaceholder(p, '[PASTE THE SITUATION ANALYSIS QUESTION HERE]', sec.questions[0].text);
+    p = fillPlaceholder(p, '[PASTE THE EXACT INSTRUCTION AND WORD LIMIT HERE]', 'Word limit: ' + sec.questions[0].wordLimit + ' words.');
+    p = fillPlaceholder(p, "[PASTE THE CANDIDATE'S ANSWER HERE]", answer);
+    return p;
+  }
+  if(sec.id === 'report'){
+    const chosen = sec.questions[item.chosenIndex];
+    if(chosen.label === 'Report Writing'){
+      let p = PROMPT_TEMPLATES.report;
+      p = fillPlaceholder(p, '[PASTE THE REPORT WRITING QUESTION HERE]', chosen.text);
+      p = fillPlaceholder(p, '[PASTE THE EXACT INSTRUCTION AND WORD LIMIT HERE]', 'Word limit: ' + chosen.wordLimit + ' words.');
+      p = fillPlaceholder(p, "[PASTE THE CANDIDATE'S ANSWER HERE]", answer);
+      return p;
+    } else {
+      const passage = chosen.text.replace(/^Write a precis of the following passage\.\s*\n*/, '');
+      let p = PROMPT_TEMPLATES.precis;
+      p = fillPlaceholder(p, '[PASTE THE ORIGINAL PASSAGE HERE]', passage);
+      p = fillPlaceholder(p, '[PASTE THE EXACT QUESTION/WORD-LIMIT INSTRUCTION HERE]', 'Write a precis of the passage in approximately ' + chosen.wordLimit + ' words, with a suitable title.');
+      p = fillPlaceholder(p, "[PASTE THE CANDIDATE'S PRECIS HERE]", answer);
+      return p;
+    }
+  }
+  return '';
+}
+
+function copyEvalPrompt(itemId, btn){
+  const item = items.find(it=>it.id===itemId);
+  if(!item || !item.text.trim()){ return; }
+  const prompt = buildEvaluationPrompt(item);
+  const done = ()=>{
+    btn.textContent = 'Copied! Paste into your AI tool';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent='Copy for AI Evaluation'; btn.classList.remove('copied'); }, 2200);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(prompt).then(done).catch(()=>fallbackCopy(prompt, done));
+  } else {
+    fallbackCopy(prompt, done);
+  }
+}
+
+function submitTest(){
+  if(examSubmitted) return;
+  examSubmitted = true;
+  if(timerInterval) clearInterval(timerInterval);
+  if(document.fullscreenElement || document.webkitFullscreenElement){
+    (document.exitFullscreen || document.webkitExitFullscreen || function(){}).call(document);
+  }
+  document.getElementById('examPage').classList.add('hidden');
+  document.getElementById('resultPage').classList.remove('hidden');
+  renderResults();
+}
+
+function fmtTime(sec){
+  const m = Math.floor(sec/60), s = sec%60;
+  return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+
+function renderResults(){
+  const total = items.length;
+  const answered = items.filter(it=>it.text.trim().length>0).length;
+  const score = Math.round((answered/total)*30);
+  document.getElementById('scoreNum').textContent = score + '/30';
+
+  const rowColors = ['#2f7ed8','#d98c22','#1f9c8a'];
+  const table = document.getElementById('analysisTable');
+  let html = '<tr><th>Section</th><th>Question Chosen</th><th>Words Written</th><th>Word Limit</th><th>Time Spent</th></tr>';
+  items.forEach(it=>{
+    const sec = examConfig.sections[it.sectionIdx];
+    const c = rowColors[it.sectionIdx % rowColors.length];
+    let qLabel, limit;
+    if(it.kind==='single'){ qLabel='—'; limit = it.question.wordLimit; }
+    else { qLabel = it.chosenIndex!==null ? sec.questions[it.chosenIndex].label : 'Not attempted'; limit = it.chosenIndex!==null ? sec.questions[it.chosenIndex].wordLimit : '—'; }
+    html += '<tr style="border-left:4px solid '+c+';"><td style="font-weight:700;color:'+c+';">'+sec.name+'</td><td>'+qLabel+'</td><td>'+it.wordCount+'</td><td>'+limit+'</td><td>'+fmtTime(sectionTimeSpent[it.sectionIdx]||0)+'</td></tr>';
+  });
+  table.innerHTML = html;
+
+  const sectionColors = ['#2f7ed8','#d98c22','#1f9c8a'];
+  const sectionIcons = ['📧','🧭','📄'];
+  const container = document.getElementById('answersContainer');
+  container.innerHTML = '';
+  items.forEach(it=>{
+    const sec = examConfig.sections[it.sectionIdx];
+    const color = sectionColors[it.sectionIdx % sectionColors.length];
+    const icon = sectionIcons[it.sectionIdx % sectionIcons.length];
+    const wrap = document.createElement('div');
+    wrap.className = 'answer-section';
+    wrap.style.borderLeft = '5px solid '+color;
+    wrap.style.paddingLeft = '14px';
+    const title = it.kind==='choice' && it.chosenIndex!==null ? sec.name+' — '+sec.questions[it.chosenIndex].label : sec.name;
+    const uid = 'ans-'+it.id;
+    let qText;
+    if(it.kind==='single') qText = it.question.text;
+    else qText = it.chosenIndex!==null ? sec.questions[it.chosenIndex].text : 'Not attempted';
+    const hasAnswer = it.text.trim().length>0;
+    const copyBtnHtml = hasAnswer
+      ? '<button class="copy-btn" style="background:'+color+';color:#fff;border-color:'+color+';" onclick="copyEvalPrompt('+it.id+', this)">Copy for AI Evaluation</button>'
+      : '<span style="font-size:11.5px;color:#999;">Attempt this question to enable AI-evaluation copy</span>';
+    wrap.innerHTML =
+      '<h4 style="color:'+color+';">'+icon+' '+title+' '+copyBtnHtml+'</h4>'+
+      '<div style="font-size:12px;font-weight:700;color:#666;margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px;">Question</div>'+
+      '<div class="answer-text-box" style="margin-bottom:10px;background:#fbfbfd;">'+(qText.replace(/</g,'&lt;'))+'</div>'+
+      '<div style="font-size:12px;font-weight:700;color:#666;margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px;">Your Answer</div>'+
+      '<div class="answer-text-box" id="'+uid+'">'+((it.text.trim() || '(No answer submitted)').replace(/</g,'&lt;'))+'</div>';
+    container.appendChild(wrap);
+  });
+}
+
+function copyAnswer(id, btn){
+  const text = document.getElementById(id).textContent;
+  const done = ()=>{
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent='Copy'; btn.classList.remove('copied'); }, 1500);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, cb){
+  const ta = document.createElement('textarea');
+  ta.value = text; document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+  cb();
+}
+</script>
+</body>
+</html>
