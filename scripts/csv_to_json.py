@@ -3,7 +3,7 @@
 Convert a bulk news CSV into data/news.json for the GA Pulse revision site.
 
 USAGE:
-    python3 scripts/csv_to_json.py data/news_bulk.csv data/news.json
+    python3 scripts/csv_to_json.py data/news_template.csv data/news.json
 
 REQUIRED CSV COLUMNS (header row required, exact names, any order):
     id, month, main, sub, minor, date, importance, title, body, remember, statics, source
