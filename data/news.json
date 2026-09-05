@@ -1,1271 +1,261 @@
 [
   {
     "id": 1,
-    "month": 6,
+    "month": 0,
     "main": "A",
     "sub": "RBI & Monetary Policy",
     "minor": "Repo Rate / Reverse Repo",
-    "date": "Jul 8",
+    "date": "Jan 08",
     "importance": 3,
-    "title": "RBI conducts ₹25,000 crore Variable Rate Repo auction",
-    "body": "RBI held an overnight VRR auction to inject short-term liquidity into the banking system and align money market rates with policy.",
+    "title": "RBI's Monetary Policy Committee reviews the repo rate 🎯",
+    "body": "The Monetary Policy Committee (MPC) met for its scheduled bi-monthly review to assess the repo rate against inflation and growth targets. The repo rate is the rate at which RBI lends short-term funds to commercial banks, and it is the primary tool used to manage liquidity and inflation in the economy.",
     "remember": [
-      "Overnight tenor, funds return July 9",
-      "Bidding window 9:30-10:00 AM under LAF",
-      "Eligible: scheduled commercial banks & primary dealers"
+      "MPC has 6 members — 3 from RBI + 3 external experts",
+      "RBI Governor chairs the MPC",
+      "Inflation target band: 4% (+/- 2%)"
     ],
     "statics": [
-      "Notified amount ₹25,000 crore",
-      "System liquidity surplus ~₹1.19 lakh crore (as of Jul 6)"
+      "Repo Rate ≠ Reverse Repo Rate — reverse repo is the rate RBI pays banks",
+      "RBI was established in 1935; HQ in Mumbai"
     ],
-    "source": "RBI"
+    "source": "Sample entry — verify with RBI press release"
   },
   {
     "id": 2,
-    "month": 6,
-    "main": "A",
-    "sub": "Digital Banking & Payments",
-    "minor": "BBPS",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "IDFC FIRST Bank goes live with EPFO PF payment services",
-    "body": "IDFC FIRST Bank became the private bank authorised by EPFO to let employers pay statutory PF contributions directly via its internet banking platforms.",
+    "month": 0,
+    "main": "H",
+    "sub": "Static GK Highlights",
+    "minor": "National Youth Day",
+    "date": "Jan 12",
+    "importance": 2,
+    "title": "National Youth Day observed across India 🎉",
+    "body": "National Youth Day is observed every year to mark the birth anniversary of Swami Vivekananda, celebrating his contribution to youth empowerment, education and spiritual thought.",
     "remember": [
-      "First private bank integrated for PF payments on EPFO Unified Portal",
-      "Employers can pay via Retail/Corporate Internet Banking"
+      "National Youth Day: 12 January",
+      "Marks birth anniversary of Swami Vivekananda (born 1863)"
     ],
     "statics": [
-      "EPFO founded 1952",
-      "HQ New Delhi",
-      "Chairman: Dr. Mansukh Mandaviya"
+      "Swami Vivekananda's real name: Narendranath Datta",
+      "Famous for his 1893 Chicago speech at the World's Parliament of Religions"
     ],
-    "source": "EPFO / IDFC FIRST Bank"
+    "source": "Sample entry — verify with official calendar"
   },
   {
     "id": 3,
-    "month": 6,
+    "month": 1,
     "main": "B",
-    "sub": "Committees & Appointments",
-    "minor": "Regulatory Appointments",
-    "date": "Jul 2026",
+    "sub": "Government Schemes",
+    "minor": "PM Surya Ghar Yojana",
+    "date": "Feb 03",
     "importance": 3,
-    "title": "RBI approves N.S. Vishwanathan's reappointment as Axis Bank chairman",
-    "body": "RBI approved a fresh three-year term for N.S. Vishwanathan as Axis Bank's Non-Executive Part-time Chairman.",
+    "title": "PM Surya Ghar: Muft Bijli Yojana expands rooftop solar coverage ☀️",
+    "body": "The scheme aims to enable households to install rooftop solar panels and receive subsidised electricity, reducing dependence on grid power and lowering household energy bills, as part of India's renewable-energy push.",
     "remember": [
-      "Term: Oct 27, 2026 to Oct 26, 2029",
-      "Former RBI Deputy Governor (retired 2020)",
-      "Chairman since Oct 2023"
+      "Aims to provide free/subsidised electricity via rooftop solar",
+      "Targets crores of households under phased rollout"
     ],
     "statics": [
-      "Axis Bank founded 1993, HQ Mumbai",
-      "MD & CEO: Amitabh Chaudhry"
+      "Ministry: Ministry of New and Renewable Energy (MNRE)",
+      "Part of India's larger renewable energy capacity goals"
     ],
-    "source": "RBI / Axis Bank"
+    "source": "Sample entry — verify with PIB release",
+    "highlights": [
+      "Aims to provide free/subsidised electricity via rooftop solar",
+      "Targets crores of households under phased rollout",
+      "Subsidy credited directly to beneficiary bank accounts"
+    ],
+    "examFocus": [
+      "Launch → Under PM Surya Ghar Muft Bijli Yojana",
+      "Ministry → MNRE",
+      "Focus → Rooftop solar for households"
+    ],
+    "footerTitle": "Ministry of New and Renewable Energy",
+    "hashtags": [
+      "PMSuryaGhar",
+      "RooftopSolar",
+      "RenewableEnergy"
+    ]
   },
   {
     "id": 4,
-    "month": 6,
-    "main": "A",
-    "sub": "Banking Schemes",
-    "minor": "AIF",
-    "date": "Jul 2026",
-    "importance": 4,
-    "title": "Government issues ₹1.55 lakh crore in guarantees under ECLGS 5.0",
-    "body": "The Emergency Credit Line Guarantee Scheme 5.0 has issued over 4 lakh credit guarantees to support businesses hit by the West Asia crisis.",
+    "month": 2,
+    "main": "D",
+    "sub": "Defence & Space Highlights",
+    "minor": "ISRO missions",
+    "date": "Mar 15",
+    "importance": 3,
+    "title": "ISRO continues progress on upcoming satellite missions 🛰️",
+    "body": "The Indian Space Research Organisation (ISRO) reviewed progress on its upcoming missions, continuing its track record in satellite launches, interplanetary missions and indigenous launch vehicle development.",
     "remember": [
-      "Approved by Union Cabinet on May 5, 2026",
-      "Administered by NCGTC",
-      "98% of guarantees by number went to MSMEs"
+      "ISRO HQ: Bengaluru",
+      "Aditya-L1: India's first solar observation mission",
+      "Chandrayaan-3 achieved a soft landing near the Moon's south pole in 2023"
     ],
     "statics": [
-      "Guarantees issued: 4,11,497",
-      "Guaranteed amount: ₹1,55,229 crore",
-      "Overall credit target: ₹2.55 lakh crore"
+      "ISRO founded in 1969 by Dr. Vikram Sarabhai",
+      "Satish Dhawan Space Centre is in Sriharikota, Andhra Pradesh"
     ],
-    "source": "Ministry of Finance"
+    "source": "Sample entry — verify with ISRO press release"
   },
   {
     "id": 5,
-    "month": 6,
-    "main": "A",
-    "sub": "Banking Schemes",
-    "minor": "AIF",
-    "date": "May 5",
-    "importance": 4,
-    "title": "Key features of the Emergency Credit Line Guarantee Scheme (ECLGS) 5.0",
-    "body": "ECLGS 5.0 offers tiered (not uniform) guarantee coverage to MSMEs, non-MSMEs and the airline sector, valid for loans sanctioned till March 2027.",
+    "month": 2,
+    "main": "E",
+    "sub": "Sports Highlights",
+    "minor": "Khel Ratna awards",
+    "date": "Mar 22",
+    "importance": 2,
+    "title": "National Sports Awards recognise top athletes 🏆",
+    "body": "The Major Dhyan Chand Khel Ratna Award, India's highest sporting honour, along with the Arjuna Awards, were conferred on athletes for their outstanding contribution to their respective sports.",
     "remember": [
-      "100% cover for MSMEs, 90% for non-MSMEs/airlines",
-      "5-yr tenor (1-yr moratorium) for MSMEs; 7-yr tenor (2-yr moratorium) for airlines",
-      "Zero guarantee fee for lending institutions"
+      "Khel Ratna is India's highest sporting honour",
+      "Named after hockey legend Major Dhyan Chand since 2021"
     ],
     "statics": [
-      "Additional credit target ₹2,55,000 crore incl. ₹5,000 crore for airlines",
-      "Interest capped at 9% (banks/FIs), 13% (NBFCs)",
-      "Valid till March 31, 2027"
+      "Arjuna Award recognises consistent excellence over 4 years",
+      "Dronacharya Award is given to coaches"
     ],
-    "source": "Union Cabinet / NCGTC"
+    "source": "Sample entry — verify with Ministry of Youth Affairs & Sports"
   },
   {
     "id": 6,
-    "month": 6,
-    "main": "B",
-    "sub": "Infrastructure Projects",
-    "minor": "Ports & Corridors",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "POWERGRID secures JPY 80 billion green loan from JBIC",
-    "body": "Japan Bank for International Cooperation is funding POWERGRID's Khavda-Nagpur HVDC transmission line that evacuates renewable power from Gujarat to Maharashtra.",
+    "month": 3,
+    "main": "F",
+    "sub": "Environment Highlights",
+    "minor": "Ramsar sites",
+    "date": "Apr 10",
+    "importance": 2,
+    "title": "India adds new wetlands to the Ramsar list 🐦",
+    "body": "New wetland sites were recognised under the Ramsar Convention, an international treaty for the conservation of wetlands of international importance, boosting India's tally of protected wetland ecosystems.",
     "remember": [
-      "Funds Khavda-Nagpur HVDC transmission project",
-      "Supports India's 500 GW renewable target by 2030",
-      "Part of India-Japan POWERR Asia initiative"
+      "Ramsar Convention signed in Ramsar, Iran in 1971",
+      "India has one of the largest networks of Ramsar sites in Asia"
     ],
     "statics": [
-      "Loan size: JPY 80 billion (~₹4,700 crore)"
+      "World Wetlands Day: 2 February",
+      "Wetlands regulate water cycles and support biodiversity"
     ],
-    "source": "POWERGRID / JBIC"
+    "source": "Sample entry — verify with MoEFCC release"
   },
   {
     "id": 7,
-    "month": 6,
-    "main": "A",
-    "sub": "Banking Schemes",
-    "minor": "AIF",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "TPG-led consortium to acquire Aseem Infrastructure Finance from NIIF",
-    "body": "A consortium of TPG, GIC and ICICI Bank is buying out NIIF's full stake in Aseem Infrastructure Finance, a green-infra NBFC founded in 2020.",
+    "month": 4,
+    "main": "C",
+    "sub": "Global Organizations",
+    "minor": "World Bank programs",
+    "date": "May 18",
+    "importance": 2,
+    "title": "World Bank report highlights India's growth outlook 📈",
+    "body": "A World Bank report assessed India's macroeconomic trajectory, noting resilience in domestic demand and structural reform progress while flagging global headwinds for emerging economies.",
     "remember": [
-      "TPG to hold 65%, GIC 25%, ICICI Bank up to 5%, rest for ESOPs",
-      "NIIF and minority holders (Govt of India, SMBC) fully exiting"
+      "World Bank HQ: Washington D.C.",
+      "Comprises IBRD + IDA + IFC + MIGA + ICSID"
     ],
     "statics": [
-      "Stake acquired: 100%",
-      "Aseem Infrastructure Finance founded: 2020"
+      "World Bank President is elected for a 5-year term",
+      "India is a founding member of the World Bank"
     ],
-    "source": "NIIF / TPG"
+    "source": "Sample entry — verify with World Bank publication"
   },
   {
     "id": 8,
-    "month": 6,
-    "main": "C",
-    "sub": "Global Organizations",
-    "minor": "UNESCO programs",
-    "date": "2025-26",
-    "importance": 3,
-    "title": "Nepal's Jestha Varna Mahavihar wins 2025 UNESCO Asia-Pacific Heritage Award",
-    "body": "The 17th-century Buddhist monastery in Nepal received the Award of Merit after post-earthquake restoration carried out with India's grant assistance.",
+    "month": 5,
+    "main": "G",
+    "sub": "Culture & Awards Highlights",
+    "minor": "International Booker Prize",
+    "date": "Jun 05",
+    "importance": 2,
+    "title": "International Booker Prize shortlist announced 📚",
+    "body": "The International Booker Prize, awarded for a single book translated into English and published in the UK or Ireland, announced its shortlist, drawing global attention to translated fiction.",
     "remember": [
-      "Category: Award of Merit",
-      "Handover ceremony held in Lalitpur",
-      "India provided restoration grant assistance"
+      "Prize money is split equally between author and translator",
+      "Awarded annually, distinct from the (English-original) Booker Prize"
     ],
     "statics": [
-      "Monastery age: 17th century"
+      "Geetanjali Shree's 'Tomb of Sand' was the first Hindi novel to win it (2022)",
+      "Administered by the Booker Prize Foundation, UK"
     ],
-    "source": "UNESCO"
+    "source": "Sample entry — verify with official Booker Prize site"
   },
   {
     "id": 9,
     "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Global Innovation Index",
-    "date": "2026",
-    "importance": 2,
-    "title": "Global Citizen Solutions publishes the Global Passport Index (GPI) 2026",
-    "body": "The Global Passport Index ranks passports using mobility, investment and quality-of-living indicators, distinct from the Henley Index's pure travel-access approach.",
+    "main": "A",
+    "sub": "Digital Banking & Payments",
+    "minor": "UPI",
+    "date": "Jul 09",
+    "importance": 3,
+    "title": "UPI transaction volumes hit fresh milestones 💳",
+    "body": "The Unified Payments Interface (UPI) continued to record strong month-on-month transaction growth, reinforcing India's position as a global leader in real-time digital payments.",
     "remember": [
-      "Published annually by Global Citizen Solutions (GCS)",
-      "Uses 14 indicators across 3 pillars"
+      "UPI developed by NPCI, launched in 2016",
+      "Enables instant bank-to-bank transfer via a Virtual Payment Address"
     ],
     "statics": [
-      "Pillars: Enhanced Mobility (50%), Investment (25%), Quality of Living (25%)"
+      "NPCI = National Payments Corporation of India",
+      "UPI Lite enables small-value offline-friendly transactions"
     ],
-    "source": "Global Citizen Solutions"
+    "source": "Sample entry — verify with NPCI data release"
   },
   {
     "id": 10,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Human Development Index",
-    "date": "2026",
-    "importance": 3,
-    "title": "India ranks 125th in the Global Passport Index 2026",
-    "body": "India slipped one spot from 2025 to rank 125th of 197 countries, trailing in mobility but improving on investment and quality-of-living sub-indices.",
-    "remember": [
-      "Down from 124th (2025)",
-      "Ranked behind Namibia (124th), ahead of Azerbaijan (126th)"
-    ],
-    "statics": [
-      "India: 136th in Mobility, 94th in Investment, 118th in Quality of Living",
-      "Visa-free/on-arrival access to 26 destinations"
-    ],
-    "source": "Global Citizen Solutions"
-  },
-  {
-    "id": 11,
-    "month": 6,
+    "month": 7,
     "main": "B",
     "sub": "Government Reports / Index",
     "minor": "Global Innovation Index",
-    "date": "2026",
-    "importance": 3,
-    "title": "Sweden tops the Global Passport Index 2026",
-    "body": "Sweden claimed the world's strongest passport title with a composite score of 96.05, followed by Switzerland, Finland and Germany.",
+    "date": "Aug 20",
+    "importance": 2,
+    "title": "India's rank in the Global Innovation Index reviewed 💡",
+    "body": "The Global Innovation Index, published annually, ranks countries on innovation input and output indicators such as R&D investment, institutions, infrastructure and creative outputs.",
     "remember": [
-      "Top 10 also includes Netherlands, Denmark, Ireland, UK, Norway, Singapore",
-      "Afghanistan ranked lowest"
+      "Published by WIPO (World Intellectual Property Organization)",
+      "India has shown a steady improving trend over the past decade"
     ],
     "statics": [
-      "Sweden's score: 96.05/100",
-      "Afghanistan's score: 23.10"
+      "WIPO is a UN specialised agency, HQ in Geneva",
+      "GII covers around 130+ economies"
     ],
-    "source": "Global Citizen Solutions"
+    "source": "Sample entry — verify with WIPO release"
+  },
+  {
+    "id": 11,
+    "month": 8,
+    "main": "H",
+    "sub": "Static GK Highlights",
+    "minor": "Capitals",
+    "date": "Sep 02",
+    "importance": 1,
+    "title": "Quick revision: State & UT capitals 🗺️",
+    "body": "A quick-refresher style entry to revise commonly asked capital-city facts for state and Union Territory general knowledge questions.",
+    "remember": [
+      "Sikkim's capital: Gangtok",
+      "Ladakh's capital: Leh",
+      "Chandigarh serves as the joint capital of Punjab and Haryana"
+    ],
+    "statics": [
+      "Mount Kamet is located in Uttarakhand (Garhwal Himalayas)",
+      "Puducherry is a UT with its own legislative assembly, unlike Chandigarh"
+    ],
+    "source": "Sample entry — cross-check with current atlas/GK manual"
   },
   {
     "id": 12,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "ISRO missions",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "China launches marine satellite HY-2E to replace HY-2B",
-    "body": "China's oceanographic satellite HY-2E was launched on a Long March 4B rocket to monitor ocean waves, winds and temperature for disaster prevention.",
-    "remember": [
-      "Launched from Jiuquan Satellite Launch Center",
-      "Built by China Academy of Space Technology (CAST)",
-      "Replaces the HY-2B satellite"
-    ],
-    "statics": [
-      "China's 47th space mission of 2026",
-      "654th Long March rocket flight"
-    ],
-    "source": "CAST / Chinese state media"
-  },
-  {
-    "id": 13,
-    "month": 6,
-    "main": "E",
-    "sub": "Sports Highlights",
-    "minor": "International tournaments",
-    "date": "Jun 27-Jul 5",
-    "importance": 2,
-    "title": "Thailand hosts the 2026 U15 & U20 Asian Wrestling Championships",
-    "body": "Pattaya, Thailand hosted the combined U15 and U20 Asian Wrestling Championships where Indian wrestlers won a large medal haul.",
-    "remember": [
-      "Event held in Pattaya, Thailand"
-    ],
-    "statics": [
-      "Duration: June 27 - July 5, 2026"
-    ],
-    "source": "Wrestling Federation of India"
-  },
-  {
-    "id": 14,
-    "month": 6,
-    "main": "E",
-    "sub": "Sports Highlights",
-    "minor": "International tournaments",
-    "date": "Jun 27-Jul 5",
-    "importance": 3,
-    "title": "India wins 41 medals at 2026 U15 & U20 Asian Wrestling Championships",
-    "body": "India's combined U15 and U20 contingents won 41 medals in Pattaya, with notable golds from Prathmesh, Naitik, Harshad Keshav and Disha Shokeen.",
-    "remember": [
-      "U20: 20 medals (4G,7S,9B)",
-      "U15: 21 medals (8G,6S,7B)",
-      "Golds included Vivek Chouhan, Samruddhi Satish Patil, Vinakshi"
-    ],
-    "statics": [
-      "Total medals: 41"
-    ],
-    "source": "Wrestling Federation of India"
-  },
-  {
-    "id": 15,
-    "month": 6,
-    "main": "G",
-    "sub": "Culture & Awards Highlights",
-    "minor": "National awards",
-    "date": "Jul 7",
-    "importance": 3,
-    "title": "'Bridge Man of India' Girish Bharadwaj passes away at 76",
-    "body": "Girish Bharadwaj, honoured with the Padma Shri in 2017 for building low-cost suspension footbridges in remote villages, died in Sullia, Karnataka.",
-    "remember": [
-      "Also called 'Sethu Bandhu'",
-      "Built first 55-metre footbridge in 1989 over the Payaswini River"
-    ],
-    "statics": [
-      "Padma Shri year: 2017",
-      "Age at death: 76"
-    ],
-    "source": "PIB / News reports"
-  },
-  {
-    "id": 16,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Infrastructure Programs",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Delhi launches Mission Kayakalp to upgrade government school infrastructure",
-    "body": "The scheme aims to modernise classrooms, repair buildings, improve labs and washrooms, and make campuses more inclusive and green.",
-    "remember": [
-      "Implemented with district administrations, CSR partners and local communities",
-      "Focus also on accessibility for children with special needs"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "Delhi Government / Education Dept"
-  },
-  {
-    "id": 17,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "SMILE Scheme",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "UP launches Vishwakarma Shram Samman Yojana for traditional artisans",
-    "body": "The scheme gives artisans free skill training, a toolkit grant and concessional collateral-free loans to boost their livelihoods.",
-    "remember": [
-      "6-day free skill training",
-      "Covers tailoring, carpentry, pottery and other trades"
-    ],
-    "statics": [
-      "Toolkit grant: ₹10,000",
-      "Loan up to ₹10 lakh (collateral-free)"
-    ],
-    "source": "UP State Government"
-  },
-  {
-    "id": 18,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "SMILE Scheme",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "West Bengal finalises Pradhan Mantri Cha Shramik Protsahan Yojana",
-    "body": "PMCSPY aims to improve education, health and infrastructure for tea garden workers in North Bengal through a dedicated financial package.",
-    "remember": [
-      "Implementing agency: North Bengal Development Department",
-      "Works with Health Dept and Paschim Banga Samagra Siksha Mission"
-    ],
-    "statics": [
-      "Financial package: ₹313.3 crore",
-      "Expected beneficiaries: over 3 lakh workers"
-    ],
-    "source": "West Bengal Government"
-  },
-  {
-    "id": 19,
-    "month": 6,
-    "main": "H",
-    "sub": "Static GK Highlights",
-    "minor": "Important days",
-    "date": "Jul 7",
-    "importance": 2,
-    "title": "World Kiswahili Language Day observed on July 7",
-    "body": "The day marks Kiswahili's 1954 adoption by the Tanganyika African National Union to unite Africans against colonial rule, and celebrates it as UNESCO's first recognised African language.",
-    "remember": [
-      "First African language officially recognised by UNESCO",
-      "Commemorates July 7, 1954 adoption led by Julius Nyerere"
-    ],
-    "statics": [
-      "Speakers: over 200 million"
-    ],
-    "source": "UNESCO"
-  },
-  {
-    "id": 20,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Economic Survey",
-    "date": "2025-26",
-    "importance": 3,
-    "title": "Madhya Pradesh tops states in new GI tag registrations for 2025-26",
-    "body": "MP added 26 new Geographical Indication tags, ahead of West Bengal's 24, as part of a nationwide total of 125 new registrations.",
-    "remember": [
-      "West Bengal ranked second",
-      "GI tags boost legal protection, exports and artisan livelihoods"
-    ],
-    "statics": [
-      "MP: 26 new GIs",
-      "West Bengal: 24 new GIs",
-      "National total: 125 new GIs"
-    ],
-    "source": "DPIIT / GI Registry"
-  },
-  {
-    "id": 21,
-    "month": 6,
-    "main": "B",
-    "sub": "Infrastructure Projects",
-    "minor": "Ports & Corridors",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Kamarajar Port becomes India's second major port with 18-metre draft",
-    "body": "After Visakhapatnam, Kamarajar Port achieved an 18-metre operational draft following Capital Dredging Phase VI, enabling it to handle fully laden Capesize vessels.",
-    "remember": [
-      "Enables handling of vessels up to 1,70,000 DWT",
-      "Deepened approach channels, harbour basin and berths"
-    ],
-    "statics": [
-      "Project cost: ₹440 crore"
-    ],
-    "source": "Kamarajar Port Limited"
-  },
-  {
-    "id": 22,
-    "month": 6,
-    "main": "H",
-    "sub": "Static GK Highlights",
-    "minor": "Important days",
-    "date": "Jul 5",
-    "importance": 2,
-    "title": "World Badminton Day marked on July 5 with 'Raise a Racket' theme",
-    "body": "Established by the Badminton World Federation to mark its 1934 founding, the 2026 campaign encourages fans and communities to take up the sport.",
-    "remember": [
-      "Founded by BWF",
-      "2026 theme: 'Raise a Racket'"
-    ],
-    "statics": [
-      "BWF founding year: 1934"
-    ],
-    "source": "Badminton World Federation"
-  },
-  {
-    "id": 23,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Infrastructure Programs",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "PM Modi inaugurates India's first greenfield refinery-cum-petrochemical complex in Rajasthan",
-    "body": "The HPCL Rajasthan Refinery at Pachpadra, a joint venture between HPCL and the Rajasthan government, aims to boost energy security and industrial growth in the region.",
-    "remember": [
-      "Located at Pachpadra, Balotra district",
-      "Joint venture: HPCL and Government of Rajasthan"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "HPCL / PIB"
-  },
-  {
-    "id": 24,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Agriculture Schemes",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Assam becomes first Indian state to commercially produce Matcha tea",
-    "body": "Production began at the Chota Tingrai Tea Estate in Tinsukia with support from India-Japan collaboration on Matcha processing techniques.",
-    "remember": [
-      "First batch sold at Guwahati Tea Auction Centre",
-      "Backed by India-Japan technical collaboration"
-    ],
-    "statics": [
-      "First batch sale price: ₹3,000"
-    ],
-    "source": "Assam Government / Tea Board"
-  },
-  {
-    "id": 25,
-    "month": 6,
-    "main": "B",
-    "sub": "Committees & Appointments",
-    "minor": "Government Panels",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Nidhi Khare chairs 9th Session of the IGE on Consumer Protection Law and Policy",
-    "body": "India chaired the UN Trade and Development session in Geneva, highlighting the National Consumer Helpline and the AI-enabled e-Jagriti platform.",
-    "remember": [
-      "Session organised by UN Trade and Development in Geneva",
-      "Nidhi Khare is Secretary, Department of Consumer Affairs"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "Ministry of Consumer Affairs"
-  },
-  {
-    "id": 26,
-    "month": 6,
-    "main": "C",
-    "sub": "Global Organizations",
-    "minor": "UNESCO programs",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "India hosts BRICS Women Working Group Meeting 2026 in Kochi",
-    "body": "Held under India's BRICS Chairship, the meeting focused on women's leadership, digital/financial inclusion and their role in climate action and food security.",
-    "remember": [
-      "Held in Kochi, Kerala",
-      "Theme: 'Building for Resilience, Innovation, Cooperation and Sustainability'"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "Ministry of External Affairs"
-  },
-  {
-    "id": 27,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Agriculture Schemes",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "Maharashtra passes Women Farmers' Empowerment Bill 2026",
-    "body": "The unanimously passed bill is India's first law dedicated to recognising women farmers and ensuring they access welfare schemes, including in fisheries and livestock.",
-    "remember": [
-      "First-of-its-kind law in India for women farmers",
-      "Covers agriculture, fisheries and livestock rearing"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "Maharashtra Assembly"
-  },
-  {
-    "id": 28,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "SMILE Scheme",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "UP launches Rashtriya Parivarik Labh Yojana for BPL families",
-    "body": "The scheme gives a one-time relief amount to Below Poverty Line families after the death of their primary earning member aged 18-60.",
-    "remember": [
-      "Applicant must be a UP resident and BPL family member"
-    ],
-    "statics": [
-      "Relief amount: ₹30,000"
-    ],
-    "source": "UP State Government"
-  },
-  {
-    "id": 29,
-    "month": 6,
-    "main": "G",
-    "sub": "Culture & Awards Highlights",
-    "minor": "Cultural festivals",
-    "date": "Jul 3",
-    "importance": 1,
-    "title": "35th Annual Mango Festival inaugurated in New Delhi",
-    "body": "Delhi's three-day Mango Festival, organised by the Delhi Tourism Department, showcased over 400 mango varieties from across India.",
-    "remember": [
-      "Launched by CM Rekha Gupta",
-      "Organised by Delhi Tourism Department"
-    ],
-    "statics": [
-      "Varieties showcased: 400+"
-    ],
-    "source": "Delhi Tourism Department"
-  },
-  {
-    "id": 30,
-    "month": 6,
-    "main": "C",
-    "sub": "International Agreements",
-    "minor": "India–Mauritius MoU",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "GIFT City signs MoU with Vietnam's Da Nang financial hub",
-    "body": "The pact lets GIFT City, India's sole IFSC, share regulatory and development expertise with Vietnam's new financial hub VIFC-DN to boost cross-border investment.",
-    "remember": [
-      "Covers financial services, fintech, digital innovation and capacity-building",
-      "GIFT City positioned as a 'knowledge exporter'"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "GIFT City / IFSCA"
-  },
-  {
-    "id": 31,
-    "month": 6,
-    "main": "B",
-    "sub": "Infrastructure Projects",
-    "minor": "Highways",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Adani's Kutch Copper secures LME brand registration for Grade-A cathodes",
-    "body": "Kutch Copper Limited's 'Adani Copper' cathodes, produced at its Mundra facility, gained London Metal Exchange 'Good Delivery' status.",
-    "remember": [
-      "Backed by USD 1.2 billion investment",
-      "Among world's largest single-location custom copper smelters"
-    ],
-    "statics": [
-      "Capacity: 0.5 MTPA"
-    ],
-    "source": "Adani Enterprises / LME"
-  },
-  {
-    "id": 32,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Economic Survey",
-    "date": "Jul 2026",
-    "importance": 4,
-    "title": "IMF trims India's FY27 GDP growth forecast to 6.4%",
-    "body": "The IMF's July update cut India's FY27 forecast slightly while raising the FY28 forecast, keeping India ahead of China and the US in growth terms.",
-    "remember": [
-      "FY27 cut by 10 bps to 6.4% (from 6.5%)",
-      "FY28 raised by 20 bps to 6.7%"
-    ],
-    "statics": [
-      "India FY27: 6.4%",
-      "China: 4.6%",
-      "USA: 2.3%"
-    ],
-    "source": "IMF"
-  },
-  {
-    "id": 33,
-    "month": 6,
-    "main": "C",
-    "sub": "Global Organizations",
-    "minor": "IMF reports",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "IMF publishes the World Economic Outlook (WEO) report",
-    "body": "The WEO is IMF's flagship report tracking global growth forecasts; RBI separately cut its own FY27 India forecast from 6.9% to 6.6% in June 2026.",
-    "remember": [
-      "IMF founded 1945, HQ Washington D.C.",
-      "Managing Director: Kristalina Georgieva"
-    ],
-    "statics": [
-      "Member countries: 191"
-    ],
-    "source": "IMF"
-  },
-  {
-    "id": 34,
-    "month": 6,
-    "main": "A",
-    "sub": "Banking Structure",
-    "minor": "PSB Number / Classification",
-    "date": "Jul 7",
-    "importance": 2,
-    "title": "Punjab & Sind Bank gets nod to open IFSC Banking Unit at GIFT City",
-    "body": "IFSCA cleared the PSU lender's first offshore IBU branch, which will offer foreign currency lending and cross-border trade finance.",
-    "remember": [
-      "RBI approval came in January 2026",
-      "IFSCA operational licence granted 7 July 2026"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "IFSCA / RBI"
-  },
-  {
-    "id": 35,
-    "month": 6,
-    "main": "A",
-    "sub": "Banking Schemes",
-    "minor": "AIF",
-    "date": "Jul 8-15",
-    "importance": 1,
-    "title": "Kotak Mutual Fund launches Nifty Private Bank ETF",
-    "body": "The new ETF tracks the Nifty Private Bank Index, covering India's top 10 private banks, with its NFO open for a week in July.",
-    "remember": [
-      "NFO period: July 8-15, 2026",
-      "Categorised as 'Very High' risk"
-    ],
-    "statics": [
-      "Minimum investment: ₹1,000",
-      "Offer price: ₹10/unit"
-    ],
-    "source": "Kotak Mutual Fund"
-  },
-  {
-    "id": 36,
-    "month": 6,
+    "month": 8,
     "main": "D",
     "sub": "Defence & Space Highlights",
     "minor": "Naval operations",
-    "date": "Jul 8",
+    "date": "Sep 03",
     "importance": 2,
-    "title": "India-Japan navies hold PASSEX off the Mumbai coast",
-    "body": "The Indian Navy and Japan Maritime Self-Defence Force conducted a joint Passage Exercise in the Arabian Sea off Mumbai.",
+    "title": "Indian Navy conducts coordinated maritime exercise ⚓",
+    "body": "The Indian Navy carried out a coordinated exercise involving surface, sub-surface and air assets, aimed at strengthening operational readiness and interoperability.",
     "remember": [
-      "JMSDF ship arrived at Mumbai Port on July 5, 2026 for an operational turnaround"
+      "Indian Navy's motto: 'Sam No Varunah' (May the Lord of Water be auspicious to us)",
+      "Naval Command HQs: Mumbai (Western), Visakhapatnam (Eastern), Kochi (Southern)"
     ],
     "statics": [
-      "-"
+      "INS Vikrant is India's first indigenous aircraft carrier",
+      "Navy Day is celebrated on 4 December"
     ],
-    "source": "Indian Navy"
-  },
-  {
-    "id": 37,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "Naval operations",
-    "date": "Jul 8",
-    "importance": 2,
-    "title": "INS Surat takes part in PASSEX with Japanese destroyer JS Takanami",
-    "body": "INS Surat, the fourth and final Visakhapatnam-class (Project 15B) destroyer with 75% indigenous content, exercised alongside JS Takanami (DD-110).",
-    "remember": [
-      "Built by Mazagon Dock Shipbuilders, designed by Navy's Warship Design Bureau",
-      "Commissioned in 2025"
-    ],
-    "statics": [
-      "Indigenous content: 75%"
-    ],
-    "source": "Indian Navy"
-  },
-  {
-    "id": 38,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "DRDO weapons",
-    "date": "Jul 7",
-    "importance": 4,
-    "title": "India signs deal to supply Astra Mk1 missiles to Indonesia",
-    "body": "Indonesia became the first export customer for India's indigenous Astra Mk1 BVRAAM, part of a broader USD 630 million defence cooperation package signed during PM Modi's Jakarta visit.",
-    "remember": [
-      "Developed by DRDO",
-      "To be integrated with Su-30 MKI, Tejas Mk1A and Rafale in future"
-    ],
-    "statics": [
-      "Deal value: ~USD 630 million",
-      "Astra Mk1 range: 80-110 km, speed Mach 4.5",
-      "Astra Mk2 range: 200 km"
-    ],
-    "source": "DRDO / MEA"
-  },
-  {
-    "id": 39,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Digital India Initiatives",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Tribal Affairs Ministry launches 'TribeX' digital learning platform",
-    "body": "TribeX offers free certificate courses and UGC-recognised PG diplomas to preserve and promote tribal arts, culture, languages and traditional knowledge.",
-    "remember": [
-      "Launched in Bhubaneswar during a National Workshop on Tribal Research Institutes",
-      "Launched by Union Minister Jual Oram"
-    ],
-    "statics": [
-      "Courses currently hosted: 20"
-    ],
-    "source": "Ministry of Tribal Affairs"
-  },
-  {
-    "id": 40,
-    "month": 6,
-    "main": "C",
-    "sub": "International Agreements",
-    "minor": "Defence agreements",
-    "date": "Jul 6-7",
-    "importance": 2,
-    "title": "India and Costa Rica hold first Joint Economic and Trade Committee meeting",
-    "body": "The virtual JETCO meeting aimed to deepen bilateral trade ties, addressing standards, food safety and pharmaceutical regulations.",
-    "remember": [
-      "Co-chaired by India's Commerce Dept and Costa Rica's Foreign Trade Ministry"
-    ],
-    "statics": [
-      "Bilateral trade (2025-26): ~USD 391 million"
-    ],
-    "source": "Ministry of Commerce"
-  },
-  {
-    "id": 41,
-    "month": 6,
-    "main": "G",
-    "sub": "Culture & Awards Highlights",
-    "minor": "Cultural festivals",
-    "date": "Jul 8",
-    "importance": 2,
-    "title": "PM Modi visits UNESCO-listed Prambanan Temple in Indonesia",
-    "body": "PM Modi and President Prabowo Subianto visited the 9th-century Hindu temple complex in Yogyakarta to launch a joint cultural conservation project.",
-    "remember": [
-      "Dedicated to Shiva, Vishnu and Brahma",
-      "Built by the Sanjaya dynasty",
-      "UNESCO World Heritage Site since 1991"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "PIB / MEA"
-  },
-  {
-    "id": 42,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Infrastructure Programs",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "Landslide hits under-construction Kwar Hydroelectric Project on the Chenab",
-    "body": "Heavy rain triggered a major landslide near the 540 MW Kwar project in Kishtwar, J&K, being built by Chenab Valley Power Projects Pvt Ltd.",
-    "remember": [
-      "Run-of-river scheme with high dam and underground powerhouse",
-      "CVPPL is a joint venture of NHPC (51%) and JKSPDC (49%)"
-    ],
-    "statics": [
-      "Capacity: 540 MW",
-      "Expected annual generation: 1,975 MU"
-    ],
-    "source": "NHPC / CVPPL"
-  },
-  {
-    "id": 43,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Human Development Index",
-    "date": "2025-26",
-    "importance": 3,
-    "title": "Chandigarh becomes first to enter 'Uttam' range in PGI 2.0 for 2025-26",
-    "body": "Education Ministry's PGI 2.0 report replaced numerical ranks with grades; Chandigarh topped in Uttam-3, while no state reached the top 'Utkarsh' grade.",
-    "remember": [
-      "Meghalaya placed in the lowest 'Akanshi-2' band",
-      "Punjab led in learning outcomes"
-    ],
-    "statics": [
-      "Covers 14.67 lakh schools, 24.72 crore students",
-      "State scale: 1,000 points across 73 indicators"
-    ],
-    "source": "Ministry of Education"
-  },
-  {
-    "id": 44,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Human Development Index",
-    "date": "2025-26",
-    "importance": 2,
-    "title": "'Daksh' introduced as the highest grade in PGI 2.0 and PGI-D",
-    "body": "Daksh represents scores above 940 out of 1000 points, sitting above the previous top grade Utkarsh in the revised grading framework.",
-    "remember": [
-      "Other grades include Utkarsh, Uttam-1/2/3, Prachesta-1/2/3, Akanshi-1/2/3"
-    ],
-    "statics": [
-      "Daksh threshold: above 940/1000"
-    ],
-    "source": "Ministry of Education"
-  },
-  {
-    "id": 45,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "Naval operations",
-    "date": "Jul 11",
-    "importance": 3,
-    "title": "Stealth frigate Mahendragiri built under Project 17A (Nilgiri-class)",
-    "body": "INS Mahendragiri (F38) is the sixth Nilgiri-class frigate under the Indian Navy's Project 17A programme.",
-    "remember": [
-      "Sixth ship of the Nilgiri-class",
-      "Designed by Warship Design Bureau"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "Indian Navy"
-  },
-  {
-    "id": 46,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "Naval operations",
-    "date": "Jul 11",
-    "importance": 3,
-    "title": "INS Mahendragiri commissioned at Visakhapatnam, built by Mazagon Dock",
-    "body": "Built by Mazagon Dock Shipbuilders Limited, the frigate uses CODOG propulsion and supports maritime security, HADR and search-and-rescue missions.",
-    "remember": [
-      "Commissioning attended by Defence Minister Rajnath Singh",
-      "Five earlier ships: Nilgiri, Himgiri, Udaygiri, Taragiri, Vindhyagiri"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "Indian Navy / MDL"
-  },
-  {
-    "id": 47,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Startup Ranking",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Ministry of Textiles launches Handloom Hackathon 2026 - 'Weaving Innovation'",
-    "body": "Held as part of National Handloom Day celebrations, the hackathon invites weavers, students and startups to propose scalable solutions for the handloom sector.",
-    "remember": [
-      "Organised by Office of the Development Commissioner (Handlooms)",
-      "Open to weavers, students, startups and designers"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "Ministry of Textiles"
-  },
-  {
-    "id": 48,
-    "month": 6,
-    "main": "C",
-    "sub": "Global Organizations",
-    "minor": "World Bank programs",
-    "date": "2026",
-    "importance": 2,
-    "title": "UNCTAD releases the World Investment Report 2026",
-    "body": "The report tracks global FDI trends, noting a 6% rise in worldwide flows to USD 1.6 trillion in 2025, ending two years of decline.",
-    "remember": [
-      "Developing Asia the largest FDI recipient region"
-    ],
-    "statics": [
-      "Global FDI 2025: USD 1.6 trillion (up 6%)",
-      "Developing Asia share: ~40% (USD 644 billion)"
-    ],
-    "source": "UNCTAD"
-  },
-  {
-    "id": 49,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Economic Survey",
-    "date": "2026",
-    "importance": 3,
-    "title": "India ranks 11th globally as an FDI recipient in 2026 report",
-    "body": "India moved up two places to become the 11th largest FDI recipient, with inflows rising sharply, and ranks 18th as an outward investor.",
-    "remember": [
-      "FDI inflows rose 44% to USD 39 billion",
-      "Outward FDI rose 50% to USD 36 billion"
-    ],
-    "statics": [
-      "India FDI rank: 11th",
-      "Outward investment rank: 18th"
-    ],
-    "source": "UNCTAD"
-  },
-  {
-    "id": 50,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Economic Survey",
-    "date": "2026",
-    "importance": 2,
-    "title": "United States remains top global FDI destination with $277 billion",
-    "body": "The US led global FDI inflows in 2025, followed by Singapore, Hong Kong and China according to UNCTAD's report.",
-    "remember": [
-      "Followed by Singapore, Hong Kong, China"
-    ],
-    "statics": [
-      "US FDI inflow: USD 277 billion"
-    ],
-    "source": "UNCTAD"
-  },
-  {
-    "id": 51,
-    "month": 6,
-    "main": "H",
-    "sub": "Static GK Highlights",
-    "minor": "Institutions",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "University of Minnesota creates SpudCell, first fully synthetic cell",
-    "body": "SpudCell is built entirely from non-living chemical components yet can take in nutrients, replicate DNA and divide, aiding origin-of-life and drug-delivery research.",
-    "remember": [
-      "Bottom-up cell built from scratch, not modified from a living cell",
-      "Consists of a lipid membrane enclosing synthetic DNA and enzymes"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "University of Minnesota"
-  },
-  {
-    "id": 52,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Human Development Index",
-    "date": "2023-24",
-    "importance": 3,
-    "title": "India's higher education GER reaches 30.0% in AISHE 2023-24",
-    "body": "The AISHE report shows total enrolment crossed 4.5 crore, with female GER (31.2%) surpassing male GER for the seventh straight year of gender parity above 1.0.",
-    "remember": [
-      "ST enrolment grew fastest at 75.7%",
-      "OBC enrolment grew 60.2%, SC grew 51.4%"
-    ],
-    "statics": [
-      "Total enrolment: 4.50 crore (2023-24)",
-      "GER: 30.0%",
-      "Female GER: 31.2%, Male GER: 30.0%",
-      "GPI: 1.08"
-    ],
-    "source": "Ministry of Education"
-  },
-  {
-    "id": 53,
-    "month": 6,
-    "main": "F",
-    "sub": "Environment Highlights",
-    "minor": "Ramsar sites",
-    "date": "Jul 2026",
-    "importance": 1,
-    "title": "Vihar Lake overflows after heavy Mumbai rainfall",
-    "body": "One of Mumbai's seven water-supply reservoirs, Vihar Lake was built by the British between 1856-1860 on the Mithi River inside Sanjay Gandhi National Park.",
-    "remember": [
-      "Largest lake in the Salsette group of islands",
-      "Located between Tulsi and Powai lakes"
-    ],
-    "statics": [
-      "Built: 1856-1860"
-    ],
-    "source": "Local news reports"
-  },
-  {
-    "id": 54,
-    "month": 6,
-    "main": "F",
-    "sub": "Environment Highlights",
-    "minor": "Wildlife sanctuaries",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Eurasian lynx spotted for the first time in Sikkim",
-    "body": "The medium-sized wild cat, found from Western Europe to the Himalayas, is a solitary, crepuscular carnivore listed as Least Concern by IUCN.",
-    "remember": [
-      "Prefers temperate, boreal and alpine habitats",
-      "Mainly active at dawn and dusk"
-    ],
-    "statics": [
-      "IUCN status: Least Concern"
-    ],
-    "source": "Wildlife reports"
-  },
-  {
-    "id": 55,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "DRDO weapons",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Germany to add second Arrow-3 missile defence site in Bavaria",
-    "body": "Arrow-3, jointly developed by Israel and the US, is an exo-atmospheric system designed to intercept long-range ballistic missiles before re-entry.",
-    "remember": [
-      "Part of the Arrow Weapon System (AWS)",
-      "World's first operational stand-alone ATBM defence system"
-    ],
-    "statics": [
-      "-"
-    ],
-    "source": "Defence news reports"
-  },
-  {
-    "id": 56,
-    "month": 6,
-    "main": "F",
-    "sub": "Environment Highlights",
-    "minor": "Wildlife sanctuaries",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "Natural History Museum Mizoram named India's 21st Designated Repository",
-    "body": "Set up in 2022 under Mizoram University in the Indo-Burma hotspot, the museum specialises in taxonomy of ferns, fungi, moths and fishes and supports endemic species conservation.",
-    "remember": [
-      "Recommended by National Biodiversity Authority",
-      "Supports conservation of Leptobrachella tamdil amphibian"
-    ],
-    "statics": [
-      "Established: 2022",
-      "Repository number: 21st"
-    ],
-    "source": "National Biodiversity Authority"
-  },
-  {
-    "id": 57,
-    "month": 6,
-    "main": "G",
-    "sub": "Culture & Awards Highlights",
-    "minor": "National awards",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "PM Modi conferred Indonesia's highest civilian honour, Bintang Adipurna",
-    "body": "President Prabowo Subianto presented the honour, instituted in 1959, recognising PM Modi's role in strengthening India-Indonesia ties.",
-    "remember": [
-      "PM Modi's sixth foreign state honour of 2026",
-      "Career total foreign honours: 35"
-    ],
-    "statics": [
-      "Bintang Adipurna instituted: 1959"
-    ],
-    "source": "PIB / MEA"
-  },
-  {
-    "id": 58,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Digital India Initiatives",
-    "date": "2023",
-    "importance": 1,
-    "title": "Indiahandmade: government-backed marketplace for artisans developed by Digital India Corporation",
-    "body": "Launched in 2023 for the Ministry of Textiles, the platform lets weavers and artisans sell directly to consumers, including GI-tagged and ODOP products.",
-    "remember": [
-      "Offers digital onboarding, free shipping and secure payments"
-    ],
-    "statics": [
-      "Launch year: 2023"
-    ],
-    "source": "Ministry of Textiles / Digital India Corporation"
-  },
-  {
-    "id": 59,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Reports / Index",
-    "minor": "Economic Survey",
-    "date": "Jul 2026",
-    "importance": 4,
-    "title": "ADB cuts India's FY27 GDP growth forecast to 6.6%",
-    "body": "The Asian Development Outlook lowered its April estimate by 30 basis points, mirroring RBI's own FY27 cut, while keeping the FY28 forecast at 7.3%.",
-    "remember": [
-      "Slightly more optimistic than IMF's 6.4% estimate",
-      "India still seen as among fastest-growing major economies"
-    ],
-    "statics": [
-      "FY27 forecast: 6.6% (from 6.9%)",
-      "FY28 forecast retained: 7.3%"
-    ],
-    "source": "Asian Development Bank"
-  },
-  {
-    "id": 60,
-    "month": 6,
-    "main": "B",
-    "sub": "Government Schemes",
-    "minor": "Startup Ranking",
-    "date": "Jul 2026",
-    "importance": 2,
-    "title": "IBS Group launches travel-focused AI firm Naviq Technology with $500 million plan",
-    "body": "Singapore-based IBS Group will invest $500 million over five years in Naviq, targeting aviation, cruise, hospitality and logistics with AI-first tools.",
-    "remember": [
-      "Initial capital injection: over ₹200 crore",
-      "Founder: V K Mathews; Naviq President: Moizur Rahman"
-    ],
-    "statics": [
-      "Investment plan: USD 500 million (~₹4,800 crore) over 5 years"
-    ],
-    "source": "IBS Group"
-  },
-  {
-    "id": 61,
-    "month": 6,
-    "main": "A",
-    "sub": "Banking Schemes",
-    "minor": "AIF",
-    "date": "Jul 2026",
-    "importance": 3,
-    "title": "Aviva to become first foreign insurer with 100% ownership of its India business",
-    "body": "UK-based Aviva agreed to buy Dabur Invest Corp's remaining 26% stake, aided by the new 100% FDI limit approved for insurance under the 'Sabka Bima, Sabki Raksha' Bill.",
-    "remember": [
-      "Moves Aviva from 74% to 100% ownership",
-      "Aligns with 'Insurance for All by 2047' vision"
-    ],
-    "statics": [
-      "FDI limit raised from 74% to 100%"
-    ],
-    "source": "IRDAI / Aviva"
-  },
-  {
-    "id": 62,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "DRDO weapons",
-    "date": "Jul 8",
-    "importance": 3,
-    "title": "DRDO flight-tests Pinaka Long-Range Guided Rocket's 60 km minimum range",
-    "body": "Conducted from the Integrated Test Range in Chandipur, Odisha, the trial validated the rocket's minimum strike range after an earlier test confirmed its 120 km maximum range.",
-    "remember": [
-      "Designed by ARDE with HEMRL; DRDL and RCI also involved",
-      "Maiden 120 km-range test was in December 2025"
-    ],
-    "statics": [
-      "Minimum range validated: 60 km",
-      "Maximum range (earlier test): 120 km"
-    ],
-    "source": "DRDO"
-  },
-  {
-    "id": 63,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "ISRO missions",
-    "date": "Jul 7",
-    "importance": 3,
-    "title": "ISRO conducts 5th Integrated Main Parachute Airdrop Test at Sheopur, MP",
-    "body": "The IMAT-05 test, run at the ADRDE drop zone, validated the Gaganyaan crew module's main parachute system ahead of the uncrewed G1 mission.",
-    "remember": [
-      "Coordinated with DRDO, IAF and Indian Army",
-      "Dropped from an Ilyushin Il-76 aircraft"
-    ],
-    "statics": [
-      "Drop altitude: 2.5 km"
-    ],
-    "source": "ISRO"
-  },
-  {
-    "id": 64,
-    "month": 6,
-    "main": "D",
-    "sub": "Defence & Space Highlights",
-    "minor": "ISRO missions",
-    "date": "Jul 7",
-    "importance": 3,
-    "title": "IMAT-05 test supports the Gaganyaan human spaceflight mission",
-    "body": "The test validated structural integrity and load-bearing capacity of the crew module's parachute system, part of a 10-parachute, 4-type recovery design.",
-    "remember": [
-      "Types: Apex Cover Separation, Drogue, Pilot and Main parachutes"
-    ],
-    "statics": [
-      "Total parachutes used: 10"
-    ],
-    "source": "ISRO"
-  },
-  {
-    "id": 65,
-    "month": 6,
-    "main": "E",
-    "sub": "Sports Highlights",
-    "minor": "National sports awards",
-    "date": "Jul 8",
-    "importance": 3,
-    "title": "Aswath S becomes India's 98th Chess Grandmaster",
-    "body": "The 17-year-old from Nagercoil, Tamil Nadu, sealed his final GM norm at the Pune International GM Round Robin, crossing the 2500 Elo barrier.",
-    "remember": [
-      "38th GM from Tamil Nadu",
-      "Runner-up prize: ₹75,000",
-      "Current rating: 2517"
-    ],
-    "statics": [
-      "Age: 17",
-      "Standard rating: 2517"
-    ],
-    "source": "AICF / Chess news"
+    "source": "Sample entry — verify with Ministry of Defence release"
   }
 ]
