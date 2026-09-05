@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GA Pulse — Current Affairs Revision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a2b;
+    --paper:#fbf9f5;
+    --paper-2:#ffffff;
+    --line:#e7e2d8;
+    --muted:#726d80;
+    --gold:#e2a339;
+    --remember:#fff4d6;
+    --remember-line:#eab93f;
+    --statictone:#e7f0ff;
+    --statictone-line:#7fa8ff;
+
+    --A:#2f5fdc; --A-soft:#e8edff;
+    --B:#1f9d55; --B-soft:#e5f7ec;
+    --C:#8b3fd6; --C-soft:#f2e9fb;
+    --D:#d64545; --D-soft:#fdeaea;
+    --E:#e07b1a; --E-soft:#fdf0e0;
+    --F:#0e9488; --F-soft:#e2f6f4;
+    --G:#d6318a; --G-soft:#fbe6f1;
+    --H:#a6791f; --H-soft:#f7f0dd;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2',cursive;
+    font-weight:700;
+    letter-spacing:.2px;
+  }
+  button{font-family:inherit;cursor:pointer;}
+  ::selection{background:var(--gold);color:#fff;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:var(--paper-2);
+    border-bottom:2px solid var(--line);
+    padding:14px 22px;
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Baloo 2',cursive;font-weight:800;font-size:1.25rem;
+    color:var(--ink);white-space:nowrap;
+  }
+  .brand .dot{
+    width:12px;height:12px;border-radius:50%;
+    background:conic-gradient(from 90deg,var(--A),var(--E),var(--G),var(--F),var(--A));
+  }
+  .crumbs{
+    display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+    font-size:.92rem;color:var(--muted);flex:1;
+  }
+  .crumb-chip{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--paper);border:1.5px solid var(--line);
+    padding:5px 11px;border-radius:100px;
+    font-weight:600;color:var(--ink);
+  }
+  .crumb-chip.clickable{cursor:pointer;}
+  .crumb-chip.clickable:hover{border-color:var(--gold);}
+  .crumb-chip .x{color:var(--muted);font-weight:800;margin-left:2px;}
+  .crumb-sep{color:var(--line);font-weight:800;}
+  .back-btn{
+    border:2px solid var(--ink);background:var(--ink);color:#fff;
+    padding:8px 16px;border-radius:100px;font-weight:700;font-size:.9rem;
+    white-space:nowrap;
+  }
+  .back-btn:hover{background:#000;}
+
+  /* ---------- Layout shell ---------- */
+  .shell{max-width:1180px;margin:0 auto;padding:34px 22px 80px;}
+
+  .hero{
+    text-align:left;margin-bottom:30px;
+  }
+  .hero .eyebrow{
+    font-weight:700;color:var(--gold);font-size:.95rem;margin-bottom:6px;
+  }
+  .hero h1{font-size:2.3rem;margin:0 0 8px;line-height:1.15;}
+  .hero p{color:var(--muted);font-size:1.02rem;max-width:640px;margin:0;}
+
+  /* ---------- Month grid ---------- */
+  .month-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px;
+  }
+  @media(max-width:820px){.month-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:560px){.month-grid{grid-template-columns:repeat(2,1fr);}}
+
+  .month-btn{
+    position:relative;
+    border:none;border-radius:18px;
+    padding:22px 16px 18px;
+    text-align:left;
+    background:var(--paper-2);
+    box-shadow:0 1px 0 var(--line) inset;
+    border:2px solid var(--line);
+    transition:transform .15s ease, border-color .15s ease;
+    overflow:hidden;
+  }
+  .month-btn:hover{transform:translateY(-3px);border-color:var(--m-color,var(--gold));}
+  .month-btn .stripe{
+    position:absolute;top:0;left:0;right:0;height:6px;
+    background:var(--m-color);
+  }
+  .month-btn .mnum{
+    font-size:.78rem;color:var(--muted);font-weight:700;
+  }
+  .month-btn .mname{
+    font-family:'Baloo 2',cursive;font-size:1.28rem;font-weight:700;margin-top:2px;
+  }
+  .month-btn .mcount{
+    margin-top:10px;display:inline-block;font-size:.78rem;font-weight:700;
+    background:var(--m-soft);color:var(--m-color);padding:3px 10px;border-radius:100px;
+  }
+  .month-btn.disabled{opacity:.4;pointer-events:none;}
+
+  /* ---------- Section label ---------- */
+  .section-label{
+    font-weight:800;font-size:1.05rem;margin:36px 0 14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .section-label .tag{
+    font-size:.72rem;font-weight:700;color:var(--muted);
+    border:1.5px dashed var(--line);border-radius:100px;padding:3px 10px;
+  }
+
+  /* ---------- Sort bar ---------- */
+  .sort-bar{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;
+  }
+  .sort-bar span{font-size:.85rem;color:var(--muted);font-weight:600;}
+  .pill-btn{
+    border:1.5px solid var(--line);background:var(--paper-2);
+    padding:7px 14px;border-radius:100px;font-weight:600;font-size:.85rem;
+    transition:.15s;
+  }
+  .pill-btn:hover{border-color:var(--ink);}
+  .pill-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+  /* ---------- Topic grid (Main / Sub / Minor) ---------- */
+  .topic-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  }
+  @media(max-width:900px){.topic-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.topic-grid{grid-template-columns:1fr;}}
+
+  .topic-card{
+    border:2px solid var(--line);border-radius:16px;background:var(--paper-2);
+    padding:16px 16px 14px;text-align:left;transition:.15s;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .topic-card:hover{transform:translateY(-2px);border-color:var(--t-color);}
+  .topic-card .icon{
+    width:38px;height:38px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+    background:var(--t-soft);
+  }
+  .topic-card .tname{font-weight:800;font-size:1rem;line-height:1.25;}
+  .topic-card .tmeta{
+    font-size:.75rem;color:var(--t-color);font-weight:700;
+  }
+  .weight-bar{
+    height:6px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:2px;
+  }
+  .weight-bar > i{display:block;height:100%;background:var(--t-color);}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .topic-chip{
+    border:1.5px solid var(--t-color,var(--line));
+    background:var(--t-soft,var(--paper-2));
+    color:var(--t-color,var(--ink));
+    padding:9px 15px;border-radius:100px;font-weight:700;font-size:.86rem;
+  }
+  .topic-chip:hover{filter:brightness(.95);}
+  .topic-chip.all{background:var(--ink);border-color:var(--ink);color:#fff;}
+
+  /* ---------- News list ---------- */
+  .news-list{display:flex;flex-direction:column;gap:22px;margin-top:18px;}
+
+  .news-card{
+    border-radius:20px;border:2px solid var(--n-color);
+    background:var(--paper-2);
+    overflow:hidden;
+    box-shadow:6px 6px 0 var(--n-soft);
+  }
+  .news-head{
+    background:var(--n-soft);
+    padding:16px 22px;
+    display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  }
+  .news-head .path{
+    font-size:.74rem;font-weight:700;color:var(--n-color);text-transform:none;
+    display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  }
+  .news-head .path b{font-weight:800;}
+  .news-title{
+    font-family:'Baloo 2',cursive;font-size:1.32rem;font-weight:700;
+    margin:6px 0 0;line-height:1.28;color:var(--ink);
+  }
+  .news-meta{
+    display:flex;gap:10px;align-items:center;flex-shrink:0;
+  }
+  .badge{
+    font-size:.72rem;font-weight:800;padding:4px 10px;border-radius:100px;
+    background:var(--n-color);color:#fff;white-space:nowrap;
+  }
+  .date-tag{font-size:.78rem;color:var(--muted);font-weight:700;white-space:nowrap;}
+
+  .news-body{padding:18px 22px 22px;}
+  .news-body p{line-height:1.65;font-size:.98rem;margin:0 0 12px;color:#332f42;}
+  .news-body p:last-of-type{margin-bottom:0;}
+
+  .boxes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;}
+  @media(max-width:640px){.boxes{grid-template-columns:1fr;}}
+
+  .info-box{
+    border-radius:14px;padding:14px 16px;font-size:.9rem;line-height:1.55;
+  }
+  .info-box h4{
+    margin:0 0 8px;font-family:'Baloo 2',cursive;font-size:.98rem;
+    display:flex;align-items:center;gap:7px;
+  }
+  .info-box ul{margin:0;padding-left:20px;}
+  .info-box li{margin-bottom:5px;}
+  .info-box li:last-child{margin-bottom:0;}
+
+  .remember{background:var(--remember);border:1.5px solid var(--remember-line);}
+  .remember h4{color:#8a6314;}
+  .staticpts{background:var(--statictone);border:1.5px solid var(--statictone-line);}
+  .staticpts h4{color:#294c9c;}
+
+  .source-row{
+    margin-top:14px;font-size:.76rem;color:var(--muted);font-weight:600;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+  }
+
+  .empty-state{
+    border:2px dashed var(--line);border-radius:18px;padding:40px 24px;
+    text-align:center;color:var(--muted);
+  }
+  .empty-state .big{font-size:2rem;margin-bottom:8px;}
+
+  .note{
+    font-size:.8rem;color:var(--muted);background:var(--paper-2);
+    border:1.5px dashed var(--line);border-radius:12px;padding:10px 14px;
+    margin-top:34px;
+  }
+
+  .view{animation:fadein .25s ease;}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="dot"></span> GA Pulse</div>
+  <div class="crumbs" id="crumbs"></div>
+  <button class="back-btn" id="backBtn">← Back</button>
+</div>
+
+<div class="shell view" id="app"></div>
+
+<script>
+/* ======================= DATA ======================= */
+
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+const MONTH_COLORS = ["#2f5fdc","#1f9d55","#8b3fd6","#d64545","#e07b1a","#0e9488","#d6318a","#a6791f","#2f5fdc","#1f9d55","#8b3fd6","#d64545"];
+
+const TOPICS = [
+  {code:"A", name:"Banking & Financial Awareness", weight:28, emoji:"🏦",
+    subs:[
+      {name:"RBI & Monetary Policy", weight:32, emoji:"💰", minors:["Repo Rate / Reverse Repo","Monetary Policy Committee","Inflation Target","RBI Reports","RBI Guidelines"]},
+      {name:"Banking Structure", weight:18, emoji:"🏛️", minors:["PSB Number / Classification","Regional Rural Banks","Small Finance Banks","Payment Banks","Local Area Banks"]},
+      {name:"Banking Schemes", weight:25, emoji:"📋", minors:["PMJDY","PMMY","PM Surya Ghar","AIF","Stand Up India","Financial Inclusion Schemes"]},
+      {name:"Digital Banking & Payments", weight:25, emoji:"💳", minors:["UPI","AEPS","Mobile Seva","Digital Rupee","UPI Lite","BBPS"]}
+    ]},
+  {code:"B", name:"National Current Affairs", weight:24, emoji:"🇮🇳",
+    subs:[
+      {name:"Government Schemes", weight:40, emoji:"📜", minors:["PM Surya Ghar Yojana","SMILE Scheme","Startup Ranking","Digital India Initiatives","Agriculture Schemes","Infrastructure Programs"]},
+      {name:"Government Reports / Index", weight:25, emoji:"📊", minors:["UNFPA Report","NHAI Green Cover Index","Economic Survey","Global Innovation Index","Human Development Index"]},
+      {name:"Committees & Appointments", weight:20, emoji:"👥", minors:["Finance Commission","Expert Committees","Regulatory Appointments","Government Panels"]},
+      {name:"Infrastructure Projects", weight:15, emoji:"🌉", minors:["Sea Bridges","Highways","Metro Projects","Ports & Corridors"]}
+    ]},
+  {code:"C", name:"International Affairs", weight:8, emoji:"🌍",
+    subs:[
+      {name:"Global Organizations", weight:50, emoji:"🏢", minors:["IMF reports","World Bank programs","WHO initiatives","IMO headquarters","UNESCO programs"]},
+      {name:"International Agreements", weight:50, emoji:"🤝", minors:["India–Mauritius MoU","Lithium exploration agreement","Defence agreements","Space collaboration"]}
+    ]},
+  {code:"D", name:"Defence & Space", weight:7, emoji:"🚀",
+    subs:[
+      {name:"Defence & Space Highlights", weight:100, emoji:"🛡️", minors:["Defence exercises","DRDO weapons","Naval operations","ISRO missions","Pinaka MBRL","Aditya-L1 mission","Chandrayaan-1","Naval rescue operations"]}
+    ]},
+  {code:"E", name:"Sports", weight:6, emoji:"🏅",
+    subs:[
+      {name:"Sports Highlights", weight:100, emoji:"⚽", minors:["International tournaments","National sports awards","Cricket tournaments","Olympic sports","ICC T20 World Cup winners","Khel Ratna awards","Irani Cup","Hockey India awards"]}
+    ]},
+  {code:"F", name:"Environment & Geography", weight:7, emoji:"🌿",
+    subs:[
+      {name:"Environment Highlights", weight:100, emoji:"🐯", minors:["Ramsar sites","Tiger reserves","National parks","Wildlife sanctuaries","Udaipur Jheel Ramsar site","Pench Tiger Reserve","Dark Sky Reserve"]}
+    ]},
+  {code:"G", name:"Culture & Awards", weight:5, emoji:"🎭",
+    subs:[
+      {name:"Culture & Awards Highlights", weight:100, emoji:"🏆", minors:["National awards","Literature awards","Cultural festivals","Dadasaheb Phalke award","International Booker Prize","Ustad Bismillah Khan award"]}
+    ]},
+  {code:"H", name:"Static GK", weight:15, emoji:"📚",
+    subs:[
+      {name:"Static GK Highlights", weight:100, emoji:"🗺️", minors:["Capitals","Important days","Geography","Institutions","National Youth Day","Gangtok capital","Mount Kamet location","Legislative assembly UTs"]}
+    ]}
+];
+
+const COLOR = {}, SOFT = {};
+TOPICS.forEach(t=>{ COLOR[t.code]=`var(--${t.code})`; SOFT[t.code]=`var(--${t.code}-soft)`; });
+
+/* ---- News content now lives in /data/news.json — this is the file you bulk-edit.
+   NEWS starts empty and is populated by loadData() below before the first render. ---- */
+let NEWS = [];
+let dataLoaded = false;
+let dataError = null;
+
+/* ======================= STATE ======================= */
+const state = { month:null, main:null, sub:null, minor:null, sort:"date" };
+
+function newsForFilter({month=state.month, main=state.main, sub=state.sub, minor=state.minor}={}){
+  return NEWS.filter(n=>
+    (month===null || n.month===month) &&
+    (main===null || n.main===main) &&
+    (sub===null || n.sub===sub) &&
+    (minor===null || n.minor===minor)
+  );
+}
+function sortNews(list){
+  const arr=[...list];
+  if(state.sort==="date") arr.sort((a,b)=>a.month-b.month || a.date.localeCompare(b.date));
+  if(state.sort==="date-desc") arr.sort((a,b)=>b.month-a.month || b.date.localeCompare(a.date));
+  if(state.sort==="importance") arr.sort((a,b)=>b.importance-a.importance);
+  return arr;
+}
+
+/* ======================= RENDER HELPERS ======================= */
+const app = document.getElementById("app");
+const crumbsEl = document.getElementById("crumbs");
+const backBtn = document.getElementById("backBtn");
+
+function go(level){
+  if(level==="home"){ state.month=null; state.main=null; state.sub=null; state.minor=null; }
+  if(level==="main"){ state.main=null; state.sub=null; state.minor=null; }
+  if(level==="sub"){ state.sub=null; state.minor=null; }
+  if(level==="minor"){ state.minor=null; }
+  render();
+}
+
+backBtn.addEventListener("click", ()=>{
+  if(state.minor!==null) return go("sub");
+  if(state.sub!==null) return go("main");
+  if(state.main!==null) return go("home");
+  // already home — no-op
+});
+
+function renderCrumbs(){
+  const parts = [];
+  parts.push(`<span class="crumb-chip clickable" data-go="home">🏠 Home</span>`);
+  if(state.month!==null){
+    parts.push(`<span class="crumb-sep">›</span>`);
+    parts.push(`<span class="crumb-chip clickable" data-go="main">${MONTHS[state.month]}</span>`);
+  }
+  if(state.main!==null){
+    const t = TOPICS.find(t=>t.code===state.main);
+    parts.push(`<span class="crumb-sep">›</span>`);
+    parts.push(`<span class="crumb-chip clickable" data-go="sub">${t.emoji} ${t.name}</span>`);
+  }
+  if(state.sub!==null){
+    parts.push(`<span class="crumb-sep">›</span>`);
+    parts.push(`<span class="crumb-chip clickable" data-go="minor">${state.sub}</span>`);
+  }
+  if(state.minor!==null){
+    parts.push(`<span class="crumb-sep">›</span>`);
+    parts.push(`<span class="crumb-chip">${state.minor}</span>`);
+  }
+  crumbsEl.innerHTML = parts.join("");
+  crumbsEl.querySelectorAll("[data-go]").forEach(el=>{
+    el.addEventListener("click", ()=>go(el.dataset.go));
+  });
+  backBtn.style.visibility = state.month===null ? "hidden" : "visible";
+}
+
+/* ======================= VIEWS ======================= */
+
+function viewHome(){
+  const html = `
+    <div class="hero">
+      <div class="eyebrow">📅 Pick a month to begin</div>
+      <h1>Revise Current Affairs, one month at a time</h1>
+      <p>Tap a month to open its news wall — then filter down by Main, Sub and Minor topic to drill into exactly what you need to revise.</p>
+    </div>
+    <div class="month-grid">
+      ${MONTHS.map((m,i)=>{
+        const count = newsForFilter({month:i, main:null, sub:null, minor:null}).length;
+        return `
+        <button class="month-btn" style="--m-color:${MONTH_COLORS[i]};--m-soft:${MONTH_COLORS[i]}22" data-month="${i}">
+          <div class="stripe"></div>
+          <div class="mnum">Month ${String(i+1).padStart(2,"0")} · 2026</div>
+          <div class="mname">${m}</div>
+          <span class="mcount">${count} ${count===1?"story":"stories"}</span>
+        </button>`;
+      }).join("")}
+    </div>
+    <p class="note">📝 Sample dataset for layout demo — swap in verified news items per month as you revise through the year.</p>
+  `;
+  app.innerHTML = html;
+  app.querySelectorAll(".month-btn").forEach(b=>{
+    b.addEventListener("click", ()=>{ state.month = Number(b.dataset.month); render(); });
+  });
+}
+
+function viewMain(){
+  const monthNews = newsForFilter({main:null,sub:null,minor:null});
+  const html = `
+    <div class="hero">
+      <div class="eyebrow">🗂️ ${MONTHS[state.month]} 2026</div>
+      <h1>Choose a Main Topic</h1>
+      <p>Each card shows that topic's approximate weightage in the exam, based on the master GA structure.</p>
+    </div>
+
+    <div class="sort-bar">
+      <span>Sort:</span>
+      <button class="pill-btn ${state.sort==='date'?'active':''}" data-sort="date">Oldest first</button>
+      <button class="pill-btn ${state.sort==='date-desc'?'active':''}" data-sort="date-desc">Newest first</button>
+      <button class="pill-btn ${state.sort==='importance'?'active':''}" data-sort="importance">By importance</button>
+      <button class="pill-btn" id="allNewsBtn" style="margin-left:auto;">📰 Show all ${MONTHS[state.month]} news →</button>
+    </div>
+
+    <div class="section-label">Main Topics <span class="tag">${TOPICS.length} categories</span></div>
+    <div class="topic-grid">
+      ${TOPICS.map(t=>{
+        const count = newsForFilter({main:t.code,sub:null,minor:null}).length;
+        return `
+        <button class="topic-card" style="--t-color:var(--${t.code});--t-soft:var(--${t.code}-soft)" data-main="${t.code}">
+          <div class="icon">${t.emoji}</div>
+          <div class="tname">${t.name}</div>
+          <div class="tmeta">${t.weight}% weightage · ${count} ${count===1?"story":"stories"} this month</div>
+          <div class="weight-bar"><i style="width:${t.weight*3}%"></i></div>
+        </button>`;
+      }).join("")}
+    </div>
+  `;
+  app.innerHTML = html;
+
+  app.querySelectorAll("[data-sort]").forEach(b=>{
+    b.addEventListener("click", ()=>{ state.sort=b.dataset.sort; render(); });
+  });
+  app.querySelector("#allNewsBtn").addEventListener("click", ()=>{
+    state.main=null; state.sub=null; state.minor="__ALL__"; render();
+  });
+  app.querySelectorAll("[data-main]").forEach(b=>{
+    b.addEventListener("click", ()=>{ state.main=b.dataset.main; render(); });
+  });
+}
+
+function viewSub(){
+  const t = TOPICS.find(t=>t.code===state.main);
+  const html = `
+    <div class="hero">
+      <div class="eyebrow">${t.emoji} ${t.name} · ${t.weight}% weightage</div>
+      <h1>Choose a Subtopic</h1>
+      <p>Subtopic weightage shown is relative to ${t.name}.</p>
+    </div>
+
+    <div class="sort-bar">
+      <span>Sort:</span>
+      <button class="pill-btn ${state.sort==='date'?'active':''}" data-sort="date">Oldest first</button>
+      <button class="pill-btn ${state.sort==='date-desc'?'active':''}" data-sort="date-desc">Newest first</button>
+      <button class="pill-btn ${state.sort==='importance'?'active':''}" data-sort="importance">By importance</button>
+      <button class="pill-btn" id="allSubBtn" style="margin-left:auto;">📰 Show all ${t.name} news →</button>
+    </div>
+
+    <div class="section-label">Subtopics <span class="tag">${t.subs.length} in this topic</span></div>
+    <div class="topic-grid">
+      ${t.subs.map(s=>{
+        const count = newsForFilter({sub:s.name,minor:null}).length;
+        return `
+        <button class="topic-card" style="--t-color:var(--${t.code});--t-soft:var(--${t.code}-soft)" data-sub="${encodeURIComponent(s.name)}">
+          <div class="icon">${s.emoji}</div>
+          <div class="tname">${s.name}</div>
+          <div class="tmeta">${s.weight}% of topic · ${count} ${count===1?"story":"stories"}</div>
+          <div class="weight-bar"><i style="width:${s.weight}%"></i></div>
+        </button>`;
+      }).join("")}
+    </div>
+  `;
+  app.innerHTML = html;
+
+  app.querySelectorAll("[data-sort]").forEach(b=>{
+    b.addEventListener("click", ()=>{ state.sort=b.dataset.sort; render(); });
+  });
+  app.querySelector("#allSubBtn").addEventListener("click", ()=>{
+    state.sub=null; state.minor="__ALL__"; render();
+  });
+  app.querySelectorAll("[data-sub]").forEach(b=>{
+    b.addEventListener("click", ()=>{ state.sub=decodeURIComponent(b.dataset.sub); render(); });
+  });
+}
+
+function viewMinor(){
+  const t = TOPICS.find(t=>t.code===state.main);
+  const s = t.subs.find(s=>s.name===state.sub);
+  const html = `
+    <div class="hero">
+      <div class="eyebrow">${t.emoji} ${t.name} › ${s.emoji} ${s.name}</div>
+      <h1>Filter by Minor Topic</h1>
+      <p>Pick a specific minor topic, or view every story under this subtopic.</p>
+    </div>
+
+    <div class="sort-bar">
+      <span>Sort:</span>
+      <button class="pill-btn ${state.sort==='date'?'active':''}" data-sort="date">Oldest first</button>
+      <button class="pill-btn ${state.sort==='date-desc'?'active':''}" data-sort="date-desc">Newest first</button>
+      <button class="pill-btn ${state.sort==='importance'?'active':''}" data-sort="importance">By importance</button>
+    </div>
+
+    <div class="section-label">Minor Topics <span class="tag">${s.minors.length} tags</span></div>
+    <div class="chip-row">
+      <button class="topic-chip all" data-minor="__ALL__">🔎 Show all</button>
+      ${s.minors.map(m=>{
+        const count = newsForFilter({minor:m}).length;
+        return `<button class="topic-chip" style="--t-color:var(--${t.code});--t-soft:var(--${t.code}-soft)" data-minor="${encodeURIComponent(m)}">${m}${count?` (${count})`:""}</button>`;
+      }).join("")}
+    </div>
+
+    <div id="newsMount"></div>
+  `;
+  app.innerHTML = html;
+
+  app.querySelectorAll("[data-sort]").forEach(b=>{
+    b.addEventListener("click", ()=>{ state.sort=b.dataset.sort; renderNewsInto(); refreshSortButtons(); });
+  });
+  app.querySelectorAll("[data-minor]").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      state.minor = b.dataset.minor==="__ALL__" ? "__ALL__" : decodeURIComponent(b.dataset.minor);
+      render();
+    });
+  });
+
+  // if a minor is already chosen (or ALL), show the news straight away
+  if(state.minor!==null){ renderNewsInto(); }
+}
+
+function refreshSortButtons(){
+  app.querySelectorAll("[data-sort]").forEach(b=>{
+    b.classList.toggle("active", b.dataset.sort===state.sort);
+  });
+}
+
+function newsCardHTML(n){
+  const t = TOPICS.find(t=>t.code===n.main);
+  return `
+  <article class="news-card" style="--n-color:var(--${n.main});--n-soft:var(--${n.main}-soft)">
+    <div class="news-head">
+      <div>
+        <div class="path">${t.emoji} <b>${t.name}</b> &nbsp;›&nbsp; ${n.sub} &nbsp;›&nbsp; ${n.minor}</div>
+        <h3 class="news-title">${n.title}</h3>
+      </div>
+      <div class="news-meta">
+        <span class="date-tag">🗓️ ${n.date}</span>
+        <span class="badge">${"⭐".repeat(n.importance)} Priority</span>
+      </div>
+    </div>
+    <div class="news-body">
+      <p>${n.body}</p>
+      <div class="boxes">
+        <div class="info-box remember">
+          <h4>🔑 Remember This</h4>
+          <ul>${n.remember.map(r=>`<li>${r}</li>`).join("")}</ul>
+        </div>
+        <div class="info-box staticpts">
+          <h4>📌 Static Points</h4>
+          <ul>${n.statics.map(r=>`<li>${r}</li>`).join("")}</ul>
+        </div>
+      </div>
+      <div class="source-row"><span>${n.source}</span><span>#${n.minor.replace(/\s+/g,'')}</span></div>
+    </div>
+  </article>`;
+}
+
+function renderNewsInto(){
+  const mount = document.getElementById("newsMount");
+  if(!mount) return;
+  const minorFilter = state.minor==="__ALL__" ? null : state.minor;
+  let list = newsForFilter({minor:minorFilter});
+  list = sortNews(list);
+
+  mount.innerHTML = `
+    <div class="section-label">📰 News <span class="tag">${list.length} ${list.length===1?"result":"results"}</span></div>
+    <div class="news-list">
+      ${list.length ? list.map(newsCardHTML).join("") : `
+        <div class="empty-state">
+          <div class="big">🗂️</div>
+          <strong>No sample stories filed here yet.</strong><br>
+          Try a different month or topic, or use "Show all" to widen the search.
+        </div>`}
+    </div>
+  `;
+}
+
+/* When "Show all news" is used from main/sub level directly (minor screen skipped visually) */
+function viewAllShortcut(){
+  // used when minor === "__ALL__" but sub is null (jumped straight from main/home screen)
+  const html = `
+    <div class="hero">
+      <div class="eyebrow">📰 ${MONTHS[state.month]} 2026${state.main? " · "+TOPICS.find(t=>t.code===state.main).name:""}</div>
+      <h1>All matching stories</h1>
+      <p>Every story that matches your current filter, sorted below.</p>
+    </div>
+    <div class="sort-bar">
+      <span>Sort:</span>
+      <button class="pill-btn ${state.sort==='date'?'active':''}" data-sort="date">Oldest first</button>
+      <button class="pill-btn ${state.sort==='date-desc'?'active':''}" data-sort="date-desc">Newest first</button>
+      <button class="pill-btn ${state.sort==='importance'?'active':''}" data-sort="importance">By importance</button>
+    </div>
+    <div id="newsMount"></div>
+  `;
+  app.innerHTML = html;
+  app.querySelectorAll("[data-sort]").forEach(b=>{
+    b.addEventListener("click", ()=>{ state.sort=b.dataset.sort; renderNewsInto(); refreshSortButtons(); });
+  });
+  renderNewsInto();
+}
+
+/* ======================= ROUTER ======================= */
+function render(){
+  renderCrumbs();
+  if(state.month===null){ viewHome(); return; }
+  if(state.main===null){
+    if(state.minor==="__ALL__"){ viewAllShortcut(); return; }
+    viewMain(); return;
+  }
+  if(state.sub===null){
+    if(state.minor==="__ALL__"){ viewAllShortcut(); return; }
+    viewSub(); return;
+  }
+  viewMinor();
+}
+
+/* ======================= LOAD DATA & BOOT ======================= */
+async function loadData(){
+  app.innerHTML = `
+    <div class="hero">
+      <div class="eyebrow">⏳ Loading</div>
+      <h1>Fetching the latest revision content…</h1>
+    </div>`;
+  try{
+    const res = await fetch("data/news.json", {cache:"no-store"});
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    NEWS = await res.json();
+    dataLoaded = true;
+    render();
+  }catch(err){
+    dataError = err;
+    console.error("Could not load data/news.json:", err);
+    app.innerHTML = `<div class="empty-state"><div class="big">⚠️</div>
+      <strong>Could not load news data.</strong><br>
+      Make sure <code>data/news.json</code> sits next to this HTML file (same relative folder structure) and that you're viewing this over http(s):// — opening the HTML file directly by double-click blocks fetch() in most browsers due to CORS on the file:// protocol. Hosting on GitHub Pages (or running a local dev server) fixes this automatically.
+    </div>`;
+  }
+}
+
+loadData();
+</script>
+</body>
+</html>
