@@ -1,0 +1,261 @@
+[
+  {
+    "id": 1,
+    "month": 0,
+    "main": "A",
+    "sub": "RBI & Monetary Policy",
+    "minor": "Repo Rate / Reverse Repo",
+    "date": "Jan 08",
+    "importance": 3,
+    "title": "RBI's Monetary Policy Committee reviews the repo rate 🎯",
+    "body": "The Monetary Policy Committee (MPC) met for its scheduled bi-monthly review to assess the repo rate against inflation and growth targets. The repo rate is the rate at which RBI lends short-term funds to commercial banks, and it is the primary tool used to manage liquidity and inflation in the economy.",
+    "remember": [
+      "MPC has 6 members — 3 from RBI + 3 external experts",
+      "RBI Governor chairs the MPC",
+      "Inflation target band: 4% (+/- 2%)"
+    ],
+    "statics": [
+      "Repo Rate ≠ Reverse Repo Rate — reverse repo is the rate RBI pays banks",
+      "RBI was established in 1935; HQ in Mumbai"
+    ],
+    "source": "Sample entry — verify with RBI press release"
+  },
+  {
+    "id": 2,
+    "month": 0,
+    "main": "H",
+    "sub": "Static GK Highlights",
+    "minor": "National Youth Day",
+    "date": "Jan 12",
+    "importance": 2,
+    "title": "National Youth Day observed across India 🎉",
+    "body": "National Youth Day is observed every year to mark the birth anniversary of Swami Vivekananda, celebrating his contribution to youth empowerment, education and spiritual thought.",
+    "remember": [
+      "National Youth Day: 12 January",
+      "Marks birth anniversary of Swami Vivekananda (born 1863)"
+    ],
+    "statics": [
+      "Swami Vivekananda's real name: Narendranath Datta",
+      "Famous for his 1893 Chicago speech at the World's Parliament of Religions"
+    ],
+    "source": "Sample entry — verify with official calendar"
+  },
+  {
+    "id": 3,
+    "month": 1,
+    "main": "B",
+    "sub": "Government Schemes",
+    "minor": "PM Surya Ghar Yojana",
+    "date": "Feb 03",
+    "importance": 3,
+    "title": "PM Surya Ghar: Muft Bijli Yojana expands rooftop solar coverage ☀️",
+    "body": "The scheme aims to enable households to install rooftop solar panels and receive subsidised electricity, reducing dependence on grid power and lowering household energy bills, as part of India's renewable-energy push.",
+    "remember": [
+      "Aims to provide free/subsidised electricity via rooftop solar",
+      "Targets crores of households under phased rollout"
+    ],
+    "statics": [
+      "Ministry: Ministry of New and Renewable Energy (MNRE)",
+      "Part of India's larger renewable energy capacity goals"
+    ],
+    "source": "Sample entry — verify with PIB release",
+    "highlights": [
+      "Aims to provide free/subsidised electricity via rooftop solar",
+      "Targets crores of households under phased rollout",
+      "Subsidy credited directly to beneficiary bank accounts"
+    ],
+    "examFocus": [
+      "Launch → Under PM Surya Ghar Muft Bijli Yojana",
+      "Ministry → MNRE",
+      "Focus → Rooftop solar for households"
+    ],
+    "footerTitle": "Ministry of New and Renewable Energy",
+    "hashtags": [
+      "PMSuryaGhar",
+      "RooftopSolar",
+      "RenewableEnergy"
+    ]
+  },
+  {
+    "id": 4,
+    "month": 2,
+    "main": "D",
+    "sub": "Defence & Space Highlights",
+    "minor": "ISRO missions",
+    "date": "Mar 15",
+    "importance": 3,
+    "title": "ISRO continues progress on upcoming satellite missions 🛰️",
+    "body": "The Indian Space Research Organisation (ISRO) reviewed progress on its upcoming missions, continuing its track record in satellite launches, interplanetary missions and indigenous launch vehicle development.",
+    "remember": [
+      "ISRO HQ: Bengaluru",
+      "Aditya-L1: India's first solar observation mission",
+      "Chandrayaan-3 achieved a soft landing near the Moon's south pole in 2023"
+    ],
+    "statics": [
+      "ISRO founded in 1969 by Dr. Vikram Sarabhai",
+      "Satish Dhawan Space Centre is in Sriharikota, Andhra Pradesh"
+    ],
+    "source": "Sample entry — verify with ISRO press release"
+  },
+  {
+    "id": 5,
+    "month": 2,
+    "main": "E",
+    "sub": "Sports Highlights",
+    "minor": "Khel Ratna awards",
+    "date": "Mar 22",
+    "importance": 2,
+    "title": "National Sports Awards recognise top athletes 🏆",
+    "body": "The Major Dhyan Chand Khel Ratna Award, India's highest sporting honour, along with the Arjuna Awards, were conferred on athletes for their outstanding contribution to their respective sports.",
+    "remember": [
+      "Khel Ratna is India's highest sporting honour",
+      "Named after hockey legend Major Dhyan Chand since 2021"
+    ],
+    "statics": [
+      "Arjuna Award recognises consistent excellence over 4 years",
+      "Dronacharya Award is given to coaches"
+    ],
+    "source": "Sample entry — verify with Ministry of Youth Affairs & Sports"
+  },
+  {
+    "id": 6,
+    "month": 3,
+    "main": "F",
+    "sub": "Environment Highlights",
+    "minor": "Ramsar sites",
+    "date": "Apr 10",
+    "importance": 2,
+    "title": "India adds new wetlands to the Ramsar list 🐦",
+    "body": "New wetland sites were recognised under the Ramsar Convention, an international treaty for the conservation of wetlands of international importance, boosting India's tally of protected wetland ecosystems.",
+    "remember": [
+      "Ramsar Convention signed in Ramsar, Iran in 1971",
+      "India has one of the largest networks of Ramsar sites in Asia"
+    ],
+    "statics": [
+      "World Wetlands Day: 2 February",
+      "Wetlands regulate water cycles and support biodiversity"
+    ],
+    "source": "Sample entry — verify with MoEFCC release"
+  },
+  {
+    "id": 7,
+    "month": 4,
+    "main": "C",
+    "sub": "Global Organizations",
+    "minor": "World Bank programs",
+    "date": "May 18",
+    "importance": 2,
+    "title": "World Bank report highlights India's growth outlook 📈",
+    "body": "A World Bank report assessed India's macroeconomic trajectory, noting resilience in domestic demand and structural reform progress while flagging global headwinds for emerging economies.",
+    "remember": [
+      "World Bank HQ: Washington D.C.",
+      "Comprises IBRD + IDA + IFC + MIGA + ICSID"
+    ],
+    "statics": [
+      "World Bank President is elected for a 5-year term",
+      "India is a founding member of the World Bank"
+    ],
+    "source": "Sample entry — verify with World Bank publication"
+  },
+  {
+    "id": 8,
+    "month": 5,
+    "main": "G",
+    "sub": "Culture & Awards Highlights",
+    "minor": "International Booker Prize",
+    "date": "Jun 05",
+    "importance": 2,
+    "title": "International Booker Prize shortlist announced 📚",
+    "body": "The International Booker Prize, awarded for a single book translated into English and published in the UK or Ireland, announced its shortlist, drawing global attention to translated fiction.",
+    "remember": [
+      "Prize money is split equally between author and translator",
+      "Awarded annually, distinct from the (English-original) Booker Prize"
+    ],
+    "statics": [
+      "Geetanjali Shree's 'Tomb of Sand' was the first Hindi novel to win it (2022)",
+      "Administered by the Booker Prize Foundation, UK"
+    ],
+    "source": "Sample entry — verify with official Booker Prize site"
+  },
+  {
+    "id": 9,
+    "month": 6,
+    "main": "A",
+    "sub": "Digital Banking & Payments",
+    "minor": "UPI",
+    "date": "Jul 09",
+    "importance": 3,
+    "title": "UPI transaction volumes hit fresh milestones 💳",
+    "body": "The Unified Payments Interface (UPI) continued to record strong month-on-month transaction growth, reinforcing India's position as a global leader in real-time digital payments.",
+    "remember": [
+      "UPI developed by NPCI, launched in 2016",
+      "Enables instant bank-to-bank transfer via a Virtual Payment Address"
+    ],
+    "statics": [
+      "NPCI = National Payments Corporation of India",
+      "UPI Lite enables small-value offline-friendly transactions"
+    ],
+    "source": "Sample entry — verify with NPCI data release"
+  },
+  {
+    "id": 10,
+    "month": 7,
+    "main": "B",
+    "sub": "Government Reports / Index",
+    "minor": "Global Innovation Index",
+    "date": "Aug 20",
+    "importance": 2,
+    "title": "India's rank in the Global Innovation Index reviewed 💡",
+    "body": "The Global Innovation Index, published annually, ranks countries on innovation input and output indicators such as R&D investment, institutions, infrastructure and creative outputs.",
+    "remember": [
+      "Published by WIPO (World Intellectual Property Organization)",
+      "India has shown a steady improving trend over the past decade"
+    ],
+    "statics": [
+      "WIPO is a UN specialised agency, HQ in Geneva",
+      "GII covers around 130+ economies"
+    ],
+    "source": "Sample entry — verify with WIPO release"
+  },
+  {
+    "id": 11,
+    "month": 8,
+    "main": "H",
+    "sub": "Static GK Highlights",
+    "minor": "Capitals",
+    "date": "Sep 02",
+    "importance": 1,
+    "title": "Quick revision: State & UT capitals 🗺️",
+    "body": "A quick-refresher style entry to revise commonly asked capital-city facts for state and Union Territory general knowledge questions.",
+    "remember": [
+      "Sikkim's capital: Gangtok",
+      "Ladakh's capital: Leh",
+      "Chandigarh serves as the joint capital of Punjab and Haryana"
+    ],
+    "statics": [
+      "Mount Kamet is located in Uttarakhand (Garhwal Himalayas)",
+      "Puducherry is a UT with its own legislative assembly, unlike Chandigarh"
+    ],
+    "source": "Sample entry — cross-check with current atlas/GK manual"
+  },
+  {
+    "id": 12,
+    "month": 8,
+    "main": "D",
+    "sub": "Defence & Space Highlights",
+    "minor": "Naval operations",
+    "date": "Sep 03",
+    "importance": 2,
+    "title": "Indian Navy conducts coordinated maritime exercise ⚓",
+    "body": "The Indian Navy carried out a coordinated exercise involving surface, sub-surface and air assets, aimed at strengthening operational readiness and interoperability.",
+    "remember": [
+      "Indian Navy's motto: 'Sam No Varunah' (May the Lord of Water be auspicious to us)",
+      "Naval Command HQs: Mumbai (Western), Visakhapatnam (Eastern), Kochi (Southern)"
+    ],
+    "statics": [
+      "INS Vikrant is India's first indigenous aircraft carrier",
+      "Navy Day is celebrated on 4 December"
+    ],
+    "source": "Sample entry — verify with Ministry of Defence release"
+  }
+]

@@ -6,7 +6,7 @@
 <title>GA Pulse — Current Affairs Revision</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1c1a2b;
@@ -57,7 +57,7 @@
     background:var(--paper-2);
     border-bottom:2px solid var(--line);
     padding:14px 22px;
-    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
   }
   .brand{
     display:flex;align-items:center;gap:10px;
@@ -68,26 +68,16 @@
     width:12px;height:12px;border-radius:50%;
     background:conic-gradient(from 90deg,var(--A),var(--E),var(--G),var(--F),var(--A));
   }
-  .crumbs{
-    display:flex;align-items:center;gap:6px;flex-wrap:wrap;
-    font-size:.92rem;color:var(--muted);flex:1;
-  }
-  .crumb-chip{
-    display:inline-flex;align-items:center;gap:6px;
-    background:var(--paper);border:1.5px solid var(--line);
-    padding:5px 11px;border-radius:100px;
-    font-weight:600;color:var(--ink);
-  }
-  .crumb-chip.clickable{cursor:pointer;}
-  .crumb-chip.clickable:hover{border-color:var(--gold);}
-  .crumb-chip .x{color:var(--muted);font-weight:800;margin-left:2px;}
-  .crumb-sep{color:var(--line);font-weight:800;}
-  .back-btn{
-    border:2px solid var(--ink);background:var(--ink);color:#fff;
+  .topbar-spacer{flex:1;}
+  .nav-btn{
+    border:2px solid var(--ink);background:#fff;color:var(--ink);
     padding:8px 16px;border-radius:100px;font-weight:700;font-size:.9rem;
-    white-space:nowrap;
+    white-space:nowrap;transition:.15s;
   }
-  .back-btn:hover{background:#000;}
+  .nav-btn:hover{border-color:var(--gold);color:var(--gold-deep,#b9822a);}
+  .nav-btn.back-btn{background:var(--ink);color:#fff;}
+  .nav-btn.back-btn:hover{background:#000;border-color:#000;color:#fff;}
+  .nav-btn[disabled]{opacity:.35;pointer-events:none;}
 
   /* ---------- Layout shell ---------- */
   .shell{max-width:1180px;margin:0 auto;padding:34px 22px 80px;}
@@ -196,65 +186,152 @@
   .topic-chip:hover{filter:brightness(.95);}
   .topic-chip.all{background:var(--ink);border-color:var(--ink);color:#fff;}
 
-  /* ---------- News list ---------- */
-  .news-list{display:flex;flex-direction:column;gap:22px;margin-top:18px;}
+  /* ---------- Story card (themed per topic) ---------- */
+  .news-list{display:flex;flex-direction:column;gap:28px;margin-top:18px;}
 
-  .news-card{
-    border-radius:20px;border:2px solid var(--n-color);
-    background:var(--paper-2);
-    overflow:hidden;
-    box-shadow:6px 6px 0 var(--n-soft);
+  .story-card{
+    border-radius:22px;overflow:hidden;background:#fff;
+    box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 22px 44px -20px rgba(18,54,38,.32), 0 6px 14px -6px rgba(0,0,0,.10);
   }
-  .news-head{
-    background:var(--n-soft);
-    padding:16px 22px;
-    display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;
-  }
-  .news-head .path{
-    font-size:.74rem;font-weight:700;color:var(--n-color);text-transform:none;
-    display:flex;align-items:center;gap:6px;flex-wrap:wrap;
-  }
-  .news-head .path b{font-weight:800;}
-  .news-title{
-    font-family:'Baloo 2',cursive;font-size:1.32rem;font-weight:700;
-    margin:6px 0 0;line-height:1.28;color:var(--ink);
-  }
-  .news-meta{
-    display:flex;gap:10px;align-items:center;flex-shrink:0;
-  }
-  .badge{
-    font-size:.72rem;font-weight:800;padding:4px 10px;border-radius:100px;
-    background:var(--n-color);color:#fff;white-space:nowrap;
-  }
-  .date-tag{font-size:.78rem;color:var(--muted);font-weight:700;white-space:nowrap;}
 
-  .news-body{padding:18px 22px 22px;}
-  .news-body p{line-height:1.65;font-size:.98rem;margin:0 0 12px;color:#332f42;}
-  .news-body p:last-of-type{margin-bottom:0;}
-
-  .boxes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;}
-  @media(max-width:640px){.boxes{grid-template-columns:1fr;}}
-
-  .info-box{
-    border-radius:14px;padding:14px 16px;font-size:.9rem;line-height:1.55;
+  .story-top{
+    position:relative;color:#f4ede0;padding:26px 26px 22px;
+    background:
+      radial-gradient(circle at 18px 18px, rgba(255,255,255,.10) 1.5px, transparent 1.6px) 0 0/26px 26px,
+      linear-gradient(135deg,
+        color-mix(in srgb, var(--n-color) 85%, #06110c 15%) 0%,
+        color-mix(in srgb, var(--n-color) 55%, #0b1220 45%) 55%,
+        color-mix(in srgb, var(--n-color) 35%, #000 12%) 100%);
   }
-  .info-box h4{
-    margin:0 0 8px;font-family:'Baloo 2',cursive;font-size:.98rem;
-    display:flex;align-items:center;gap:7px;
+  .story-top::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:5px;
+    background:linear-gradient(90deg,var(--gold),var(--n-color) 55%,var(--gold));
   }
-  .info-box ul{margin:0;padding-left:20px;}
-  .info-box li{margin-bottom:5px;}
-  .info-box li:last-child{margin-bottom:0;}
-
-  .remember{background:var(--remember);border:1.5px solid var(--remember-line);}
-  .remember h4{color:#8a6314;}
-  .staticpts{background:var(--statictone);border:1.5px solid var(--statictone-line);}
-  .staticpts h4{color:#294c9c;}
-
-  .source-row{
-    margin-top:14px;font-size:.76rem;color:var(--muted);font-weight:600;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+  .story-breadcrumb{
+    font-size:.82rem;font-weight:700;line-height:1.55;margin-bottom:12px;
+    color:#fbe9c4;opacity:.92;
   }
+  .story-breadcrumb .sep{margin:0 4px;opacity:.7;}
+  .story-title{
+    font-family:'Fraunces',serif;font-optical-sizing:auto;
+    font-size:1.5rem;line-height:1.25;font-weight:700;color:#fff;margin:0;
+  }
+  .story-meta{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    margin-top:18px;flex-wrap:wrap;
+  }
+  .story-date{
+    font-size:.85rem;font-weight:700;color:var(--ink);
+    background:#f4ede0;border-radius:100px;padding:6px 14px;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .story-priority{
+    background:linear-gradient(135deg,var(--gold),#b9822a);color:#3a2506;
+    border-radius:100px;padding:7px 16px;font-size:.85rem;font-weight:800;
+    display:inline-flex;align-items:center;gap:5px;
+    box-shadow:0 4px 10px -3px rgba(185,130,42,.5);
+  }
+
+  .story-content{padding:24px 26px 6px;}
+  .story-lead{
+    font-size:1.02rem;line-height:1.68;color:#494940;margin:0 0 6px;font-weight:500;
+  }
+  .story-lead::first-letter{
+    font-family:'Fraunces',serif;font-weight:700;font-size:2.3em;
+    color:color-mix(in srgb, var(--n-color) 70%, black 30%);
+    float:left;line-height:.85;padding-right:8px;padding-top:3px;
+  }
+
+  .story-section-label{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Fraunces',serif;font-size:1.08rem;font-weight:700;
+    margin:22px 0 10px;color:var(--ink);
+  }
+  .story-section-label .bar{
+    width:5px;height:18px;border-radius:3px;flex-shrink:0;
+    background:linear-gradient(180deg,var(--gold),var(--n-color));
+  }
+
+  .story-list{list-style:none;margin:0 0 4px;padding:0;color:#3a3a34;font-size:.98rem;line-height:1.6;}
+  .story-list li{position:relative;padding:8px 4px 8px 24px;border-bottom:1px dashed #e7e1d1;}
+  .story-list li:last-child{border-bottom:none;}
+  .story-list li::before{
+    content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;
+    border-radius:50%;background:var(--ink);
+  }
+
+  .story-box{border-radius:16px;padding:4px 20px 16px;margin:20px 0;}
+  .story-box-head{display:flex;align-items:center;gap:10px;padding:14px 0 10px;}
+  .story-icon{
+    width:32px;height:32px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:.95rem;
+  }
+  .story-box.remember{background:linear-gradient(175deg,#fdf1d2,#fff8e8);border:1.5px solid #e3b23c;}
+  .story-box.remember .story-icon{background:#e3b23c;color:#5c440f;}
+  .story-box.remember .story-box-title{color:#7a5a10;font-weight:800;font-size:1rem;font-family:'Fraunces',serif;}
+  .story-box.static{background:linear-gradient(175deg,#e9eefb,#f5f8ff);border:1.5px solid #7797d9;}
+  .story-box.static .story-icon{background:#7797d9;color:#fff;}
+  .story-box.static .story-box-title{color:#2c4d8f;font-weight:800;font-size:1rem;font-family:'Fraunces',serif;}
+
+  .story-box ul{margin:0;padding-left:2px;list-style:none;}
+  .story-box li{
+    font-size:.94rem;line-height:1.6;color:#41403a;margin:0;padding:7px 0 7px 20px;
+    position:relative;border-bottom:1px solid rgba(0,0,0,.055);
+  }
+  .story-box li:last-child{border-bottom:none;}
+  .story-box li::before{content:"▸";position:absolute;left:0;top:6px;font-size:.8rem;color:var(--ink);}
+
+  .story-flash{list-style:none;margin:0 0 6px;padding:0;border-radius:14px;overflow:hidden;border:1.5px solid #ded3b2;}
+  .story-flash li{
+    display:flex;align-items:baseline;gap:10px;padding:11px 16px;
+    font-size:.9rem;line-height:1.5;color:#4a493f;background:#fffdf6;
+  }
+  .story-flash li:nth-child(even){background:#fbf3de;}
+  .story-flash li:not(:last-child){border-bottom:1px dashed #e6dcbe;}
+  .story-flash b{color:var(--ink);font-weight:800;}
+
+  .story-divider{height:1px;background:linear-gradient(90deg,transparent,#ddd0a8,transparent);margin:20px 0 2px;}
+
+  .story-footer{
+    padding:18px 26px 24px;color:#6f6e63;font-size:.86rem;line-height:1.7;
+    border-top:1px solid #eee3c6;margin-top:10px;
+  }
+  .story-footer strong{font-weight:800;color:var(--ink);font-family:'Fraunces',serif;font-size:.98rem;}
+  .story-hashtags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .story-hashtags span{
+    background:var(--n-soft);color:color-mix(in srgb, var(--n-color) 75%, black 25%);
+    border:1px solid var(--n-color);border-radius:100px;padding:4px 12px;
+    font-weight:700;font-size:.78rem;
+  }
+
+  @media(min-width:860px){
+    .story-top{padding:36px 44px 30px;}
+    .story-title{font-size:1.9rem;}
+    .story-breadcrumb{font-size:.9rem;}
+    .story-content{padding:32px 44px 6px;}
+    .story-lead{font-size:1.08rem;}
+    .story-list{column-count:2;column-gap:30px;}
+    .story-list li{break-inside:avoid;}
+    .story-box{padding:4px 26px 16px;}
+    .story-box ul{column-count:2;column-gap:24px;}
+    .story-box li{break-inside:avoid;}
+    .story-footer{padding:20px 44px 28px;}
+  }
+  @media(max-width:520px){
+    .story-top{padding:20px 18px 18px;}
+    .story-title{font-size:1.25rem;}
+    .story-content{padding:20px 18px 4px;}
+    .story-footer{padding:16px 18px 20px;}
+  }
+
+  .pdf-row{display:flex;justify-content:center;margin:30px 0 10px;}
+  .pdf-btn{
+    border:none;background:linear-gradient(135deg,var(--ink),#000);color:#fff;
+    padding:13px 26px;border-radius:100px;font-weight:800;font-size:.95rem;
+    box-shadow:0 8px 20px -8px rgba(0,0,0,.5);transition:.15s;
+  }
+  .pdf-btn:hover{transform:translateY(-2px);}
+  .pdf-btn[disabled]{opacity:.5;pointer-events:none;}
 
   .empty-state{
     border:2px dashed var(--line);border-radius:18px;padding:40px 24px;
@@ -276,12 +353,14 @@
 
 <div class="topbar">
   <div class="brand"><span class="dot"></span> GA Pulse</div>
-  <div class="crumbs" id="crumbs"></div>
-  <button class="back-btn" id="backBtn">← Back</button>
+  <div class="topbar-spacer"></div>
+  <button class="nav-btn" id="homeBtn">🏠 Home</button>
+  <button class="nav-btn back-btn" id="backBtn">← Back</button>
 </div>
 
 <div class="shell view" id="app"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 /* ======================= DATA ======================= */
 
@@ -361,7 +440,7 @@ function sortNews(list){
 
 /* ======================= RENDER HELPERS ======================= */
 const app = document.getElementById("app");
-const crumbsEl = document.getElementById("crumbs");
+const homeBtn = document.getElementById("homeBtn");
 const backBtn = document.getElementById("backBtn");
 
 function go(level){
@@ -372,6 +451,8 @@ function go(level){
   render();
 }
 
+homeBtn.addEventListener("click", ()=>go("home"));
+
 backBtn.addEventListener("click", ()=>{
   if(state.minor!==null) return go("sub");
   if(state.sub!==null) return go("main");
@@ -379,31 +460,10 @@ backBtn.addEventListener("click", ()=>{
   // already home — no-op
 });
 
-function renderCrumbs(){
-  const parts = [];
-  parts.push(`<span class="crumb-chip clickable" data-go="home">🏠 Home</span>`);
-  if(state.month!==null){
-    parts.push(`<span class="crumb-sep">›</span>`);
-    parts.push(`<span class="crumb-chip clickable" data-go="main">${MONTHS[state.month]}</span>`);
-  }
-  if(state.main!==null){
-    const t = TOPICS.find(t=>t.code===state.main);
-    parts.push(`<span class="crumb-sep">›</span>`);
-    parts.push(`<span class="crumb-chip clickable" data-go="sub">${t.emoji} ${t.name}</span>`);
-  }
-  if(state.sub!==null){
-    parts.push(`<span class="crumb-sep">›</span>`);
-    parts.push(`<span class="crumb-chip clickable" data-go="minor">${state.sub}</span>`);
-  }
-  if(state.minor!==null){
-    parts.push(`<span class="crumb-sep">›</span>`);
-    parts.push(`<span class="crumb-chip">${state.minor}</span>`);
-  }
-  crumbsEl.innerHTML = parts.join("");
-  crumbsEl.querySelectorAll("[data-go]").forEach(el=>{
-    el.addEventListener("click", ()=>go(el.dataset.go));
-  });
-  backBtn.style.visibility = state.month===null ? "hidden" : "visible";
+function renderNav(){
+  const atHome = state.month===null;
+  homeBtn.disabled = atHome;
+  backBtn.disabled = atHome;
 }
 
 /* ======================= VIEWS ======================= */
@@ -580,43 +640,98 @@ function toArray(v){
 }
 
 function safeTopic(code){
-  const clean = String(code||"").trim().toUpperCase();
-  return TOPICS.find(t=>t.code===clean) || {code:clean||"?", name:"Uncategorised", emoji:"📰"};
+  const raw = String(code||"").trim();
+  const clean = raw.toUpperCase();
+  // 1) exact single-letter code match (A-H)
+  let t = TOPICS.find(t=>t.code===clean);
+  if(t) return t;
+  // 2) fall back to matching by full topic name, in case someone entered
+  //    "Banking & Financial Awareness" instead of "A"
+  const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g,"");
+  const rawNorm = norm(raw);
+  if(rawNorm){
+    t = TOPICS.find(t => {
+      const n = norm(t.name);
+      return n === rawNorm || n.includes(rawNorm) || rawNorm.includes(n);
+    });
+    if(t) return t;
+  }
+  return {code:clean||"?", name:"Uncategorised", emoji:"📰"};
+}
+
+function slugify(s){
+  return String(s||"").replace(/[^a-zA-Z0-9]+/g,"");
 }
 
 function newsCardHTML(n){
   const t = safeTopic(n.main);
   const remember = toArray(n.remember);
   const statics = toArray(n.statics);
+  const highlights = toArray(n.highlights);   // optional "Key News" bullet list
+  const examFocus = toArray(n.examFocus);     // optional "Exam Focus" flashcard lines, e.g. "Label → Value"
   const sub = n.sub || "—";
   const minor = n.minor || "—";
+  const footerTitle = n.footerTitle || t.name;
+  const hashtags = toArray(n.hashtags).length ? toArray(n.hashtags) : [slugify(t.name), slugify(minor)].filter(Boolean);
+
   return `
-  <article class="news-card" style="--n-color:var(--${t.code});--n-soft:var(--${t.code}-soft)">
-    <div class="news-head">
-      <div>
-        <div class="path">${t.emoji} <b>${t.name}</b> &nbsp;›&nbsp; ${sub} &nbsp;›&nbsp; ${minor}</div>
-        <h3 class="news-title">${n.title || "(untitled)"}</h3>
+  <article class="story-card" style="--n-color:var(--${t.code});--n-soft:var(--${t.code}-soft)">
+    <header class="story-top">
+      <div class="story-breadcrumb">
+        ${t.emoji} ${t.name}<br>
+        <span class="sep">›</span> ${sub} <span class="sep">›</span> ${minor}
       </div>
-      <div class="news-meta">
-        <span class="date-tag">🗓️ ${n.date || ""}</span>
-        <span class="badge">${"⭐".repeat(Number(n.importance)||1)} Priority</span>
+      <h2 class="story-title">${n.title || "(untitled)"}</h2>
+      <div class="story-meta">
+        <div class="story-date">🗓️ ${n.date || ""}</div>
+        <div class="story-priority">${"⭐".repeat(Number(n.importance)||1)} Priority</div>
       </div>
+    </header>
+
+    <div class="story-content">
+      <p class="story-lead">${n.body || ""}</p>
+
+      ${highlights.length ? `
+      <div class="story-section-label"><span class="bar"></span>📰 Key News</div>
+      <ul class="story-list">${highlights.map(h=>`<li>${h}</li>`).join("")}</ul>
+      ` : ""}
+
+      <div class="story-box remember">
+        <div class="story-box-head"><div class="story-icon">🔑</div><div class="story-box-title">Remember This</div></div>
+        <ul>${remember.length ? remember.map(r=>`<li>${r}</li>`).join("") : "<li>—</li>"}</ul>
+      </div>
+
+      <div class="story-box static">
+        <div class="story-box-head"><div class="story-icon">📌</div><div class="story-box-title">Static Points</div></div>
+        <ul>${statics.length ? statics.map(r=>`<li>${r}</li>`).join("") : "<li>—</li>"}</ul>
+      </div>
+
+      ${examFocus.length ? `
+      <div class="story-divider"></div>
+      <div class="story-section-label"><span class="bar"></span>🎯 Exam Focus</div>
+      <ul class="story-flash">${examFocus.map(f=>{
+        const parts = String(f).split(/→|:/);
+        const label = parts[0] ? parts[0].trim() : f;
+        const value = parts.slice(1).join(":").trim();
+        return `<li><b>${label}${value ? " →" : ""}</b> ${value}</li>`;
+      }).join("")}</ul>
+      ` : ""}
     </div>
-    <div class="news-body">
-      <p>${n.body || ""}</p>
-      <div class="boxes">
-        <div class="info-box remember">
-          <h4>🔑 Remember This</h4>
-          <ul>${remember.length ? remember.map(r=>`<li>${r}</li>`).join("") : "<li>—</li>"}</ul>
-        </div>
-        <div class="info-box staticpts">
-          <h4>📌 Static Points</h4>
-          <ul>${statics.length ? statics.map(r=>`<li>${r}</li>`).join("") : "<li>—</li>"}</ul>
-        </div>
-      </div>
-      <div class="source-row"><span>${n.source || ""}</span><span>#${minor.replace(/\s+/g,'')}</span></div>
-    </div>
+
+    <footer class="story-footer">
+      <strong>${footerTitle}</strong>
+      <div class="story-hashtags">${hashtags.map(h=>`<span>#${h}</span>`).join("")}</div>
+      ${n.source ? `<div style="margin-top:8px;opacity:.75;">${n.source}</div>` : ""}
+    </footer>
   </article>`;
+}
+
+function currentSectionLabel(){
+  if(state.minor && state.minor !== "__ALL__") return state.minor;
+  if(state.sub) return state.sub;
+  if(state.main) return safeTopic(state.main).name;
+  if(state.month !== null) return MONTHS[state.month] + " 2026";
+  return "All News";
 }
 
 function renderNewsInto(){
@@ -625,6 +740,7 @@ function renderNewsInto(){
   const minorFilter = state.minor==="__ALL__" ? null : state.minor;
   let list = newsForFilter({minor:minorFilter});
   list = sortNews(list);
+  const label = currentSectionLabel();
 
   mount.innerHTML = `
     <div class="section-label">📰 News <span class="tag">${list.length} ${list.length===1?"result":"results"}</span></div>
@@ -644,7 +760,31 @@ function renderNewsInto(){
           Try a different month or topic, or use "Show all" to widen the search.
         </div>`}
     </div>
+    ${list.length ? `
+    <div class="pdf-row">
+      <button class="pdf-btn" id="pdfDownloadBtn">📄 Download PDF — Target News of ${label}</button>
+    </div>` : ""}
   `;
+
+  const pdfBtn = document.getElementById("pdfDownloadBtn");
+  if(pdfBtn){
+    pdfBtn.addEventListener("click", ()=>{
+      pdfBtn.disabled = true;
+      const originalText = pdfBtn.textContent;
+      pdfBtn.textContent = "⏳ Building PDF…";
+      setTimeout(()=>{
+        try{
+          generateNewsPDF(list, label);
+        }catch(err){
+          console.error("PDF generation failed:", err);
+          alert("Sorry, the PDF couldn't be generated. Please try again.");
+        }finally{
+          pdfBtn.disabled = false;
+          pdfBtn.textContent = originalText;
+        }
+      }, 30);
+    });
+  }
 }
 
 /* When "Show all news" is used from main/sub level directly (minor screen skipped visually) */
@@ -671,9 +811,125 @@ function viewAllShortcut(){
   renderNewsInto();
 }
 
+/* ======================= PDF EXPORT ======================= */
+function generateNewsPDF(list, sectionLabel){
+  if(!window.jspdf || !window.jspdf.jsPDF){
+    alert("The PDF library didn't load (check your internet connection) — please try again.");
+    return;
+  }
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit:"mm", format:"a4" });
+
+  const pageW = doc.internal.pageSize.getWidth();
+  const pageH = doc.internal.pageSize.getHeight();
+  const marginX = 16;
+  const contentTop = 26;
+  const contentBottom = pageH - 18;
+  const contentW = pageW - marginX * 2;
+  let y = contentTop;
+  let pageNum = 1;
+
+  function drawWatermark(){
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(56);
+    doc.setTextColor(232, 232, 226);
+    doc.text("BANKERS ALLIANCE", pageW / 2, pageH / 2, { angle: 45, align: "center" });
+  }
+
+  function drawHeader(){
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(13);
+    doc.setTextColor(18, 54, 38);
+    doc.text(`Target News of ${sectionLabel}`, marginX, 15);
+    doc.setDrawColor(226, 171, 68);
+    doc.setLineWidth(0.6);
+    doc.line(marginX, 18, pageW - marginX, 18);
+  }
+
+  function drawFooter(){
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8.5);
+    doc.setTextColor(110, 110, 100);
+    doc.text("Created by BankersAlliance and Victory Banker", pageW / 2, pageH - 10, { align: "center" });
+    doc.text(String(pageNum), pageW - marginX, pageH - 10, { align: "right" });
+  }
+
+  function startPage(){
+    drawWatermark();
+    drawHeader();
+    y = contentTop;
+  }
+
+  function newPage(){
+    drawFooter();
+    doc.addPage();
+    pageNum++;
+    startPage();
+  }
+
+  function ensureSpace(neededH){
+    if(y + neededH > contentBottom) newPage();
+  }
+
+  function writeWrapped(text, x, w, size, color, lineH, bold){
+    doc.setFont("helvetica", bold ? "bold" : "normal");
+    doc.setFontSize(size);
+    doc.setTextColor(color[0], color[1], color[2]);
+    const lines = doc.splitTextToSize(text, w);
+    lines.forEach(line=>{
+      ensureSpace(lineH);
+      doc.text(line, x, y);
+      y += lineH;
+    });
+  }
+
+  startPage();
+
+  list.forEach((n, idx)=>{
+    const t = safeTopic(n.main);
+    const remember = toArray(n.remember);
+    const statics = toArray(n.statics);
+
+    ensureSpace(8);
+    writeWrapped(`${idx + 1}. ${n.title || "(untitled)"}`, marginX, contentW, 12.5, [18,54,38], 6, true);
+
+    writeWrapped(
+      `${t.name}  ›  ${n.sub || "—"}  ›  ${n.minor || "—"}     |     ${n.date || ""}`,
+      marginX, contentW, 9, [110,110,100], 5, false
+    );
+    y += 2;
+
+    if(n.body) writeWrapped(n.body, marginX, contentW, 10.5, [30,36,31], 5.4, false);
+    y += 2;
+
+    if(remember.length){
+      writeWrapped("Remember This:", marginX, contentW, 10.5, [122,90,16], 5.5, true);
+      remember.forEach(pt=> writeWrapped(`•  ${pt}`, marginX + 2, contentW - 4, 10, [30,36,31], 5, false));
+      y += 1.5;
+    }
+
+    if(statics.length){
+      writeWrapped("Static Points:", marginX, contentW, 10.5, [44,77,143], 5.5, true);
+      statics.forEach(pt=> writeWrapped(`•  ${pt}`, marginX + 2, contentW - 4, 10, [30,36,31], 5, false));
+      y += 1.5;
+    }
+
+    ensureSpace(6);
+    doc.setDrawColor(222, 222, 212);
+    doc.setLineWidth(0.3);
+    doc.line(marginX, y, pageW - marginX, y);
+    y += 7;
+  });
+
+  drawFooter();
+
+  const safeName = String(sectionLabel).replace(/[^a-z0-9]+/gi, "_").toLowerCase();
+  doc.save(`ga-pulse-${safeName || "news"}.pdf`);
+}
+
 /* ======================= ROUTER ======================= */
 function render(){
-  renderCrumbs();
+  renderNav();
   if(state.month===null){ viewHome(); return; }
   if(state.main===null){
     if(state.minor==="__ALL__"){ viewAllShortcut(); return; }

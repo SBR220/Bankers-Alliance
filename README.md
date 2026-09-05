@@ -132,7 +132,46 @@ a single `data/news.json` file is simpler and completely fine.
 
 ---
 
-## 4. Quick content checklist before publishing a batch
+## 4. New: themed story cards, simplified nav, and PDF export
+
+**Story card redesign.** Each news card is now a full magazine-style layout
+(dark themed header per topic, drop-cap lead paragraph, Remember This /
+Static Points boxes, optional Key News and Exam Focus sections, footer with
+ministry name + hashtags). The header gradient automatically uses that
+story's topic colour — no per-topic CSS to maintain, it's computed from the
+same `main` code you already set.
+
+**Optional fields** (add these columns to your CSV/JSON if you want the
+richer sections — leave them out and the card still renders fine without
+them):
+- `highlights` → renders a "📰 Key News" bullet list
+- `examFocus` → renders a "🎯 Exam Focus" flashcard strip. Format each item
+  as `Label → Value`, e.g. `Launch date → 1 March 2021`
+- `footerTitle` → bold name in the card's footer (defaults to the topic name)
+- `hashtags` → pipe-separated tags in the footer (defaults to auto-generated ones)
+
+**Simplified header nav.** The top bar now shows only **🏠 Home** and
+**← Back** — no breadcrumb trail up there. The full path (Topic › Subtopic ›
+Minor Topic) still shows on every individual story card, same as your sample.
+
+**PDF export.** Every news list screen (a specific minor topic, or any
+"Show all" view) has a **📄 Download PDF** button at the bottom. It exports
+exactly what's on screen at A4 size, with:
+- A tilted "BANKERS ALLIANCE" watermark on every page
+- A header reading **"Target News of {Section}"** — the section name is
+  whichever filter is currently most specific (minor topic name, or the
+  subtopic/topic/month name when "Show all" is used)
+- A footer reading **"Created by BankersAlliance and Victory Banker"** with
+  page numbers
+- Automatic pagination — long lists span multiple pages cleanly
+
+This uses the [jsPDF](https://github.com/parallax/jsPDF) library loaded from
+a CDN (`cdnjs.cloudflare.com`), so it needs an internet connection to load
+the very first time the button is used (cached by the browser after that).
+
+---
+
+## 5. Quick content checklist before publishing a batch
 - [ ] Every `main` code matches A–H exactly
 - [ ] Every `sub` / `minor` string matches the app's topic list exactly (case-sensitive)
 - [ ] `data/news.json` is valid JSON (run `python3 -m json.tool data/news.json` to check — it'll error out if a comma or quote is off)
