@@ -5,8 +5,18 @@ Convert a bulk news CSV into data/news.json for the GA Pulse revision site.
 USAGE:
     python3 scripts/csv_to_json.py data/news_bulk.csv data/news.json
 
-CSV COLUMNS (header row required, this exact order/names):
+REQUIRED CSV COLUMNS (header row required, exact names, any order):
     id, month, main, sub, minor, date, importance, title, body, remember, statics, source
+
+OPTIONAL CSV COLUMNS (leave the whole column out, or leave cells blank —
+the story card just won't show that section):
+    highlights   -- "Key News" bullet list, pipe-separated, e.g. "Point A|Point B"
+    examFocus    -- "Exam Focus" flashcard lines, pipe-separated, each formatted
+                    "Label → Value" or "Label: Value", e.g.
+                    "Launch date → 1 March 2021|FRS → Take-Home Rations"
+    footerTitle  -- bold name shown in the card's footer (defaults to the topic name)
+    hashtags     -- pipe-separated tags shown in the footer, without '#', e.g.
+                    "PoshanTracker|MissionPoshan2.0" (defaults to auto-generated tags)
 
 NOTES:
   - month: use 1-12 (Jan=1 ... Dec=12). The script converts it to the
@@ -14,8 +24,8 @@ NOTES:
   - main: single letter code, must match a topic code in the app (A-H).
   - sub / minor: must match the exact subtopic/minor-topic text used in the
     app's TOPICS structure in index.html, so filtering works correctly.
-  - remember / statics: put multiple bullet points in ONE cell, separated
-    by a pipe character "|". Example: "Point one|Point two|Point three"
+  - remember / statics / highlights / hashtags / examFocus: put multiple
+    values in ONE cell, separated by a pipe character "|".
   - importance: a number 1-3 (shown as star rating on the card).
   - Wrap any cell that contains a comma in double quotes (standard CSV rule
     -- Excel/Google Sheets do this for you automatically on export).
@@ -31,20 +41,31 @@ import csv
 import json
 import sys
 
+REQUIRED_COLUMNS = {"id", "month", "main", "sub", "minor", "date",
+                    "importance", "title", "body", "remember", "statics", "source"}
+OPTIONAL_LIST_COLUMNS = ["highlights", "examFocus", "hashtags"]
+OPTIONAL_TEXT_COLUMNS = ["footerTitle"]
+
+
+def split_pipes(value):
+    return [p.strip() for p in value.split("|") if p.strip()]
+
 
 def convert(csv_path: str, json_path: str) -> None:
     rows = []
     with open(csv_path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
-        required = {"id", "month", "main", "sub", "minor", "date",
-                    "importance", "title", "body", "remember", "statics", "source"}
-        missing = required - set(reader.fieldnames or [])
+        fieldnames = set(reader.fieldnames or [])
+        missing = REQUIRED_COLUMNS - fieldnames
         if missing:
             sys.exit(f"CSV is missing required column(s): {', '.join(sorted(missing))}")
 
+        present_optional_lists = [c for c in OPTIONAL_LIST_COLUMNS if c in fieldnames]
+        present_optional_text = [c for c in OPTIONAL_TEXT_COLUMNS if c in fieldnames]
+
         for i, row in enumerate(reader, start=2):  # row 1 is the header
             try:
-                rows.append({
+                item = {
                     "id": int(row["id"]),
                     "month": int(row["month"]) - 1,  # convert 1-12 -> 0-11
                     "main": row["main"].strip(),
@@ -54,10 +75,19 @@ def convert(csv_path: str, json_path: str) -> None:
                     "importance": int(row["importance"]),
                     "title": row["title"].strip(),
                     "body": row["body"].strip(),
-                    "remember": [p.strip() for p in row["remember"].split("|") if p.strip()],
-                    "statics": [p.strip() for p in row["statics"].split("|") if p.strip()],
+                    "remember": split_pipes(row["remember"]),
+                    "statics": split_pipes(row["statics"]),
                     "source": row["source"].strip(),
-                })
+                }
+                for col in present_optional_lists:
+                    val = split_pipes(row.get(col, "") or "")
+                    if val:
+                        item[col] = val
+                for col in present_optional_text:
+                    val = (row.get(col, "") or "").strip()
+                    if val:
+                        item[col] = val
+                rows.append(item)
             except (ValueError, KeyError) as e:
                 sys.exit(f"Error on CSV row {i}: {e}")
 
