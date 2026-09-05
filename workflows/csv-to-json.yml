@@ -11,7 +11,7 @@ on:
       csv_file:
         description: "Path to the CSV file to convert"
         required: true
-        default: "data/news_bulk.csv"
+        default: "data/news_template.csv"
 
 permissions:
   contents: write
@@ -30,7 +30,7 @@ jobs:
 
       - name: Convert CSV to news.json
         run: |
-          CSV_PATH="${{ github.event.inputs.csv_file || 'data/news_bulk.csv' }}"
+          CSV_PATH="${{ github.event.inputs.csv_file || 'data/news_template.csv' }}"
           echo "Converting $CSV_PATH -> data/news.json"
           python3 scripts/csv_to_json.py "$CSV_PATH" data/news.json
 
