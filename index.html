@@ -812,13 +812,6 @@ function viewAllShortcut(){
 }
 
 /* ======================= PDF EXPORT ======================= */
-function stripHtml(str){
-  return String(str || "")
-    .replace(/<[^>]*>/g, "")
-    .replace(/&amp;/g, "&").replace(/&nbsp;/g, " ")
-    .replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-}
-
 function generateNewsPDF(list, sectionLabel){
   if(!window.jspdf || !window.jspdf.jsPDF){
     alert("The PDF library didn't load (check your internet connection) — please try again.");
@@ -898,7 +891,7 @@ function generateNewsPDF(list, sectionLabel){
     const statics = toArray(n.statics);
 
     ensureSpace(8);
-    writeWrapped(`${idx + 1}. ${stripHtml(n.title) || "(untitled)"}`, marginX, contentW, 12.5, [18,54,38], 6, true);
+    writeWrapped(`${idx + 1}. ${n.title || "(untitled)"}`, marginX, contentW, 12.5, [18,54,38], 6, true);
 
     writeWrapped(
       `${t.name}  ›  ${n.sub || "—"}  ›  ${n.minor || "—"}     |     ${n.date || ""}`,
@@ -906,18 +899,18 @@ function generateNewsPDF(list, sectionLabel){
     );
     y += 2;
 
-    if(n.body) writeWrapped(stripHtml(n.body), marginX, contentW, 10.5, [30,36,31], 5.4, false);
+    if(n.body) writeWrapped(n.body, marginX, contentW, 10.5, [30,36,31], 5.4, false);
     y += 2;
 
     if(remember.length){
       writeWrapped("Remember This:", marginX, contentW, 10.5, [122,90,16], 5.5, true);
-      remember.forEach(pt=> writeWrapped(`•  ${stripHtml(pt)}`, marginX + 2, contentW - 4, 10, [30,36,31], 5, false));
+      remember.forEach(pt=> writeWrapped(`•  ${pt}`, marginX + 2, contentW - 4, 10, [30,36,31], 5, false));
       y += 1.5;
     }
 
     if(statics.length){
       writeWrapped("Static Points:", marginX, contentW, 10.5, [44,77,143], 5.5, true);
-      statics.forEach(pt=> writeWrapped(`•  ${stripHtml(pt)}`, marginX + 2, contentW - 4, 10, [30,36,31], 5, false));
+      statics.forEach(pt=> writeWrapped(`•  ${pt}`, marginX + 2, contentW - 4, 10, [30,36,31], 5, false));
       y += 1.5;
     }
 
