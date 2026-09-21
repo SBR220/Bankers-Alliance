@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bankers Alliance - Descriptive Test</title>
+<style>
+  :root{
+    --navy:#140852;
+    --navy-dark:#00a8e6;
+    --navy-darker:#212b30;
+    --light-bg:#eef1f5;
+    --panel-border:#dfe3e8;
+    --green:#0cc05a;
+    --orange:#ff0000;
+    --gray-chip:#cfd6dd;
+    --purple:#5e3a99;
+    --text-dark:#000000;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;font-family:'Segoe UI',Arial,Helvetica,sans-serif;background:var(--light-bg);color:var(--text-dark);}
+  button{font-family:inherit;cursor:pointer;}
+  input[type=text]{font-family:inherit;}
+  .hidden{display:none !important;}
+
+  /* ---------- Mobile / Orientation warning ---------- */
+  #mobileWarning{
+    position:fixed;inset:0;background:rgba(20,24,32,.92);z-index:9999;
+    display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;
+  }
+  #mobileWarning .box{background:#fff;border-radius:10px;padding:30px 24px;max-width:380px;}
+  #mobileWarning .box h2{margin:0 0 10px;color:var(--navy);}
+  #mobileWarning .box p{margin:0 0 18px;line-height:1.5;color:#444;font-size:14px;}
+  #mobileWarning .icon{font-size:40px;margin-bottom:10px;}
+  #mobileWarning button{background:var(--navy);color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:14px;}
+
+  /* ---------- Fullscreen notice ---------- */
+  #fsNotice{position:fixed;top:14px;left:50%;transform:translateX(-50%) translateY(-20px);background:#1e2430;
+    color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:8000;opacity:0;
+    transition:all .3s ease;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.3);}
+  #fsNotice.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* ---------- Start Page ---------- */
+  #startPage{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background: linear-gradient(45deg, #8ec5fc 0.000%, #8dd3ff 25.000%, #a1d8ff 50.000%, #c1d2ff 75.000%, #e0c3ff 100.000%);
+    padding:30px 10px;}
+  .start-card{background:#fff;border-radius:14px;padding:42px 44px;width:520px;max-width:92vw;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);text-align:center;}
+  .brand-logo{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:6px;}
+.brand-logo .mark {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  border: 2px solid var(--navy);
+  
+  /* Layout & Typography */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+  
+  /* 3D Depth Properties */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Toned down from your original for a cleaner look */
+}
+  .brand-logo .name{font-size:27px;font-weight:900;color:var(--navy);letter-spacing:.3px;}
+  .brand-tag{color:#8a93a3;font-size:13px;margin-bottom:20px;letter-spacing:.5px;text-transform:uppercase;}
+  .start-card h1{font-size:19px;margin:0 0 16px;color:var(--text-dark);font-weight:700;}
+  .start-meta-row{display:flex;gap:12px;margin-bottom:18px;}
+  .meta-box{flex:1;background:#f4f6f9;border-radius:8px;padding:12px 6px;}
+  .meta-box .meta-num{font-size:19px;font-weight:800;color:var(--navy);}
+  .meta-box .meta-lbl{font-size:10.5px;color:#828a97;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+  table.instr-table{border-collapse:collapse;width:100%;margin:0 0 20px;font-size:13px;}
+  table.instr-table th,table.instr-table td{border:1px solid #e3e6ea;padding:8px 10px;text-align:left;}
+  table.instr-table th{background:#f4f6f9;}
+  .start-card label{display:block;text-align:left;font-size:13px;color:#666;margin-bottom:6px;font-weight:600;}
+  .start-card input[type=text]{width:100%;padding:12px 14px;border:1.5px solid #d7dbe2;border-radius:8px;
+    font-size:15px;margin-bottom:8px;outline:none;transition:border-color .15s;}
+  .start-card input[type=text]:focus{border-color:var(--navy);}
+  #nameError{color:#c0392b;font-size:12px;text-align:left;min-height:16px;margin-bottom:6px;}
+  .btn-primary{background:var(--navy);color:#fff;border:none;padding:13px 20px;border-radius:8px;
+    font-size:15px;font-weight:600;width:100%;margin-top:10px;transition:background .15s;}
+  .btn-primary:hover{background:var(--navy-dark);}
+  .btn-primary:disabled{background:#a9b1bd;cursor:not-allowed;}
+
+  /* ---------- Instructions Page ---------- */
+  #instructionsPage{min-height:100vh;background:#fff;display:flex;flex-direction:column;}
+  .instr-topbar{background:var(--navy);color:#fff;padding:14px 24px;text-align:center;font-weight:700;font-size:16px;}
+  .instr-wrap{display:flex;max-width:1200px;margin:0 auto;flex:1;width:100%;min-height:0;}
+  .instr-main{flex:1;display:flex;flex-direction:column;border-right:1px solid #eee;min-height:0;}
+  .instr-scroll{flex:1;overflow-y:auto;padding:26px 40px 10px;min-height:0;}
+  .instr-scroll h2{font-size:20px;margin-top:0;}
+  .instr-scroll h3{font-size:16px;color:var(--navy);margin:22px 0 10px;}
+  .instr-scroll ul{margin:0 0 6px;padding-left:22px;line-height:1.7;font-size:14.5px;color:#333;}
+  .legend-row-instr{display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 6px;padding:14px 16px;background:#f7f8fa;border-radius:8px;}
+  .instr-footer-fixed{padding:16px 40px 22px;border-top:1px solid #eee;background:#fff;}
+  .instr-checkline{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;font-size:14px;line-height:1.5;}
+  .instr-checkline input{margin-top:3px;width:16px;height:16px;flex-shrink:0;}
+  .instr-nav-row{display:flex;justify-content:space-between;align-items:center;}
+  .copyright-note{font-size:10.5px;color:#9aa1ab;text-align:center;margin-top:14px;line-height:1.5;}
+  .btn-back{background:#fff;color:var(--navy);border:1.5px solid var(--navy);padding:10px 22px;border-radius:6px;font-size:14px;font-weight:600;}
+  .btn-next{background:var(--navy);color:#fff;border:none;padding:10px 26px;border-radius:6px;font-size:14px;font-weight:600;}
+  .btn-next:disabled{background:#b7bec8;cursor:not-allowed;}
+  .instr-side{width:230px;padding:30px 20px;text-align:center;flex-shrink:0;}
+  .avatar-circle{width:80px;height:80px;border-radius:50%;background:#eeedec;margin:0 auto 10px;
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;}
+  .instr-side .cname{font-weight:700;font-size:16px;}
+
+  /* ---------- Legend (shared: instructions + exam side panel) ---------- */
+  .legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#444;}
+  .legend-swatch{width:26px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:11px;font-weight:700;flex-shrink:0;}
+  .sw-answered{background:var(--green);}
+  .sw-notanswered{background:var(--orange);clip-path:polygon(50% 0%,100% 25%,100% 100%,0% 100%,0% 25%);}
+  .sw-notvisited{background:#e3e6ea;color:#555;}
+  .sw-review{background:var(--purple);border-radius:50%;}
+  .sw-ansreview{background:var(--purple);border-radius:50%;position:relative;}
+  .sw-ansreview::after{content:'';position:absolute;bottom:-2px;right:-2px;width:8px;height:8px;background:var(--green);
+    border-radius:50%;border:1px solid #fff;}
+  .legend-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+
+  /* ---------- Exam Page ---------- */
+  #examPage{min-height:100vh;display:flex;flex-direction:column;background:#f7f8fa;}
+  .exam-header{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;
+    padding:10px 20px;flex-wrap:wrap;gap:8px;}
+  .exam-header .left-title{font-weight:700;font-size:16px;}
+  .exam-header .mid{display:flex;align-items:center;gap:18px;}
+  .exam-header .brandmini{display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px;}
+  .exam-header .brandmini .dot{width:20px;height:20px;border-radius:50%;object-fit:cover;
+    border:1.5px solid #fff;flex-shrink:0;}
+  .exam-header .testtype{font-size:13px;opacity:.9;}
+  .exam-header .right{display:flex;align-items:center;gap:12px;}
+  .exam-header .avatar-mini{width:38px;height:38px;border-radius:50%;background:#eeedec;display:flex;align-items:center;
+    justify-content:center;font-size:16px;}
+  .exam-header .cname-mini{font-weight:700;font-size:14px;}
+
+  .subheader{background:#fff;border-bottom:1px solid var(--panel-border);display:flex;align-items:center;
+    padding:0 10px;gap:2px;}
+  .subheader .timeleft{font-size:13px;color:#333;padding:8px 10px;display:flex;align-items:center;gap:6px;white-space:nowrap;}
+  .subheader .timeleft b{font-family:monospace;font-size:14px;}
+  .pausebtn{border:1px solid #ccc;background:#fff;border-radius:3px;width:22px;height:22px;font-size:11px;
+    display:flex;align-items:center;justify-content:center;}
+  .fsbtn{border:1px solid #ccc;background:#fff;border-radius:4px;width:30px;height:30px;font-size:15px;
+    display:flex;align-items:center;justify-content:center;margin-left:8px;color:var(--navy);}
+  .fsbtn:hover{background:#eef1f5;}
+  .tabscroll{display:flex;align-items:center;flex:1;overflow:hidden;}
+  .navarrow{background:none;border:none;color:var(--navy);font-size:18px;padding:6px 6px;}
+  .tabs{display:flex;overflow-x:auto;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab-btn{padding:12px 18px;background:#eef1f5;border:none;font-size:13.5px;color:#333;white-space:nowrap;
+    border-right:1px solid #dfe3e8;position:relative;font-weight:600;}
+  .tab-btn.active{background:var(--navy);color:#fff;}
+  .tab-btn .info-i{display:inline-block;margin-left:5px;width:14px;height:14px;border-radius:50%;background:#9aa5b5;
+    color:#fff;font-size:10px;line-height:14px;text-align:center;font-style:normal;}
+  .tab-btn.active .info-i{background:rgba(255,255,255,.4);}
+
+  .exam-body{flex:1;display:flex;overflow:hidden;}
+  .exam-content{flex:1;display:flex;flex-direction:column;background:#fff;overflow-y:auto;padding:18px 26px;min-width:0;}
+  .qno{font-weight:700;font-size:14px;margin-bottom:10px;color:#333;}
+  .qtext{font-size:14.5px;font-weight:600;line-height:1.6;margin-bottom:14px;color:#1e2430;white-space:pre-wrap;}
+  .choice-box{border:1px solid #e0e4ea;border-radius:6px;padding:14px 16px;margin-bottom:14px;background:#fafbfc;
+    display:flex;gap:12px;cursor:pointer;}
+  .choice-box.selected{border-color:var(--navy);background:#eef1fa;}
+  .choice-box input{margin-top:4px;}
+  .choice-box .clabel{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:4px;}
+  .choice-box .ctext{font-size:13.5px;line-height:1.55;color:#333;white-space:pre-wrap;}
+
+  .answerbox{flex:1;width:100%;height:260px;min-height:200px;max-height:260px;border:1px solid #c9cfd8;border-radius:4px;
+    padding:14px;font-size:15px;line-height:1.65;font-family:Calibri,'Segoe UI',"Century Gothic",Candara,Arial,sans-serif;resize:none;outline:none;
+    white-space:pre;overflow-x:auto;overflow-y:auto;
+    scrollbar-width:thin;scrollbar-color:#b7bec8 #f0f2f5;}
+  .answerbox:focus{border-color:var(--navy);}
+  .answerbox::-webkit-scrollbar{width:8px;height:8px;}
+  .answerbox::-webkit-scrollbar-thumb{background:#b7bec8;border-radius:4px;}
+  .answerbox::-webkit-scrollbar-track{background:#f0f2f5;}
+  .wordcount-row{display:flex;justify-content:flex-end;padding:8px 2px;font-size:13px;color:#555;}
+  .wordcount-row.limit-hit{color:#c0392b;font-weight:700;}
+  .changeq-link{font-size:12.5px;color:var(--navy);text-decoration:underline;cursor:pointer;margin-bottom:10px;display:inline-block;}
+
+  .bottom-actions{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;
+    background:#fff;border-top:1px solid var(--panel-border);}
+  .bottom-actions .left-btns,.bottom-actions .mid-btns{display:flex;gap:10px;}
+  .bbtn{padding:10px 16px;border-radius:5px;font-size:13.5px;font-weight:600;border:1px solid transparent;}
+  .bbtn-mark{background:var(--purple);color:#fff;}
+  .bbtn-clear{background:#fff;color:#333;border-color:#c7cdd6;}
+  .bbtn-prev{background:#fff;color:#333;border-color:#c7cdd6;}
+  .bbtn-prev:disabled{color:#bbb;cursor:not-allowed;}
+  .bbtn-save{background:var(--navy);color:#fff;}
+  .bbtn-submit{background:var(--navy-darker);color:#fff;padding:10px 24px;}
+
+  .panel-toggle-col{width:26px;display:flex;align-items:center;justify-content:center;background:#f2f4f7;
+    border-left:1px solid var(--panel-border);border-right:1px solid var(--panel-border);}
+  .panel-toggle-btn{background:var(--navy);color:#fff;border:none;width:22px;height:44px;border-radius:4px;
+    font-size:13px;display:flex;align-items:center;justify-content:center;}
+
+  .side-panel{width:290px;background:#fff;overflow-y:auto;transition:width .2s ease;flex-shrink:0;}
+  .side-panel.closed{width:0;overflow:hidden;}
+  .side-inner{width:290px;padding:16px;}
+  .side-profile{display:flex;flex-direction:column;align-items:center;padding:8px 0 18px;}
+  .side-profile .avatar-circle2{width:56px;height:56px;border-radius:50%;background:#eeedec;color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:8px;}
+  .side-profile .sname{font-weight:700;font-size:15px;}
+
+  .sec-block{margin-bottom:2px;}
+  .sec-header{background:var(--navy);color:#fff;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;}
+  .sec-header.inactive{background:#57647d;}
+  .sec-body{padding:10px 4px 16px;}
+  .sec-body .choose-label{font-size:12px;color:#777;margin-bottom:8px;}
+  .qchip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .qchip{width:36px;height:36px;border-radius:5px;display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;color:#fff;border:none;position:relative;}
+  .qchip.st-notvisited{background:#e3e6ea;color:#555;}
+  .qchip.st-notanswered{background:var(--orange);clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);}
+  .qchip.st-answered{background:var(--green);}
+  .qchip.st-marked{background:var(--purple);border-radius:50%;}
+  .qchip.st-answeredmarked{background:var(--purple);border-radius:50%;}
+  .qchip.st-answeredmarked::after{content:'';position:absolute;bottom:-3px;right:-3px;width:9px;height:9px;
+    background:var(--green);border-radius:50%;border:1.5px solid #fff;}
+  .qchip.current{outline:2px solid #1e2430;outline-offset:1px;}
+
+  /* ---------- Toast ---------- */
+  #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:#28324a;
+    color:#fff;padding:12px 20px;border-radius:8px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.25);
+    z-index:5000;opacity:0;pointer-events:none;transition:all .25s ease;max-width:420px;text-align:center;}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* ---------- Modal ---------- */
+  .modal-overlay{position:fixed;inset:0;background:rgba(20,24,32,.55);display:flex;align-items:center;
+    justify-content:center;z-index:6000;}
+  .modal-box{background:#fff;border-radius:10px;padding:26px 26px;width:380px;max-width:90vw;text-align:center;}
+  .modal-box h3{margin:0 0 10px;color:var(--navy);}
+  .modal-box p{font-size:13.5px;color:#444;line-height:1.5;margin-bottom:20px;}
+  .modal-btns{display:flex;gap:10px;justify-content:center;}
+  .modal-btns button{padding:9px 18px;border-radius:6px;font-size:13.5px;font-weight:600;border:1px solid #ccc;background:#fff;}
+  .modal-btns .confirm{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .summary-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;}
+  .summary-table th,.summary-table td{border:1px solid #e6e9ee;padding:8px 10px;text-align:left;}
+  .summary-table th{background:#f4f6f9;}
+
+  /* ---------- Result Page ---------- */
+  #resultPage{min-height:100vh;background:var(--light-bg);padding:30px 0 60px;}
+  .result-wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+  .disclaimer-banner{background:#fdecec;border:1px solid #f3b9b9;color:#8a1f1f;font-size:13.5px;line-height:1.6;
+    padding:14px 18px;border-radius:8px;margin-bottom:20px;}
+  .result-header{background: linear-gradient(225deg, #000344 0.000%, #0046d3 60.000%, #071990 100%);border-radius:10px;
+    padding:26px 30px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:16px;box-shadow:0 6px 18px rgba(255, 255, 255);color:#fff;}
+  .result-header .brand-logo .name{font-size:20px;color:#fff;}
+  .result-header .brand-logo .mark{border-color:#fff;}
+  .result-header .brand-tag{display:none;}
+  .score-badge{text-align:center;background:rgba(255,255,255,.15);padding:10px 22px;border-radius:10px;}
+  .score-badge .num{font-size:34px;font-weight:800;color:#fff;}
+  .score-badge .lbl{font-size:12px;color:#eef1f5;}
+  .result-note{background:#fff8e6;border:1px solid #f0dca0;color:#8a6d1a;font-size:13px;padding:10px 14px;
+    border-radius:6px;margin-bottom:20px;}
+  .analysis-card{background:#fff;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.05);
+    border-top:4px solid #cfd6e0;}
+  .analysis-card h3{margin:0 0 14px;font-size:16px;color:var(--navy);}
+  table.analysis-table{border-collapse:collapse;width:100%;font-size:13.5px;}
+  table.analysis-table th,table.analysis-table td{border:1px solid #e6e9ee;padding:9px 12px;text-align:left;}
+  table.analysis-table th{background:#f4f6f9;}
+  .answer-section{margin-bottom:16px;}
+  .answer-section h4{font-size:14px;color:#333;margin:14px 0 6px;display:flex;justify-content:space-between;align-items:center;}
+  .copy-btn{background:#eef1f5;border:1px solid #d7dbe2;color:var(--navy);font-size:12px;padding:5px 12px;
+    border-radius:5px;font-weight:600;}
+  .copy-btn.copied{background:var(--green);color:#fff;border-color:var(--green);}
+  .action-row{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap;}
+  .action-select{padding:6px 10px;border:1.5px solid #d7dbe2;border-radius:6px;font-size:12.5px;font-family:inherit;
+    color:#333;background:#fff;min-width:190px;}
+  .get-btn{padding:6px 18px;}
+  .get-btn:disabled{background:#c3c9d1 !important;border-color:#c3c9d1 !important;color:#fff;cursor:not-allowed;}
+  .answer-text-box{border:1px solid #e6e9ee;border-radius:6px;padding:12px 14px;font-size:13.5px;line-height:1.6;
+    background:#fafbfc;white-space:pre-wrap;min-height:40px;user-select:text;}
+  .restart-row{text-align:center;margin-top:24px;}
+  .restart-row button{background:var(--navy);color:#fff;border:none;padding:11px 26px;border-radius:6px;font-size:14px;font-weight:600;}
+</style>
+</head>
+<body>
+
+<!-- MOBILE / ORIENTATION WARNING -->
+<div id="mobileWarning" class="hidden">
+  <div class="box">
+    <div class="icon">🖥️</div>
+    <h2 id="viewportWarningTitle">Desktop (Landscape) View Required</h2>
+    <p id="viewportWarningText">Bankers Alliance's Descriptive Test Simulator is designed for desktop screens in landscape orientation. Please switch to Desktop Mode / rotate your device for the exam interface to work correctly.</p>
+    <button onclick="dismissMobileWarning()">Continue Anyway</button>
+  </div>
+</div>
+
+<div id="fsNotice">You are now in fullscreen mode. Press <b>Esc</b> anytime to exit fullscreen.</div>
+
+<!-- START PAGE -->
+<div id="startPage">
+  <div class="start-card">
+    <div class="brand-logo"><img class="mark" id="logoImg" src="https://i.postimg.cc/wv5BSqhL/Banker-alliance.jpg?text=BA&font=montserrat" alt="Bankers Alliance logo"><div class="name">Bankers Alliance</div></div>
+    <div class="brand-tag">Descriptive Test Platform</div>
+    <h1 id="startExamTitle">IBPS PO Mains Descriptive Test</h1>
+    <div class="start-meta-row">
+      <div class="meta-box"><div class="meta-num" id="startDuration">30 min</div><div class="meta-lbl">Duration</div></div>
+      <div class="meta-box"><div class="meta-num" id="startTotalMarks">25</div><div class="meta-lbl">Total Marks</div></div>
+      <div class="meta-box"><div class="meta-num" id="startSecCount">2</div><div class="meta-lbl">Sections</div></div>
+    </div>
+    <table class="instr-table" id="startPatternTable"></table>
+    <label for="candidateNameInput">Candidate Name</label>
+    <input type="text" id="candidateNameInput" placeholder="e.g. Samay Raina" maxlength="40">
+    <div id="nameError"></div>
+    <button class="btn-primary" onclick="goToInstructions()">Start Test</button>
+  </div>
+</div>
+
+<!-- INSTRUCTIONS PAGE -->
+<div id="instructionsPage" class="hidden">
+  <div class="instr-topbar" id="instrTitle">IBPS PO Mains — Descriptive Paper</div>
+  <div class="instr-wrap">
+    <div class="instr-main">
+      <div class="instr-scroll">
+        <h2>Instructions</h2>
+        <h3>Duration &amp; Auto-Submission</h3>
+        <ul>
+          <li>The total duration of the Descriptive Test is <b id="durText">30 minutes</b>.</li>
+          <li>The countdown timer in the <b>top right corner</b> of the screen will display the <b>remaining time</b>, and will continue running throughout the test.</li>
+          <li>Once the timer reaches zero, the test will <b>auto-submit</b>. You do not need to manually submit your answers.</li>
+        </ul>
+        <h3>Test Structure</h3>
+        <p style="font-size:14.5px;">The Descriptive Writing Test consists of <b id="secCountText">2</b> questions:</p>
+        <table class="instr-table" id="structureTable"></table>
+        <ul>
+          <li>The <b>total marks</b> for the Descriptive Test are <b id="totalMarksText">25 marks</b>.</li>
+          <li>Marks will be allotted based on the <b>evaluation criteria</b> mentioned below.</li>
+        </ul>
+        <h3>Navigation Rules</h3>
+        <ul>
+          <li>Do not click the <b>"Submit"</b> button until you have attempted all questions, as the test cannot be resumed once submitted.</li>
+          <li>The <b>word count</b> for each answer is displayed at the bottom-right corner of the answer box.</li>
+          <li>You may switch between sections at any time before the timer ends using the section tabs.</li>
+        </ul>
+        <h3>Scoring Criteria</h3>
+        <ul>
+          <li>The Descriptive Paper (Essay and Comprehension) may be broadly based on <b>Economic and Social issues, emerging trends in Banking and Technology, Current events, Ethics</b>, etc.</li>
+          <li>The Descriptive Paper may be evaluated using an <b>automated scoring mechanism</b> validated to identify features related to writing proficiency, in addition to expert evaluation.</li>
+          <li>Your score will be calculated based on the following three criteria:</li>
+          <li><b>Format</b> – Adherence to the required structure (Essay / Comprehension answers).</li>
+          <li><b>Content</b> – Relevance, clarity, and completeness of the response.</li>
+          <li><b>Language</b> – Grammar, coherence, fluency, vocabulary, and sentence structure.</li>
+          <li>Marks will be deducted for exceeding or falling short of the word limit.</li>
+          <li><b>Essay Writing</b> will be evaluated on structure, argumentation, and depth of analysis.</li>
+          <li><b>Reading Comprehension</b> will be evaluated on accuracy, relevance, and completeness of answers to all sub-questions.</li>
+        </ul>
+        <h3>Post-Test Information</h3>
+        <ul>
+          <li>After submitting the test, you will be able to view your score and a section-wise analysis.</li>
+        </ul>
+        <h3>Question Palette Color Key</h3>
+        <div class="legend-row-instr">
+          <div class="legend-item"><div class="legend-swatch sw-answered">✓</div> Green — Answered</div>
+          <div class="legend-item"><div class="legend-swatch sw-notanswered"></div> Red — Not Answered</div>
+          <div class="legend-item"><div class="legend-swatch sw-review"></div> Dark Purple — Mark for Review</div>
+        </div>
+      </div>
+      <div class="instr-footer-fixed">
+        <div class="instr-checkline">
+          <input type="checkbox" id="agreeCheck" onchange="toggleStartExamBtn()">
+          <label for="agreeCheck">I have read and understood all the instructions mentioned above, including the scoring criteria, and I agree to attempt the test accordingly.</label>
+        </div>
+        <div class="instr-nav-row">
+          <button class="btn-back" onclick="backToStart()">&lt; Back</button>
+          <button class="btn-next" id="startExamBtn" disabled onclick="beginExam()">I am Ready to Begin &gt;</button>
+        </div>
+        <div class="copyright-note">© Bankers Alliance. This platform is provided for personal, non-commercial exam-preparation practice only. Passages and questions used here are either original or adapted for educational purposes; unauthorized reproduction, redistribution or commercial use is prohibited.</div>
+      </div>
+    </div>
+    <div class="instr-side">
+      <div class="avatar-circle">👤</div>
+      <div class="cname" id="instrCandidateName">Candidate</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAM PAGE -->
+<div id="examPage" class="hidden">
+  <div class="exam-header">
+    <div class="left-title" id="examTitle">IBPS PO Mains Descriptive Test</div>
+    <div class="mid">
+      <div class="brandmini"><img class="dot" src="https://i.postimg.cc/wv5BSqhL/Banker-alliance.jpg?text=BA&font=montserrat" alt="Bankers Alliance logo"> Bankers Alliance</div>
+      <div class="testtype">Descriptive Test</div>
+    </div>
+    <div class="right">
+      <div class="avatar-mini">👤</div>
+      <div class="cname-mini" id="examCandidateName">Candidate</div>
+    </div>
+  </div>
+
+  <div class="subheader">
+    <button class="navarrow" onclick="scrollTabs(-1)">&#9664;</button>
+    <div class="tabscroll"><div class="tabs" id="tabsRow"></div></div>
+    <button class="navarrow" onclick="scrollTabs(1)">&#9654;</button>
+    <button class="fsbtn" id="fsToggleBtn" onclick="toggleFullscreen()" title="Toggle Fullscreen">⛶</button>
+    <div class="timeleft">Time Left :
+      <b id="timerDisplay">00:30:00</b>
+    </div>
+  </div>
+
+  <div class="exam-body">
+    <div class="exam-content" id="examContent"></div>
+
+    <div class="panel-toggle-col">
+      <button class="panel-toggle-btn" id="panelToggleBtn" onclick="togglePanel()">&#9654;</button>
+    </div>
+
+    <div class="side-panel" id="sidePanel">
+      <div class="side-inner">
+        <div class="side-profile">
+          <div class="avatar-circle2">👤</div>
+          <div class="sname" id="sideCandidateName">Candidate</div>
+        </div>
+        <div class="legend-grid">
+          <div class="legend-item"><div class="legend-swatch sw-answered" id="cntAnswered">0</div> Answered</div>
+          <div class="legend-item"><div class="legend-swatch sw-notanswered" id="cntNotAnswered">0</div> Not Answered</div>
+          <div class="legend-item"><div class="legend-swatch sw-notvisited" id="cntNotVisited">0</div> Not Visited</div>
+          <div class="legend-item"><div class="legend-swatch sw-review" id="cntReview">0</div> Mark For Review</div>
+          <div class="legend-item"><div class="legend-swatch sw-ansreview" id="cntAnsReview">0</div> Answered &amp; Mark for Review</div>
+        </div>
+        <div id="sectionListPanel"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-actions">
+    <div class="left-btns">
+      <button class="bbtn bbtn-mark" onclick="markForReview()">Mark for Review &amp; Next</button>
+      <button class="bbtn bbtn-clear" onclick="clearResponse()">Clear Response</button>
+    </div>
+    <div class="mid-btns">
+      <button class="bbtn bbtn-prev" id="prevBtn" onclick="prevQuestion()">Previous</button>
+      <button class="bbtn bbtn-save" onclick="saveAndNext()">Save &amp; Next</button>
+    </div>
+    <button class="bbtn bbtn-submit" onclick="confirmSubmit()">SUBMIT</button>
+  </div>
+</div>
+
+<!-- RESULT PAGE -->
+<div id="resultPage" class="hidden">
+  <div class="result-wrap">
+    <div class="disclaimer-banner">
+      <b>⚠️ Note:</b> This website does not have any AI or bot integrated to evaluate your answers automatically. To get a deep, accurate analysis of your writing, select your answer text below, click <b>Copy</b>, and paste it into any AI tool of your choice (ChatGPT, Gemini, Claude, etc.) — it will analyze your answer in depth and can give you a proper score and feedback.
+    </div>
+    <div class="result-header">
+      <div>
+        <div class="brand-logo"><img class="mark" id="logoImg" src="https://i.postimg.cc/wv5BSqhL/Banker-alliance.jpg?text=BA&font=montserrat" alt="Bankers Alliance logo"><div class="name">Bankers Alliance</div></div>
+        <div style="font-size:16px;color:#ffffff;margin-top:4px;">Test Submitted Successfully ✅ — <span id="resultCandidateName">Candidate</span></div>
+      </div>
+      <div class="score-badge">
+        <div class="num" id="scoreNum">0%</div>
+        <div class="lbl">Completion Score (Word Count)</div>
+      </div>
+    </div>
+    <div class="result-note">This percentage reflects how much of the word limit you filled in across both answers (words typed ÷ total word limit) — it is <b>not</b> an evaluation of writing quality, grammar or content. Descriptive answers are evaluated manually by subject experts. For real evaluation, use the <b>Copy for Evaluation</b> / <b>TXT</b> options below with an AI tool.</div>
+    <div class="analysis-card">
+      <h3>Section-wise Analysis</h3>
+      <table class="analysis-table" id="analysisTable"></table>
+    </div>
+    <div class="analysis-card">
+      <h3>Your Answers</h3>
+      <div id="answersContainer"></div>
+    </div>
+    <div class="restart-row"><button onclick="clearProgress(); location.reload();">Take Another Test</button></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ================= DATA ================= */
+const examConfig = {
+  testTitle: "IBPS PO Mains Descriptive Test",
+  instructionsTitle: "IBPS PO Mains \u2014 Descriptive Paper",
+  durationMinutes: 30,
+  sections: [
+    {
+      id:'essay', name:'Essay Writing', marks:15,
+      info:'Write a well-structured essay on the given topic.',
+      type:'single',
+      questions:[
+        {id:'essay-1', text:"Climate change - Mitigating Floods and Natural Disasters", wordLimit:250}
+      ]
+    },
+    {
+      id:'comprehension', name:'Reading Comprehension', marks:10,
+      info:'Read the passage carefully and answer all 5 questions that follow.',
+      type:'single',
+      questions:[
+        {id:'rc-1', text:"Financial innovation is frequently presented as an unqualified instrument of economic progress. By reducing transaction costs, widening access to capital and enabling individuals to participate in markets previously beyond their reach, technological advances have undoubtedly transformed the architecture of modern finance. Yet the assumption that greater financial sophistication necessarily produces greater financial welfare is considerably less secure. Innovation can broaden access without improving outcomes, and it can redistribute risks without eliminating them. Indeed, some of the most consequential financial disruptions of recent decades have emerged not from a shortage of innovation, but from its rapid diffusion without a corresponding expansion in institutional capacity, consumer understanding and regulatory oversight.\n\nThe distinction between access and effective participation is particularly important. A digital lending platform may enable an individual with little collateral or formal credit history to obtain a loan within minutes. From the standpoint of access, this represents considerable progress. But if the borrower does not understand the pricing structure, cannot accurately assess repayment obligations, or is repeatedly encouraged to refinance existing liabilities, access may merely accelerate financial vulnerability. The technology itself is neither inherently emancipatory nor exploitative; its consequences depend substantially on the institutional and behavioural environment in which it operates.\n\nThis problem becomes more complicated when convenience is mistaken for empowerment. Financial products increasingly rely on automated decision-making, personalised interfaces and frictionless transactions. Such features can make financial services easier to use, but they may simultaneously reduce the deliberation that traditionally accompanied consequential financial decisions. When a transaction requires little effort, consumers may be less inclined to question its necessity, compare alternatives or consider its long-term implications. The removal of friction, therefore, has an ambiguous economic value: what is an obstacle from the perspective of efficiency may sometimes function as a safeguard against impulsive or poorly informed decisions.\n\nNone of this implies that financial innovation should be restrained merely because it introduces new forms of risk. Such an approach ignore the substantial benefits generated by digital payments, alternative credit mechanisms and technology-enabled financial inclusion. The more defensible proposition is that innovation should be accompanied by institutional adaptation. Regulators need the capacity to understand emerging business models; consumers need the literacy to evaluate increasingly complex products; and financial institutions need risk-management systems capable of responding to rapidly changing channels of distribution.\n\nUltimately, the challenge is not to determine whether financial innovation is beneficial or harmful. That binary framing is itself inadequate. The more pertinent question is under what conditions innovation converts technological possibility into durable economic benefit. Financial progress cannot be measured solely by the speed with which a product reaches a consumer or the number of people who gain nominal access to it. It must also be judged by whether that access enhances resilience, informed choice and productive economic participation. Innovation becomes meaningful progress only when the institutions surrounding it evolve sufficiently to ensure that the benefits of greater financial connectivity do not come at the expense of greater financial fragility.\n\nQuestions \u2014 5 x 2 marks\nQ1. What is the central argument of the passage?\nQ2. Why does the author distinguish between \"access\" and \"effective participation\" in financial services? Explain with reference to the passage.\nQ3. What does the author mean by stating that \"the removal of friction\" may have an ambiguous economic value?\nQ4. What can be most reasonably inferred from the passage?\nQ5. Describe author's tone toward financial innovation.", html:"Financial innovation is frequently presented as an unqualified instrument of economic progress. By reducing transaction costs, widening access to capital and enabling individuals to participate in markets previously beyond their reach, technological advances have undoubtedly transformed the architecture of modern finance. Yet the assumption that greater financial sophistication necessarily produces greater financial welfare is considerably less secure. Innovation can broaden access without improving outcomes, and it can redistribute risks without eliminating them. Indeed, some of the most consequential financial disruptions of recent decades have emerged not from a shortage of innovation, but from its rapid diffusion without a corresponding expansion in institutional capacity, consumer understanding and regulatory oversight.\n\nThe distinction between access and effective participation is particularly important. A digital lending platform may enable an individual with little collateral or formal credit history to obtain a loan within minutes. From the standpoint of access, this represents considerable progress. But if the borrower does not understand the pricing structure, cannot accurately assess repayment obligations, or is repeatedly encouraged to refinance existing liabilities, access may merely accelerate financial vulnerability. The technology itself is neither inherently emancipatory nor exploitative; its consequences depend substantially on the institutional and behavioural environment in which it operates.\n\nThis problem becomes more complicated when convenience is mistaken for empowerment. Financial products increasingly rely on automated decision-making, personalised interfaces and frictionless transactions. Such features can make financial services easier to use, but they may simultaneously reduce the deliberation that traditionally accompanied consequential financial decisions. When a transaction requires little effort, consumers may be less inclined to question its necessity, compare alternatives or consider its long-term implications. The removal of friction, therefore, has an ambiguous economic value: what is an obstacle from the perspective of efficiency may sometimes function as a safeguard against impulsive or poorly informed decisions.\n\nNone of this implies that financial innovation should be restrained merely because it introduces new forms of risk. Such an approach ignore the substantial benefits generated by digital payments, alternative credit mechanisms and technology-enabled financial inclusion. The more defensible proposition is that innovation should be accompanied by institutional adaptation. Regulators need the capacity to understand emerging business models; consumers need the literacy to evaluate increasingly complex products; and financial institutions need risk-management systems capable of responding to rapidly changing channels of distribution.\n\nUltimately, the challenge is not to determine whether financial innovation is beneficial or harmful. That binary framing is itself inadequate. The more pertinent question is under what conditions innovation converts technological possibility into durable economic benefit. Financial progress cannot be measured solely by the speed with which a product reaches a consumer or the number of people who gain nominal access to it. It must also be judged by whether that access enhances resilience, informed choice and productive economic participation. Innovation becomes meaningful progress only when the institutions surrounding it evolve sufficiently to ensure that the benefits of greater financial connectivity do not come at the expense of greater financial fragility.\n\n<b>Title: The Paradox of Financial Innovation</b>\n\n<b>Questions \u2014 5 x 2 marks</b>\n<b>Q1. What is the central argument of the passage?</b>\n<b>Q2. Why does the author distinguish between \"access\" and \"effective participation\" in financial services? Explain with reference to the passage.</b>\n<b>Q3. What does the author mean by stating that \"the removal of friction\" may have an ambiguous economic value?</b>\n<b>Q4. What can be most reasonably inferred from the passage?</b>\n<b>Q5. Describe author's tone toward financial innovation.</b>", wordLimit:150}
+      ]
+    }
+  ]
+};
+
+/* ================= STATE ================= */
+let candidateName = "Candidate";
+let items = [];
+let currentItemId = 1;
+let timeRemaining = examConfig.durationMinutes*60;
+let timerInterval = null;
+let panelOpen = true;
+let sectionTimeSpent = {};
+let toastTimer = null;
+let examSubmitted = false;
+const STORAGE_KEY = 'bankersAlliance_examProgress_v1';
+
+function buildItems(){
+  items = [];
+  examConfig.sections.forEach((sec, sIdx)=>{
+    sectionTimeSpent[sIdx] = 0;
+    if(sec.type==='single'){
+      items.push({ id: items.length+1, sectionIdx:sIdx, kind:'single', question: sec.questions[0], status:'not-visited', text:'', wordCount:0 });
+    } else {
+      items.push({ id: items.length+1, sectionIdx:sIdx, kind:'choice', options: sec.questions, chosenIndex:null, tempChoice:null, status:'not-visited', text:'', wordCount:0 });
+    }
+  });
+}
+
+/* ================= PROGRESS PERSISTENCE (localStorage) ================= */
+function saveProgress(){
+  try{
+    if(!items || !items.length) return;
+    const state = {
+      candidateName: candidateName,
+      currentItemId: currentItemId,
+      timeRemaining: timeRemaining,
+      sectionTimeSpent: sectionTimeSpent,
+      examSubmitted: examSubmitted,
+      items: items.map(it=>({
+        id: it.id, text: it.text, wordCount: it.wordCount, status: it.status,
+        chosenIndex: (it.chosenIndex!==undefined ? it.chosenIndex : null),
+        tempChoice: (it.tempChoice!==undefined ? it.tempChoice : null)
+      })),
+      savedAt: Date.now()
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }catch(e){ /* localStorage unavailable (private mode, etc.) — fail silently */ }
+}
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  }catch(e){ return null; }
+}
+function clearProgress(){
+  try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+}
+
+function checkResumeProgress(){
+  const saved = loadProgress();
+  if(!saved || !saved.items) return;
+  const hasContent = saved.examSubmitted || saved.items.some(it=>it.text && it.text.trim().length>0);
+  if(!hasContent) return;
+  showResumeModal(saved);
+}
+
+function showResumeModal(saved){
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.innerHTML = '<div class="modal-box" style="width:400px;">'+
+    '<h3>Welcome Back!</h3>'+
+    '<p>We found a previous test session'+(saved.examSubmitted ? ' (already submitted)' : ' (in progress)')+
+    ' saved in this browser for <b>'+((saved.candidateName||'Candidate').replace(/</g,'&lt;'))+'</b>. Would you like to resume it, or start a fresh test?</p>'+
+    '<div class="modal-btns">'+
+      '<button id="freshBtn">Start Fresh</button>'+
+      '<button class="confirm" id="resumeBtn">Resume</button>'+
+    '</div></div>';
+  document.body.appendChild(overlay);
+  overlay.querySelector('#freshBtn').onclick = ()=>{ clearProgress(); overlay.remove(); };
+  overlay.querySelector('#resumeBtn').onclick = ()=>{ overlay.remove(); resumeFromSaved(saved); };
+}
+
+function resumeFromSaved(saved){
+  candidateName = saved.candidateName || 'Candidate';
+  document.getElementById('instrCandidateName').textContent = candidateName;
+  document.getElementById('examCandidateName').textContent = candidateName;
+  document.getElementById('sideCandidateName').textContent = candidateName;
+  document.getElementById('resultCandidateName').textContent = candidateName;
+
+  buildItems();
+  saved.items.forEach(si=>{
+    const it = items.find(x=>x.id===si.id);
+    if(!it) return;
+    it.text = si.text || '';
+    it.wordCount = si.wordCount || 0;
+    it.status = si.status || 'not-visited';
+    it.chosenIndex = (si.chosenIndex!==undefined ? si.chosenIndex : null);
+    it.tempChoice = (si.tempChoice!==undefined ? si.tempChoice : null);
+  });
+  currentItemId = saved.currentItemId || 1;
+  timeRemaining = (typeof saved.timeRemaining === 'number') ? saved.timeRemaining : examConfig.durationMinutes*60;
+  sectionTimeSpent = saved.sectionTimeSpent || sectionTimeSpent;
+  examSubmitted = !!saved.examSubmitted;
+
+  document.getElementById('startPage').classList.add('hidden');
+  document.getElementById('instructionsPage').classList.add('hidden');
+
+  if(examSubmitted){
+    document.getElementById('examPage').classList.add('hidden');
+    document.getElementById('resultPage').classList.remove('hidden');
+    renderResults();
+  } else {
+    document.getElementById('examPage').classList.remove('hidden');
+    renderTabs();
+    renderPanel();
+    renderContent();
+    updateTimerDisplay();
+    startTimer();
+    enterFullscreen();
+  }
+}
+
+function buildStructureTableHtml(){
+  let html = '<tr><th>SL. No.</th><th>Name of the Test</th><th>No. of Questions</th><th>Maximum Marks</th></tr>';
+  examConfig.sections.forEach((s,i)=>{
+    const qcount = s.type==='choice' ? 1 : s.questions.length;
+    html += '<tr><td>'+(i+1)+'</td><td>'+s.name+'</td><td>'+qcount+'</td><td>'+s.marks+'</td></tr>';
+  });
+  return html;
+}
+
+/* ================= INIT ================= */
+function initStaticInfo(){
+  document.getElementById('startExamTitle').textContent = examConfig.testTitle;
+  document.getElementById('startDuration').textContent = examConfig.durationMinutes+' min';
+  document.getElementById('startTotalMarks').textContent = examConfig.sections.reduce((a,s)=>a+s.marks,0);
+  document.getElementById('startSecCount').textContent = examConfig.sections.length;
+  document.getElementById('startPatternTable').innerHTML = buildStructureTableHtml();
+
+  document.getElementById('instrTitle').textContent = examConfig.instructionsTitle;
+  document.getElementById('durText').textContent = examConfig.durationMinutes+' minutes';
+  document.getElementById('secCountText').textContent = examConfig.sections.length;
+  document.getElementById('totalMarksText').textContent = (examConfig.sections.reduce((a,s)=>a+s.marks,0))+' marks';
+  document.getElementById('structureTable').innerHTML = buildStructureTableHtml();
+  document.getElementById('examTitle').textContent = examConfig.testTitle;
+}
+window.addEventListener('load', ()=>{ initStaticInfo(); checkViewport(); checkResumeProgress(); });
+
+/* ================= VIEWPORT CHECK ================= */
+function checkViewport(){
+  const warn = document.getElementById('mobileWarning');
+  const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+  const tooNarrow = window.innerWidth < 900;
+  if(tooNarrow || isPortrait){ warn.classList.remove('hidden'); }
+  else { warn.classList.add('hidden'); }
+}
+function dismissMobileWarning(){ document.getElementById('mobileWarning').classList.add('hidden'); }
+/* Viewport warning is checked once on load (Start page) only, per spec — never re-checked on later pages. */
+
+/* ================= START PAGE ================= */
+function goToInstructions(){
+  const val = document.getElementById('candidateNameInput').value.trim();
+  const err = document.getElementById('nameError');
+  if(!val){ err.textContent = 'Please enter your name to continue.'; return; }
+  err.textContent = '';
+  candidateName = val;
+  document.getElementById('instrCandidateName').textContent = candidateName;
+  document.getElementById('examCandidateName').textContent = candidateName;
+  document.getElementById('sideCandidateName').textContent = candidateName;
+  document.getElementById('resultCandidateName').textContent = candidateName;
+
+  document.getElementById('startPage').classList.add('hidden');
+  document.getElementById('instructionsPage').classList.remove('hidden');
+}
+function backToStart(){
+  document.getElementById('instructionsPage').classList.add('hidden');
+  document.getElementById('startPage').classList.remove('hidden');
+}
+function toggleStartExamBtn(){
+  document.getElementById('startExamBtn').disabled = !document.getElementById('agreeCheck').checked;
+}
+
+/* ================= EXAM START ================= */
+function beginExam(){
+  clearProgress();
+  buildItems();
+  currentItemId = 1;
+  timeRemaining = examConfig.durationMinutes*60;
+  document.getElementById('instructionsPage').classList.add('hidden');
+  document.getElementById('examPage').classList.remove('hidden');
+  renderTabs();
+  renderPanel();
+  renderContent();
+  updateTimerDisplay();
+  startTimer();
+  enterFullscreen();
+  saveProgress();
+}
+function enterFullscreen(){
+  const el = document.documentElement;
+  const req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+  if(req){ req.call(el).then(showFsNotice).catch(showFsNotice); } else { showFsNotice(); }
+}
+function showFsNotice(){
+  const n = document.getElementById('fsNotice');
+  n.classList.add('show');
+  setTimeout(()=> n.classList.remove('show'), 4000);
+}
+
+function startTimer(){
+  if(timerInterval) clearInterval(timerInterval);
+  timerInterval = setInterval(()=>{
+    if(examSubmitted) return;
+    timeRemaining--;
+    const curItem = items[currentItemId-1];
+    if(curItem) sectionTimeSpent[curItem.sectionIdx] = (sectionTimeSpent[curItem.sectionIdx]||0) + 1;
+    updateTimerDisplay();
+    saveProgress();
+    if(timeRemaining<=0){
+      clearInterval(timerInterval);
+      showToast('Time is up! Auto-submitting your test...');
+      setTimeout(submitTest, 1200);
+    }
+  },1000);
+}
+function toggleFullscreen(){
+  const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+  if(isFs){
+    (document.exitFullscreen || document.webkitExitFullscreen || function(){}).call(document);
+  } else {
+    const el = document.documentElement;
+    const req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+    if(req){ req.call(el).catch(()=>{}); }
+  }
+}
+document.addEventListener('fullscreenchange', updateFsBtnIcon);
+document.addEventListener('webkitfullscreenchange', updateFsBtnIcon);
+function updateFsBtnIcon(){
+  const btn = document.getElementById('fsToggleBtn');
+  if(!btn) return;
+  const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+  btn.textContent = isFs ? '⤢' : '⛶';
+  btn.title = isFs ? 'Exit Fullscreen' : 'Enter Fullscreen';
+}
+function updateTimerDisplay(){
+  const h = Math.floor(timeRemaining/3600);
+  const m = Math.floor((timeRemaining%3600)/60);
+  const s = timeRemaining%60;
+  const pad = n=>String(n).padStart(2,'0');
+  document.getElementById('timerDisplay').textContent = pad(h)+':'+pad(m)+':'+pad(s);
+}
+
+/* ================= TABS ================= */
+function renderTabs(){
+  const row = document.getElementById('tabsRow');
+  row.innerHTML = '';
+  examConfig.sections.forEach((sec, idx)=>{
+    const curSec = items[currentItemId-1].sectionIdx;
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (idx===curSec ? ' active':'');
+    btn.innerHTML = sec.name + ' <span class="info-i" title="'+sec.info+'">i</span>';
+    btn.onclick = ()=> switchSection(idx);
+    row.appendChild(btn);
+  });
+}
+function scrollTabs(dir){ document.getElementById('tabsRow').scrollBy({left: dir*150, behavior:'smooth'}); }
+function switchSection(sIdx){
+  const target = items.find(it=>it.sectionIdx===sIdx);
+  if(target) goToItem(target.id);
+}
+
+/* ================= PANEL ================= */
+function togglePanel(){
+  panelOpen = !panelOpen;
+  document.getElementById('sidePanel').classList.toggle('closed', !panelOpen);
+  document.getElementById('panelToggleBtn').innerHTML = panelOpen ? '&#9654;' : '&#9664;';
+}
+function renderPanel(){
+  const counts = {answered:0, notanswered:0, notvisited:0, marked:0, answeredmarked:0};
+  items.forEach(it=>{
+    if(it.status==='answered') counts.answered++;
+    else if(it.status==='not-answered') counts.notanswered++;
+    else if(it.status==='not-visited') counts.notvisited++;
+    else if(it.status==='marked') counts.marked++;
+    else if(it.status==='answered-marked') counts.answeredmarked++;
+  });
+  document.getElementById('cntAnswered').textContent = counts.answered;
+  document.getElementById('cntNotAnswered').textContent = counts.notanswered;
+  document.getElementById('cntNotVisited').textContent = counts.notvisited;
+  document.getElementById('cntReview').textContent = counts.marked;
+  document.getElementById('cntAnsReview').textContent = counts.answeredmarked;
+
+  const listEl = document.getElementById('sectionListPanel');
+  listEl.innerHTML = '';
+  const curSecIdx = items[currentItemId-1].sectionIdx;
+  examConfig.sections.forEach((sec, sIdx)=>{
+    const block = document.createElement('div');
+    block.className = 'sec-block';
+    const header = document.createElement('div');
+    header.className = 'sec-header' + (sIdx===curSecIdx ? '' : ' inactive');
+    header.innerHTML = '<span>'+sec.name+'</span>';
+    header.onclick = ()=> switchSection(sIdx);
+    block.appendChild(header);
+    if(sIdx===curSecIdx){
+      const body = document.createElement('div');
+      body.className = 'sec-body';
+      body.innerHTML = '<div class="choose-label">Choose a Question</div>';
+      const row = document.createElement('div');
+      row.className = 'qchip-row';
+      items.filter(it=>it.sectionIdx===sIdx).forEach(it=>{
+        const chip = document.createElement('button');
+        chip.className = 'qchip st-' + statusClass(it.status) + (it.id===currentItemId ? ' current':'');
+        chip.textContent = it.id;
+        chip.onclick = ()=> goToItem(it.id);
+        row.appendChild(chip);
+      });
+      body.appendChild(row);
+      block.appendChild(body);
+    }
+    listEl.appendChild(block);
+  });
+}
+function statusClass(status){
+  return { 'not-visited':'notvisited','not-answered':'notanswered','answered':'answered','marked':'marked','answered-marked':'answeredmarked' }[status];
+}
+
+/* ================= CONTENT RENDER ================= */
+function syncCurrentAnswerBox(){
+  const box = document.getElementById('currentAnswerBox');
+  const cur = items[currentItemId-1];
+  if(!box || !cur) return;
+  cur.text = box.value;
+  cur.wordCount = wordCount(box.value);
+}
+
+function goToItem(id){
+  syncCurrentAnswerBox();
+  const item = items[id-1];
+  if(item.status==='not-visited') item.status='not-answered';
+  currentItemId = id;
+  renderTabs();
+  renderPanel();
+  renderContent();
+  saveProgress();
+}
+
+function wordCount(text){
+  const t = text.trim();
+  return t.length ? t.split(/\s+/).filter(Boolean).length : 0;
+}
+
+function renderContent(){
+  const item = items[currentItemId-1];
+  const content = document.getElementById('examContent');
+  content.innerHTML = '';
+
+  const qno = document.createElement('div');
+  qno.className = 'qno';
+  qno.textContent = 'Question No ' + item.id;
+  content.appendChild(qno);
+
+  if(item.kind==='single'){
+    const qtext = document.createElement('div');
+    qtext.className = 'qtext';
+    if(item.question.html){ qtext.innerHTML = item.question.html; }
+    else { qtext.textContent = item.question.text; }
+    content.appendChild(qtext);
+    appendAnswerArea(content, item, item.question.wordLimit);
+  } else {
+    if(item.chosenIndex===null){
+      const label = document.createElement('div');
+      label.className = 'qtext';
+      label.textContent = 'Choose one of the following and provide your answer:';
+      content.appendChild(label);
+      item.options.forEach((opt, oIdx)=>{
+        const box = document.createElement('label');
+        box.className = 'choice-box' + (oIdx===item.tempChoice ? ' selected' : '');
+        box.innerHTML = '<input type="radio" name="choiceq" '+(oIdx===item.tempChoice?'checked':'')+'>'+
+          '<div><div class="clabel">'+opt.label+'</div><div class="ctext">Question:<br>'+opt.text+'</div></div>';
+        box.querySelector('input').onclick = ()=>{ item.tempChoice = oIdx; renderContent(); };
+        content.appendChild(box);
+      });
+      const cbtn = document.createElement('button');
+      cbtn.className = 'bbtn bbtn-save';
+      cbtn.style.alignSelf = 'flex-start';
+      cbtn.textContent = 'Continue';
+      cbtn.disabled = (item.tempChoice===undefined || item.tempChoice===null);
+      cbtn.onclick = ()=>{ item.chosenIndex = item.tempChoice; renderContent(); };
+      content.appendChild(cbtn);
+    } else {
+      const chosen = item.options[item.chosenIndex];
+      const changeLink = document.createElement('span');
+      changeLink.className = 'changeq-link';
+      changeLink.textContent = '← Change Question';
+      changeLink.onclick = ()=>{
+        if(item.text.trim().length && !confirm('Switching the question will clear your current answer. Continue?')) return;
+        item.chosenIndex = null; item.tempChoice = null; item.text=''; item.wordCount=0;
+        item.status = 'not-answered';
+        renderContent(); renderPanel();
+      };
+      content.appendChild(changeLink);
+      const qtext = document.createElement('div');
+      qtext.className = 'qtext';
+      qtext.textContent = chosen.label + ' — Question:\n' + chosen.text;
+      content.appendChild(qtext);
+      appendAnswerArea(content, item, chosen.wordLimit);
+    }
+  }
+}
+
+/* ---- restricted typing answer box ---- */
+function appendAnswerArea(container, item, limit){
+  const box = document.createElement('textarea');
+  box.className = 'answerbox';
+  box.id = 'currentAnswerBox';
+  box.placeholder = 'Type your answer here...';
+  box.value = item.text;
+  container.appendChild(box);
+
+  const wcRow = document.createElement('div');
+  wcRow.className = 'wordcount-row';
+  wcRow.textContent = 'Words: ' + item.wordCount + ' / ' + limit;
+  if(item.wordCount>=limit) wcRow.classList.add('limit-hit');
+  container.appendChild(wcRow);
+
+  attachRestrictedTextarea(box, item, limit, wcRow);
+  document.getElementById('prevBtn').disabled = (currentItemId===1);
+  setTimeout(()=> box.focus(), 0);
+}
+
+function syncFromBox(box, item, limit, wcRow){
+  item.text = box.value;
+  item.wordCount = wordCount(box.value);
+  wcRow.textContent = 'Words: ' + item.wordCount + ' / ' + limit;
+  wcRow.classList.toggle('limit-hit', item.wordCount>=limit);
+}
+function flashLimit(wcRow){
+  wcRow.classList.add('limit-hit');
+  showToast('Word limit reached for this answer.');
+}
+
+function attachRestrictedTextarea(box, item, limit, wcRow){
+  /* Safety net: whatever ends up in the box — via our controlled keydown logic,
+     native Backspace/Delete, browser autofill, spellcheck corrections, IME input,
+     or anything else — always gets captured into saved state on every 'input' event. */
+  box.addEventListener('input', ()=> syncFromBox(box, item, limit, wcRow));
+
+  box.addEventListener('contextmenu', e=> e.preventDefault());
+  box.addEventListener('paste', e=> e.preventDefault());
+  box.addEventListener('drop', e=> e.preventDefault());
+  box.addEventListener('wheel', e=> e.preventDefault(), {passive:false});
+
+  box.addEventListener('mousedown', e=>{
+    const rect = box.getBoundingClientRect();
+    const scrollbarZone = 16;
+    const nearRightEdge = (rect.right - e.clientX) <= scrollbarZone;
+    const nearBottomEdge = (rect.bottom - e.clientY) <= scrollbarZone;
+    if(!nearRightEdge && !nearBottomEdge){
+      e.preventDefault();
+      box.focus();
+    }
+  });
+
+  box.addEventListener('keydown', e=>{
+    if(e.code==='CapsLock' || e.code==='NumLock'){ e.preventDefault(); return; }
+    if((e.ctrlKey||e.metaKey) && ['v','s','a','V','S','A'].indexOf(e.key)!==-1){ e.preventDefault(); return; }
+
+    const navKeys = ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','Tab','PageUp','PageDown'];
+    if(navKeys.indexOf(e.key)!==-1) return;
+
+    if(e.key==='Backspace' || e.key==='Delete'){
+      setTimeout(()=> syncFromBox(box, item, limit, wcRow), 0);
+      return;
+    }
+
+    if(e.key==='Enter'){
+      e.preventDefault();
+      const pos = box.selectionStart;
+      const before = box.value.slice(0,pos), after = box.value.slice(pos);
+      if(before.endsWith('\n')) return;
+      if(wordCount(box.value) >= limit){ flashLimit(wcRow); return; }
+      box.value = before + '\n' + after;
+      box.selectionStart = box.selectionEnd = pos+1;
+      syncFromBox(box, item, limit, wcRow);
+      return;
+    }
+
+    if(e.key===' '){
+      e.preventDefault();
+      const pos = box.selectionStart;
+      const before = box.value.slice(0,pos);
+      if(before.endsWith(' ') || before.endsWith('\n')){
+        /* Double (or more) consecutive spaces are not accepted — only a single space is kept. */
+        return;
+      }
+      const after = box.value.slice(pos);
+      box.value = before + ' ' + after;
+      box.selectionStart = box.selectionEnd = pos+1;
+      syncFromBox(box, item, limit, wcRow);
+      return;
+    }
+
+    if(e.key.length===1 && !e.ctrlKey && !e.metaKey && !e.altKey){
+      e.preventDefault();
+      let ch = e.key;
+      if(/^[a-zA-Z]$/.test(ch)){ ch = e.shiftKey ? ch.toUpperCase() : ch.toLowerCase(); }
+      const pos = box.selectionStart;
+      const before = box.value.slice(0,pos), after = box.value.slice(pos);
+      const testVal = before + ch + after;
+      if(wordCount(testVal) > limit){ flashLimit(wcRow); return; }
+      box.value = testVal;
+      box.selectionStart = box.selectionEnd = pos+1;
+      syncFromBox(box, item, limit, wcRow);
+      return;
+    }
+  });
+}
+
+/* ================= ACTIONS ================= */
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=> t.classList.remove('show'), 2800);
+}
+
+function saveCurrentStatus(newStatus){
+  const item = items[currentItemId-1];
+  if(item.kind==='choice' && item.chosenIndex===null){
+    showToast('Please select a question before saving.');
+    return false;
+  }
+  const hasText = item.text.trim().length>0;
+  if(newStatus==='answer'){ item.status = hasText ? 'answered' : 'not-answered'; }
+  else if(newStatus==='mark'){ item.status = hasText ? 'answered-marked' : 'marked'; }
+  return true;
+}
+
+function saveAndNext(){
+  syncCurrentAnswerBox();
+  if(!saveCurrentStatus('answer')) return;
+  showToast('Answer saved.');
+  renderPanel();
+  saveProgress();
+  goToNext();
+}
+function markForReview(){
+  syncCurrentAnswerBox();
+  if(!saveCurrentStatus('mark')) return;
+  showToast('Answer saved & marked for review.');
+  renderPanel();
+  saveProgress();
+  goToNext();
+}
+function clearResponse(){
+  const item = items[currentItemId-1];
+  item.text=''; item.wordCount=0; item.status='not-answered';
+  renderContent(); renderPanel();
+  showToast('Response cleared.');
+  saveProgress();
+}
+function goToNext(){
+  if(currentItemId < items.length){ goToItem(currentItemId+1); }
+  else { renderContent(); renderPanel(); }
+}
+function prevQuestion(){ if(currentItemId>1) goToItem(currentItemId-1); }
+
+/* ================= SUBMIT ================= */
+function confirmSubmit(){
+  syncCurrentAnswerBox();
+  let answered=0, notAnswered=0, skipped=0, marked=0;
+  items.forEach(it=>{
+    if(it.status==='answered' || it.status==='answered-marked') answered++;
+    if(it.status==='marked') marked++;
+    else if(it.status==='not-answered') notAnswered++;
+    else if(it.status==='not-visited') skipped++;
+  });
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.innerHTML = '<div class="modal-box" style="width:420px;">'+
+    '<h3>Test Summary</h3>'+
+    '<table class="summary-table">'+
+      '<tr><th>Status</th><th>Count</th></tr>'+
+      '<tr><td>Answered</td><td>'+answered+'</td></tr>'+
+      '<tr><td>Marked for Review</td><td>'+marked+'</td></tr>'+
+      '<tr><td>Not Answered</td><td>'+notAnswered+'</td></tr>'+
+      '<tr><td>Not Visited / Skipped</td><td>'+skipped+'</td></tr>'+
+      '<tr><td><b>Total Questions</b></td><td><b>'+items.length+'</b></td></tr>'+
+    '</table>'+
+    '<p style="font-size:13px;color:#555;">Once submitted, you cannot resume or edit your answers.</p>'+
+    '<div class="modal-btns">'+
+      '<button id="cancelSubmit">Go Back</button>'+
+      '<button class="confirm" id="okSubmit">Submit Exam</button>'+
+    '</div></div>';
+  document.body.appendChild(overlay);
+  overlay.querySelector('#cancelSubmit').onclick = ()=> overlay.remove();
+  overlay.querySelector('#okSubmit').onclick = ()=>{ overlay.remove(); submitTest(); };
+}
+
+/* ================= AI EVALUATION PROMPT BUILDER ================= */
+const PROMPT_TEMPLATES = {
+  essay: `You are an expert evaluator of SBI PO and IBPS PO Mains Descriptive English. Evaluate my answer like a strict but fair bank-examination evaluator.
+
+Task Type:
+Essay
+
+Evaluate it at the actual SBI PO/IBPS PO level. Do not judge it like a UPSC answer, academic research paper or creative-writing competition. Clear, correct and well-organised English should receive more importance than complicated vocabulary or unnecessary facts.
+
+DETAILED SCORECARD
+Evaluate my answer using this diagnostic marking system. This is a practice assessment, not an official examination score.
+Score of Essay Out of 15.
+Criterion Maximum Marks Marks Awarded 
+Examiner’s Comments:
+Relevance and task completion 20%  
+, Quality and development of ideas 15%, Organisation, coherence and flow 15% , Grammar and sentence construction 20% , Clarity with vocabulary and conciseness 10% , Format, tone and task-specific requirements 10%, Spelling, punctuation and capitalisation 10%  , Total 100%  
+Do not award marks generously merely because the topic has been understood. Language, structure and execution must also be considered.
+
+IMPORTANT EVALUATION RULES: 
+Count the words in my answer. If the question itself provides a word restriction, check whether I have followed it. Otherwise, only report the word count without penalising me.
+Be honest and specific. Do not give unnecessary praise or generic comments such as “Good attempt” without explaining why.
+Separate actual grammatical mistakes from optional stylistic improvements. Do not present every alternative sentence as if my original sentence were grammatically wrong.
+Accept standard Indian/British English. Check that spelling style remains consistent throughout the answer.
+Do not expect specialised banking knowledge, difficult vocabulary, excessive statistics or quotations unless they are genuinely required by the question.
+Check whether my answer is:
+Relevant to the exact question, Complete and sufficiently, developed, Logically organised, Grammatically correct, Easy to understand, Concise and free from repetition, Written in the appropriate tone, Properly formatted for the given task, Suitable for a time-bound banking examination.
+Flag doubtful or incorrect factual claims separately. Do not invent facts while correcting my answer.
+Assess my original answer completely before showing any rewritten version.
+
+FORMAT OF YOUR EVALUATION
+TASK IDENTIFICATION
+Mention:
+Examination
+Task type
+Answer word count
+Whether the response properly addresses the question
+
+QUICK EXAMINER’S VERDICT
+Give a direct three-to-five-sentence assessment covering:
+Overall quality, Strongest aspect, Biggest weakness, Whether the answer is presently exam-ready.
+
+DETAILED SCORECARD
+Evaluate my answer using this diagnostic marking system. This is a practice assessment, not an official examination score.
+
+Criterion Maximum Marks Marks Awarded Examiner’s Comments:
+Relevance and task completion 20  
+, Quality and development of ideas 15, Organisation, coherence and flow 15 , Grammar and sentence construction 20 , Clarity with vocabulary and conciseness 10 , Format, tone and task-specific requirements 10, Spelling, punctuation and capitalisation 10  
+Total 100  
+
+Do not award marks generously merely because the topic has been understood. Language, structure and execution must also be considered.
+
+GRAMMAR AND LANGUAGE CORRECTIONS
+Create a table with the following columns:
+My Original Words Type of Error Corrected Version Simple Explanation
+Check carefully for:
+Subject-verb agreement, Tenses, Articles, Prepositions, Pronouns, Singular and plural forms, Sentence fragments, Run-on sentences, Incorrect word choice, Awkward expressions, Spelling, Punctuation, Capitalisation, Unnecessary repetition.
+Include only genuine mistakes or clearly awkward constructions. If a sentence is already correct, do not change it merely to display better vocabulary.
+
+STRUCTURE AND FLOW ANALYSIS
+Comment separately on:
+Effectiveness of the opening
+Logical order of ideas
+Paragraph division
+Connection between sentences and paragraphs
+Use of transitions
+Repetition or unnecessary information
+Missing points
+Strength of the ending
+Whether the answer remains focused on the question
+Identify the exact paragraph or sentence where the flow becomes weak.
+
+TASK-SPECIFIC EVALUATION
+Apply only the relevant checklist:
+- For an Essay:
+• Does the introduction directly establish the topic?
+• Are the ideas logically developed?
+• Is the discussion balanced where required?
+• Are examples relevant and believable?
+• Does the conclusion properly close the discussion?
+
+MINIMUM-CORRECTION VERSION
+Rewrite my complete answer by correcting only:
+- Grammar, Spelling, Punctuation, Clearly awkward sentences, Preserve my original ideas, examples, order and natural writing style.
+- Do not add new arguments or make the language unnecessarily advanced.
+
+EXAM-READY IMPROVED VERSION
+Provide a second version:
+Retains the main ideas from my answer
+Improves structure, flow and clarity
+Uses realistic SBI PO/IBPS PO-level English, Avoids difficult or artificial vocabulary, Removes repetition
+Includes missing links or explanations where necessary
+Remains concise and suitable for a time-bound examination, Do not turn it into a UPSC-style or highly technical answer.
+
+MY FIVE MOST IMPORTANT IMPROVEMENTS
+• Give five personalised and actionable points. Mention recurring mistakes rather than generic advice.
+• For example:
+Which grammar rule I should revise, Which sentences should be shortened, Where my ideas require better connection, Which unnecessary expressions I repeatedly use, What I should do differently in my next attempt.
+
+FINAL ASSESSMENT
+• End with:
+Estimated practice percentage out of 100
+• Performance category:
+- Exam-ready / Strong but needs polishing / Average / Needs substantial improvement
+- The single biggest change that can improve my score
+- One short rewriting task based on my weakest paragraph
+
+MY SUBMISSION: 
+Examination: [IBPS PO]
+Task type: [Essay]
+Question: [Paste the complete question here]
+My answer: [Paste your answer here]`,
+  comprehension: `You are an expert evaluator of SBI PO and IBPS PO Mains Descriptive English. Evaluate my answer like a strict but fair bank-examination evaluator.
+
+Task Type:
+Reading Comprehension
+
+Evaluate it at the actual SBI PO/IBPS PO level. Do not judge it like a UPSC answer, academic research paper or creative-writing competition. Clear, correct and well-organised English should receive more importance than complicated vocabulary or unnecessary facts.
+
+DETAILED SCORECARD
+Evaluate my answer using this diagnostic marking system. This is a practice assessment, not an official examination score.
+Score of Comprehension Out of 10.
+Criterion Maximum Marks Marks Awarded 
+Examiner’s Comments:
+Relevance and task completion 20%  
+, Quality and development of ideas 15%, Organisation, coherence and flow 15% , Grammar and sentence construction 20% , Clarity with vocabulary and conciseness 10% , Format, tone and task-specific requirements 10%, Spelling, punctuation and capitalisation 10%  , Total 100%  
+Do not award marks generously merely because the topic has been understood. Language, structure and execution must also be considered.
+
+IMPORTANT EVALUATION RULES: 
+Count the words in my answer. If the question itself provides a word restriction, check whether I have followed it. Otherwise, only report the word count without penalising me.
+Be honest and specific. Do not give unnecessary praise or generic comments such as “Good attempt” without explaining why.
+Separate actual grammatical mistakes from optional stylistic improvements. Do not present every alternative sentence as if my original sentence were grammatically wrong.
+Accept standard Indian/British English. Check that spelling style remains consistent throughout the answer.
+Do not expect specialised banking knowledge, difficult vocabulary, excessive statistics or quotations unless they are genuinely required by the question.
+Check whether my answer is:
+Relevant to the exact question, Complete and sufficiently, developed, Logically organised, Grammatically correct, Easy to understand, Concise and free from repetition, Written in the appropriate tone, Properly formatted for the given task, Suitable for a time-bound banking examination.
+Flag doubtful or incorrect factual claims separately. Do not invent facts while correcting my answer.
+Assess my original answer completely before showing any rewritten version.
+
+FORMAT OF YOUR EVALUATION
+TASK IDENTIFICATION
+Mention: 
+Task type
+Answer word count
+Whether the response properly addresses the question
+
+QUICK EXAMINER’S VERDICT
+Give a direct three-to-five-sentence assessment covering:
+Overall quality, Strongest aspect, Biggest weakness, Whether the answer is presently exam-ready.
+
+GRAMMAR AND LANGUAGE CORRECTIONS
+Create a table with the following columns:
+My Original Words Type of Error Corrected Version Simple Explanation
+• Check carefully for:
+Subject-verb agreement, Tenses, Articles, Prepositions, Pronouns, Singular and plural forms, Sentence fragments, Run-on sentences, Incorrect word choice, Awkward expressions, Spelling, Punctuation, Capitalisation, Unnecessary repetition.
+Include only genuine mistakes or clearly awkward constructions.
+If a sentence is already correct, do not change it merely to display better vocabulary.
+
+STRUCTURE AND FLOW ANALYSIS
+Comment separately on:
+Effectiveness of the opening, Logical order of ideas,Paragraph division, Connection between sentences and paragraphs, Use of transitions
+Repetition or unnecessary information, Missing points, Strength of the ending, Whether the answer remains focused on the question, Identify the exact paragraph or sentence where the flow becomes weak.
+
+TASK-SPECIFIC EVALUATION
+For Comprehension Answers:
+• Is each answer based only on the passage?
+• Does it answer exactly what has been asked?
+• Is it written in the student’s own words?
+• Is it concise but complete?
+• Has unnecessary outside knowledge been avoided?
+
+MINIMUM-CORRECTION VERSION
+Rewrite my complete answer by correcting only:
+- Grammar, Spelling, Punctuation, Clearly awkward sentences, Preserve my original ideas, examples, order and natural writing style.
+- Do not add new arguments or make the language unnecessarily advanced.
+
+EXAM-READY IMPROVED VERSION
+Provide a second version:
+Retains the main ideas from my answer
+Improves structure, flow and clarity
+Uses realistic SBI PO/IBPS PO-level English, Avoids difficult or artificial vocabulary, Removes repetition
+Includes missing links or explanations where necessary
+Remains concise and suitable for a time-bound examination, Do not turn it into a UPSC-style or highly technical answer.
+
+MY FIVE MOST IMPORTANT IMPROVEMENTS
+• Give five personalised and actionable points. Mention recurring mistakes rather than generic advice.
+• For example:
+Which grammar rule I should revise, Which sentences should be shortened, Where my ideas require better connection, Which unnecessary expressions I repeatedly use, What I should do differently in my next attempt.
+
+FINAL ASSESSMENT
+• End with:
+Estimated practice percentage out of 100
+• Performance category:
+- Exam-ready / Strong but needs polishing / Average / Needs substantial improvement
+- The single biggest change that can improve my score
+- One short rewriting task based on my weakest paragraph
+
+MY SUBMISSION: 
+Examination: [IBPS PO]
+Task type: [Comprehension]
+Question: [Paste the complete question here]
+My answer: [Paste your answer here]`
+};
+
+function fillPlaceholder(tpl, placeholder, value){
+  return tpl.split(placeholder).join(value);
+}
+
+function buildEvaluationPrompt(item){
+  const sec = examConfig.sections[item.sectionIdx];
+  const answer = item.text.trim();
+  if(sec.id === 'essay'){
+    let p = PROMPT_TEMPLATES.essay;
+    p = fillPlaceholder(p, '[IBPS PO]', 'IBPS PO');
+    p = fillPlaceholder(p, '[Essay]', 'Essay');
+    p = fillPlaceholder(p, '[Paste the complete question here]', sec.questions[0].text + ' (Word limit: ' + sec.questions[0].wordLimit + ' words)');
+    p = fillPlaceholder(p, '[Paste your answer here]', answer);
+    return p;
+  }
+  if(sec.id === 'comprehension'){
+    let p = PROMPT_TEMPLATES.comprehension;
+    p = fillPlaceholder(p, '[IBPS PO]', 'IBPS PO');
+    p = fillPlaceholder(p, '[Comprehension]', 'Comprehension');
+    p = fillPlaceholder(p, '[Paste the complete question here]', sec.questions[0].text + ' (Word limit for the combined answers: ' + sec.questions[0].wordLimit + ' words)');
+    p = fillPlaceholder(p, '[Paste your answer here]', answer);
+    return p;
+  }
+  return '';
+}
+
+function copyTextToClipboard(text, onDone){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(onDone).catch(()=>fallbackCopy(text, onDone));
+  } else {
+    fallbackCopy(text, onDone);
+  }
+}
+
+function downloadTxt(content, filename){
+  const blob = new Blob([content], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(()=> URL.revokeObjectURL(url), 3000);
+}
+
+function toggleGetBtn(selectEl, itemId){
+  const btn = document.getElementById('getBtn-'+itemId);
+  if(btn) btn.disabled = !selectEl.value;
+}
+
+function handleGetAction(itemId){
+  const select = document.getElementById('actionSelect-'+itemId);
+  const btn = document.getElementById('getBtn-'+itemId);
+  const action = select.value;
+  const item = items.find(it=>it.id===itemId);
+  if(!item || !item.text.trim() || !action) return;
+  const sec = examConfig.sections[item.sectionIdx];
+  const safeName = (candidateName||'Candidate').replace(/[^a-z0-9]+/gi,'_');
+  const original = btn.textContent;
+  const flash = (msg)=>{
+    btn.textContent = msg;
+    setTimeout(()=>{ btn.textContent = original; }, 2000);
+  };
+
+  if(action==='eval'){
+    const prompt = buildEvaluationPrompt(item);
+    copyTextToClipboard(prompt, ()=> flash('Copied!'));
+  } else if(action==='txt'){
+    const prompt = buildEvaluationPrompt(item);
+    downloadTxt(prompt, safeName+'_'+sec.name.replace(/[^a-z0-9]+/gi,'_')+'_Evaluation.txt');
+    flash('Downloaded!');
+  } else if(action==='copy'){
+    copyTextToClipboard(item.text, ()=> flash('Copied!'));
+  }
+}
+
+function submitTest(){
+  if(examSubmitted) return;
+  syncCurrentAnswerBox();
+  examSubmitted = true;
+  if(timerInterval) clearInterval(timerInterval);
+  if(document.fullscreenElement || document.webkitFullscreenElement){
+    (document.exitFullscreen || document.webkitExitFullscreen || function(){}).call(document);
+  }
+  saveProgress();
+  document.getElementById('examPage').classList.add('hidden');
+  document.getElementById('resultPage').classList.remove('hidden');
+  renderResults();
+}
+
+function fmtTime(sec){
+  const m = Math.floor(sec/60), s = sec%60;
+  return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+
+function renderResults(){
+  const totalWordsTyped = items.reduce((a,it)=>a + it.wordCount, 0);
+  const totalWordLimit = items.reduce((a,it)=>{
+    let lim = 0;
+    if(it.kind==='single'){ lim = it.question.wordLimit; }
+    else if(it.chosenIndex!==null){ lim = it.options[it.chosenIndex].wordLimit; }
+    return a + lim;
+  }, 0);
+  const percentage = totalWordLimit>0 ? Math.min(100, Math.round((totalWordsTyped/totalWordLimit)*100)) : 0;
+  document.getElementById('scoreNum').textContent = percentage + '%';
+
+  const rowColors = ['#2f7ed8','#1f9c8a'];
+  const table = document.getElementById('analysisTable');
+  let html = '<tr><th>Section</th><th>Question Chosen</th><th>Words Written</th><th>Word Limit</th><th>Time Spent</th></tr>';
+  items.forEach(it=>{
+    const sec = examConfig.sections[it.sectionIdx];
+    const c = rowColors[it.sectionIdx % rowColors.length];
+    let qLabel, limit;
+    if(it.kind==='single'){ qLabel='—'; limit = it.question.wordLimit; }
+    else { qLabel = it.chosenIndex!==null ? sec.questions[it.chosenIndex].label : 'Not attempted'; limit = it.chosenIndex!==null ? sec.questions[it.chosenIndex].wordLimit : '—'; }
+    html += '<tr style="border-left:4px solid '+c+';"><td style="font-weight:700;color:'+c+';">'+sec.name+'</td><td>'+qLabel+'</td><td>'+it.wordCount+'</td><td>'+limit+'</td><td>'+fmtTime(sectionTimeSpent[it.sectionIdx]||0)+'</td></tr>';
+  });
+  table.innerHTML = html;
+
+  const sectionColors = ['#2f7ed8','#1f9c8a'];
+  const sectionIcons = ['✍️','📖'];
+  const container = document.getElementById('answersContainer');
+  container.innerHTML = '';
+  items.forEach(it=>{
+    const sec = examConfig.sections[it.sectionIdx];
+    const color = sectionColors[it.sectionIdx % sectionColors.length];
+    const icon = sectionIcons[it.sectionIdx % sectionIcons.length];
+    const wrap = document.createElement('div');
+    wrap.className = 'answer-section';
+    wrap.style.borderLeft = '5px solid '+color;
+    wrap.style.paddingLeft = '14px';
+    const title = it.kind==='choice' && it.chosenIndex!==null ? sec.name+' — '+sec.questions[it.chosenIndex].label : sec.name;
+    const uid = 'ans-'+it.id;
+    let qHtml;
+    if(it.kind==='single') qHtml = it.question.html ? it.question.html : (it.question.text||'').replace(/</g,'&lt;');
+    else qHtml = it.chosenIndex!==null ? sec.questions[it.chosenIndex].text.replace(/</g,'&lt;') : 'Not attempted';
+    const hasAnswer = it.text.trim().length>0;
+    const answerUid = uid;
+    const actionUiHtml = hasAnswer
+      ? '<div class="action-row">'
+          +'<select class="action-select" id="actionSelect-'+it.id+'" onchange="toggleGetBtn(this,'+it.id+')">'
+            +'<option value="" selected disabled>Select an option</option>'
+            +'<option value="eval">Copy for Evaluation</option>'
+            +'<option value="txt">TXT file of Answer</option>'
+            +'<option value="copy">Copy (Only Answer)</option>'
+          +'</select>'
+          +'<button class="copy-btn get-btn" id="getBtn-'+it.id+'" style="background:'+color+';color:#fff;border-color:'+color+';" disabled onclick="handleGetAction('+it.id+')">Get</button>'
+        +'</div>'
+      : '<span style="font-size:11.5px;color:#999;">Attempt this question to enable this option</span>';
+    wrap.innerHTML =
+      '<h4 style="color:'+color+';">'+icon+' '+title+'</h4>'+
+      actionUiHtml+
+      '<div style="font-size:12px;font-weight:700;color:#666;margin:10px 0 4px;text-transform:uppercase;letter-spacing:.3px;">Question</div>'+
+      '<div class="answer-text-box" style="margin-bottom:10px;background:#fbfbfd;">'+qHtml+'</div>'+
+      '<div style="font-size:12px;font-weight:700;color:#666;margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px;">Your Answer</div>'+
+      '<div class="answer-text-box" id="'+uid+'">'+((it.text.trim() || '(No answer submitted)').replace(/</g,'&lt;'))+'</div>';
+    container.appendChild(wrap);
+  });
+}
+
+function copyAnswer(id, btn){
+  const text = document.getElementById(id).textContent;
+  const done = ()=>{
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent='Copy'; btn.classList.remove('copied'); }, 1500);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, cb){
+  const ta = document.createElement('textarea');
+  ta.value = text; document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+  cb();
+}
+</script>
+</body>
+</html>
