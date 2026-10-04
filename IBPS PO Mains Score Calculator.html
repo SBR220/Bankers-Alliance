@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IBPS PO Mains Score Calculator | @BankersAlliance</title>
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--text:#14213d;--muted:#5b6b86;--primary:#1d4ed8;--accent:#f59e0b;--line:#dbe3f0;--ok:#15803d;--bad:#b91c1c;--soft:#eaf1ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#131c2e;--text:#e8eefc;--muted:#9fb0cf;--primary:#60a5fa;--accent:#fbbf24;--line:#25324d;--ok:#4ade80;--bad:#f87171;--soft:#1a2740}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#131c2e;--text:#e8eefc;--muted:#9fb0cf;--primary:#60a5fa;--accent:#fbbf24;--line:#25324d;--ok:#4ade80;--bad:#f87171;--soft:#1a2740}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.45}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+header{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;border-radius:16px;padding:22px 20px;text-align:center}
+header h1{margin:0 0 4px;font-size:clamp(20px,5vw,28px)}
+header p{margin:0;opacity:.9;font-size:14px}
+.badge{display:inline-block;margin-top:12px;background:var(--accent);color:#1c1400;font-weight:700;padding:6px 14px;border-radius:999px;font-size:14px;text-decoration:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:16px}
+.card h2{margin:0 0 4px;font-size:18px}
+.sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+.row{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:10px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.row.head{border-top:0;padding:0 0 6px;color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase}
+.name b{display:block}
+.name small{color:var(--muted)}
+input[type=number]{width:100%;padding:11px 10px;font-size:16px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text)}
+input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--soft)}
+input.err{border-color:var(--bad)}
+.desc{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.desc label{font-size:14px;font-weight:600;display:block;margin-bottom:6px}
+.neg{display:flex;gap:8px;align-items:center;font-size:14px;margin-top:12px}
+.msg{color:var(--bad);font-size:13px;min-height:18px;margin-top:8px}
+button{width:100%;margin-top:14px;padding:14px;border:0;border-radius:12px;font-size:16px;font-weight:700;background:var(--primary);color:#fff;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.ghost{background:transparent;color:var(--muted);border:1px solid var(--line);margin-top:10px}
+#result{display:none}
+.total{text-align:center;background:var(--soft);border-radius:14px;padding:18px;margin-bottom:14px}
+.total .big{font-size:44px;font-weight:800;color:var(--primary);line-height:1.1}
+.total .of{color:var(--muted);font-size:14px}
+.pbar{height:10px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:12px}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));width:0}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th,td{padding:10px 8px;text-align:center;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-size:12px;text-transform:uppercase}
+td:first-child,th:first-child{text-align:left}
+tfoot td{font-weight:800;border-bottom:0;background:var(--soft)}
+.neg-t{color:var(--bad)}
+.note{font-size:12px;color:var(--muted);margin-top:12px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:22px 0}
+footer a{color:var(--primary);font-weight:700;text-decoration:none}
+@media(max-width:560px){.row{grid-template-columns:1fr 1fr}.row .name{grid-column:1/-1}.row.head{display:none}.row label{font-size:12px;color:var(--muted)}.desc{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>IBPS PO Mains Score Calculator</h1>
+<p>Enter your attempts section-wise &amp; get your expected marks</p>
+<a class="badge" href="https://t.me/BankersAlliance" target="_blank" rel="noopener">📢 Telegram: @BankersAlliance</a>
+</header>
+
+<div class="card">
+<h2>Objective Tests (Total 170 Qs · 200 Marks)</h2>
+<p class="sub">Every question in a section carries equal marks. Enter attempted &amp; correct questions.</p>
+<div class="row head"><div>Section</div><div>Attempted</div><div>Correct</div></div>
+<div id="rows"></div>
+<label class="neg"><input type="checkbox" id="negOn" checked style="width:auto"> Apply negative marking (¼ of the question's marks per wrong answer)</label>
+</div>
+
+<div class="card">
+<h2>Descriptive Paper (2 Qs · 25 Marks · 30 min)</h2>
+<p class="sub">Enter the marks you expect for each descriptive question.</p>
+<div class="desc">
+<div><label for="d1">Q1 – Essay (max 15)</label><input type="number" id="d1" min="0" max="15" step="0.5" inputmode="decimal" placeholder="0 – 15"></div>
+<div><label for="d2">Q2 – Letter / Comprehension (max 10)</label><input type="number" id="d2" min="0" max="10" step="0.5" inputmode="decimal" placeholder="0 – 10"></div>
+</div>
+<div class="msg" id="msg"></div>
+<button id="calc" disabled>Calculate My Expected Score</button>
+<button class="ghost" id="reset">Reset</button>
+</div>
+
+<div class="card" id="result">
+<h2>Your Expected Result</h2>
+<p class="sub">Section-wise marks breakdown</p>
+<div class="total"><div class="big" id="gt">0</div><div class="of" id="gtof">out of 225</div><div class="pbar"><i id="bar"></i></div></div>
+<div class="tw"><table>
+<thead><tr><th>Section</th><th>Marks/Q</th><th>Attempted</th><th>Correct</th><th>Wrong</th><th>Negative</th><th>Score</th></tr></thead>
+<tbody id="tb"></tbody>
+<tfoot id="tf"></tfoot>
+</table></div>
+<p class="note">Objective: 200 marks + Descriptive: 25 marks = 225 total. Marks per question = section marks ÷ number of questions. This is an estimate for self-assessment only.</p>
+</div>
+
+<footer>Made with ❤️ for aspirants · Credit: <a href="https://t.me/BankersAlliance" target="_blank" rel="noopener">@BankersAlliance</a></footer>
+</div>
+
+<script>
+const S=[
+{n:"Reasoning",q:40,m:60,t:"45 min"},
+{n:"General/Economy/Banking Awareness",q:50,m:60,t:"35 min"},
+{n:"English Language",q:40,m:20,t:"35 min"},
+{n:"Data Analysis & Interpretation",q:40,m:60,t:"45 min"}];
+const $=id=>document.getElementById(id);
+const rows=$("rows");
+S.forEach((s,i)=>{
+ s.pm=s.m/s.q;
+ rows.insertAdjacentHTML("beforeend",`<div class="row"><div class="name"><b>${s.n}</b><small>${s.q} Qs · ${s.m} marks · ${s.pm} per Q · ${s.t}</small></div>
+ <div><label>Attempted</label><input type="number" id="a${i}" min="0" max="${s.q}" inputmode="numeric" placeholder="0–${s.q}"></div>
+ <div><label>Correct</label><input type="number" id="c${i}" min="0" max="${s.q}" inputmode="numeric" placeholder="0–${s.q}"></div></div>`);
+});
+const ids=[...S.flatMap((_,i)=>["a"+i,"c"+i]),"d1","d2"];
+const f=n=>Math.round(n*100)/100;
+function check(){
+ let ok=true,m="";
+ ids.forEach(id=>$(id).classList.remove("err"));
+ ids.forEach(id=>{if($(id).value.trim()==="")ok=false});
+ S.forEach((s,i)=>{
+  const a=$("a"+i),c=$("c"+i);
+  if(a.value!==""&&(+a.value>s.q||+a.value<0)){a.classList.add("err");ok=false;m=`${s.n}: attempts can't exceed ${s.q}.`}
+  if(c.value!==""&&a.value!==""&&+c.value>+a.value){c.classList.add("err");ok=false;m=`${s.n}: correct can't exceed attempted.`}
+ });
+ [["d1",15],["d2",10]].forEach(([id,mx])=>{const e=$(id);if(e.value!==""&&(+e.value<0||+e.value>mx)){e.classList.add("err");ok=false;m=`Descriptive marks must be between 0 and ${mx}.`}});
+ $("msg").textContent=m;$("calc").disabled=!ok;
+ return ok;
+}
+function calc(){
+ if(!check())return;
+ const neg=$("negOn").checked;let obj=0,rowsH="";
+ S.forEach((s,i)=>{
+  const a=+$("a"+i).value,c=+$("c"+i).value,w=a-c;
+  const pos=c*s.pm,ng=neg?w*s.pm/4:0,sc=pos-ng;obj+=sc;s.sc=sc;
+  rowsH+=`<tr><td>${s.n}</td><td>${s.pm}</td><td>${a}</td><td>${c}</td><td>${w}</td><td class="neg-t">${ng?"−"+f(ng):"0"}</td><td><b>${f(sc)}</b> / ${s.m}</td></tr>`;
+ });
+ const d1=+$("d1").value,d2=+$("d2").value,d=d1+d2,tot=obj+d;
+ rowsH+=`<tr><td>Descriptive (Essay ${f(d1)} + Letter ${f(d2)})</td><td>–</td><td>2</td><td>–</td><td>–</td><td>–</td><td><b>${f(d)}</b> / 25</td></tr>`;
+ $("tb").innerHTML=rowsH;
+ $("tf").innerHTML=`<tr><td colspan="6">Objective Total</td><td>${f(obj)} / 200</td></tr><tr><td colspan="6">Overall Expected Score</td><td>${f(tot)} / 225</td></tr>`;
+ $("gt").textContent=f(tot);$("bar").style.width=Math.max(0,tot)/225*100+"%";
+ $("result").style.display="block";
+ $("result").scrollIntoView({behavior:"smooth",block:"start"});
+}
+ids.forEach(id=>$(id).addEventListener("input",()=>{check();if($("result").style.display==="block")calc()}));
+$("negOn").addEventListener("change",()=>{if($("result").style.display==="block")calc()});
+$("calc").addEventListener("click",calc);
+$("reset").addEventListener("click",()=>{ids.forEach(id=>$(id).value="");$("result").style.display="none";check()});
+</script>
+</body>
+</html>
