@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Online Mock Test</title>
+<style>
+:root{--blue:#1d4f91;--bg:#f3f5f8;--line:#d5dbe3;--green:#3fa535;--orange:#f26a21;--purple:#6a4fb3;--grey:#e3e6ea;--fs:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:"Segoe UI",Roboto,Arial,sans-serif;background:#fff;color:#1b1f24;overflow:hidden;-webkit-user-select:none;user-select:none}
+button{font-family:inherit;cursor:pointer}
+.app{display:none;flex-direction:column;height:100%;height:100dvh}
+.app.show{display:flex}
+mark{background:#fff2a8;padding:0 2px}
+
+/* header */
+header{background:var(--blue);color:#fff;display:flex;align-items:center;gap:10px;padding:8px 12px;flex:none}
+header h1{font-size:15px;font-weight:600;flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ibtn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:4px;min-width:34px;height:32px;font-size:14px;font-weight:700;padding:0 8px}
+.ibtn:hover{background:rgba(255,255,255,.18)}
+.hgroup{display:flex;gap:6px;align-items:center}
+.who{font-size:12px;max-width:140px;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.subbar{display:flex;align-items:center;gap:8px;background:#fff;border-bottom:1px solid var(--line);padding:0 10px;flex:none;flex-wrap:wrap}
+.tabs{display:flex;overflow-x:auto;flex:1;min-width:160px}
+.tab{background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px;font-size:13px;color:#555;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue);font-weight:700;background:#eef3fa}
+.tab i{width:10px;height:10px;border-radius:50%;background:#1e88e5;display:inline-block}
+.timer{font-size:13px;font-weight:700;padding:6px 0}
+.timer b{font-size:16px;color:var(--blue);margin-left:4px;font-variant-numeric:tabular-nums}
+.timer.low b{color:#d32f2f}
+.infobar{display:flex;justify-content:space-between;align-items:center;padding:6px 12px;border-bottom:1px solid var(--line);font-size:13px;flex:none;gap:8px;flex-wrap:wrap}
+.infobar .sec{font-weight:700}
+.marks{display:flex;gap:6px;align-items:center}
+.pill{color:#fff;border-radius:12px;padding:2px 9px;font-size:12px;font-weight:600}
+.pill.p{background:var(--green)}.pill.n{background:#d94a3a}
+
+/* main */
+.main{flex:1;display:flex;min-height:0;position:relative}
+.content{flex:1;display:flex;min-width:0;position:relative;--split:52%}
+.pane{overflow:auto;padding:14px 16px;font-size:var(--fs);line-height:1.6;min-width:0;min-height:0}
+.passage{flex:0 0 var(--split)}
+.qpane{flex:1}
+.no-passage .passage,.no-passage .splitter{display:none}
+.splitter{flex:0 0 8px;background:#e8ecf1;border-left:1px solid var(--line);border-right:1px solid var(--line);cursor:col-resize;position:relative;touch-action:none}
+.splitter::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:36px;margin:-18px 0 0 -1.5px;background:#8b97a8;border-radius:2px}
+.splitter:hover,.splitter.drag{background:#cfd8e6}
+.passage p{margin-bottom:12px}
+.qimg{max-width:100%;height:auto;border:1px solid var(--line);background:#fff;cursor:zoom-in;display:block;margin:6px 0}
+.imgerr{padding:14px;border:1px dashed #c33;color:#a22;font-size:13px;border-radius:6px}
+.qno{font-weight:700;margin-bottom:8px;font-size:calc(var(--fs) - 1px)}
+.qtext{font-weight:600;margin-bottom:14px}
+.opt{display:flex;align-items:center;gap:10px;padding:9px 10px;margin-bottom:6px;border:1px solid transparent;border-radius:6px;cursor:pointer}
+.opt:hover{background:#eef3fa;border-color:#c5d3e8}
+.opt input{accent-color:var(--blue);width:18px;height:18px;flex:none}
+.opt.sel{background:#e5f0ff;border-color:#8fb3e6}
+.ol{font-weight:700;color:#456}
+.wm{position:absolute;inset:0;pointer-events:none;z-index:5;background-repeat:repeat}
+
+/* sidebar */
+aside{flex:0 0 290px;background:var(--bg);border-left:1px solid var(--line);display:flex;flex-direction:column;min-height:0;transition:margin .25s}
+.collapsed aside{margin-right:-290px}
+.toggle{position:absolute;right:290px;top:42%;z-index:20;width:22px;height:54px;border:0;background:var(--blue);color:#fff;border-radius:6px 0 0 6px;font-size:16px;transition:right .25s}
+.collapsed .toggle{right:0}
+.collapsed .toggle span{display:inline-block;transform:rotate(180deg)}
+.profile{display:flex;gap:10px;justify-content:center;padding:10px 0 4px}
+.avatar{width:44px;height:44px;border-radius:50%;background:#c9d0da;position:relative;overflow:hidden}
+.avatar::before{content:"";position:absolute;left:14px;top:7px;width:16px;height:16px;border-radius:50%;background:#7b8696}
+.avatar::after{content:"";position:absolute;left:7px;top:26px;width:30px;height:24px;border-radius:50%;background:#7b8696}
+.roll{text-align:center;font-size:12px;font-weight:600;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px 6px;padding:10px;font-size:11px}
+.legend div{display:flex;align-items:center;gap:6px}
+.sh{width:26px;height:26px;flex:none;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+.sh.nv{background:var(--grey);color:#333;border-radius:4px;border:1px solid #c5cad1}
+.sh.na{background:var(--orange);clip-path:polygon(0 0,100% 0,100% 62%,50% 100%,0 62%);padding-bottom:4px}
+.sh.an{background:var(--green);clip-path:polygon(0 38%,50% 0,100% 38%,100% 100%,0 100%);padding-top:4px}
+.sh.mk{background:var(--purple);border-radius:50%}
+.sh.am{background:var(--purple);border-radius:50%;position:relative}
+.sh.am::after{content:"✓";position:absolute;right:-3px;bottom:-4px;font-size:10px;background:var(--green);width:13px;height:13px;border-radius:50%;line-height:13px;text-align:center}
+.secname{background:var(--blue);color:#fff;font-size:13px;font-weight:600;text-align:center;padding:7px}
+.grid{flex:1;overflow:auto;padding:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-content:start;justify-items:center}
+.grid .sh{width:40px;height:40px;font-size:13px;border:0;cursor:pointer}
+.grid .sh.cur{outline:3px solid #222;outline-offset:1px}
+.grid .sh.nv{border:1px solid #c5cad1}
+.sbtns{padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;border-top:1px solid var(--line)}
+.sbtns button{padding:8px;font-size:12px;border:1px solid #b8c3d4;background:#fff;color:var(--blue);border-radius:4px;font-weight:600}
+.sbtns .submit{grid-column:1/3;background:var(--blue);color:#fff;border-color:var(--blue);font-size:13px;padding:10px}
+
+/* footer */
+footer{display:flex;align-items:center;gap:10px;padding:10px 12px;border-top:1px solid var(--line);background:#fff;flex:none;flex-wrap:wrap}
+.btn{padding:10px 16px;border-radius:4px;font-size:13px;font-weight:600;border:1px solid var(--blue)}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.ghost{background:#fff;color:var(--blue)}
+.btn.save{margin-left:auto;background:#1e7a3c;border-color:#1e7a3c;color:#fff}
+.btn:hover{filter:brightness(1.1)}
+.btn:disabled{opacity:.5;cursor:wait}
+.mob{display:none}
+
+/* full-page screens */
+.screen{position:fixed;inset:0;z-index:150;background:linear-gradient(#e9f0fa,#fff);display:none;overflow:auto;padding:14px;-webkit-user-select:text;user-select:text}
+.screen.show{display:block}
+.card{max-width:520px;margin:3vh auto;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 6px 24px rgba(20,40,80,.12);overflow:hidden}
+.card.wide{max-width:900px}
+.card h2{background:var(--blue);color:#fff;padding:14px 18px;font-size:17px}
+.cb{padding:18px;font-size:14px;line-height:1.6}
+.field{display:block;margin-bottom:12px;font-size:13px;font-weight:600}
+.field input{display:block;width:100%;margin-top:4px;padding:10px;border:1px solid #aab;border-radius:4px;font-size:16px;font-family:inherit}
+.msg{background:#fff4e5;border:1px solid #f0c27a;color:#7a4a00;padding:10px 12px;border-radius:6px;margin:0 0 12px;font-size:13px;display:none}
+.msg.show{display:block}
+.msg.ok{background:#e8f6ea;border-color:#9ccf9f;color:#1c5a22}
+.demo{background:#eef3fa;border:1px dashed #8fb3e6;padding:8px 10px;border-radius:6px;font-size:12px;margin-bottom:12px}
+ol.ins{margin-left:18px}ol.ins li{margin-bottom:6px}
+table.sum{border-collapse:collapse;width:100%;margin:8px 0 14px;font-size:14px}
+table.sum th,table.sum td,table.tbl th,table.tbl td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+table.sum th{background:var(--bg);width:45%}
+table.tbl{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
+table.tbl th{background:var(--bg)}
+.tblwrap{overflow-x:auto}
+.good{color:#1c7a2c;font-weight:700}.bad{color:#c0392b;font-weight:700}.skip{color:#777;font-weight:700}
+.qcard{border:1px solid var(--line);border-radius:8px;margin:14px 0;overflow:hidden}
+.qcard .qh{background:var(--bg);padding:8px 12px;font-weight:700;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.qcard .qb{padding:12px}
+.ro{padding:7px 10px;border:1px solid var(--line);border-radius:6px;margin:5px 0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.ro.right{background:#e6f6e8;border-color:#7fc48a}
+.ro.wrong{background:#fdeaea;border-color:#e59a9a}
+.ro small{margin-left:auto;font-weight:700}
+.sol{margin-top:10px;padding:10px 12px;background:#f7f9fc;border-left:4px solid var(--blue);border-radius:4px}
+.sol img{max-width:100%;margin-top:8px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+/* overlays */
+.overlay{position:fixed;inset:0;background:rgba(10,20,40,.65);z-index:300;display:none;align-items:center;justify-content:center;padding:14px}
+.overlay.show{display:flex}
+.modal{background:#fff;border-radius:8px;max-width:620px;width:100%;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
+.modal h3{background:var(--blue);color:#fff;padding:12px 16px;font-size:16px}
+.modal .body{padding:16px;overflow:auto;font-size:14px;line-height:1.6}
+.modal .body li{margin-left:18px;margin-bottom:6px}
+.modal .act{padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.qlist button{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:4px;padding:8px 10px;margin-bottom:6px;font-size:13px}
+#lb{z-index:400;background:rgba(0,0,0,.88);overflow:auto;align-items:flex-start;justify-content:center}
+#lb img{max-width:100%;cursor:zoom-in}
+#lb.big img{max-width:none;width:220%;cursor:zoom-out}
+.toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%);background:#222;color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;z-index:500;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;text-align:center}
+.toast.show{opacity:.92}
+
+@media (max-width:800px){
+  header h1{display:none}
+  .hgroup.left{flex:1}
+  .content{flex-direction:column}
+  .passage{flex:0 0 var(--split);padding:10px 12px}
+  .splitter{flex:0 0 12px;cursor:row-resize;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .splitter::after{width:36px;height:3px;margin:-1.5px 0 0 -18px}
+  .pane{padding:10px 12px}
+  aside{position:fixed;top:0;right:0;bottom:0;width:min(310px,88vw);z-index:60;margin:0 !important;transform:translateX(100%);transition:transform .25s;box-shadow:-6px 0 20px rgba(0,0,0,.3)}
+  .open aside{transform:none}
+  .toggle{right:0;top:55%;z-index:70}
+  .open .toggle{right:min(310px,88vw)}
+  .open .toggle span{display:inline-block;transform:rotate(180deg)}
+  .collapsed .toggle span{transform:none}
+  .mob{display:inline-block}
+  .btn{padding:9px 10px;font-size:12px;flex:1 1 auto;text-align:center}
+  .btn.save{margin-left:0}
+  .timer b{font-size:14px}
+  .tab{padding:9px 10px}
+  .card{margin:1vh auto}
+}
+@media print{
+  body{overflow:visible}
+  .app,.noprint{display:none !important}
+  .screen{position:static;display:block;padding:0;background:#fff}
+  .card{box-shadow:none;border:0;max-width:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. LOGIN ============ -->
+<div class="screen show" id="loginScr">
+  <div class="card">
+    <h2 id="loginTitle">Online Mock Test</h2>
+    <div class="cb">
+      <div class="demo" id="demoNote" style="display:none"><b>Demo mode:</b> no server is connected yet, so any roll number works and results stay on this device only.</div>
+      <div class="msg" id="loginMsg"></div>
+      <label class="field">Roll number<input id="rollIn" type="text" inputmode="text" autocomplete="off" maxlength="20"></label>
+      <label class="field">Full name<input id="nameIn" type="text" autocomplete="off" maxlength="40"></label>
+      <label class="field">PIN (only if your teacher gave you one)<input id="pinIn" type="password" autocomplete="off" maxlength="20"></label>
+      <button class="btn primary" id="loginBtn" style="width:100%;padding:12px">Continue</button>
+      <p style="font-size:12px;color:#667;margin-top:12px">Already attempted the test? Enter the same details to see your result.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 2. INSTRUCTIONS / READY ============ -->
+<div class="screen" id="readyScr">
+  <div class="card">
+    <h2 id="readyTitle">Instructions</h2>
+    <div class="cb">
+      <p id="readyHello" style="margin-bottom:10px"></p>
+      <ol class="ins" id="readyList"></ol>
+      <label style="display:flex;gap:8px;align-items:center;font-size:13px;margin:14px 0"><input type="checkbox" id="agree" checked> I have read the instructions and I'm ready to begin.</label>
+      <button class="btn primary" id="startBtn" style="width:100%;padding:12px">Start test</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 3. EXAM ============ -->
+<div class="app" id="app">
+  <header>
+    <div class="hgroup left">
+      <button class="ibtn" id="fsBtn" title="Full screen">⛶</button>
+      <button class="ibtn" id="fsDown" title="Smaller text">A−</button>
+      <button class="ibtn" id="fsUp" title="Larger text">A+</button>
+    </div>
+    <h1 id="examTitle"></h1>
+    <div class="who" id="who"></div>
+  </header>
+  <div class="subbar">
+    <div class="tabs" id="tabs"></div>
+    <div class="timer" id="timerBox">Time Left : <b id="timer">00:00:00</b></div>
+  </div>
+  <div class="infobar">
+    <span class="sec" id="secLbl"></span>
+    <span class="marks">Marks <span class="pill p" id="pPos">+1</span><span class="pill n" id="pNeg">−0.25</span></span>
+  </div>
+  <div class="main" id="main">
+    <div class="content" id="content">
+      <div class="pane passage" id="passage"></div>
+      <div class="splitter" id="splitter" title="Drag to resize"></div>
+      <div class="pane qpane" id="qpane"></div>
+      <div class="wm" id="wm"></div>
+    </div>
+    <button class="toggle" id="toggle" title="Show / hide question palette"><span>❯</span></button>
+    <aside>
+      <div class="profile"><div class="avatar"></div><div class="avatar"></div></div>
+      <div class="roll">Roll No: <span id="rollMask"></span></div>
+      <div class="legend">
+        <div><span class="sh an" id="cAn">0</span>Answered</div>
+        <div><span class="sh na" id="cNa">0</span>Not Answered</div>
+        <div><span class="sh nv" id="cNv">0</span>Not Visited</div>
+        <div><span class="sh mk" id="cMk">0</span>Marked for Review</div>
+        <div style="grid-column:1/3"><span class="sh am" id="cAm">0</span>Answered &amp; Marked for Review</div>
+      </div>
+      <div class="secname" id="palSec"></div>
+      <div class="grid" id="grid"></div>
+      <div class="sbtns">
+        <button id="qpBtn">Question Paper</button>
+        <button id="insBtn">Instructions</button>
+        <button id="profBtn">Profile</button>
+        <button id="fsBtn2">Full Screen</button>
+        <button class="submit" id="submitBtn">Submit Test</button>
+      </div>
+    </aside>
+  </div>
+  <footer>
+    <button class="btn ghost" id="markBtn">Mark for Review &amp; Next</button>
+    <button class="btn ghost" id="clearBtn">Clear Response</button>
+    <button class="btn ghost mob" id="palBtn">Palette</button>
+    <button class="btn primary mob" id="submitBtn2">Submit</button>
+    <button class="btn save" id="saveBtn">Save &amp; Next</button>
+  </footer>
+</div>
+
+<!-- ============ 4. RESULT ============ -->
+<div class="screen" id="resScr">
+  <div class="card wide"><h2 id="resTitle">Result</h2><div class="cb" id="resBody"></div></div>
+</div>
+
+<div class="overlay" id="genOv"><div class="modal"><h3 id="genT"></h3><div class="body" id="genB"></div><div class="act" id="genA"></div></div></div>
+<div class="overlay" id="lb"><img id="lbImg" alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* =====================================================================
+   SETTINGS  (the only things you normally change)
+   ===================================================================== */
+// Paste your Google Apps Script "Web app URL" between the quotes.
+// Leave it EMPTY ("") to run in DEMO mode (no server, answers checked on this device).
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycby1eTRkPlD-EH3PCEMoITleh86HTAwhciNLjODan5CwwrDupr1tFYEgyfjmcmJaJg1p/exec";
+
+// Used in DEMO mode only. In live mode the title and timing come from the Google Sheet "Config" tab.
+const TEST_TITLE   = "IBPS Clerk Pre – Mock Test 1";
+const DEMO_MINUTES = 20;
+
+/* =====================================================================
+   QUESTION SET  — questions, options, marks, images. NO answers here.
+   Formatting you can use inside any text:
+     **bold**   *italic*   ***bold italic***   __underline__   ==highlight==
+   Optional fields per question:  passage, image_url, section
+   ===================================================================== */
+const QS = [
+  { "id":"1", "question":"**Find the value:** if *25% of 240* + __40__ = ?",
+    "positive_marks":"1", "negative_marks":"0.25",
+    "option_1":"80", "option_2":"90", "option_3":"100", "option_4":"120", "option_5":"None of these" },
+  { "id":"2", "question":"**Solve:** (12 × 8) − *16* = ?",
+    "positive_marks":"1", "negative_marks":"0.25",
+    "option_1":"60", "option_2":"72", "option_3":"76", "option_4":"80", "option_5":"None of these" },
+  { "id":"3", "question":"**Solve:** __15²__ + *5²* = ?",
+    "positive_marks":"1", "negative_marks":"0.25",
+    "option_1":"225", "option_2":"250", "option_3":"275", "option_4":"300", "option_5":"None of these" },
+  { "id":"4", "question":"*Ravi* earns ==₹12,000== per month and saves __20%__. How much does he **save** monthly?",
+    "positive_marks":"1", "negative_marks":"0.25",
+    "option_1":"₹2,400", "option_2":"₹2,000", "option_3":"₹1,800", "option_4":"₹2,200", "option_5":"None of these" },
+  { "id":"5", "question":"**Speed** of a train is *60 km/h*. Time to cover __120 km__ = ?",
+    "positive_marks":"1", "negative_marks":"0.25",
+    "option_1":"1 hour", "option_2":"2 hours", "option_3":"3 hours", "option_4":"4 hours", "option_5":"None of these" },
+  { "id":"6", "question":"**Speed** of a train is *60 km/h*. Time to cover __120 km__ = ?",
+    "image_url":"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ef951a60-bc69-447d-baf0-aa0415e17f5f.png",
+    "positive_marks":"1", "negative_marks":"0.25",
+    "option_1":"A", "option_2":"B", "option_3":"C", "option_4":"D", "option_5":"E" }
+];
+
+/* DEMO ONLY — answer key used when BACKEND_URL is empty.
+   When you go live, DELETE this block (answers must live only in Google Apps Script). */
+/* =====================================================================
+   PROGRAM  (no need to edit below this line)
+   ===================================================================== */
+const $ = id => document.getElementById(id);
+const LETTERS = ["A","B","C","D","E"];
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fmt(s){
+  return esc(s).replace(/\*\*\*(.+?)\*\*\*/g,"<b><i>$1</i></b>").replace(/\*\*(.+?)\*\*/g,"<b>$1</b>")
+    .replace(/\*(.+?)\*/g,"<i>$1</i>").replace(/__(.+?)__/g,"<u>$1</u>").replace(/==(.+?)==/g,"<mark>$1</mark>").replace(/\n/g,"<br>");
+}
+function safeUrl(u){ u = String(u||"").trim(); return /^(https?:\/\/|\.{0,2}\/|[\w\-]+\/)/i.test(u) && !/^javascript:/i.test(u) ? u : ""; }
+function imgTag(u,cls){ u = safeUrl(u); return u ? `<img class="${cls||"qimg"}" src="${esc(u)}" alt="Figure" onerror="this.outerHTML='<div class=&quot;imgerr&quot;>Image could not be loaded. Check your internet connection and refresh.</div>'">` : ""; }
+
+const QN = QS.map(q => ({
+  id:String(q.id), text:q.question||"", passage:q.passage||"", img:q.image_url||"",
+  opts:[1,2,3,4,5].map(k=>q["option_"+k]).filter(v=>v!==undefined && v!==""),
+  pos:parseFloat(q.positive_marks==null?1:q.positive_marks), neg:parseFloat(q.negative_marks==null?0:q.negative_marks),
+  sec:q.section||"Mock Test"
+}));
+const SECS = [...new Set(QN.map(q=>q.sec))];
+
+const S = { roll:"", name:"", pin:"", title:TEST_TITLE, offset:0, endsAt:0, duration:DEMO_MINUTES,
+  a:[], m:[], v:[], cur:0, viol:0, dirty:false, started:false, done:false, submitting:false, wasFS:false, tick:null, save:null };
+
+/* ---------- server calls ---------- */
+async function api(action, payload){
+  if(!BACKEND_URL) return mockApi(action, payload);
+  const ctl = new AbortController(); const t = setTimeout(()=>ctl.abort(), 30000);
+  try{
+    const res = await fetch(BACKEND_URL, { method:"POST", body:JSON.stringify(Object.assign({action}, payload)), signal:ctl.signal });
+    return await res.json();
+  } finally { clearTimeout(t); }
+}
+async function apiRetry(action, payload, tries){
+  for(let i=0;i<tries;i++){ try{ return await api(action,payload); }catch(e){ await sleep(1500+i*1500); } }
+  throw new Error("network");
+}
+const ident = () => ({roll:S.roll, name:S.name, pin:S.pin});
+
+/* ---------- screens ---------- */
+function show(id){ ["loginScr","readyScr","resScr"].forEach(x=>$(x).classList.toggle("show",x===id)); $("app").classList.toggle("show",id==="app"); }
+function loginMsg(t,ok){ const m=$("loginMsg"); m.textContent=t||""; m.className="msg"+(t?" show":"")+(ok?" ok":""); }
+let tt; function toast(m){ const t=$("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove("show"),2600); }
+function modal(title, html, buttons){
+  $("genT").textContent=title; $("genB").innerHTML=html; $("genA").innerHTML="";
+  buttons.forEach(b=>{ const el=document.createElement("button"); el.className="btn "+(b.cls||"ghost"); el.textContent=b.l;
+    el.onclick=()=>{ if(!b.keep) $("genOv").classList.remove("show"); b.fn&&b.fn(); }; $("genA").appendChild(el); });
+  $("genOv").classList.add("show");
+}
+const closeBtn = {l:"Close"};
+
+/* ---------- login ---------- */
+$("demoNote").style.display = BACKEND_URL ? "none" : "block";
+try{ const last=JSON.parse(localStorage.getItem("mt_last")||"{}"); $("rollIn").value=last.roll||""; $("nameIn").value=last.name||""; }catch(e){}
+$("loginBtn").onclick = login;
+["rollIn","nameIn","pinIn"].forEach(id=>$(id).addEventListener("keydown",e=>{ if(e.key==="Enter") login(); }));
+
+async function login(){
+  const roll=$("rollIn").value.trim(), name=$("nameIn").value.trim();
+  if(!roll||!name){ loginMsg("Please enter both your roll number and your name."); return; }
+  S.roll=roll.toUpperCase(); S.name=name; S.pin=$("pinIn").value.trim();
+  $("loginBtn").disabled=true; loginMsg("Checking…",true);
+  try{
+    const r = await apiRetry("login", ident(), 2);
+    if(!r.ok){ loginMsg(r.error||"Could not log in."); return; }
+    localStorage.setItem("mt_last", JSON.stringify({roll:S.roll,name:S.name}));
+    S.title=r.title||S.title; S.offset=(r.serverNow||Date.now())-Date.now(); S.duration=r.duration||S.duration;
+    $("loginTitle").textContent=S.title;
+    if(r.status==="NOT_STARTED") loginMsg("This test has not opened yet. It opens on "+new Date(r.startsAt).toLocaleString()+".");
+    else if(r.status==="CLOSED") loginMsg("This test is closed. You can no longer start it.");
+    else if(r.status==="SUBMITTED") { loginMsg(""); loadResult(); }
+    else { loginMsg(""); showReady(r); }
+  }catch(e){ loginMsg("Cannot reach the server. Check your internet and try again."); }
+  finally{ $("loginBtn").disabled=false; }
+}
+
+function showReady(r){
+  const resume = r.status==="IN_PROGRESS";
+  S.resumeData = resume ? r : null;
+  $("readyTitle").textContent = S.title;
+  $("readyHello").innerHTML = `Welcome, <b>${esc(S.name)}</b> (Roll No ${esc(S.roll)}).`;
+  const total = QN.reduce((t,q)=>t+q.pos,0);
+  $("readyList").innerHTML = [
+    `Total questions: <b>${QN.length}</b> &nbsp;|&nbsp; Maximum marks: <b>${total}</b> &nbsp;|&nbsp; Time: <b>${S.duration} minutes</b>.`,
+    resume ? "<b>You already started this test.</b> Your timer kept running on the server. Press Resume to continue from where you stopped." : "The timer starts as soon as you press <b>Start test</b> and cannot be paused.",
+    "Each wrong answer deducts negative marks, as shown at the top of every question. Skipped questions carry no penalty.",
+    "Your answers are saved automatically. If your internet drops or the page closes, log in again and continue.",
+    "Do not switch tabs or apps and do not leave full screen. Such activity is recorded for the teacher.",
+    "You can attempt this test only once. Press <b>Submit Test</b> when finished, or it will submit by itself when time ends."
+  ].map(x=>`<li>${x}</li>`).join("");
+  $("startBtn").textContent = resume ? "Resume test" : "Start test";
+  show("readyScr");
+}
+
+$("startBtn").onclick = async () => {
+  if(!$("agree").checked){ toast("Please tick the box to continue."); return; }
+  $("startBtn").disabled=true;
+  try{
+    let r = S.resumeData;
+    if(!r){ r = await apiRetry("start", ident(), 3); if(!r.ok){ toast(r.error||"Could not start."); if(r.status==="SUBMITTED") loadResult(); return; } }
+    S.offset=(r.serverNow||Date.now())-Date.now(); S.endsAt=r.endsAt;
+    beginExam(r.state);
+    goFull();
+  }catch(e){ toast("Cannot reach the server. Check your internet and try again."); }
+  finally{ $("startBtn").disabled=false; }
+};
+
+/* ---------- exam ---------- */
+function beginExam(state){
+  const n=QN.length, st=state||{};
+  S.a=QN.map((_,i)=>(st.answers&&st.answers[i])||null);
+  S.m=QN.map((_,i)=>!!(st.marked&&st.marked[i]));
+  S.v=QN.map((_,i)=>!!(st.visited&&st.visited[i]));
+  S.cur=Math.min(Math.max(+st.cur||0,0),n-1); S.viol=+st.viol||0;
+  S.started=true; S.done=false; S.submitting=false; S.dirty=true;
+  $("examTitle").textContent=S.title; $("who").textContent=S.name;
+  $("tabs").innerHTML=SECS.map((s,i)=>`<button class="tab" data-s="${i}">${esc(s)}<i></i></button>`).join("");
+  $("tabs").querySelectorAll(".tab").forEach(b=>b.onclick=()=>go(QN.findIndex(q=>q.sec===SECS[+b.dataset.s])));
+  setWatermark(); show("app"); showQ();
+  clearInterval(S.tick); S.tick=setInterval(tickFn,1000); tickFn();
+  clearInterval(S.save); setTimeout(()=>{ S.save=setInterval(autosave,25000); }, Math.random()*8000);
+}
+
+function setWatermark(){
+  const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='150'><text x='120' y='80' text-anchor='middle' transform='rotate(-28 120 80)' font-family='Arial,sans-serif' font-size='19' font-weight='700' letter-spacing='1' fill='rgba(20,30,50,0.10)'>${esc(S.roll)}</text></svg>`;
+  $("wm").style.backgroundImage=`url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+  $("rollMask").textContent="*".repeat(Math.max(S.roll.length-3,0))+S.roll.slice(-3);
+}
+function status(i){
+  if(!S.v[i]) return "nv";
+  if(S.a[i]!=null && S.m[i]) return "am";
+  if(S.m[i]) return "mk";
+  if(S.a[i]!=null) return "an";
+  return "na";
+}
+function showQ(){
+  const q=QN[S.cur]; S.v[S.cur]=true;
+  const left=(q.passage?`<p>${fmt(q.passage)}</p>`:"")+imgTag(q.img,"qimg");
+  $("content").classList.toggle("no-passage",!left);
+  $("passage").innerHTML=left; $("passage").scrollTop=0;
+  $("qpane").scrollTop=0;
+  $("secLbl").textContent=$("palSec").textContent=q.sec;
+  $("pPos").textContent="+"+q.pos; $("pNeg").textContent="−"+q.neg;
+  document.querySelectorAll(".tab").forEach((t,i)=>t.classList.toggle("active",SECS[i]===q.sec));
+  refresh();
+}
+function refresh(){
+  const q=QN[S.cur], sc=$("qpane").scrollTop;
+  $("qpane").innerHTML=`<div class="qno">Question No. ${S.cur+1} :</div><div class="qtext">${fmt(q.text)}</div>`+
+    q.opts.map((o,k)=>`<label class="opt ${S.a[S.cur]===k+1?"sel":""}"><input type="radio" name="opt" value="${k+1}" ${S.a[S.cur]===k+1?"checked":""}><span class="ol">${LETTERS[k]}.</span><span>${fmt(o)}</span></label>`).join("");
+  $("qpane").scrollTop=sc;
+  $("qpane").querySelectorAll("input").forEach(inp=>inp.addEventListener("change",()=>{ S.a[S.cur]=+inp.value; S.dirty=true; refresh(); }));
+  $("grid").innerHTML=QN.map((_,i)=>`<button class="sh ${status(i)} ${i===S.cur?"cur":""}" data-i="${i}" aria-label="Question ${i+1}">${i+1}</button>`).join("");
+  $("grid").querySelectorAll("button").forEach(b=>b.onclick=()=>{ go(+b.dataset.i); $("main").classList.remove("open"); });
+  const c={an:0,na:0,nv:0,mk:0,am:0}; QN.forEach((_,i)=>c[status(i)]++);
+  $("cAn").textContent=c.an; $("cNa").textContent=c.na; $("cNv").textContent=c.nv; $("cMk").textContent=c.mk; $("cAm").textContent=c.am;
+}
+function go(i){ S.cur=Math.max(0,Math.min(QN.length-1,i)); S.dirty=true; showQ(); }
+function next(){ go(S.cur<QN.length-1?S.cur+1:0); }
+$("saveBtn").onclick=()=>{ if(S.a[S.cur]==null) toast("No option selected: question counted as Not Answered."); S.m[S.cur]=false; next(); };
+$("markBtn").onclick=()=>{ S.m[S.cur]=true; next(); };
+$("clearBtn").onclick=()=>{ S.a[S.cur]=null; S.dirty=true; refresh(); toast("Response cleared"); };
+
+/* text size, full screen, palette, splitter */
+let fsz=16; function setFs(n){ fsz=Math.max(12,Math.min(26,n)); document.documentElement.style.setProperty("--fs",fsz+"px"); }
+$("fsUp").onclick=()=>setFs(fsz+2); $("fsDown").onclick=()=>setFs(fsz-2);
+function inFS(){ return !!(document.fullscreenElement||document.webkitFullscreenElement); }
+function goFull(){ const el=document.documentElement, f=el.requestFullscreen||el.webkitRequestFullscreen; if(f&&!inFS()){ try{ const p=f.call(el); if(p&&p.then) p.then(()=>{S.wasFS=true;}).catch(()=>{}); else S.wasFS=true; }catch(e){} } }
+function toggleFS(){ if(inFS()){ S.wasFS=false; (document.exitFullscreen||document.webkitExitFullscreen).call(document); } else if(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen) goFull(); else toast("Full screen is not supported on this device."); }
+$("fsBtn").onclick=$("fsBtn2").onclick=toggleFS;
+const mq=window.matchMedia("(max-width:800px)");
+$("toggle").onclick=()=>$("main").classList.toggle(mq.matches?"open":"collapsed");
+$("palBtn").onclick=()=>$("main").classList.toggle("open");
+$("content").addEventListener("click",()=>{ if(mq.matches) $("main").classList.remove("open"); });
+(function(){
+  const sp=$("splitter"), ct=$("content"); let drag=false;
+  sp.addEventListener("pointerdown",e=>{ drag=true; sp.classList.add("drag"); sp.setPointerCapture(e.pointerId); });
+  sp.addEventListener("pointermove",e=>{ if(!drag) return; const r=ct.getBoundingClientRect();
+    let p=mq.matches?(e.clientY-r.top)/r.height*100:(e.clientX-r.left)/r.width*100; ct.style.setProperty("--split",Math.max(18,Math.min(80,p))+"%"); });
+  const end=()=>{ drag=false; sp.classList.remove("drag"); };
+  sp.addEventListener("pointerup",end); sp.addEventListener("pointercancel",end);
+})();
+
+/* image zoom */
+document.addEventListener("click",e=>{
+  if(e.target.classList&&e.target.classList.contains("qimg")){ $("lbImg").src=e.target.src; $("lb").classList.remove("big"); $("lb").classList.add("show"); }
+  else if(e.target.closest&&e.target.closest("#lb")){ if(e.target.id==="lbImg") $("lb").classList.toggle("big"); else $("lb").classList.remove("show"); }
+});
+
+/* modals */
+$("insBtn").onclick=()=>modal("Instructions",`<ol>
+ <li>The timer at the top is controlled by the server and cannot be paused.</li>
+ <li>Palette colours: grey = not visited, orange = not answered, green = answered, purple = marked for review, purple with tick = answered and marked for review.</li>
+ <li><b>Save &amp; Next</b> saves your answer. <b>Mark for Review &amp; Next</b> flags the question. <b>Clear Response</b> removes your selection.</li>
+ <li>Tap an image to enlarge it. Drag the divider to resize the panes.</li>
+ <li>Your answers are saved automatically every few seconds.</li></ol>`,[closeBtn]);
+$("profBtn").onclick=()=>modal("Candidate profile",`<table class="tbl"><tr><th>Name</th><td>${esc(S.name)}</td></tr><tr><th>Roll No</th><td>${esc(S.roll)}</td></tr><tr><th>Test</th><td>${esc(S.title)}</td></tr></table>`,[closeBtn]);
+$("qpBtn").onclick=()=>{
+  modal("Question paper",`<div class="qlist">${QN.map((q,i)=>`<button data-i="${i}"><b>Q${i+1}.</b> ${fmt(q.text)}</button>`).join("")}</div>`,[closeBtn]);
+  $("genB").querySelectorAll("button").forEach(b=>b.onclick=()=>{ $("genOv").classList.remove("show"); go(+b.dataset.i); });
+};
+
+/* timer */
+const fmt2=n=>String(n).padStart(2,"0");
+function remaining(){ return Math.max(0,Math.round((S.endsAt-(Date.now()+S.offset))/1000)); }
+function tickFn(){
+  const r=remaining();
+  $("timer").textContent=`${fmt2(Math.floor(r/3600))}:${fmt2(Math.floor(r%3600/60))}:${fmt2(r%60)}`;
+  $("timerBox").classList.toggle("low",r<=300);
+  if(r<=0 && !S.submitting){ clearInterval(S.tick); setTimeout(()=>submitFinal(true), Math.random()*6000); lockUI("Time is up. Submitting your answers…"); }
+}
+function lockUI(text){ modal("Please wait", `<p>${text}</p><p style="margin-top:8px">Keep this page open.</p>`, []); }
+
+/* auto-save */
+function payload(){ return Object.assign(ident(),{ answers:S.a.map(x=>x||null), marked:S.m.map(Boolean), visited:S.v.map(Boolean), cur:S.cur, viol:S.viol }); }
+async function autosave(){
+  if(!S.dirty||S.submitting||!S.started||S.done) return;
+  S.dirty=false;
+  try{ const r=await api("save",payload()); if(r&&r.ok&&r.status==="SUBMITTED"){ S.done=true; stopAll(); loadResult(); } else if(r&&!r.ok) S.dirty=true; }
+  catch(e){ S.dirty=true; }
+}
+function stopAll(){ clearInterval(S.tick); clearInterval(S.save); S.started=false; $("genOv").classList.remove("show"); if(inFS()){ S.wasFS=false; try{(document.exitFullscreen||document.webkitExitFullscreen).call(document);}catch(e){} } }
+
+/* tab-switch / full-screen-exit record (recorded for the teacher, no penalty) */
+document.addEventListener("visibilitychange",()=>{
+  if(!S.started||S.done) return;
+  if(document.hidden){ S.viol++; S.dirty=true; autosave(); } else toast("Activity such as switching tabs or apps is recorded.");
+});
+document.addEventListener("fullscreenchange",()=>{ if(S.started&&!S.done&&S.wasFS&&!inFS()){ S.viol++; S.dirty=true; S.wasFS=false; toast("Please return to full screen mode."); } });
+window.addEventListener("beforeunload",e=>{ if(S.started&&!S.done){ e.preventDefault(); e.returnValue=""; } });
+document.addEventListener("contextmenu",e=>{ if(S.started) e.preventDefault(); });
+
+/* submit */
+function counts(){ const c={an:0,na:0,nv:0,mk:0,am:0}; QN.forEach((_,i)=>c[status(i)]++); return c; }
+function askSubmit(){
+  const c=counts(), ans=c.an+c.am;
+  modal("Submit test?",`<p>Are you sure you want to submit? You cannot change your answers afterwards.</p>
+   <table class="tbl"><tr><th>Total</th><th>Answered</th><th>Not answered</th><th>Marked for review</th><th>Not visited</th></tr>
+   <tr><td>${QN.length}</td><td>${ans}</td><td>${QN.length-ans-c.nv}</td><td>${c.mk+c.am}</td><td>${c.nv}</td></tr></table>`,
+   [{l:"Go back"},{l:"Yes, submit",cls:"primary",fn:()=>submitFinal(false)}]);
+}
+$("submitBtn").onclick=$("submitBtn2").onclick=askSubmit;
+async function submitFinal(timeUp){
+  if(S.submitting) return; S.submitting=true; clearInterval(S.save);
+  lockUI(timeUp?"Time is up. Submitting your answers…":"Submitting your answers…");
+  for(let t=0;;t++){
+    try{
+      const r=await api("submit",payload());
+      if(r&&r.ok){ S.done=true; stopAll(); loadResult(); return; }
+      S.submitting=false;
+      modal("Could not submit",`<p>${esc((r&&r.error)||"Submission failed.")}</p>`,[{l:"Try again",cls:"primary",fn:()=>submitFinal(timeUp)}]);
+      return;
+    }catch(e){ $("genB").innerHTML="<p>Network problem. Retrying automatically… keep this page open.</p>"; await sleep(Math.min(3000+t*1000,10000)); }
+  }
+}
+
+/* ---------- result ---------- */
+async function loadResult(){
+  show("resScr"); $("resTitle").textContent=S.title;
+  $("resBody").innerHTML="<p>Loading your result…</p>";
+  try{ const r=await apiRetry("result",ident(),4); renderResult(r); }
+  catch(e){ $("resBody").innerHTML=`<div class="msg show">Cannot reach the server. <button class="btn primary" onclick="loadResult()">Try again</button></div>`; }
+}
+function sumTable(s,r){
+  const rows=[["Total questions",s.total],["Attempted",s.attempted],["Right",`<span class="good">${s.right}</span>`],["Wrong",`<span class="bad">${s.wrong}</span>`],["Skipped",s.skipped],["Accuracy",s.accuracy+"%"],["Score",`<b>${s.score}</b> / ${s.maxScore}`]];
+  if(r.published&&r.stats) rows.push(["Rank",`${r.stats.rank} of ${r.stats.participants}`],["Class average",r.stats.average],["Topper score",r.stats.top]);
+  return `<table class="sum">${rows.map(x=>`<tr><th>${x[0]}</th><td>${x[1]}</td></tr>`).join("")}</table>`;
+}
+function renderResult(r){
+  const b=$("resBody");
+  if(!r.ok){ b.innerHTML=`<div class="msg show">${esc(r.error||"Could not load result.")}</div>`; return; }
+  if(r.status==="NO_ATTEMPT"){ b.innerHTML=`<div class="msg show">No attempt found for this roll number.</div><div class="btnrow"><button class="btn primary" onclick="location.reload()">Back</button></div>`; return; }
+  if(r.status==="IN_PROGRESS"){ b.innerHTML=`<div class="msg show">Your test is still in progress. Please log in again to resume.</div><div class="btnrow"><button class="btn primary" onclick="location.reload()">Back</button></div>`; return; }
+  const s=r.summary;
+  let h=`<p><b>${esc(S.name)}</b> (Roll No ${esc(S.roll)})</p>
+    <div class="msg ${r.published?"ok":""} show">${r.published?"Result, answer key and solutions are published below.":"Your test is submitted. The answer key, solutions and analysis will be published here after the test ends. Visit this page again and enter your roll number."}</div>`+sumTable(s,r);
+  if(r.published&&r.details){
+    const D={}; r.details.forEach(d=>D[d.id]=d);
+    h+=`<h3 style="margin:16px 0 4px">Question-wise result</h3><div class="tblwrap"><table class="tbl"><tr><th>Q</th><th>Your answer</th><th>Correct</th><th>Result</th><th>Marks</th></tr>`;
+    QN.forEach((q,i)=>{ const d=D[q.id]; if(!d) return; const y=d.yours, ok=y&&y===d.answer;
+      const res=!y?`<span class="skip">Skipped</span>`:ok?`<span class="good">Right</span>`:`<span class="bad">Wrong</span>`;
+      const mk=!y?0:ok?d.positive_marks:-d.negative_marks;
+      h+=`<tr><td>${i+1}</td><td>${y?LETTERS[y-1]:"-"}</td><td>${LETTERS[d.answer-1]}</td><td>${res}</td><td>${mk>0?"+":""}${mk}</td></tr>`; });
+    h+=`</table></div><h3 style="margin:16px 0 0">Solutions</h3>`;
+    QN.forEach((q,i)=>{ const d=D[q.id]; if(!d) return; const y=d.yours, ok=y&&y===d.answer;
+      h+=`<div class="qcard"><div class="qh"><span>Question ${i+1}</span><span class="${!y?"skip":ok?"good":"bad"}">${!y?"Skipped":ok?"Right":"Wrong"}</span></div><div class="qb">
+        ${q.passage?`<p>${fmt(q.passage)}</p>`:""}${imgTag(q.img,"qimg")}
+        <p style="font-weight:600;margin:6px 0">${fmt(q.text)}</p>
+        ${q.opts.map((o,k)=>{ const n=k+1, cls=n===d.answer?"right":(n===y?"wrong":""); const tag=n===d.answer?"Correct answer":(n===y?"Your answer":"");
+          return `<div class="ro ${cls}"><b>${LETTERS[k]}.</b> <span>${fmt(o)}</span><small>${tag}${n===d.answer&&n===y?" (yours)":""}</small></div>`; }).join("")}
+        <div class="sol"><b>Solution</b><div style="margin-top:4px">${d.solution_text?fmt(d.solution_text):"Solution not provided."}</div>${imgTag(d.solution_image_url,"qimg")}</div>
+      </div></div>`; });
+  }
+  h+=`<div class="btnrow noprint"><button class="btn primary" onclick="loadResult()">Refresh result</button><button class="btn ghost" onclick="window.print()">Print / Save as PDF</button><button class="btn ghost" onclick="location.reload()">Log out</button></div>`;
+  b.innerHTML=h;
+}
+
+/* =====================================================================
+   DEMO SERVER (used only when BACKEND_URL is empty) — mimics Google Sheet
+   Tip: add  #published  to the page address to see the published result,
+        add  #reset  to the address and reload to start over.
+   ===================================================================== */
+function demoEval(ans){
+  let right=0,wrong=0,skipped=0,score=0,max=0;
+  QN.forEach((q,i)=>{ max+=q.pos; const a=ans[i]; if(!a){skipped++;return;} if(String(a)===String((DEMO_KEY[q.id]||{}).answer)){right++;score+=q.pos;}else{wrong++;score-=q.neg;} });
+  const att=right+wrong;
+  return {total:QN.length,attempted:att,right,wrong,skipped,accuracy:att?Math.round(right/att*1000)/10:0,score:Math.round(score*100)/100,maxScore:max};
+}
+async function mockApi(action,p){
+  if(location.hash==="#reset"){ localStorage.removeItem("mt_demo"); history.replaceState(null,"",location.pathname+location.search); }
+  let db={}; try{ db=JSON.parse(localStorage.getItem("mt_demo")||"{}"); }catch(e){}
+  const save=()=>localStorage.setItem("mt_demo",JSON.stringify(db));
+  const roll=String(p.roll||"").trim().toUpperCase(), now=Date.now();
+  if(!roll||!String(p.name||"").trim()) return {ok:false,error:"Enter roll number and name."};
+  const rec=db[roll], published=location.hash==="#published";
+  const base={ok:true,serverNow:now,title:TEST_TITLE,duration:DEMO_MINUTES,published};
+  if(rec&&rec.status==="IN_PROGRESS"&&now>rec.start+DEMO_MINUTES*60000+90000){ rec.status="SUBMITTED"; rec.answers=(rec.state&&rec.state.answers)||[]; rec.summary=demoEval(rec.answers); save(); }
+  const endsAt=rec?rec.start+DEMO_MINUTES*60000:0;
+  if(action==="login"){
+    if(!rec) return Object.assign(base,{status:"READY"});
+    if(rec.status==="IN_PROGRESS") return Object.assign(base,{status:"IN_PROGRESS",endsAt,state:rec.state});
+    return Object.assign(base,{status:"SUBMITTED"});
+  }
+  if(action==="start"){
+    if(rec) return rec.status==="IN_PROGRESS"?Object.assign(base,{status:"IN_PROGRESS",endsAt,state:rec.state}):{ok:false,status:"SUBMITTED",error:"Already submitted."};
+    db[roll]={status:"IN_PROGRESS",start:now,name:p.name,state:null}; save();
+    return Object.assign(base,{status:"IN_PROGRESS",endsAt:now+DEMO_MINUTES*60000,state:null});
+  }
+  if(!rec) return {ok:false,error:"No attempt found."};
+  if(action==="save"){ if(rec.status!=="IN_PROGRESS") return {ok:true,status:"SUBMITTED"}; rec.state={answers:p.answers,marked:p.marked,visited:p.visited,cur:p.cur,viol:p.viol}; save(); return {ok:true,status:"IN_PROGRESS"}; }
+  if(action==="submit"){
+    if(rec.status==="IN_PROGRESS"){ rec.status="SUBMITTED"; rec.answers=p.answers; rec.summary=demoEval(p.answers); save(); }
+    return {ok:true,status:"SUBMITTED",summary:rec.summary};
+  }
+  if(action==="result"){
+    if(rec.status!=="SUBMITTED") return {ok:true,status:"IN_PROGRESS"};
+    const out=Object.assign(base,{status:"SUBMITTED",summary:rec.summary});
+    if(published){
+      out.details=QN.map((q,i)=>({id:q.id,answer:+DEMO_KEY[q.id].answer,positive_marks:q.pos,negative_marks:q.neg,solution_text:DEMO_KEY[q.id].solution_text||"",solution_image_url:"",yours:rec.answers[i]||null}));
+      out.stats={rank:1,participants:1,average:rec.summary.score,top:rec.summary.score};
+    }
+    return out;
+  }
+  return {ok:false,error:"Unknown action"};
+}
+</script>
+</body>
+</html>
