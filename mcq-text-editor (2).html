@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCQ Text Editor</title>
+<style>
+:root{--bg:#fff;--pn:#fff;--fg:#1a1a1a;--ln:#d9d9d9;--mu:#777;--ok:#16a34a;--er:#dc2626;--wr:#d97706;--hl:#fde68a;--hc:#fb923c;--f:Roboto,"Noto Sans","Noto Sans Devanagari",system-ui,sans-serif}
+body.beige{--bg:#efebc5;--pn:#e6e2b6;--ln:#cdc893;--fg:#2a2a1e;--mu:#6d6a4a;--hl:#f3d45a}
+body.dark{--bg:#1c1c1e;--pn:#242427;--fg:#e9e9e9;--ln:#3b3b40;--mu:#9a9aa0;--hl:#6b5a14;--hc:#b45309}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:flex;flex-direction:column;background:var(--bg);color:var(--fg);font:16px/1.4 var(--f);overflow:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid #2b6cb0;outline-offset:-2px}
+svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+header{display:flex;height:56px;background:var(--pn);border-bottom:1px solid var(--ln)}
+header>*{border-right:1px solid var(--ln);display:flex;align-items:center}
+#mn{width:56px;justify-content:center;font-size:28px}
+#tt{flex:1;min-width:0;padding:0 14px}
+#nm{width:100%;border:0;background:none;color:inherit;font:18px var(--f);outline:0}
+#fm{gap:10px;padding:0 14px;color:var(--mu);border-right:0}
+.sw{width:44px;height:26px;border-radius:13px;background:var(--ln);position:relative;transition:.2s}
+.sw:after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 2px #0004}
+.on .sw{background:var(--ok)}.on .sw:after{left:21px}
+#sig{height:4px;background:var(--ln);transition:background .2s}#sig.ok{background:var(--ok)}#sig.bad{background:var(--er)}
+#fp{display:none;flex-direction:column;gap:6px;padding:8px;background:var(--pn);border-bottom:1px solid var(--ln)}
+#fp.show{display:flex}
+.fr{display:flex;gap:6px;align-items:center}
+.fr input{flex:1;min-width:0;padding:8px 10px;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:inherit;font:15px var(--f)}
+.fr input.bad{border-color:var(--er)}
+.fr button{padding:7px 10px;border:1px solid var(--ln);border-radius:8px;font-size:14px;white-space:nowrap}
+.fr button.act{background:#2b6cb0;color:#fff;border-color:#2b6cb0}
+#fcnt{min-width:46px;text-align:center;color:var(--mu);font-size:13px}
+#pg{flex:1;position:relative;overflow:hidden;min-height:90px}
+.in{max-width:900px;height:100%;margin:0 auto;position:relative;overflow:hidden}
+#bd,#ed{position:absolute;left:0;top:0;width:100%;margin:0;padding:18px 20px 40vh;font:17px/1.9 var(--f);white-space:pre-wrap;overflow-wrap:anywhere;tab-size:4;border-radius:0;-webkit-appearance:none}
+#ed{height:100%;background:transparent;border:0;outline:0;resize:none;color:var(--fg);overflow-y:auto;scrollbar-width:none}
+#ed::-webkit-scrollbar{display:none}
+#bd{color:transparent;pointer-events:none}
+#bd .e{background:#dc262630}#bd .w{background:#d9770630}
+#bd i{font-style:normal;background:var(--hl);border-radius:2px}#bd i.c{background:var(--hc)}
+#ftb{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:none;gap:2px;padding:4px;background:var(--pn);border:1px solid var(--ln);border-radius:12px;box-shadow:0 6px 24px #0003;z-index:5;max-width:96%}
+#ftb.show{display:flex}#ftb button{min-width:44px;height:40px;padding:0 12px;border-radius:8px;font-size:16px;white-space:nowrap}#ftb button:hover{background:var(--ln)}#ftb .br{font-size:14px;border-left:1px solid var(--ln);border-radius:0 8px 8px 0;margin-left:2px}
+#con{display:flex;flex-direction:column;max-height:42vh;background:var(--pn);border-top:1px solid var(--ln)}
+#con.hide{display:none}#con.min #cb{display:none}
+.ch{display:flex;align-items:center;gap:6px;padding:4px 6px 4px 12px;min-height:40px;cursor:pointer}
+#cs{flex:1;font-weight:500;font-size:14px;display:flex;align-items:center;gap:8px}
+#cs:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--ln);flex:none}
+#cs.ok{color:var(--ok)}#cs.ok:before{background:var(--ok)}#cs.bad{color:var(--er)}#cs.bad:before{background:var(--er)}
+.ch button{padding:6px 10px;border-radius:6px;font-size:13px;color:var(--mu)}.ch button.act{background:var(--ln);color:var(--fg)}
+#cb{overflow:auto}
+.r{display:flex;gap:10px;padding:8px 12px;border-top:1px solid var(--ln);font-size:14px;cursor:pointer}
+.r>b{min-width:44px;color:var(--er);font-weight:500}.r.w>b{color:var(--wr)}
+.r em{display:block;font-style:normal;font-size:12px;color:var(--mu)}
+.r code{display:block;margin-top:2px;font:12px monospace;color:var(--mu);white-space:pre-wrap;overflow-wrap:anywhere}
+.r div{min-width:0}
+.pv{padding:10px 14px;border-top:1px solid var(--ln);font-size:14px}.pv div div{padding:2px 0}.pv .ok{color:var(--ok);font-weight:500}.pv small{display:block;color:var(--mu);white-space:pre-wrap}.pv strong{display:block;margin:2px 0 4px}
+.bar{display:flex;height:48px;background:var(--pn);border-top:1px solid var(--ln)}
+.bar>*{display:flex;align-items:center;justify-content:center}
+#b2>button{flex:1;border-left:1px solid var(--ln)}#b2>button:first-child{border-left:0}
+#fl{padding:0 14px;color:var(--mu);border-right:1px solid var(--ln)}
+.sq{width:34px;height:34px;border-radius:8px;border:2px solid var(--ln);margin:0 0 0 10px}.sq.act{border-color:#2b6cb0}
+#sb{background:#e6e3b8}#sd{background:#1c1c1e}
+.chk{width:34px;height:34px;border-radius:8px;border:2px solid var(--ln);margin:0 10px;font-size:18px;font-weight:700}
+.chk.ok{background:var(--ok);border-color:var(--ok);color:#fff}.chk.bad{background:var(--er);border-color:var(--er);color:#fff}
+#ct{flex:1;justify-content:flex-start;overflow:hidden;white-space:nowrap;color:var(--mu);border-left:1px solid var(--ln);min-width:0}
+#ct span{padding:0 10px;overflow:hidden;text-overflow:ellipsis}#ct span+span{border-left:1px solid var(--ln)}
+.pop{position:fixed;bottom:104px;display:none;flex-direction:column;min-width:210px;background:var(--pn);border:1px solid var(--ln);border-radius:10px;box-shadow:0 6px 24px #0003;z-index:20;overflow:hidden}
+.pop.show{display:flex}.pop button{padding:12px 16px;text-align:left}.pop button+button{border-top:1px solid var(--ln)}
+#sh{position:fixed;inset:0;background:#0006;display:none;z-index:25}#sh.show{display:block}
+#dr{position:fixed;inset:0 auto 0 0;width:min(86vw,340px);background:var(--pn);border-right:1px solid var(--ln);transform:translateX(-100%);transition:transform .22s;z-index:30;display:flex;flex-direction:column}
+#dr.show{transform:none}
+#dr h2{margin:0;padding:16px;font-size:18px;font-weight:500}
+.dh{display:flex;gap:8px;padding:0 16px 12px}.dh button{flex:1;padding:9px;border:1px solid var(--ln);border-radius:8px;font-size:14px}
+#fl2{overflow:auto;flex:1}
+.fi{display:flex;align-items:center;gap:8px;padding:12px 16px;border-top:1px solid var(--ln);cursor:pointer}
+.fi.cur{background:var(--ln)}.fi span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.fi small{display:block;color:var(--mu);font-size:12px}.fi button{color:var(--mu);padding:4px 8px}
+#ts{position:fixed;left:50%;bottom:112px;transform:translateX(-50%);background:#222;color:#fff;padding:9px 16px;border-radius:20px;font-size:14px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:50;max-width:90vw}
+#ts.show{opacity:1}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-find" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></symbol>
+<symbol id="i-ins" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9.5h.01M15 9.5h.01"/></symbol>
+<symbol id="i-pv" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4m0 0-4 4m4-4 4 4M5 20h14"/></symbol>
+<symbol id="i-fs" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+<symbol id="i-fx" viewBox="0 0 24 24"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></symbol>
+<symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14"/></symbol>
+<symbol id="i-tr" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></symbol>
+</svg>
+
+<header>
+  <button id="mn" aria-label="Open files">»</button>
+  <div id="tt"><input id="nm" aria-label="File name" spellcheck="false"></div>
+  <button id="fm" aria-label="Auto-clean formatting"><span>Formatting</span><i class="sw"></i></button>
+</header>
+<div id="sig"></div>
+
+<div id="fp">
+  <div class="fr"><input id="fi" placeholder="Find" autocomplete="off" spellcheck="false"><span id="fcnt"></span><button id="fprev" aria-label="Previous">▲</button><button id="fnext" aria-label="Next">▼</button><button id="fx" aria-label="Close">✕</button></div>
+  <div class="fr"><input id="ri" placeholder="Replace with" autocomplete="off" spellcheck="false"><button id="r1">Replace</button><button id="ra">All</button></div>
+  <div class="fr"><button id="oc" title="Match case">Aa</button><button id="or" title="Regular expression">.*</button></div>
+</div>
+
+<div id="pg"><div class="in"><div id="bd"></div><textarea id="ed" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Editor" placeholder="Type, paste or upload your MCQ text here…"></textarea></div><div id="ftb" role="toolbar" aria-label="Text formatting"><button data-f="b" title="Bold (Ctrl+B)"><b>B</b></button><button data-f="i" title="Italic (Ctrl+I)"><i>I</i></button><button data-f="u" title="Underline (Ctrl+U)"><u>U</u></button><button data-f="br" class="br" title="Line break after selection">↵ Line break</button></div></div>
+
+<section id="con" class="min">
+  <div class="ch" id="ch"><span id="cs"></span><button id="tp" class="act">Problems</button><button id="tv">Preview</button><button id="cm-min" aria-label="Minimise">–</button><button id="cm-x" aria-label="Hide console">✕</button></div>
+  <div id="cb"></div>
+</section>
+
+<div class="bar" id="b1">
+  <button id="fl">My Files</button>
+  <button class="sq" id="sb" aria-label="Beige theme"></button>
+  <button class="sq" id="sd" aria-label="Dark theme"></button>
+  <button class="chk" id="st" aria-label="Validation status">✓</button>
+  <div id="ct"></div>
+</div>
+<div class="bar" id="b2">
+  <button id="bf" aria-label="Find and replace"><svg class="i"><use href="#i-find"/></svg></button>
+  <button id="bi" data-m aria-label="Insert template"><svg class="i"><use href="#i-ins"/></svg></button>
+  <button id="bp" aria-label="Preview questions"><svg class="i"><use href="#i-pv"/></svg></button>
+  <button id="bu" aria-label="Upload"><svg class="i"><use href="#i-up"/></svg></button>
+  <button id="bs" aria-label="Full screen"><svg class="i"><use id="fsi" href="#i-fs"/></svg></button>
+  <button id="bd2" data-m aria-label="Download"><svg class="i"><use href="#i-dl"/></svg></button>
+  <button id="bt" aria-label="Clear text"><svg class="i"><use href="#i-tr"/></svg></button>
+</div>
+
+<div id="pp" class="pop"></div>
+<div id="sh"></div>
+<aside id="dr"><h2>My Files</h2><div class="dh"><button id="dn">New file</button><button id="du">Upload .txt</button></div><div id="fl2"></div></aside>
+<div id="ts" role="status"></div>
+<input type="file" id="up" accept=".txt,text/plain" multiple hidden>
+
+<script>
+const $=s=>document.querySelector(s),esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const ed=$('#ed'),bd=$('#bd'),nm=$('#nm');
+
+/* ---------- storage ---------- */
+let S=null;try{S=JSON.parse(localStorage.getItem('mcqed'))}catch(e){}
+if(!S||!S.docs||!S.docs.length)S={docs:[],cur:null,theme:'',fmt:false,con:'min'};
+const nd=(name,text)=>{const d={id:Math.random().toString(36).slice(2),name:name||'Untitled',text:text||'',ts:Date.now()};S.docs.push(d);return d};
+if(!S.docs.length)S.cur=nd('July 2nd Week Part 2',"Q1. RBI's Negotiated Dealing System-Order Matching (NDS-OM) is used for secondary market trading of:\nA. Foreign exchange swaps\nB. Corporate bonds only\nC. Equity shares\nD. Commercial paper\nE. Government securities\nANSWER: E\nSOLUTION: It is an RBI-owned screen-based anonymous order matching system with an RFQ facility.\n").id;
+const doc=()=>S.docs.find(d=>d.id===S.cur)||(S.cur=S.docs[0].id,S.docs[0]);
+let st;const save=()=>{clearTimeout(st);st=setTimeout(()=>{try{localStorage.setItem('mcqed',JSON.stringify(S))}catch(e){toast('Browser storage full – download your file')}},350)};
+let tt;const toast=m=>{const t=$('#ts');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2400)};
+
+/* ---------- bot-format validator (mirrors parse_questions in the bot) ---------- */
+const L={Q:300,O:100,S:200,X:4096,MAXO:10};
+const MK={Q:['QUESTION'],T:['TEXT','HEADER','PRETEXT'],I:['IMAGE','IMAGE_URL','PHOTO'],A:['ANSWER','ANS','CORRECT ANSWER'],S:['SOLUTION','EXPLANATION']};
+const BAD=/[\u200b-\u200d\u2060\ufeff\ufffd\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/;
+const LK1=/^(QUESTION|ANSWER|ANS|CORRECT ANSWER|SOLUTION|EXPLANATION)(?:\s*[：;=\-–—.]|\s+(?=\S))/i,LK2=/^(TEXT|HEADER|PRETEXT|IMAGE|IMAGE_URL|PHOTO)\s*[：;=]/i;
+function mk(line,names){const s=line.trim(),u=s.toUpperCase();for(const n of names){if(u===n)return[true,''];if(u.startsWith(n+':')||u.startsWith(n+' :'))return[true,s.slice(s.indexOf(':')+1).trim()]}return[false,'']}
+const cleanQ=s=>s.trim().replace(/^(?:Q(?:uestion)?\s*)?\d+\s*[.)\-:]\s*/i,'').trim();
+const cleanO=s=>s.trim().replace(/^(?:\(?[A-Ja-j0-9]+\)?)[.)\-:]\s*/,'').trim();
+function parseAns(a,o){a=a.trim().replace(/^(?:OPTION|ANSWER)\s*[:.)-]?\s*/i,'').trim();
+ for(let i=0;i<o.length;i++)if(o[i].trim().toLowerCase()===a.toLowerCase())return i;
+ if(/^\d+$/.test(a)){const n=+a;if(n>=1&&n<=o.length)return n-1}
+ if(/^[A-Za-z]$/.test(a)){const i=a.toUpperCase().charCodeAt(0)-65;if(i>=0&&i<o.length)return i}
+ return null}
+function validate(raw){
+ const iss=[],qs=[],lines=raw.replace(/\r\n?/g,'\n').replace(/```text/g,'').replace(/```/g,'').split('\n'),blocks=[];
+ let cur=[];
+ const snip=n=>(lines[n-1]||'').trim().slice(0,80);
+ lines.forEach((ln,i)=>{
+  const m=ln.match(BAD);
+  if(m)iss.push({lvl:'e',line:i+1,block:blocks.length+1,seg:'CHARACTER',msg:`Invisible/control character U+${m[0].charCodeAt(0).toString(16).toUpperCase().padStart(4,'0')} at column ${m.index+1}. The bot can silently mis-read markers, options or blank lines.`,snip:snip(i+1)});
+  if(ln.trim()==='')(cur.length&&blocks.push(cur),cur=[]);else cur.push({t:ln.trim(),n:i+1})});
+ cur.length&&blocks.push(cur);
+ blocks.forEach((b,bi)=>{
+  const bn=bi+1,loc=(n,seg,msg,lvl='e')=>iss.push({lvl,line:n,block:bn,seg,msg,snip:snip(n)});
+  const first=b[0].t.toUpperCase(),adv=['TEXT','HEADER','PRETEXT','QUESTION','IMAGE'].some(p=>first.startsWith(p));
+  let q=null,qL=b[0].n,opts=[],ans=null,aL=0,sol=null,sL=0,extra=[],started=false,nq=0,na=0;
+  for(const {t,n} of b){
+   let f,v;
+   [f,v]=mk(t,MK.Q);if(f){q=cleanQ(v);qL=n;started=true;nq++;continue}
+   [f,v]=mk(t,MK.T);if(f){if(v)extra.push({t:v,n});continue}
+   [f,v]=mk(t,MK.I);if(f)continue;
+   [f,v]=mk(t,MK.A);if(f){ans=v;aL=n;na++;continue}
+   [f,v]=mk(t,MK.S);if(f){sol=v;sL=n;continue}
+   if(LK1.test(t)||LK2.test(t))loc(n,'MARKER','Looks like a marker but is not recognised. Use exactly NAME: value (e.g. "ANSWER: B") with a normal colon.','w');
+   if(q===null){if(adv)extra.push({t,n});else{q=cleanQ(t);qL=n;started=true}continue}
+   if(started){
+    if(ans!==null||sol!==null)loc(n,'AFTER ANSWER/SOLUTION','This line comes after ANSWER/SOLUTION so the bot reads it as an extra OPTION. Keep the SOLUTION on a single line.');
+    const m=t.match(/^(\(?[A-Ja-j0-9]+\)?)([.)\-:])\s*/);let lab=null;
+    if(m){const k=m[1].replace(/[()]/g,'');if(/^[A-Ja-j]$/.test(k))lab=k.toUpperCase();else if(!(/^\d+$/.test(k)&&/[.)]/.test(m[2])))loc(n,'OPTION','The bot strips "'+m[0].trim()+'" as if it were an option label, so the start of this option will be lost.','w')}
+    opts.push({t:cleanO(t),n,lab})}}
+  if(opts.length===1&&opts[0].t.includes(',')){const p=opts[0].t.split(',').map(x=>x.trim()).filter(Boolean);if(p.length>=2&&p.length<=L.MAXO)opts=p.map(x=>({t:x,n:opts[0].n,lab:null}))}
+  const ex=extra.map(e=>e.t).join('\n').trim();
+  let ok=true;
+  if(nq>1)loc(qL,'QUESTION','Block has '+nq+' QUESTION lines – the bot keeps only the last. Separate questions with a blank line.','w');
+  if(na>1)loc(aL,'ANSWER','Block has '+na+' ANSWER lines – the bot keeps only the last.','w');
+  if(!q){ok=false;loc(b[0].n,'QUESTION','QUESTION is missing.'+(/^QUESTION(?!\s*:)/i.test(b[0].t)?' A block starting with "Question 5." is read as advanced format – write "Q5." or "QUESTION: …".':' If this is a TEXT block, put its QUESTION: line in the same block (no blank line between).'))}
+  else if(q.length>L.Q){ok=false;loc(qL,'QUESTION',`Question is ${q.length} characters (max ${L.Q}).`)}
+  const seen=new Set(),co=[];
+  for(const o of opts){if(!o.t){loc(o.n,'OPTION','Empty option text (ignored by the bot).','w');continue}if(seen.has(o.t)){loc(o.n,'OPTION','Duplicate option – the bot removes it.','w');continue}seen.add(o.t);co.push(o)}
+  if(co.length<2||co.length>L.MAXO){ok=false;loc(co.length?co[0].n:q!==null?qL:b[b.length-1].n,'OPTIONS',`Found ${co.length} option${co.length===1?'':'s'}. Allowed: 2–${L.MAXO}.`+(q!==null&&!co.length?' Options go on the lines after the question.':''))}
+  co.forEach(o=>{if(o.t.length>L.O){ok=false;loc(o.n,'OPTION',`Option is ${o.t.length} characters (max ${L.O}).`)}});
+  const labs=opts.map(o=>o.lab);
+  if(labs.some(x=>x)&&labs.some(x=>!x))loc(opts[0].n,'OPTIONS','Some options have letter labels and some do not.','w');
+  else if(labs.length&&labs.every(x=>x)){const bad=labs.findIndex((x,i)=>x!==String.fromCharCode(65+i));if(bad>=0)loc(opts[bad].n,'OPTIONS','Option labels are not in order A, B, C…','w')}
+  let ai=null;
+  if(!ans){ok=false;loc(aL||b[b.length-1].n,'ANSWER',ans===''?'ANSWER is empty.':'ANSWER is missing.')}
+  else{ai=parseAns(ans,co.map(o=>o.t));if(ai===null){ok=false;if(co.length>=2)loc(aL,'ANSWER',`ANSWER "${ans}" does not match an option. Use a letter (A–${String.fromCharCode(64+Math.max(co.length,1))}), a number, or the exact option text.`)}}
+  let s='';
+  if(sol===null){ok=false;loc(b[b.length-1].n,'SOLUTION','SOLUTION is missing.')}
+  else{s=sol.replace(/\s+/g,' ').trim();if(!s){ok=false;loc(sL,'SOLUTION','SOLUTION is empty.')}else if(s.length>L.S)loc(sL,'SOLUTION',`Solution is ${s.length} characters; the bot cuts it to ${L.S}.`,'w')}
+  if(ex.length>L.X){ok=false;loc(extra[0].n,'TEXT',`Extra text is ${ex.length} characters (max ${L.X}).`)}
+  if(ex){const tags=[...ex.matchAll(/<(\/?)([a-z][a-z0-9-]*)[^>]*>/gi)],stack=[];let bad=false;
+   for(const m of tags){const nmz=m[2].toLowerCase();if(!/^(b|strong|i|em|u|ins|s|strike|del|a|code|pre|span|tg-spoiler|blockquote)$/.test(nmz))bad=true;else if(m[1]){if(stack.pop()!==nmz)bad=true}else stack.push(nmz)}
+   const rest=ex.replace(/<\/?[a-z][^>]*>/gi,'');
+   if(bad||stack.length||/[<>]/.test(rest)||/&(?!(amp|lt|gt|quot|#\d+);)/.test(rest))loc(extra[0].n,'TEXT','TEXT is sent as Telegram HTML: unbalanced/unsupported tags or a bare < > & may break formatting. Use &lt; &gt; &amp;.','w')}
+  if(ok&&ai!==null)qs.push({q,o:co.map(o=>o.t),a:ai,s,extra:ex});
+ });
+ iss.sort((a,b)=>a.line-b.line);
+ return{iss,qs,blocks:blocks.length}}
+
+/* ---------- state / rendering ---------- */
+let R={iss:[],qs:[],blocks:0},T='p',vt,M=[],ci=0;
+const O={cs:false,rx:false};
+const sync=()=>{bd.style.transform=`translateY(${-ed.scrollTop}px)`};
+function paint(){
+ const t=ed.value,Ls=t.split('\n'),lv={};
+ R.iss.forEach(i=>{if(i.lvl==='e'||!lv[i.line])lv[i.line]=i.lvl});
+ let o=0,k=0,h='';
+ for(let n=0;n<Ls.length;n++){
+  const end=o+Ls[n].length;let s='',p=o;
+  while(k<M.length&&M[k].i+M[k].l<o)k++;
+  for(let j=k;j<M.length&&M[j].i<=end;j++){const m=M[j],a=Math.max(m.i,o),b=Math.min(m.i+m.l,end);if(b>a){s+=esc(t.slice(p,a))+(j===ci?'<i id="cm" class="c">':'<i>')+esc(t.slice(a,b))+'</i>';p=b}}
+  s+=esc(t.slice(p,end));
+  h+=`<div${lv[n+1]?` class="${lv[n+1]}"`:''}>${s||' '}</div>`;o=end+1}
+ bd.innerHTML=h;sync()}
+function count(){const t=ed.value.trim();$('#ct').innerHTML=`<span>${t?t.split(/\s+/).length:0} Words</span><span>${ed.value.length} Characters</span>`}
+function renderCon(){
+ const e=R.iss.filter(i=>i.lvl==='e').length,w=R.iss.length-e,n=R.qs.length,empty=!ed.value.trim(),state=empty?'':e?'bad':'ok';
+ $('#sig').className=state;$('#st').className='chk '+state;$('#st').textContent=e?'✕':'✓';
+ const cs=$('#cs');cs.className=state;
+ cs.textContent=empty?'Console – nothing to check':e?`${e} error${e>1?'s':''}${w?`, ${w} warning${w>1?'s':''}`:''} – not ready for the bot`:`All ${n} question${n>1?'s':''} valid${w?` · ${w} warning${w>1?'s':''}`:''}`;
+ $('#tp').classList.toggle('act',T==='p');$('#tv').classList.toggle('act',T==='v');
+ $('#cb').innerHTML=T==='p'
+  ?(R.iss.map(i=>`<div class="r ${i.lvl}" data-l="${i.line}"><b>L${i.line}</b><div><em>Block ${i.block} · ${i.seg}</em>${esc(i.msg)}<code>${esc(i.snip)}</code></div></div>`).join('')||`<div class="r" style="cursor:default"><b style="color:var(--ok)">✓</b><div>${empty?'Paste or upload text to check it.':'No problems found.'}</div></div>`)
+  :(R.qs.map((q,k)=>`<div class="pv">${q.extra?`<small>${esc(q.extra)}</small>`:''}<strong>${k+1}. ${esc(q.q)}</strong>${q.o.map((o,j)=>`<div class="${j===q.a?'ok':''}">${String.fromCharCode(65+j)}. ${esc(o)}${j===q.a?' ✓':''}</div>`).join('')}<small>${esc(q.s)}</small></div>`).join('')||'<div class="r" style="cursor:default">No valid questions yet.</div>')}
+function run(){R=validate(ed.value);renderCon();paint()}
+function setCon(s){S.con=s;$('#con').className=s==='open'?'':s;save()}
+function onInput(){const d=doc();d.text=ed.value;d.ts=Date.now();count();paint();if($('#fp').classList.contains('show'))find(false);clearTimeout(vt);vt=setTimeout(run,250);save()}
+function loadDoc(){const d=doc();ed.value=d.text;nm.value=d.name;document.title=d.name+' – MCQ Editor';ed.scrollTop=0;count();M=[];run()}
+const put=s=>document.execCommand('insertText',false,s)||(ed.setRangeText(s,ed.selectionStart,ed.selectionEnd,'end'),onInput());
+const setText=v=>{ed.focus();ed.select();put(v)};
+function jump(l){const t=ed.value;let o=0;for(let i=1;i<l;i++)o=t.indexOf('\n',o)+1;const e=t.indexOf('\n',o);ed.setSelectionRange(o,e<0?t.length:e);const el=bd.children[l-1];if(el)ed.scrollTop=Math.max(0,el.offsetTop-ed.clientHeight/3);sync();ed.focus({preventScroll:true})}
+
+/* ---------- clean / formatting ---------- */
+const cl=t=>t.replace(/\r\n?/g,'\n').replace(/[\u200b-\u200d\u2060\ufeff\ufffd\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g,'').replace(/\u00a0/g,' ').replace(/```(?:text)?/g,'').replace(/^(\s*(?:QUESTION|TEXT|HEADER|PRETEXT|IMAGE|ANSWER|ANS|CORRECT ANSWER|SOLUTION|EXPLANATION))\s*：/gim,'$1:').replace(/[ \t]+$/gm,'').replace(/\n{3,}/g,'\n\n').trim()+'\n';
+$('#fm').onclick=()=>{S.fmt=!S.fmt;$('#fm').classList.toggle('on',S.fmt);save();if(S.fmt&&ed.value.trim()){const c=cl(ed.value);if(c!==ed.value){setText(c);toast('Formatting cleaned')}else toast('Auto-clean on')}};
+ed.addEventListener('paste',e=>{const t=e.clipboardData?e.clipboardData.getData('text'):'';if(S.fmt&&t){e.preventDefault();put(cl(t).trim())}setTimeout(()=>{clearTimeout(vt);run();if(t.length>40&&R.iss.some(i=>i.lvl==='e'))setCon('open')},60)});
+ed.addEventListener('input',onInput);ed.addEventListener('scroll',sync);
+nm.oninput=()=>{doc().name=nm.value;document.title=nm.value+' – MCQ Editor';save()};
+
+/* ---------- find & replace ---------- */
+const fi=$('#fi'),ri=$('#ri'),fc=$('#fcnt');
+function re(g=true){const q=fi.value;if(!q)return null;try{return new RegExp(O.rx?q:q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),(g?'g':'')+(O.cs?'':'i')+'m')}catch(e){return 0}}
+function find(jumpTo){
+ const r=re();fi.classList.toggle('bad',r===0);M=[];
+ if(r){const t=ed.value;let m;while((m=r.exec(t))&&M.length<5000){M.push({i:m.index,l:m[0].length});if(!m[0].length)r.lastIndex++}}
+ if(jumpTo){ci=M.findIndex(x=>x.i>=ed.selectionStart);if(ci<0)ci=0}
+ ci=Math.min(ci,Math.max(M.length-1,0));
+ fc.textContent=M.length?`${ci+1}/${M.length}`:fi.value&&r!==0?'0':'';
+ paint();if(jumpTo)reveal()}
+function reveal(){const el=$('#cm');if(el)ed.scrollTop=Math.max(0,el.offsetTop-ed.clientHeight/3);sync()}
+function nav(d){if(!M.length)return;ci=(ci+d+M.length)%M.length;fc.textContent=`${ci+1}/${M.length}`;paint();reveal()}
+function openFind(){const s=ed.value.slice(ed.selectionStart,ed.selectionEnd);if(s&&!s.includes('\n'))fi.value=s;$('#fp').classList.add('show');fi.focus();fi.select();find(true)}
+function closeFind(){$('#fp').classList.remove('show');M=[];paint()}
+$('#bf').onclick=()=>$('#fp').classList.contains('show')?closeFind():openFind();
+$('#fx').onclick=closeFind;$("#fnext").onclick=()=>nav(1);$("#fprev").onclick=()=>nav(-1);
+fi.oninput=()=>find(true);
+fi.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();nav(e.shiftKey?-1:1)}};
+ri.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();rep1()}};
+$('#oc').onclick=e=>{O.cs=!O.cs;e.currentTarget.classList.toggle('act',O.cs);find(true)};
+$('#or').onclick=e=>{O.rx=!O.rx;e.currentTarget.classList.toggle('act',O.rx);find(true)};
+function rep1(){
+ if(!M.length)return;const m=M[ci],r=re(false),s=ed.value.slice(m.i,m.i+m.l),v=O.rx?s.replace(r,ri.value):ri.value;
+ ed.focus();ed.setSelectionRange(m.i,m.i+m.l);put(v);find(false);
+ ci=M.findIndex(x=>x.i>=m.i+v.length);if(ci<0)ci=0;nav(0)}
+$('#r1').onclick=rep1;
+$('#ra').onclick=()=>{const r=re();if(!r||!M.length)return toast('No matches');const n=M.length;setText(ed.value.replace(r,O.rx?ri.value:()=>ri.value));find(false);toast(`Replaced ${n} match${n>1?'es':''}`)};
+
+/* ---------- menus, files, export ---------- */
+const pp=$('#pp');
+function menu(a,items){pp.innerHTML='';items.forEach(([l,f])=>{const b=document.createElement('button');b.textContent=l;b.onclick=()=>{pp.classList.remove('show');f()};pp.append(b)});const r=a.getBoundingClientRect();pp.style.left=Math.max(6,Math.min(r.left,innerWidth-226))+'px';pp.classList.add('show')}
+document.addEventListener('pointerdown',e=>{if(!e.target.closest('#pp')&&!e.target.closest('[data-m]'))pp.classList.remove('show')},true);
+function ins(s){ed.focus();const a=ed.selectionStart,b=ed.value.slice(0,a),pre=a===0||b.endsWith('\n\n')?'':b.endsWith('\n')?'\n':'\n\n';put(pre+s+'\n\n')}
+$('#bi').onclick=e=>{const n=R.qs.length+1;menu(e.currentTarget,[
+ ['MCQ block',()=>ins(`Q${n}. Question text?\nA. Option 1\nB. Option 2\nC. Option 3\nD. Option 4\nANSWER: A\nSOLUTION: Short explanation.`)],
+ ['MCQ with TEXT / statements',()=>ins(`TEXT: Passage or statements\n1. First statement\n2. Second statement\nQUESTION: Which statements are correct?\nA. 1 only\nB. 2 only\nC. Both 1 and 2\nD. Neither\nANSWER: C\nSOLUTION: Short explanation.`)],
+ ['MCQ with IMAGE',()=>ins(`IMAGE: https://example.com/image.jpg\nQUESTION: Question text?\nA. Option 1\nB. Option 2\nC. Option 3\nD. Option 4\nANSWER: A\nSOLUTION: Short explanation.`)]])};
+const safe=()=>(doc().name||'file').replace(/[\\/:*?"<>|]+/g,'_');
+function dlTxt(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ed.value],{type:'text/plain;charset=utf-8'}));a.download=safe()+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);const e=R.iss.filter(i=>i.lvl==='e').length;toast(e?`Downloaded with ${e} error${e>1?'s':''}`:'Downloaded')}
+function dlPdf(){
+ const f=document.createElement('iframe');f.style.cssText='position:fixed;width:0;height:0;border:0';document.body.append(f);
+ const w=f.contentWindow,d=w.document;d.open();
+ d.write(`<!doctype html><meta charset="utf-8"><title>${esc(safe())}</title><style>@page{margin:16mm}body{font:12pt/1.6 "Noto Sans","Noto Sans Devanagari",Roboto,Arial,sans-serif;color:#000}p{margin:0 0 1.1em;white-space:pre-wrap;overflow-wrap:anywhere;break-inside:avoid}</style><body>${ed.value.split(/\n\s*\n/).map(b=>`<p>${esc(b.trim())}</p>`).join('')}`);d.close();
+ toast('Choose “Save as PDF” in the print dialog');setTimeout(()=>{w.focus();w.print();setTimeout(()=>f.remove(),3000)},350)}
+$('#bd2').onclick=e=>menu(e.currentTarget,[['Download as TXT',dlTxt],['Download as PDF',dlPdf]]);
+$('#bt').onclick=()=>{if(ed.value&&confirm('Clear all text in this file?')){setText('');toast('Cleared')}};
+$('#bs').onclick=()=>{const el=document.documentElement;if(document.fullscreenElement)document.exitFullscreen();else if(el.requestFullscreen)el.requestFullscreen().catch(()=>toast('Full screen blocked'));else toast('Full screen not supported here')};
+document.onfullscreenchange=()=>$('#fsi').setAttribute('href',document.fullscreenElement?'#i-fx':'#i-fs');
+
+async function addFiles(fs){
+ let n=0;
+ for(const f of fs){if(!/\.txt$/i.test(f.name)&&!(f.type||'').startsWith('text/')){toast('Only .txt files are supported');continue}
+  let t=await f.text();if(S.fmt)t=cl(t);S.cur=nd(f.name.replace(/\.txt$/i,''),t).id;n++}
+ if(!n)return;loadDoc();save();drawer();if(R.iss.some(i=>i.lvl==='e'))setCon('open');toast('Opened '+doc().name)}
+$('#up').onchange=e=>{addFiles([...e.target.files]);e.target.value=''};
+$('#bu').onclick=$('#du').onclick=()=>{closeDr();$('#up').click()};
+addEventListener('dragover',e=>e.preventDefault());
+addEventListener('drop',e=>{e.preventDefault();if(e.dataTransfer.files.length)addFiles([...e.dataTransfer.files])});
+
+/* drawer */
+function drawer(){$('#fl2').innerHTML=S.docs.slice().sort((a,b)=>b.ts-a.ts).map(d=>`<div class="fi${d.id===S.cur?' cur':''}" data-id="${d.id}"><span>${esc(d.name||'Untitled')}<small>${d.text.length} chars · ${new Date(d.ts).toLocaleString()}</small></span><button data-x="${d.id}" aria-label="Delete">✕</button></div>`).join('')}
+const openDr=()=>{drawer();$('#dr').classList.add('show');$('#sh').classList.add('show')},closeDr=()=>{$('#dr').classList.remove('show');$('#sh').classList.remove('show')};
+$('#mn').onclick=$('#fl').onclick=openDr;$('#sh').onclick=closeDr;
+$('#dn').onclick=()=>{S.cur=nd('Untitled','').id;loadDoc();save();closeDr();ed.focus()};
+$('#fl2').onclick=e=>{
+ const x=e.target.closest('[data-x]');
+ if(x){if(!confirm('Delete this file?'))return;S.docs=S.docs.filter(d=>d.id!==x.dataset.x);if(!S.docs.length)nd('Untitled','');if(!S.docs.some(d=>d.id===S.cur))S.cur=S.docs[0].id;loadDoc();save();drawer();return}
+ const f=e.target.closest('.fi');if(f){S.cur=f.dataset.id;loadDoc();save();closeDr()}};
+
+/* console + theme */
+$('#cb').onclick=e=>{const r=e.target.closest('.r[data-l]');if(r)jump(+r.dataset.l)};
+$('#ch').onclick=e=>{if(e.target.closest('button'))return;setCon(S.con==='open'?'min':'open')};
+$('#tp').onclick=()=>{T='p';renderCon()};$('#tv').onclick=()=>{T='v';renderCon()};
+$('#cm-min').onclick=()=>setCon(S.con==='open'?'min':'open');$('#cm-x').onclick=()=>setCon('hide');
+$('#st').onclick=()=>setCon(S.con==='open'?'min':'open');
+$('#bp').onclick=()=>{T='v';renderCon();setCon('open')};
+function theme(t){S.theme=t;document.body.className=t;$('#sb').classList.toggle('act',t==='beige');$('#sd').classList.toggle('act',t==='dark');save()}
+$('#sb').onclick=()=>theme(S.theme==='beige'?'':'beige');$('#sd').onclick=()=>theme(S.theme==='dark'?'':'dark');
+addEventListener('keydown',e=>{const k=e.key.toLowerCase(),c=e.ctrlKey||e.metaKey;
+ if(c&&(k==='f'||k==='h')){e.preventDefault();openFind()}
+ else if(c&&k==='s'){e.preventDefault();try{localStorage.setItem('mcqed',JSON.stringify(S));toast('Saved in this browser')}catch(x){toast('Storage full – download your file')}}
+ else if(c&&sel&&(k==='b'||k==='i'||k==='u')){e.preventDefault();fmtSel(k)}
+ else if(k==='escape'){closeFind();pp.classList.remove('show');closeDr()}});
+
+
+/* ---------- TEXT: selection formatting toolbar ---------- */
+const ftb=$('#ftb');let sel=null;
+function textRegion(a,b){
+ const t=ed.value,Ls=t.split('\n'),st=[];let o=0;Ls.forEach(l=>{st.push(o);o+=l.length+1});
+ const li=p=>{let i=0;while(i+1<Ls.length&&st[i+1]<=p)i++;return i};
+ const la=li(a),lb=li(b-1),blank=i=>Ls[i].trim()==='';
+ if(blank(la)||blank(lb))return null;
+ let bs=la,be=lb;while(bs>0&&!blank(bs-1))bs--;while(be+1<Ls.length&&!blank(be+1))be++;
+ let qi=be+1,ti=-1;
+ for(let i=bs;i<=be;i++){if(qi>be&&mk(Ls[i],MK.Q)[0]){qi=i;break}if(ti<0&&mk(Ls[i],MK.T)[0])ti=i}
+ if(ti<0||la<ti||lb>=qi)return null;
+ const anyMk=l=>[MK.Q,MK.I,MK.A,MK.S].some(n=>mk(l,n)[0]);
+ let s=a;
+ for(let i=la;i<=lb;i++){
+  if(anyMk(Ls[i]))return null;
+  if(mk(Ls[i],MK.T)[0]&&i===la){const c=Ls[i].indexOf(':');let k=c<0?Ls[i].length:c+1;while(Ls[i][k]===' ')k++;s=Math.max(a,st[i]+k)}
+  else if(mk(Ls[i],MK.T)[0])return null}
+ return s<b?{a:s,b}:null}
+function updSel(){sel=ed.selectionStart!==ed.selectionEnd?textRegion(ed.selectionStart,ed.selectionEnd):null;ftb.classList.toggle('show',!!sel)}
+document.addEventListener('selectionchange',()=>{if(document.activeElement===ed)updSel()});
+ed.addEventListener('blur',()=>setTimeout(()=>{if(document.activeElement!==ed){sel=null;ftb.classList.remove('show')}},250));
+function fmtSel(kind){
+ if(!sel)return;const{a,b}=sel,t=ed.value;ed.focus();
+ if(kind==='br'){const rest=t.slice(b).split('\n')[0];ed.setSelectionRange(b,b+(rest.length-rest.trimStart().length));put('\n&#8203;'+(rest.trim()?'\n':''));return}
+ let a2=a,b2=b;const lt=t.lastIndexOf('<',a-1);if(lt>=0&&lt>t.lastIndexOf('>',a-1))a2=lt;const gt=t.indexOf('>',b),nl=t.indexOf('<',b);if(gt>=0&&(nl<0||gt<nl))b2=gt+1;
+ const s=t.slice(a2,b2),o='<'+kind+'>',c='</'+kind+'>';let na=a2,nb=b2,x;
+ if(s.length>=o.length+c.length&&s.startsWith(o)&&s.endsWith(c))x=s.slice(o.length,s.length-c.length);
+ else if(t.slice(a2-o.length,a2)===o&&t.slice(b2,b2+c.length)===c){na=a2-o.length;nb=b2+c.length;x=s}
+ else x=o+s+c;
+ ed.setSelectionRange(na,nb);put(x);ed.setSelectionRange(na,na+x.length);updSel()}
+ftb.addEventListener('pointerdown',e=>{e.preventDefault();const b=e.target.closest('button');if(b)fmtSel(b.dataset.f)});
+
+/* init */
+$('#fm').classList.toggle('on',!!S.fmt);theme(S.theme||'');setCon(S.con||'min');loadDoc();
+</script>
+</body>
+</html>
