@@ -1,0 +1,33 @@
+[
+  {"code":"A","name":"Banking & Financial Awareness","weight":28,"emoji":"🏦","subs":[
+    {"name":"RBI & Monetary Policy","weight":32,"emoji":"💰","minors":["Repo Rate / Reverse Repo","Monetary Policy Committee","Inflation Target","RBI Reports","RBI Guidelines"]},
+    {"name":"Banking Structure","weight":18,"emoji":"🏛️","minors":["PSB Number / Classification","Regional Rural Banks","Small Finance Banks","Payment Banks","Local Area Banks"]},
+    {"name":"Banking Schemes","weight":25,"emoji":"📋","minors":["PMJDY","PMMY","PM Surya Ghar","AIF","Stand Up India","Financial Inclusion Schemes"]},
+    {"name":"Digital Banking & Payments","weight":25,"emoji":"💳","minors":["UPI","AEPS","Mobile Seva","Digital Rupee","UPI Lite","BBPS"]}
+  ]},
+  {"code":"B","name":"National Current Affairs","weight":24,"emoji":"🇮🇳","subs":[
+    {"name":"Government Schemes","weight":40,"emoji":"📜","minors":["PM Surya Ghar Yojana","SMILE Scheme","Startup Ranking","Digital India Initiatives","Agriculture Schemes","Infrastructure Programs"]},
+    {"name":"Government Reports / Index","weight":25,"emoji":"📊","minors":["UNFPA Report","NHAI Green Cover Index","Economic Survey","Global Innovation Index","Human Development Index"]},
+    {"name":"Committees & Appointments","weight":20,"emoji":"👥","minors":["Finance Commission","Expert Committees","Regulatory Appointments","Government Panels"]},
+    {"name":"Infrastructure Projects","weight":15,"emoji":"🌉","minors":["Sea Bridges","Highways","Metro Projects","Ports & Corridors"]}
+  ]},
+  {"code":"C","name":"International Affairs","weight":8,"emoji":"🌍","subs":[
+    {"name":"Global Organizations","weight":50,"emoji":"🏢","minors":["IMF reports","World Bank programs","WHO initiatives","IMO headquarters","UNESCO programs"]},
+    {"name":"International Agreements","weight":50,"emoji":"🤝","minors":["India–Mauritius MoU","Lithium exploration agreement","Defence agreements","Space collaboration"]}
+  ]},
+  {"code":"D","name":"Defence & Space","weight":7,"emoji":"🚀","subs":[
+    {"name":"Defence & Space Highlights","weight":100,"emoji":"🛡️","minors":["Defence exercises","DRDO weapons","Naval operations","ISRO missions","Pinaka MBRL","Aditya-L1 mission","Chandrayaan-1","Naval rescue operations"]}
+  ]},
+  {"code":"E","name":"Sports","weight":6,"emoji":"🏅","subs":[
+    {"name":"Sports Highlights","weight":100,"emoji":"⚽","minors":["International tournaments","National sports awards","Cricket tournaments","Olympic sports","ICC T20 World Cup winners","Khel Ratna awards","Irani Cup","Hockey India awards"]}
+  ]},
+  {"code":"F","name":"Environment & Geography","weight":7,"emoji":"🌿","subs":[
+    {"name":"Environment Highlights","weight":100,"emoji":"🐯","minors":["Ramsar sites","Tiger reserves","National parks","Wildlife sanctuaries","Udaipur Jheel Ramsar site","Pench Tiger Reserve","Dark Sky Reserve"]}
+  ]},
+  {"code":"G","name":"Culture & Awards","weight":5,"emoji":"🎭","subs":[
+    {"name":"Culture & Awards Highlights","weight":100,"emoji":"🏆","minors":["National awards","Literature awards","Cultural festivals","Dadasaheb Phalke award","International Booker Prize","Ustad Bismillah Khan award"]}
+  ]},
+  {"code":"H","name":"Static GK","weight":15,"emoji":"📚","subs":[
+    {"name":"Static GK Highlights","weight":100,"emoji":"🗺️","minors":["Capitals","Important days","Geography","Institutions","National Youth Day","Gangtok capital","Mount Kamet location","Legislative assembly UTs"]}
+  ]}
+]

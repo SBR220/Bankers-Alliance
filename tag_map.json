@@ -1,0 +1,19 @@
+{
+  "_help": "Maps the TAG: line of each MCQ to the Main > Sub > Minor tree. Keys are case-insensitive. 'main' = letter A-H, 'sub' = exact subtopic name from topics.json, 'minor' is optional (defaults to the tag text itself, so it appears as its own chip). Tags that are NOT listed here are auto-matched against names in topics.json; anything still unmatched lands in 'Other / Unsorted' and the converter prints a warning telling you which tags to add here.",
+
+  "United Nations": {"main": "C", "sub": "Global Organizations"},
+  "RBI Monetary Policy": {"main": "A", "sub": "RBI & Monetary Policy"},
+
+  "Appointments": {"main": "B", "sub": "Committees & Appointments"},
+  "Committees": {"main": "B", "sub": "Committees & Appointments"},
+  "Reports & Indices": {"main": "B", "sub": "Government Reports / Index"},
+  "Banking Schemes": {"main": "A", "sub": "Banking Schemes"},
+  "Payments": {"main": "A", "sub": "Digital Banking & Payments"},
+  "Awards": {"main": "G", "sub": "Culture & Awards Highlights"},
+  "Books & Authors": {"main": "G", "sub": "Culture & Awards Highlights"},
+  "Summits": {"main": "C", "sub": "International Agreements"},
+  "MoU": {"main": "C", "sub": "International Agreements"},
+  "Defence": {"main": "D", "sub": "Defence & Space Highlights"},
+  "Space": {"main": "D", "sub": "Defence & Space Highlights"},
+  "Important Days": {"main": "H", "sub": "Static GK Highlights"}
+}
