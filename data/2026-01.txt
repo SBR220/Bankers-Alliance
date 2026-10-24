@@ -1,0 +1,51 @@
+QUESTION: National Youth Day in India is observed every year on which date?
+A. 2 October
+B. 12 January
+C. 15 August
+D. 5 September
+ANSWER: B
+SOLUTION: National Youth Day is observed on <b>12 January</b>, the birth anniversary of Swami Vivekananda (born 1863).
+TAG: National Youth Day
+
+QUESTION: How many members does the Monetary Policy Committee (MPC) of the Reserve Bank of India have?
+A. 4
+B. 5
+C. 6
+D. 7
+ANSWER: C
+SOLUTION: The MPC has <b>six members</b>: three from the RBI (including the Governor, who chairs it) and three external members appointed by the Government of India.
+TAG: Monetary Policy Committee
+
+QUESTION: The Ramsar Convention, signed in 1971, is an international treaty for the conservation and wise use of which of the following?
+A. Tiger reserves
+B. Coral reefs
+C. Wetlands
+D. Mangrove forests
+ANSWER: C
+SOLUTION: The <b>Ramsar Convention</b> (Ramsar, Iran, 1971) protects <mark>wetlands of international importance</mark>. World Wetlands Day is observed on 2 February.
+TAG: Ramsar sites
+
+TEXT: <b>Consider the following statements about the Unified Payments Interface (UPI):</b>
+&#8203;
+I. UPI was developed by the National Payments Corporation of India (NPCI).
+II. UPI allows instant bank-to-bank transfers using a Virtual Payment Address.
+III. UPI is regulated by SEBI.
+&#8203;
+Which of the statements given above is/are correct?
+QUESTION: STATEMENT BASED QUESTION
+A. Only I
+B. Only I and II
+C. Only II and III
+D. I, II and III
+ANSWER: B
+SOLUTION: UPI was developed by <b>NPCI</b> and enables instant bank-to-bank transfers via a VPA. Statement III is wrong: payment systems are regulated by the <b>RBI</b>, not SEBI.
+TAG: UPI
+
+QUESTION: Where is the headquarters of the International Monetary Fund (IMF) located?
+A. Geneva
+B. New York
+C. Washington, D.C.
+D. Paris
+ANSWER: C
+SOLUTION: The IMF is headquartered in <b>Washington, D.C.</b>, USA.
+TAG: IMF reports
