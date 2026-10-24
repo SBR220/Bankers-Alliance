@@ -1,1 +1,88 @@
-[]
+[
+ {
+  "month": 0,
+  "main": "H",
+  "sub": "Static GK Highlights",
+  "minor": "National Youth Day",
+  "tag": "National Youth Day",
+  "question": "National Youth Day in India is observed every year on which date?",
+  "options": {
+   "A": "2 October",
+   "B": "12 January",
+   "C": "15 August",
+   "D": "5 September"
+  },
+  "answer": "B",
+  "solution": "<p>National Youth Day is observed on <b>12 January</b>, the birth anniversary of Swami Vivekananda (born 1863).</p>",
+  "id": "baa9d95054"
+ },
+ {
+  "month": 0,
+  "main": "A",
+  "sub": "RBI & Monetary Policy",
+  "minor": "Monetary Policy Committee",
+  "tag": "Monetary Policy Committee",
+  "question": "How many members does the Monetary Policy Committee (MPC) of the Reserve Bank of India have?",
+  "options": {
+   "A": "4",
+   "B": "5",
+   "C": "6",
+   "D": "7"
+  },
+  "answer": "C",
+  "solution": "<p>The MPC has <b>six members</b>: three from the RBI (including the Governor, who chairs it) and three external members appointed by the Government of India.</p>",
+  "id": "51ba612978"
+ },
+ {
+  "month": 0,
+  "main": "F",
+  "sub": "Environment Highlights",
+  "minor": "Ramsar sites",
+  "tag": "Ramsar sites",
+  "question": "The Ramsar Convention, signed in 1971, is an international treaty for the conservation and wise use of which of the following?",
+  "options": {
+   "A": "Tiger reserves",
+   "B": "Coral reefs",
+   "C": "Wetlands",
+   "D": "Mangrove forests"
+  },
+  "answer": "C",
+  "solution": "<p>The <b>Ramsar Convention</b> (Ramsar, Iran, 1971) protects <mark>wetlands of international importance</mark>. World Wetlands Day is observed on 2 February.</p>",
+  "id": "4aaf88be2c"
+ },
+ {
+  "month": 0,
+  "main": "A",
+  "sub": "Digital Banking & Payments",
+  "minor": "UPI",
+  "tag": "UPI",
+  "passage": "<p><b>Consider the following statements about the Unified Payments Interface (UPI):</b></p><p>I. UPI was developed by the National Payments Corporation of India (NPCI).<br>II. UPI allows instant bank-to-bank transfers using a Virtual Payment Address.<br>III. UPI is regulated by SEBI.</p><p>Which of the statements given above is/are correct?</p>",
+  "question": "STATEMENT BASED QUESTION",
+  "options": {
+   "A": "Only I",
+   "B": "Only I and II",
+   "C": "Only II and III",
+   "D": "I, II and III"
+  },
+  "answer": "B",
+  "solution": "<p>UPI was developed by <b>NPCI</b> and enables instant bank-to-bank transfers via a VPA. Statement III is wrong: payment systems are regulated by the <b>RBI</b>, not SEBI.</p>",
+  "id": "7cd68ea785"
+ },
+ {
+  "month": 0,
+  "main": "C",
+  "sub": "Global Organizations",
+  "minor": "IMF reports",
+  "tag": "IMF reports",
+  "question": "Where is the headquarters of the International Monetary Fund (IMF) located?",
+  "options": {
+   "A": "Geneva",
+   "B": "New York",
+   "C": "Washington, D.C.",
+   "D": "Paris"
+  },
+  "answer": "C",
+  "solution": "<p>The IMF is headquartered in <b>Washington, D.C.</b>, USA.</p>",
+  "id": "42b79a6458"
+ }
+]
