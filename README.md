@@ -1,178 +1,101 @@
-# GA Pulse — Current Affairs Revision Site
+# Bankers Alliance — Current Affairs MCQ Practice
 
-A single-page revision app: Month → Main Topic → Subtopic → Minor Topic → News cards
-with "Remember This" and "Static Points" boxes.
+Month → Main topic → Subtopic → Minor topic → **MCQ practice** with instant explanations,
+score + analysis, and A4 PDF export (tilted watermark, header, footer).
 
 ```
-ga-pulse/
-├── index.html              ← the app (structure, styling, logic)
+├── index.html                  the whole website
 ├── data/
-│   ├── news.json           ← THE CONTENT — edit this to add/change news
-│   └── news_template.csv   ← spreadsheet template for bulk entry
-└── scripts/
-    └── csv_to_json.py      ← converts a bulk CSV into news.json
+│   ├── raw/                    ★ YOUR MCQ TEXT FILES GO HERE  (2026-08.txt, 2026-09.txt …)
+│   ├── tag_map.json            tells the site where each TAG belongs in the topic tree
+│   ├── topics.json             the master GA structure (Main > Sub > Minor + weightage)
+│   └── questions.json          generated automatically — don't edit by hand
+├── scripts/mcq_to_json.py      converts data/raw/*.txt  ->  data/questions.json
+└── .github/workflows/build-questions.yml   runs the converter on GitHub for you
 ```
 
----
+## 1. Adding MCQs (the daily workflow)
 
-## 1. Host it on GitHub Pages (free, no server needed)
+1. Create/edit a text file in **`data/raw/`**. **The file name decides the month**:
+   `2026-08.txt`, `august.txt`, `08_august.txt` all mean August.
+   (Alternatively put `MONTH: August` on the very first line of the file.)
+2. Paste your questions in this format (blank lines between questions are optional):
 
-1. Create a new GitHub repository (e.g. `ga-pulse`).
-2. Upload these three items to the **root** of the repo, keeping the folder
-   structure exactly as above (`index.html` at root, `data/` and `scripts/`
-   as subfolders).
-3. Go to **Settings → Pages**.
-4. Under "Build and deployment", set **Source: Deploy from a branch**,
-   branch: **main**, folder: **/ (root)**. Save.
-5. Wait ~1 minute, then GitHub shows your live URL, typically:
-   `https://<your-username>.github.io/ga-pulse/`
-6. Open it — the page will fetch `data/news.json` automatically and render.
+```
+QUESTION: Who is the President of the 81st UNGA?
+A. Annalena Baerbock
+B. Mirza Fakhrul Alamgir
+C. Khalilur Rahman
+D. Peter Pellegrini
+E. Hakainde Hichilema
+ANSWER: C
+SOLUTION: Bangladesh's Khalilur Rahman presides over the 81st session.
+TAG: United Nations
 
-Every time you push a change to `data/news.json` (or edit it directly on
-github.com), the live site updates within a minute or two — no rebuild step,
-no server code.
-
-> ⚠️ One thing that trips people up: don't just double-click `index.html`
-> on your own computer to test it — `fetch()` is blocked on the `file://`
-> protocol by browser security rules, so the news won't load locally unless
-> you run a local dev server (e.g. `python3 -m http.server` from the folder,
-> then visit `http://localhost:8000`). On GitHub Pages this is a non-issue
-> since it's served over `https://`.
-
----
-
-## 2. Adding news in bulk — two ways
-
-### Option A: Edit `data/news.json` directly
-Good for occasional additions. Copy this block, fill it in, add a comma
-after the previous item, paste it in:
-
-```json
-{
-  "id": 13,
-  "month": 8,
-  "main": "A",
-  "sub": "RBI & Monetary Policy",
-  "minor": "Inflation Target",
-  "date": "Sep 10",
-  "importance": 3,
-  "title": "Your headline with an emoji 🎯",
-  "body": "One or two sentence plain-English summary of the news.",
-  "remember": ["Key point one", "Key point two", "Key point three"],
-  "statics": ["Static fact one", "Static fact two"],
-  "source": "Where this came from"
-}
+TEXT: <u>Consider the following statements:</u>
+&#8203;
+I. First statement
+II. Second statement
+&#8203;
+Which of the statements given above is/are correct?
+QUESTION: STATEMENT BASED QUESTION
+A. Only I
+B. Only II
+C. Both I and II
+D. Neither
+ANSWER: C
+SOLUTION: Both are correct because …
+TAG: RBI Monetary Policy
 ```
 
-- `month` is **0-indexed**: January = 0, December = 11.
-- `main` must be one of the topic codes: `A B C D E F G H`.
-- `sub` and `minor` must match the exact text used in `index.html`'s
-  `TOPICS` structure — otherwise the card won't show up under that filter
-  (it'll still appear when "Show all" is selected, since that ignores
-  sub/minor matching).
-- `importance` is 1–3 and controls the ⭐ rating shown on the card.
+* Keywords `TEXT: QUESTION: ANSWER: SOLUTION: TAG:` must be **UPPERCASE**.
+* 2 to 6 options (A–F). `SOLUTION` and `TEXT` may run over many lines.
+* `&#8203;` lines (zero-width spaces) are turned into paragraph gaps automatically.
+* HTML formatting works everywhere: `<b> <i> <u> <mark> <br>` and even `<table>`.
+* A question that only has a label (e.g. `STATEMENT BASED QUESTION`) shows that label as a small tag above the passage.
 
-### Option B: Bulk import from a spreadsheet (recommended for lots of entries)
-This is the easiest way to add dozens of news items at once without
-hand-writing JSON.
+3. **Commit & push.** The GitHub Action rebuilds `data/questions.json`; Vercel/GitHub Pages then redeploys.
+   (Repo → *Actions* tab → *Build questions.json* → green tick = done. Warnings about skipped
+   questions or unknown tags appear there as yellow annotations.)
 
-1. Open `data/news_template.csv` in Google Sheets / Excel.
-2. Add one row per news item. Columns:
+*Prefer to run it yourself?* `python3 scripts/mcq_to_json.py` (no installs needed) and commit `data/questions.json`.
 
-   | column | notes |
-   |---|---|
-   | id | any unique number |
-   | month | **1–12** (human-friendly here — the script converts it) |
-   | main | topic code A–H |
-   | sub | exact subtopic name |
-   | minor | exact minor-topic name |
-   | date | display text, e.g. `Sep 10` |
-   | importance | 1, 2, or 3 |
-   | title | headline (emoji welcome) |
-   | body | 1–2 sentence summary |
-   | remember | bullet points separated by `\|` e.g. `Point one\|Point two` |
-   | statics | same `\|`-separated format |
-   | source | citation/source note |
+## 2. Where does a TAG go?  (`data/tag_map.json`)
 
-3. Export as CSV (File → Download → CSV).
-4. Run the converter (needs Python 3, no extra installs):
-   ```bash
-   python3 scripts/csv_to_json.py data/your_export.csv data/news.json
-   ```
-5. Commit and push the updated `data/news.json`. Done — the whole batch is live.
+Each question's `TAG:` is matched to a category in this order:
 
-This workflow means non-technical contributors can fill in a spreadsheet,
-and you just run one command to publish the batch.
+1. **`data/tag_map.json`** — explicit, always wins:
+   `"United Nations": {"main": "C", "sub": "Global Organizations"}`  
+   (`"minor"` is optional; by default the tag itself becomes a minor-topic chip.)
+2. **Automatic matching** against the names in `topics.json` (e.g. `RBI Monetary Policy` → *RBI & Monetary Policy*, `UPI` → *UPI*).
+   The converter prints what it matched so you can double-check.
+3. Otherwise the question is filed under **Other / Unsorted** (a grey topic card that appears only when needed)
+   and the Action shows a warning naming the tag — just add that tag to `tag_map.json`.
 
----
+To override per question, write lines **above** a question: `MAIN: C`, `SUB: Global Organizations`, `MINOR: UN`, `MONTH: 8`.
 
-## 3. Does all this data make the file heavy / slow to load?
+## 3. What the site does
 
-Short answer: **no, not at your realistic scale.**
+| | |
+|---|---|
+| **Navigation** | Header has only **Home** and **Back** (they also work with the phone's back button). The Main › Sub › Minor trail is shown inside each question card. |
+| **"All"** | Every level (month, topic, subtopic) has a *Practice all …* button, plus an **All Months** tile. |
+| **Practice mode** | Tap an option → instantly ✅/❌, correct answer highlighted, **explanation shown**. Answer locks. |
+| **Test mode** | No feedback until the end; answers can be changed; full review afterwards. |
+| **Result** | Score ring, correct/wrong/skipped, accuracy, time, avg time per question, per-topic bars, verdict. |
+| **Extras** | Negative marking (−¼), shuffle, random subset (10/20/30/50), question palette, ⭐ save questions, **My Mistakes** (auto-collected; fixed ones disappear), Retry wrong, Review (filter wrong/correct/skipped), resume unfinished quizzes, recent-results history, keyboard shortcuts (`A–E` / `1–5` answer, `←/→` move, `S` save), share score. |
+| **PDF** | At the bottom of every opened topic: **Question paper** or **With answers & solutions**. A4, tilted *BANKERS ALLIANCE* watermark on every page, header *"Target MCQs of {Section}"*, footer *"Created by BankersAlliance and Victory Banker"*, page numbers. Questions are never split across pages. |
 
-- The current `news.json` (12 items) is about **6 KB**.
-- Even **500 detailed news items** (a very thick full-year dataset) would be
-  roughly **250–350 KB** of JSON — still loads in well under a second on
-  any connection, and the browser caches it after the first visit.
-- `index.html` itself (structure + styling + logic) is ~35 KB regardless of
-  how much news content you add, since content now lives separately in JSON.
+Progress, saved questions, mistakes and history are stored in the learner's own browser (localStorage).
 
-**When it would actually start to matter:** if you eventually have several
-thousand entries covering many years. At that point, the fix isn't to
-avoid JSON — it's to **split it by month or year** instead of one giant
-file, and only fetch what's needed:
+## 4. Easy settings (top of the `<script>` in `index.html`)
 
-```js
-// instead of one fetch("data/news.json"), fetch per month on demand:
-fetch(`data/2026/${String(monthIndex+1).padStart(2,"0")}.json`)
-```
+`BRAND`, `YEAR`, `NEG_MARK`, `PDF_HEADER_PREFIX` (change *"Target MCQs of"* if you prefer another wording),
+`PDF_FOOTER_TEXT`, `PDF_WATERMARK`.
 
-That's a ~15-minute change to `loadData()` if/when you need it — for now,
-a single `data/news.json` file is simpler and completely fine.
+## 5. Good to know
 
----
-
-## 4. New: themed story cards, simplified nav, and PDF export
-
-**Story card redesign.** Each news card is now a full magazine-style layout
-(dark themed header per topic, drop-cap lead paragraph, Remember This /
-Static Points boxes, optional Key News and Exam Focus sections, footer with
-ministry name + hashtags). The header gradient automatically uses that
-story's topic colour — no per-topic CSS to maintain, it's computed from the
-same `main` code you already set.
-
-**Optional fields** (add these columns to your CSV/JSON if you want the
-richer sections — leave them out and the card still renders fine without
-them):
-- `highlights` → renders a "📰 Key News" bullet list
-- `examFocus` → renders a "🎯 Exam Focus" flashcard strip. Format each item
-  as `Label → Value`, e.g. `Launch date → 1 March 2021`
-- `footerTitle` → bold name in the card's footer (defaults to the topic name)
-- `hashtags` → pipe-separated tags in the footer (defaults to auto-generated ones)
-
-**Simplified header nav.** The top bar now shows only **🏠 Home** and
-**← Back** — no breadcrumb trail up there. The full path (Topic › Subtopic ›
-Minor Topic) still shows on every individual story card, same as your sample.
-
-**PDF export.** Every news list screen (a specific minor topic, or any
-"Show all" view) has a **📄 Download PDF** button at the bottom. It exports
-exactly what's on screen at A4 size, with:
-- A tilted "BANKERS ALLIANCE" watermark on every page
-- A header reading **"Target News of {Section}"** — the section name is
-  whichever filter is currently most specific (minor topic name, or the
-  subtopic/topic/month name when "Show all" is used)
-- A footer reading **"Created by BankersAlliance and Victory Banker"** with
-  page numbers
-- Automatic pagination — long lists span multiple pages cleanly
-
-This uses the [jsPDF](https://github.com/parallax/jsPDF) library loaded from
-a CDN (`cdnjs.cloudflare.com`), so it needs an internet connection to load
-the very first time the button is used (cached by the browser after that).
-
----
-
-## 5. Quick content checklist before publishing a batch
-- [ ] Every `main` code matches A–H exactly
-- [ ] Every `sub` / `minor` string matches the app's topic list exactly (case-sensitive)
-- [ ] `data/news.json` is valid JSON (run `python3 -m json.tool data/news.json` to check — it'll error out if a comma or quote is off)
-- [ ] Facts in `body` / `remember` / `statics` are verified against an official source, not left as placeholder text
+* The PDF library (jsPDF) loads from a CDN, so the first PDF needs internet.
+* PDF text uses built-in Latin fonts: **₹ prints as "Rs."** and Hindi/other scripts can't be shown in the PDF (they display fine on the website).
+* Opening `index.html` by double-clicking won't load the data (browsers block `fetch` on `file://`); use your hosted site, or `python3 -m http.server` locally.
+* Old story files (`news.json`, `csv_to_json.py`, `csv-to-json.yml`) are no longer used — delete them from your repo.

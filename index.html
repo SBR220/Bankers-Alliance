@@ -1,408 +1,1117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>English PO level Target</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<style>:root{--acc:#000787;--adk:#127DE5;--ok:#1f9e5a;--bad:#f23f54;--bg:#f0f4ff;--card:#fff;--mx:860px;--gold:#f59e0b;--sh:0 8px 32px rgba(0,7,135,.13)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:#111;padding-bottom:90px;min-height:100vh}
-::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#c0c8d8;border-radius:4px}
-.wrap{max-width:var(--mx);margin:auto;padding:12px 16px}
-header{background:linear-gradient(135deg,#000787,#127DE5);box-shadow:0 4px 20px rgba(0,7,135,.3);position:sticky;top:0;z-index:10}
-.hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:10px;flex-wrap:wrap}
-.tog{position:relative;width:96px;height:30px;background:rgba(255,255,255,.18);border-radius:999px;cursor:pointer;display:flex;align-items:center;padding:0 6px;user-select:none;border:1px solid rgba(255,255,255,.25)}
-.tog span{z-index:2;flex:1;text-align:center;font-size:12px;font-weight:700;color:rgba(255,255,255,.7);transition:color .2s}
-.tog::before{content:"";position:absolute;top:3px;left:3px;width:44px;height:24px;background:#fff;border-radius:999px;transition:transform .28s;box-shadow:0 2px 6px rgba(0,0,0,.2)}
-.tog.qm::before{transform:translateX(44px)}.tog span:first-child{color:#000787}.tog.qm span:first-child{color:rgba(255,255,255,.7)}.tog.qm span:last-child{color:#000787}
-.timer{font-weight:800;font-size:18px;color:#fff;font-variant-numeric:tabular-nums;background:rgba(0,0,0,.2);padding:4px 10px;border-radius:8px;min-width:68px;text-align:right}
-.timer.warn{color:#fbbf24;animation:tp 1s infinite}@keyframes tp{0%,100%{opacity:1}50%{opacity:.6}}
-.btn{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .18s}
-.btn:hover{background:rgba(255,255,255,.3);transform:translateY(-1px)}.btn-sub{background:linear-gradient(135deg,#f59e0b,#ef4444);border:none}
-.btn-o{background:#fff;color:var(--acc);border:2px solid var(--acc);border-radius:999px;padding:5px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s}.btn-o:hover{background:var(--acc);color:#fff}
-.pbr{background:rgba(255,255,255,.2);height:4px;overflow:hidden}.pb{height:100%;background:linear-gradient(90deg,#fbbf24,#34d399);transition:width .4s}
-.card{background:var(--card);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:var(--sh);border:1px solid rgba(0,7,135,.06);animation:fiu .3s ease}
-@keyframes fiu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.qbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:6px}
-.qmeta{font-size:13px;color:#69707a;font-weight:600}
-.qnum{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:linear-gradient(135deg,var(--acc),var(--adk));color:#fff;border-radius:50%;font-size:13px;font-weight:800;margin-right:4px}
-.sbdg{display:flex;gap:6px}.sbdg span{padding:3px 9px;border-radius:6px;font-weight:700;font-size:13px}
-.sp{background:#dcfce7;color:#15803d;border:1px solid #bbf7d0}.sn{background:#fee2e2;color:#b91c1c;border:1px solid #fecaca}
-.qtxt{font-size:15.5px;line-height:1.85;margin:10px 0 14px;padding:13px 16px;background:linear-gradient(135deg,#f8faff,#eef2ff);border-radius:10px;border-left:4px solid var(--acc)}
-.qtxt strong{font-weight:800;color:#00087a}.qtxt em{font-style:italic;color:#1a56db}.qtxt u{text-decoration:underline;text-underline-offset:3px}.qtxt mark{background:#fef08a;color:#78350f;border-radius:3px;padding:0 3px}
-.qtxt img{max-width:100%;border-radius:8px;margin:8px 0;display:block}
-.opts{display:flex;flex-direction:column;gap:9px}
-.opt{display:flex;align-items:flex-start;gap:12px;padding:12px 15px;border:2px solid #e2e8f0;border-radius:10px;cursor:pointer;background:#fff;transition:all .18s}
-.opt:hover:not(.cor):not(.wrg){border-color:#93c5fd;background:#f0f9ff;transform:translateX(3px)}
-.opt.sel{border-color:var(--acc);background:rgba(0,7,135,.05);transform:translateX(3px)}
-.opt.cor{border-color:var(--ok);background:rgba(31,158,90,.1);transform:translateX(3px)}
-.opt.wrg{border-color:var(--bad);background:rgba(200,45,63,.08);transform:translateX(3px)}
-.oltr{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#64748b;margin-top:2px;transition:all .18s}
-.opt.sel .oltr{background:var(--acc);border-color:var(--acc);color:#fff}
-.opt.cor .oltr{background:var(--ok);border-color:var(--ok);color:#fff}
-.opt.wrg .oltr{background:var(--bad);border-color:var(--bad);color:#fff}
-.otxt{font-size:15px;line-height:1.6;flex:1}
-.otxt strong{font-weight:800;color:#00087a}.otxt em{font-style:italic;color:#1a56db}.otxt u{text-decoration:underline;text-underline-offset:3px}.otxt mark{background:#fef08a;color:#78350f;border-radius:3px;padding:0 3px}
-.och{margin-left:auto;font-size:16px;flex-shrink:0}
-.opt.cor .och::before{content:"✓";color:var(--ok)}.opt.wrg .och::before{content:"✗";color:var(--bad)}
-.expl{margin-top:12px;padding:13px 16px 13px 42px;border-radius:10px;background:linear-gradient(135deg,#f0fdf9,#dcfce7);border:1px solid #a7f3d0;font-size:14px;line-height:1.75;display:none;position:relative}
-.expl::before{content:"💡";position:absolute;left:13px;top:13px;font-size:18px}
-.expl strong{font-weight:800;color:#065f46}.expl em{font-style:italic;color:#0f766e}.expl u{text-decoration:underline}.expl mark{background:#fef08a;color:#78350f;border-radius:3px;padding:0 3px}
-.fbar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 -4px 20px rgba(0,7,135,.1);display:flex;justify-content:center;z-index:50;border-top:1px solid rgba(0,7,135,.07)}
-.fbar-in{display:flex;align-items:center;gap:8px;max-width:var(--mx);width:100%;padding:10px 14px}
-.nb{background:linear-gradient(135deg,var(--acc),var(--adk));color:#fff;border:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:all .18s;flex:1;max-width:130px}
-.nb:hover{transform:translateY(-2px)}.nb-clr{background:#f1f5f9;color:#475569;border:1px solid #e2e8f0}.nb-clr:hover{background:#e2e8f0;transform:translateY(-1px)}
-.qctr{flex:1;text-align:center;font-size:13px;font-weight:700;color:#69707a}
-#pal{position:fixed;top:62px;right:14px;background:#fff;border-radius:14px;box-shadow:0 16px 48px rgba(0,7,135,.18);padding:14px;display:none;flex-wrap:wrap;gap:6px;z-index:200;max-width:305px;border:1px solid rgba(0,7,135,.08)}
-#pal-hd{width:100%;font-size:11px;font-weight:800;color:var(--acc);padding-bottom:8px;border-bottom:2px solid #eef2ff;margin-bottom:2px;text-transform:uppercase;letter-spacing:.4px}
-.pq{width:40px;height:40px;border-radius:8px;border:2px solid #e2e8f0;background:#f8faff;cursor:pointer;font-weight:800;font-size:12px;transition:all .15s;color:#374151}
-.pq:hover{border-color:var(--adk);transform:scale(1.08)}.pq.ans{background:linear-gradient(135deg,var(--acc),var(--adk));color:#fff;border-color:var(--acc)}.pq.act{background:linear-gradient(135deg,#fef3c7,#fde68a);border:2px solid var(--gold);color:#92400e}
-#pal-sum{width:100%;text-align:center;font-size:10px;color:#69707a;padding-top:7px;border-top:1px solid #eef2ff;margin-top:3px;font-weight:600}
-.modal{position:fixed;inset:0;background:rgba(0,0,50,.5);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:300}
-.mbox{background:#fff;border-radius:18px;padding:26px;max-width:410px;width:94%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.2);animation:mbu .3s ease}
-@keyframes mbu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.mbox h3{color:var(--acc);margin:8px 0 10px;font-size:20px;font-weight:900}.mbox p{color:#555;font-size:14px;margin-bottom:20px;line-height:1.6}
-.macts{display:flex;gap:9px;justify-content:center}.bp{background:linear-gradient(135deg,var(--acc),var(--adk));color:#fff;border:none;padding:10px 22px;border-radius:999px;font-weight:800;cursor:pointer;font-size:14px;transition:all .18s}.bp:hover{transform:translateY(-2px)}
-.start{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:radial-gradient(ellipse at 20% 20%,rgba(107,228,255,.3),transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(0,7,135,.15),transparent 50%),linear-gradient(160deg,#bff1fc,#eefbfe 40%,#dde9ff 70%,#aaeeff);text-align:center;padding:24px;position:relative;overflow:hidden}
-.logo-wrap{position:relative;margin-bottom:18px}.logo-glow{position:absolute;inset:-18px;background:radial-gradient(circle,rgba(0,7,135,.15),transparent 70%);border-radius:50%;animation:glw 3s ease-in-out infinite}
-@keyframes glw{0%,100%{opacity:.5}50%{opacity:1;transform:scale(1.08)}}.logo-img{width:100px;height:100px;border-radius:50%;object-fit:cover;filter:drop-shadow(0 8px 24px rgba(0,7,135,.3));animation:fly 4s ease-in-out infinite;position:relative}
-@keyframes fly{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-.start h1{font-size:clamp(20px,4vw,28px);font-weight:900;color:#000787;margin-bottom:5px}.start-sub{font-size:14px;color:#0369a1;margin-bottom:20px;font-weight:600}
-.start-card{background:rgba(255,255,255,.88);backdrop-filter:blur(20px);padding:22px;border-radius:18px;max-width:600px;width:100%;text-align:left;box-shadow:0 14px 48px rgba(0,7,135,.12);margin-bottom:16px;border:1px solid rgba(255,255,255,.6)}
-.start-card h2{color:var(--acc);margin-bottom:12px;font-size:14px;font-weight:800}
-.instr-list{list-style:none;display:flex;flex-direction:column;gap:8px}
-.ii{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.55;padding:9px 12px;background:rgba(0,7,135,.03);border-radius:9px;border:1px solid rgba(0,7,135,.06)}
-.ii-ico{font-size:16px;flex-shrink:0;margin-top:1px}.ii p{flex:1}.ii strong{color:#000787}
-.meta-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.mp{display:flex;align-items:center;gap:5px;padding:7px 12px;border-radius:9px;font-size:12px;font-weight:700;flex:1;min-width:90px;justify-content:center}
-.mp-b{background:linear-gradient(135deg,#dbeafe,#bfdbfe);color:#1e40af;border:1px solid #93c5fd}.mp-g{background:linear-gradient(135deg,#d1fae5,#a7f3d0);color:#065f46;border:1px solid #6ee7b7}.mp-o{background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;border:1px solid #fcd34d}.mp-r{background:linear-gradient(135deg,#fee2e2,#fecaca);color:#991b1b;border:1px solid #f87171}
-.agree{display:flex;align-items:center;gap:11px;padding:13px 15px;background:linear-gradient(135deg,rgba(0,7,135,.07),rgba(18,125,229,.05));border-radius:11px;margin-top:12px;border:2px dashed rgba(0,7,135,.2);cursor:pointer;transition:border-color .2s}.agree:hover{border-color:rgba(0,7,135,.4)}
-.agree input[type=checkbox]{width:20px;height:20px;accent-color:var(--acc);cursor:pointer;flex-shrink:0}.agree label{font-size:13px;color:#1e3a8a;cursor:pointer;font-weight:700;line-height:1.5}
-.start-btn{background:linear-gradient(135deg,#22d3ee,#4f39f6);color:#fff;padding:13px 34px;border:0;border-radius:50px;font-weight:900;font-size:16px;cursor:pointer;margin-top:14px;transition:all .25s;box-shadow:0 8px 28px rgba(79,57,246,.3);opacity:.45;pointer-events:none}
-.start-btn.ready{opacity:1;pointer-events:all;animation:sbp 2.2s ease-in-out infinite}.start-btn.ready:hover{transform:translateY(-3px) scale(1.03)}
-@keyframes sbp{0%,100%{box-shadow:0 8px 28px rgba(79,57,246,.4)}50%{box-shadow:0 14px 44px rgba(79,57,246,.65),0 0 0 8px rgba(79,57,246,.1)}}
-.sf { margin-top:20px; margin-bottom:20px; display:flex; flex-direction:column; align-items:center; gap:15px; }.sf p{font-size:13px;color:#0369a1;font-weight:600}
-.sf a{color:#0000EE;text-decoration:underline}.sf a:hover{text-decoration:underline}
-.tg-btn{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#2196F3,#0d47a1);color:#fff;border:none;padding:10px 22px;border-radius:50px;font-weight:800;font-size:14px;cursor:pointer;text-decoration:none;box-shadow:0 5px 18px rgba(13,71,161,.3);transition:all .22s}.tg-btn:hover{transform:translateY(-2px)}.tg-btn svg{width:18px;height:18px;fill:#fff}
-.rhero{background:linear-gradient(135deg,#000787,#127DE5 60%,#0d9488);color:#fff;border-radius:18px;padding:26px;margin-bottom:16px}
-.rhero h2{font-size:20px;font-weight:900;margin-bottom:4px}.rhero p{opacity:.8;font-size:13px}
-.rscore{font-size:48px;font-weight:900;background:linear-gradient(135deg,#fbbf24,#f87171);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0}
-.rstats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:12px 0}
-.rstat{padding:13px 10px;border-radius:11px;text-align:center}.rstat h4{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px;opacity:.8}.rstat p{font-weight:900;font-size:20px}
-.rs-c{background:linear-gradient(135deg,#d1fae5,#a7f3d0);border:2px solid #6ee7b7;color:#065f46}.rs-w{background:linear-gradient(135deg,#fee2e2,#fecaca);border:2px solid #f87171;color:#991b1b}.rs-s{background:linear-gradient(135deg,#f1f5f9,#e2e8f0);border:2px solid #cbd5e1;color:#475569}.rs-a{background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:2px solid #a78bfa;color:#5b21b6}.rs-sc{background:linear-gradient(135deg,#fef3c7,#fde68a);border:2px solid #fcd34d;color:#92400e}.rs-t{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border:2px solid #93c5fd;color:#1e40af}
-.charts-sec{margin:16px 0}.charts-sec h3{font-size:16px;font-weight:800;color:var(--acc);margin-bottom:12px}
-.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ccard{background:#fff;border-radius:12px;padding:16px;box-shadow:var(--sh);border:1px solid rgba(0,7,135,.05)}.ccard h4{font-size:11px;font-weight:800;color:#374151;margin-bottom:12px;text-align:center;text-transform:uppercase;letter-spacing:.4px}.ccard canvas{max-height:200px}.cwide{grid-column:1/-1}
-.rcard{border-radius:13px;padding:16px;margin:10px 0;box-shadow:0 2px 10px rgba(0,7,135,.07);border:1px solid rgba(0,7,135,.05);background:#fff;animation:fiu .3s ease}
-.rcard.cor{border-left:5px solid var(--ok)}.rcard.wrg{border-left:5px solid var(--bad)}.rcard.skp{border-left:5px solid #94a3b8}
-.ropt{padding:9px 12px;margin:4px 0;border-radius:8px;font-size:13px;display:flex;align-items:flex-start;gap:8px;line-height:1.6}
-.ropt.rc{border:2px solid var(--ok);background:rgba(31,158,90,.07);color:#065f46}.ropt.rw{border:2px solid var(--bad);background:rgba(200,45,63,.07);color:#991b1b}.ropt.rp{border:1px solid #e2e8f0;background:#f8faff;color:#64748b}
-.rl{font-weight:800;font-size:12px;min-width:20px;flex-shrink:0;margin-top:2px}
-.ropt strong{font-weight:800}.ropt em{font-style:italic}.ropt u{text-decoration:underline}.ropt mark{background:#fef08a;color:#78350f;border-radius:3px;padding:0 3px}
-.res-expl{margin-top:9px;padding:11px 14px 11px 38px;border-radius:9px;background:linear-gradient(135deg,#f0fdf9,#dcfce7);border:1px solid #a7f3d0;font-size:13px;line-height:1.7;position:relative}
-.res-expl::before{content:"💡";position:absolute;left:11px;top:11px;font-size:15px}
-.res-expl strong{font-weight:800;color:#065f46}.res-expl em{font-style:italic;color:#0f766e}.res-expl u{text-decoration:underline}.res-expl mark{background:#fef08a;color:#78350f;border-radius:3px;padding:0 3px}
-@media(max-width:540px){.cgrid{grid-template-columns:1fr}.cwide{grid-column:1}.rstats{grid-template-columns:repeat(2,1fr)}.rscore{font-size:36px}.hdr{padding:8px 10px}.timer{font-size:14px}.fbar-in{gap:5px;padding:8px 10px}.nb{padding:9px 11px;font-size:12px}#pal{right:8px;max-width:270px}.pq{width:36px;height:36px;font-size:11px}}
-@media print{.fbar,header,.modal,#pal,.start,button,.tog,.timer{display:none!important}body{background:#fff;padding:0}.rhero{background:#000787!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.rcard{box-shadow:none!important;border:1px solid #ddd!important;break-inside:avoid}}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1c1a2b">
+<title>Bankers Alliance — Current Affairs MCQ Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a2b; --paper:#fbf9f5; --paper-2:#ffffff; --line:#e7e2d8; --muted:#726d80;
+    --gold:#e2a339; --gold-deep:#b9822a;
+    --ok:#16a34a; --ok-soft:#e7f7ec; --bad:#dc2626; --bad-soft:#fdeaea;
+    --info:#2f5fdc; --info-soft:#eef3ff;
+    --A:#2f5fdc; --A-soft:#e8edff;  --B:#1f9d55; --B-soft:#e5f7ec;
+    --C:#8b3fd6; --C-soft:#f2e9fb;  --D:#d64545; --D-soft:#fdeaea;
+    --E:#e07b1a; --E-soft:#fdf0e0;  --F:#0e9488; --F-soft:#e2f6f4;
+    --G:#d6318a; --G-soft:#fbe6f1;  --H:#a6791f; --H-soft:#f7f0dd;
+    --Z:#6b7280; --Z-soft:#eef0f3;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);color:var(--ink);min-height:100vh;line-height:1.5;
+    font-family:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Baloo 2',cursive;font-weight:700;margin:0;letter-spacing:.2px;}
+  button{font-family:inherit;color:inherit;cursor:pointer;}
+  button:disabled{cursor:not-allowed;}
+  ::selection{background:var(--gold);color:#fff;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
+
+  /* ---------- top bar : only Home + Back ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;background:var(--paper-2);border-bottom:2px solid var(--line);
+    padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top,0px));
+    display:flex;align-items:center;gap:8px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:0;font-family:'Baloo 2',cursive;font-weight:800;font-size:1.2rem;}
+  .brand .dot{flex:0 0 12px;width:12px;height:12px;border-radius:50%;background:conic-gradient(from 90deg,var(--A),var(--E),var(--G),var(--F),var(--A));}
+  .brand #brandText{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .spacer{display:none;}
+  .nav-btn{
+    border:2px solid var(--ink);background:#fff;color:var(--ink);padding:8px 16px;border-radius:100px;
+    font-weight:700;font-size:.9rem;white-space:nowrap;transition:.15s;
+  }
+  .nav-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold-deep);}
+  .nav-btn.back-btn{background:var(--ink);color:#fff;}
+  .nav-btn.back-btn:hover:not(:disabled){background:#000;border-color:#000;color:#fff;}
+  .nav-btn:disabled{opacity:.35;pointer-events:none;}
+  @media(max-width:480px){
+    .topbar{padding-left:12px;padding-right:12px;gap:6px;}
+    .brand{font-size:1.02rem;gap:8px;}
+    .nav-btn{padding:7px 12px;font-size:.82rem;}
+  }
+  @media(max-width:340px){.nav-btn .lbl{display:none;}}
+
+  .shell{max-width:1120px;margin:0 auto;padding:26px 18px 110px;}
+  .view{animation:fadein .25s ease;}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+  .hero{margin-bottom:22px;}
+  .eyebrow{font-weight:800;color:var(--gold-deep);font-size:.92rem;margin-bottom:4px;}
+  .hero h1{font-size:clamp(1.6rem,5vw,2.3rem);line-height:1.15;margin-bottom:6px;}
+  .hero p{color:var(--muted);margin:0;max-width:640px;}
+
+  .section-label{font-weight:800;font-size:1.05rem;margin:30px 0 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .tag{font-size:.72rem;font-weight:700;color:var(--muted);border:1.5px dashed var(--line);border-radius:100px;padding:3px 10px;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:100px;
+    padding:11px 22px;font-weight:800;font-size:.95rem;transition:.15s;
+  }
+  .btn:hover:not(:disabled){transform:translateY(-1px);}
+  .btn.primary{background:var(--ink);color:#fff;box-shadow:0 8px 18px -8px rgba(0,0,0,.45);}
+  .btn:disabled{opacity:.4;}
+  .btn-sm{border:1.5px solid var(--ink);background:#fff;border-radius:100px;padding:6px 14px;font-weight:700;font-size:.82rem;}
+  .btn-sm:hover{background:var(--ink);color:#fff;}
+  .wide-btn{
+    width:100%;border:2px solid var(--ink);background:var(--ink);color:#fff;border-radius:16px;
+    padding:14px 18px;font-weight:800;font-size:1rem;text-align:center;transition:.15s;
+  }
+  .wide-btn:hover:not(:disabled){transform:translateY(-2px);}
+  .wide-btn:disabled{opacity:.35;}
+
+  /* ---------- home : months ---------- */
+  .month-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:820px){.month-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:560px){.month-grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
+  .month-btn{
+    position:relative;overflow:hidden;text-align:left;background:var(--paper-2);border:2px solid var(--line);
+    border-radius:18px;padding:20px 14px 16px;transition:.15s;
+  }
+  .month-btn:hover:not(:disabled){transform:translateY(-3px);border-color:var(--m-color);}
+  .month-btn .stripe{position:absolute;top:0;left:0;right:0;height:6px;background:var(--m-color);}
+  .month-btn .mnum{font-size:.74rem;color:var(--muted);font-weight:700;}
+  .month-btn .mname{font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:700;}
+  .month-btn .mcount{margin-top:8px;display:inline-block;font-size:.76rem;font-weight:800;background:var(--m-soft);color:var(--m-color);padding:3px 10px;border-radius:100px;}
+  .month-btn:disabled{opacity:.45;}
+  .month-btn.all{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;}
+  .month-btn.all .stripe{background:conic-gradient(from 0deg,var(--A),var(--E),var(--G),var(--F),var(--A));height:6px;}
+
+  .rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  @media(max-width:560px){.rev-grid{grid-template-columns:1fr;}}
+  .rev-tile{
+    display:flex;align-items:center;gap:14px;text-align:left;background:var(--paper-2);border:2px solid var(--line);
+    border-radius:16px;padding:14px 16px;transition:.15s;
+  }
+  .rev-tile:hover:not(:disabled){border-color:var(--gold);transform:translateY(-2px);}
+  .rev-tile:disabled{opacity:.45;}
+  .rev-tile .ico{font-size:1.6rem;}
+  .rev-tile b{display:block;font-weight:800;}
+  .rev-tile span{font-size:.82rem;color:var(--muted);font-weight:600;}
+  .continue{
+    width:100%;display:flex;align-items:center;gap:14px;text-align:left;margin-bottom:14px;
+    background:linear-gradient(135deg,#1c1a2b,#2b2750);color:#fff;border:none;border-radius:16px;padding:14px 18px;
+    box-shadow:0 12px 26px -14px rgba(28,26,43,.7);
+  }
+  .continue .ico{font-size:1.5rem;}
+  .continue b{display:block;font-weight:800;}
+  .continue span{font-size:.82rem;opacity:.8;font-weight:600;}
+
+  .log-list{display:flex;flex-direction:column;gap:8px;}
+  .log-item{display:flex;align-items:center;gap:12px;background:var(--paper-2);border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;}
+  .log-item .nm{flex:1;min-width:0;font-weight:700;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .log-item .nm small{display:block;color:var(--muted);font-weight:600;font-size:.76rem;}
+  .pill{font-weight:800;font-size:.82rem;border-radius:100px;padding:4px 12px;white-space:nowrap;}
+  .pill.g{background:var(--ok-soft);color:#0f7a37;} .pill.y{background:#fff4d6;color:#8a6314;} .pill.r{background:var(--bad-soft);color:#b42323;}
+
+  /* ---------- topic cards & chips ---------- */
+  .topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:900px){.topic-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.topic-grid{grid-template-columns:1fr;}}
+  .topic-card{
+    border:2px solid var(--line);border-radius:16px;background:var(--paper-2);padding:16px 16px 14px;text-align:left;
+    transition:.15s;display:flex;flex-direction:column;gap:8px;
+  }
+  .topic-card:hover:not(:disabled){transform:translateY(-2px);border-color:var(--t-color);}
+  .topic-card:disabled{opacity:.45;}
+  .topic-card .icon{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;background:var(--t-soft);}
+  .topic-card .tname{font-weight:800;font-size:1rem;line-height:1.25;}
+  .topic-card .tmeta{font-size:.75rem;color:var(--t-color);font-weight:800;}
+  .weight-bar{height:6px;border-radius:4px;background:var(--line);overflow:hidden;}
+  .weight-bar>i{display:block;height:100%;background:var(--t-color);}
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .topic-chip{
+    max-width:100%;text-align:left;
+    border:1.5px solid var(--t-color);background:var(--t-soft);color:color-mix(in srgb,var(--t-color) 70%,#000 30%);
+    padding:10px 16px;border-radius:100px;font-weight:800;font-size:.88rem;transition:.15s;
+  }
+  .topic-chip:hover:not(:disabled){transform:translateY(-2px);}
+  .topic-chip:disabled{opacity:.4;border-style:dashed;}
+
+  /* ---------- overview ---------- */
+  .panel{background:var(--paper-2);border:2px solid var(--line);border-radius:20px;padding:18px 20px;margin-bottom:18px;}
+  .panel-h{font-family:'Baloo 2',cursive;font-weight:700;font-size:1.1rem;margin-bottom:10px;}
+  .panel p{margin:0 0 12px;color:var(--muted);font-size:.92rem;}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 0;border-bottom:1px dashed var(--line);}
+  .row:last-of-type{border-bottom:none;}
+  .row-l{font-weight:800;font-size:.92rem;}
+  .row-l small{display:block;color:var(--muted);font-weight:600;font-size:.76rem;}
+  .seg{display:inline-flex;border:2px solid var(--ink);border-radius:100px;overflow:hidden;flex-wrap:wrap;}
+  .seg button{border:none;background:#fff;padding:8px 14px;font-weight:800;font-size:.84rem;}
+  .seg button+button{border-left:2px solid var(--ink);}
+  .seg button.on{background:var(--ink);color:#fff;}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .cta-row .btn{flex:1 1 180px;}
+  .mini-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .mini-chips span{background:var(--paper);border:1.5px solid var(--line);border-radius:100px;padding:4px 12px;font-size:.8rem;font-weight:700;}
+  .mini-chips span b{color:var(--gold-deep);}
+  .empty{border:2px dashed var(--line);border-radius:18px;padding:38px 22px;text-align:center;color:var(--muted);}
+  .empty .big{font-size:2.2rem;margin-bottom:6px;}
+
+  /* ---------- quiz ---------- */
+  .quiz-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
+  .quiz-title{flex:1 1 220px;min-width:0;font-family:'Baloo 2',cursive;font-weight:700;font-size:1.15rem;line-height:1.2;}
+  @media(max-width:600px){.quiz-title{flex-basis:100%;}}
+  .quiz-title small{display:block;font-family:'Manrope',sans-serif;font-weight:700;color:var(--muted);font-size:.76rem;}
+  .mode-pill{font-size:.74rem;font-weight:800;border-radius:100px;padding:4px 10px;background:var(--info-soft);color:var(--info);}
+  .timer{font-weight:800;font-variant-numeric:tabular-nums;font-size:.92rem;background:var(--paper-2);border:1.5px solid var(--line);border-radius:100px;padding:4px 12px;}
+  .progress{height:8px;border-radius:6px;background:var(--line);overflow:hidden;margin-bottom:14px;}
+  .progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--ok));transition:width .3s;}
+  .done-banner{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    background:var(--ok-soft);border:1.5px solid var(--ok);color:#0f6a31;border-radius:14px;padding:10px 14px;margin-bottom:14px;font-weight:800;font-size:.92rem;
+  }
+  .quiz-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;}
+  .quiz-wrap>div{min-width:0;}
+  @media(min-width:980px){.quiz-wrap{grid-template-columns:minmax(0,1fr) 290px;align-items:start;}}
+
+  .qcard{min-width:0;max-width:100%;background:var(--paper-2);border-radius:20px;overflow:hidden;box-shadow:0 18px 40px -22px rgba(18,24,40,.4),0 4px 12px -6px rgba(0,0,0,.1);}
+  .qhead{
+    position:relative;color:#fff;padding:12px 16px 14px;
+    background:var(--n-color);
+    background:linear-gradient(135deg,color-mix(in srgb,var(--n-color) 88%,#06110c 12%) 0%,color-mix(in srgb,var(--n-color) 52%,#0b1220 48%) 100%);
+  }
+  .qhead::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--n-color) 55%,var(--gold));}
+  .qhead-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .qnum{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;}
+  .qnum small{font-size:.8rem;opacity:.75;font-weight:600;}
+  .qbadge{font-size:.74rem;font-weight:800;border-radius:100px;padding:3px 10px;background:rgba(255,255,255,.2);}
+  .qbadge.ok{background:#fff;color:#0f7a37;} .qbadge.bad{background:#fff;color:#b42323;} .qbadge.skip{background:#fff;color:#6b6b6b;}
+  .star{border:none;background:rgba(255,255,255,.18);color:#fff;border-radius:50%;width:34px;height:34px;font-size:1.1rem;line-height:1;}
+  .star.on{background:#fff;color:var(--gold-deep);}
+  .qpath{margin-top:6px;font-size:.78rem;font-weight:700;color:#fbe9c4;line-height:1.45;opacity:.95;}
+  .qpath span{opacity:.7;margin:0 3px;}
+  .qbody{padding:18px 18px 20px;}
+  .qlabel{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.8px;color:var(--gold-deep);background:#fff4d6;border-radius:100px;padding:3px 12px;margin-bottom:10px;}
+  .passage{
+    background:#fffaf0;border:1.5px solid #f0dfb2;border-left:5px solid var(--gold);border-radius:12px;
+    padding:12px 16px;margin:0 0 14px;font-size:.98rem;line-height:1.65;overflow-x:auto;
+  }
+  .passage-h{font-size:.74rem;font-weight:800;color:var(--gold-deep);margin-bottom:6px;letter-spacing:.4px;}
+  .passage p,.sol-b p{margin:0 0 .6em;} .passage p:last-child,.sol-b p:last-child{margin-bottom:0;}
+  .qtext{font-size:1.08rem;font-weight:700;line-height:1.55;margin:0 0 14px;overflow-wrap:anywhere;overflow-x:auto;}
+  .passage,.sol-b,.fb{overflow-wrap:anywhere;}
+  .sol-b{overflow-x:auto;}
+  .passage table,.qtext table,.sol-b table,.opt-text table{border-collapse:collapse;width:100%;font-size:.9rem;margin:6px 0;}
+  .passage th,.passage td,.qtext th,.qtext td,.sol-b th,.sol-b td{border:1px solid #d9cfb4;padding:6px 9px;text-align:left;}
+  .passage th,.qtext th,.sol-b th{background:#f6edd5;}
+  .qbody img{max-width:100%;height:auto;border-radius:8px;}
+
+  .opts{display:flex;flex-direction:column;gap:10px;}
+  .opt{
+    display:flex;align-items:flex-start;gap:12px;width:100%;text-align:left;background:#fff;border:2px solid var(--line);
+    border-radius:14px;padding:12px 14px;font-size:1rem;font-weight:600;line-height:1.45;transition:.15s;color:var(--ink);
+  }
+  .opt:hover:not(:disabled){border-color:var(--n-color,var(--ink));transform:translateX(2px);}
+  .opt:disabled{color:var(--ink);}
+  .opt-key{flex:0 0 32px;height:32px;border-radius:50%;background:var(--paper);border:2px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:.85rem;}
+  .opt-text{flex:1;min-width:0;padding-top:3px;overflow-wrap:anywhere;}
+  .opt-mark{flex:0 0 auto;font-weight:800;font-size:.8rem;padding-top:4px;}
+  .opt.selected{border-color:var(--info);background:var(--info-soft);}
+  .opt.selected .opt-key{background:var(--info);border-color:var(--info);color:#fff;}
+  .opt.correct{border-color:var(--ok);background:var(--ok-soft);}
+  .opt.correct .opt-key{background:var(--ok);border-color:var(--ok);color:#fff;}
+  .opt.correct .opt-mark{color:var(--ok);}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-soft);animation:shake .35s;}
+  .opt.wrong .opt-key{background:var(--bad);border-color:var(--bad);color:#fff;}
+  .opt.wrong .opt-mark{color:var(--bad);}
+  .opt.dim{opacity:.55;}
+  @keyframes shake{25%{transform:translateX(-4px);}75%{transform:translateX(4px);}}
+  .clear-row{margin-top:10px;text-align:right;}
+
+  .fb{margin-top:16px;border-radius:14px;padding:12px 16px;font-weight:800;line-height:1.45;}
+  .fb.ok{background:var(--ok-soft);border:1.5px solid var(--ok);color:#0f6a31;}
+  .fb.bad{background:var(--bad-soft);border:1.5px solid var(--bad);color:#a31f1f;}
+  .fb.skip{background:#f1f1ee;border:1.5px solid #cfcfc8;color:#55554f;}
+  .sol{margin-top:12px;border-radius:14px;border:1.5px solid #e3b23c;background:linear-gradient(175deg,#fdf1d2,#fff8e8);padding:12px 16px 14px;}
+  .sol-h{font-family:'Fraunces',serif;font-weight:700;color:#7a5a10;margin-bottom:6px;}
+  .sol-b{font-size:.96rem;line-height:1.65;color:#41403a;}
+
+  .palette{background:var(--paper-2);border:2px solid var(--line);border-radius:18px;padding:14px;}
+  .pal-head{display:flex;justify-content:space-between;align-items:center;font-weight:800;margin-bottom:10px;}
+  .pal-head span{font-size:.8rem;color:var(--muted);}
+  .pal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+  .pal-btn{position:relative;aspect-ratio:1;border:2px solid var(--line);background:#fff;border-radius:12px;font-weight:800;font-size:.85rem;padding:0;}
+  .pal-btn.ok{background:var(--ok);border-color:var(--ok);color:#fff;}
+  .pal-btn.bad{background:var(--bad);border-color:var(--bad);color:#fff;}
+  .pal-btn.ans{background:var(--info);border-color:var(--info);color:#fff;}
+  .pal-btn.cur{outline:3px solid var(--gold);outline-offset:1px;}
+  .pal-btn i{position:absolute;top:-6px;right:-4px;font-style:normal;font-size:.7rem;color:var(--gold-deep);text-shadow:0 0 3px #fff;}
+  .pal-legend{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;font-size:.72rem;font-weight:700;color:var(--muted);}
+  .pal-legend b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px;}
+  .palette .btn{width:100%;}
+  .sheet-backdrop{display:none;}
+  @media(max-width:979px){
+    .palette{
+      position:fixed;left:0;right:0;bottom:0;z-index:60;border-radius:22px 22px 0 0;max-height:72vh;overflow:auto;
+      padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));
+      transform:translateY(110%);transition:transform .25s ease;box-shadow:0 -14px 44px rgba(0,0,0,.28);
+    }
+    .palette.open{transform:none;}
+    .sheet-backdrop.open{display:block;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:55;}
+  }
+  @media(min-width:980px){.palette{position:sticky;top:76px;} .pal-toggle{display:none!important;}}
+
+  .qnav{
+    position:sticky;bottom:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;
+    padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px));
+    background:linear-gradient(to top,var(--paper) 72%,rgba(251,249,245,0));
+  }
+  .qnav .btn{padding:12px 20px;} .qnav .btn:first-child,.qnav .btn:last-child{min-width:108px;}
+  @media(max-width:420px){
+    .qnav{gap:6px;} .qnav .btn{padding:11px 12px;font-size:.88rem;}
+    .qnav .btn:first-child,.qnav .btn:last-child{min-width:0;}
+  }
+
+  /* ---------- result ---------- */
+  .result-hero{
+    display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center;color:#fff;border-radius:24px;padding:26px 22px;
+    background:radial-gradient(circle at 18px 18px,rgba(255,255,255,.08) 1.5px,transparent 1.6px) 0 0/26px 26px,linear-gradient(135deg,#1c1a2b,#2b2750 60%,#3b2f6b);
+    box-shadow:0 24px 50px -26px rgba(28,26,43,.8);
+  }
+  .donut{width:150px;height:150px;flex:0 0 auto;}
+  .donut text{font-family:'Fraunces',serif;font-weight:800;fill:#fff;}
+  .result-txt{flex:1 1 220px;min-width:200px;}
+  .result-txt .msg{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;line-height:1.2;margin-bottom:6px;}
+  .result-txt .big{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:800;line-height:1;}
+  .result-txt .big small{font-size:1.1rem;opacity:.75;font-weight:600;}
+  .result-txt p{margin:8px 0 0;opacity:.85;font-size:.9rem;}
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;}
+  @media(min-width:760px){.stat-grid{grid-template-columns:repeat(6,1fr);}}
+  .stat{background:var(--paper-2);border:2px solid var(--line);border-radius:16px;padding:12px 10px;text-align:center;}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.45rem;font-weight:800;line-height:1.15;}
+  .stat span{font-size:.72rem;font-weight:800;color:var(--muted);}
+  .stat.ok b{color:var(--ok);} .stat.bad b{color:var(--bad);} .stat.skip b{color:#7b7b73;}
+  .bars{display:flex;flex-direction:column;gap:12px;}
+  .bar-row .bar-h{display:flex;justify-content:space-between;gap:10px;font-weight:700;font-size:.88rem;margin-bottom:4px;}
+  .bar-row .bar-h span{color:var(--muted);font-size:.78rem;white-space:nowrap;}
+  .bar-track{display:flex;height:12px;border-radius:8px;overflow:hidden;background:var(--line);}
+  .bar-track i{display:block;height:100%;} .bar-track .o{background:var(--ok);} .bar-track .b{background:var(--bad);} .bar-track .s{background:#c9c9c0;}
+  .result-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px;}
+  @media(min-width:760px){.result-actions{grid-template-columns:repeat(3,1fr);}}
+  .result-actions .btn{width:100%;padding:12px 8px;font-size:.88rem;}
+
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  .tabs button{border:2px solid var(--line);background:#fff;border-radius:100px;padding:7px 14px;font-weight:800;font-size:.84rem;}
+  .tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .review-list{display:flex;flex-direction:column;gap:22px;}
+
+  .toast{
+    position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);z-index:90;
+    background:var(--ink);color:#fff;font-weight:700;font-size:.9rem;padding:10px 18px;border-radius:100px;
+    opacity:0;pointer-events:none;transition:.25s;max-width:90vw;text-align:center;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0);}
+</style>
 </head>
 <body>
-<div class="start" id="startScr">
-<div class="logo-wrap"><div class="logo-glow"></div><img class="logo-img" src="https://i.ibb.co/W8PWFVB/20260406-005258.jpg" alt="Logo" width="100" height="100"/></div>
-<h1 id="sTitle">English PO level Target</h1>
-<div class="start-sub">30 Questions</div>
-<div class="start-card">
-<h2>📋 Instructions</h2>
-<ul class="instr-list">
-<li class="ii"><span class="ii-ico">⏱️</span><p>Total time: <strong>30 minutes</strong>. Auto-submits when time runs out.</p></li>
-<li class="ii"><span class="ii-ico">✅</span><p>Correct = <strong>+1 mark</strong>. There is <strong>-0.25 negative marking</strong> for wrong answers.</p></li>
-<li class="ii"><span class="ii-ico">🔄</span><p><strong>Test Mode</strong>: Attempt all → Submit → See results. <strong>Quiz Mode</strong>: Instant feedback per answer.</p></li>
-<li class="ii"><span class="ii-ico">📌</span><p>Use <strong>Palette</strong> to jump between questions.</p></li>
-</ul>
-<div class="meta-pills">
-<div class="mp mp-b">📝 30 Questions</div>
-<div class="mp mp-g">⏱️ 30 minutes</div>
-<div class="mp mp-o">+1 Correct</div>
-<div class="mp mp-r">-0.25 Negative</div>
-</div>
-<div class="agree" onclick="toggleAgree()">
-<input type="checkbox" id="agreeChk" onchange="checkReady()" onclick="event.stopPropagation()"/>
-<label for="agreeChk">I have read all instructions and I am ready to begin.</label>
-</div>
-</div>
-<button class="start-btn" id="startBtn" onclick="startQuiz()">Start Quiz →</button>
-<div class="sf">
-  <p>Created & Designed by <a href="https://t.me/I_SR_bot" target="_blank" style="color:#0000EE;text-decoration:none;">@I_SR_bot</a></p>
-</div>
-<a class="tg-btn" href="https://t.me/BankAllContent" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.857l-2.96-.924c-.643-.203-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.978.702z"/></svg>
-BankAllContent
-</a></div>
-</div>
-<div id="quizUI" style="display:none">
-<header id="mainHdr">
-<div class="hdr" id="hdrCtrls">
-<div style="display:flex;align-items:center;gap:10px"><div class="tog" id="modeTog" onclick="toggleMode()"><span>Test</span><span>Quiz</span></div></div>
-<div style="display:flex;align-items:center;gap:8px">
-<div class="timer" id="timerEl">00:00</div>
-<button class="btn btn-sub" onclick="openSub()">Submit</button>
-<button class="btn" id="palBtn" onclick="togglePal()">📋 Palette</button>
-</div></div>
-<div class="pbr"><div class="pb" id="pb" style="width:0%"></div></div>
-</header>
-<div class="wrap">
-<div id="qCard" class="card">
-<div class="qbar">
-<span class="qmeta"><span class="qnum" id="qBadge">1</span>Q <span id="qIdx">1</span> / <span id="qTot">0</span></span>
-<div class="sbdg"><span class="sp" id="qPos"></span><span class="sn" id="qNeg"></span></div>
-</div>
-<div class="qtxt" id="qTxt"></div>
-<div class="opts" id="opts"></div>
-<div class="expl" id="expl"></div>
-</div>
-<div id="resultArea" style="display:none"></div>
-</div>
-<div class="fbar" id="fbar"><div class="fbar-in">
-<button class="nb" onclick="nav(-1)">← Prev</button>
-<button class="nb nb-clr" onclick="clrAns()">✕ Clear</button>
-<span class="qctr" id="qCtr"></span>
-<button class="nb" onclick="nav(1)">Next →</button>
-</div></div>
-</div>
-<div id="pal" aria-hidden="true"><div id="pal-hd">Question Palette</div></div>
-<div class="modal" id="subMod">
-<div class="mbox">
-<div style="font-size:44px">📤</div>
-<h3>Submit Quiz?</h3>
-<p id="subMsg"></p>
-<div class="macts"><button class="btn-o" onclick="closeSub()">Cancel</button><button class="bp" onclick="doSubmit()">Submit Now</button></div>
-</div></div>
-<script>
-var QS=[{"id":"1","question":"**Directions (1-5):** In the following questions, five sentences are given in jumbled form. These sentences, when arranged in a proper sequence, form a coherent passage. Rearrange the jumbled sentences to form a cohesive passage and answer the questions that follow.\n\nA. Indian exporters, who have been significantly affected by the imposition of nearly 50 per cent tariffs in the United States market, have repeatedly voiced their concerns about potential large-scale job losses, which has pushed the Indian government to actively prepare a relief package aimed at addressing the severe liquidity crunch that manufacturers are currently experiencing.\n\nB. Prime Minister Narendra Modi, in a detailed post shared on X, emphasized that India and the United States share the bond of close friendship and stand as natural partners, while also expressing his strong confidence that the ongoing trade discussions will serve as a foundation to unlock the immense and limitless potential that the India-US partnership truly holds for the future.\n\nC. Observers believe that the possible thaw in trade tensions between the two nations comes at a critical juncture, as both sides are making conscious efforts and working persistently to bring the ongoing negotiations to an early and mutually beneficial conclusion that could transform bilateral economic ties.\n\nD. Modi further highlighted that he is eagerly looking forward to holding direct conversations with President Donald Trump in the near future, underlining his commitment to working closely with the United States in order to secure a brighter, more stable, and more prosperous future for the citizens of both countries.\n\nE. Earlier, in a post on Truth Social, former US President Donald Trump officially announced that India and the United States had resumed their negotiations to resolve long-standing trade barriers, expressing his personal confidence that these discussions would conclude successfully and bring positive outcomes for the two great nations.\n\n**Which of the following will be the INTRODUCTORY sentence after the rearrangement?**","answer":"2","positive_marks":"1","negative_marks":"0.25","option_1":"A","option_2":"E","option_3":"C","option_4":"B","option_5":"D","solution_text":"***Explanation:*** The correct order is: ==E → B → D → C → A==. Sentence E functions as the natural introduction because it establishes the primary event — Trump's announcement that negotiations have resumed — setting the temporal and factual context for the rest of the paragraph. B and D are reactive statements from Prime Minister Modi and therefore logically follow the announcement; they work as response and elaboration, not openers. C is an analytical transition about a *thaw* and belongs after both countries' statements to summarize significance. A discusses exporters' problems and government relief, which is a consequence and detail best placed later. Thus E must lead. Answer is **Option B (E)**."},{"id":"2","question":"**Directions (1-5):** In the following questions, five sentences are given in jumbled form. These sentences, when arranged in a proper sequence, form a coherent passage. Rearrange the jumbled sentences to form a cohesive passage and answer the questions that follow.\n\nA. Indian exporters, who have been significantly affected by the imposition of nearly 50 per cent tariffs in the United States market, have repeatedly voiced their concerns about potential large-scale job losses, which has pushed the Indian government to actively prepare a relief package aimed at addressing the severe liquidity crunch that manufacturers are currently experiencing.\n\nB. Prime Minister Narendra Modi, in a detailed post shared on X, emphasized that India and the United States share the bond of close friendship and stand as natural partners, while also expressing his strong confidence that the ongoing trade discussions will serve as a foundation to unlock the immense and limitless potential that the India-US partnership truly holds for the future.\n\nC. Observers believe that the possible thaw in trade tensions between the two nations comes at a critical juncture, as both sides are making conscious efforts and working persistently to bring the ongoing negotiations to an early and mutually beneficial conclusion that could transform bilateral economic ties.\n\nD. Modi further highlighted that he is eagerly looking forward to holding direct conversations with President Donald Trump in the near future, underlining his commitment to working closely with the United States in order to secure a brighter, more stable, and more prosperous future for the citizens of both countries.\n\nE. Earlier, in a post on Truth Social, former US President Donald Trump officially announced that India and the United States had resumed their negotiations to resolve long-standing trade barriers, expressing his personal confidence that these discussions would conclude successfully and bring positive outcomes for the two great nations.\n\n**Which of the following will be the SECOND sentence after the rearrangement?**","answer":"1","positive_marks":"1","negative_marks":"0.25","option_1":"B","option_2":"C","option_3":"E","option_4":"D","option_5":"A","solution_text":"***Explanation:*** The correct order is: ==E → B → D → C → A==. Sentence B is the correct second sentence because it directly follows Trump's announcement (E) by presenting Prime Minister Modi's official response on X. This creates a logical flow of dialogue: first Trump sets the stage, then Modi acknowledges the partnership and expresses optimism about the negotiations. Answer is **Option A (B)**."},{"id":"3","question":"**Directions (1-5):** In the following questions, five sentences are given in jumbled form. These sentences, when arranged in a proper sequence, form a coherent passage. Rearrange the jumbled sentences to form a cohesive passage and answer the questions that follow.\n\nA. Indian exporters, who have been significantly affected by the imposition of nearly 50 per cent tariffs in the United States market, have repeatedly voiced their concerns about potential large-scale job losses, which has pushed the Indian government to actively prepare a relief package aimed at addressing the severe liquidity crunch that manufacturers are currently experiencing.\n\nB. Prime Minister Narendra Modi, in a detailed post shared on X, emphasized that India and the United States share the bond of close friendship and stand as natural partners, while also expressing his strong confidence that the ongoing trade discussions will serve as a foundation to unlock the immense and limitless potential that the India-US partnership truly holds for the future.\n\nC. Observers believe that the possible thaw in trade tensions between the two nations comes at a critical juncture, as both sides are making conscious efforts and working persistently to bring the ongoing negotiations to an early and mutually beneficial conclusion that could transform bilateral economic ties.\n\nD. Modi further highlighted that he is eagerly looking forward to holding direct conversations with President Donald Trump in the near future, underlining his commitment to working closely with the United States in order to secure a brighter, more stable, and more prosperous future for the citizens of both countries.\n\nE. Earlier, in a post on Truth Social, former US President Donald Trump officially announced that India and the United States had resumed their negotiations to resolve long-standing trade barriers, expressing his personal confidence that these discussions would conclude successfully and bring positive outcomes for the two great nations.\n\n**Which of the following will be the THIRD sentence after the rearrangement?**","answer":"1","positive_marks":"1","negative_marks":"0.25","option_1":"D","option_2":"E","option_3":"B","option_4":"C","option_5":"A","solution_text":"***Explanation:*** The correct order is: ==E → B → D → C → A==. Sentence D is the appropriate third sentence because it directly extends Modi's response in B. After expressing optimism about the India-US partnership, Modi naturally adds that he looks forward to speaking with Trump, reinforcing his commitment to closer cooperation. Answer is **Option A (D)**."},{"id":"4","question":"**Directions (1-5):** In the following questions, five sentences are given in jumbled form. These sentences, when arranged in a proper sequence, form a coherent passage. Rearrange the jumbled sentences to form a cohesive passage and answer the questions that follow.\n\nA. Indian exporters, who have been significantly affected by the imposition of nearly 50 per cent tariffs in the United States market, have repeatedly voiced their concerns about potential large-scale job losses, which has pushed the Indian government to actively prepare a relief package aimed at addressing the severe liquidity crunch that manufacturers are currently experiencing.\n\nB. Prime Minister Narendra Modi, in a detailed post shared on X, emphasized that India and the United States share the bond of close friendship and stand as natural partners, while also expressing his strong confidence that the ongoing trade discussions will serve as a foundation to unlock the immense and limitless potential that the India-US partnership truly holds for the future.\n\nC. Observers believe that the possible thaw in trade tensions between the two nations comes at a critical juncture, as both sides are making conscious efforts and working persistently to bring the ongoing negotiations to an early and mutually beneficial conclusion that could transform bilateral economic ties.\n\nD. Modi further highlighted that he is eagerly looking forward to holding direct conversations with President Donald Trump in the near future, underlining his commitment to working closely with the United States in order to secure a brighter, more stable, and more prosperous future for the citizens of both countries.\n\nE. Earlier, in a post on Truth Social, former US President Donald Trump officially announced that India and the United States had resumed their negotiations to resolve long-standing trade barriers, expressing his personal confidence that these discussions would conclude successfully and bring positive outcomes for the two great nations.\n\n**Which of the following will be the FOURTH sentence after the rearrangement?**","answer":"3","positive_marks":"1","negative_marks":"0.25","option_1":"A","option_2":"B","option_3":"C","option_4":"D","option_5":"E","solution_text":"***Explanation:*** The correct order is: ==E → B → D → C → A==. Sentence C is the correct fourth sentence because it provides an analytical perspective on the situation after both Trump's announcement (E) and Modi's responses (B, D). It comments that the thaw in trade tensions comes at a crucial juncture, showing the larger significance of the leaders' remarks and efforts. Answer is **Option C (C)**."},{"id":"5","question":"**Directions (1-5):** In the following questions, five sentences are given in jumbled form. These sentences, when arranged in a proper sequence, form a coherent passage. Rearrange the jumbled sentences to form a cohesive passage and answer the questions that follow.\n\nA. Indian exporters, who have been significantly affected by the imposition of nearly 50 per cent tariffs in the United States market, have repeatedly voiced their concerns about potential large-scale job losses, which has pushed the Indian government to actively prepare a relief package aimed at addressing the severe liquidity crunch that manufacturers are currently experiencing.\n\nB. Prime Minister Narendra Modi, in a detailed post shared on X, emphasized that India and the United States share the bond of close friendship and stand as natural partners, while also expressing his strong confidence that the ongoing trade discussions will serve as a foundation to unlock the immense and limitless potential that the India-US partnership truly holds for the future.\n\nC. Observers believe that the possible thaw in trade tensions between the two nations comes at a critical juncture, as both sides are making conscious efforts and working persistently to bring the ongoing negotiations to an early and mutually beneficial conclusion that could transform bilateral economic ties.\n\nD. Modi further highlighted that he is eagerly looking forward to holding direct conversations with President Donald Trump in the near future, underlining his commitment to working closely with the United States in order to secure a brighter, more stable, and more prosperous future for the citizens of both countries.\n\nE. Earlier, in a post on Truth Social, former US President Donald Trump officially announced that India and the United States had resumed their negotiations to resolve long-standing trade barriers, expressing his personal confidence that these discussions would conclude successfully and bring positive outcomes for the two great nations.\n\n**Which of the following will be the CONCLUDING sentence after the rearrangement?**","answer":"5","positive_marks":"1","negative_marks":"0.25","option_1":"C","option_2":"D","option_3":"B","option_4":"E","option_5":"A","solution_text":"***Explanation:*** The correct order is: ==E → B → D → C → A==. Sentence A is the best concluding sentence because it shifts from diplomatic exchanges and analysis to the ground-level impact on Indian exporters. It highlights the consequences of high US tariffs, the fears of job losses, and the government's preparation of a relief package — a fitting conclusion as it connects international negotiations to domestic realities. Answer is **Option E (A)**."},{"id":"6","question":"**Directions (6-10):** A passage is given with five blanks in it. Each blank is represented by a letter. From the given options, choose the most suitable words to fill in these blanks so as to make the passage meaningful.\n\nThe ministry's decision is in line with other changes made this year for speedy **(A)** and approval of critical and strategic mineral projects. The Centre already has a separate category for critical minerals on its online clearance window portal Parivesh, at the **(B)** of the Ministry of Mines. Earlier this month, it also amended the Van (Sanrakshan Evam Samvardhan) Rules, 2023, and included a clause to create a category for critical and strategic minerals to process forest **(C)** for such projects. The Mines and Minerals (Development and Regulation) Amendment Act, 2023, provides a list of atomic minerals and critical and strategic minerals, and the Centre added them in the Act's schedule to specifically **(D)** their exploration and **(E)**\n\n**Which of the following words fits correctly in blank A?**","answer":"4","positive_marks":"1","negative_marks":"0.25","option_1":"Rejection","option_2":"Estimation","option_3":"Detraction","option_4":"Appraisal","option_5":"Exclusion","solution_text":"***Explanation:*** The sentence refers to *speedy and approval of critical and strategic mineral projects.* In administrative and project contexts, __appraisal__ means the official evaluation or assessment of a project before giving approval. This fits perfectly with the idea of reviewing and approving projects efficiently. ==Rejection== is incorrect because it means denial, which contradicts *approval.* ==Estimation== refers to approximate calculation, not formal project review. ==Detraction== means belittling or reducing importance, contextually irrelevant. ==Exclusion== means keeping out, which doesn't match the approval process. Answer is **Option D (Appraisal)**."},{"id":"7","question":"**Directions (6-10):** A passage is given with five blanks in it. Each blank is represented by a letter. From the given options, choose the most suitable words to fill in these blanks so as to make the passage meaningful.\n\nThe ministry's decision is in line with other changes made this year for speedy **(A)** and approval of critical and strategic mineral projects. The Centre already has a separate category for critical minerals on its online clearance window portal Parivesh, at the **(B)** of the Ministry of Mines. Earlier this month, it also amended the Van (Sanrakshan Evam Samvardhan) Rules, 2023, and included a clause to create a category for critical and strategic minerals to process forest **(C)** for such projects. The Mines and Minerals (Development and Regulation) Amendment Act, 2023, provides a list of atomic minerals and critical and strategic minerals, and the Centre added them in the Act's schedule to specifically **(D)** their exploration and **(E)**\n\n**Which of the following words fits correctly in blank B?**","answer":"3","positive_marks":"1","negative_marks":"0.25","option_1":"Command","option_2":"Denial","option_3":"Request","option_4":"Refusal","option_5":"Opposition","solution_text":"***Explanation:*** The sentence states: *The Centre already has a separate category for critical minerals on its online clearance window portal Parivesh, at the __ of the Ministry of Mines.* Here, the creation of a separate category happened because the Ministry of Mines asked for it, making __request__ the most suitable word. ==Command== implies an order, not a polite administrative process. ==Denial== suggests refusal, opposite to the intended meaning. ==Refusal== also indicates rejection, contextually incorrect. ==Opposition== means resistance, which doesn't fit. Answer is **Option C (Request)**."},{"id":"8","question":"**Directions (6-10):** A passage is given with five blanks in it. Each blank is represented by a letter. From the given options, choose the most suitable words to fill in these blanks so as to make the passage meaningful.\n\nThe ministry's decision is in line with other changes made this year for speedy **(A)** and approval of critical and strategic mineral projects. The Centre already has a separate category for critical minerals on its online clearance window portal Parivesh, at the **(B)** of the Ministry of Mines. Earlier this month, it also amended the Van (Sanrakshan Evam Samvardhan) Rules, 2023, and included a clause to create a category for critical and strategic minerals to process forest **(C)** for such projects. The Mines and Minerals (Development and Regulation) Amendment Act, 2023, provides a list of atomic minerals and critical and strategic minerals, and the Centre added them in the Act's schedule to specifically **(D)** their exploration and **(E)**\n\n**Which of the following words fits correctly in blank C?**","answer":"3","positive_marks":"1","negative_marks":"0.25","option_1":"Obstacles","option_2":"Sanctions","option_3":"Approvals","option_4":"Denials","option_5":"Prohibitions","solution_text":"***Explanation:*** The sentence mentions: *...included a clause to create a category for critical and strategic minerals to process forest ______ for such projects.* In government procedures, projects involving forests require official __approvals__ under forest laws. Hence, the right word here is approvals, as it conveys authorization for proceeding. ==Obstacles== means hurdles, which is opposite in meaning. ==Sanctions== can mean penalties or permissions, but in this context it primarily suggests punishment, making it unsuitable. ==Denials== implies rejection, not applicable since the goal is clearance. ==Prohibitions== means bans, which doesn't match the context of processing permissions. Answer is **Option C (Approvals)**."},{"id":"9","question":"**Directions (6-10):** A passage is given with five blanks in it. Each blank is represented by a letter. From the given options, choose the most suitable words to fill in these blanks so as to make the passage meaningful.\n\nThe ministry's decision is in line with other changes made this year for speedy **(A)** and approval of critical and strategic mineral projects. The Centre already has a separate category for critical minerals on its online clearance window portal Parivesh, at the **(B)** of the Ministry of Mines. Earlier this month, it also amended the Van (Sanrakshan Evam Samvardhan) Rules, 2023, and included a clause to create a category for critical and strategic minerals to process forest **(C)** for such projects. The Mines and Minerals (Development and Regulation) Amendment Act, 2023, provides a list of atomic minerals and critical and strategic minerals, and the Centre added them in the Act's schedule to specifically **(D)** their exploration and **(E)**\n\n**Which of the following words fits correctly in blank D?**","answer":"1","positive_marks":"1","negative_marks":"0.25","option_1":"Promote","option_2":"Hinder","option_3":"Prevent","option_4":"Curtail","option_5":"Diminish","solution_text":"***Explanation:*** The line says: *...the Centre added them in the Act's schedule to specifically ______ their exploration and ...* The purpose of adding minerals to the schedule is to encourage and facilitate exploration, so __promote__ is the most suitable choice. ==Hinder== means obstruct, opposite of the intended sense. ==Prevent== suggests stopping entirely, which contradicts the goal. ==Curtail== means reduce or restrict, contextually wrong. ==Diminish== means lessen in degree, again the opposite of what the Centre intends. Answer is **Option A (Promote)**."},{"id":"10","question":"**Directions (6-10):** A passage is given with five blanks in it. Each blank is represented by a letter. From the given options, choose the most suitable words to fill in these blanks so as to make the passage meaningful.\n\nThe ministry's decision is in line with other changes made this year for speedy **(A)** and approval of critical and strategic mineral projects. The Centre already has a separate category for critical minerals on its online clearance window portal Parivesh, at the **(B)** of the Ministry of Mines. Earlier this month, it also amended the Van (Sanrakshan Evam Samvardhan) Rules, 2023, and included a clause to create a category for critical and strategic minerals to process forest **(C)** for such projects. The Mines and Minerals (Development and Regulation) Amendment Act, 2023, provides a list of atomic minerals and critical and strategic minerals, and the Centre added them in the Act's schedule to specifically **(D)** their exploration and **(E)**\n\n**Which of the following words fits correctly in blank E?**","answer":"4","positive_marks":"1","negative_marks":"0.25","option_1":"Import","option_2":"Transportation","option_3":"Storage","option_4":"Mining","option_5":"Diversion","solution_text":"***Explanation:*** The line reads: *...to specifically promote their exploration and ______.* Exploration naturally pairs with __mining__, since exploration refers to surveying and locating minerals, while mining refers to extracting them. Together, they describe the complete process of resource utilization. ==Import== is incorrect, as it refers to bringing goods from another country, unrelated to local resource exploration. ==Transportation== deals with movement of extracted minerals, not exploration. ==Storage== refers to keeping resources, not their extraction. ==Diversion== means redirecting, contextually irrelevant. Answer is **Option D (Mining)**."},{"id":"11","question":"**In the following sentence, identify the part which contains an error.**\n\nThe EIA Notification is a key to government regulation (A)/ that is central to screening and appraising the impacts (B)/ of developmental and industrial projects (C)/ on the environment, health, and communities. (D)","answer":"1","positive_marks":"1","negative_marks":"0.25","option_1":"A","option_2":"B","option_3":"C","option_4":"D","option_5":"No error","solution_text":"***Explanation:*** The error lies in part A. The phrase *is a key to government regulation* is awkward and grammatically imprecise. The correct expression should be ==is key to government regulation== or ==is a key government regulation==. The article *a* before *key* with *to* makes the construction incorrect. **Rule:** When *key* is used in the sense of *important* or *essential,* it acts as an adjective and must be written as *key to + noun* without the article *a.* Answer is **Option A**."},{"id":"12","question":"**In the following sentence, identify the part which contains an error.**\n\nIn 10 constituencies, the ECI had released the data (A)/ only as image PDFs, that could not (B)/ be accurately scraped, while in a few other, (C)/ technical reasons prevented the analysis. (D)","answer":"4","positive_marks":"1","negative_marks":"0.25","option_1":"A","option_2":"A and C Only","option_3":"D","option_4":"B and C only","option_5":"No error","solution_text":"***Explanation:*** The errors are in parts B and C. **Rule 1 (Relative Pronouns):** Use *which* for non-living things/objects and *who/whom* for people. *That* can be used for both people and things, but in formal/written English, *which* is preferred for non-living objects. **Rule 2 (Others vs Other):** *Other* = adjective (used before a singular or plural noun). Example: *a few other constituencies.* Answer is **Option D**."},{"id":"13","question":"**In the following sentence, identify the part which contains an error.**\n\nThe deaths had seem to have galvanised a generation that had watched political leaders cycle (A)/ through power while fundamental problems, such as youth unemployment, (B)/ economic stagnation, leading to (C)/ severe out-migration and institutional decay, remains unaddressed. (D)","answer":"2","positive_marks":"1","negative_marks":"0.25","option_1":"A","option_2":"B","option_3":"C","option_4":"D","option_5":"No error","solution_text":"***Explanation:*** The errors are in parts A and D. **Rule 1 (Past Perfect Form of Verbs):** The past perfect tense is formed using *had + past participle.* *Seem* → past participle is *seemed.* In part D, the verb *remains* is inconsistent with the past perfect context used earlier; it should be *remained* to match the past tense narrative. Answer is **Option B**."},{"id":"14","question":"**In the following sentence, identify the part which contains an error.**\n\nThe amorphous nature of (A)/ the Gen Z movement makes (B)/ it particularly susceptible (C)/ to capture by such forces. (D)","answer":"5","positive_marks":"1","negative_marks":"0.25","option_1":"A","option_2":"B","option_3":"C","option_4":"D","option_5":"No error","solution_text":"***Explanation:*** The above sentence is free from error. Answer is **Option E (No error)**."},{"id":"15","question":"**In the following sentence, identify the part which contains an error.**\n\nOur goal was to convey disapproval of Israeli policies (A)/ and reduce the Olympiad's propaganda value (B)/ for the Israeli government, while having as little impact as (C)/ possible on the students themself. (D)","answer":"4","positive_marks":"1","negative_marks":"0.25","option_1":"A","option_2":"B","option_3":"C","option_4":"D","option_5":"No error","solution_text":"***Explanation:*** The error is in part D. The word *themself* is incorrect when referring to the plural noun *students.* The correct pronoun should be *themselves* to agree in number. Answer is **Option D**."},{"id":"16","question":"**In the questions below, two sentences are given with four highlighted parts (A), (B), (C), and (D). One of the parts in each sentence needs to be interchanged with the other sentence to make the sentences grammatically correct and meaningful. Identify the correct pair of parts that needs to be interchanged.**\n\nSentence A: Hardly the best **purpose (A)** for the inaugural **(B)** game of cricket's continental showpiece event.\n\nSentence B: It's not that the Asia Cup lacks context in its own right, but given the **preparation (C)** many feel it is intended to **achieve (D)**, it assumes even greater significance.","answer":"1","positive_marks":"1","negative_marks":"0.25","option_1":"A-C","option_2":"A-D","option_3":"B-C","option_4":"B-D","option_5":"No interchange is required","solution_text":"***Explanation:*** The correct sentences are: A. Hardly the best ==preparation== for the inaugural game of cricket's continental showpiece event. B. It's not that the Asia Cup lacks context in its own right, but given the ==purpose== many feel it is intended to achieve, it assumes even greater significance. Answer is **Option A (A-C)**."},{"id":"17","question":"**In the questions below, two sentences are given with four highlighted parts (A), (B), (C), and (D). One of the parts in each sentence needs to be interchanged with the other sentence to make the sentences grammatically correct and meaningful. Identify the correct pair of parts that needs to be interchanged.**\n\nSentence A: The exemption has been granted **(A)** in response to a recent **enhancement (B)** made by the Ministry of Defence and the Department of Atomic Energy (DAE).\n\nSentence B: It added that there is a need for the **request (C)** of production of these minerals, including uranium, by way of **operationalisation (D)** of new deposits of beach sand minerals and uranium.","answer":"3","positive_marks":"1","negative_marks":"0.25","option_1":"A-C","option_2":"A-D","option_3":"B-C","option_4":"B-D","option_5":"No interchange is required","solution_text":"***Explanation:*** The correct sentences are: A. The exemption has been granted in response to a recent ==request== made by the Ministry of Defence and the Department of Atomic Energy (DAE). B. It added that there is a need for the ==enhancement== of production of these minerals, including uranium, by way of operationalisation of new deposits of beach sand minerals and uranium. Answer is **Option C (B-C)**."},{"id":"18","question":"**In the questions below, two sentences are given with four highlighted parts (A), (B), (C), and (D). One of the parts in each sentence needs to be interchanged with the other sentence to make the sentences grammatically correct and meaningful. Identify the correct pair of parts that needs to be interchanged.**\n\nSentence A: The **professionals (A)** of India has been the **predominant (B)** theme in the prelude to the series.\n\nSentence B: But as **supremacy (C)** we can't complain **(D)** and think too much about it.","answer":"4","positive_marks":"1","negative_marks":"0.25","option_1":"A-D","option_2":"B-C","option_3":"B-D","option_4":"A-C","option_5":"No interchange is required","solution_text":"***Explanation:*** The correct sentences are: A. The ==supremacy== of India has been the predominant theme in the prelude to the series. B. But as ==professionals== we can't complain and think too much about it. Answer is **Option D (A-C)**."},{"id":"19","question":"**In the questions below, two sentences are given with four highlighted parts (A), (B), (C), and (D). One of the parts in each sentence needs to be interchanged with the other sentence to make the sentences grammatically correct and meaningful. Identify the correct pair of parts that needs to be interchanged.**\n\nSentence A: The GST rates **(A)** for all these items have been **reduced (B)** to 5 per cent from 12 per cent or 18 per cent.\n\nSentence B: The **consumers (C)** has by and large passed on the benefits of rate cuts to the **industry. (D)**","answer":"2","positive_marks":"1","negative_marks":"0.25","option_1":"A-D","option_2":"C-D","option_3":"B-D","option_4":"A-C","option_5":"No interchange is required","solution_text":"***Explanation:*** The correct sentences are: A. The GST rates for all these items have been reduced to 5 per cent from 12 per cent or 18 per cent. B. The ==industry== has by and large passed on the benefits of rate cuts to the ==consumers==. Answer is **Option B (C-D)**."},{"id":"20","question":"**In the questions below, two sentences are given with four highlighted parts (A), (B), (C), and (D). One of the parts in each sentence needs to be interchanged with the other sentence to make the sentences grammatically correct and meaningful. Identify the correct pair of parts that needs to be interchanged.**\n\nSentence A: Six decades have passed **(A)** but his fame and relevance have only **grown. (B)**\n\nSentence B: One can **compare (C)** Mahatma Gandhi's assassination and Muktibodh's death in terms of the nation's moral obligation **(D)** to \"respond\" to their passing.","answer":"5","positive_marks":"1","negative_marks":"0.25","option_1":"A-D","option_2":"C-D","option_3":"B-D","option_4":"A-C","option_5":"No interchange is required","solution_text":"***Explanation:*** The correct sentences are: A. Six decades have passed but his fame and relevance have only grown. B. One can compare Mahatma Gandhi's assassination and Muktibodh's death in terms of the nation's moral obligation to *respond* to their passing. Answer is **Option E (No interchange is required)**."},{"id":"21","question":"**Directions (21-27):** Read the given passage carefully and answer the questions that follow. Some words may be highlighted to help you locate the same while answering.\n\nNearly 50 years ago, a U.S. government ship searching for minerals and hydrocarbons made an unexpected discovery: freshwater beneath the sea floor off the country's northeastern coast. Recently, an international team of scientists revisited this site and confirmed a large offshore aquifer stretching from New Jersey to Maine. Drilling up to 1,289 feet below the seabed, they collected nearly 50,000 liters of freshwater for analysis. Brandon Dugan, a geophysicist at the Colorado School of Mines, remarked that this is \"one of the last places you would probably look for freshwater on Earth.\"\n\nOffshore aquifers are similar to terrestrial ones, consisting of porous rock or sediment that holds freshwater, but they lie beneath the ocean floor. Scientists estimate that these aquifers can extend up to 90 kilometers offshore and may contain more freshwater than all terrestrial aquifers combined. A 2021 study in Environmental Research Letters suggested that offshore aquifers worldwide hold around one million cubic kilometers of freshwater, roughly 10% of all terrestrial groundwater. While offshore aquifers have been confirmed in regions like Australia, China, North America, and South Africa, they have largely remained unexplored due to logistical difficulties and the historical focus on land-based aquifers.\n\nThe latest exploration off the U.S. northeast is particularly significant, being the first systematic global expedition to drill for undersea freshwater. Scientists estimate that this aquifer contains enough water to supply New York City for 800 years.\n\nThe origin of offshore freshwater remains under study. On land, aquifers are replenished by rainfall and snowmelt percolating through soil and rock. Offshore, one theory suggests that water infiltrated the ground during past ice ages when sea levels were lower, exposing areas that are now submerged. Rainwater seeped into the ground, and the weight of ice sheets may have forced water into porous rocks extending offshore. Another possibility is that offshore aquifers are linked to onshore aquifers, receiving a continual supply of freshwater. A clay-rich \"cap rock\" layer prevents freshwater from mixing with seawater, maintaining its purity.\n\nOffshore aquifers are important because they represent untapped freshwater resources, potentially mitigating water scarcity on land. The United Nations has highlighted a global water crisis, projecting that demand for freshwater will exceed supply by 40% by 2030. Climate change, droughts, pollution, and inefficient water use exacerbate this scarcity, creating a \"triple crisis,\" according to Johan Rockstrom, co-chair of the Global Commission on the Economics of Water.\n\nHowever, accessing offshore aquifers poses challenges. Drilling beneath the sea is expensive, with the U.S. northeast project costing around $25 million. Infrastructure is needed to transport water to land while preventing contamination with saltwater. Additionally, the ecological impact on marine life is uncertain, and legal questions regarding ownership and management remain unresolved. Indigenous, fishing, and coastal communities would also have a stake in decision-making. As Rob Evans, a geophysicist, warns, large-scale extraction could have unforeseen consequences.\n\nDespite these challenges, offshore aquifers offer a promising resource to address the growing global water crisis, provided extraction is carefully managed and sustainable practices are followed.\n\n**What was the original purpose of the U.S. government ship that discovered freshwater off the northeastern coast?**","answer":"3","positive_marks":"1","negative_marks":"0.25","option_1":"To search specifically for untapped freshwater reserves beneath the seabed along the U.S. coastline.","option_2":"To conduct comprehensive surveys of marine biodiversity, including flora and fauna in the ocean.","option_3":"To explore and locate deposits of minerals and hydrocarbons beneath the ocean floor for potential extraction.","option_4":"To map and study the patterns of ocean currents, tides, and related marine phenomena in the region.","option_5":"To investigate and study the existence of offshore aquifers and assess their freshwater potential.","solution_text":"***Explanation:*** The passage states that nearly 50 years ago, a U.S. government ship __searching for minerals and hydrocarbons__ unexpectedly discovered freshwater off the northeastern coast. This means the ship's original mission was resource exploration, not freshwater research. ==A== is incorrect because freshwater was discovered accidentally, not the mission's goal. ==B== is wrong as marine biodiversity surveys were not the purpose. ==D== is irrelevant since mapping ocean currents was not the objective. ==E== is incorrect because offshore aquifers were investigated much later, not during the original mission. Answer is **Option C**."},{"id":"22","question":"**Directions (21-27):** Read the given passage carefully and answer the questions that follow. Some words may be highlighted to help you locate the same while answering.\n\nNearly 50 years ago, a U.S. government ship searching for minerals and hydrocarbons made an unexpected discovery: freshwater beneath the sea floor off the country's northeastern coast. Recently, an international team of scientists revisited this site and confirmed a large offshore aquifer stretching from New Jersey to Maine. Drilling up to 1,289 feet below the seabed, they collected nearly 50,000 liters of freshwater for analysis. Brandon Dugan, a geophysicist at the Colorado School of Mines, remarked that this is \"one of the last places you would probably look for freshwater on Earth.\"\n\nOffshore aquifers are similar to terrestrial ones, consisting of porous rock or sediment that holds freshwater, but they lie beneath the ocean floor. Scientists estimate that these aquifers can extend up to 90 kilometers offshore and may contain more freshwater than all terrestrial aquifers combined. A 2021 study in Environmental Research Letters suggested that offshore aquifers worldwide hold around one million cubic kilometers of freshwater, roughly 10% of all terrestrial groundwater. While offshore aquifers have been confirmed in regions like Australia, China, North America, and South Africa, they have largely remained unexplored due to logistical difficulties and the historical focus on land-based aquifers.\n\nThe latest exploration off the U.S. northeast is particularly significant, being the first systematic global expedition to drill for undersea freshwater. Scientists estimate that this aquifer contains enough water to supply New York City for 800 years.\n\nThe origin of offshore freshwater remains under study. On land, aquifers are replenished by rainfall and snowmelt percolating through soil and rock. Offshore, one theory suggests that water infiltrated the ground during past ice ages when sea levels were lower, exposing areas that are now submerged. Rainwater seeped into the ground, and the weight of ice sheets may have forced water into porous rocks extending offshore. Another possibility is that offshore aquifers are linked to onshore aquifers, receiving a continual supply of freshwater. A clay-rich \"cap rock\" layer prevents freshwater from mixing with seawater, maintaining its purity.\n\nOffshore aquifers are important because they represent untapped freshwater resources, potentially mitigating water scarcity on land. The United Nations has highlighted a global water crisis, projecting that demand for freshwater will exceed supply by 40% by 2030. Climate change, droughts, pollution, and inefficient water use exacerbate this scarcity, creating a \"triple crisis,\" according to Johan Rockstrom, co-chair of the Global Commission on the Economics of Water.\n\nHowever, accessing offshore aquifers poses challenges. Drilling beneath the sea is expensive, with the U.S. northeast project costing around $25 million. Infrastructure is needed to transport water to land while preventing contamination with saltwater. Additionally, the ecological impact on marine life is uncertain, and legal questions regarding ownership and management remain unresolved. Indigenous, fishing, and coastal communities would also have a stake in decision-making. As Rob Evans, a geophysicist, warns, large-scale extraction could have unforeseen consequences.\n\nDespite these challenges, offshore aquifers offer a promising resource to address the growing global water crisis, provided extraction is carefully managed and sustainable practices are followed.\n\n**Offshore aquifers differ from terrestrial aquifers primarily because they:**","answer":"5","positive_marks":"1","negative_marks":"0.25","option_1":"Are composed entirely of solid rock with no porous layers, unlike terrestrial aquifers which contain sediments and soil.","option_2":"Contain primarily saltwater instead of freshwater, making them unsuitable for direct human consumption.","option_3":"Are smaller in size and hold less water compared to the extensive terrestrial aquifers found on continents.","option_4":"Are artificially created by humans for storing water, unlike naturally occurring terrestrial aquifers.","option_5":"Exist beneath the ocean floor, extending offshore rather than being located on land like terrestrial aquifers.","solution_text":"***Explanation:*** Offshore aquifers are similar in composition to terrestrial aquifers, consisting of porous rock or sediment holding freshwater, but they are unique because they lie beneath the seabed, often extending many kilometers offshore. The option about being solid rock is incorrect because offshore aquifers are porous, not solid. Saltwater is wrong; these aquifers contain freshwater, not seawater. Smaller in size is incorrect; some offshore aquifers may be larger than terrestrial ones. Artificially created is false; they are natural formations. Answer is **Option E**."},{"id":"23","question":"**Directions (21-27):** Read the given passage carefully and answer the questions that follow. Some words may be highlighted to help you locate the same while answering.\n\nNearly 50 years ago, a U.S. government ship searching for minerals and hydrocarbons made an unexpected discovery: freshwater beneath the sea floor off the country's northeastern coast. Recently, an international team of scientists revisited this site and confirmed a large offshore aquifer stretching from New Jersey to Maine. Drilling up to 1,289 feet below the seabed, they collected nearly 50,000 liters of freshwater for analysis. Brandon Dugan, a geophysicist at the Colorado School of Mines, remarked that this is \"one of the last places you would probably look for freshwater on Earth.\"\n\nOffshore aquifers are similar to terrestrial ones, consisting of porous rock or sediment that holds freshwater, but they lie beneath the ocean floor. Scientists estimate that these aquifers can extend up to 90 kilometers offshore and may contain more freshwater than all terrestrial aquifers combined. A 2021 study in Environmental Research Letters suggested that offshore aquifers worldwide hold around one million cubic kilometers of freshwater, roughly 10% of all terrestrial groundwater. While offshore aquifers have been confirmed in regions like Australia, China, North America, and South Africa, they have largely remained unexplored due to logistical difficulties and the historical focus on land-based aquifers.\n\nThe latest exploration off the U.S. northeast is particularly significant, being the first systematic global expedition to drill for undersea freshwater. Scientists estimate that this aquifer contains enough water to supply New York City for 800 years.\n\nThe origin of offshore freshwater remains under study. On land, aquifers are replenished by rainfall and snowmelt percolating through soil and rock. Offshore, one theory suggests that water infiltrated the ground during past ice ages when sea levels were lower, exposing areas that are now submerged. Rainwater seeped into the ground, and the weight of ice sheets may have forced water into porous rocks extending offshore. Another possibility is that offshore aquifers are linked to onshore aquifers, receiving a continual supply of freshwater. A clay-rich \"cap rock\" layer prevents freshwater from mixing with seawater, maintaining its purity.\n\nOffshore aquifers are important because they represent untapped freshwater resources, potentially mitigating water scarcity on land. The United Nations has highlighted a global water crisis, projecting that demand for freshwater will exceed supply by 40% by 2030. Climate change, droughts, pollution, and inefficient water use exacerbate this scarcity, creating a \"triple crisis,\" according to Johan Rockstrom, co-chair of the Global Commission on the Economics of Water.\n\nHowever, accessing offshore aquifers poses challenges. Drilling beneath the sea is expensive, with the U.S. northeast project costing around $25 million. Infrastructure is needed to transport water to land while preventing contamination with saltwater. Additionally, the ecological impact on marine life is uncertain, and legal questions regarding ownership and management remain unresolved. Indigenous, fishing, and coastal communities would also have a stake in decision-making. As Rob Evans, a geophysicist, warns, large-scale extraction could have unforeseen consequences.\n\nDespite these challenges, offshore aquifers offer a promising resource to address the growing global water crisis, provided extraction is carefully managed and sustainable practices are followed.\n\n**One theory about the origin of offshore freshwater suggests that:**","answer":"1","positive_marks":"1","negative_marks":"0.25","option_1":"Water infiltrated the ground during past ice ages, when lower sea levels exposed areas that allowed rainwater to seep into porous rocks.","option_2":"The freshwater was artificially injected into the seabed in recent times through human engineering or experimental projects.","option_3":"The freshwater originates solely from deep-sea hydrothermal vents, which release water and minerals from beneath the ocean floor.","option_4":"Freshwater formed recently directly from rainfall falling onto the ocean surface and accumulating beneath the seabed.","option_5":"The freshwater was transported over long distances from other continents through underground channels or tectonic movements.","solution_text":"***Explanation:*** The passage explains that offshore aquifers likely formed during ice ages, when sea levels were lower, exposing land where rainwater could penetrate and fill porous rocks, later submerged as sea levels rose. The idea of artificial injection is incorrect; these aquifers are naturally occurring. Deep-sea hydrothermal vents produce water, but not freshwater aquifers. Recent rainfall on the ocean cannot penetrate seabeds to form large aquifers. Transport from other continents is implausible due to vast distances and geological barriers. Answer is **Option A**."},{"id":"24","question":"**Directions (21-27):** Read the given passage carefully and answer the questions that follow. Some words may be highlighted to help you locate the same while answering.\n\nNearly 50 years ago, a U.S. government ship searching for minerals and hydrocarbons made an unexpected discovery: freshwater beneath the sea floor off the country's northeastern coast. Recently, an international team of scientists revisited this site and confirmed a large offshore aquifer stretching from New Jersey to Maine. Drilling up to 1,289 feet below the seabed, they collected nearly 50,000 liters of freshwater for analysis. Brandon Dugan, a geophysicist at the Colorado School of Mines, remarked that this is \"one of the last places you would probably look for freshwater on Earth.\"\n\nOffshore aquifers are similar to terrestrial ones, consisting of porous rock or sediment that holds freshwater, but they lie beneath the ocean floor. Scientists estimate that these aquifers can extend up to 90 kilometers offshore and may contain more freshwater than all terrestrial aquifers combined. A 2021 study in Environmental Research Letters suggested that offshore aquifers worldwide hold around one million cubic kilometers of freshwater, roughly 10% of all terrestrial groundwater. While offshore aquifers have been confirmed in regions like Australia, China, North America, and South Africa, they have largely remained unexplored due to logistical difficulties and the historical focus on land-based aquifers.\n\nThe latest exploration off the U.S. northeast is particularly significant, being the first systematic global expedition to drill for undersea freshwater. Scientists estimate that this aquifer contains enough water to supply New York City for 800 years.\n\nThe origin of offshore freshwater remains under study. On land, aquifers are replenished by rainfall and snowmelt percolating through soil and rock. Offshore, one theory suggests that water infiltrated the ground during past ice ages when sea levels were lower, exposing areas that are now submerged. Rainwater seeped into the ground, and the weight of ice sheets may have forced water into porous rocks extending offshore. Another possibility is that offshore aquifers are linked to onshore aquifers, receiving a continual supply of freshwater. A clay-rich \"cap rock\" layer prevents freshwater from mixing with seawater, maintaining its purity.\n\nOffshore aquifers are important because they represent untapped freshwater resources, potentially mitigating water scarcity on land. The United Nations has highlighted a global water crisis, projecting that demand for freshwater will exceed supply by 40% by 2030. Climate change, droughts, pollution, and inefficient water use exacerbate this scarcity, creating a \"triple crisis,\" according to Johan Rockstrom, co-chair of the Global Commission on the Economics of Water.\n\nHowever, accessing offshore aquifers poses challenges. Drilling beneath the sea is expensive, with the U.S. northeast project costing around $25 million. Infrastructure is needed to transport water to land while preventing contamination with saltwater. Additionally, the ecological impact on marine life is uncertain, and legal questions regarding ownership and management remain unresolved. Indigenous, fishing, and coastal communities would also have a stake in decision-making. As Rob Evans, a geophysicist, warns, large-scale extraction could have unforeseen consequences.\n\nDespite these challenges, offshore aquifers offer a promising resource to address the growing global water crisis, provided extraction is carefully managed and sustainable practices are followed.\n\n**Why are offshore aquifers considered significant?**\n\n1. They are easy to access and inexpensive to extract, providing a quick solution to water scarcity issues.\n\n2. They represent vast, largely untapped freshwater resources that could help mitigate freshwater shortages on land.\n\n3. They contain saltwater or serve primarily as a source of minerals, rather than being directly useful as freshwater.","answer":"2","positive_marks":"1","negative_marks":"0.25","option_1":"1 only","option_2":"2 only","option_3":"1 and 2 only","option_4":"2 and 3 only","option_5":"1, 2, and 3","solution_text":"***Explanation:*** Offshore aquifers are considered significant because they represent vast, largely untapped freshwater resources that could help address freshwater scarcity on land, as highlighted in the passage. Answer is **Option B (2 only)**."},{"id":"25","question":"**Directions (21-27):** Read the given passage carefully and answer the questions that follow. Some words may be highlighted to help you locate the same while answering.\n\nNearly 50 years ago, a U.S. government ship searching for minerals and hydrocarbons made an unexpected discovery: freshwater beneath the sea floor off the country's northeastern coast. Recently, an international team of scientists revisited this site and confirmed a large offshore aquifer stretching from New Jersey to Maine. Drilling up to 1,289 feet below the seabed, they collected nearly 50,000 liters of freshwater for analysis. Brandon Dugan, a geophysicist at the Colorado School of Mines, remarked that this is \"one of the last places you would probably look for freshwater on Earth.\"\n\nOffshore aquifers are similar to terrestrial ones, consisting of porous rock or sediment that holds freshwater, but they lie beneath the ocean floor. Scientists estimate that these aquifers can extend up to 90 kilometers offshore and may contain more freshwater than all terrestrial aquifers combined. A 2021 study in Environmental Research Letters suggested that offshore aquifers worldwide hold around one million cubic kilometers of freshwater, roughly 10% of all terrestrial groundwater. While offshore aquifers have been confirmed in regions like Australia, China, North America, and South Africa, they have largely remained unexplored due to logistical difficulties and the historical focus on land-based aquifers.\n\nThe latest exploration off the U.S. northeast is particularly significant, being the first systematic global expedition to drill for undersea freshwater. Scientists estimate that this aquifer contains enough water to supply New York City for 800 years.\n\nThe origin of offshore freshwater remains under study. On land, aquifers are replenished by rainfall and snowmelt percolating through soil and rock. Offshore, one theory suggests that water infiltrated the ground during past ice ages when sea levels were lower, exposing areas that are now submerged. Rainwater seeped into the ground, and the weight of ice sheets may have forced water into porous rocks extending offshore. Another possibility is that offshore aquifers are linked to onshore aquifers, receiving a continual supply of freshwater. A clay-rich \"cap rock\" layer prevents freshwater from mixing with seawater, maintaining its purity.\n\nOffshore aquifers are important because they represent untapped freshwater resources, potentially mitigating water scarcity on land. The United Nations has highlighted a global water crisis, projecting that demand for freshwater will exceed supply by 40% by 2030. Climate change, droughts, pollution, and inefficient water use exacerbate this scarcity, creating a \"triple crisis,\" according to Johan Rockstrom, co-chair of the Global Commission on the Economics of Water.\n\nHowever, accessing offshore aquifers poses challenges. Drilling beneath the sea is expensive, with the U.S. northeast project costing around $25 million. Infrastructure is needed to transport water to land while preventing contamination with saltwater. Additionally, the ecological impact on marine life is uncertain, and legal questions regarding ownership and management remain unresolved. Indigenous, fishing, and coastal communities would also have a stake in decision-making. As Rob Evans, a geophysicist, warns, large-scale extraction could have unforeseen consequences.\n\nDespite these challenges, offshore aquifers offer a promising resource to address the growing global water crisis, provided extraction is carefully managed and sustainable practices are followed.\n\n**What is the overall tone of the passage?**","answer":"2","positive_marks":"1","negative_marks":"0.25","option_1":"Alarmist and speculative","option_2":"Analytical and cautiously optimistic","option_3":"Casual and narrative-driven","option_4":"Persuasive and promotional","option_5":"Indifferent and detached","solution_text":"***Explanation:*** The passage examines scientific evidence, historical context, and theories of origin → showing an __analytical__ approach. It acknowledges the promise of offshore aquifers to solve water scarcity → __optimism__. At the same time, it highlights costs, risks, ecological impact, and governance issues → __cautious__. Not alarmist (A), not casual (C), not persuasive marketing (D), and not indifferent (E). Answer is **Option B**."},{"id":"26","question":"**Directions (21-27):** Read the given passage carefully and answer the questions that follow. Some words may be highlighted to help you locate the same while answering.\n\nNearly 50 years ago, a U.S. government ship searching for minerals and hydrocarbons made an unexpected discovery: freshwater beneath the sea floor off the country's northeastern coast. Recently, an international team of scientists revisited this site and confirmed a large offshore aquifer stretching from New Jersey to Maine. Drilling up to 1,289 feet below the seabed, they collected nearly 50,000 liters of freshwater for analysis. Brandon Dugan, a geophysicist at the Colorado School of Mines, remarked that this is \"one of the last places you would probably look for freshwater on Earth.\"\n\nOffshore aquifers are similar to terrestrial ones, consisting of porous rock or sediment that holds freshwater, but they lie beneath the ocean floor. Scientists estimate that these aquifers can extend up to 90 kilometers offshore and may contain more freshwater than all terrestrial aquifers combined. A 2021 study in Environmental Research Letters suggested that offshore aquifers worldwide hold around one million cubic kilometers of freshwater, roughly 10% of all terrestrial groundwater. While offshore aquifers have been confirmed in regions like Australia, China, North America, and South Africa, they have largely remained unexplored due to logistical difficulties and the historical focus on land-based aquifers.\n\nThe latest exploration off the U.S. northeast is particularly significant, being the first systematic global expedition to drill for undersea freshwater. Scientists estimate that this aquifer contains enough water to supply New York City for 800 years.\n\nThe origin of offshore freshwater remains under study. On land, aquifers are replenished by rainfall and snowmelt percolating through soil and rock. Offshore, one theory suggests that water infiltrated the ground during past ice ages when sea levels were lower, exposing areas that are now submerged. Rainwater seeped into the ground, and the weight of ice sheets may have forced water into porous rocks extending offshore. Another possibility is that offshore aquifers are linked to onshore aquifers, receiving a continual supply of freshwater. A clay-rich \"cap rock\" layer prevents freshwater from mixing with seawater, maintaining its purity.\n\nOffshore aquifers are important because they represent untapped freshwater resources, potentially mitigating water scarcity on land. The United Nations has highlighted a global water crisis, projecting that demand for freshwater will exceed supply by 40% by 2030. Climate change, droughts, pollution, and inefficient water use exacerbate this scarcity, creating a \"triple crisis,\" according to Johan Rockstrom, co-chair of the Global Commission on the Economics of Water.\n\nHowever, accessing offshore aquifers poses challenges. Drilling beneath the sea is expensive, with the U.S. northeast project costing around $25 million. Infrastructure is needed to transport water to land while preventing contamination with saltwater. Additionally, the ecological impact on marine life is uncertain, and legal questions regarding ownership and management remain unresolved. Indigenous, fishing, and coastal communities would also have a stake in decision-making. As Rob Evans, a geophysicist, warns, large-scale extraction could have unforeseen consequences.\n\nDespite these challenges, offshore aquifers offer a promising resource to address the growing global water crisis, provided extraction is carefully managed and sustainable practices are followed.\n\n**The passage uses the word \"replenished\" to describe how freshwater in offshore aquifers is renewed over time. Which of the following words is closest in meaning to replenished?**","answer":"1","positive_marks":"1","negative_marks":"0.25","option_1":"Restored","option_2":"Depleted","option_3":"Drained","option_4":"Polluted","option_5":"Neglected","solution_text":"***Explanation:*** In the passage, *replenished* refers to the process by which freshwater in offshore aquifers is renewed or refilled over time, making it available again. ==Restored== closely matches this meaning, as it also implies bringing something back to its previous level or condition. ==Depleted== is the opposite of replenished, meaning used up or reduced. ==Drained== suggests water has been removed, which contrasts with refilling. ==Polluted== means contaminated, unrelated to replenishment. ==Neglected== implies being ignored or left unattended, which does not convey renewal. Answer is **Option A**."},{"id":"27","question":"**Directions (21-27):** Read the given passage carefully and answer the questions that follow. Some words may be highlighted to help you locate the same while answering.\n\nNearly 50 years ago, a U.S. government ship searching for minerals and hydrocarbons made an unexpected discovery: freshwater beneath the sea floor off the country's northeastern coast. Recently, an international team of scientists revisited this site and confirmed a large offshore aquifer stretching from New Jersey to Maine. Drilling up to 1,289 feet below the seabed, they collected nearly 50,000 liters of freshwater for analysis. Brandon Dugan, a geophysicist at the Colorado School of Mines, remarked that this is \"one of the last places you would probably look for freshwater on Earth.\"\n\nOffshore aquifers are similar to terrestrial ones, consisting of porous rock or sediment that holds freshwater, but they lie beneath the ocean floor. Scientists estimate that these aquifers can extend up to 90 kilometers offshore and may contain more freshwater than all terrestrial aquifers combined. A 2021 study in Environmental Research Letters suggested that offshore aquifers worldwide hold around one million cubic kilometers of freshwater, roughly 10% of all terrestrial groundwater. While offshore aquifers have been confirmed in regions like Australia, China, North America, and South Africa, they have largely remained unexplored due to logistical difficulties and the historical focus on land-based aquifers.\n\nThe latest exploration off the U.S. northeast is particularly significant, being the first systematic global expedition to drill for undersea freshwater. Scientists estimate that this aquifer contains enough water to supply New York City for 800 years.\n\nThe origin of offshore freshwater remains under study. On land, aquifers are replenished by rainfall and snowmelt percolating through soil and rock. Offshore, one theory suggests that water infiltrated the ground during past ice ages when sea levels were lower, exposing areas that are now submerged. Rainwater seeped into the ground, and the weight of ice sheets may have forced water into porous rocks extending offshore. Another possibility is that offshore aquifers are linked to onshore aquifers, receiving a continual supply of freshwater. A clay-rich \"cap rock\" layer prevents freshwater from mixing with seawater, maintaining its purity.\n\nOffshore aquifers are important because they represent untapped freshwater resources, potentially mitigating water scarcity on land. The United Nations has highlighted a global water crisis, projecting that demand for freshwater will exceed supply by 40% by 2030. Climate change, droughts, pollution, and inefficient water use exacerbate this scarcity, creating a \"triple crisis,\" according to Johan Rockstrom, co-chair of the Global Commission on the Economics of Water.\n\nHowever, accessing offshore aquifers poses challenges. Drilling beneath the sea is expensive, with the U.S. northeast project costing around $25 million. Infrastructure is needed to transport water to land while preventing contamination with saltwater. Additionally, the ecological impact on marine life is uncertain, and legal questions regarding ownership and management remain unresolved. Indigenous, fishing, and coastal communities would also have a stake in decision-making. As Rob Evans, a geophysicist, warns, large-scale extraction could have unforeseen consequences.\n\nDespite these challenges, offshore aquifers offer a promising resource to address the growing global water crisis, provided extraction is carefully managed and sustainable practices are followed.\n\n**In the context of offshore aquifers, the word \"accessing\" refers to obtaining or reaching the water. Which of the following words is most opposite in meaning to \"accessing\"?**","answer":"4","positive_marks":"1","negative_marks":"0.25","option_1":"Securing","option_2":"Reaching","option_3":"Withdrawing","option_4":"Denying","option_5":"Extracting","solution_text":"***Explanation:*** In the passage, *accessing* refers to obtaining or reaching the freshwater in offshore aquifers. The opposite of this idea is ==denying==, which implies preventing access or making it unavailable. ==Securing== is similar in meaning to accessing, as it implies obtaining or safeguarding. ==Reaching== also aligns with accessing, meaning to physically or figuratively get to something. ==Withdrawing== and ==Extracting== involve taking water out, which still presupposes access, so they are not opposites. Answer is **Option D**."},{"id":"28","question":"**Choose the correct word to fill in the blank:**\n\nSunita confided her tribulations to her parents, pursued an in-person consultation with a psychiatrist, and ______ pharmacological treatment.","answer":"2","positive_marks":"1","negative_marks":"0.25","option_1":"Abandoned","option_2":"Commenced","option_3":"Resisted","option_4":"Neglected","option_5":"Suspended","solution_text":"***Explanation:*** The sentence describes Sunita sharing her struggles, consulting a psychiatrist, and then beginning treatment. The word __commenced__ means *started* or *began,* which logically follows the sequence of events. ==Abandoned== is incorrect because she did not quit before starting. ==Resisted== is wrong, as she did not refuse treatment. ==Neglected== suggests carelessness or ignoring, which contradicts her proactive actions. ==Suspended== implies stopping something after it has started, which does not fit here. Answer is **Option B**."},{"id":"29","question":"**Choose the correct word to fill in the blank:**\n\nNeuralink inaugurated human clinical trials in 2024 on its neuroprosthetic implant after assuaging safety apprehensions articulated by the U.S. Food and Drug Administration, which had initially ______ its application in 2022.","answer":"4","positive_marks":"1","negative_marks":"0.25","option_1":"Endorsed","option_2":"Authorized","option_3":"Supported","option_4":"Repudiated","option_5":"Sanctioned","solution_text":"***Explanation:*** The sentence notes that Neuralink began human trials in 2024 only after resolving safety concerns. This implies the U.S. FDA had rejected or refused the application earlier. ==Repudiated== means rejected or disapproved, which fits perfectly. ==Endorsed, Authorized,== and ==Supported== all indicate approval, which contradicts the context of initial refusal. ==Sanctioned== usually means officially approved or permitted, so it is also incorrect. Answer is **Option D**."},{"id":"30","question":"**Choose the correct word to fill in the blank:**\n\nThe immune system inundates the brain with neutrophils and cytokines, precipitating cerebral edema, hemorrhage, and ______ degeneration.","answer":"3","positive_marks":"1","negative_marks":"0.25","option_1":"Regenerative","option_2":"Constructive","option_3":"Necrotic","option_4":"Restorative","option_5":"Curative","solution_text":"***Explanation:*** The sentence describes harmful effects on the brain - edema, hemorrhage, and degeneration. ==Necrotic== degeneration means the death of brain tissue due to disease or injury, which aligns with the destructive context. ==Regenerative== suggests healing or new growth, opposite to degeneration. ==Constructive== implies building or creating, which doesn't fit the damaging context. ==Restorative== means bringing back health or strength, again the opposite of degeneration. ==Curative== refers to healing or curing disease, not degeneration. Answer is **Option C**."}],TITLE="English PO level Target",TIME_SECS=1800,LT=["A","B","C","D","E"];
-var charts=[],cur=0,qmode=false,secs=0,tick=null,ans={};
-function $$$(id){return document.getElementById(id);}
-function fmtT(s){var m=Math.floor(s/60),sc=s%60;return String(m).padStart(2,"0")+":"+String(sc).padStart(2,"0");}
 
-/* ── stylizeTxt: markdown → styled HTML ── */
-function stylizeTxt(s){
-  if(!s) return "";
-  s=s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-  s=s.replace(/\*\*\*(.*?)\*\*\*/g,"<strong><em>$1</em></strong>");
-  s=s.replace(/\*\*(.*?)\*\*/g,"<strong>$1</strong>");
-  s=s.replace(/\*(.*?)\*/g,"<em>$1</em>");
-  s=s.replace(/__(.*?)__/g,"<u>$1</u>");
-  s=s.replace(/==(.*?)==/g,"<mark>$1</mark>");
-  s=s.replace(/\\n/g,"<br>").replace(/\n/g,"<br>");
-  return s;
+<div class="topbar">
+  <div class="brand"><span class="dot"></span><span id="brandText">Bankers Alliance</span></div>
+  <div class="spacer"></div>
+  <button class="nav-btn" id="homeBtn" aria-label="Home">🏠<span class="lbl"> Home</span></button>
+  <button class="nav-btn back-btn" id="backBtn" aria-label="Back">←<span class="lbl"> Back</span></button>
+</div>
+
+<main class="shell" id="app"><div class="empty"><div class="big">⏳</div>Loading questions…</div></main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px;text-align:center">Please enable JavaScript to use this site.</p></noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){
+"use strict";
+
+/* =====================================================================
+   CONFIG — easy things to change
+   ===================================================================== */
+const BRAND = "Bankers Alliance";
+const YEAR = 2026;                                   // shown next to month names
+const NEG_MARK = 0.25;                               // marks deducted per wrong answer (if enabled)
+const PDF_HEADER_PREFIX = "Target MCQs of";          // PDF header = prefix + section name
+const PDF_FOOTER_TEXT = "Created by BankersAlliance and Victory Banker";
+const PDF_WATERMARK = "BANKERS ALLIANCE";
+const OTHER_CODE = "Z";
+const COUNT_CHOICES = [10, 20, 30, 50];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const MONTH_COLORS = ["#2f5fdc","#1f9d55","#8b3fd6","#d64545","#e07b1a","#0e9488","#d6318a","#a6791f","#2f5fdc","#1f9d55","#8b3fd6","#d64545"];
+
+/* =====================================================================
+   HELPERS
+   ===================================================================== */
+const $ = (s, r=document) => r.querySelector(s);
+const app = $("#app"), homeBtn = $("#homeBtn"), backBtn = $("#backBtn"), toastEl = $("#toast");
+$("#brandText").textContent = BRAND;
+document.title = BRAND + " — Current Affairs MCQ Practice";
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s || "").toLowerCase().replace(/&/g," ").replace(/[^a-z0-9]+/g," ").trim();
+const plural = (n, w) => n + " " + w + (n === 1 ? "" : "s");
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function fmtTime(sec){
+  sec = Math.max(0, Math.floor(sec)); const h = Math.floor(sec/3600), m = Math.floor(sec%3600/60), s = sec%60;
+  const p = n => String(n).padStart(2,"0");
+  return h ? h+":"+p(m)+":"+p(s) : p(m)+":"+p(s);
+}
+const LS = {
+  get(k, d){ try{ const v = localStorage.getItem("ga:"+k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem("ga:"+k, JSON.stringify(v)); }catch(e){} }
+};
+function toast(msg){
+  toastEl.textContent = msg; toastEl.classList.add("show");
+  clearTimeout(toast.t); toast.t = setTimeout(() => toastEl.classList.remove("show"), 2300);
 }
 
-function toggleAgree(){var c=$$$("agreeChk");c.checked=!c.checked;checkReady();}
-function checkReady(){var b=$$$("startBtn");$$$("agreeChk").checked?b.classList.add("ready"):b.classList.remove("ready");}
+/* ---------- safe HTML: question text may contain <b>, <u>, <mark>, tables … ---------- */
+const ALLOWED = new Set(["B","STRONG","I","EM","U","MARK","BR","P","SPAN","SUB","SUP","UL","OL","LI","TABLE","THEAD","TBODY","TR","TH","TD","CAPTION","IMG","DIV","S","SMALL","BLOCKQUOTE","CODE"]);
+const DROP = new Set(["SCRIPT","STYLE","IFRAME","OBJECT","EMBED","LINK","META","FORM","INPUT","BUTTON","SVG","MATH","TEXTAREA","SELECT"]);
+const sanitizeCache = new Map();
+function sanitize(html){
+  const key = String(html == null ? "" : html);
+  if(sanitizeCache.has(key)) return sanitizeCache.get(key);
+  const cleaned = key.replace(/&#0*8203;|&#x0*200b;|[\u200b\ufeff]/gi, "");
+  const doc = new DOMParser().parseFromString("<body>" + cleaned + "</body>", "text/html");
+  (function walk(node){
+    Array.from(node.childNodes).forEach(ch => {
+      if(ch.nodeType === 3) return;
+      if(ch.nodeType !== 1){ ch.remove(); return; }
+      if(DROP.has(ch.tagName)){ ch.remove(); return; }
+      if(!ALLOWED.has(ch.tagName)){
+        walk(ch);
+        while(ch.firstChild) node.insertBefore(ch.firstChild, ch);
+        ch.remove(); return;
+      }
+      Array.from(ch.attributes).forEach(a => {
+        const n = a.name.toLowerCase();
+        const keep = (ch.tagName === "IMG" && (n === "src" || n === "alt")) ||
+                     ((ch.tagName === "TD" || ch.tagName === "TH") && (n === "colspan" || n === "rowspan"));
+        if(!keep) ch.removeAttribute(a.name);
+      });
+      if(ch.tagName === "IMG"){
+        const src = ch.getAttribute("src") || "";
+        if(!/^(https?:\/\/|data:image\/(png|jpe?g|gif|webp);|\/|\.\/|[\w-]+\/)/i.test(src)){ ch.remove(); return; }
+        ch.setAttribute("loading", "lazy");
+      }
+      walk(ch);
+    });
+  })(doc.body);
+  const out = doc.body.innerHTML;
+  sanitizeCache.set(key, out);
+  return out;
+}
+/* HTML -> plain text (used by the PDF); keeps line breaks and table rows readable */
+function htmlToText(html){
+  const h = String(html == null ? "" : html)
+    .replace(/<\s*br\s*\/?>/gi, "\n").replace(/<\/p>/gi, "\n\n").replace(/<\/(div|li|tr|h\d|blockquote)>/gi, "\n")
+    .replace(/<\/(td|th)>/gi, " | ");
+  const doc = new DOMParser().parseFromString("<body>" + h + "</body>", "text/html");
+  return doc.body.textContent.replace(/[\u200b\ufeff\u00a0]/g, " ").replace(/ \| \n/g, "\n")
+    .replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+/* jsPDF's built-in fonts only know Latin-1 – swap or drop anything else so nothing prints as garbage */
+const PDF_SWAP = {"₹":"Rs. ","→":"->","←":"<-","↔":"<->","≥":">=","≤":"<=","≈":"~","≠":"!=","✓":"","✔":"","✗":"","✘":"","−":"-","‑":"-","\u2009":" ","\u202f":" "};
+const PDF_OK = new Set([0x2013,0x2014,0x2018,0x2019,0x201C,0x201D,0x2022,0x2026,0x2039,0x203A,0x20AC,0x2122]);
+function pdfSafe(text){
+  let t = String(text == null ? "" : text).replace(/₹\s*/g, "Rs. ").replace(/[→←↔≥≤≈≠✓✔✗✘−‑\u2009\u202f]/g, c => PDF_SWAP[c]);
+  return Array.from(t).filter(ch => { const c = ch.codePointAt(0); return c === 10 || (c >= 32 && c <= 0xFF) || PDF_OK.has(c); }).join("");
+}
 
-window.addEventListener("DOMContentLoaded",function(){
-  $$$("sTitle").textContent=TITLE;
-  $$$("qTot").textContent=QS.length;
-  buildPal(); updProg();
+/* =====================================================================
+   STATE
+   ===================================================================== */
+let TOPICS = [], Q = [];
+const QBYID = new Map();
+let bookmarks = new Set(LS.get("bookmarks", []));
+let mistakes  = new Set(LS.get("mistakes", []));
+let log       = LS.get("log", []);
+let sessions  = LS.get("sessions", {});
+let prefs     = Object.assign({mode:"practice", shuffle:false, neg:false, count:0}, LS.get("prefs", {}));
+let nav       = [{v:"home", scope:{}}];
+let session   = null;
+const ui      = {paletteOpen:false, reviewFilter:"all"};
+
+const topicByCode = c => TOPICS.find(t => t.code === c);
+const topicOf = q => topicByCode(q.main) || {code:OTHER_CODE, name:"Other", emoji:"🗂️"};
+const monthLabel = m => m == null ? "All Months" : MONTHS[m] + " " + YEAR;
+const cur = () => nav[nav.length-1];
+
+/* ---------- data preparation ---------- */
+function ensureOther(){
+  let t = TOPICS.find(t => t.code === OTHER_CODE);
+  if(!t){ t = {code:OTHER_CODE, name:"Other / Unsorted", weight:0, emoji:"🗂️", subs:[{name:"Unsorted", weight:0, emoji:"🏷️", minors:[]}]}; TOPICS.push(t); }
+  return t;
+}
+function prepareData(raw){
+  Q = (Array.isArray(raw) ? raw : []).filter(q => q && q.options && q.answer).map(q => ({
+    id: String(q.id), month: Number(q.month), main: String(q.main || "").trim().toUpperCase(),
+    sub: String(q.sub || "").trim(), minor: String(q.minor || q.tag || "General").trim(), tag: q.tag || "",
+    passage: q.passage || "", question: q.question || "", options: q.options,
+    answer: String(q.answer).trim().toUpperCase(), solution: q.solution || ""
+  }));
+  Q.forEach(q => {
+    let top = topicByCode(q.main);
+    if(!top){ top = ensureOther(); q.main = OTHER_CODE; if(!q.sub) q.sub = "Unsorted"; }
+    let sub = top.subs.find(s => norm(s.name) === norm(q.sub));
+    if(!sub){ sub = {name:q.sub || "General", weight:0, emoji:"🏷️", minors:[]}; top.subs.push(sub); }
+    q.sub = sub.name;
+    QBYID.set(q.id, q);
+  });
+}
+function filterQ(sc){
+  sc = sc || {};
+  return Q.filter(q => {
+    if(sc.special === "saved" && !bookmarks.has(q.id)) return false;
+    if(sc.special === "mistakes" && !mistakes.has(q.id)) return false;
+    if(sc.month != null && q.month !== sc.month) return false;
+    if(sc.main && q.main !== sc.main) return false;
+    if(sc.sub && q.sub !== sc.sub) return false;
+    if(sc.minor && q.minor !== sc.minor) return false;
+    return true;
+  });
+}
+function minorsFor(main, sub){
+  const top = topicByCode(main); const s = top && top.subs.find(x => x.name === sub);
+  const list = s ? s.minors.slice() : [];
+  Q.forEach(q => { if(q.main === main && q.sub === sub && !list.includes(q.minor)) list.push(q.minor); });
+  return list;
+}
+const scopeKey = sc => [sc.special||"", sc.month == null ? "" : sc.month, sc.main||"", sc.sub||"", sc.minor||""].join("|");
+function scopeTitle(sc){
+  if(sc.special === "saved") return "⭐ Saved Questions";
+  if(sc.special === "mistakes") return "🔁 My Mistakes";
+  if(sc.minor) return sc.minor;
+  if(sc.sub) return sc.sub;
+  if(sc.main){ const t = topicByCode(sc.main); return t ? t.name : sc.main; }
+  return monthLabel(sc.month);
+}
+function pdfSection(sc){
+  const t = scopeTitle(sc).replace(/^[^\w]+/, "");
+  if(sc.special) return t;
+  return (sc.main || sc.sub || sc.minor) && sc.month != null ? t + " (" + monthLabel(sc.month) + ")" : t;
+}
+const effCount = n => (prefs.count && prefs.count < n) ? prefs.count : 0;
+/* statement-style questions often have just a label such as "STATEMENT BASED QUESTION" */
+function qLabelOnly(q){
+  const t = htmlToText(q.question);
+  return q.passage && t && t.length <= 60 && t === t.toUpperCase() && /[A-Z]/.test(t) ? t : "";
+}
+
+/* =====================================================================
+   NAVIGATION  (integrates with the phone's / browser's Back button)
+   ===================================================================== */
+function pushView(v, scope){ nav.push({v, scope: scope || {}}); history.pushState({d: nav.length-1}, ""); ui.paletteOpen = false; render(); }
+function replaceTop(v, scope){ nav[nav.length-1] = {v, scope: scope || {}}; history.replaceState({d: nav.length-1}, ""); ui.paletteOpen = false; render(); }
+function goBack(){ if(nav.length > 1) history.back(); }
+function goHome(){ const k = nav.length - 1; if(k > 0) history.go(-k); else render(); }
+window.addEventListener("popstate", e => {
+  const d = e.state && typeof e.state.d === "number" ? e.state.d : 0;
+  if(d > nav.length - 1) nav = [nav[0]]; else while(nav.length > d + 1) nav.pop();
+  ui.paletteOpen = false; render();
+});
+history.replaceState({d:0}, "");
+homeBtn.addEventListener("click", goHome);
+backBtn.addEventListener("click", goBack);
+
+/* =====================================================================
+   VIEWS : home → months → topics → subtopics → minor topics → overview
+   ===================================================================== */
+function render(keepScroll){
+  const v = cur();
+  homeBtn.disabled = backBtn.disabled = (v.v === "home");
+  try{
+    if((v.v === "quiz" || v.v === "result" || v.v === "review") && !session){ nav = [nav[0]]; history.replaceState({d:0}, ""); viewHome(); }
+    else switch(v.v){
+      case "home": viewHome(); break;
+      case "topics": viewTopics(v.scope); break;
+      case "subs": viewSubs(v.scope); break;
+      case "minors": viewMinors(v.scope); break;
+      case "overview": viewOverview(v.scope); break;
+      case "quiz": viewQuiz(); break;
+      case "result": viewResult(); break;
+      case "review": viewReview(); break;
+    }
+  }catch(err){
+    console.error(err);
+    app.innerHTML = `<div class="empty"><div class="big">⚠️</div><b>Something went wrong showing this screen.</b><br>${esc(err.message)}<br><br><button class="btn primary" data-action="home">🏠 Go Home</button></div>`;
+  }
+  if(!keepScroll) window.scrollTo(0, 0);
+}
+
+function viewHome(){
+  const counts = MONTHS.map((_, i) => Q.filter(q => q.month === i).length);
+  const open = Object.values(sessions).filter(s => s && !s.finished && s.ids && s.ids.length)
+                     .sort((a, b) => (b.updatedAt||0) - (a.updatedAt||0));
+  const cont = open[0];
+  const recent = log.slice(0, 5);
+  app.innerHTML = `
+    <div class="hero">
+      <div class="eyebrow">📅 Pick a month to begin</div>
+      <h1>Practice Current Affairs MCQs</h1>
+      <p>${Q.length ? plural(Q.length, "question") + " ready. " : ""}Choose a month, drill down by topic, answer and learn from instant explanations.</p>
+    </div>
+    ${cont ? `<button class="continue" data-action="resume-key" data-key="${esc(cont.key)}"><span class="ico">▶️</span><div><b>Continue: ${esc(cont.label)}</b><span>${Object.keys(cont.answers||{}).length}/${cont.ids.length} answered · ${esc(cont.mode === "test" ? "Test mode" : "Practice mode")}</span></div></button>` : ""}
+    ${Q.length ? "" : `<div class="empty"><div class="big">🗂️</div><b>No questions found yet.</b><br>Add MCQ text files to <code>data/raw/</code> and run the converter (see README).</div>`}
+    <div class="month-grid">
+      <button class="month-btn all" data-action="month" data-m="all" ${Q.length ? "" : "disabled"} style="--m-color:#1c1a2b;--m-soft:#ececf3">
+        <div class="stripe"></div><div><div class="mnum">EVERYTHING</div><div class="mname">All Months</div></div><span class="mcount">${plural(Q.length, "question")}</span>
+      </button>
+      ${MONTHS.map((m, i) => `
+        <button class="month-btn" data-action="month" data-m="${i}" ${counts[i] ? "" : "disabled"} style="--m-color:${MONTH_COLORS[i]};--m-soft:${MONTH_COLORS[i]}22">
+          <div class="stripe"></div><div class="mnum">${String(i+1).padStart(2,"0")} · ${YEAR}</div><div class="mname">${m}</div>
+          <span class="mcount">${counts[i] ? plural(counts[i], "question") : "No questions yet"}</span>
+        </button>`).join("")}
+    </div>
+    <div class="section-label">🧠 My Revision</div>
+    <div class="rev-grid">
+      <button class="rev-tile" data-action="special" data-kind="saved" ${bookmarks.size ? "" : "disabled"}><span class="ico">⭐</span><div><b>Saved Questions</b><span>${plural(filterQ({special:"saved"}).length, "question")} bookmarked</span></div></button>
+      <button class="rev-tile" data-action="special" data-kind="mistakes" ${mistakes.size ? "" : "disabled"}><span class="ico">🔁</span><div><b>My Mistakes</b><span>${plural(filterQ({special:"mistakes"}).length, "question")} to revisit</span></div></button>
+    </div>
+    ${recent.length ? `
+      <div class="section-label">📈 Recent Results <button class="btn-sm" data-action="clear-log">Clear</button></div>
+      <div class="log-list">${recent.map(r => `
+        <div class="log-item"><div class="nm">${esc(r.label)}<small>${new Date(r.ts).toLocaleDateString(undefined,{day:"numeric",month:"short"})} · ${esc(r.mode === "test" ? "Test" : "Practice")} · ${fmtTime(r.secs)}</small></div>
+          <div style="font-weight:800">${r.correct}/${r.total}</div><span class="pill ${r.pct >= 75 ? "g" : r.pct >= 50 ? "y" : "r"}">${Math.round(r.pct)}%</span></div>`).join("")}</div>` : ""}`;
+}
+
+function topicCard(action, attrs, code, emoji, name, meta, pct, count){
+  return `<button class="topic-card" data-action="${action}" ${attrs} ${count ? "" : "disabled"} style="--t-color:var(--${code});--t-soft:var(--${code}-soft)">
+    <div class="icon">${emoji}</div><div class="tname">${esc(name)}</div><div class="tmeta">${meta}</div>
+    <div class="weight-bar"><i style="width:${Math.min(100, pct)}%"></i></div></button>`;
+}
+function viewTopics(sc){
+  const ml = monthLabel(sc.month), total = filterQ({month: sc.month}).length;
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">🗂️ ${esc(ml)}</div><h1>Choose a Main Topic</h1>
+      <p>The bar shows each topic's approximate exam weightage. Topics without questions are greyed out.</p></div>
+    <button class="wide-btn" data-action="practice" ${total ? "" : "disabled"}>▶ Practice all ${plural(total, "question")} of ${esc(ml)}</button>
+    <div class="section-label">Main Topics <span class="tag">${TOPICS.length} categories</span></div>
+    <div class="topic-grid">${TOPICS.map(t => {
+      const c = filterQ({month: sc.month, main: t.code}).length;
+      return topicCard("topic", `data-code="${t.code}"`, t.code, t.emoji, t.name,
+        `${t.weight ? t.weight + "% weightage · " : ""}${plural(c, "question")}`, t.weight * 3, c);
+    }).join("")}</div>`;
+}
+function viewSubs(sc){
+  const t = topicByCode(sc.main); const total = filterQ(sc).length;
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">${t.emoji} ${esc(t.name)} · ${esc(monthLabel(sc.month))}</div><h1>Choose a Subtopic</h1>
+      <p>Subtopic weightage is relative to ${esc(t.name)}.</p></div>
+    <button class="wide-btn" data-action="practice" ${total ? "" : "disabled"}>▶ Practice all ${plural(total, "question")} of ${esc(t.name)}</button>
+    <div class="section-label">Subtopics <span class="tag">${t.subs.length} in this topic</span></div>
+    <div class="topic-grid">${t.subs.map(s => {
+      const c = filterQ({month: sc.month, main: sc.main, sub: s.name}).length;
+      return topicCard("sub", `data-sub="${encodeURIComponent(s.name)}"`, t.code, s.emoji, s.name,
+        `${s.weight ? s.weight + "% of topic · " : ""}${plural(c, "question")}`, s.weight || (c ? 100 : 0), c);
+    }).join("")}</div>`;
+}
+function viewMinors(sc){
+  const t = topicByCode(sc.main); const s = t.subs.find(x => x.name === sc.sub);
+  const total = filterQ(sc).length;
+  const chips = minorsFor(sc.main, sc.sub).map(m => ({m, c: filterQ({...sc, minor: m}).length}))
+                  .sort((a, b) => (b.c > 0) - (a.c > 0));
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">${t.emoji} ${esc(t.name)} › ${s ? s.emoji : ""} ${esc(sc.sub)}</div><h1>Pick a Minor Topic</h1>
+      <p>Choose a specific minor topic, or practise the whole subtopic at once.</p></div>
+    <button class="wide-btn" data-action="practice" ${total ? "" : "disabled"}>▶ Practice all ${plural(total, "question")} of ${esc(sc.sub)}</button>
+    <div class="section-label">Minor Topics <span class="tag">${chips.length} tags</span></div>
+    <div class="chip-row">${chips.map(x => `
+      <button class="topic-chip" data-action="minor" data-minor="${encodeURIComponent(x.m)}" ${x.c ? "" : "disabled"} style="--t-color:var(--${t.code});--t-soft:var(--${t.code}-soft)">${esc(x.m)} (${x.c})</button>`).join("")}</div>`;
+}
+
+function segRow(label, hint, k, opts, val){
+  return `<div class="row"><div class="row-l">${label}${hint ? `<small>${hint}</small>` : ""}</div>
+    <div class="seg" role="group" aria-label="${esc(label)}">${opts.map(([v, t]) =>
+      `<button class="${String(v) === String(val) ? "on" : ""}" data-action="pref" data-k="${k}" data-v="${v}">${t}</button>`).join("")}</div></div>`;
+}
+function viewOverview(sc){
+  const list = filterQ(sc), n = list.length, key = scopeKey(sc);
+  const saved = sessions[key] && !sessions[key].finished ? sessions[key] : null;
+  const past = log.filter(r => r.key === key);
+  const best = past.length ? Math.max(...past.map(r => r.pct)) : null;
+  const byMinor = {}; list.forEach(q => { byMinor[q.minor] = (byMinor[q.minor] || 0) + 1; });
+  const mc = Object.entries(byMinor).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  const counts = COUNT_CHOICES.filter(c => c < n).map(c => [c, c]);
+  const eff = effCount(n);
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">${esc(sc.special ? "🧠 My Revision" : (scopeTitle(sc) === monthLabel(sc.month) ? "🎯 Practice set" : "📅 " + monthLabel(sc.month)))}</div>
+      <h1>${esc(scopeTitle(sc))}</h1>
+      <p>${n ? plural(n, "question") + " in this set." : "No questions in this set yet."}${best != null ? " Best score so far: <b>" + Math.round(best) + "%</b> (" + plural(past.length, "attempt") + ")." : ""}</p></div>
+    ${n ? `
+    <div class="panel">
+      <div class="panel-h">⚙️ Set up your practice</div>
+      ${segRow("Mode", prefs.mode === "practice" ? "See right / wrong + explanation after every answer" : "No feedback until the end, then full review", "mode", [["practice","📘 Practice"],["test","📝 Test"]], prefs.mode)}
+      ${counts.length ? segRow("Questions", "Take a random subset", "count", [["0", "All " + n], ...counts], eff) : ""}
+      ${segRow("Shuffle", "Random question order", "shuffle", [["0","Off"],["1","On"]], prefs.shuffle ? "1" : "0")}
+      ${segRow("Negative marking", "Deduct ¼ mark per wrong answer", "neg", [["0","Off"],["1","−¼"]], prefs.neg ? "1" : "0")}
+      <div class="cta-row">
+        ${saved ? `<button class="btn primary" data-action="resume">▶ Resume (${Object.keys(saved.answers).length}/${saved.ids.length})</button>` : ""}
+        <button class="btn ${saved ? "" : "primary"}" data-action="start">${saved ? "🔄 Start fresh" : "▶ Start " + (prefs.mode === "test" ? "Test" : "Practice")}</button>
+      </div>
+    </div>
+    <div class="panel"><div class="panel-h">🏷️ Inside this set</div><div class="mini-chips">${mc.map(([m, c]) => `<span>${esc(m)} <b>${c}</b></span>`).join("")}</div></div>
+    <div class="panel">
+      <div class="panel-h">📄 Download PDF</div>
+      <p>Exports all ${plural(n, "question")} of this set in A4 format with the Bankers Alliance watermark.</p>
+      <div class="cta-row">
+        <button class="btn" data-action="pdf" data-kind="paper">📝 Question paper</button>
+        <button class="btn" data-action="pdf" data-kind="full">✅ With answers &amp; solutions</button>
+      </div>
+    </div>` : `<div class="empty"><div class="big">🗂️</div>Nothing here yet.</div>`}`;
+}
+
+/* =====================================================================
+   QUESTION CARD  (used by the quiz and by the review screen)
+   ===================================================================== */
+function questionCardHTML(q, o){
+  const t = topicOf(q), label = qLabelOnly(q), bm = bookmarks.has(q.id), reveal = !!o.reveal;
+  const opts = Object.keys(q.options).map(k => {
+    let cls = "opt", mark = "";
+    const picked = o.selected === k;
+    if(reveal){
+      if(k === q.answer){ cls += " correct"; mark = o.review ? "✓ Correct" : "✓"; }
+      else if(picked){ cls += " wrong"; mark = o.review ? "✗ Your answer" : "✗"; }
+      else cls += " dim";
+    } else if(picked) cls += " selected";
+    const attrs = o.locked ? "disabled" : `data-action="opt" data-key="${k}"`;
+    return `<button class="${cls}" ${attrs}><span class="opt-key">${k}</span><span class="opt-text">${sanitize(q.options[k])}</span><span class="opt-mark">${mark}</span></button>`;
+  }).join("");
+
+  let fb = "", sol = "";
+  if(reveal){
+    if(!o.selected) fb = `<div class="fb skip" role="status">⏭️ Not attempted — correct answer: <b>${q.answer}</b></div>`;
+    else if(o.selected === q.answer) fb = `<div class="fb ok" role="status">🎉 Correct! Well done.</div>`;
+    else fb = `<div class="fb bad" role="status">❌ Incorrect. The correct answer is <b>${q.answer}. ${sanitize(q.options[q.answer])}</b></div>`;
+    sol = `<div class="sol"><div class="sol-h">💡 Explanation</div><div class="sol-b">${q.solution ? sanitize(q.solution) : "<p>No explanation added for this question.</p>"}</div></div>`;
+  }
+  let badge = "";
+  if(o.status) badge = `<span class="qbadge ${o.status}">${o.status === "ok" ? "✓ Correct" : o.status === "bad" ? "✗ Wrong" : "— Skipped"}</span>`;
+
+  return `
+  <article class="qcard" style="--n-color:var(--${t.code})">
+    <div class="qhead">
+      <div class="qhead-top"><span class="qnum">Q${o.n}<small> / ${o.total}</small></span>${badge}
+        <button class="star ${bm ? "on" : ""}" data-action="bookmark" data-id="${esc(q.id)}" aria-label="Save this question" title="Save this question">${bm ? "★" : "☆"}</button></div>
+      <div class="qpath">${t.emoji} ${esc(t.name)} <span>›</span> ${esc(q.sub)} <span>›</span> ${esc(q.minor)}</div>
+    </div>
+    <div class="qbody">
+      ${label ? `<div class="qlabel">${esc(label)}</div>` : ""}
+      ${q.passage ? `<div class="passage"><div class="passage-h">📖 READ CAREFULLY</div>${sanitize(q.passage)}</div>` : ""}
+      ${!label && q.question ? `<div class="qtext">${sanitize(q.question)}</div>` : ""}
+      <div class="opts" role="group" aria-label="Answer options">${opts}</div>
+      ${o.canClear ? `<div class="clear-row"><button class="btn-sm" data-action="clear">Clear answer</button></div>` : ""}
+      <div aria-live="polite">${fb}${sol}</div>
+    </div>
+  </article>`;
+}
+
+/* =====================================================================
+   QUIZ
+   ===================================================================== */
+function saveSession(){
+  if(!session || session.finished) return;
+  session.updatedAt = Date.now();
+  sessions[session.key] = session;
+  const keys = Object.keys(sessions);
+  if(keys.length > 8){ keys.sort((a, b) => (sessions[a].updatedAt||0) - (sessions[b].updatedAt||0)); delete sessions[keys[0]]; }
+  LS.set("sessions", sessions);
+}
+function dropSession(key){ delete sessions[key]; LS.set("sessions", sessions); }
+function newSession(p){
+  return {key:p.key, label:p.label, pdfLabel:p.pdfLabel, scope:p.scope || {}, mode:p.mode, neg:p.neg, ids:p.ids,
+          answers:{}, times:{}, idx:0, elapsed:0, updatedAt:Date.now(), finished:false};
+}
+function startFromScope(sc, resume){
+  const key = scopeKey(sc);
+  if(resume && sessions[key]){
+    const s = sessions[key]; s.ids = s.ids.filter(id => QBYID.has(id));
+    if(s.ids.length){ s.finished = false; session = s; pushView("quiz"); return; }
+    dropSession(key);
+  }
+  let ids = filterQ(sc).map(q => q.id); if(!ids.length) return;
+  const take = effCount(ids.length);
+  if(prefs.shuffle || take) shuffle(ids);
+  if(take) ids = ids.slice(0, take);
+  session = newSession({key, label: scopeTitle(sc), pdfLabel: pdfSection(sc), scope: sc, mode: prefs.mode, neg: prefs.neg, ids});
+  saveSession(); pushView("quiz");
+}
+function resumeByKey(key){
+  const s = sessions[key]; if(!s) return;
+  s.ids = s.ids.filter(id => QBYID.has(id));
+  if(!s.ids.length){ dropSession(key); render(); return; }
+  s.finished = false; session = s; pushView("quiz");
+}
+const attemptedCount = s => s.ids.filter(id => s.answers[id]).length;
+
+function viewQuiz(){
+  const s = session, total = s.ids.length;
+  s.idx = Math.min(Math.max(s.idx, 0), total - 1);
+  const q = QBYID.get(s.ids[s.idx]), sel = s.answers[q.id];
+  const practice = s.mode === "practice", reveal = practice && !!sel;
+  const attempted = attemptedCount(s), allDone = attempted === total, last = s.idx === total - 1;
+
+  const pal = s.ids.map((id, i) => {
+    const a = s.answers[id], qq = QBYID.get(id); let st = "";
+    if(a) st = practice ? (a === qq.answer ? "ok" : "bad") : "ans";
+    return `<button class="pal-btn ${st} ${i === s.idx ? "cur" : ""}" data-action="goto" data-i="${i}" aria-label="Question ${i+1}">${i+1}${bookmarks.has(id) ? "<i>★</i>" : ""}</button>`;
+  }).join("");
+
+  app.innerHTML = `
+    <div class="quiz-top">
+      <div class="quiz-title">${esc(s.label)}<small>${plural(total, "question")}${s.neg ? " · −¼ negative marking" : ""}</small></div>
+      <span class="mode-pill">${practice ? "📘 Practice" : "📝 Test"}</span>
+      <span class="timer" title="Time spent">⏱ <span id="timer">${fmtTime(s.elapsed)}</span></span>
+      <button class="btn-sm" data-action="finish">🏁 Finish</button>
+    </div>
+    <div class="progress" aria-label="Progress"><i style="width:${attempted / total * 100}%"></i></div>
+    ${allDone ? `<div class="done-banner"><span>🎉 All ${total} questions attempted!</span><button class="btn-sm" data-action="finish">View Result 🏁</button></div>` : ""}
+    <div class="quiz-wrap">
+      <div>${questionCardHTML(q, {n: s.idx + 1, total, selected: sel, reveal, locked: reveal, canClear: !practice && !!sel})}</div>
+      <aside class="palette ${ui.paletteOpen ? "open" : ""}" id="palette" aria-label="Question palette">
+        <div class="pal-head">Questions <span>${attempted}/${total} answered</span></div>
+        <div class="pal-grid">${pal}</div>
+        <div class="pal-legend">
+          ${practice ? `<span><b style="background:var(--ok)"></b>Correct</span><span><b style="background:var(--bad)"></b>Wrong</span>` : `<span><b style="background:var(--info)"></b>Answered</span>`}
+          <span><b style="background:#fff;border:1.5px solid var(--line)"></b>Not yet</span><span>★ Saved</span>
+        </div>
+        <button class="btn primary" data-action="finish">🏁 Finish &amp; see result</button>
+      </aside>
+    </div>
+    <div class="sheet-backdrop ${ui.paletteOpen ? "open" : ""}" data-action="palette"></div>
+    <div class="qnav">
+      <button class="btn" data-action="prev" ${s.idx === 0 ? "disabled" : ""}>← Prev</button>
+      <button class="btn pal-toggle" data-action="palette">▦ ${s.idx + 1}/${total}</button>
+      ${last ? `<button class="btn primary" data-action="finish">🏁 ${allDone ? "View Result" : "Finish"}</button>`
+             : `<button class="btn ${(!practice || sel) ? "primary" : ""}" data-action="next">Next →</button>`}
+    </div>`;
+}
+
+function chooseOption(key){
+  const s = session; if(!s) return;
+  const q = QBYID.get(s.ids[s.idx]); if(!q || !q.options[key]) return;
+  if(s.mode === "practice"){
+    if(s.answers[q.id]) return;
+    s.answers[q.id] = key;
+    if(key === q.answer) mistakes.delete(q.id); else mistakes.add(q.id);
+    LS.set("mistakes", [...mistakes]);
+  } else s.answers[q.id] = key;
+  saveSession(); viewQuiz();
+  if(s.mode === "practice"){ const fb = $(".fb"); if(fb && fb.scrollIntoView) fb.scrollIntoView({behavior:"smooth", block:"center"}); }
+}
+function moveTo(i){
+  const s = session; if(!s) return;
+  s.idx = Math.min(Math.max(i, 0), s.ids.length - 1); ui.paletteOpen = false; saveSession(); viewQuiz(); window.scrollTo(0, 0);
+}
+function toggleBookmark(id){
+  if(!id) return;
+  if(bookmarks.has(id)){ bookmarks.delete(id); toast("Removed from saved"); } else { bookmarks.add(id); toast("⭐ Saved for later"); }
+  LS.set("bookmarks", [...bookmarks]);
+  document.querySelectorAll('[data-action="bookmark"]').forEach(b => {
+    if(b.dataset.id === id){ const on = bookmarks.has(id); b.classList.toggle("on", on); b.textContent = on ? "★" : "☆"; }
+  });
+}
+
+/* stopwatch : counts only while the quiz screen is visible */
+setInterval(() => {
+  if(cur().v !== "quiz" || !session || document.hidden) return;
+  session.elapsed++;
+  const id = session.ids[session.idx]; session.times[id] = (session.times[id] || 0) + 1;
+  const el = $("#timer"); if(el) el.textContent = fmtTime(session.elapsed);
+  if(session.elapsed % 10 === 0) saveSession();
+}, 1000);
+
+/* =====================================================================
+   RESULT + REVIEW
+   ===================================================================== */
+function computeResult(s){
+  let correct = 0, wrong = 0, skipped = 0; const wrongIds = [], groups = new Map();
+  s.ids.forEach(id => {
+    const q = QBYID.get(id); if(!q) return;
+    const a = s.answers[id]; let st;
+    if(!a){ skipped++; st = "skip"; } else if(a === q.answer){ correct++; st = "ok"; } else { wrong++; st = "bad"; wrongIds.push(id); }
+    const g = groups.get(q.minor) || {name:q.minor, ok:0, bad:0, skip:0}; g[st]++; groups.set(q.minor, g);
+  });
+  const total = s.ids.length, net = correct - (s.neg ? wrong * NEG_MARK : 0), attempted = correct + wrong;
+  return {correct, wrong, skipped, total, net, attempted, wrongIds,
+    pct: total ? Math.max(0, net) / total * 100 : 0, acc: attempted ? correct / attempted * 100 : 0,
+    groups: [...groups.values()].sort((a, b) => (b.ok + b.bad + b.skip) - (a.ok + a.bad + a.skip))};
+}
+function finishSession(){
+  const s = session; if(!s) return;
+  const un = s.ids.length - attemptedCount(s);
+  if(un > 0 && !window.confirm(plural(un, "question") + " not attempted yet. Finish and see your result anyway?")) return;
+  s.finished = true;
+  if(s.mode === "test"){
+    s.ids.forEach(id => { const a = s.answers[id], q = QBYID.get(id); if(!a || !q) return; if(a === q.answer) mistakes.delete(id); else mistakes.add(id); });
+    LS.set("mistakes", [...mistakes]);
+  }
+  const r = computeResult(s);
+  log.unshift({ts: Date.now(), key: s.key, label: s.label, mode: s.mode, total: r.total, correct: r.correct, wrong: r.wrong,
+               skipped: r.skipped, pct: r.pct, secs: s.elapsed});
+  log = log.slice(0, 40); LS.set("log", log);
+  dropSession(s.key);
+  replaceTop("result");
+}
+function viewResult(){
+  const s = session, r = computeResult(s);
+  const tier = r.pct >= 90 ? ["Outstanding! 🏆", "#4ade80"] : r.pct >= 75 ? ["Great job! 🎉", "#4ade80"] :
+               r.pct >= 60 ? ["Good effort 👍", "#facc15"] : r.pct >= 40 ? ["Keep practising 💪", "#fb923c"] : ["Revise and try again 📚", "#f87171"];
+  const R = 52, C = 2 * Math.PI * R, dash = C * Math.min(100, r.pct) / 100;
+  const avg = r.attempted ? s.elapsed / r.attempted : 0;
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">🏁 Result · ${esc(s.label)}</div><h1>${s.mode === "test" ? "Test" : "Practice"} complete</h1></div>
+    <div class="result-hero">
+      <svg class="donut" viewBox="0 0 120 120" role="img" aria-label="Score ${Math.round(r.pct)} percent">
+        <circle cx="60" cy="60" r="${R}" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="12"/>
+        <circle cx="60" cy="60" r="${R}" fill="none" stroke="${tier[1]}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${dash} ${C}" transform="rotate(-90 60 60)"/>
+        <text x="60" y="68" text-anchor="middle" font-size="28">${Math.round(r.pct)}%</text>
+      </svg>
+      <div class="result-txt">
+        <div class="msg">${tier[0]}</div>
+        <div class="big">${s.neg ? r.net.toFixed(2).replace(/\.00$/, "") : r.correct}<small> / ${r.total}</small></div>
+        <p>${s.neg ? `${r.correct} correct − ${r.wrong} × ${NEG_MARK} negative marking` : `${r.correct} correct out of ${plural(r.total, "question")}`}</p>
+      </div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat ok"><b>${r.correct}</b><span>✅ Correct</span></div>
+      <div class="stat bad"><b>${r.wrong}</b><span>❌ Wrong</span></div>
+      <div class="stat skip"><b>${r.skipped}</b><span>⏭️ Skipped</span></div>
+      <div class="stat"><b>${Math.round(r.acc)}%</b><span>🎯 Accuracy</span></div>
+      <div class="stat"><b>${fmtTime(s.elapsed)}</b><span>⏱ Time</span></div>
+      <div class="stat"><b>${r.attempted ? Math.round(avg) + "s" : "–"}</b><span>⚡ Avg / Q</span></div>
+    </div>
+    ${r.groups.length > 1 ? `
+    <div class="section-label">📊 Performance by topic</div>
+    <div class="panel"><div class="bars">${r.groups.map(g => { const t = g.ok + g.bad + g.skip;
+      return `<div class="bar-row"><div class="bar-h"><b>${esc(g.name)}</b><span>${g.ok}/${t} correct</span></div>
+        <div class="bar-track"><i class="o" style="width:${g.ok / t * 100}%"></i><i class="b" style="width:${g.bad / t * 100}%"></i><i class="s" style="width:${g.skip / t * 100}%"></i></div></div>`; }).join("")}</div></div>` : ""}
+    <div class="result-actions">
+      <button class="btn primary" data-action="review">📝 Review answers</button>
+      <button class="btn" data-action="retry-wrong" ${r.wrong ? "" : "disabled"}>🔁 Retry wrong (${r.wrong})</button>
+      <button class="btn" data-action="restart">🔀 Restart shuffled</button>
+      <button class="btn" data-action="pdf-session">📄 PDF with answers</button>
+      <button class="btn" data-action="share">📤 Share score</button>
+      <button class="btn" data-action="home">🏠 Home</button>
+    </div>`;
+}
+function viewReview(){
+  const s = session, f = ui.reviewFilter;
+  const rows = s.ids.map((id, i) => {
+    const q = QBYID.get(id), a = s.answers[id];
+    return {q, i, a, st: !a ? "skip" : a === q.answer ? "ok" : "bad"};
+  });
+  const cnt = {all: rows.length, bad: rows.filter(r => r.st === "bad").length, ok: rows.filter(r => r.st === "ok").length, skip: rows.filter(r => r.st === "skip").length};
+  const shown = rows.filter(r => f === "all" || r.st === f);
+  const tab = (k, t) => `<button class="${f === k ? "on" : ""}" data-action="rfilter" data-f="${k}">${t} (${cnt[k]})</button>`;
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">📝 Review · ${esc(s.label)}</div><h1>Your answers</h1></div>
+    <div class="tabs">${tab("all","All")}${tab("bad","❌ Wrong")}${tab("ok","✅ Correct")}${tab("skip","⏭️ Skipped")}</div>
+    <div class="review-list">${shown.length ? shown.map(r => questionCardHTML(r.q, {n: r.i + 1, total: s.ids.length, selected: r.a, reveal: true, locked: true, review: true, status: r.st})).join("")
+      : `<div class="empty"><div class="big">🎯</div>Nothing in this filter.</div>`}</div>`;
+}
+
+/* =====================================================================
+   PDF  (A4 · tilted watermark · header · footer · page numbers)
+   ===================================================================== */
+function buildPdf(list, sectionLabel, kind){
+  if(!list.length){ toast("Nothing to export yet."); return; }
+  if(!(window.jspdf && window.jspdf.jsPDF)){ toast("PDF library didn’t load — check your internet and try again."); return; }
+  const doc = new window.jspdf.jsPDF({unit:"mm", format:"a4"});
+  const W = doc.internal.pageSize.getWidth(), H = doc.internal.pageSize.getHeight();
+  const mx = 16, top = 28, bottom = H - 18, cw = W - 2 * mx;
+  let y = top;
+
+  function watermark(){
+    // jsPDF's align:"center" ignores rotation, so centre the tilted text by hand
+    doc.setFont("helvetica", "bold"); doc.setFontSize(52); doc.setTextColor(232, 232, 226);
+    const tw = doc.getTextWidth(PDF_WATERMARK), rad = 45 * Math.PI / 180;
+    const lift = 52 * 0.3528 * 0.35;                       // nudge so the letters (not the baseline) are centred
+    doc.text(PDF_WATERMARK, W / 2 - (tw / 2) * Math.cos(rad) + lift * Math.sin(rad),
+                            H / 2 + (tw / 2) * Math.sin(rad) + lift * Math.cos(rad), {angle: 45});
+  }
+  function header(){
+    const txt = pdfSafe(PDF_HEADER_PREFIX + " " + sectionLabel);
+    let size = 13; doc.setFont("helvetica", "bold"); doc.setFontSize(size);
+    while(size > 8 && doc.getTextWidth(txt) > cw){ size -= 0.5; doc.setFontSize(size); }
+    doc.setTextColor(18, 54, 38); doc.text(txt, mx, 15);
+    doc.setDrawColor(226, 171, 68); doc.setLineWidth(0.6); doc.line(mx, 18, W - mx, 18);
+  }
+  function startPage(){ watermark(); header(); y = top; }
+  function newPage(){ doc.addPage(); startPage(); }
+  startPage();
+
+  const wrap = (text, w, size, bold) => {
+    doc.setFont("helvetica", bold ? "bold" : "normal"); doc.setFontSize(size);
+    const out = []; pdfSafe(text).split("\n").forEach(p => out.push(...doc.splitTextToSize(p.trim() === "" ? " " : p, w))); return out;
+  };
+  const style = c => { doc.setFont("helvetica", c.bold ? "bold" : "normal"); doc.setFontSize(c.size); doc.setTextColor(c.color[0], c.color[1], c.color[2]); };
+
+  list.forEach((q, i) => {
+    const cmds = [];
+    const addText = (text, x, w, size, bold, color, lh, bar) => {
+      const lines = wrap(text, w, size, bold); if(lines.length && pdfSafe(text).trim()) cmds.push({t:"text", lines, x, size, bold, color, lh, bar});
+    };
+    const gap = h => cmds.push({t:"gap", h});
+    const lab = qLabelOnly(q), qt = htmlToText(q.question);
+    if(q.passage){
+      addText("Q" + (i + 1) + "." + (lab ? "  " + lab : ""), mx, cw, 10.5, true, [110, 110, 100], 5.4);
+      addText(htmlToText(q.passage), mx + 5, cw - 5, 10, false, [60, 60, 52], 5, true);
+      gap(2); if(!lab && qt) addText(qt, mx, cw, 11, true, [18, 36, 28], 5.6);
+    } else addText("Q" + (i + 1) + ". " + qt, mx, cw, 11, true, [18, 36, 28], 5.6);
+    gap(1.5);
+    Object.keys(q.options).forEach(k => addText(k + ".  " + htmlToText(q.options[k]), mx + 3, cw - 3, 10.5, false, [30, 36, 31], 5.2));
+    if(kind === "full"){
+      gap(1.5); addText("Answer: " + q.answer, mx, cw, 10.5, true, [22, 120, 70], 5.4);
+      if(q.solution) addText("Solution: " + htmlToText(q.solution), mx, cw, 9.8, false, [70, 70, 62], 4.9);
+    }
+    gap(2); cmds.push({t:"rule"}); gap(4);
+
+    // keep a question together on one page when it fits on a page
+    const total = cmds.reduce((s, c) => s + (c.t === "text" ? c.lines.length * c.lh : c.t === "gap" ? c.h : 0), 0);
+    if(y + total > bottom && total <= bottom - top) newPage();
+
+    cmds.forEach(c => {
+      if(c.t === "gap"){ y += c.h; return; }
+      if(c.t === "rule"){ doc.setDrawColor(222, 222, 212); doc.setLineWidth(0.3); doc.line(mx, y, W - mx, y); return; }
+      style(c);
+      c.lines.forEach(line => {
+        if(y + c.lh > bottom){ newPage(); style(c); }
+        doc.text(line, c.x, y);
+        if(c.bar){ doc.setDrawColor(226, 171, 68); doc.setLineWidth(0.9); doc.line(mx + 1.5, y - c.lh * 0.78, mx + 1.5, y + c.lh * 0.22); }
+        y += c.lh;
+      });
+    });
+  });
+
+  const pages = doc.internal.getNumberOfPages();
+  for(let p = 1; p <= pages; p++){
+    doc.setPage(p); doc.setFont("helvetica", "normal"); doc.setFontSize(8.5); doc.setTextColor(110, 110, 100);
+    doc.text(PDF_FOOTER_TEXT, W / 2, H - 10, {align: "center"});
+    doc.text(p + " / " + pages, W - mx, H - 10, {align: "right"});
+  }
+  const slug = String(sectionLabel).replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "").toLowerCase() || "mcqs";
+  doc.save("ga-pulse-" + slug + (kind === "full" ? "-with-answers" : "-paper") + ".pdf");
+  toast("📄 PDF ready");
+}
+
+/* =====================================================================
+   EVENTS  (one delegated click handler for the whole app)
+   ===================================================================== */
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-action]"); if(!el || el.disabled) return;
+  const a = el.dataset.action, sc = cur().scope || {};
+  switch(a){
+    case "home": goHome(); break;
+    case "month": pushView("topics", {month: el.dataset.m === "all" ? null : Number(el.dataset.m)}); break;
+    case "special": pushView("overview", {special: el.dataset.kind, month: null}); break;
+    case "topic": {
+      const code = el.dataset.code, t = topicByCode(code), next = {...sc, main: code};
+      if(t.subs.length === 1) pushView("minors", {...next, sub: t.subs[0].name}); else pushView("subs", next); break;
+    }
+    case "sub": pushView("minors", {...sc, sub: decodeURIComponent(el.dataset.sub)}); break;
+    case "minor": pushView("overview", {...sc, minor: decodeURIComponent(el.dataset.minor)}); break;
+    case "practice": pushView("overview", {...sc}); break;
+    case "pref": {
+      const k = el.dataset.k, v = el.dataset.v;
+      if(k === "mode") prefs.mode = v; else if(k === "count") prefs.count = Number(v);
+      else if(k === "shuffle") prefs.shuffle = v === "1"; else if(k === "neg") prefs.neg = v === "1";
+      LS.set("prefs", prefs); render(true); break;
+    }
+    case "start": startFromScope(sc, false); break;
+    case "resume": startFromScope(sc, true); break;
+    case "resume-key": resumeByKey(el.dataset.key); break;
+    case "opt": chooseOption(el.dataset.key); break;
+    case "clear": if(session){ delete session.answers[session.ids[session.idx]]; saveSession(); viewQuiz(); } break;
+    case "next": moveTo(session.idx + 1); break;
+    case "prev": moveTo(session.idx - 1); break;
+    case "goto": moveTo(Number(el.dataset.i)); break;
+    case "palette": ui.paletteOpen = !ui.paletteOpen; viewQuiz(); break;
+    case "finish": finishSession(); break;
+    case "bookmark": toggleBookmark(el.dataset.id); break;
+    case "review": ui.reviewFilter = "all"; pushView("review"); break;
+    case "rfilter": ui.reviewFilter = el.dataset.f; viewReview(); break;
+    case "retry-wrong": {
+      const ids = computeResult(session).wrongIds.slice(); if(!ids.length) break;
+      session = newSession({key: session.key + "|retry", label: "Retry: " + session.label, pdfLabel: session.pdfLabel + " - Mistakes",
+                            scope: session.scope, mode: "practice", neg: false, ids});
+      saveSession(); replaceTop("quiz"); break;
+    }
+    case "restart": {
+      const old = session;
+      session = newSession({key: old.key, label: old.label, pdfLabel: old.pdfLabel, scope: old.scope, mode: old.mode, neg: old.neg, ids: shuffle(old.ids.slice())});
+      saveSession(); replaceTop("quiz"); break;
+    }
+    case "pdf": buildPdf(filterQ(sc), pdfSection(sc), el.dataset.kind); break;
+    case "pdf-session": buildPdf(session.ids.map(id => QBYID.get(id)).filter(Boolean), session.pdfLabel || session.label, "full"); break;
+    case "share": {
+      const r = computeResult(session);
+      const text = `I scored ${r.correct}/${r.total} (${Math.round(r.pct)}%) in “${session.label}” on ${BRAND}. Try it yourself!`;
+      if(navigator.share) navigator.share({title: BRAND, text, url: location.href}).catch(() => {});
+      else if(navigator.clipboard) navigator.clipboard.writeText(text + " " + location.href).then(() => toast("Score copied to clipboard"), () => toast(text));
+      else toast(text);
+      break;
+    }
+    case "clear-log": log = []; LS.set("log", log); render(true); break;
+  }
+});
+document.addEventListener("keydown", e => {
+  if(cur().v !== "quiz" || !session || e.ctrlKey || e.metaKey || e.altKey) return;
+  const t = (e.target.tagName || "").toLowerCase(); if(t === "input" || t === "textarea" || t === "select") return;
+  const k = e.key;
+  if(/^[a-fA-F]$/.test(k)) chooseOption(k.toUpperCase());
+  else if(/^[1-6]$/.test(k)) chooseOption("ABCDEF"[Number(k) - 1]);
+  else if(k === "ArrowRight" || k === "n") moveTo(session.idx + 1);
+  else if(k === "ArrowLeft" || k === "p") moveTo(session.idx - 1);
+  else if(k === "s") toggleBookmark(session.ids[session.idx]);
 });
 
-function startQuiz(){$$$("startScr").style.display="none";$$$("quizUI").style.display="block";render(0);startTick();}
-
-function startTick(){
-  if(tick)clearInterval(tick);
-  tick=setInterval(function(){
-    secs++;var rem=TIME_SECS-secs,el=$$$("timerEl");
-    if(rem<=300&&rem>0){el.classList.add("warn");el.textContent="⚠️ "+fmtT(rem);}
-    else{el.classList.remove("warn");el.textContent=fmtT(secs);}
-    if(secs>=TIME_SECS){clearInterval(tick);doSubmit();}
-  },1000);
-}
-
-function updProg(){var p=$$$("pb");if(p)p.style.width=((cur+1)/QS.length*100).toFixed(1)+"%";}
-
-function render(i){
-  cur=i;var q=QS[i],k="q"+i;
-  $$$("qIdx").textContent=i+1;$$$("qBadge").textContent=i+1;
-  $$$("qCtr").textContent=(i+1)+" / "+QS.length;
-  var pm=Number(q.positive_marks||q.marks||1),nm=Number(q.negative_marks||0);
-  $$$("qPos").textContent="+"+pm+" Correct";
-  $$$("qNeg").textContent=nm>0?"-"+nm+" Wrong":"No Negative";
-  // Question text: stylize then append image
-  var qh=stylizeTxt(q.question||"");
-  if(q.image_url) qh+='<img src="'+q.image_url+'" style="max-width:100%;border-radius:8px;margin-top:10px;display:block">';
-  $$$("qTxt").innerHTML=qh;
-  $$$("expl").style.display="none";
-  var ob=$$$("opts");ob.innerHTML="";
-  ["option_1","option_2","option_3","option_4","option_5"].forEach(function(ok2,idx){
-    if(!q[ok2])return;
-    var val=String(idx+1);
-    var d=document.createElement("div");d.className="opt";d.dataset.v=val;
-    // Option text: stylize it
-    var optTxt=stylizeTxt(q[ok2]||"");
-    var optImg=q["option_"+(idx+1)+"_image"]?'<div style="margin-top:5px"><img src="'+q["option_"+(idx+1)+"_image"]+'" style="max-width:100%;border-radius:6px;display:block"></div>':"";
-    d.innerHTML='<div class="oltr">'+LT[idx]+'</div><div class="otxt">'+optTxt+optImg+'</div><div class="och"></div>';
-    d.addEventListener("click",function(){pick(q,i,val,d);});
-    if(ans[k]===val)d.classList.add("sel");
-    ob.appendChild(d);
-  });
-  if(qmode&&ans[k])feedback(q);
-  syncPal();updProg();
-}
-
-function pick(q,i,val,div){
-  var k="q"+i;ans[k]=val;
-  Array.from($$$("opts").children).forEach(function(o){o.classList.remove("sel","cor","wrg");});
-  div.classList.add("sel");
-  if(qmode)feedback(q);
-  syncPal();
-}
-
-function feedback(q){
-  var cv=String(q.answer),uv=ans["q"+cur];
-  Array.from($$$("opts").children).forEach(function(o){
-    o.classList.remove("sel","cor","wrg");
-    if(o.dataset.v===cv)o.classList.add("cor");
-    else if(uv&&o.dataset.v===uv)o.classList.add("wrg");
-  });
-  // Explanation with formatting
-  if(q.solution_text){
-    $$$("expl").innerHTML=stylizeTxt(q.solution_text);
-    $$$("expl").style.display="block";
+/* =====================================================================
+   BOOT
+   ===================================================================== */
+async function boot(){
+  try{
+    const [tr, qr] = await Promise.all([fetch("data/topics.json", {cache:"no-store"}), fetch("data/questions.json", {cache:"no-store"})]);
+    if(!tr.ok) throw new Error("data/topics.json → HTTP " + tr.status);
+    if(!qr.ok) throw new Error("data/questions.json → HTTP " + qr.status);
+    TOPICS = await tr.json(); prepareData(await qr.json());
+    render();
+  }catch(err){
+    console.error(err);
+    app.innerHTML = `<div class="empty"><div class="big">⚠️</div><b>Could not load the question bank.</b><br>${esc(err.message)}<br><br>
+      Make sure <code>data/topics.json</code> and <code>data/questions.json</code> are next to this file and that the page is opened over
+      <code>http(s)://</code> (e.g. your hosted site), not by double-clicking the HTML file.</div>`;
   }
 }
-
-function toggleMode(){qmode=!qmode;$$$("modeTog").classList.toggle("qm",qmode);render(cur);}
-function nav(d){var n=cur+d;if(n>=0&&n<QS.length)render(n);}
-function clrAns(){delete ans["q"+cur];render(cur);}
-
-function openSub(){
-  var done=Object.keys(ans).length,left=QS.length-done;
-  $$$("subMsg").innerHTML="You answered <strong>"+done+"</strong>. <strong style=\"color:#c82d3f\">"+left+"</strong> unanswered. Submit?";
-  $$$("subMod").style.display="flex";
-}
-function closeSub(){$$$("subMod").style.display="none";}
-
-function doSubmit(){
-  closeSub();if(tick)clearInterval(tick);
-  var cor=0,wrg=0,tot=0;
-  QS.forEach(function(q,i){
-    var a=ans["q"+i],ok=a&&String(a)===String(q.answer);
-    var pm=Number(q.positive_marks||q.marks||1),nm=Number(q.negative_marks||0);
-    if(ok){cor++;tot+=pm;}else if(a){wrg++;tot-=nm;}
-  });
-  var att=Object.keys(ans).length,unatt=QS.length-att;
-  var acc=att?((cor/att)*100).toFixed(1):"0.0";
-  var pct=((cor/QS.length)*100).toFixed(1);
-  var grade=cor>=QS.length*.9?"A+":cor>=QS.length*.75?"A":cor>=QS.length*.6?"B":cor>=QS.length*.4?"C":"D";
-  var h='<div class="rhero"><h2>🎯 '+TITLE+'</h2><p>Quiz completed!</p>'+
-    '<div class="rscore">'+tot+' / '+QS.length+'</div>'+
-    '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">'+
-    '<span style="background:rgba(255,255,255,.2);padding:4px 10px;border-radius:7px;font-weight:700">Grade: <span style="color:#fbbf24">'+grade+'</span></span>'+
-    '<span style="background:rgba(255,255,255,.2);padding:4px 10px;border-radius:7px;font-weight:700">⏱️ '+fmtT(secs)+'</span>'+
-    '<span style="background:rgba(255,255,255,.2);padding:4px 10px;border-radius:7px;font-weight:700">'+pct+'%</span>'+
-    '</div></div>'+
-    '<div class="rstats">'+
-    '<div class="rstat rs-c"><h4>✅ Correct</h4><p>'+cor+'</p></div>'+
-    '<div class="rstat rs-w"><h4>❌ Wrong</h4><p>'+wrg+'</p></div>'+
-    '<div class="rstat rs-s"><h4>⏭️ Skipped</h4><p>'+unatt+'</p></div>'+
-    '<div class="rstat rs-a"><h4>🎯 Accuracy</h4><p>'+acc+'%</p></div>'+
-    '<div class="rstat rs-sc"><h4>📊 Score</h4><p>'+tot+'</p></div>'+
-    '<div class="rstat rs-t"><h4>⏱️ Time</h4><p>'+fmtT(secs)+'</p></div>'+
-    '</div>'+
-    '<div class="charts-sec"><h3>📈 Performance Analysis</h3><div class="cgrid">'+
-    '<div class="ccard"><h4>Distribution</h4><canvas id="pieC"></canvas></div>'+
-    '<div class="ccard"><h4>Score Breakdown</h4><canvas id="barC"></canvas></div>'+
-    '<div class="ccard cwide"><h4>Question-wise</h4><canvas id="lineC"></canvas></div>'+
-    '</div></div>'+
-    '<div class="charts-sec"><h3>📝 Detailed Answers</h3></div>';
-
-  QS.forEach(function(q,i){
-    var a=ans["q"+i],ok=a&&String(a)===String(q.answer);
-    var pm=Number(q.positive_marks||q.marks||1),nm=Number(q.negative_marks||0);
-    var scH=ok?'<span style="color:#15803d;font-weight:800">+'+pm+' ✓</span>':a?'<span style="color:#991b1b;font-weight:800">-'+nm+' ✗</span>':"<span>0 (Skipped)</span>";
-    h+='<div class="rcard '+( ok?"cor":a?"wrg":"skp" )+'">'+
-       '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px;margin-bottom:9px">'+
-       '<span style="font-weight:800;color:var(--acc)">Q'+( i+1 )+'</span><span>'+scH+'</span></div>'+
-       // Question with formatting
-       '<div class="qtxt" style="font-size:14px;margin-bottom:10px">'+stylizeTxt(q.question||"")+'</div>';
-    ["option_1","option_2","option_3","option_4","option_5"].forEach(function(ok2,j){
-      if(!q[ok2])return;
-      var idx=String(j+1),isC=idx===String(q.answer),isU=a&&idx===String(a)&&!isC;
-      // Option text with formatting
-      h+='<div class="ropt '+( isC?"rc":isU?"rw":"rp" )+'">'+
-         '<span class="rl">'+LT[j]+'</span>'+( isC?"✓ ":isU?"✗ ":"" )+stylizeTxt(q[ok2]||"")+'</div>';
-    });
-    h+='<div style="margin-top:8px;font-size:13px;font-weight:700">Score: '+scH+'</div>';
-    // Solution with formatting
-    if(q.solution_text) h+='<div class="res-expl">'+stylizeTxt(q.solution_text)+'</div>';
-    h+='</div>';
-  });
-
-  $$$("resultArea").innerHTML=h;$$$("resultArea").style.display="block";
-  $$$("qCard").style.display="none";$$$("fbar").style.display="none";$$$("pal").style.display="none";
-  renderCharts(cor,wrg,unatt);
-
-  var hdr=$$$("hdrCtrls");hdr.innerHTML="";
-  var L=document.createElement("div");L.style.cssText="display:flex;align-items:center;gap:10px";
-  L.innerHTML='<h1 style="margin:0;color:#fff;font-size:15px">'+TITLE+'</h1>';
-  var R=document.createElement("div");R.style.cssText="display:flex;gap:7px";
-  [["Re-Attempt",function(){location.reload();}],["Print",function(){window.print();}]].forEach(function(x){
-    var b=document.createElement("button");b.className="btn";b.textContent=x[0];b.addEventListener("click",x[1]);R.appendChild(b);
-  });
-  hdr.appendChild(L);hdr.appendChild(R);
-}
-
-function renderCharts(cor,wrg,unatt){
-  charts.forEach(function(c){try{c.destroy();}catch(e){}});charts=[];
-  var pie=document.getElementById("pieC");
-  if(pie){
-    var c=new Chart(pie,{type:"doughnut",data:{labels:["Correct","Wrong","Skipped"],datasets:[{data:[cor,wrg,unatt],backgroundColor:["rgba(31,158,90,.85)","rgba(242,63,84,.85)","rgba(148,163,184,.7)"],borderColor:["#1f9e5a","#f23f54","#94a3b8"],borderWidth:2,spacing:2}]},options:{responsive:true,cutout:"65%",plugins:{legend:{position:"bottom",labels:{font:{size:11,weight:"600"},padding:12}}}}});
-    pie.parentElement.style.cssText+="border-radius:14%;padding:16px;background:radial-gradient(145deg,#f0f4ff,#d9e2f3);box-shadow:12px 12px 24px #bebebe,-12px -12px 24px #fff;width:fit-content;margin:auto;";
-    charts.push(c);
-  }
-  var bar=document.getElementById("barC");
-  if(bar){
-    var cx=bar.getContext("2d");
-    function grad(a,b){var g=cx.createLinearGradient(0,0,0,300);g.addColorStop(0,a);g.addColorStop(.5,b);g.addColorStop(1,a);return g;}
-    var sc=QS.reduce(function(t,q,i){var a=ans["q"+i],ok=a&&String(a)===String(q.answer),pm=Number(q.positive_marks||1),nm=Number(q.negative_marks||0);return t+(ok?pm:a?-nm:0);},0);
-    var c2=new Chart(bar,{type:"bar",data:{labels:["Score","Max","Correct","Wrong"],datasets:[{data:[parseFloat(sc.toFixed(2)),QS.length,cor,wrg],backgroundColor:[grad("#2563eb","#1e3a8a"),grad("#60a5fa","#2563eb"),grad("#4ade80","#166534"),grad("#f87171","#991b1b")],borderColor:["#000787","#127DE5","#16a34a","#dc2626"],borderWidth:1,borderRadius:8,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:"rgba(0,0,0,.05)"}},x:{grid:{display:false}}}}});
-    charts.push(c2);
-  }
-  var line=document.getElementById("lineC");
-  if(line){
-    var lb=QS.map(function(_,i){return "Q"+(i+1);});
-    var dt=QS.map(function(q,i){var a=ans["q"+i];if(!a)return 0;return String(a)===String(q.answer)?1:-1;});
-    var cl=dt.map(function(v){return v===1?"rgba(34,197,94,.85)":v===-1?"rgba(239,68,68,.85)":"rgba(148,163,184,.65)";});
-    var c3=new Chart(line,{type:"bar",data:{labels:lb,datasets:[{data:dt,backgroundColor:cl,borderColor:cl,borderWidth:1,borderRadius:4}]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.raw===1?"✅ Correct":c.raw===-1?"❌ Wrong":"⏭️ Skipped";}}}},scales:{y:{min:-1.5,max:1.5,ticks:{callback:function(v){return v===1?"✅":v===-1?"❌":"—";},font:{size:10}},grid:{color:"rgba(0,0,0,.05)"}},x:{grid:{display:false},ticks:{font:{size:9}}}}}});
-    charts.push(c3);
-  }
-}
-
-function buildPal(){
-  var p=$$$("pal");while(p.children.length>1)p.removeChild(p.lastChild);
-  QS.forEach(function(_,i){
-    var b=document.createElement("button");b.className="pq";b.textContent=i+1;
-    b.addEventListener("click",function(e){e.stopPropagation();render(i);closePal();});
-    p.appendChild(b);
-  });
-  var s=document.createElement("div");s.id="pal-sum";p.appendChild(s);
-  syncPal();
-}
-
-function syncPal(){
-  var p=$$$("pal");if(!p)return;
-  var tot=QS.length,done=Object.keys(ans).length,idx=0;
-  Array.from(p.children).forEach(function(c){
-    if(c.id==="pal-hd"||c.id==="pal-sum")return;
-    c.className="pq";
-    if(idx===cur)c.classList.add("act");else if(ans["q"+idx])c.classList.add("ans");
-    idx++;
-  });
-  var s=$$$("pal-sum");if(s)s.textContent="Total: "+tot+" · Done: "+done+" · Left: "+(tot-done);
-}
-
-function togglePal(){var p=$$$("pal");if(p.style.display==="flex")closePal();else{p.style.display="flex";syncPal();}}
-function closePal(){$$$("pal").style.display="none";}
-document.addEventListener("click",function(e){var p=$$$("pal"),pb=$$$("palBtn");if(p&&p.style.display==="flex"&&!p.contains(e.target)&&e.target!==pb&&!pb.contains(e.target))closePal();});
-document.addEventListener("keydown",function(e){if(e.key==="ArrowRight"&&cur<QS.length-1)render(cur+1);if(e.key==="ArrowLeft"&&cur>0)render(cur-1);if(e.key==="Escape")closePal();});
+window.__ga = { get nav(){ return nav; }, get session(){ return session; } };   // handy for debugging
+boot();
+})();
 </script>
 </body>
 </html>
