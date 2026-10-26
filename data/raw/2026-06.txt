@@ -6,7 +6,7 @@ D. Bihu Pepa
 E. Bihu Dhol
 ANSWER: D
 SOLUTION: Bah Silpa (bamboo craft), Bihu Pepa (buffalo horn instrument), Karbi Anglong Handloom and Deori Handloom got GI tags.
-TAG: Government schemes
+TAG: Capitals
 
 Q2. Uttarakhand became which state to be declared fully literate under the ULLAS scheme, after Sikkim?
 A. Sixth
@@ -26,7 +26,7 @@ D. ₹4,000
 E. ₹6,500
 ANSWER: C
 SOLUTION: New fees: 36-page ordinary ₹2,500, 36-page Tatkal ₹5,000, 60-page ordinary ₹3,500 and 60-page Tatkal ₹6,000.
-TAG: UPI
+TAG: BBPS
 
 Q4. The Regional Meteorological Centre inaugurated at Jammu is which RMC of the India Meteorological Department?
 A. 5th
