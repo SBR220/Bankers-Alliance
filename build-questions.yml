@@ -1,0 +1,39 @@
+name: Build questions from MCQ text files
+
+# Runs automatically when you add/edit a file in data/raw/ (or the tag map / topics),
+# and can be started by hand from the Actions tab ("Run workflow").
+on:
+  push:
+    paths:
+      - "data/raw/**"
+      - "data/tag_map.json"
+      - "data/topics.json"
+      - "scripts/mcq_to_json.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install encryption library (only used when the bank is locked)
+        run: pip install cryptography
+      - name: Convert MCQ text files to the question bank
+        env:
+          # Optional. If you create this secret, the bank is encrypted (questions.enc.json)
+          # and can only be opened by logged-in members. See SETUP.md, part 3.
+          GA_CONTENT_KEY: ${{ secrets.GA_CONTENT_KEY }}
+        run: python3 scripts/mcq_to_json.py
+      - name: Commit the updated question bank
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A data/
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Auto-build question bank from MCQ text files"
+          git push
