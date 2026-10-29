@@ -1,0 +1,27 @@
+{
+  "_help": "Maps a CATEGORY from the TAG: line of an MCQ to the Main > Sub > Minor tree. Keys are case-insensitive. 'main' = letter A-H (required). 'sub' = exact subtopic name from topics.json (optional - if left out, a single-subtopic topic uses its only subtopic, otherwise 'General'). 'minor' is optional (defaults to the category text itself, so it shows up as its own chip). Categories NOT listed here are auto-matched against names in topics.json; anything still unmatched goes to 'Other / Unsorted' and the converter prints a warning naming it.",
+
+  "RBI": {"main": "A", "sub": "RBI & Monetary Policy"},
+  "RBI Monetary Policy": {"main": "A", "sub": "RBI & Monetary Policy"},
+  "Banking news": {"main": "A"},
+  "Banking Schemes": {"main": "A", "sub": "Banking Schemes"},
+  "Payments": {"main": "A", "sub": "Digital Banking & Payments"},
+
+  "National news": {"main": "B"},
+  "Appointments": {"main": "B", "sub": "Committees & Appointments"},
+  "Committees": {"main": "B", "sub": "Committees & Appointments"},
+  "Reports & Indices": {"main": "B", "sub": "Government Reports / Index"},
+
+  "International news": {"main": "C"},
+  "United Nations": {"main": "C", "sub": "Global Organizations"},
+  "Summits": {"main": "C", "sub": "International Agreements"},
+  "MoU": {"main": "C", "sub": "International Agreements"},
+
+  "Defence": {"main": "D"},
+  "Space": {"main": "D"},
+  "Sports news": {"main": "E"},
+  "Environment": {"main": "F"},
+  "Awards": {"main": "G"},
+  "Books & Authors": {"main": "G"},
+  "Important Days": {"main": "H"}
+}

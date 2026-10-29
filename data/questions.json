@@ -1,0 +1,376 @@
+{
+ "built": "2026-10-28T10:57:06+00:00",
+ "questions": [
+  {
+   "month": 0,
+   "main": "H",
+   "sub": "Static GK Highlights",
+   "minor": "National Youth Day",
+   "cats": [
+    {
+     "main": "H",
+     "sub": "Static GK Highlights",
+     "minor": "National Youth Day"
+    },
+    {
+     "main": "H",
+     "sub": "Static GK Highlights",
+     "minor": "Important Days"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "National Youth Day, Important Days/Oneliner",
+   "question": "National Youth Day in India is observed every year on which date?",
+   "options": {
+    "A": "2 October",
+    "B": "12 January",
+    "C": "15 August",
+    "D": "5 September"
+   },
+   "answer": "B",
+   "solution": "<p>National Youth Day is observed on <b>12 January</b>, the birth anniversary of Swami Vivekananda (born 1863).</p>",
+   "id": "baa9d95054"
+  },
+  {
+   "month": 0,
+   "main": "A",
+   "sub": "RBI & Monetary Policy",
+   "minor": "Monetary Policy Committee",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "RBI & Monetary Policy",
+     "minor": "Monetary Policy Committee"
+    },
+    {
+     "main": "A",
+     "sub": "RBI & Monetary Policy",
+     "minor": "RBI"
+    },
+    {
+     "main": "A",
+     "sub": "General",
+     "minor": "Banking news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Monetary Policy Committee, RBI, Banking news/Oneliner",
+   "question": "How many members does the Monetary Policy Committee (MPC) of the Reserve Bank of India have?",
+   "options": {
+    "A": "4",
+    "B": "5",
+    "C": "6",
+    "D": "7"
+   },
+   "answer": "C",
+   "solution": "<p>The MPC has <b>six members</b>: three from the RBI (including the Governor, who chairs it) and three external members appointed by the Government of India.</p>",
+   "id": "51ba612978"
+  },
+  {
+   "month": 0,
+   "main": "F",
+   "sub": "Environment Highlights",
+   "minor": "Ramsar sites",
+   "cats": [
+    {
+     "main": "F",
+     "sub": "Environment Highlights",
+     "minor": "Ramsar sites"
+    },
+    {
+     "main": "F",
+     "sub": "Environment Highlights",
+     "minor": "Environment"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Ramsar sites, Environment/Oneliner",
+   "question": "The Ramsar Convention, signed in 1971, is an international treaty for the conservation and wise use of which of the following?",
+   "options": {
+    "A": "Tiger reserves",
+    "B": "Coral reefs",
+    "C": "Wetlands",
+    "D": "Mangrove forests"
+   },
+   "answer": "C",
+   "solution": "<p>The <b>Ramsar Convention</b> (Ramsar, Iran, 1971) protects <mark>wetlands of international importance</mark>. World Wetlands Day is observed on 2 February.</p>",
+   "id": "4aaf88be2c"
+  },
+  {
+   "month": 0,
+   "main": "A",
+   "sub": "Digital Banking & Payments",
+   "minor": "UPI",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Digital Banking & Payments",
+     "minor": "UPI"
+    },
+    {
+     "main": "A",
+     "sub": "General",
+     "minor": "Banking news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "UPI, Banking news/Statement Based",
+   "passage": "<p><b>Consider the following statements about the Unified Payments Interface (UPI):</b></p><p>I. UPI was developed by the National Payments Corporation of India (NPCI).<br>II. UPI allows instant bank-to-bank transfers using a Virtual Payment Address.<br>III. UPI is regulated by SEBI.</p><p>Which of the statements given above is/are correct?</p>",
+   "question": "STATEMENT BASED QUESTION",
+   "options": {
+    "A": "Only I",
+    "B": "Only I and II",
+    "C": "Only II and III",
+    "D": "I, II and III"
+   },
+   "answer": "B",
+   "solution": "<p>UPI was developed by <b>NPCI</b> and enables instant bank-to-bank transfers via a VPA. Statement III is wrong: payment systems are regulated by the <b>RBI</b>, not SEBI.</p>",
+   "id": "7cd68ea785"
+  },
+  {
+   "month": 0,
+   "main": "C",
+   "sub": "Global Organizations",
+   "minor": "IMF reports",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "Global Organizations",
+     "minor": "IMF reports"
+    },
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "IMF reports, International news/Oneliner",
+   "question": "Where is the headquarters of the International Monetary Fund (IMF) located?",
+   "options": {
+    "A": "Geneva",
+    "B": "New York",
+    "C": "Washington, D.C.",
+    "D": "Paris"
+   },
+   "answer": "C",
+   "solution": "<p>The IMF is headquartered in <b>Washington, D.C.</b>, USA.</p>",
+   "id": "42b79a6458"
+  },
+  {
+   "month": 0,
+   "main": "A",
+   "sub": "Digital Banking & Payments",
+   "minor": "UPI",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Digital Banking & Payments",
+     "minor": "UPI"
+    },
+    {
+     "main": "A",
+     "sub": "General",
+     "minor": "Banking news"
+    }
+   ],
+   "types": [
+    "Data Based"
+   ],
+   "tag": "UPI, Banking news/Data Based",
+   "passage": "<p><b>The table below gives hypothetical UPI transaction data (in crore) for three months:</b><br><table><tr><th>Month</th><th>Transactions</th></tr><tr><td>January</td><td>1,200</td></tr><tr><td>February</td><td>1,500</td></tr><tr><td>March</td><td>1,800</td></tr></table></p><p>What is the percentage increase in transactions from January to March?</p>",
+   "question": "DATA BASED QUESTION",
+   "options": {
+    "A": "25%",
+    "B": "40%",
+    "C": "50%",
+    "D": "60%"
+   },
+   "answer": "C",
+   "solution": "<p>Increase = 1,800 - 1,200 = 600. Percentage increase = 600 / 1,200 x 100 = <b>50%</b>.</p>",
+   "id": "36f1527e5c"
+  },
+  {
+   "month": 0,
+   "main": "C",
+   "sub": "Global Organizations",
+   "minor": "Global Organizations",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "Global Organizations",
+     "minor": "Global Organizations"
+    },
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Match the Column"
+   ],
+   "tag": "Global Organizations, International news/Match the Column",
+   "passage": "<p><b>Match the organisations in Column I with their headquarters in Column II:</b></p><p><b>Column I:</b> (a) IMF &nbsp; (b) WHO &nbsp; (c) UNESCO &nbsp; (d) IMO<br><b>Column II:</b> (1) Geneva &nbsp; (2) Paris &nbsp; (3) London &nbsp; (4) Washington, D.C.</p>",
+   "question": "MATCH THE COLUMN",
+   "options": {
+    "A": "a-4, b-1, c-2, d-3",
+    "B": "a-1, b-4, c-2, d-3",
+    "C": "a-4, b-1, c-3, d-2",
+    "D": "a-2, b-1, c-4, d-3"
+   },
+   "answer": "A",
+   "solution": "<p>IMF - Washington, D.C.; WHO - Geneva; UNESCO - Paris; IMO - London.</p>",
+   "id": "8803955556"
+  },
+  {
+   "month": 7,
+   "main": "C",
+   "sub": "Global Organizations",
+   "minor": "United Nations",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "Global Organizations",
+     "minor": "United Nations"
+    },
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "United Nations, International news/Oneliner",
+   "question": "Who has been elected as the President of the 81st session of the United Nations General Assembly (UNGA), serving a one-year term from September 2026?",
+   "options": {
+    "A": "Annalena Baerbock",
+    "B": "Mirza Fakhrul Alamgir",
+    "C": "Khalilur Rahman",
+    "D": "Peter Pellegrini",
+    "E": "Hakainde Hichilema"
+   },
+   "answer": "C",
+   "solution": "<p>Bangladesh's Khalilur Rahman is the President of the 81st UNGA, succeeding Germany's Annalena Baerbock, who presided over the 80th session.</p>",
+   "id": "7081ca5ede"
+  },
+  {
+   "month": 7,
+   "main": "A",
+   "sub": "RBI & Monetary Policy",
+   "minor": "RBI",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "RBI & Monetary Policy",
+     "minor": "RBI"
+    },
+    {
+     "main": "A",
+     "sub": "General",
+     "minor": "Banking news"
+    },
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "RBI, Banking news, National news/Statement Based",
+   "passage": "<p><u>Consider the following statements about the RBI Monetary Policy Committee (MPC) meeting of August 2026:</u></p><p>I. The repo rate was kept unchanged at 5.25%.<br>II. The policy stance was retained as 'Neutral'.<br>III. Standing Deposit Facility (SDF) is 5.50%</p><p>Which of the statements given above is/are correct?</p>",
+   "question": "STATEMENT BASED QUESTION",
+   "options": {
+    "A": "Only II and III",
+    "B": "Only I and III",
+    "C": "I, II and III all",
+    "D": "None of I, II, III",
+    "E": "Only I and II"
+   },
+   "answer": "E",
+   "solution": "<p>In August 2026 the MPC kept the repo rate unchanged at 5.25% with a Neutral stance, and Standing Deposit Facility (SDF) is 5.00%. Statement III is incorrect.</p>",
+   "id": "303302b3d6"
+  }
+ ],
+ "report": {
+  "months": {
+   "1": {
+    "valid": 7,
+    "invalid": 0
+   },
+   "2": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "3": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "4": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "5": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "6": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "7": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "8": {
+    "valid": 2,
+    "invalid": 0
+   },
+   "9": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "10": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "11": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "12": {
+    "valid": 0,
+    "invalid": 0
+   },
+   "unknown": {
+    "valid": 0,
+    "invalid": 0
+   }
+  },
+  "types": {
+   "Oneliner": 5,
+   "Data Based": 1,
+   "Statement Based": 2,
+   "Match the Column": 1
+  },
+  "valid": 9,
+  "invalid": 0,
+  "duplicates": 0,
+  "invalidList": [],
+  "unmappedTags": {}
+ }
+}
