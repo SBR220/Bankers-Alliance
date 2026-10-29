@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1c1a2b">
+<title>Bankers Alliance — GA MCQ Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a2b; --paper:#fbf9f5; --paper-2:#ffffff; --line:#e7e2d8; --muted:#726d80;
+    --gold:#e2a339; --gold-deep:#b9822a;
+    --ok:#16a34a; --ok-soft:#e7f7ec; --bad:#dc2626; --bad-soft:#fdeaea;
+    --info:#2f5fdc; --info-soft:#eef3ff;
+    --A:#2f5fdc; --A-soft:#e8edff;  --B:#1f9d55; --B-soft:#e5f7ec;
+    --C:#8b3fd6; --C-soft:#f2e9fb;  --D:#d64545; --D-soft:#fdeaea;
+    --E:#e07b1a; --E-soft:#fdf0e0;  --F:#0e9488; --F-soft:#e2f6f4;
+    --G:#d6318a; --G-soft:#fbe6f1;  --H:#a6791f; --H-soft:#f7f0dd;
+    --Z:#6b7280; --Z-soft:#eef0f3;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);color:var(--ink);min-height:100vh;line-height:1.5;
+    font-family:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Baloo 2',cursive;font-weight:700;margin:0;letter-spacing:.2px;}
+  button{font-family:inherit;color:inherit;cursor:pointer;}
+  button:disabled{cursor:not-allowed;}
+  ::selection{background:var(--gold);color:#fff;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
+
+  /* ---------- top bar : only Home + Back ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;background:var(--paper-2);border-bottom:2px solid var(--line);
+    padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top,0px));
+    display:flex;align-items:center;gap:8px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:0;font-family:'Baloo 2',cursive;font-weight:800;font-size:1.2rem;}
+  .brand .dot{flex:0 0 12px;width:12px;height:12px;border-radius:50%;background:conic-gradient(from 90deg,var(--A),var(--E),var(--G),var(--F),var(--A));}
+  .brand #brandText{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .spacer{display:none;}
+  .nav-btn{
+    border:2px solid var(--ink);background:#fff;color:var(--ink);padding:8px 16px;border-radius:100px;
+    font-weight:700;font-size:.9rem;white-space:nowrap;transition:.15s;
+  }
+  .nav-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold-deep);}
+  .nav-btn.back-btn{background:var(--ink);color:#fff;}
+  .nav-btn.back-btn:hover:not(:disabled){background:#000;border-color:#000;color:#fff;}
+  .nav-btn:disabled{opacity:.35;pointer-events:none;}
+  @media(max-width:480px){
+    .topbar{padding-left:12px;padding-right:12px;gap:6px;}
+    .brand{font-size:1.02rem;gap:8px;}
+    .nav-btn{padding:7px 12px;font-size:.82rem;}
+  }
+  @media(max-width:340px){.nav-btn .lbl{display:none;}}
+
+  .shell{max-width:1120px;margin:0 auto;padding:26px 18px 110px;}
+  .view{animation:fadein .25s ease;}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+  .hero{margin-bottom:22px;}
+  .eyebrow{font-weight:800;color:var(--gold-deep);font-size:.92rem;margin-bottom:4px;}
+  .hero h1{font-size:clamp(1.6rem,5vw,2.3rem);line-height:1.15;margin-bottom:6px;}
+  .hero p{color:var(--muted);margin:0;max-width:640px;}
+
+  .section-label{font-weight:800;font-size:1.05rem;margin:30px 0 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .tag{font-size:.72rem;font-weight:700;color:var(--muted);border:1.5px dashed var(--line);border-radius:100px;padding:3px 10px;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:100px;
+    padding:11px 22px;font-weight:800;font-size:.95rem;transition:.15s;
+  }
+  .btn:hover:not(:disabled){transform:translateY(-1px);}
+  .btn.primary{background:var(--ink);color:#fff;box-shadow:0 8px 18px -8px rgba(0,0,0,.45);}
+  .btn:disabled{opacity:.4;}
+  .btn-sm{border:1.5px solid var(--ink);background:#fff;border-radius:100px;padding:6px 14px;font-weight:700;font-size:.82rem;}
+  .btn-sm:hover{background:var(--ink);color:#fff;}
+  .wide-btn{
+    width:100%;border:2px solid var(--ink);background:var(--ink);color:#fff;border-radius:16px;
+    padding:14px 18px;font-weight:800;font-size:1rem;text-align:center;transition:.15s;
+  }
+  .wide-btn:hover:not(:disabled){transform:translateY(-2px);}
+  .wide-btn:disabled{opacity:.35;}
+
+  /* ---------- home : months ---------- */
+  .month-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:820px){.month-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:560px){.month-grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
+  .month-btn{
+    position:relative;overflow:hidden;text-align:left;background:var(--paper-2);border:2px solid var(--line);
+    border-radius:18px;padding:20px 14px 16px;transition:.15s;
+  }
+  .month-btn:hover:not(:disabled){transform:translateY(-3px);border-color:var(--m-color);}
+  .month-btn .stripe{position:absolute;top:0;left:0;right:0;height:6px;background:var(--m-color);}
+  .month-btn .mnum{font-size:.74rem;color:var(--muted);font-weight:700;}
+  .month-btn .mname{font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:700;}
+  .month-btn .mcount{margin-top:8px;display:inline-block;font-size:.76rem;font-weight:800;background:var(--m-soft);color:var(--m-color);padding:3px 10px;border-radius:100px;}
+  .month-btn:disabled{opacity:.45;}
+  .month-btn.all{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;}
+  .month-btn.all .stripe{background:conic-gradient(from 0deg,var(--A),var(--E),var(--G),var(--F),var(--A));height:6px;}
+
+  .rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  @media(max-width:560px){.rev-grid{grid-template-columns:1fr;}}
+  .rev-tile{
+    display:flex;align-items:center;gap:14px;text-align:left;background:var(--paper-2);border:2px solid var(--line);
+    border-radius:16px;padding:14px 16px;transition:.15s;
+  }
+  .rev-tile:hover:not(:disabled){border-color:var(--gold);transform:translateY(-2px);}
+  .rev-tile:disabled{opacity:.45;}
+  .rev-tile .ico{font-size:1.6rem;}
+  .rev-tile b{display:block;font-weight:800;}
+  .rev-tile span{font-size:.82rem;color:var(--muted);font-weight:600;}
+  .continue{
+    width:100%;display:flex;align-items:center;gap:14px;text-align:left;margin-bottom:14px;
+    background:linear-gradient(135deg,#1c1a2b,#2b2750);color:#fff;border:none;border-radius:16px;padding:14px 18px;
+    box-shadow:0 12px 26px -14px rgba(28,26,43,.7);
+  }
+  .continue .ico{font-size:1.5rem;}
+  .continue b{display:block;font-weight:800;}
+  .continue span{font-size:.82rem;opacity:.8;font-weight:600;}
+
+  .log-list{display:flex;flex-direction:column;gap:8px;}
+  .log-item{display:flex;align-items:center;gap:12px;background:var(--paper-2);border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;}
+  .log-item .nm{flex:1;min-width:0;font-weight:700;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .log-item .nm small{display:block;color:var(--muted);font-weight:600;font-size:.76rem;}
+  .pill{font-weight:800;font-size:.82rem;border-radius:100px;padding:4px 12px;white-space:nowrap;}
+  .pill.g{background:var(--ok-soft);color:#0f7a37;} .pill.y{background:#fff4d6;color:#8a6314;} .pill.r{background:var(--bad-soft);color:#b42323;}
+
+  /* ---------- topic cards & chips ---------- */
+  .topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:900px){.topic-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.topic-grid{grid-template-columns:1fr;}}
+  .topic-card{
+    border:2px solid var(--line);border-radius:16px;background:var(--paper-2);padding:16px 16px 14px;text-align:left;
+    transition:.15s;display:flex;flex-direction:column;gap:8px;
+  }
+  .topic-card:hover:not(:disabled){transform:translateY(-2px);border-color:var(--t-color);}
+  .topic-card:disabled{opacity:.45;}
+  .topic-card .icon{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;background:var(--t-soft);}
+  .topic-card .tname{font-weight:800;font-size:1rem;line-height:1.25;}
+  .topic-card .tmeta{font-size:.75rem;color:var(--t-color);font-weight:800;}
+  .weight-bar{height:6px;border-radius:4px;background:var(--line);overflow:hidden;}
+  .weight-bar>i{display:block;height:100%;background:var(--t-color);}
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .topic-chip{
+    max-width:100%;text-align:left;
+    border:1.5px solid var(--t-color);background:var(--t-soft);color:color-mix(in srgb,var(--t-color) 70%,#000 30%);
+    padding:10px 16px;border-radius:100px;font-weight:800;font-size:.88rem;transition:.15s;
+  }
+  .topic-chip:hover:not(:disabled){transform:translateY(-2px);}
+  .topic-chip:disabled{opacity:.4;border-style:dashed;}
+
+  /* ---------- overview ---------- */
+  .panel{background:var(--paper-2);border:2px solid var(--line);border-radius:20px;padding:18px 20px;margin-bottom:18px;}
+  .panel-h{font-family:'Baloo 2',cursive;font-weight:700;font-size:1.1rem;margin-bottom:10px;}
+  .panel p{margin:0 0 12px;color:var(--muted);font-size:.92rem;}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 0;border-bottom:1px dashed var(--line);}
+  .row:last-of-type{border-bottom:none;}
+  .row-l{font-weight:800;font-size:.92rem;}
+  .row-l small{display:block;color:var(--muted);font-weight:600;font-size:.76rem;}
+  .seg{display:inline-flex;border:2px solid var(--ink);border-radius:100px;overflow:hidden;flex-wrap:wrap;}
+  .seg button{border:none;background:#fff;padding:8px 14px;font-weight:800;font-size:.84rem;}
+  .seg button+button{border-left:2px solid var(--ink);}
+  .seg button.on{background:var(--ink);color:#fff;}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .cta-row .btn{flex:1 1 180px;}
+  .mini-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .mini-chips span{background:var(--paper);border:1.5px solid var(--line);border-radius:100px;padding:4px 12px;font-size:.8rem;font-weight:700;}
+  .mini-chips span b{color:var(--gold-deep);}
+  .empty{border:2px dashed var(--line);border-radius:18px;padding:38px 22px;text-align:center;color:var(--muted);}
+  .empty .big{font-size:2.2rem;margin-bottom:6px;}
+
+  /* ---------- quiz ---------- */
+  .quiz-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
+  .quiz-title{flex:1 1 220px;min-width:0;font-family:'Baloo 2',cursive;font-weight:700;font-size:1.15rem;line-height:1.2;}
+  @media(max-width:600px){.quiz-title{flex-basis:100%;}}
+  .quiz-title small{display:block;font-family:'Manrope',sans-serif;font-weight:700;color:var(--muted);font-size:.76rem;}
+  .mode-pill{font-size:.74rem;font-weight:800;border-radius:100px;padding:4px 10px;background:var(--info-soft);color:var(--info);}
+  .timer{font-weight:800;font-variant-numeric:tabular-nums;font-size:.92rem;background:var(--paper-2);border:1.5px solid var(--line);border-radius:100px;padding:4px 12px;}
+  .progress{height:8px;border-radius:6px;background:var(--line);overflow:hidden;margin-bottom:14px;}
+  .progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--ok));transition:width .3s;}
+  .done-banner{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    background:var(--ok-soft);border:1.5px solid var(--ok);color:#0f6a31;border-radius:14px;padding:10px 14px;margin-bottom:14px;font-weight:800;font-size:.92rem;
+  }
+  .quiz-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;}
+  .quiz-wrap>div{min-width:0;}
+  @media(min-width:980px){.quiz-wrap{grid-template-columns:minmax(0,1fr) 290px;align-items:start;}}
+
+  .qcard{min-width:0;max-width:100%;background:var(--paper-2);border-radius:20px;overflow:hidden;box-shadow:0 18px 40px -22px rgba(18,24,40,.4),0 4px 12px -6px rgba(0,0,0,.1);}
+  .qhead{
+    position:relative;color:#fff;padding:12px 16px 14px;
+    background:var(--n-color);
+    background:linear-gradient(135deg,color-mix(in srgb,var(--n-color) 88%,#06110c 12%) 0%,color-mix(in srgb,var(--n-color) 52%,#0b1220 48%) 100%);
+  }
+  .qhead::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--n-color) 55%,var(--gold));}
+  .qhead-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .qnum{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;}
+  .qnum small{font-size:.8rem;opacity:.75;font-weight:600;}
+  .qbadge{font-size:.74rem;font-weight:800;border-radius:100px;padding:3px 10px;background:rgba(255,255,255,.2);}
+  .qbadge.ok{background:#fff;color:#0f7a37;} .qbadge.bad{background:#fff;color:#b42323;} .qbadge.skip{background:#fff;color:#6b6b6b;}
+  .star{border:none;background:rgba(255,255,255,.18);color:#fff;border-radius:50%;width:34px;height:34px;font-size:1.1rem;line-height:1;}
+  .star.on{background:#fff;color:var(--gold-deep);}
+  .qpath{margin-top:6px;font-size:.78rem;font-weight:700;color:#fbe9c4;line-height:1.45;opacity:.95;}
+  .qpath span{opacity:.7;margin:0 3px;}
+  .qbody{padding:18px 18px 20px;}
+  .qlabel{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.8px;color:var(--gold-deep);background:#fff4d6;border-radius:100px;padding:3px 12px;margin-bottom:10px;}
+  .passage{
+    background:#fffaf0;border:1.5px solid #f0dfb2;border-left:5px solid var(--gold);border-radius:12px;
+    padding:12px 16px;margin:0 0 14px;font-size:.98rem;line-height:1.65;overflow-x:auto;
+  }
+  .passage-h{font-size:.74rem;font-weight:800;color:var(--gold-deep);margin-bottom:6px;letter-spacing:.4px;}
+  .passage p,.sol-b p{margin:0 0 .6em;} .passage p:last-child,.sol-b p:last-child{margin-bottom:0;}
+  .qtext{font-size:1.08rem;font-weight:700;line-height:1.55;margin:0 0 14px;overflow-wrap:anywhere;overflow-x:auto;}
+  .passage,.sol-b,.fb{overflow-wrap:anywhere;}
+  .sol-b{overflow-x:auto;}
+  .passage table,.qtext table,.sol-b table,.opt-text table{border-collapse:collapse;width:100%;font-size:.9rem;margin:6px 0;}
+  .passage th,.passage td,.qtext th,.qtext td,.sol-b th,.sol-b td{border:1px solid #d9cfb4;padding:6px 9px;text-align:left;}
+  .passage th,.qtext th,.sol-b th{background:#f6edd5;}
+  .qbody img{max-width:100%;height:auto;border-radius:8px;}
+
+  .opts{display:flex;flex-direction:column;gap:10px;}
+  .opt{
+    display:flex;align-items:flex-start;gap:12px;width:100%;text-align:left;background:#fff;border:2px solid var(--line);
+    border-radius:14px;padding:12px 14px;font-size:1rem;font-weight:600;line-height:1.45;transition:.15s;color:var(--ink);
+  }
+  .opt:hover:not(:disabled){border-color:var(--n-color,var(--ink));transform:translateX(2px);}
+  .opt:disabled{color:var(--ink);}
+  .opt-key{flex:0 0 32px;height:32px;border-radius:50%;background:var(--paper);border:2px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:.85rem;}
+  .opt-text{flex:1;min-width:0;padding-top:3px;overflow-wrap:anywhere;}
+  .opt-mark{flex:0 0 auto;font-weight:800;font-size:.8rem;padding-top:4px;}
+  .opt.selected{border-color:var(--info);background:var(--info-soft);}
+  .opt.selected .opt-key{background:var(--info);border-color:var(--info);color:#fff;}
+  .opt.correct{border-color:var(--ok);background:var(--ok-soft);}
+  .opt.correct .opt-key{background:var(--ok);border-color:var(--ok);color:#fff;}
+  .opt.correct .opt-mark{color:var(--ok);}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-soft);animation:shake .35s;}
+  .opt.wrong .opt-key{background:var(--bad);border-color:var(--bad);color:#fff;}
+  .opt.wrong .opt-mark{color:var(--bad);}
+  .opt.dim{opacity:.55;}
+  @keyframes shake{25%{transform:translateX(-4px);}75%{transform:translateX(4px);}}
+  .clear-row{margin-top:10px;text-align:right;}
+
+  .fb{margin-top:16px;border-radius:14px;padding:12px 16px;font-weight:800;line-height:1.45;}
+  .fb.ok{background:var(--ok-soft);border:1.5px solid var(--ok);color:#0f6a31;}
+  .fb.bad{background:var(--bad-soft);border:1.5px solid var(--bad);color:#a31f1f;}
+  .fb.skip{background:#f1f1ee;border:1.5px solid #cfcfc8;color:#55554f;}
+  .sol{margin-top:12px;border-radius:14px;border:1.5px solid #e3b23c;background:linear-gradient(175deg,#fdf1d2,#fff8e8);padding:12px 16px 14px;}
+  .sol-h{font-family:'Fraunces',serif;font-weight:700;color:#7a5a10;margin-bottom:6px;}
+  .sol-b{font-size:.96rem;line-height:1.65;color:#41403a;}
+
+  .palette{background:var(--paper-2);border:2px solid var(--line);border-radius:18px;padding:14px;}
+  .pal-head{display:flex;justify-content:space-between;align-items:center;font-weight:800;margin-bottom:10px;}
+  .pal-head span{font-size:.8rem;color:var(--muted);}
+  .pal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+  .pal-btn{position:relative;aspect-ratio:1;border:2px solid var(--line);background:#fff;border-radius:12px;font-weight:800;font-size:.85rem;padding:0;}
+  .pal-btn.ok{background:var(--ok);border-color:var(--ok);color:#fff;}
+  .pal-btn.bad{background:var(--bad);border-color:var(--bad);color:#fff;}
+  .pal-btn.ans{background:var(--info);border-color:var(--info);color:#fff;}
+  .pal-btn.cur{outline:3px solid var(--gold);outline-offset:1px;}
+  .pal-btn i{position:absolute;top:-6px;right:-4px;font-style:normal;font-size:.7rem;color:var(--gold-deep);text-shadow:0 0 3px #fff;}
+  .pal-legend{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;font-size:.72rem;font-weight:700;color:var(--muted);}
+  .pal-legend b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px;}
+  .palette .btn{width:100%;}
+  .sheet-backdrop{display:none;}
+  @media(max-width:979px){
+    .palette{
+      position:fixed;left:0;right:0;bottom:0;z-index:60;border-radius:22px 22px 0 0;max-height:72vh;overflow:auto;
+      padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));
+      transform:translateY(110%);transition:transform .25s ease;box-shadow:0 -14px 44px rgba(0,0,0,.28);
+    }
+    .palette.open{transform:none;}
+    .sheet-backdrop.open{display:block;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:55;}
+  }
+  @media(min-width:980px){.palette{position:sticky;top:76px;} .pal-toggle{display:none!important;}}
+
+  .qnav{
+    position:sticky;bottom:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;
+    padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px));
+    background:linear-gradient(to top,var(--paper) 72%,rgba(251,249,245,0));
+  }
+  .qnav .btn{padding:12px 20px;} .qnav .btn:first-child,.qnav .btn:last-child{min-width:108px;}
+  @media(max-width:420px){
+    .qnav{gap:6px;} .qnav .btn{padding:11px 12px;font-size:.88rem;}
+    .qnav .btn:first-child,.qnav .btn:last-child{min-width:0;}
+  }
+
+  /* ---------- result ---------- */
+  .result-hero{
+    display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center;color:#fff;border-radius:24px;padding:26px 22px;
+    background:radial-gradient(circle at 18px 18px,rgba(255,255,255,.08) 1.5px,transparent 1.6px) 0 0/26px 26px,linear-gradient(135deg,#1c1a2b,#2b2750 60%,#3b2f6b);
+    box-shadow:0 24px 50px -26px rgba(28,26,43,.8);
+  }
+  .donut{width:150px;height:150px;flex:0 0 auto;}
+  .donut text{font-family:'Fraunces',serif;font-weight:800;fill:#fff;}
+  .result-txt{flex:1 1 220px;min-width:200px;}
+  .result-txt .msg{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;line-height:1.2;margin-bottom:6px;}
+  .result-txt .big{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:800;line-height:1;}
+  .result-txt .big small{font-size:1.1rem;opacity:.75;font-weight:600;}
+  .result-txt p{margin:8px 0 0;opacity:.85;font-size:.9rem;}
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;}
+  @media(min-width:760px){.stat-grid{grid-template-columns:repeat(6,1fr);}}
+  .stat{background:var(--paper-2);border:2px solid var(--line);border-radius:16px;padding:12px 10px;text-align:center;}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.45rem;font-weight:800;line-height:1.15;}
+  .stat span{font-size:.72rem;font-weight:800;color:var(--muted);}
+  .stat.ok b{color:var(--ok);} .stat.bad b{color:var(--bad);} .stat.skip b{color:#7b7b73;}
+  .bars{display:flex;flex-direction:column;gap:12px;}
+  .bar-row .bar-h{display:flex;justify-content:space-between;gap:10px;font-weight:700;font-size:.88rem;margin-bottom:4px;}
+  .bar-row .bar-h span{color:var(--muted);font-size:.78rem;white-space:nowrap;}
+  .bar-track{display:flex;height:12px;border-radius:8px;overflow:hidden;background:var(--line);}
+  .bar-track i{display:block;height:100%;} .bar-track .o{background:var(--ok);} .bar-track .b{background:var(--bad);} .bar-track .s{background:#c9c9c0;}
+  .result-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px;}
+  @media(min-width:760px){.result-actions{grid-template-columns:repeat(3,1fr);}}
+  .result-actions .btn{width:100%;padding:12px 8px;font-size:.88rem;}
+
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  .tabs button{border:2px solid var(--line);background:#fff;border-radius:100px;padding:7px 14px;font-weight:800;font-size:.84rem;}
+  .tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .review-list{display:flex;flex-direction:column;gap:22px;}
+
+  .toast{
+    position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);z-index:90;
+    background:var(--ink);color:#fff;font-weight:700;font-size:.9rem;padding:10px 18px;border-radius:100px;
+    opacity:0;pointer-events:none;transition:.25s;max-width:90vw;text-align:center;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0);}
+
+  /* =====================================================================
+     v3 additions : login, welcome strip, selects, dashboard, history, admin
+     ===================================================================== */
+  body.guest .nav-btn{display:none;}
+  .login-wrap{min-height:calc(100vh - 150px);display:grid;place-items:center;padding:6px 0 30px;}
+  .login-card{
+    position:relative;overflow:hidden;width:min(430px,100%);background:#fff;border:2px solid var(--line);
+    border-radius:24px;padding:30px 24px 22px;box-shadow:0 30px 60px -36px rgba(28,26,43,.55);
+  }
+  .login-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--A),var(--E),var(--G),var(--F));}
+  .login-logo{width:56px;height:56px;border-radius:18px;background:var(--ink);display:grid;place-items:center;font-size:1.6rem;margin-bottom:12px;}
+  .login-card h1{font-size:1.7rem;margin-bottom:4px;}
+  .login-card .sub{color:var(--muted);margin:0 0 6px;font-size:.92rem;}
+  .field{display:block;margin:14px 0 0;}
+  .field>span{display:block;font-weight:800;font-size:.84rem;margin-bottom:6px;}
+  .field input[type=text],.field input[type=password],.field input[type=search]{
+    width:100%;font:inherit;font-weight:600;padding:13px 14px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);
+  }
+  .field input:focus{outline:none;border-color:var(--ink);}
+  .pw{position:relative;} .pw input{padding-right:52px!important;}
+  .eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:none;background:none;font-size:1.1rem;padding:8px;}
+  .chk{display:flex;align-items:center;gap:8px;margin:14px 0 0;font-size:.88rem;font-weight:600;color:var(--muted);}
+  .err{min-height:22px;margin-top:10px;color:var(--bad);font-weight:700;font-size:.9rem;}
+  .notice{background:#fff4d6;border:1.5px solid #e3b23c;color:#7a5a10;border-radius:12px;padding:10px 14px;font-size:.86rem;font-weight:700;margin-top:12px;}
+  .btn.wide{width:100%;}
+  .fine{margin:14px 0 0;font-size:.78rem;color:var(--muted);text-align:center;}
+
+  .welcome{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px;background:var(--paper-2);
+    border:2px solid var(--line);border-radius:18px;padding:12px 16px;
+  }
+  .welcome .who{flex:1 1 200px;min-width:0;}
+  .welcome .who b{display:block;font-weight:800;font-size:1.02rem;}
+  .welcome .who small{color:var(--muted);font-weight:700;font-size:.78rem;}
+  .welcome .wbtns{display:flex;gap:8px;flex-wrap:wrap;}
+  .sync{font-size:.74rem;font-weight:800;border-radius:100px;padding:3px 10px;background:#eef0f3;color:#55554f;}
+  .sync.ok{background:var(--ok-soft);color:#0f6a31;} .sync.warn{background:#fff4d6;color:#8a6314;} .sync.bad{background:var(--bad-soft);color:#a31f1f;}
+
+  .sel{
+    appearance:none;-webkit-appearance:none;font:inherit;font-weight:800;font-size:.9rem;color:var(--ink);background:#fff;
+    border:2px solid var(--ink);border-radius:100px;padding:9px 40px 9px 16px;max-width:100%;min-width:200px;cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' fill='none' stroke='%231c1a2b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center;
+  }
+  .sel:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+  @media(max-width:520px){.sel{width:100%;} .row .sel{flex:1 1 100%;}}
+  .take-note{margin:4px 0 0;padding:10px 14px;border-radius:12px;background:var(--info-soft);color:#1f3f9c;font-weight:700;font-size:.88rem;}
+  .take-note.warn{background:#fff4d6;color:#8a6314;}
+
+  .btn-icon{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;font-size:1rem;display:grid;place-items:center;padding:0;}
+  .btn-icon:hover{background:var(--ink);color:#fff;}
+  .qtime{font-size:.74rem;font-weight:800;background:rgba(255,255,255,.2);border-radius:100px;padding:3px 10px;font-variant-numeric:tabular-nums;}
+  .qhead-tools{display:flex;align-items:center;gap:8px;}
+
+  /* ---------- KPI tiles + bars ---------- */
+  .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  @media(min-width:700px){.kpis{grid-template-columns:repeat(4,1fr);}}
+  .kpi{background:var(--paper-2);border:2px solid var(--line);border-radius:16px;padding:14px 12px;text-align:center;}
+  .kpi b{display:block;font-family:'Fraunces',serif;font-size:1.55rem;font-weight:800;line-height:1.15;}
+  .kpi span{font-size:.72rem;font-weight:800;color:var(--muted);}
+  .two-col{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:900px){.two-col{grid-template-columns:1fr 1fr;}}
+  .minibars{display:flex;align-items:flex-end;gap:6px;height:120px;padding-top:8px;}
+  .minibars .mb{flex:1;min-width:10px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;}
+  .minibars .mb i{display:block;width:100%;border-radius:6px 6px 0 0;min-height:3px;background:var(--info);}
+  .minibars .mb em{font-style:normal;font-size:.62rem;font-weight:800;color:var(--muted);margin-top:4px;white-space:nowrap;}
+  .minibars .mb u{text-decoration:none;font-size:.62rem;font-weight:800;margin-bottom:2px;}
+  .tbars{display:flex;align-items:flex-end;gap:3px;height:96px;overflow-x:auto;padding-bottom:2px;}
+  .tbars i{flex:1 0 8px;max-width:26px;min-height:4px;border-radius:4px 4px 0 0;background:#c9c9c0;}
+  .tbars i.ok{background:var(--ok);} .tbars i.bad{background:var(--bad);}
+  .tleg{display:flex;gap:12px;flex-wrap:wrap;font-size:.72rem;font-weight:700;color:var(--muted);margin-top:8px;}
+  .tleg b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px;}
+  .insights{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .insights li{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;font-size:.9rem;font-weight:600;}
+  .chip-soft{display:inline-block;background:var(--paper);border:1.5px solid var(--line);border-radius:100px;padding:2px 10px;font-size:.74rem;font-weight:800;margin:2px 4px 2px 0;}
+  .weak-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);}
+  .weak-row:last-child{border-bottom:none;}
+  .weak-row b{font-size:.9rem;} .weak-row small{display:block;color:var(--muted);font-weight:700;font-size:.74rem;}
+
+  /* ---------- history + admin tables ---------- */
+  .hist-head,.hist-row{display:grid;grid-template-columns:minmax(0,2.4fr) minmax(0,1.5fr) .6fr .6fr .8fr .7fr;gap:10px;align-items:center;}
+  .hist-head{padding:8px 16px;font-size:.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+  .hist-list{display:flex;flex-direction:column;gap:8px;}
+  .hist-row{width:100%;text-align:left;background:var(--paper-2);border:2px solid var(--line);border-radius:14px;padding:12px 16px;transition:.15s;}
+  .hist-row:hover{border-color:var(--ink);transform:translateY(-1px);}
+  .hist-row .nm{font-weight:800;font-size:.94rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .hist-row .nm small{display:block;font-weight:700;font-size:.74rem;color:var(--muted);}
+  .hist-row .c-r{color:var(--ok);font-weight:800;} .hist-row .c-w{color:var(--bad);font-weight:800;}
+  .hist-row .lbl{display:none;}
+  @media(max-width:700px){
+    .hist-head{display:none;}
+    .hist-row{grid-template-columns:repeat(4,1fr);row-gap:6px;}
+    .hist-row .nm{grid-column:1/-1;}
+    .hist-row .dt{grid-column:1/-1;font-size:.78rem;color:var(--muted);font-weight:700;}
+    .hist-row .lbl{display:block;font-size:.64rem;color:var(--muted);font-weight:800;text-transform:uppercase;}
+  }
+  .tbl-wrap{overflow-x:auto;border:2px solid var(--line);border-radius:16px;background:var(--paper-2);}
+  .tbl{width:100%;border-collapse:collapse;font-size:.86rem;}
+  .tbl th{background:#f6f3ec;text-align:left;padding:10px 12px;font-size:.72rem;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);white-space:nowrap;position:sticky;top:0;}
+  .tbl td{padding:10px 12px;border-top:1px solid var(--line);white-space:nowrap;font-weight:600;}
+  .tbl tr.click{cursor:pointer;} .tbl tr.click:hover td{background:#faf7f0;}
+  .tbl .num{text-align:right;font-variant-numeric:tabular-nums;}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px;}
+  .toolbar .field{margin:0;flex:1 1 220px;} .toolbar .field input{padding:10px 14px;}
+  .status-pill{font-size:.7rem;font-weight:800;border-radius:100px;padding:2px 9px;background:var(--ok-soft);color:#0f6a31;}
+  .status-pill.off{background:var(--bad-soft);color:#a31f1f;}
+  .valid-bar{display:flex;height:10px;border-radius:6px;overflow:hidden;background:var(--line);min-width:120px;}
+  .valid-bar i{display:block;height:100%;} .valid-bar .v{background:var(--ok);} .valid-bar .x{background:var(--bad);}
+  .admin-banner{background:#e9eefb;border:1.5px solid #7797d9;color:#294c9c;border-radius:12px;padding:10px 14px;font-weight:700;font-size:.88rem;margin-bottom:14px;}
+  .pg{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px;font-weight:700;font-size:.84rem;}
+  body.fs .topbar{padding-top:6px;padding-bottom:6px;}
+
+  .stat span{display:block;line-height:1.25;white-space:nowrap;}
+  .stat{display:flex;flex-direction:column;justify-content:center;min-height:74px;}
+
+  .minibars{justify-content:flex-start;}
+  .minibars .mb{flex:0 1 72px;}
+
+  .hist-row .pill{display:inline-block;margin-top:3px;}
+</style>
+</head>
+<body class="guest">
+
+<div class="topbar">
+  <div class="brand"><span class="dot"></span><span id="brandText">Bankers Alliance</span></div>
+  <div class="spacer"></div>
+  <button class="nav-btn" id="homeBtn" aria-label="Home">🏠<span class="lbl"> Home</span></button>
+  <button class="nav-btn back-btn" id="backBtn" aria-label="Back">←<span class="lbl"> Back</span></button>
+</div>
+
+<main class="shell" id="app"></main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px;text-align:center">Please enable JavaScript to use this site.</p></noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){
+"use strict";
+
+/* =====================================================================
+   CONFIG — the only things you normally edit
+   ===================================================================== */
+const API_URL = "";   /* ← PASTE your Google Apps Script Web-App URL here (it ends with /exec). See SETUP.md */
+const BRAND = "Bankers Alliance";
+const YEAR = 2026;                                   // shown next to month names
+const NEG_MARK = 0.25;                               // marks lost per wrong answer when negative marking is ON
+const PDF_HEADER_PREFIX = "Target MCQs of";
+const PDF_FOOTER_TEXT = "Created by BankersAlliance and Victory Banker";
+const PDF_WATERMARK = "BANKERS ALLIANCE";
+const OTHER_CODE = "Z";
+const QTYPES = ["Oneliner", "Data Based", "Statement Based", "Match the Column"];
+const DEFAULT_COUNT = 5;                             // what "Default" means in the Number-of-questions box
+const COUNT_CHOICES = [10, 20, 30, 50];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const MONTH_COLORS = ["#2f5fdc","#1f9d55","#8b3fd6","#d64545","#e07b1a","#0e9488","#d6318a","#a6791f","#2f5fdc","#1f9d55","#8b3fd6","#d64545"];
+
+/* =====================================================================
+   HELPERS
+   ===================================================================== */
+const $ = (s, r=document) => r.querySelector(s);
+const app = $("#app"), homeBtn = $("#homeBtn"), backBtn = $("#backBtn"), toastEl = $("#toast");
+$("#brandText").textContent = BRAND;
+document.title = BRAND + " — GA MCQ Practice";
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s || "").toLowerCase().replace(/&/g," ").replace(/[^a-z0-9]+/g," ").trim();
+const plural = (n, w) => n + " " + w + (n === 1 ? "" : "s");
+const round2 = n => Math.round(n * 100) / 100;
+const fmtScore = n => String(round2(n));
+const uid = () => "r" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function fmtTime(sec){
+  sec = Math.max(0, Math.floor(sec)); const h = Math.floor(sec/3600), m = Math.floor(sec%3600/60), s = sec%60;
+  const p = n => String(n).padStart(2, "0");
+  return h ? h + ":" + p(m) + ":" + p(s) : p(m) + ":" + p(s);
+}
+function fmtDur(sec){ sec = Math.round(sec); return sec < 60 ? sec + "s" : Math.floor(sec/60) + "m " + String(sec%60).padStart(2,"0") + "s"; }
+function fmtDate(ts){
+  if(!ts) return "—"; const d = new Date(ts);
+  return d.toLocaleDateString(undefined, {day:"2-digit", month:"short", year:"numeric"}) + ", " + d.toLocaleTimeString(undefined, {hour:"2-digit", minute:"2-digit"});
+}
+function toast(msg){
+  toastEl.textContent = msg; toastEl.classList.add("show");
+  clearTimeout(toast.t); toast.t = setTimeout(() => toastEl.classList.remove("show"), 2400);
+}
+
+/* ---------- storage: everything is kept in THIS browser, separately for each member ---------- */
+let auth = null;                                          // lives in memory ONLY → a page refresh always means "log in again"
+const LS = {
+  p(){ return "ga:u:" + (auth ? auth.id.toLowerCase() : "-") + ":"; },
+  get(k, d){ try{ const v = localStorage.getItem(this.p() + k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ if(v === null || v === undefined) localStorage.removeItem(this.p() + k); else localStorage.setItem(this.p() + k, JSON.stringify(v)); }catch(e){} }
+};
+const GS = {                                              // device-wide (only the last ID typed — never a password)
+  get(k, d){ try{ const v = localStorage.getItem("ga:" + k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ if(v === null) localStorage.removeItem("ga:" + k); else localStorage.setItem("ga:" + k, JSON.stringify(v)); }catch(e){} }
+};
+
+/* ---------- safe HTML: question text may contain <b>, <u>, <mark>, tables … ---------- */
+const ALLOWED = new Set(["B","STRONG","I","EM","U","MARK","BR","P","SPAN","SUB","SUP","UL","OL","LI","TABLE","THEAD","TBODY","TR","TH","TD","CAPTION","IMG","DIV","S","SMALL","BLOCKQUOTE","CODE"]);
+const DROP = new Set(["SCRIPT","STYLE","IFRAME","OBJECT","EMBED","LINK","META","FORM","INPUT","BUTTON","SVG","MATH","TEXTAREA","SELECT"]);
+const sanitizeCache = new Map();
+function sanitize(html){
+  const key = String(html == null ? "" : html);
+  if(sanitizeCache.has(key)) return sanitizeCache.get(key);
+  const cleaned = key.replace(/&#0*8203;|&#x0*200b;|[\u200b\ufeff]/gi, "");
+  const doc = new DOMParser().parseFromString("<body>" + cleaned + "</body>", "text/html");
+  (function walk(node){
+    Array.from(node.childNodes).forEach(ch => {
+      if(ch.nodeType === 3) return;
+      if(ch.nodeType !== 1){ ch.remove(); return; }
+      if(DROP.has(ch.tagName)){ ch.remove(); return; }
+      if(!ALLOWED.has(ch.tagName)){ walk(ch); while(ch.firstChild) node.insertBefore(ch.firstChild, ch); ch.remove(); return; }
+      Array.from(ch.attributes).forEach(a => {
+        const n = a.name.toLowerCase();
+        const keep = (ch.tagName === "IMG" && (n === "src" || n === "alt")) || ((ch.tagName === "TD" || ch.tagName === "TH") && (n === "colspan" || n === "rowspan"));
+        if(!keep) ch.removeAttribute(a.name);
+      });
+      if(ch.tagName === "IMG"){
+        const src = ch.getAttribute("src") || "";
+        if(!/^(https?:\/\/|data:image\/(png|jpe?g|gif|webp);|\/|\.\/|[\w-]+\/)/i.test(src)){ ch.remove(); return; }
+        ch.setAttribute("loading", "lazy");
+      }
+      walk(ch);
+    });
+  })(doc.body);
+  const out = doc.body.innerHTML; sanitizeCache.set(key, out); return out;
+}
+function htmlToText(html){
+  const h = String(html == null ? "" : html)
+    .replace(/<\s*br\s*\/?>/gi, "\n").replace(/<\/p>/gi, "\n\n").replace(/<\/(div|li|tr|h\d|blockquote)>/gi, "\n").replace(/<\/(td|th)>/gi, " | ");
+  const doc = new DOMParser().parseFromString("<body>" + h + "</body>", "text/html");
+  return doc.body.textContent.replace(/[\u200b\ufeff\u00a0]/g, " ").replace(/ \| \n/g, "\n").replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+const PDF_SWAP = {"→":"->","←":"<-","↔":"<->","≥":">=","≤":"<=","≈":"~","≠":"!=","✓":"","✔":"","✗":"","✘":"","−":"-","‑":"-","\u2009":" ","\u202f":" "};
+const PDF_OK = new Set([0x2013,0x2014,0x2018,0x2019,0x201C,0x201D,0x2022,0x2026,0x2039,0x203A,0x20AC,0x2122]);
+function pdfSafe(text){
+  const t = String(text == null ? "" : text).replace(/₹\s*/g, "Rs. ").replace(/[→←↔≥≤≈≠✓✔✗✘−‑\u2009\u202f]/g, c => PDF_SWAP[c]);
+  return Array.from(t).filter(ch => { const c = ch.codePointAt(0); return c === 10 || (c >= 32 && c <= 0xFF) || PDF_OK.has(c); }).join("");
+}
+
+/* =====================================================================
+   STATE
+   ===================================================================== */
+let TOPICS = [], Q = [], REPORT = null;
+const QBYID = new Map();
+let bookmarks = new Set(), mistakes = new Set(), log = [], sessions = {}, queue = [], kvts = {};
+let prefs = {mode:"practice", shuffle:false, neg:false, qtype:"", count:""};
+let nav = [{v:"home", scope:{}}];
+let session = null;
+const ui = {paletteOpen:false, resFilter:"all", admin:{tab:"overview", data:null, loading:false, error:"", filter:"", page:0, results:{}}};
+const sync = {state:"idle", busy:false};
+
+const topicByCode = c => TOPICS.find(t => t.code === c);
+const topicOf = q => topicByCode(q.main) || {code:OTHER_CODE, name:"Other", emoji:"🗂️"};
+const monthLabel = m => m == null ? "All Months" : MONTHS[m] + " " + YEAR;
+const cur = () => nav[nav.length-1];
+
+/* ---------- question types ---------- */
+const TYPE_ALIAS = {"oneliner":"Oneliner","one liner":"Oneliner","one line":"Oneliner","data based":"Data Based","data":"Data Based","data interpretation":"Data Based","di":"Data Based",
+  "statement based":"Statement Based","statement":"Statement Based","statements":"Statement Based","match the column":"Match the Column","match the columns":"Match the Column",
+  "match the following":"Match the Column","matching":"Match the Column","match":"Match the Column"};
+function normTypes(arr){
+  const out = [];
+  (Array.isArray(arr) ? arr : []).forEach(t => { const m = TYPE_ALIAS[norm(t)]; if(m && !out.includes(m)) out.push(m); });
+  return out;
+}
+function inferTypes(q){
+  const low = ((q.passage || "") + " " + (q.question || "")).toLowerCase(), text = low.replace(/<[^>]+>/g, " ");
+  if(/match (the )?(following|column|columns|list)|\bcolumn[\s-]*(i|1|a)\b|\blist[\s-]*(i|1)\b/.test(text)) return ["Match the Column"];
+  const t = [];
+  if(/<table/.test(low) || /\b(table|graph|chart|pie chart|bar diagram|following data|data given)\b/.test(text)) t.push("Data Based");
+  if(/statement based/.test(text) || (/\bstatements?\b/.test(text) && /(?:^|<br>|<p>|\n)\s*(?:i{1,3}|iv|v|[1-5])[.)]\s/.test(low))) t.push("Statement Based");
+  return t.length ? t : ["Oneliner"];
+}
+
+/* ---------- question bank ---------- */
+function ensureOther(){
+  let t = TOPICS.find(t => t.code === OTHER_CODE);
+  if(!t){ t = {code:OTHER_CODE, name:"Other / Unsorted", weight:0, emoji:"🗂️", subs:[{name:"Unsorted", weight:0, emoji:"🏷️", minors:[]}]}; TOPICS.push(t); }
+  return t;
+}
+function prepareData(raw){
+  const list = Array.isArray(raw) ? raw : ((raw && raw.questions) || []);
+  REPORT = (!Array.isArray(raw) && raw && raw.report) || null;
+  if(REPORT && raw.built) REPORT.built = raw.built;
+  Q = []; QBYID.clear();
+  list.forEach(q => {
+    if(!q || !q.options || !q.answer || !q.id) return;
+    let cats = (Array.isArray(q.cats) && q.cats.length ? q.cats : [{main:q.main, sub:q.sub, minor:q.minor || q.tag}]);
+    cats = cats.map(c => ({main:String(c.main || "").trim().toUpperCase(), sub:String(c.sub || "").trim(), minor:String(c.minor || "General").trim()}));
+    const o = {id:String(q.id), month:Number(q.month), cats, main:cats[0].main, sub:cats[0].sub, minor:cats[0].minor, tag:q.tag || "",
+      passage:q.passage || "", question:q.question || "", options:q.options, answer:String(q.answer).trim().toUpperCase(), solution:q.solution || ""};
+    o.types = normTypes(q.types); if(!o.types.length) o.types = inferTypes(o);
+    Q.push(o);
+  });
+  Q.forEach(q => {
+    q.cats.forEach(c => {
+      let top = topicByCode(c.main);
+      if(!top){ top = ensureOther(); c.main = OTHER_CODE; if(!c.sub) c.sub = "Unsorted"; }
+      let sub = top.subs.find(s => norm(s.name) === norm(c.sub));
+      if(!sub){ sub = {name:c.sub || "General", weight:0, emoji:"🏷️", minors:[]}; top.subs.push(sub); }
+      c.sub = sub.name;
+    });
+    q.main = q.cats[0].main; q.sub = q.cats[0].sub; q.minor = q.cats[0].minor;
+    QBYID.set(q.id, q);
+  });
+}
+function inScope(q, sc){
+  if(sc.special === "saved" && !bookmarks.has(q.id)) return false;
+  if(sc.special === "mistakes" && !mistakes.has(q.id)) return false;
+  if(sc.month != null && q.month !== sc.month) return false;
+  if(sc.main || sc.sub || sc.minor){
+    if(!q.cats.some(c => (!sc.main || c.main === sc.main) && (!sc.sub || c.sub === sc.sub) && (!sc.minor || c.minor === sc.minor))) return false;
+  }
+  return true;
+}
+const filterQ = sc => Q.filter(q => inScope(q, sc || {}));
+const wantedCount = () => prefs.count === "" ? DEFAULT_COUNT : (prefs.count === "all" ? Infinity : Number(prefs.count));
+const poolFor = sc => { const base = filterQ(sc); return prefs.qtype ? base.filter(q => q.types.includes(prefs.qtype)) : base; };
+function minorsFor(main, sub){
+  const top = topicByCode(main), s = top && top.subs.find(x => x.name === sub);
+  const list = s ? s.minors.slice() : [];
+  Q.forEach(q => q.cats.forEach(c => { if(c.main === main && c.sub === sub && !list.includes(c.minor)) list.push(c.minor); }));
+  return list;
+}
+const scopeKey = sc => [sc.special||"", sc.month == null ? "" : sc.month, sc.main||"", sc.sub||"", sc.minor||""].join("|");
+function scopeTitle(sc){
+  if(sc.special === "saved") return "⭐ Saved Questions";
+  if(sc.special === "mistakes") return "🔁 My Mistakes";
+  if(sc.minor) return sc.minor;
+  if(sc.sub) return sc.sub;
+  if(sc.main){ const t = topicByCode(sc.main); return t ? t.name : sc.main; }
+  return monthLabel(sc.month);
+}
+function pdfSection(sc){
+  const t = scopeTitle(sc).replace(/^[^\w]+/, "");
+  const withType = prefs.qtype ? t + " - " + prefs.qtype : t;
+  if(sc.special) return withType;
+  return (sc.main || sc.sub || sc.minor) && sc.month != null ? withType + " (" + monthLabel(sc.month) + ")" : withType;
+}
+function qLabelOnly(q){
+  const t = htmlToText(q.question);
+  return q.passage && t && t.length <= 60 && t === t.toUpperCase() && /[A-Z]/.test(t) ? t : "";
+}
+
+/* =====================================================================
+   API (Google Apps Script)  +  sync queue
+   ===================================================================== */
+async function callApi(action, payload, noAuth){
+  if(!API_URL) throw new Error("Login is not connected yet. Paste your Apps Script Web-App URL into API_URL at the top of the script in index.html (see SETUP.md).");
+  const body = JSON.stringify(Object.assign({action}, noAuth ? {} : {token: auth && auth.token}, payload || {}));
+  const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+  const timer = setTimeout(() => ctrl && ctrl.abort(), 30000);
+  try{
+    const r = await fetch(API_URL, {method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"}, body, signal: ctrl ? ctrl.signal : undefined});
+    try{ return await r.json(); }
+    catch(e){ throw new Error("Unexpected reply from the server. Check that the Web-App is deployed with access set to “Anyone”."); }
+  }catch(e){
+    if(e && /Unexpected reply/.test(e.message)) throw e;
+    throw new Error("Could not reach the server. Check your internet connection and try again.");
+  }finally{ clearTimeout(timer); }
+}
+function setSync(s){ sync.state = s; const el = $("#syncBadge"); if(el) el.outerHTML = syncBadge(); }
+function syncBadge(){
+  const n = queue.length;
+  const map = {ok:["ok","☁️ Synced"], busy:["warn","⏳ Syncing…"], offline:["warn","📴 Offline — will sync later"], expired:["bad","🔒 Log in again to sync"], err:["bad","⚠️ Sync problem — will retry"], idle:["", n ? "⏳ " + n + " waiting to sync" : "☁️ Ready"]};
+  const [cls, txt] = map[sync.state] || map.idle;
+  return `<span class="sync ${cls}" id="syncBadge">${txt}${sync.state === "ok" && n ? " · " + n + " pending" : ""}</span>`;
+}
+function persistQueue(){ LS.set("queue", queue); }
+function enqueue(op){ queue.push(op); persistQueue(); scheduleFlush(); }
+function enqueueKV(key){
+  queue = queue.filter(o => !(o.op === "kv" && o.key === key));
+  queue.push({op:"kv", key, value:[...(key === "saved" ? bookmarks : mistakes)], ts: kvts[key] || Date.now()});
+  persistQueue(); scheduleFlush();
+}
+function touchKV(key){ kvts[key] = Date.now(); LS.set("kvts", kvts); enqueueKV(key); }
+let flushTimer = null;
+function scheduleFlush(ms){ clearTimeout(flushTimer); flushTimer = setTimeout(flushQueue, ms == null ? 1500 : ms); }
+async function flushQueue(){
+  if(!auth || !API_URL || sync.busy || !queue.length) return;
+  sync.busy = true; const batch = queue.slice(0, 15);
+  try{
+    const r = await callApi("push", {ops: batch});
+    if(r.ok){ queue = queue.filter(o => !batch.includes(o)); persistQueue(); setSync("ok"); if(queue.length) scheduleFlush(300); }
+    else if(r.code === "expired"){ setSync("expired"); }
+    else setSync("err");
+  }catch(e){ setSync("offline"); }
+  finally{ sync.busy = false; }
+}
+function entryFromServer(r){
+  const d = r.detail || {};
+  return {qid:r.qid, ts:r.ts, label:r.label, pdfLabel:d.pdfLabel || r.label, key:d.key || "", mode:r.mode || "practice", neg:!!r.neg, month:r.month, qtype:d.qtype || "",
+    ids:d.ids || [], answers:d.answers || {}, times:d.times || {}, secs:r.secs, total:r.total, right:r.right, wrong:r.wrong, skipped:r.skipped, score:r.score, pct:r.pct, acc:r.acc};
+}
+async function pullSync(){
+  if(!auth || !API_URL) return;
+  try{
+    setSync("busy");
+    const r = await callApi("pull", {});
+    if(!r.ok){ setSync(r.code === "expired" ? "expired" : "err"); return; }
+    const have = new Set(log.map(e => e.qid)); let added = 0;
+    (r.results || []).forEach(x => { if(!have.has(x.qid)){ log.push(entryFromServer(x)); added++; } });
+    if(added){ log.sort((a, b) => b.ts - a.ts); log = log.slice(0, 300); LS.set("log", log); }
+    ["saved","mistakes"].forEach(key => {
+      const srv = r.kv && r.kv[key], local = kvts[key] || 0;
+      if(srv && srv.ts > local){ const set = new Set(Array.isArray(srv.v) ? srv.v : []); if(key === "saved") bookmarks = set; else mistakes = set; kvts[key] = srv.ts; LS.set(key === "saved" ? "bookmarks" : "mistakes", [...set]); LS.set("kvts", kvts); }
+      else if(local > ((srv && srv.ts) || 0)) enqueueKV(key);
+    });
+    setSync("ok");
+    if(["home","dashboard","history","saved"].includes(cur().v)) render(true);
+    flushQueue();
+  }catch(e){ setSync("offline"); }
+}
+
+/* =====================================================================
+   LOGIN  /  LOGOUT  /  RESUME
+   ===================================================================== */
+function viewLogin(msg){
+  const remembered = GS.get("lastId", "");
+  app.innerHTML = `
+    <div class="login-wrap"><form class="login-card" id="loginForm" novalidate>
+      <div class="login-logo">🔐</div>
+      <h1>Member Login</h1>
+      <p class="sub">Sign in with the ID and password given to you by ${esc(BRAND)}.</p>
+      ${API_URL ? "" : `<div class="notice">⚠️ Login is not connected yet — the admin must paste the Apps Script URL into <code>API_URL</code> (see SETUP.md).</div>`}
+      <label class="field"><span>Member ID</span><input id="liId" type="text" name="username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" value="${esc(remembered)}"></label>
+      <label class="field"><span>Password</span><div class="pw"><input id="liPw" type="password" name="password" autocomplete="current-password"><button type="button" class="eye" data-action="toggle-pw" aria-label="Show or hide password">👁️</button></div></label>
+      <label class="chk"><input type="checkbox" id="liRem" checked> Remember my ID on this device</label>
+      <div class="err" id="liErr" role="alert">${esc(msg || "")}</div>
+      <button class="btn primary wide" id="liBtn" type="submit">Sign in</button>
+      <p class="fine">🔒 Your password is checked securely on Google Sheets. It is never saved in this page or on this device.</p>
+    </form></div>`;
+  const f = remembered ? $("#liPw") : $("#liId"); if(f && f.focus) f.focus();
+}
+async function handleLogin(){
+  const id = $("#liId").value.trim(), pw = $("#liPw").value, err = $("#liErr"), btn = $("#liBtn");
+  if(!id || !pw){ err.textContent = "Please enter your ID and password."; return; }
+  btn.disabled = true; btn.textContent = "Signing in…"; err.textContent = "";
+  try{
+    const res = await callApi("login", {id, password: pw}, true);
+    if(!res.ok){ err.textContent = res.error || "Login failed."; btn.disabled = false; btn.textContent = "Sign in"; $("#liPw").value = ""; return; }
+    GS.set("lastId", $("#liRem").checked ? res.id : null);
+    await onLoggedIn(res);
+  }catch(ex){
+    const e2 = $("#liErr"), b2 = $("#liBtn");
+    if(e2){ e2.textContent = ex.message; } if(b2){ b2.disabled = false; b2.textContent = "Sign in"; }
+  }
+}
+async function decryptEnvelope(env, keyB64){
+  const subtle = window.crypto && window.crypto.subtle;
+  if(!subtle) throw new Error("This browser cannot open the locked question bank (it needs a secure https:// page).");
+  const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  const key = await subtle.importKey("raw", b64(keyB64), "AES-GCM", false, ["decrypt"]);
+  let plain;
+  try{ plain = await subtle.decrypt({name:"AES-GCM", iv:b64(env.iv)}, key, b64(env.data)); }
+  catch(e){ throw new Error("Could not unlock the question bank (key mismatch). Ask the admin to rebuild it."); }
+  return JSON.parse(new TextDecoder().decode(plain));
+}
+async function loadContent(){
+  const tr = await fetch("data/topics.json", {cache:"no-store"});
+  if(!tr.ok) throw new Error("data/topics.json → HTTP " + tr.status);
+  TOPICS = await tr.json();
+  let raw, er = null;
+  try{ er = await fetch("data/questions.enc.json", {cache:"no-store"}); }catch(e){ er = null; }
+  if(er && er.ok){
+    if(!auth.contentKey) throw new Error("The question bank is locked but the server sent no key. Ask the admin to run “GA Tool › Show / create content key” in the Sheet.");
+    raw = await decryptEnvelope(await er.json(), auth.contentKey);
+  } else {
+    const qr = await fetch("data/questions.json", {cache:"no-store"});
+    if(!qr.ok) throw new Error("data/questions.json → HTTP " + qr.status);
+    raw = await qr.json();
+  }
+  prepareData(raw);
+}
+function loadUserState(){
+  bookmarks = new Set(LS.get("bookmarks", [])); mistakes = new Set(LS.get("mistakes", []));
+  log = LS.get("log", []); sessions = LS.get("sessions", {}); queue = LS.get("queue", []); kvts = LS.get("kvts", {});
+  prefs = Object.assign({mode:"practice", shuffle:false, neg:false, qtype:"", count:""}, LS.get("prefs", {}));
+  session = null; ui.admin = {tab:"overview", data:null, loading:false, error:"", filter:"", page:0, results:{}}; ui.resFilter = "all";
+}
+function restoreNav(){
+  let saved = LS.get("nav", null);
+  const okV = ["home","dashboard","history","saved","topics","subs","minors","overview","quiz","result","admin"];
+  if(!Array.isArray(saved) || !saved.length || saved[0].v !== "home") saved = [{v:"home", scope:{}}];
+  saved = saved.filter(n => n && okV.includes(n.v));
+  const top = saved[saved.length-1];
+  if(top.v === "quiz"){
+    const s = sessions[LS.get("curKey", null)];
+    if(s && !s.finished && s.ids.some(id => QBYID.has(id))){ s.ids = s.ids.filter(id => QBYID.has(id)); session = s; } else saved.pop();
+  } else if(top.v === "result" && !log.find(r => r.qid === (top.scope || {}).quizId)) saved.pop();
+  else if(top.v === "admin" && auth.role !== "admin") saved.pop();
+  nav = saved.length ? saved : [{v:"home", scope:{}}];
+  history.replaceState({d:0}, "");
+  for(let i = 1; i < nav.length; i++) history.pushState({d:i}, "");
+}
+async function onLoggedIn(res){
+  auth = {id:res.id, name:res.name, role:res.role, token:res.token, exp:res.exp, contentKey:res.contentKey || null};
+  document.body.classList.remove("guest");
+  app.innerHTML = `<div class="empty"><div class="big">⏳</div>Opening your question bank…</div>`;
+  try{ await loadContent(); }
+  catch(err){ auth = null; document.body.classList.add("guest"); viewLogin(err.message); return; }
+  loadUserState(); restoreNav(); render();
+  if(queue.length) scheduleFlush(800);
+  pullSync();
+}
+function logout(){
+  saveSession(); persistNav();
+  if(queue.length) flushQueue();
+  LS.set("nav", null);                                  // explicit logout: next login starts at Home (quizzes in progress are still kept)
+  auth = null; session = null; Q = []; QBYID.clear(); TOPICS = []; REPORT = null;
+  nav = [{v:"home", scope:{}}]; history.replaceState({d:0}, "");
+  if(document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {});
+  render();
+}
+
+/* =====================================================================
+   NAVIGATION (works with the phone's Back button; survives refresh after re-login)
+   ===================================================================== */
+function persistNav(){ if(auth) LS.set("nav", nav); }
+function pushView(v, scope){ nav.push({v, scope: scope || {}}); history.pushState({d: nav.length-1}, ""); ui.paletteOpen = false; persistNav(); render(); }
+function replaceTop(v, scope){ nav[nav.length-1] = {v, scope: scope || {}}; history.replaceState({d: nav.length-1}, ""); ui.paletteOpen = false; persistNav(); render(); }
+function goBack(){ if(nav.length > 1) history.back(); }
+function goHome(){ const k = nav.length - 1; if(k > 0) history.go(-k); else render(); }
+window.addEventListener("popstate", e => {
+  if(!auth) return;
+  const d = e.state && typeof e.state.d === "number" ? e.state.d : 0;
+  if(d > nav.length - 1) nav = [nav[0]]; else while(nav.length > d + 1) nav.pop();
+  ui.paletteOpen = false; persistNav(); render();
+});
+history.replaceState({d:0}, "");
+homeBtn.addEventListener("click", goHome);
+backBtn.addEventListener("click", goBack);
+
+/* =====================================================================
+   RENDER ROUTER
+   ===================================================================== */
+function render(keepScroll){
+  const v = cur();
+  document.body.classList.toggle("guest", !auth);
+  homeBtn.disabled = backBtn.disabled = (!auth || v.v === "home");
+  if(!auth){ viewLogin(); if(!keepScroll) window.scrollTo(0, 0); return; }
+  try{
+    if(v.v === "quiz" && !session){ nav.pop(); persistNav(); return render(keepScroll); }
+    switch(v.v){
+      case "home": viewHome(); break;
+      case "dashboard": viewDashboard(); break;
+      case "history": viewHistory(); break;
+      case "saved": viewSaved(); break;
+      case "topics": viewTopics(v.scope); break;
+      case "subs": viewSubs(v.scope); break;
+      case "minors": viewMinors(v.scope); break;
+      case "overview": viewOverview(v.scope); break;
+      case "quiz": viewQuiz(); break;
+      case "result": viewResult(v.scope); break;
+      case "admin": viewAdmin(); break;
+      default: viewHome();
+    }
+  }catch(err){
+    console.error(err);
+    app.innerHTML = `<div class="empty"><div class="big">⚠️</div><b>Something went wrong showing this screen.</b><br>${esc(err.message)}<br><br><button class="btn primary" data-action="home">🏠 Go Home</button></div>`;
+  }
+  if(!keepScroll) window.scrollTo(0, 0);
+}
+
+/* =====================================================================
+   HOME / BROWSE
+   ===================================================================== */
+function viewHome(){
+  const counts = MONTHS.map((_, i) => Q.filter(q => q.month === i).length);
+  const open = Object.values(sessions).filter(s => s && !s.finished && s.ids && s.ids.length).sort((a, b) => (b.updatedAt||0) - (a.updatedAt||0));
+  const cont = open[0];
+  app.innerHTML = `
+    <div class="welcome">
+      <div class="who"><b>👋 Welcome, ${esc(auth.name)}</b><small>ID: ${esc(auth.id)}${auth.role === "admin" ? " · Admin" : ""} &nbsp;</small>${syncBadge()}</div>
+      <div class="wbtns">
+        <button class="btn-sm" data-action="nav-dashboard">📊 My Dashboard</button>
+        ${auth.role === "admin" ? `<button class="btn-sm" data-action="nav-admin">🛡️ Admin Panel</button>` : ""}
+        <button class="btn-sm" data-action="logout">Logout</button>
+      </div>
+    </div>
+    <div class="hero">
+      <div class="eyebrow">📅 Pick a month to begin</div>
+      <h1>Practice Current Affairs MCQs</h1>
+      <p>${Q.length ? plural(Q.length, "question") + " ready. " : ""}Choose a month, drill down by topic, answer and learn from instant explanations.</p>
+    </div>
+    ${cont ? `<button class="continue" data-action="resume-key" data-key="${esc(cont.key)}"><span class="ico">▶️</span><div><b>Continue: ${esc(cont.label)}</b><span>${Object.keys(cont.answers||{}).length}/${cont.ids.length} answered · ${esc(cont.mode === "test" ? "Test mode" : "Practice mode")}</span></div></button>` : ""}
+    ${Q.length ? "" : `<div class="empty"><div class="big">🗂️</div><b>No questions found yet.</b><br>Add MCQ text files to <code>data/raw/</code> and run the converter (see README).</div>`}
+    <div class="month-grid">
+      <button class="month-btn all" data-action="month" data-m="all" ${Q.length ? "" : "disabled"} style="--m-color:#1c1a2b;--m-soft:#ececf3">
+        <div class="stripe"></div><div><div class="mnum">EVERYTHING</div><div class="mname">All Months</div></div><span class="mcount">${plural(Q.length, "question")}</span>
+      </button>
+      ${MONTHS.map((m, i) => `
+        <button class="month-btn" data-action="month" data-m="${i}" ${counts[i] ? "" : "disabled"} style="--m-color:${MONTH_COLORS[i]};--m-soft:${MONTH_COLORS[i]}22">
+          <div class="stripe"></div><div class="mnum">${String(i+1).padStart(2,"0")} · ${YEAR}</div><div class="mname">${m}</div>
+          <span class="mcount">${counts[i] ? plural(counts[i], "question") : "No questions yet"}</span>
+        </button>`).join("")}
+    </div>
+    <div class="section-label">🧠 My Revision</div>
+    <div class="rev-grid">
+      <button class="rev-tile" data-action="nav-saved"><span class="ico">⭐</span><div><b>Saved Questions</b><span>${plural(bookmarks.size, "question")} starred</span></div></button>
+      <button class="rev-tile" data-action="special" data-kind="mistakes" ${mistakes.size ? "" : "disabled"}><span class="ico">🔁</span><div><b>My Mistakes</b><span>${plural(filterQ({special:"mistakes"}).length, "question")} to revisit</span></div></button>
+      <button class="rev-tile" data-action="nav-history"><span class="ico">🕘</span><div><b>Quiz History</b><span>${plural(log.length, "quiz")} attempted</span></div></button>
+      <button class="rev-tile" data-action="nav-dashboard"><span class="ico">📊</span><div><b>My Dashboard</b><span>Analytics & weak areas</span></div></button>
+    </div>`;
+}
+function topicCard(action, attrs, code, emoji, name, meta, pct, count){
+  return `<button class="topic-card" data-action="${action}" ${attrs} ${count ? "" : "disabled"} style="--t-color:var(--${code});--t-soft:var(--${code}-soft)">
+    <div class="icon">${emoji}</div><div class="tname">${esc(name)}</div><div class="tmeta">${meta}</div>
+    <div class="weight-bar"><i style="width:${Math.min(100, pct)}%"></i></div></button>`;
+}
+function viewTopics(sc){
+  const ml = monthLabel(sc.month), total = filterQ({month: sc.month}).length;
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">🗂️ ${esc(ml)}</div><h1>Choose a Main Topic</h1>
+      <p>The bar shows each topic's approximate exam weightage. Topics without questions are greyed out.</p></div>
+    <button class="wide-btn" data-action="practice" ${total ? "" : "disabled"}>▶ Practice all ${plural(total, "question")} of ${esc(ml)}</button>
+    <div class="section-label">Main Topics <span class="tag">${TOPICS.length} categories</span></div>
+    <div class="topic-grid">${TOPICS.map(t => {
+      const c = filterQ({month: sc.month, main: t.code}).length;
+      return topicCard("topic", `data-code="${t.code}"`, t.code, t.emoji, t.name, `${t.weight ? t.weight + "% weightage · " : ""}${plural(c, "question")}`, t.weight * 3, c);
+    }).join("")}</div>`;
+}
+function viewSubs(sc){
+  const t = topicByCode(sc.main), total = filterQ(sc).length;
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">${t.emoji} ${esc(t.name)} · ${esc(monthLabel(sc.month))}</div><h1>Choose a Subtopic</h1>
+      <p>Subtopic weightage is relative to ${esc(t.name)}.</p></div>
+    <button class="wide-btn" data-action="practice" ${total ? "" : "disabled"}>▶ Practice all ${plural(total, "question")} of ${esc(t.name)}</button>
+    <div class="section-label">Subtopics <span class="tag">${t.subs.length} in this topic</span></div>
+    <div class="topic-grid">${t.subs.map(s => {
+      const c = filterQ({month: sc.month, main: sc.main, sub: s.name}).length;
+      return topicCard("sub", `data-sub="${encodeURIComponent(s.name)}"`, t.code, s.emoji, s.name, `${s.weight ? s.weight + "% of topic · " : ""}${plural(c, "question")}`, s.weight || (c ? 100 : 0), c);
+    }).join("")}</div>`;
+}
+function viewMinors(sc){
+  const t = topicByCode(sc.main), s = t.subs.find(x => x.name === sc.sub), total = filterQ(sc).length;
+  const chips = minorsFor(sc.main, sc.sub).map(m => ({m, c: filterQ({...sc, minor: m}).length})).sort((a, b) => (b.c > 0) - (a.c > 0));
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">${t.emoji} ${esc(t.name)} › ${s ? s.emoji : ""} ${esc(sc.sub)}</div><h1>Pick a Minor Topic</h1>
+      <p>Choose a specific minor topic, or practise the whole subtopic at once.</p></div>
+    <button class="wide-btn" data-action="practice" ${total ? "" : "disabled"}>▶ Practice all ${plural(total, "question")} of ${esc(sc.sub)}</button>
+    <div class="section-label">Minor Topics <span class="tag">${chips.length} tags</span></div>
+    <div class="chip-row">${chips.map(x => `<button class="topic-chip" data-action="minor" data-minor="${encodeURIComponent(x.m)}" ${x.c ? "" : "disabled"} style="--t-color:var(--${t.code});--t-soft:var(--${t.code}-soft)">${esc(x.m)} (${x.c})</button>`).join("")}</div>`;
+}
+
+/* =====================================================================
+   SET-UP PANEL (overview) — Question type + Number of questions dropdowns
+   ===================================================================== */
+function segRow(label, hint, k, opts, val){
+  return `<div class="row"><div class="row-l">${label}${hint ? `<small>${hint}</small>` : ""}</div>
+    <div class="seg" role="group" aria-label="${esc(label)}">${opts.map(([v, t]) => `<button class="${String(v) === String(val) ? "on" : ""}" data-action="pref" data-k="${k}" data-v="${v}">${t}</button>`).join("")}</div></div>`;
+}
+function selectRow(label, hint, k, opts, val){
+  return `<div class="row"><div class="row-l"><label for="sel-${k}">${label}</label><small>${hint}</small></div>
+    <select class="sel" id="sel-${k}" data-pref="${k}">${opts.map(([v, t, dis]) => `<option value="${esc(v)}" ${String(v) === String(val) ? "selected" : ""} ${dis ? "disabled" : ""}>${esc(t)}</option>`).join("")}</select></div>`;
+}
+function viewOverview(sc){
+  const base = filterQ(sc), key = scopeKey(sc);
+  const typeCounts = {}; QTYPES.forEach(t => { typeCounts[t] = base.filter(q => q.types.includes(t)).length; });
+  if(prefs.qtype && !typeCounts[prefs.qtype]) { /* chosen type has none here → keep selection but warn below */ }
+  const pool = prefs.qtype ? base.filter(q => q.types.includes(prefs.qtype)) : base;
+  const want = wantedCount(), take = Math.min(pool.length, want === Infinity ? pool.length : want);
+  const saved = sessions[key] && !sessions[key].finished ? sessions[key] : null;
+  const past = log.filter(r => r.key === key), best = past.length ? Math.max(...past.map(r => r.pct)) : null;
+  const byMinor = {}; pool.forEach(q => { byMinor[q.minor] = (byMinor[q.minor] || 0) + 1; });
+  const mc = Object.entries(byMinor).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  const title = scopeTitle(sc);
+  const typeOpts = [["", "Default (Random — all types)"], ...QTYPES.map(t => [t, `${t} (${typeCounts[t]})`, typeCounts[t] === 0 && prefs.qtype !== t])];
+  const countOpts = [["", "Default (" + DEFAULT_COUNT + ")"], ...COUNT_CHOICES.map(c => [String(c), String(c)]), ["all", "Unlimited (all in this category)"]];
+  let note = "";
+  if(!base.length) note = "";
+  else if(!pool.length) note = `<div class="take-note warn">No “${esc(prefs.qtype)}” questions in this category. Pick another type.</div>`;
+  else if(want !== Infinity && want > pool.length) note = `<div class="take-note warn" id="takeNote">Only <b>${pool.length}</b> question${pool.length === 1 ? "" : "s"} available${prefs.qtype ? " of this type" : ""} here — you'll get all <b>${pool.length}</b>.</div>`;
+  else note = `<div class="take-note" id="takeNote">You'll get <b>${take}</b> ${prefs.count === "" || take < pool.length ? "random " : ""}question${take === 1 ? "" : "s"} from <b>${pool.length}</b> available.</div>`;
+
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">${esc(sc.special ? "🧠 My Revision" : (title === monthLabel(sc.month) ? "🎯 Practice set" : "📅 " + monthLabel(sc.month)))}</div>
+      <h1>${esc(title)}</h1>
+      <p>${base.length ? plural(base.length, "question") + " in this category." : "No questions in this set yet."}${best != null ? " Best score so far: <b>" + Math.round(best) + "%</b> (" + plural(past.length, "attempt") + ")." : ""}</p></div>
+    ${base.length ? `
+    <div class="panel">
+      <div class="panel-h">⚙️ Set up your practice</div>
+      ${selectRow("Question type", "Leave on Default for a random mix", "qtype", typeOpts, prefs.qtype)}
+      ${selectRow("Number of questions", "Default = " + DEFAULT_COUNT + " random questions", "count", countOpts, prefs.count)}
+      ${segRow("Mode", prefs.mode === "practice" ? "Right / wrong + explanation after every answer" : "No feedback until you submit", "mode", [["practice","📘 Practice"],["test","📝 Test"]], prefs.mode)}
+      ${segRow("Shuffle", "Random question order", "shuffle", [["0","Off"],["1","On"]], prefs.shuffle ? "1" : "0")}
+      ${segRow("Negative marking", "Deduct ¼ mark per wrong answer", "neg", [["0","Off"],["1","−¼"]], prefs.neg ? "1" : "0")}
+      ${note}
+      <div class="cta-row">
+        ${saved ? `<button class="btn primary" data-action="resume">▶ Resume (${Object.keys(saved.answers).length}/${saved.ids.length})</button>` : ""}
+        <button class="btn ${saved ? "" : "primary"}" data-action="start" ${pool.length ? "" : "disabled"}>${saved ? "🔄 Start fresh" : "▶ Start " + (prefs.mode === "test" ? "Test" : "Practice") + (pool.length ? " (" + take + ")" : "")}</button>
+      </div>
+    </div>
+    <div class="panel"><div class="panel-h">🏷️ Inside this category</div>
+      <div class="mini-chips">${mc.map(([m, c]) => `<span>${esc(m)} <b>${c}</b></span>`).join("") || "<span>—</span>"}</div>
+      <div class="mini-chips" style="margin-top:10px">${QTYPES.filter(t => typeCounts[t]).map(t => `<span>${t} <b>${typeCounts[t]}</b></span>`).join("")}</div></div>
+    <div class="panel">
+      <div class="panel-h">📄 Download PDF</div>
+      <p>Exports ${plural(pool.length, "question")}${prefs.qtype ? " (" + esc(prefs.qtype) + ")" : ""} of this category in A4 format with the ${esc(BRAND)} watermark.</p>
+      <div class="cta-row">
+        <button class="btn" data-action="pdf" data-kind="paper" ${pool.length ? "" : "disabled"}>📝 Question paper</button>
+        <button class="btn" data-action="pdf" data-kind="full" ${pool.length ? "" : "disabled"}>✅ With answers &amp; solutions</button>
+      </div>
+    </div>` : `<div class="empty"><div class="big">🗂️</div>Nothing here yet.</div>`}`;
+}
+
+/* =====================================================================
+   QUESTION CARD
+   ===================================================================== */
+function questionCardHTML(q, o){
+  const t = topicOf(q), label = qLabelOnly(q), bm = bookmarks.has(q.id), reveal = !!o.reveal;
+  const opts = Object.keys(q.options).map(k => {
+    let cls = "opt", mark = "";
+    const picked = o.selected === k;
+    if(reveal){
+      if(k === q.answer){ cls += " correct"; mark = o.review ? "✓ Correct" : "✓"; }
+      else if(picked){ cls += " wrong"; mark = o.review ? "✗ Your answer" : "✗"; }
+      else cls += " dim";
+    } else if(picked) cls += " selected";
+    const attrs = o.locked ? "disabled" : `data-action="opt" data-key="${k}"`;
+    return `<button class="${cls}" ${attrs}><span class="opt-key">${k}</span><span class="opt-text">${sanitize(q.options[k])}</span><span class="opt-mark">${mark}</span></button>`;
+  }).join("");
+  let fb = "", sol = "";
+  if(reveal){
+    if(!o.selected) fb = `<div class="fb skip" role="status">⏭️ Not attempted — correct answer: <b>${q.answer}</b></div>`;
+    else if(o.selected === q.answer) fb = `<div class="fb ok" role="status">🎉 Correct! Well done.</div>`;
+    else fb = `<div class="fb bad" role="status">❌ Incorrect. The correct answer is <b>${q.answer}. ${sanitize(q.options[q.answer])}</b></div>`;
+    sol = `<div class="sol"><div class="sol-h">💡 Solution</div><div class="sol-b">${q.solution ? sanitize(q.solution) : "<p>No explanation added for this question.</p>"}</div></div>`;
+  }
+  const badge = o.status ? `<span class="qbadge ${o.status}">${o.status === "ok" ? "✓ Correct" : o.status === "bad" ? "✗ Wrong" : "— Skipped"}</span>` : "";
+  const timeChip = o.time != null ? `<span class="qtime" title="Time spent on this question">⏱ ${fmtDur(o.time)}</span>` : (o.liveTime ? `<span class="qtime">⏱ <span id="qtimer">${fmtDur(o.liveTime.v)}</span></span>` : "");
+  return `
+  <article class="qcard" style="--n-color:var(--${t.code})">
+    <div class="qhead">
+      <div class="qhead-top"><span class="qnum">Q${o.n}<small> / ${o.total}</small></span>${badge}${timeChip}
+        <span class="qhead-tools">
+          ${o.noFlag ? "" : `<button class="star" data-action="flag" data-id="${esc(q.id)}" aria-label="Report a problem with this question" title="Report a problem">🚩</button>`}
+          <button class="star ${bm ? "on" : ""}" data-action="bookmark" data-id="${esc(q.id)}" aria-label="Save this question" title="Save this question">${bm ? "★" : "☆"}</button>
+        </span></div>
+      <div class="qpath">${t.emoji} ${esc(t.name)} <span>›</span> ${esc(q.sub)} <span>›</span> ${esc(q.minor)}${q.types.length ? ` <span>·</span> ${esc(q.types.join(", "))}` : ""}</div>
+    </div>
+    <div class="qbody">
+      ${label ? `<div class="qlabel">${esc(label)}</div>` : ""}
+      ${q.passage ? `<div class="passage"><div class="passage-h">📖 READ CAREFULLY</div>${sanitize(q.passage)}</div>` : ""}
+      ${!label && q.question ? `<div class="qtext">${sanitize(q.question)}</div>` : ""}
+      <div class="opts" role="group" aria-label="Answer options">${opts}</div>
+      ${o.canClear ? `<div class="clear-row"><button class="btn-sm" data-action="clear">Clear answer</button></div>` : ""}
+      <div aria-live="polite">${fb}${sol}</div>
+    </div>
+  </article>`;
+}
+
+/* =====================================================================
+   QUIZ
+   ===================================================================== */
+function saveSession(){
+  if(!auth || !session) return;
+  if(session.finished){ return; }
+  session.updatedAt = Date.now();
+  sessions[session.key] = session;
+  const keys = Object.keys(sessions);
+  if(keys.length > 8){ keys.sort((a, b) => (sessions[a].updatedAt||0) - (sessions[b].updatedAt||0)); delete sessions[keys[0]]; }
+  LS.set("sessions", sessions); LS.set("curKey", session.key);
+}
+function dropSession(key){ delete sessions[key]; LS.set("sessions", sessions); if(LS.get("curKey", null) === key) LS.set("curKey", null); }
+function newSession(p){
+  return {key:p.key, label:p.label, pdfLabel:p.pdfLabel, scope:p.scope || {}, mode:p.mode, neg:p.neg, qtype:p.qtype || "", ids:p.ids,
+          answers:{}, times:{}, idx:0, elapsed:0, updatedAt:Date.now(), finished:false};
+}
+function startFromScope(sc, resume){
+  const key = scopeKey(sc);
+  if(resume && sessions[key]){
+    const s = sessions[key]; s.ids = s.ids.filter(id => QBYID.has(id));
+    if(s.ids.length){ s.finished = false; session = s; saveSession(); pushView("quiz"); return; }
+    dropSession(key);
+  }
+  const pool = poolFor(sc); if(!pool.length) return;
+  let ids = pool.map(q => q.id);
+  const want = wantedCount();
+  if(prefs.count === "" || want < ids.length || prefs.shuffle) shuffle(ids);   // Default / subsets are random
+  if(want < ids.length) ids = ids.slice(0, want);
+  session = newSession({key, label: scopeTitle(sc) + (prefs.qtype ? " · " + prefs.qtype : ""), pdfLabel: pdfSection(sc), scope: sc, mode: prefs.mode, neg: prefs.neg, qtype: prefs.qtype, ids});
+  saveSession(); pushView("quiz");
+}
+function resumeByKey(key){
+  const s = sessions[key]; if(!s) return;
+  s.ids = s.ids.filter(id => QBYID.has(id));
+  if(!s.ids.length){ dropSession(key); render(); return; }
+  s.finished = false; session = s; saveSession(); pushView("quiz");
+}
+const attemptedCount = s => s.ids.filter(id => s.answers[id]).length;
+const fsSupported = () => !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+const inFs = () => !!(document.fullscreenElement || document.webkitFullscreenElement);
+function toggleFs(){
+  const d = document, el = d.documentElement;
+  if(inFs()){ (d.exitFullscreen || d.webkitExitFullscreen).call(d); return; }
+  const f = el.requestFullscreen || el.webkitRequestFullscreen;
+  if(!f){ toast("Full screen isn't available in this browser"); return; }
+  try{ const p = f.call(el); if(p && p.catch) p.catch(() => toast("Full screen was blocked by the browser")); }catch(e){ toast("Full screen isn't available in this browser"); }
+}
+
+function viewQuiz(){
+  const s = session, total = s.ids.length;
+  s.idx = Math.min(Math.max(s.idx, 0), total - 1);
+  const q = QBYID.get(s.ids[s.idx]), sel = s.answers[q.id];
+  const practice = s.mode === "practice", reveal = practice && !!sel;
+  const attempted = attemptedCount(s), allDone = attempted === total, last = s.idx === total - 1;
+  const pal = s.ids.map((id, i) => {
+    const a = s.answers[id], qq = QBYID.get(id); let st = "";
+    if(a) st = practice ? (a === qq.answer ? "ok" : "bad") : "ans";
+    return `<button class="pal-btn ${st} ${i === s.idx ? "cur" : ""}" data-action="goto" data-i="${i}" aria-label="Question ${i+1}">${i+1}${bookmarks.has(id) ? "<i>★</i>" : ""}</button>`;
+  }).join("");
+  app.innerHTML = `
+    <div class="quiz-top">
+      <div class="quiz-title">${esc(s.label)}<small>${plural(total, "question")}${s.neg ? " · −¼ negative marking" : ""}</small></div>
+      <span class="mode-pill">${practice ? "📘 Practice" : "📝 Test"}</span>
+      <span class="timer" title="Total quiz time">⏱ <span id="timer">${fmtTime(s.elapsed)}</span></span>
+      ${fsSupported() ? `<button class="btn-icon" data-action="fullscreen" id="fsBtn" title="Full screen" aria-label="Toggle full screen">${inFs() ? "🗗" : "⛶"}</button>` : ""}
+      <button class="btn-sm" data-action="finish">🏁 Submit</button>
+    </div>
+    <div class="progress" aria-label="Progress"><i style="width:${attempted / total * 100}%"></i></div>
+    ${allDone ? `<div class="done-banner"><span>🎉 All ${total} questions attempted!</span><button class="btn-sm" data-action="finish">Submit & see result 🏁</button></div>` : ""}
+    <div class="quiz-wrap">
+      <div>${questionCardHTML(q, {n: s.idx + 1, total, selected: sel, reveal, locked: reveal, canClear: !practice && !!sel, liveTime: {v: s.times[q.id] || 0}})}</div>
+      <aside class="palette ${ui.paletteOpen ? "open" : ""}" id="palette" aria-label="Question palette">
+        <div class="pal-head">Questions <span>${attempted}/${total} answered</span></div>
+        <div class="pal-grid">${pal}</div>
+        <div class="pal-legend">
+          ${practice ? `<span><b style="background:var(--ok)"></b>Correct</span><span><b style="background:var(--bad)"></b>Wrong</span>` : `<span><b style="background:var(--info)"></b>Answered</span>`}
+          <span><b style="background:#fff;border:1.5px solid var(--line)"></b>Not yet</span><span>★ Saved</span>
+        </div>
+        <button class="btn primary" data-action="finish">🏁 Submit &amp; see result</button>
+      </aside>
+    </div>
+    <div class="sheet-backdrop ${ui.paletteOpen ? "open" : ""}" data-action="palette"></div>
+    <div class="qnav">
+      <button class="btn" data-action="prev" ${s.idx === 0 ? "disabled" : ""}>← Prev</button>
+      <button class="btn pal-toggle" data-action="palette">▦ ${s.idx + 1}/${total}</button>
+      ${last ? `<button class="btn primary" data-action="finish">🏁 ${allDone ? "Submit" : "Finish"}</button>`
+             : `<button class="btn ${(!practice || sel) ? "primary" : ""}" data-action="next">${(practice && !sel) ? "Skip →" : "Next →"}</button>`}
+    </div>`;
+}
+function chooseOption(key){
+  const s = session; if(!s) return;
+  const q = QBYID.get(s.ids[s.idx]); if(!q || !q.options[key]) return;
+  if(s.mode === "practice"){
+    if(s.answers[q.id]) return;
+    s.answers[q.id] = key;
+    if(key === q.answer) mistakes.delete(q.id); else mistakes.add(q.id);
+    LS.set("mistakes", [...mistakes]); touchKV("mistakes");
+  } else s.answers[q.id] = key;
+  saveSession(); viewQuiz();
+  if(s.mode === "practice"){ const fb = $(".fb"); if(fb && fb.scrollIntoView) fb.scrollIntoView({behavior:"smooth", block:"center"}); }
+}
+function moveTo(i){
+  const s = session; if(!s) return;
+  s.idx = Math.min(Math.max(i, 0), s.ids.length - 1); ui.paletteOpen = false; saveSession(); viewQuiz(); window.scrollTo(0, 0);
+}
+function toggleBookmark(id){
+  if(!id) return;
+  if(bookmarks.has(id)){ bookmarks.delete(id); toast("Removed from saved"); } else { bookmarks.add(id); toast("⭐ Saved to your dashboard"); }
+  LS.set("bookmarks", [...bookmarks]); touchKV("saved");
+  document.querySelectorAll('[data-action="bookmark"]').forEach(b => { if(b.dataset.id === id){ const on = bookmarks.has(id); b.classList.toggle("on", on); b.textContent = on ? "★" : "☆"; } });
+}
+function flagQuestion(id){
+  const q = QBYID.get(id); if(!q) return;
+  const note = window.prompt("What is wrong with this question? (wrong answer key, typo, unclear …)", "");
+  if(note === null) return;
+  enqueue({op:"report", data:{qid:id, qmonth:q.month, note:note.slice(0, 300), quiz:session ? session.label : "", ts:Date.now()}});
+  toast("🚩 Thanks — the admin has been told");
+}
+
+/* stopwatch: whole-quiz time + time on each question (only while the quiz screen is visible) */
+setInterval(() => {
+  if(!auth || cur().v !== "quiz" || !session || document.hidden) return;
+  session.elapsed++;
+  const id = session.ids[session.idx]; session.times[id] = (session.times[id] || 0) + 1;
+  const el = $("#timer"); if(el) el.textContent = fmtTime(session.elapsed);
+  const qe = $("#qtimer"); if(qe) qe.textContent = fmtDur(session.times[id]);
+  if(session.elapsed % 5 === 0) saveSession();
+}, 1000);
+function saveNow(){ saveSession(); persistNav(); }
+window.addEventListener("pagehide", saveNow);
+window.addEventListener("beforeunload", saveNow);
+document.addEventListener("visibilitychange", () => { if(document.hidden) saveNow(); });
+window.addEventListener("online", () => { if(auth) { flushQueue(); } });
+setInterval(() => { if(auth && queue.length && !sync.busy) flushQueue(); }, 60000);
+document.addEventListener("fullscreenchange", () => { document.body.classList.toggle("fs", inFs()); const b = $("#fsBtn"); if(b) b.textContent = inFs() ? "🗗" : "⛶"; });
+
+/* =====================================================================
+   STATISTICS (used by result page, dashboard)
+   ===================================================================== */
+function statsFor(rep){
+  const rows = [];
+  (rep.ids || []).forEach(id => {
+    const q = QBYID.get(id); if(!q) return;
+    const a = (rep.answers || {})[id] || "", t = (rep.times || {})[id] || 0;
+    rows.push({n: rows.length + 1, id, q, a, t, st: !a ? "skip" : (a === q.answer ? "ok" : "bad")});
+  });
+  const total = rows.length, right = rows.filter(r => r.st === "ok").length, wrong = rows.filter(r => r.st === "bad").length;
+  const skipped = total - right - wrong, attempted = right + wrong, negLost = rep.neg ? wrong * NEG_MARK : 0, net = right - negLost;
+  const attRows = rows.filter(r => r.st !== "skip"), tAtt = attRows.reduce((s, r) => s + r.t, 0);
+  const grp = fn => {
+    const m = new Map();
+    rows.forEach(r => [].concat(fn(r.q)).forEach(k => { const g = m.get(k) || {name:k, ok:0, bad:0, skip:0, t:0, n:0}; g[r.st]++; g.n++; g.t += r.t; m.set(k, g); }));
+    return [...m.values()].sort((a, b) => b.n - a.n);
+  };
+  const timed = attRows.filter(r => r.t > 0);
+  return {rows, total, right, wrong, skipped, attempted, negLost, net,
+    pct: total ? Math.max(0, net) / total * 100 : 0, acc: attempted ? right / attempted * 100 : 0, attemptRate: total ? attempted / total * 100 : 0,
+    avgT: attempted ? tAtt / attempted : 0, byTopic: grp(q => topicOf(q).name), byMinor: grp(q => q.minor), byType: grp(q => q.types),
+    fastest: timed.length ? timed.reduce((a, b) => b.t < a.t ? b : a) : null, slowest: timed.length ? timed.reduce((a, b) => b.t > a.t ? b : a) : null};
+}
+function insightsFor(rep, st){
+  const out = [];
+  if(!st.total) return out;
+  if(st.attempted === 0) out.push("🙈 You skipped every question. Try attempting at least the ones you're fairly sure about.");
+  else if(st.acc >= 85) out.push(`🎯 Excellent accuracy — ${Math.round(st.acc)}% of the questions you attempted were right.`);
+  else if(st.acc >= 60) out.push(`👍 Solid accuracy of ${Math.round(st.acc)}%. Revising the wrong ones (below) can push it higher.`);
+  else out.push(`📚 Accuracy was ${Math.round(st.acc)}% — go through the solutions below, then use “Retry wrong”.`);
+  if(rep.neg && st.wrong > 0) out.push(`➖ Penalty marking cost you ${fmtScore(st.negLost)} mark${st.negLost === 1 ? "" : "s"} (${plural(st.wrong, "wrong answer")} × ${NEG_MARK}). Leaving those unattempted would have given ${fmtScore(st.right)} instead of ${fmtScore(st.net)} — skip when you can't narrow it down.`);
+  if(st.skipped > 0) out.push(`⏭️ ${plural(st.skipped, "question")} left unattempted (${Math.round(100 - st.attemptRate)}%).`);
+  if(st.attempted) out.push(`⏱ Average ${fmtDur(st.avgT)} per attempted question${st.fastest ? ` · fastest Q${st.fastest.n} (${fmtDur(st.fastest.t)})` : ""}${st.slowest && st.slowest !== st.fastest ? ` · slowest Q${st.slowest.n} (${fmtDur(st.slowest.t)})` : ""}.`);
+  const types = st.byType.filter(g => g.ok + g.bad > 0);
+  if(types.length >= 2){
+    const best = types.reduce((a, b) => (b.ok / (b.ok + b.bad)) > (a.ok / (a.ok + a.bad)) ? b : a), worst = types.reduce((a, b) => (b.ok / (b.ok + b.bad)) < (a.ok / (a.ok + a.bad)) ? b : a);
+    if(best !== worst) out.push(`🧩 Strongest on <b>${esc(best.name)}</b> (${Math.round(best.ok / (best.ok + best.bad) * 100)}%), weakest on <b>${esc(worst.name)}</b> (${Math.round(worst.ok / (worst.ok + worst.bad) * 100)}%).`);
+  }
+  const tops = st.byTopic.filter(g => g.n >= 2 && g.ok + g.bad > 0);
+  if(tops.length >= 2){
+    const w = tops.reduce((a, b) => (b.ok / (b.ok + b.bad)) < (a.ok / (a.ok + a.bad)) ? b : a);
+    if(w.bad > 0) out.push(`🔎 Revise <b>${esc(w.name)}</b> — ${w.bad} of ${w.ok + w.bad} attempted were wrong.`);
+  }
+  const prev = log.filter(e => e.key && e.key === rep.key && e.ts < rep.ts && e.qid !== rep.qid).sort((a, b) => b.ts - a.ts)[0];
+  if(prev){ const d = Math.round(st.pct - prev.pct); out.push(d > 0 ? `📈 Up ${d}% from your previous attempt of this set (${Math.round(prev.pct)}%).` : d < 0 ? `📉 Down ${-d}% from your previous attempt (${Math.round(prev.pct)}%).` : `➡️ Same as your previous attempt (${Math.round(prev.pct)}%).`); }
+  return out;
+}
+
+/* =====================================================================
+   FINISH → RESULT (scorecard + analytics + every question with its solution)
+   ===================================================================== */
+function finishSession(){
+  const s = session; if(!s) return;
+  const un = s.ids.length - attemptedCount(s);
+  if(un > 0 && !window.confirm(plural(un, "question") + " not attempted yet. Submit and see your result anyway?")) return;
+  s.finished = true;
+  const st = statsFor({ids:s.ids, answers:s.answers, times:s.times, neg:s.neg});
+  if(s.mode === "test"){
+    s.ids.forEach(id => { const a = s.answers[id], q = QBYID.get(id); if(!a || !q) return; if(a === q.answer) mistakes.delete(id); else mistakes.add(id); });
+    LS.set("mistakes", [...mistakes]); touchKV("mistakes");
+  }
+  const entry = {qid: uid(), ts: Date.now(), label: s.label, pdfLabel: s.pdfLabel, key: s.key, mode: s.mode, neg: !!s.neg,
+    month: s.scope && s.scope.month != null ? s.scope.month : null, qtype: s.qtype || "",
+    ids: s.ids.slice(), answers: Object.assign({}, s.answers), times: Object.assign({}, s.times), secs: s.elapsed,
+    total: st.total, right: st.right, wrong: st.wrong, skipped: st.skipped, score: round2(st.net), pct: round2(st.pct), acc: round2(st.acc)};
+  log.unshift(entry); log = log.slice(0, 300); LS.set("log", log);
+  dropSession(s.key);
+  enqueue({op:"result", data:{qid:entry.qid, ts:entry.ts, label:entry.label, mode:entry.mode, neg:entry.neg, month:entry.month, total:entry.total, right:entry.right,
+    wrong:entry.wrong, skipped:entry.skipped, score:entry.score, pct:entry.pct, acc:entry.acc, secs:entry.secs,
+    detail:{ids:entry.ids, answers:entry.answers, times:entry.times, key:entry.key, pdfLabel:entry.pdfLabel, qtype:entry.qtype},
+    att: st.rows.map(r => [r.id, r.q.month, topicOf(r.q).name, r.q.types[0] || "", r.a, r.st === "ok" ? "right" : r.st === "bad" ? "wrong" : "skip", r.t])}});
+  ui.resFilter = "all";
+  replaceTop("result", {quizId: entry.qid});
+}
+function findRep(sc){ return sc.admin ? ui.admin.results[sc.quizId] : log.find(r => r.qid === sc.quizId); }
+
+function viewResult(sc){
+  const rep = findRep(sc);
+  if(!rep){ nav = [nav[0]]; persistNav(); return viewHome(); }
+  const st = statsFor(rep), ro = !!sc.admin;
+  const tier = st.pct >= 90 ? ["Outstanding! 🏆", "#4ade80"] : st.pct >= 75 ? ["Great job! 🎉", "#4ade80"] : st.pct >= 60 ? ["Good effort 👍", "#facc15"] : st.pct >= 40 ? ["Keep practising 💪", "#fb923c"] : ["Revise and try again 📚", "#f87171"];
+  const R = 52, C = 2 * Math.PI * R, dash = C * Math.min(100, st.pct) / 100;
+  const maxT = Math.max(1, ...st.rows.map(r => r.t));
+  const shown = st.rows.filter(r => ui.resFilter === "all" || r.st === ui.resFilter);
+  const cnt = {all: st.rows.length, bad: st.wrong, ok: st.right, skip: st.skipped};
+  const tab = (k, t) => `<button class="${ui.resFilter === k ? "on" : ""}" data-action="rfilter" data-f="${k}">${t} (${cnt[k]})</button>`;
+  const bars = (arr) => arr.map(g => { const t = g.ok + g.bad + g.skip; return `<div class="bar-row"><div class="bar-h"><b>${esc(g.name)}</b><span>${g.ok}/${t} correct${g.ok + g.bad ? " · avg " + fmtDur(g.t / t) : ""}</span></div>
+      <div class="bar-track"><i class="o" style="width:${g.ok / t * 100}%"></i><i class="b" style="width:${g.bad / t * 100}%"></i><i class="s" style="width:${g.skip / t * 100}%"></i></div></div>`; }).join("");
+  const ins = insightsFor(rep, st);
+  app.innerHTML = `
+    ${ro ? `<div class="admin-banner">🛡️ Admin view — attempt by <b>${esc(rep.name || rep.uid)}</b> (ID ${esc(rep.uid)}), ${esc(fmtDate(rep.ts))}</div>` : ""}
+    <div class="hero"><div class="eyebrow">🏁 Scorecard · ${esc(rep.label)}</div><h1>${rep.mode === "test" ? "Test" : "Practice"} result</h1></div>
+    <div class="result-hero">
+      <svg class="donut" viewBox="0 0 120 120" role="img" aria-label="Score ${Math.round(st.pct)} percent">
+        <circle cx="60" cy="60" r="${R}" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="12"/>
+        ${dash > 0.5 ? `<circle cx="60" cy="60" r="${R}" fill="none" stroke="${tier[1]}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${dash} ${C}" transform="rotate(-90 60 60)"/>` : ""}
+        <text x="60" y="68" text-anchor="middle" font-size="28">${Math.round(st.pct)}%</text>
+      </svg>
+      <div class="result-txt">
+        <div class="msg">${tier[0]}</div>
+        <div class="big">${fmtScore(st.net)}<small> / ${st.total}</small></div>
+        <p>${rep.neg ? `${st.right} right − ${st.wrong} × ${NEG_MARK} negative marking = <b>${fmtScore(st.net)}</b>` : `${st.right} right out of ${plural(st.total, "question")} (no negative marking)`}</p>
+      </div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat ok"><b>${st.right}</b><span>✅ Right</span></div>
+      <div class="stat bad"><b>${st.wrong}</b><span>❌ Wrong</span></div>
+      <div class="stat skip"><b>${st.skipped}</b><span>⏭️ Skipped</span></div>
+      <div class="stat"><b>${Math.round(st.acc)}%</b><span>🎯 Accuracy</span></div>
+      <div class="stat"><b>${Math.round(st.attemptRate)}%</b><span>📝 Tried</span></div>
+      <div class="stat"><b>${rep.neg ? "−" + fmtScore(st.negLost) : "0"}</b><span>➖ Negative</span></div>
+      <div class="stat"><b>${fmtTime(rep.secs || 0)}</b><span>⏱ Time</span></div>
+      <div class="stat"><b>${st.attempted ? fmtDur(st.avgT) : "–"}</b><span>⚡ Avg/Q</span></div>
+      <div class="stat"><b>${st.fastest ? fmtDur(st.fastest.t) : "–"}</b><span>🐇 Fastest</span></div>
+      <div class="stat"><b>${st.slowest ? fmtDur(st.slowest.t) : "–"}</b><span>🐢 Slowest</span></div>
+      <div class="stat"><b>${fmtScore(rep.neg ? st.right : st.right)}</b><span>🧮 Raw</span></div>
+      <div class="stat"><b>${Math.round(st.pct)}%</b><span>📊 Percent</span></div>
+    </div>
+    ${ins.length ? `<div class="section-label">💡 Insights</div><ul class="insights">${ins.map(t => `<li>${t}</li>`).join("")}</ul>` : ""}
+    <div class="section-label">⏱ Time per question</div>
+    <div class="panel"><div class="tbars" role="img" aria-label="Time spent on each question">${st.rows.map(r => `<i class="${r.st}" style="height:${Math.max(4, r.t / maxT * 100)}%" title="Q${r.n}: ${fmtDur(r.t)} · ${r.st === "ok" ? "right" : r.st === "bad" ? "wrong" : "skipped"}"></i>`).join("")}</div>
+      <div class="tleg"><span><b style="background:var(--ok)"></b>Right</span><span><b style="background:var(--bad)"></b>Wrong</span><span><b style="background:#c9c9c0"></b>Skipped</span><span>Tallest bar = ${fmtDur(maxT)}</span></div></div>
+    <div class="two-col">
+      ${st.byTopic.length ? `<div><div class="section-label">📊 By topic</div><div class="panel"><div class="bars">${bars(st.byTopic)}</div></div></div>` : ""}
+      ${st.byType.length ? `<div><div class="section-label">🧩 By question type</div><div class="panel"><div class="bars">${bars(st.byType)}</div></div></div>` : ""}
+    </div>
+    ${st.byMinor.length > 1 ? `<div class="section-label">🏷️ By minor topic</div><div class="panel"><div class="bars">${bars(st.byMinor.slice(0, 12))}</div></div>` : ""}
+    <div class="result-actions">
+      ${ro ? "" : `<button class="btn" data-action="retry-wrong" ${st.wrong ? "" : "disabled"}>🔁 Retry wrong (${st.wrong})</button>
+      <button class="btn" data-action="restart">🔀 Re-attempt shuffled</button>`}
+      <button class="btn" data-action="pdf-session">📄 PDF with answers</button>
+      ${ro ? "" : `<button class="btn" data-action="share">📤 Share score</button>
+      <button class="btn" data-action="nav-history">🕘 Quiz history</button>`}
+      <button class="btn" data-action="home">🏠 Home</button>
+    </div>
+    <div class="section-label" id="allq">📝 All questions with solutions</div>
+    <div class="tabs">${tab("all", "All")}${tab("bad", "❌ Wrong")}${tab("ok", "✅ Right")}${tab("skip", "⏭️ Skipped")}</div>
+    <div class="review-list">${shown.length ? shown.map(r => questionCardHTML(r.q, {n: r.n, total: st.total, selected: r.a, reveal: true, locked: true, review: true, status: r.st, time: r.t, noFlag: ro})).join("")
+      : `<div class="empty"><div class="big">🎯</div>Nothing in this filter.</div>`}</div>`;
+}
+
+/* =====================================================================
+   HISTORY · SAVED · DASHBOARD
+   ===================================================================== */
+function downloadCSV(name, rows){
+  const csv = rows.map(r => r.map(v => '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"').join(",")).join("\r\n");
+  const blob = new Blob(["\ufeff" + csv], {type:"text/csv;charset=utf-8"});
+  if(!(window.URL && URL.createObjectURL)){ toast("Download isn't supported here"); return; }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+function viewHistory(){
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">🕘 My Quiz History</div><h1>All previous quizzes</h1>
+      <p>${log.length ? plural(log.length, "quiz") + " attempted. Tap any row to reopen its scorecard and solutions." : "You haven't attempted a quiz yet."}</p></div>
+    ${log.length ? `
+    <div class="toolbar"><button class="btn-sm" data-action="export-history">⬇️ Download CSV</button></div>
+    <div class="hist-head"><span>Quiz name</span><span>Date &amp; time</span><span>Right</span><span>Wrong</span><span>Score</span><span>Percent</span></div>
+    <div class="hist-list">${[...log].sort((a, b) => b.ts - a.ts).map(r => `
+      <button class="hist-row" data-action="open-result" data-id="${esc(r.qid)}">
+        <span class="nm">${esc(r.label)}<small>${r.mode === "test" ? "Test" : "Practice"} · ${plural(r.total, "question")}${r.neg ? " · −¼" : ""} · ${fmtTime(r.secs)}</small></span>
+        <span class="dt">${esc(fmtDate(r.ts))}</span>
+        <span><span class="lbl">Right</span><span class="c-r">${r.right}</span></span>
+        <span><span class="lbl">Wrong</span><span class="c-w">${r.wrong}</span></span>
+        <span><span class="lbl">Score</span><b>${fmtScore(r.score)}/${r.total}</b></span>
+        <span><span class="lbl">Percent</span><span class="pill ${r.pct >= 75 ? "g" : r.pct >= 50 ? "y" : "r"}">${Math.round(r.pct)}%</span></span>
+      </button>`).join("")}</div>` : `<div class="empty"><div class="big">🕘</div>Your finished quizzes will appear here.</div>`}`;
+}
+function viewSaved(){
+  const list = [...bookmarks].map(id => QBYID.get(id)).filter(Boolean);
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">⭐ Saved Questions</div><h1>Your starred questions</h1>
+      <p>${list.length ? plural(list.length, "question") + " saved — answers and solutions are shown for revision. Tap ★ to remove." : "Tap the ☆ on any question while practising to save it here."}</p></div>
+    ${list.length ? `<button class="wide-btn" data-action="special" data-kind="saved">▶ Practice these ${list.length} saved questions</button><div style="height:16px"></div>` : ""}
+    <div class="review-list">${list.length ? list.map((q, i) => questionCardHTML(q, {n: i + 1, total: list.length, selected: "", reveal: true, locked: true, review: false, noFlag: true})).join("")
+      : `<div class="empty"><div class="big">⭐</div>No saved questions yet.</div>`}</div>`;
+}
+function aggregateHistory(){
+  const topics = new Map(), types = new Map(); let att = 0, right = 0, tSum = 0;
+  const bump = (m, k, ok, t) => { const g = m.get(k) || {name:k, ok:0, bad:0, t:0}; ok ? g.ok++ : g.bad++; g.t += t; m.set(k, g); };
+  log.forEach(e => (e.ids || []).forEach(id => {
+    const q = QBYID.get(id), a = (e.answers || {})[id]; if(!q || !a) return;
+    const ok = a === q.answer, t = (e.times || {})[id] || 0; att++; if(ok) right++; tSum += t;
+    q.cats.forEach(c => { const tp = topicByCode(c.main); bump(topics, tp ? tp.name : "Other", ok, t); });
+    q.types.forEach(ty => bump(types, ty, ok, t));
+  }));
+  const days = new Set(log.map(e => new Date(e.ts).toDateString()));
+  let streak = 0; const d = new Date(); if(!days.has(d.toDateString())) d.setDate(d.getDate() - 1);
+  while(days.has(d.toDateString())){ streak++; d.setDate(d.getDate() - 1); }
+  return {topics: [...topics.values()], types: [...types.values()], att, right, tSum, streak};
+}
+function viewDashboard(){
+  const ag = aggregateHistory(), best = log.length ? Math.max(...log.map(r => r.pct)) : 0, avg = log.length ? log.reduce((s, r) => s + r.pct, 0) / log.length : 0;
+  const secs = log.reduce((s, r) => s + (r.secs || 0), 0);
+  const last = log.slice(0, 10).reverse();
+  const weak = ag.topics.filter(g => g.ok + g.bad >= 3).map(g => ({...g, acc: g.ok / (g.ok + g.bad) * 100})).filter(g => g.acc < 80).sort((a, b) => a.acc - b.acc).slice(0, 4);
+  const bars = arr => arr.sort((a, b) => (b.ok + b.bad) - (a.ok + a.bad)).map(g => { const n = g.ok + g.bad;
+    return `<div class="bar-row"><div class="bar-h"><b>${esc(g.name)}</b><span>${Math.round(g.ok / n * 100)}% · ${n} attempted · avg ${fmtDur(g.t / n)}</span></div>
+      <div class="bar-track"><i class="o" style="width:${g.ok / n * 100}%"></i><i class="b" style="width:${g.bad / n * 100}%"></i></div></div>`; }).join("");
+  app.innerHTML = `
+    <div class="hero"><div class="eyebrow">📊 ${esc(auth.name)}</div><h1>My Dashboard</h1><p>Built from your own quiz history, stored on this device and mirrored to your Google Sheet.</p></div>
+    <div class="kpis">
+      <div class="kpi"><b>${log.length}</b><span>QUIZZES</span></div><div class="kpi"><b>${ag.att}</b><span>QUESTIONS ATTEMPTED</span></div>
+      <div class="kpi"><b>${ag.att ? Math.round(ag.right / ag.att * 100) : 0}%</b><span>OVERALL ACCURACY</span></div><div class="kpi"><b>${Math.round(avg)}%</b><span>AVERAGE SCORE</span></div>
+      <div class="kpi"><b>${Math.round(best)}%</b><span>BEST SCORE</span></div><div class="kpi"><b>${ag.att ? fmtDur(ag.tSum / ag.att) : "–"}</b><span>AVG TIME / QUESTION</span></div>
+      <div class="kpi"><b>${fmtTime(secs)}</b><span>TOTAL PRACTICE TIME</span></div><div class="kpi"><b>🔥 ${ag.streak}</b><span>DAY STREAK</span></div>
+    </div>
+    <div class="section-label">📈 Last ${last.length || ""} quiz scores</div>
+    <div class="panel">${last.length ? `<div class="minibars">${last.map((r, i) => `<div class="mb"><u>${Math.round(r.pct)}%</u><i style="height:${Math.max(3, r.pct)}%;background:${r.pct >= 75 ? "var(--ok)" : r.pct >= 50 ? "#e3b23c" : "var(--bad)"}"></i><em>#${i + 1}</em></div>`).join("")}</div>` : "<p>No quizzes yet.</p>"}</div>
+    ${weak.length ? `<div class="section-label">🎯 Focus areas</div><div class="panel">${weak.map(g => `<div class="weak-row"><div><b>${esc(g.name)}</b><small>${Math.round(g.acc)}% accuracy over ${g.ok + g.bad} questions</small></div>${(TOPICS.find(t => t.name === g.name)) ? `<button class="btn-sm" data-action="practice-topic" data-code="${TOPICS.find(t => t.name === g.name).code}">Practice</button>` : ""}</div>`).join("")}</div>` : ""}
+    <div class="two-col">
+      <div><div class="section-label">📊 Accuracy by topic</div><div class="panel"><div class="bars">${ag.topics.length ? bars(ag.topics) : "<p>Attempt a quiz to see this.</p>"}</div></div></div>
+      <div><div class="section-label">🧩 Accuracy by question type</div><div class="panel"><div class="bars">${ag.types.length ? bars(ag.types) : "<p>Attempt a quiz to see this.</p>"}</div></div></div>
+    </div>
+    <div class="section-label">🔑 Account</div>
+    <div class="panel"><div class="panel-h">Change my password</div>
+      <label class="field"><span>Current password</span><input id="pwOld" type="password" autocomplete="current-password"></label>
+      <label class="field"><span>New password (min 6 characters)</span><input id="pwNew" type="password" autocomplete="new-password"></label>
+      <div class="err" id="pwMsg" role="status"></div>
+      <div class="cta-row"><button class="btn" data-action="change-pw">Update password</button><button class="btn" data-action="logout">Logout</button></div></div>`;
+}
+
+/* =====================================================================
+   ADMIN PANEL
+   ===================================================================== */
+async function adminLoad(force){
+  const A = ui.admin; if(A.loading || (A.data && !force)) return;
+  A.loading = true; A.error = "";
+  try{ const r = await callApi("adminStats", {}); if(r.ok) A.data = r; else A.error = r.error || "Could not load admin data."; }
+  catch(e){ A.error = e.message; }
+  A.loading = false; if(auth && cur().v === "admin") render(true);
+}
+const plainQ = id => {
+  const q = QBYID.get(id); if(!q) return id;
+  const t = htmlToText(q.passage ? q.passage : q.question).replace(/\s+/g, " ");
+  return t.length <= 90 ? t : t.slice(0, 90).replace(/\s+\S*$/, "") + "…";
+};
+function viewAdmin(){
+  const A = ui.admin, tabs = [["overview","📈 Overview"],["members","👥 Members"],["log","🕘 Quiz log"],["content","🧪 Content health"]];
+  const head = `<div class="hero"><div class="eyebrow">🛡️ Admin Panel</div><h1>Monitor members &amp; content</h1><p>Live from your Google Sheet. Only visible to admin logins.</p></div>
+    <div class="tabs">${tabs.map(([k, t]) => `<button class="${A.tab === k ? "on" : ""}" data-action="admin-tab" data-tab="${k}">${t}</button>`).join("")}
+      <button class="btn-sm" data-action="admin-refresh" style="margin-left:auto">🔄 Refresh</button></div>`;
+  if(A.tab === "content"){ app.innerHTML = head + adminContent(); return; }
+  if(!A.data){
+    if(!A.loading && !A.error) adminLoad(false);
+    app.innerHTML = head + (A.error ? `<div class="empty"><div class="big">⚠️</div>${esc(A.error)}</div>` : `<div class="empty"><div class="big">⏳</div>Loading from Google Sheets…</div>`);
+    return;
+  }
+  const d = A.data;
+  let body = "";
+  if(A.tab === "overview"){
+    const mx = Math.max(1, ...d.months.map(m => m.quizzes));
+    body = `
+      <div class="kpis">
+        <div class="kpi"><b>${d.totals.members}</b><span>MEMBERS</span></div><div class="kpi"><b>${d.totals.active7}</b><span>ACTIVE (7 DAYS)</span></div>
+        <div class="kpi"><b>${d.totals.quizzes}</b><span>QUIZZES TAKEN</span></div><div class="kpi"><b>${Math.round(d.totals.avgPct)}%</b><span>AVERAGE SCORE</span></div>
+      </div>
+      <div class="section-label">📅 Quizzes by month</div>
+      <div class="panel">${d.months.length ? `<div class="minibars">${d.months.sort((a, b) => (a.month == null ? 99 : a.month) - (b.month == null ? 99 : b.month)).map(m => `<div class="mb"><u>${m.quizzes}</u><i style="height:${Math.max(3, m.quizzes / mx * 100)}%"></i><em>${m.month == null ? "All" : MONTHS[m.month].slice(0, 3)}</em></div>`).join("")}</div>` : "<p>No quizzes yet.</p>"}</div>
+      <div class="two-col">
+        <div><div class="section-label">😓 Hardest questions</div><div class="panel">${d.hardest.length ? d.hardest.slice(0, 8).map(h => `<div class="weak-row"><div><b>${esc(plainQ(h.qid))}</b><small>${Math.round(h.accuracy)}% correct · ${h.attempts} attempts</small></div></div>`).join("") : "<p>Needs a question attempted at least 3 times.</p>"}</div></div>
+        <div><div class="section-label">🐢 Slowest questions</div><div class="panel">${d.slowest.length ? d.slowest.slice(0, 8).map(h => `<div class="weak-row"><div><b>${esc(plainQ(h.qid))}</b><small>avg ${fmtDur(h.avgTime)} · ${h.attempts} attempts</small></div></div>`).join("") : "<p>Needs a question attempted at least 3 times.</p>"}</div></div>
+      </div>`;
+  } else if(A.tab === "members"){
+    const f = norm(A.filter);
+    const rows = d.members.filter(m => !f || norm(m.id + " " + m.name).includes(f));
+    body = `<div class="toolbar"><label class="field"><span class="sr" style="display:none">Search</span><input type="search" id="adminSearch" placeholder="Search member ID or name…" value="${esc(A.filter)}"></label>
+        <button class="btn-sm" data-action="export-members">⬇️ CSV</button></div>
+      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>ID</th><th>Name</th><th>Role</th><th>Status</th><th>Last login</th><th class="num">Logins</th><th class="num">Quizzes</th><th class="num">Avg %</th><th class="num">Accuracy</th><th class="num">Time</th></tr></thead><tbody>
+      ${rows.map(m => `<tr class="click" data-action="admin-member" data-id="${esc(m.id)}"><td>${esc(m.id)}</td><td>${esc(m.name)}</td><td>${esc(m.role)}</td><td><span class="status-pill ${m.status === "active" ? "" : "off"}">${esc(m.status)}</span></td>
+        <td>${esc(fmtDate(m.lastLogin))}</td><td class="num">${m.logins}</td><td class="num">${m.quizzes}</td><td class="num">${m.quizzes ? Math.round(m.avgPct) + "%" : "–"}</td><td class="num">${m.quizzes ? Math.round(m.accuracy) + "%" : "–"}</td><td class="num">${fmtTime(m.secs)}</td></tr>`).join("") || `<tr><td colspan="10">No members match.</td></tr>`}
+      </tbody></table></div><p class="fine">Tap a member to see their quizzes.</p>`;
+  } else {
+    const f = norm(A.filter), all = d.results.filter(r => !f || norm(r.uid + " " + r.name + " " + r.label).includes(f));
+    const PER = 25, pages = Math.max(1, Math.ceil(all.length / PER)); A.page = Math.min(A.page, pages - 1);
+    const rows = all.slice(A.page * PER, A.page * PER + PER);
+    body = `<div class="toolbar"><label class="field"><span class="sr" style="display:none">Filter</span><input type="search" id="adminSearch" placeholder="Filter by member ID, name or quiz…" value="${esc(A.filter)}"></label>
+        <button class="btn-sm" data-action="export-log">⬇️ CSV</button></div>
+      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Date &amp; time</th><th>Member ID</th><th>Name</th><th>Quiz</th><th>Mode</th><th class="num">Right</th><th class="num">Wrong</th><th class="num">Score</th><th class="num">%</th><th class="num">Time</th></tr></thead><tbody>
+      ${rows.map(r => `<tr class="click" data-action="admin-open" data-qid="${esc(r.qid)}"><td>${esc(fmtDate(r.ts))}</td><td>${esc(r.uid)}</td><td>${esc(r.name)}</td><td>${esc(r.label)}</td><td>${esc(r.mode)}</td>
+        <td class="num" style="color:var(--ok)">${r.right}</td><td class="num" style="color:var(--bad)">${r.wrong}</td><td class="num">${fmtScore(r.score)}/${r.total}</td><td class="num">${Math.round(r.pct)}%</td><td class="num">${fmtTime(r.secs)}</td></tr>`).join("") || `<tr><td colspan="10">No quizzes found.</td></tr>`}
+      </tbody></table></div>
+      <div class="pg"><button class="btn-sm" data-action="admin-page" data-d="-1" ${A.page === 0 ? "disabled" : ""}>← Prev</button> Page ${A.page + 1} of ${pages} · ${plural(all.length, "quiz")} <button class="btn-sm" data-action="admin-page" data-d="1" ${A.page >= pages - 1 ? "disabled" : ""}>Next →</button></div>
+      <p class="fine">Tap a row to open the member's full attempt (their answers, time per question and solutions).</p>`;
+  }
+  app.innerHTML = head + body;
+}
+function adminContent(){
+  if(!REPORT) return `<div class="empty"><div class="big">🧪</div>No build report found. Rebuild the question bank with the latest <code>mcq_to_json.py</code> to see valid / invalid counts.</div>`;
+  const R = REPORT, ms = Object.entries(R.months).filter(([m, v]) => m !== "unknown" && (v.valid || v.invalid)), unk = R.months.unknown;
+  const mx = Math.max(1, ...ms.map(([, v]) => v.valid + v.invalid));
+  return `
+    <div class="kpis">
+      <div class="kpi"><b style="color:var(--ok)">${R.valid}</b><span>✅ VALID QUESTIONS</span></div><div class="kpi"><b style="color:var(--bad)">${R.invalid}</b><span>❌ INVALID (SKIPPED)</span></div>
+      <div class="kpi"><b>${R.duplicates || 0}</b><span>DUPLICATES SKIPPED</span></div><div class="kpi"><b>${Object.keys(R.unmappedTags || {}).length}</b><span>UNMAPPED CATEGORIES</span></div>
+    </div>
+    <div class="section-label">📅 Valid vs invalid, month by month</div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Month</th><th class="num">Valid</th><th class="num">Invalid</th><th class="num">Total</th><th>Share</th></tr></thead><tbody>
+      ${ms.map(([m, v]) => `<tr><td>${MONTHS[Number(m) - 1]} ${YEAR}</td><td class="num" style="color:var(--ok)">${v.valid}</td><td class="num" style="color:var(--bad)">${v.invalid}</td><td class="num">${v.valid + v.invalid}</td>
+        <td><div class="valid-bar" style="width:${Math.max(30, (v.valid + v.invalid) / mx * 100)}%"><i class="v" style="width:${v.valid / (v.valid + v.invalid || 1) * 100}%"></i><i class="x" style="width:${v.invalid / (v.valid + v.invalid || 1) * 100}%"></i></div></td></tr>`).join("") || `<tr><td colspan="5">No questions yet.</td></tr>`}
+      ${unk && (unk.valid || unk.invalid) ? `<tr><td>Month unknown</td><td class="num">${unk.valid}</td><td class="num" style="color:var(--bad)">${unk.invalid}</td><td class="num">${unk.valid + unk.invalid}</td><td></td></tr>` : ""}
+    </tbody></table></div>
+    <div class="two-col">
+      <div><div class="section-label">🧩 Questions by type</div><div class="panel">${Object.entries(R.types || {}).map(([t, n]) => `<span class="chip-soft">${esc(t)}: <b>${n}</b></span>`).join("")}</div></div>
+      <div><div class="section-label">🏷️ Categories needing a mapping</div><div class="panel">${Object.keys(R.unmappedTags || {}).length ? Object.entries(R.unmappedTags).map(([t, n]) => `<span class="chip-soft">${esc(t)}: ${n}</span>`).join("") + `<p class="fine" style="text-align:left">Add these to <code>data/tag_map.json</code>.</p>` : "<p>All categories are mapped 👍</p>"}</div></div>
+    </div>
+    ${R.invalidList && R.invalidList.length ? `<div class="section-label">❌ Invalid questions (fix in the text files)</div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>File</th><th class="num">Line</th><th>Month</th><th>Problem</th><th>Question</th></tr></thead><tbody>
+      ${R.invalidList.map(i => `<tr><td>${esc(String(i.file).replace(/^.*?(data\/raw\/)/, "$1"))}</td><td class="num">${i.line}</td><td>${i.month ? MONTHS[i.month - 1] : "?"}</td><td style="white-space:normal;min-width:220px">${esc(i.reason)}</td><td style="white-space:normal;min-width:200px">${esc(i.preview)}</td></tr>`).join("")}
+    </tbody></table></div>` : ""}
+    ${ui.admin.data && ui.admin.data.reports && ui.admin.data.reports.length ? `<div class="section-label">🚩 Reported by members</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>When</th><th>Member</th><th>Question</th><th>Note</th></tr></thead><tbody>
+      ${ui.admin.data.reports.map(r => `<tr><td>${esc(fmtDate(r.ts))}</td><td>${esc(r.uid)}</td><td style="white-space:normal;min-width:220px">${esc(plainQ(r.qid))}</td><td style="white-space:normal;min-width:180px">${esc(r.note || "—")}</td></tr>`).join("")}</tbody></table></div>` : (ui.admin.data ? "" : `<p class="fine">Open the Overview tab once to load member-reported questions.</p>`)}
+    <p class="fine">Build time: ${esc(R.built || "")}</p>`;
+}
+
+/* =====================================================================
+   PDF  (A4 · tilted watermark · header · footer · page numbers)
+   ===================================================================== */
+function buildPdf(list, sectionLabel, kind){
+  if(!list.length){ toast("Nothing to export yet."); return; }
+  if(!(window.jspdf && window.jspdf.jsPDF)){ toast("PDF library didn’t load — check your internet and try again."); return; }
+  const doc = new window.jspdf.jsPDF({unit:"mm", format:"a4"});
+  const W = doc.internal.pageSize.getWidth(), H = doc.internal.pageSize.getHeight();
+  const mx = 16, top = 28, bottom = H - 18, cw = W - 2 * mx;
+  let y = top;
+  function watermark(){
+    doc.setFont("helvetica", "bold"); doc.setFontSize(52); doc.setTextColor(232, 232, 226);
+    const tw = doc.getTextWidth(PDF_WATERMARK), rad = 45 * Math.PI / 180, lift = 52 * 0.3528 * 0.35;
+    doc.text(PDF_WATERMARK, W / 2 - (tw / 2) * Math.cos(rad) + lift * Math.sin(rad), H / 2 + (tw / 2) * Math.sin(rad) + lift * Math.cos(rad), {angle: 45});
+  }
+  function header(){
+    const txt = pdfSafe(PDF_HEADER_PREFIX + " " + sectionLabel);
+    let size = 13; doc.setFont("helvetica", "bold"); doc.setFontSize(size);
+    while(size > 8 && doc.getTextWidth(txt) > cw){ size -= 0.5; doc.setFontSize(size); }
+    doc.setTextColor(18, 54, 38); doc.text(txt, mx, 15);
+    doc.setDrawColor(226, 171, 68); doc.setLineWidth(0.6); doc.line(mx, 18, W - mx, 18);
+  }
+  function startPage(){ watermark(); header(); y = top; }
+  function newPage(){ doc.addPage(); startPage(); }
+  startPage();
+  const wrap = (text, w, size, bold) => {
+    doc.setFont("helvetica", bold ? "bold" : "normal"); doc.setFontSize(size);
+    const out = []; pdfSafe(text).split("\n").forEach(p => out.push(...doc.splitTextToSize(p.trim() === "" ? " " : p, w))); return out;
+  };
+  const style = c => { doc.setFont("helvetica", c.bold ? "bold" : "normal"); doc.setFontSize(c.size); doc.setTextColor(c.color[0], c.color[1], c.color[2]); };
+  list.forEach((q, i) => {
+    const cmds = [];
+    const addText = (text, x, w, size, bold, color, lh, bar) => { const lines = wrap(text, w, size, bold); if(lines.length && pdfSafe(text).trim()) cmds.push({t:"text", lines, x, size, bold, color, lh, bar}); };
+    const gap = h => cmds.push({t:"gap", h});
+    const lab = qLabelOnly(q), qt = htmlToText(q.question);
+    if(q.passage){
+      addText("Q" + (i + 1) + "." + (lab ? "  " + lab : ""), mx, cw, 10.5, true, [110, 110, 100], 5.4);
+      addText(htmlToText(q.passage), mx + 5, cw - 5, 10, false, [60, 60, 52], 5, true);
+      gap(2); if(!lab && qt) addText(qt, mx, cw, 11, true, [18, 36, 28], 5.6);
+    } else addText("Q" + (i + 1) + ". " + qt, mx, cw, 11, true, [18, 36, 28], 5.6);
+    gap(1.5);
+    Object.keys(q.options).forEach(k => addText(k + ".  " + htmlToText(q.options[k]), mx + 3, cw - 3, 10.5, false, [30, 36, 31], 5.2));
+    if(kind === "full"){
+      gap(1.5); addText("Answer: " + q.answer, mx, cw, 10.5, true, [22, 120, 70], 5.4);
+      if(q.solution) addText("Solution: " + htmlToText(q.solution), mx, cw, 9.8, false, [70, 70, 62], 4.9);
+    }
+    gap(2); cmds.push({t:"rule"}); gap(4);
+    const total = cmds.reduce((s, c) => s + (c.t === "text" ? c.lines.length * c.lh : c.t === "gap" ? c.h : 0), 0);
+    if(y + total > bottom && total <= bottom - top) newPage();
+    cmds.forEach(c => {
+      if(c.t === "gap"){ y += c.h; return; }
+      if(c.t === "rule"){ doc.setDrawColor(222, 222, 212); doc.setLineWidth(0.3); doc.line(mx, y, W - mx, y); return; }
+      style(c);
+      c.lines.forEach(line => {
+        if(y + c.lh > bottom){ newPage(); style(c); }
+        doc.text(line, c.x, y);
+        if(c.bar){ doc.setDrawColor(226, 171, 68); doc.setLineWidth(0.9); doc.line(mx + 1.5, y - c.lh * 0.78, mx + 1.5, y + c.lh * 0.22); }
+        y += c.lh;
+      });
+    });
+  });
+  const pages = doc.internal.getNumberOfPages();
+  for(let p = 1; p <= pages; p++){
+    doc.setPage(p); doc.setFont("helvetica", "normal"); doc.setFontSize(8.5); doc.setTextColor(110, 110, 100);
+    doc.text(PDF_FOOTER_TEXT, W / 2, H - 10, {align: "center"}); doc.text(p + " / " + pages, W - mx, H - 10, {align: "right"});
+  }
+  const slug = String(sectionLabel).replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "").toLowerCase() || "mcqs";
+  doc.save("ga-pulse-" + slug + (kind === "full" ? "-with-answers" : "-paper") + ".pdf");
+  toast("📄 PDF ready");
+}
+
+/* =====================================================================
+   EVENTS
+   ===================================================================== */
+document.addEventListener("submit", e => { if(e.target && e.target.id === "loginForm"){ e.preventDefault(); handleLogin(); } });
+document.addEventListener("input", e => {
+  if(e.target && e.target.id === "adminSearch"){ ui.admin.filter = e.target.value; ui.admin.page = 0; const pos = e.target.selectionStart; render(true); const n = $("#adminSearch"); if(n){ n.focus(); try{ n.setSelectionRange(pos, pos); }catch(x){} } }
+});
+document.addEventListener("change", e => {
+  const el = e.target; if(!el || !el.dataset || !el.dataset.pref) return;
+  prefs[el.dataset.pref] = el.value; LS.set("prefs", prefs); render(true);
+});
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-action]"); if(!el || el.disabled) return;
+  const a = el.dataset.action, sc = cur().scope || {};
+  switch(a){
+    case "toggle-pw": { const i = $("#liPw"); if(i){ i.type = i.type === "password" ? "text" : "password"; } break; }
+    case "logout": logout(); break;
+    case "home": goHome(); break;
+    case "nav-dashboard": pushView("dashboard"); break;
+    case "nav-history": pushView("history"); break;
+    case "nav-saved": pushView("saved"); break;
+    case "nav-admin": ui.admin.tab = "overview"; pushView("admin"); break;
+    case "month": pushView("topics", {month: el.dataset.m === "all" ? null : Number(el.dataset.m)}); break;
+    case "special": pushView("overview", {special: el.dataset.kind, month: null}); break;
+    case "topic": {
+      const code = el.dataset.code, t = topicByCode(code), next = {...sc, main: code};
+      if(t.subs.length === 1) pushView("minors", {...next, sub: t.subs[0].name}); else pushView("subs", next); break;
+    }
+    case "sub": pushView("minors", {...sc, sub: decodeURIComponent(el.dataset.sub)}); break;
+    case "minor": pushView("overview", {...sc, minor: decodeURIComponent(el.dataset.minor)}); break;
+    case "practice": pushView("overview", {...sc}); break;
+    case "practice-topic": pushView("overview", {main: el.dataset.code, month: null}); break;
+    case "pref": {
+      const k = el.dataset.k, v = el.dataset.v;
+      if(k === "mode") prefs.mode = v; else if(k === "shuffle") prefs.shuffle = v === "1"; else if(k === "neg") prefs.neg = v === "1";
+      LS.set("prefs", prefs); render(true); break;
+    }
+    case "start": startFromScope(sc, false); break;
+    case "resume": startFromScope(sc, true); break;
+    case "resume-key": resumeByKey(el.dataset.key); break;
+    case "opt": chooseOption(el.dataset.key); break;
+    case "clear": if(session){ delete session.answers[session.ids[session.idx]]; saveSession(); viewQuiz(); } break;
+    case "next": moveTo(session.idx + 1); break;
+    case "prev": moveTo(session.idx - 1); break;
+    case "goto": moveTo(Number(el.dataset.i)); break;
+    case "palette": ui.paletteOpen = !ui.paletteOpen; viewQuiz(); break;
+    case "fullscreen": toggleFs(); break;
+    case "finish": finishSession(); break;
+    case "bookmark": toggleBookmark(el.dataset.id); break;
+    case "flag": flagQuestion(el.dataset.id); break;
+    case "rfilter": ui.resFilter = el.dataset.f; viewResult(sc); { const t = $("#allq"); if(t && t.scrollIntoView) t.scrollIntoView({block:"start"}); } break;
+    case "open-result": ui.resFilter = "all"; pushView("result", {quizId: el.dataset.id}); break;
+    case "retry-wrong": {
+      const rep = findRep(sc); if(!rep) break;
+      const ids = statsFor(rep).rows.filter(r => r.st === "bad").map(r => r.id); if(!ids.length) break;
+      session = newSession({key: (rep.key || "retry") + "|retry", label: "Retry: " + rep.label, pdfLabel: (rep.pdfLabel || rep.label) + " - Mistakes", scope: {}, mode: "practice", neg: false, ids});
+      saveSession(); replaceTop("quiz"); break;
+    }
+    case "restart": {
+      const rep = findRep(sc); if(!rep) break;
+      session = newSession({key: rep.key || "redo", label: rep.label, pdfLabel: rep.pdfLabel || rep.label, scope: {}, mode: rep.mode, neg: rep.neg, qtype: rep.qtype, ids: shuffle(rep.ids.filter(id => QBYID.has(id)))});
+      saveSession(); replaceTop("quiz"); break;
+    }
+    case "pdf": buildPdf(poolFor(sc), pdfSection(sc), el.dataset.kind); break;
+    case "pdf-session": { const rep = findRep(sc); if(rep) buildPdf(rep.ids.map(id => QBYID.get(id)).filter(Boolean), rep.pdfLabel || rep.label, "full"); break; }
+    case "share": {
+      const rep = findRep(sc); if(!rep) break;
+      const text = `I scored ${fmtScore(rep.score)}/${rep.total} (${Math.round(rep.pct)}%) in “${rep.label}” on ${BRAND}. Try it yourself!`;
+      if(navigator.share) navigator.share({title: BRAND, text, url: location.href}).catch(() => {});
+      else if(navigator.clipboard) navigator.clipboard.writeText(text + " " + location.href).then(() => toast("Score copied to clipboard"), () => toast(text));
+      else toast(text);
+      break;
+    }
+    case "export-history": downloadCSV("my-quiz-history.csv", [["Quiz","Date & time","Mode","Questions","Right","Wrong","Skipped","Score","Percent","Time (s)"]].concat(log.map(r => [r.label, new Date(r.ts).toLocaleString(), r.mode, r.total, r.right, r.wrong, r.skipped, r.score, r.pct, r.secs]))); break;
+    case "change-pw": {
+      const o = $("#pwOld").value, n = $("#pwNew").value, m = $("#pwMsg"); m.style.color = "var(--bad)";
+      if(n.length < 6){ m.textContent = "New password must be at least 6 characters."; break; }
+      m.textContent = "Updating…";
+      callApi("changePassword", {oldPassword: o, newPassword: n}).then(r => { m.style.color = r.ok ? "var(--ok)" : "var(--bad)"; m.textContent = r.ok ? "✅ Password updated." : (r.error || "Could not update."); if(r.ok){ $("#pwOld").value = ""; $("#pwNew").value = ""; } })
+        .catch(x => { m.textContent = x.message; });
+      break;
+    }
+    /* ---- admin ---- */
+    case "admin-tab": ui.admin.tab = el.dataset.tab; ui.admin.filter = ""; ui.admin.page = 0; render(true); break;
+    case "admin-refresh": ui.admin.data = null; ui.admin.error = ""; adminLoad(true); render(true); break;
+    case "admin-member": ui.admin.tab = "log"; ui.admin.filter = el.dataset.id; ui.admin.page = 0; render(true); break;
+    case "admin-page": ui.admin.page = Math.max(0, ui.admin.page + Number(el.dataset.d)); render(true); break;
+    case "admin-open": {
+      const qid = el.dataset.qid;
+      callApi("adminResult", {qid}).then(r => {
+        if(!r.ok){ toast(r.error || "Could not open this attempt"); return; }
+        ui.admin.results[qid] = entryFromServer(r.result); ui.admin.results[qid].uid = r.result.uid; ui.admin.results[qid].name = r.result.name;
+        ui.resFilter = "all"; pushView("result", {quizId: qid, admin: true});
+      }).catch(x => toast(x.message));
+      break;
+    }
+    case "export-members": if(ui.admin.data) downloadCSV("members.csv", [["ID","Name","Role","Status","Last login","Logins","Quizzes","Avg %","Accuracy %","Time (s)"]].concat(ui.admin.data.members.map(m => [m.id, m.name, m.role, m.status, m.lastLogin ? new Date(m.lastLogin).toLocaleString() : "", m.logins, m.quizzes, Math.round(m.avgPct), Math.round(m.accuracy), m.secs]))); break;
+    case "export-log": if(ui.admin.data) downloadCSV("all-quizzes.csv", [["Date & time","Member ID","Name","Quiz","Mode","Right","Wrong","Skipped","Score","Percent","Time (s)"]].concat(ui.admin.data.results.map(r => [new Date(r.ts).toLocaleString(), r.uid, r.name, r.label, r.mode, r.right, r.wrong, r.skipped, r.score, r.pct, r.secs]))); break;
+  }
+});
+document.addEventListener("keydown", e => {
+  if(!auth || cur().v !== "quiz" || !session || e.ctrlKey || e.metaKey || e.altKey) return;
+  const t = (e.target.tagName || "").toLowerCase(); if(t === "input" || t === "textarea" || t === "select") return;
+  const k = e.key;
+  if(/^[a-fA-F]$/.test(k)) chooseOption(k.toUpperCase());
+  else if(/^[1-6]$/.test(k)) chooseOption("ABCDEF"[Number(k) - 1]);
+  else if(k === "ArrowRight" || k === "n") moveTo(session.idx + 1);
+  else if(k === "ArrowLeft" || k === "p") moveTo(session.idx - 1);
+  else if(k === "s") toggleBookmark(session.ids[session.idx]);
+  else if(k === "f") toggleFs();
+});
+
+/* =====================================================================
+   BOOT  — always starts at the login screen (a refresh = log in again; your quiz resumes afterwards)
+   ===================================================================== */
+window.__ga = { get nav(){ return nav; }, get session(){ return session; }, get auth(){ return auth; }, get log(){ return log; }, get queue(){ return queue; }, flush: flushQueue, get Q(){ return Q; } };
+render();
+})();
+</script>
+</body>
+</html>
