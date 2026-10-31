@@ -1,5 +1,5 @@
 {
- "built": "2026-10-31T07:30:03+00:00",
+ "built": "2026-10-31T17:28:38+00:00",
  "questions": [
   {
    "month": 0,
@@ -5424,78 +5424,6 @@
    "answer": "B",
    "solution": "<p>As of July 2026, 68 individuals have served as RBI Deputy Governors.</p>",
    "id": "37e4a2d496"
-  },
-  {
-   "month": 7,
-   "main": "C",
-   "sub": "Global Organizations",
-   "minor": "United Nations",
-   "cats": [
-    {
-     "main": "C",
-     "sub": "Global Organizations",
-     "minor": "United Nations"
-    },
-    {
-     "main": "C",
-     "sub": "General",
-     "minor": "International news"
-    }
-   ],
-   "types": [
-    "Oneliner"
-   ],
-   "tag": "United Nations, International news/Oneliner",
-   "question": "Who has been elected as the President of the 81st session of the United Nations General Assembly (UNGA), serving a one-year term from September 2026?",
-   "options": {
-    "A": "Annalena Baerbock",
-    "B": "Mirza Fakhrul Alamgir",
-    "C": "Khalilur Rahman",
-    "D": "Peter Pellegrini",
-    "E": "Hakainde Hichilema"
-   },
-   "answer": "C",
-   "solution": "<p>Bangladesh's Khalilur Rahman is the President of the 81st UNGA, succeeding Germany's Annalena Baerbock, who presided over the 80th session.</p>",
-   "id": "7081ca5ede"
-  },
-  {
-   "month": 7,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
-   "minor": "RBI",
-   "cats": [
-    {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
-     "minor": "RBI"
-    },
-    {
-     "main": "A",
-     "sub": "General",
-     "minor": "Banking news"
-    },
-    {
-     "main": "B",
-     "sub": "General",
-     "minor": "National news"
-    }
-   ],
-   "types": [
-    "Statement Based"
-   ],
-   "tag": "RBI, Banking news, National news/Statement Based",
-   "passage": "<p><u>Consider the following statements about the RBI Monetary Policy Committee (MPC) meeting of August 2026:</u></p><p>I. The repo rate was kept unchanged at 5.25%.<br>II. The policy stance was retained as 'Neutral'.<br>III. Standing Deposit Facility (SDF) is 5.50%</p><p>Which of the statements given above is/are correct?</p>",
-   "question": "STATEMENT BASED QUESTION",
-   "options": {
-    "A": "Only II and III",
-    "B": "Only I and III",
-    "C": "I, II and III all",
-    "D": "None of I, II, III",
-    "E": "Only I and II"
-   },
-   "answer": "E",
-   "solution": "<p>In August 2026 the MPC kept the repo rate unchanged at 5.25% with a Neutral stance, and Standing Deposit Facility (SDF) is 5.00%. Statement III is incorrect.</p>",
-   "id": "303302b3d6"
   }
  ],
  "report": {
@@ -5529,7 +5457,7 @@
     "invalid": 0
    },
    "8": {
-    "valid": 2,
+    "valid": 0,
     "invalid": 0
    },
    "9": {
@@ -5554,12 +5482,12 @@
    }
   },
   "types": {
-   "Oneliner": 177,
+   "Oneliner": 176,
    "Data Based": 1,
-   "Statement Based": 10,
+   "Statement Based": 9,
    "Match the Column": 6
   },
-  "valid": 194,
+  "valid": 192,
   "invalid": 1,
   "duplicates": 0,
   "invalidList": [
