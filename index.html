@@ -763,7 +763,7 @@ function viewLogin(msg){
       <label class="chk"><input type="checkbox" id="liRem" checked> Remember my ID on this device</label>
       <div class="err" id="liErr" role="alert">${esc(msg || "")}</div>
       <button class="btn primary wide" id="liBtn" type="submit">Sign in</button>
-      <p class="fine">🔒 Your password is checked securely on Google Sheets. It is never saved in this page or on this device.</p>
+      <p class="fine">🔒 Your password is checked securely. It is never saved in this page or on this device.</p>
     </form></div>`;
   const f = remembered ? $("#liPw") : $("#liId"); if(f && f.focus) f.focus();
 }
