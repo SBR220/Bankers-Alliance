@@ -29,5 +29,85 @@
   ]},
   {"code":"H","name":"Static GK","weight":15,"emoji":"📚","subs":[
     {"name":"Static GK Highlights","weight":100,"emoji":"🗺️","minors":["Capitals","Important days","Geography","Institutions","National Youth Day","Gangtok capital","Mount Kamet location","Legislative assembly UTs"]}
+  ]},
+
+  {"code":"I","name":"Government Schemes & Missions","weight":12,"emoji":"🏛️","subs":[
+    {"name":"Central Government Schemes","weight":8,"emoji":"🇮🇳","minors":["Centrally Sponsored Schemes","Central Sector Schemes","Flagship Missions","Scheme Launch Dates"]},
+    {"name":"State Government Schemes","weight":8,"emoji":"🗺️","minors":["State Welfare Schemes","State Cash Transfer Schemes","State Housing Schemes","State Launch Events"]},
+    {"name":"New Scheme Launch","weight":8,"emoji":"🆕","minors":["Launched By","Launch Date & Venue","Objective","Budget Outlay"]},
+    {"name":"Scheme Expansion / Extension","weight":8,"emoji":"📈","minors":["Extension of Tenure","Added Beneficiary Categories","Phase 2 / Next Phase","Cabinet Approval"]},
+    {"name":"Scheme Funding & Budget Allocation","weight":8,"emoji":"💵","minors":["Union Budget Allocation","Centre–State Funding Ratio","Outlay in Crore","Funding Agencies"]},
+    {"name":"Scheme Implementing Ministry","weight":8,"emoji":"🏢","minors":["Nodal Ministry","Implementing Agency","Monitoring Body","Scheme–Ministry Matching"]},
+    {"name":"Target Beneficiaries of Schemes","weight":8,"emoji":"🎯","minors":["Farmers","Women","Youth","Senior Citizens","BPL Families","Students"]},
+    {"name":"Digital / Technology Schemes","weight":8,"emoji":"💻","minors":["Digital India","BharatNet","AI Mission","Semiconductor Mission","Startup India"]},
+    {"name":"Rural Development Schemes","weight":8,"emoji":"🌾","minors":["MGNREGA","PM Awas Yojana – Gramin","PM Gram Sadak Yojana","DAY-NRLM","SVAMITVA"]},
+    {"name":"Health Sector Schemes","weight":7,"emoji":"🏥","minors":["Ayushman Bharat PM-JAY","National Health Mission","PM-ABHIM","Mission Indradhanush","Health & Wellness Centres"]},
+    {"name":"Agriculture Schemes","weight":7,"emoji":"🚜","minors":["PM-KISAN","PM Fasal Bima Yojana","Kisan Credit Card","e-NAM","Soil Health Card"]},
+    {"name":"Women & Child Welfare Schemes","weight":7,"emoji":"👩‍👧","minors":["Beti Bachao Beti Padhao","Sukanya Samriddhi Yojana","Mission Shakti","Poshan Abhiyaan","PM Matru Vandana Yojana"]},
+    {"name":"Skill Development Schemes","weight":7,"emoji":"🛠️","minors":["Skill India Mission","PMKVY","PM Vishwakarma","DDU-GKY","National Apprenticeship Promotion Scheme"]}
+  ]},
+
+  {"code":"J","name":"National Current Affairs – Events & Governance","weight":10,"emoji":"🗞️","subs":[
+    {"name":"Major Government Initiatives","weight":11,"emoji":"🚩","minors":["Flagship Initiatives","Mission Mode Projects","Reform Announcements","Policy Frameworks"]},
+    {"name":"Important Bills & Acts","weight":11,"emoji":"⚖️","minors":["Bills Passed in Parliament","New Acts Enacted","Constitutional Amendments","Ordinances","Rules Notified"]},
+    {"name":"National Programs / Campaigns","weight":11,"emoji":"📣","minors":["Swachh Bharat Abhiyan","Awareness Campaigns","Har Ghar Tiranga","Fit India Movement","Theme-based Campaigns"]},
+    {"name":"Important National Events","weight":11,"emoji":"📅","minors":["Census & Surveys","National Days & Weeks","Festivals of National Importance","Major Inaugurations"]},
+    {"name":"Infrastructure Projects (National)","weight":11,"emoji":"🏗️","minors":["Expressways","Bullet Train","Airports","Railway Projects","Inland Waterways"]},
+    {"name":"Defence Exercises (India)","weight":11,"emoji":"🎖️","minors":["Joint Military Exercises","Naval Exercises","Air Force Exercises","Exercise Name & Partner Country","Exercise Venue"]},
+    {"name":"Government Portals & Apps","weight":11,"emoji":"📱","minors":["New Portals Launched","Mobile Apps","UMANG","DigiLocker","e-Governance Platforms"]},
+    {"name":"National Conferences / Summits","weight":11,"emoji":"🎤","minors":["Conference Host City","Theme of Summit","Inaugurated By","Investor Summits"]},
+    {"name":"Important Announcements by Government","weight":12,"emoji":"📢","minors":["Cabinet Decisions","PM Announcements","Union Budget Announcements","MSP Announcements","Policy Notifications"]}
+  ]},
+
+  {"code":"K","name":"International Current Affairs","weight":6,"emoji":"🌐","subs":[
+    {"name":"Global Summits & Meetings","weight":13,"emoji":"🧭","minors":["G20","G7","BRICS","SCO","UN General Assembly","COP Summits"]},
+    {"name":"International Agreements / MoUs","weight":13,"emoji":"📝","minors":["Bilateral MoUs","Trade Agreements","Defence Pacts","Energy Agreements","Treaties"]},
+    {"name":"Major Elections (President / PM)","weight":12,"emoji":"🗳️","minors":["Presidential Elections","Prime Minister Elections","Election Winners","New Heads of Government"]},
+    {"name":"International Organizations News","weight":12,"emoji":"🏢","minors":["UN & Agencies","WTO","NATO","ASEAN","New Members / Headquarters"]},
+    {"name":"Global Reports & Studies","weight":12,"emoji":"📑","minors":["UN Reports","World Bank Reports","IMF Outlooks","Think-tank Studies"]},
+    {"name":"Defence / Military Developments","weight":13,"emoji":"🪖","minors":["Global Military Exercises","Defence Deals","Weapon Systems","Military Alliances"]},
+    {"name":"International Conflicts & Diplomacy","weight":13,"emoji":"🕊️","minors":["Ongoing Conflicts","Peace Talks","Sanctions","Diplomatic Visits"]},
+    {"name":"India's International Partnerships","weight":12,"emoji":"🤝","minors":["Strategic Partnerships","Quad","I2U2","India–US / Russia / Japan Ties","Neighbourhood First Policy"]}
+  ]},
+
+  {"code":"L","name":"Appointments & Resignations","weight":6,"emoji":"🧑‍💼","subs":[
+    {"name":"Heads of International Organizations","weight":15,"emoji":"🌍","minors":["UN Secretary-General","IMF Managing Director","World Bank President","WHO Director-General","WTO Director-General"]},
+    {"name":"CEOs / Chairpersons of Companies","weight":15,"emoji":"💼","minors":["New CEO Appointments","Chairperson Appointments","Corporate Resignations","MD Appointments"]},
+    {"name":"Bank & Financial Institution Heads","weight":14,"emoji":"🏦","minors":["RBI Governor","SBI Chairman","SEBI Chairperson","NABARD Chairman","MD & CEO of Banks"]},
+    {"name":"Government Officials Appointments","weight":14,"emoji":"🏛️","minors":["Cabinet Secretary","Chief Election Commissioner","CAG","Governors","Chief Secretaries"]},
+    {"name":"Ambassadors & Diplomats","weight":14,"emoji":"🛂","minors":["Indian Ambassadors","High Commissioners","Foreign Secretary","Permanent Representative to UN"]},
+    {"name":"Defence Chiefs","weight":14,"emoji":"🎖️","minors":["Chief of Defence Staff","Army Chief","Navy Chief","Air Chief Marshal","DRDO Chairman"]},
+    {"name":"Committee / Commission Heads","weight":14,"emoji":"👥","minors":["Finance Commission Chairman","Law Commission","NITI Aayog","NHRC Chairperson","Expert Committee Heads"]}
+  ]},
+
+  {"code":"M","name":"Reports & Indices","weight":8,"emoji":"📈","subs":[
+    {"name":"Global Economic Reports","weight":13,"emoji":"💹","minors":["World Economic Outlook","Global Economic Prospects","Global Competitiveness","Trade & Development Report"]},
+    {"name":"Human Development Reports","weight":13,"emoji":"🧬","minors":["Human Development Index","Gender Inequality Index","Multidimensional Poverty Index","Global Gender Gap Report"]},
+    {"name":"Environment & Climate Reports","weight":13,"emoji":"🌡️","minors":["Climate Change Performance Index","Environmental Performance Index","Emissions Gap Report","Air Quality Index Reports"]},
+    {"name":"Banking / Financial Stability Reports","weight":13,"emoji":"🏦","minors":["Financial Stability Report (RBI)","Report on Trend & Progress of Banking","Global Financial Stability Report","Financial Inclusion Index"]},
+    {"name":"Education & University Rankings","weight":12,"emoji":"🎓","minors":["NIRF Rankings","QS World University Rankings","Times Higher Education Rankings","ASER Report"]},
+    {"name":"Happiness / Prosperity Indices","weight":12,"emoji":"😊","minors":["World Happiness Report","Legatum Prosperity Index","Global Hunger Index","Social Progress Index"]},
+    {"name":"Competitiveness Rankings","weight":12,"emoji":"🏁","minors":["Global Innovation Index","Ease of Doing Business","Logistics Performance Index","Global Competitiveness Index"]},
+    {"name":"Government Statistical Reports","weight":12,"emoji":"🗂️","minors":["Economic Survey","GDP / GVA Estimates","CPI / WPI Data","NFHS","PLFS"]}
+  ]},
+
+  {"code":"N","name":"Awards & Honours","weight":5,"emoji":"🥇","subs":[
+    {"name":"National Civilian Awards","weight":15,"emoji":"🎗️","minors":["Bharat Ratna","Padma Vibhushan","Padma Bhushan","Padma Shri"]},
+    {"name":"International Awards","weight":15,"emoji":"🌐","minors":["Nobel Prizes","Magsaysay Award","Oscars","Grammy Awards","Pritzker Prize"]},
+    {"name":"Science & Technology Awards","weight":14,"emoji":"🔬","minors":["Shanti Swarup Bhatnagar Prize","Vigyan Ratna","Breakthrough Prize","Turing Award"]},
+    {"name":"Literature Awards","weight":14,"emoji":"📖","minors":["Jnanpith Award","Sahitya Akademi Award","Booker Prize","Saraswati Samman"]},
+    {"name":"Film & Entertainment Awards","weight":14,"emoji":"🎬","minors":["National Film Awards","Dadasaheb Phalke Award","Filmfare Awards","IIFA Awards"]},
+    {"name":"Sports Awards","weight":14,"emoji":"🏅","minors":["Major Dhyan Chand Khel Ratna","Arjuna Award","Dronacharya Award","Dhyan Chand Award"]},
+    {"name":"Government Recognition Awards","weight":14,"emoji":"🏆","minors":["Swachh Survekshan Awards","National Panchayat Awards","Prime Minister's Awards for Excellence","Gallantry Awards"]}
+  ]},
+
+  {"code":"O","name":"Sports Current Affairs","weight":4,"emoji":"🏟️","subs":[
+    {"name":"Major Sports Tournaments","weight":15,"emoji":"🏆","minors":["Olympics","Asian Games","Commonwealth Games","FIFA World Cup","Cricket World Cup"]},
+    {"name":"International Championships","weight":15,"emoji":"🌍","minors":["World Athletics Championships","World Badminton Championships","Chess Olympiad","Wimbledon & Grand Slams"]},
+    {"name":"League Competitions","weight":14,"emoji":"⚽","minors":["IPL","ISL","Pro Kabaddi League","Premier League","Hockey India League"]},
+    {"name":"Medal Winners","weight":14,"emoji":"🥈","minors":["Gold Medalists","India's Medal Tally","Olympic / Paralympic Medalists","Host City & Year"]},
+    {"name":"Records & Achievements","weight":14,"emoji":"📊","minors":["World Records","National Records","Milestones","Youngest / Oldest Winners"]},
+    {"name":"Sports Associations / Governing Bodies","weight":14,"emoji":"🏢","minors":["BCCI","ICC","FIFA","IOA","Sports Authority of India"]},
+    {"name":"Sports Awards (Current Year)","weight":14,"emoji":"🎖️","minors":["Khel Ratna Winners","Arjuna Awardees","Dronacharya Awardees","Laureus Awards"]}
   ]}
 ]
