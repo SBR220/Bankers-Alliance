@@ -1,20 +1,15 @@
 {
- "built": "2026-11-03T08:53:37+00:00",
+ "built": "2026-11-04T19:37:09+00:00",
  "questions": [
   {
    "month": 0,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "National Youth Day",
+   "sub": "General",
+   "minor": "Important Days",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "National Youth Day"
-    },
-    {
-     "main": "H",
-     "sub": "Static GK Highlights",
+     "sub": "General",
      "minor": "Important Days"
     }
    ],
@@ -37,12 +32,12 @@
    "month": 0,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Monetary Policy Committee",
+   "minor": "Monetary Policy Committee (MPC)",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Monetary Policy Committee"
+     "minor": "Monetary Policy Committee (MPC)"
     },
     {
      "main": "A",
@@ -73,17 +68,17 @@
   {
    "month": 0,
    "main": "F",
-   "sub": "Environment Highlights",
-   "minor": "Ramsar sites",
+   "sub": "Ramsar Sites & Wetlands",
+   "minor": "New Ramsar sites in India",
    "cats": [
     {
      "main": "F",
-     "sub": "Environment Highlights",
-     "minor": "Ramsar sites"
+     "sub": "Ramsar Sites & Wetlands",
+     "minor": "New Ramsar sites in India"
     },
     {
      "main": "F",
-     "sub": "Environment Highlights",
+     "sub": "General",
      "minor": "Environment"
     }
    ],
@@ -105,12 +100,12 @@
   {
    "month": 0,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     },
     {
@@ -138,13 +133,13 @@
   {
    "month": 0,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "IMF reports",
+   "sub": "International Organisations & Institutions",
+   "minor": "IMF",
    "cats": [
     {
      "main": "C",
-     "sub": "Global Organizations",
-     "minor": "IMF reports"
+     "sub": "International Organisations & Institutions",
+     "minor": "IMF"
     },
     {
      "main": "C",
@@ -170,12 +165,12 @@
   {
    "month": 0,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     },
     {
@@ -203,14 +198,9 @@
   {
    "month": 0,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "Global Organizations",
+   "sub": "General",
+   "minor": "International news",
    "cats": [
-    {
-     "main": "C",
-     "sub": "Global Organizations",
-     "minor": "Global Organizations"
-    },
     {
      "main": "C",
      "sub": "General",
@@ -236,13 +226,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -264,13 +254,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -292,13 +282,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -319,14 +309,14 @@
   },
   {
    "month": 5,
-   "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Institutions",
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "Financial institutions and headquarters",
    "cats": [
     {
-     "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Institutions"
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "Financial institutions and headquarters"
     }
    ],
    "types": [
@@ -349,12 +339,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Monetary Policy Committee",
+   "minor": "Monetary Policy Committee (MPC)",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Monetary Policy Committee"
+     "minor": "Monetary Policy Committee (MPC)"
     }
    ],
    "types": [
@@ -375,13 +365,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -404,12 +394,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -432,12 +422,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -459,14 +449,14 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "Banking Schemes",
-   "minor": "Financial Inclusion Schemes",
+   "main": "B",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Financial inclusion-linked schemes",
    "cats": [
     {
-     "main": "A",
-     "sub": "Banking Schemes",
-     "minor": "Financial Inclusion Schemes"
+     "main": "B",
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Financial inclusion-linked schemes"
     }
    ],
    "types": [
@@ -488,12 +478,12 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
+   "sub": "General",
    "minor": "Important days",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
+     "sub": "General",
      "minor": "Important days"
     }
    ],
@@ -515,13 +505,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Schemes",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Infrastructure Programs",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Schemes",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Infrastructure Programs"
     }
    ],
@@ -544,13 +534,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -572,12 +562,12 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Infrastructure Projects",
+   "sub": "National Infrastructure & Development Projects",
    "minor": "Infrastructure Projects",
    "cats": [
     {
      "main": "B",
-     "sub": "Infrastructure Projects",
+     "sub": "National Infrastructure & Development Projects",
      "minor": "Infrastructure Projects"
     }
    ],
@@ -599,13 +589,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -628,12 +618,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -655,13 +645,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -684,13 +674,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Schemes",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Digital India Initiatives",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Schemes",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Digital India Initiatives"
     }
    ],
@@ -713,12 +703,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -741,13 +731,13 @@
   {
    "month": 5,
    "main": "F",
-   "sub": "Environment Highlights",
-   "minor": "Ramsar sites",
+   "sub": "Ramsar Sites & Wetlands",
+   "minor": "New Ramsar sites in India",
    "cats": [
     {
      "main": "F",
-     "sub": "Environment Highlights",
-     "minor": "Ramsar sites"
+     "sub": "Ramsar Sites & Wetlands",
+     "minor": "New Ramsar sites in India"
     }
    ],
    "types": [
@@ -768,13 +758,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Reports",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Reports"
     }
    ],
@@ -797,14 +787,14 @@
   },
   {
    "month": 5,
-   "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Institutions",
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "Financial institutions and headquarters",
    "cats": [
     {
-     "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Institutions"
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "Financial institutions and headquarters"
     }
    ],
    "types": [
@@ -826,12 +816,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -854,12 +844,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -882,12 +872,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -911,12 +901,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Inflation Target",
+   "minor": "Inflation target",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Inflation Target"
+     "minor": "Inflation target"
     }
    ],
    "types": [
@@ -938,12 +928,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -967,13 +957,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -994,13 +984,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Reports / Index",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Government Reports / Index",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Reports / Index",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Government Reports / Index"
     }
    ],
@@ -1023,12 +1013,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -1051,12 +1041,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -1078,13 +1068,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -1107,13 +1097,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Committees & Appointments",
-   "minor": "Regulatory Appointments",
+   "sub": "National Appointments, Committees & Commissions",
+   "minor": "Regulatory body appointments",
    "cats": [
     {
      "main": "B",
-     "sub": "Committees & Appointments",
-     "minor": "Regulatory Appointments"
+     "sub": "National Appointments, Committees & Commissions",
+     "minor": "Regulatory body appointments"
     }
    ],
    "types": [
@@ -1134,13 +1124,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Reports / Index",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Government Reports / Index",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Reports / Index",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Government Reports / Index"
     }
    ],
@@ -1163,13 +1153,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -1192,12 +1182,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Monetary Policy Committee",
+   "minor": "Monetary Policy Committee (MPC)",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Monetary Policy Committee"
+     "minor": "Monetary Policy Committee (MPC)"
     }
    ],
    "types": [
@@ -1218,14 +1208,14 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "Banking Schemes",
-   "minor": "Financial Inclusion Schemes",
+   "main": "B",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Financial inclusion-linked schemes",
    "cats": [
     {
-     "main": "A",
-     "sub": "Banking Schemes",
-     "minor": "Financial Inclusion Schemes"
+     "main": "B",
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Financial inclusion-linked schemes"
     }
    ],
    "types": [
@@ -1247,12 +1237,12 @@
   {
    "month": 5,
    "main": "F",
-   "sub": "Environment Highlights",
+   "sub": "National Parks, Wildlife Sanctuaries & Reserves",
    "minor": "Tiger reserves",
    "cats": [
     {
      "main": "F",
-     "sub": "Environment Highlights",
+     "sub": "National Parks, Wildlife Sanctuaries & Reserves",
      "minor": "Tiger reserves"
     }
    ],
@@ -1275,13 +1265,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -1302,13 +1292,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -1330,14 +1320,14 @@
   },
   {
    "month": 5,
-   "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Institutions",
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "Financial institutions and headquarters",
    "cats": [
     {
-     "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Institutions"
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "Financial institutions and headquarters"
     }
    ],
    "types": [
@@ -1359,12 +1349,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -1386,13 +1376,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -1415,13 +1405,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -1443,12 +1433,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -1470,13 +1460,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -1499,12 +1489,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -1526,13 +1516,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -1555,13 +1545,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -1583,12 +1573,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -1610,13 +1600,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Reports",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Reports"
     }
    ],
@@ -1638,13 +1628,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Reports / Index",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Government Reports / Index",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Reports / Index",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Government Reports / Index"
     }
    ],
@@ -1667,13 +1657,13 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "UNESCO programs",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
    "cats": [
     {
      "main": "C",
-     "sub": "Global Organizations",
-     "minor": "UNESCO programs"
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
     }
    ],
    "types": [
@@ -1696,12 +1686,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -1724,12 +1714,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -1751,13 +1741,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -1779,13 +1769,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Infrastructure Projects",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Ports & Corridors",
    "cats": [
     {
-     "main": "B",
-     "sub": "Infrastructure Projects",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Ports & Corridors"
     }
    ],
@@ -1807,13 +1797,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -1835,13 +1825,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Schemes",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Infrastructure Programs",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Schemes",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Infrastructure Programs"
     }
    ],
@@ -1863,14 +1853,14 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "Banking Schemes",
-   "minor": "Financial Inclusion Schemes",
+   "main": "B",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Financial inclusion-linked schemes",
    "cats": [
     {
-     "main": "A",
-     "sub": "Banking Schemes",
-     "minor": "Financial Inclusion Schemes"
+     "main": "B",
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Financial inclusion-linked schemes"
     }
    ],
    "types": [
@@ -1892,12 +1882,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -1919,13 +1909,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Reports / Index",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Government Reports / Index",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Reports / Index",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Government Reports / Index"
     }
    ],
@@ -1948,13 +1938,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -1975,13 +1965,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Infrastructure Projects",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Ports & Corridors",
    "cats": [
     {
-     "main": "B",
-     "sub": "Infrastructure Projects",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Ports & Corridors"
     }
    ],
@@ -2004,12 +1994,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -2031,13 +2021,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -2059,14 +2049,14 @@
   },
   {
    "month": 5,
-   "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Institutions",
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "Financial institutions and headquarters",
    "cats": [
     {
-     "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Institutions"
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "Financial institutions and headquarters"
     }
    ],
    "types": [
@@ -2087,13 +2077,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -2116,12 +2106,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -2143,13 +2133,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -2171,13 +2161,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -2200,13 +2190,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Committees & Appointments",
-   "minor": "Regulatory Appointments",
+   "sub": "National Appointments, Committees & Commissions",
+   "minor": "Regulatory body appointments",
    "cats": [
     {
      "main": "B",
-     "sub": "Committees & Appointments",
-     "minor": "Regulatory Appointments"
+     "sub": "National Appointments, Committees & Commissions",
+     "minor": "Regulatory body appointments"
     }
    ],
    "types": [
@@ -2228,12 +2218,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -2256,12 +2246,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -2283,13 +2273,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Reports",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Reports"
     }
    ],
@@ -2311,13 +2301,13 @@
   },
   {
    "month": 5,
-   "main": "E",
-   "sub": "Sports Highlights",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Cricket tournaments",
    "cats": [
     {
-     "main": "E",
-     "sub": "Sports Highlights",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Cricket tournaments"
     }
    ],
@@ -2339,13 +2329,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -2369,12 +2359,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Monetary Policy Committee",
+   "minor": "Monetary Policy Committee (MPC)",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Monetary Policy Committee"
+     "minor": "Monetary Policy Committee (MPC)"
     }
    ],
    "types": [
@@ -2395,13 +2385,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -2424,13 +2414,13 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "UNESCO programs",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
    "cats": [
     {
      "main": "C",
-     "sub": "Global Organizations",
-     "minor": "UNESCO programs"
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
     }
    ],
    "types": [
@@ -2451,13 +2441,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Reports / Index",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Government Reports / Index",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Reports / Index",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Government Reports / Index"
     }
    ],
@@ -2481,12 +2471,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Monetary Policy Committee",
+   "minor": "Monetary Policy Committee (MPC)",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Monetary Policy Committee"
+     "minor": "Monetary Policy Committee (MPC)"
     }
    ],
    "types": [
@@ -2507,14 +2497,14 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "Banking Schemes",
-   "minor": "Financial Inclusion Schemes",
+   "main": "B",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Financial inclusion-linked schemes",
    "cats": [
     {
-     "main": "A",
-     "sub": "Banking Schemes",
-     "minor": "Financial Inclusion Schemes"
+     "main": "B",
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Financial inclusion-linked schemes"
     }
    ],
    "types": [
@@ -2536,12 +2526,12 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Infrastructure Projects",
+   "sub": "National Infrastructure & Development Projects",
    "minor": "Infrastructure Projects",
    "cats": [
     {
      "main": "B",
-     "sub": "Infrastructure Projects",
+     "sub": "National Infrastructure & Development Projects",
      "minor": "Infrastructure Projects"
     }
    ],
@@ -2564,13 +2554,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Reports",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Reports"
     }
    ],
@@ -2593,13 +2583,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -2621,12 +2611,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -2648,13 +2638,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -2677,13 +2667,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -2705,13 +2695,13 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
-   "minor": "Defence agreements",
+   "sub": "International Agreements, MoUs & Treaties",
+   "minor": "Defence cooperation agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
-     "minor": "Defence agreements"
+     "sub": "International Agreements, MoUs & Treaties",
+     "minor": "Defence cooperation agreements"
     }
    ],
    "types": [
@@ -2732,13 +2722,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -2762,12 +2752,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Repo Rate / Reverse Repo",
+   "minor": "Reverse Repo Rate",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Repo Rate / Reverse Repo"
+     "minor": "Reverse Repo Rate"
     }
    ],
    "types": [
@@ -2789,12 +2779,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI Lite",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI Lite"
     }
    ],
@@ -2818,13 +2808,13 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "UNESCO programs",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
    "cats": [
     {
      "main": "C",
-     "sub": "Global Organizations",
-     "minor": "UNESCO programs"
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
     }
    ],
    "types": [
@@ -2845,13 +2835,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -2874,13 +2864,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -2902,12 +2892,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -2929,14 +2919,14 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "Banking Schemes",
-   "minor": "Financial Inclusion Schemes",
+   "main": "B",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Financial inclusion-linked schemes",
    "cats": [
     {
-     "main": "A",
-     "sub": "Banking Schemes",
-     "minor": "Financial Inclusion Schemes"
+     "main": "B",
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Financial inclusion-linked schemes"
     }
    ],
    "types": [
@@ -2958,12 +2948,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -2985,13 +2975,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -3014,13 +3004,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -3041,13 +3031,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -3070,13 +3060,13 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "UNESCO programs",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
    "cats": [
     {
      "main": "C",
-     "sub": "Global Organizations",
-     "minor": "UNESCO programs"
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
     }
    ],
    "types": [
@@ -3097,13 +3087,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -3126,14 +3116,14 @@
   },
   {
    "month": 5,
-   "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Institutions",
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "Financial institutions and headquarters",
    "cats": [
     {
-     "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Institutions"
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "Financial institutions and headquarters"
     }
    ],
    "types": [
@@ -3154,13 +3144,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -3183,12 +3173,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -3210,13 +3200,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Schemes",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Digital India Initiatives",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Schemes",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Digital India Initiatives"
     }
    ],
@@ -3238,13 +3228,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -3267,12 +3257,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -3294,13 +3284,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -3324,12 +3314,12 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "International Agreements",
+   "sub": "International Agreements, MoUs & Treaties",
    "minor": "International Agreements",
    "cats": [
     {
      "main": "C",
-     "sub": "International Agreements",
+     "sub": "International Agreements, MoUs & Treaties",
      "minor": "International Agreements"
     }
    ],
@@ -3351,13 +3341,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -3380,12 +3370,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -3407,13 +3397,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -3435,13 +3425,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -3464,13 +3454,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -3491,13 +3481,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -3519,13 +3509,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Schemes",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Digital India Initiatives",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Schemes",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Digital India Initiatives"
     }
    ],
@@ -3548,12 +3538,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -3575,13 +3565,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -3603,13 +3593,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Reports / Index",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Government Reports / Index",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Reports / Index",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Government Reports / Index"
     }
    ],
@@ -3631,13 +3621,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -3660,13 +3650,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -3688,13 +3678,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -3717,13 +3707,13 @@
   {
    "month": 5,
    "main": "F",
-   "sub": "Environment Highlights",
-   "minor": "Ramsar sites",
+   "sub": "Ramsar Sites & Wetlands",
+   "minor": "New Ramsar sites in India",
    "cats": [
     {
      "main": "F",
-     "sub": "Environment Highlights",
-     "minor": "Ramsar sites"
+     "sub": "Ramsar Sites & Wetlands",
+     "minor": "New Ramsar sites in India"
     }
    ],
    "types": [
@@ -3745,13 +3735,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -3774,12 +3764,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Repo Rate / Reverse Repo",
+   "minor": "Reverse Repo Rate",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Repo Rate / Reverse Repo"
+     "minor": "Reverse Repo Rate"
     }
    ],
    "types": [
@@ -3801,13 +3791,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Committees & Appointments",
-   "minor": "Expert Committees",
+   "sub": "National Appointments, Committees & Commissions",
+   "minor": "Expert committees and chairpersons",
    "cats": [
     {
      "main": "B",
-     "sub": "Committees & Appointments",
-     "minor": "Expert Committees"
+     "sub": "National Appointments, Committees & Commissions",
+     "minor": "Expert committees and chairpersons"
     }
    ],
    "types": [
@@ -3830,12 +3820,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Repo Rate / Reverse Repo",
+   "minor": "Reverse Repo Rate",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Repo Rate / Reverse Repo"
+     "minor": "Reverse Repo Rate"
     }
    ],
    "types": [
@@ -3858,13 +3848,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -3885,14 +3875,14 @@
   },
   {
    "month": 5,
-   "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Institutions",
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "Financial institutions and headquarters",
    "cats": [
     {
-     "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Institutions"
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "Financial institutions and headquarters"
     }
    ],
    "types": [
@@ -3914,13 +3904,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -3942,13 +3932,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -3969,13 +3959,13 @@
   },
   {
    "month": 5,
-   "main": "E",
-   "sub": "Sports Highlights",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Cricket tournaments",
    "cats": [
     {
-     "main": "E",
-     "sub": "Sports Highlights",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Cricket tournaments"
     }
    ],
@@ -3998,13 +3988,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -4025,14 +4015,14 @@
   },
   {
    "month": 5,
-   "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Institutions",
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "Financial institutions and headquarters",
    "cats": [
     {
-     "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Institutions"
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "Financial institutions and headquarters"
     }
    ],
    "types": [
@@ -4054,13 +4044,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -4081,13 +4071,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -4111,12 +4101,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Monetary Policy Committee",
+   "minor": "Monetary Policy Committee (MPC)",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Monetary Policy Committee"
+     "minor": "Monetary Policy Committee (MPC)"
     }
    ],
    "types": [
@@ -4138,13 +4128,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -4165,13 +4155,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -4194,13 +4184,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -4221,13 +4211,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -4249,13 +4239,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Reports / Index",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Government Reports / Index",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Reports / Index",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Government Reports / Index"
     }
    ],
@@ -4278,13 +4268,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -4306,13 +4296,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -4333,13 +4323,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Reports",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Reports"
     }
    ],
@@ -4362,13 +4352,13 @@
   {
    "month": 5,
    "main": "F",
-   "sub": "Environment Highlights",
-   "minor": "Ramsar sites",
+   "sub": "Ramsar Sites & Wetlands",
+   "minor": "New Ramsar sites in India",
    "cats": [
     {
      "main": "F",
-     "sub": "Environment Highlights",
-     "minor": "Ramsar sites"
+     "sub": "Ramsar Sites & Wetlands",
+     "minor": "New Ramsar sites in India"
     }
    ],
    "types": [
@@ -4389,13 +4379,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -4418,12 +4408,12 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Infrastructure Projects",
+   "sub": "National Infrastructure & Development Projects",
    "minor": "Infrastructure Projects",
    "cats": [
     {
      "main": "B",
-     "sub": "Infrastructure Projects",
+     "sub": "National Infrastructure & Development Projects",
      "minor": "Infrastructure Projects"
     }
    ],
@@ -4445,13 +4435,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Reports",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Reports"
     }
    ],
@@ -4473,13 +4463,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -4502,13 +4492,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -4530,13 +4520,13 @@
   },
   {
    "month": 5,
-   "main": "E",
-   "sub": "Sports Highlights",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Cricket tournaments",
    "cats": [
     {
-     "main": "E",
-     "sub": "Sports Highlights",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Cricket tournaments"
     }
    ],
@@ -4558,13 +4548,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -4587,13 +4577,13 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "UNESCO programs",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
    "cats": [
     {
      "main": "C",
-     "sub": "Global Organizations",
-     "minor": "UNESCO programs"
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
     }
    ],
    "types": [
@@ -4615,13 +4605,13 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "UNESCO programs",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
    "cats": [
     {
      "main": "C",
-     "sub": "Global Organizations",
-     "minor": "UNESCO programs"
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
     }
    ],
    "types": [
@@ -4643,12 +4633,12 @@
   {
    "month": 5,
    "main": "A",
-   "sub": "Digital Banking & Payments",
+   "sub": "Digital Banking & Payment Systems",
    "minor": "UPI",
    "cats": [
     {
      "main": "A",
-     "sub": "Digital Banking & Payments",
+     "sub": "Digital Banking & Payment Systems",
      "minor": "UPI"
     }
    ],
@@ -4670,13 +4660,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -4698,13 +4688,13 @@
   },
   {
    "month": 5,
-   "main": "C",
-   "sub": "Global Organizations",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Global Organizations",
    "cats": [
     {
-     "main": "C",
-     "sub": "Global Organizations",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Global Organizations"
     }
    ],
@@ -4727,12 +4717,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -4755,12 +4745,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -4784,12 +4774,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Monetary Policy Committee",
+   "minor": "Monetary Policy Committee (MPC)",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Monetary Policy Committee"
+     "minor": "Monetary Policy Committee (MPC)"
     }
    ],
    "types": [
@@ -4811,13 +4801,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Agriculture Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Agriculture and farmers' schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Agriculture Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Agriculture and farmers' schemes"
     }
    ],
    "types": [
@@ -4839,13 +4829,13 @@
   {
    "month": 5,
    "main": "C",
-   "sub": "Global Organizations",
-   "minor": "UNESCO programs",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
    "cats": [
     {
      "main": "C",
-     "sub": "Global Organizations",
-     "minor": "UNESCO programs"
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
     }
    ],
    "types": [
@@ -4867,13 +4857,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -4894,13 +4884,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Reports",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Reports"
     }
    ],
@@ -4922,13 +4912,13 @@
   },
   {
    "month": 5,
-   "main": "H",
-   "sub": "Static GK Highlights",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Legislative assembly UTs",
    "cats": [
     {
-     "main": "H",
-     "sub": "Static GK Highlights",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Legislative assembly UTs"
     }
    ],
@@ -4951,13 +4941,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Government Schemes",
-   "minor": "Government Schemes",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
    "cats": [
     {
      "main": "B",
-     "sub": "Government Schemes",
-     "minor": "Government Schemes"
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
     }
    ],
    "types": [
@@ -4978,13 +4968,13 @@
   },
   {
    "month": 5,
-   "main": "B",
-   "sub": "Government Schemes",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Infrastructure Programs",
    "cats": [
     {
-     "main": "B",
-     "sub": "Government Schemes",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Infrastructure Programs"
     }
    ],
@@ -5007,13 +4997,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Committees & Appointments",
-   "minor": "Regulatory Appointments",
+   "sub": "National Appointments, Committees & Commissions",
+   "minor": "Regulatory body appointments",
    "cats": [
     {
      "main": "B",
-     "sub": "Committees & Appointments",
-     "minor": "Regulatory Appointments"
+     "sub": "National Appointments, Committees & Commissions",
+     "minor": "Regulatory body appointments"
     }
    ],
    "types": [
@@ -5035,13 +5025,13 @@
   {
    "month": 5,
    "main": "F",
-   "sub": "Environment Highlights",
-   "minor": "National parks",
+   "sub": "National Parks, Wildlife Sanctuaries & Reserves",
+   "minor": "National parks and States",
    "cats": [
     {
      "main": "F",
-     "sub": "Environment Highlights",
-     "minor": "National parks"
+     "sub": "National Parks, Wildlife Sanctuaries & Reserves",
+     "minor": "National parks and States"
     }
    ],
    "types": [
@@ -5062,13 +5052,13 @@
   },
   {
    "month": 5,
-   "main": "E",
-   "sub": "Sports Highlights",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "Cricket tournaments",
    "cats": [
     {
-     "main": "E",
-     "sub": "Sports Highlights",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "Cricket tournaments"
     }
    ],
@@ -5090,14 +5080,14 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "Banking Schemes",
-   "minor": "Financial Inclusion Schemes",
+   "main": "B",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Financial inclusion-linked schemes",
    "cats": [
     {
-     "main": "A",
-     "sub": "Banking Schemes",
-     "minor": "Financial Inclusion Schemes"
+     "main": "B",
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Financial inclusion-linked schemes"
     }
    ],
    "types": [
@@ -5119,13 +5109,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -5147,13 +5137,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -5177,12 +5167,12 @@
    "month": 5,
    "main": "A",
    "sub": "RBI & Monetary Policy",
-   "minor": "Repo Rate / Reverse Repo",
+   "minor": "Reverse Repo Rate",
    "cats": [
     {
      "main": "A",
      "sub": "RBI & Monetary Policy",
-     "minor": "Repo Rate / Reverse Repo"
+     "minor": "Reverse Repo Rate"
     }
    ],
    "types": [
@@ -5204,13 +5194,13 @@
   {
    "month": 5,
    "main": "F",
-   "sub": "Environment Highlights",
-   "minor": "Ramsar sites",
+   "sub": "Ramsar Sites & Wetlands",
+   "minor": "New Ramsar sites in India",
    "cats": [
     {
      "main": "F",
-     "sub": "Environment Highlights",
-     "minor": "Ramsar sites"
+     "sub": "Ramsar Sites & Wetlands",
+     "minor": "New Ramsar sites in India"
     }
    ],
    "types": [
@@ -5232,13 +5222,13 @@
   {
    "month": 5,
    "main": "F",
-   "sub": "Environment Highlights",
-   "minor": "Ramsar sites",
+   "sub": "Ramsar Sites & Wetlands",
+   "minor": "New Ramsar sites in India",
    "cats": [
     {
      "main": "F",
-     "sub": "Environment Highlights",
-     "minor": "Ramsar sites"
+     "sub": "Ramsar Sites & Wetlands",
+     "minor": "New Ramsar sites in India"
     }
    ],
    "types": [
@@ -5260,13 +5250,13 @@
   {
    "month": 5,
    "main": "H",
-   "sub": "Static GK Highlights",
-   "minor": "Capitals",
+   "sub": "Countries, Capitals, Currencies & Locations",
+   "minor": "Countries and capitals",
    "cats": [
     {
      "main": "H",
-     "sub": "Static GK Highlights",
-     "minor": "Capitals"
+     "sub": "Countries, Capitals, Currencies & Locations",
+     "minor": "Countries and capitals"
     }
    ],
    "types": [
@@ -5288,13 +5278,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Committees & Appointments",
-   "minor": "Expert Committees",
+   "sub": "National Appointments, Committees & Commissions",
+   "minor": "Expert committees and chairpersons",
    "cats": [
     {
      "main": "B",
-     "sub": "Committees & Appointments",
-     "minor": "Expert Committees"
+     "sub": "National Appointments, Committees & Commissions",
+     "minor": "Expert committees and chairpersons"
     }
    ],
    "types": [
@@ -5316,12 +5306,12 @@
   {
    "month": 5,
    "main": "E",
-   "sub": "Sports Highlights",
+   "sub": "International Championships & Tournaments",
    "minor": "International tournaments",
    "cats": [
     {
      "main": "E",
-     "sub": "Sports Highlights",
+     "sub": "International Championships & Tournaments",
      "minor": "International tournaments"
     }
    ],
@@ -5343,13 +5333,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -5371,13 +5361,13 @@
   },
   {
    "month": 5,
-   "main": "A",
-   "sub": "RBI & Monetary Policy",
+   "main": "Z",
+   "sub": "Unsorted",
    "minor": "RBI Guidelines",
    "cats": [
     {
-     "main": "A",
-     "sub": "RBI & Monetary Policy",
+     "main": "Z",
+     "sub": "Unsorted",
      "minor": "RBI Guidelines"
     }
    ],
@@ -5400,13 +5390,13 @@
   {
    "month": 5,
    "main": "B",
-   "sub": "Committees & Appointments",
-   "minor": "Regulatory Appointments",
+   "sub": "National Appointments, Committees & Commissions",
+   "minor": "Regulatory body appointments",
    "cats": [
     {
      "main": "B",
-     "sub": "Committees & Appointments",
-     "minor": "Regulatory Appointments"
+     "sub": "National Appointments, Committees & Commissions",
+     "minor": "Regulatory body appointments"
     }
    ],
    "types": [
@@ -5499,6 +5489,16 @@
     "preview": "Consider the following about Mutilated notes of ₹50, ₹100, ₹200, ₹500 and ₹2000 "
    }
   ],
-  "unmappedTags": {}
+  "unmappedTags": {
+   "RBI Guidelines": 30,
+   "Infrastructure Programs": 3,
+   "Digital India Initiatives": 3,
+   "RBI Reports": 7,
+   "Government Reports / Index": 7,
+   "Global Organizations": 15,
+   "Ports & Corridors": 2,
+   "Cricket tournaments": 4,
+   "Legislative assembly UTs": 1
+  }
  }
 }

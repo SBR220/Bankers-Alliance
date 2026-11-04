@@ -1,113 +1,1031 @@
 [
-  {"code":"A","name":"Banking & Financial Awareness","weight":28,"emoji":"🏦","subs":[
-    {"name":"RBI & Monetary Policy","weight":32,"emoji":"💰","minors":["Repo Rate / Reverse Repo","Monetary Policy Committee","Inflation Target","RBI Reports","RBI Guidelines"]},
-    {"name":"Banking Structure","weight":18,"emoji":"🏛️","minors":["PSB Number / Classification","Regional Rural Banks","Small Finance Banks","Payment Banks","Local Area Banks"]},
-    {"name":"Banking Schemes","weight":25,"emoji":"📋","minors":["PMJDY","PMMY","PM Surya Ghar","AIF","Stand Up India","Financial Inclusion Schemes"]},
-    {"name":"Digital Banking & Payments","weight":25,"emoji":"💳","minors":["UPI","AEPS","Mobile Seva","Digital Rupee","UPI Lite","BBPS"]}
-  ]},
-  {"code":"B","name":"National Current Affairs","weight":24,"emoji":"🇮🇳","subs":[
-    {"name":"Government Schemes","weight":40,"emoji":"📜","minors":["PM Surya Ghar Yojana","SMILE Scheme","Startup Ranking","Digital India Initiatives","Agriculture Schemes","Infrastructure Programs"]},
-    {"name":"Government Reports / Index","weight":25,"emoji":"📊","minors":["UNFPA Report","NHAI Green Cover Index","Economic Survey","Global Innovation Index","Human Development Index"]},
-    {"name":"Committees & Appointments","weight":20,"emoji":"👥","minors":["Finance Commission","Expert Committees","Regulatory Appointments","Government Panels"]},
-    {"name":"Infrastructure Projects","weight":15,"emoji":"🌉","minors":["Sea Bridges","Highways","Metro Projects","Ports & Corridors"]}
-  ]},
-  {"code":"C","name":"International Affairs","weight":8,"emoji":"🌍","subs":[
-    {"name":"Global Organizations","weight":50,"emoji":"🏢","minors":["IMF reports","World Bank programs","WHO initiatives","IMO headquarters","UNESCO programs"]},
-    {"name":"International Agreements","weight":50,"emoji":"🤝","minors":["India–Mauritius MoU","Lithium exploration agreement","Defence agreements","Space collaboration"]}
-  ]},
-  {"code":"D","name":"Defence & Space","weight":7,"emoji":"🚀","subs":[
-    {"name":"Defence & Space Highlights","weight":100,"emoji":"🛡️","minors":["Defence exercises","DRDO weapons","Naval operations","ISRO missions","Pinaka MBRL","Aditya-L1 mission","Chandrayaan-1","Naval rescue operations"]}
-  ]},
-  {"code":"E","name":"Sports","weight":6,"emoji":"🏅","subs":[
-    {"name":"Sports Highlights","weight":100,"emoji":"⚽","minors":["International tournaments","National sports awards","Cricket tournaments","Olympic sports","ICC T20 World Cup winners","Khel Ratna awards","Irani Cup","Hockey India awards"]}
-  ]},
-  {"code":"F","name":"Environment & Geography","weight":7,"emoji":"🌿","subs":[
-    {"name":"Environment Highlights","weight":100,"emoji":"🐯","minors":["Ramsar sites","Tiger reserves","National parks","Wildlife sanctuaries","Udaipur Jheel Ramsar site","Pench Tiger Reserve","Dark Sky Reserve"]}
-  ]},
-  {"code":"G","name":"Culture & Awards","weight":5,"emoji":"🎭","subs":[
-    {"name":"Culture & Awards Highlights","weight":100,"emoji":"🏆","minors":["National awards","Literature awards","Cultural festivals","Dadasaheb Phalke award","International Booker Prize","Ustad Bismillah Khan award"]}
-  ]},
-  {"code":"H","name":"Static GK","weight":15,"emoji":"📚","subs":[
-    {"name":"Static GK Highlights","weight":100,"emoji":"🗺️","minors":["Capitals","Important days","Geography","Institutions","National Youth Day","Gangtok capital","Mount Kamet location","Legislative assembly UTs"]}
-  ]},
-
-  {"code":"I","name":"Government Schemes & Missions","weight":12,"emoji":"🏛️","subs":[
-    {"name":"Central Government Schemes","weight":8,"emoji":"🇮🇳","minors":["Centrally Sponsored Schemes","Central Sector Schemes","Flagship Missions","Scheme Launch Dates"]},
-    {"name":"State Government Schemes","weight":8,"emoji":"🗺️","minors":["State Welfare Schemes","State Cash Transfer Schemes","State Housing Schemes","State Launch Events"]},
-    {"name":"New Scheme Launch","weight":8,"emoji":"🆕","minors":["Launched By","Launch Date & Venue","Objective","Budget Outlay"]},
-    {"name":"Scheme Expansion / Extension","weight":8,"emoji":"📈","minors":["Extension of Tenure","Added Beneficiary Categories","Phase 2 / Next Phase","Cabinet Approval"]},
-    {"name":"Scheme Funding & Budget Allocation","weight":8,"emoji":"💵","minors":["Union Budget Allocation","Centre–State Funding Ratio","Outlay in Crore","Funding Agencies"]},
-    {"name":"Scheme Implementing Ministry","weight":8,"emoji":"🏢","minors":["Nodal Ministry","Implementing Agency","Monitoring Body","Scheme–Ministry Matching"]},
-    {"name":"Target Beneficiaries of Schemes","weight":8,"emoji":"🎯","minors":["Farmers","Women","Youth","Senior Citizens","BPL Families","Students"]},
-    {"name":"Digital / Technology Schemes","weight":8,"emoji":"💻","minors":["Digital India","BharatNet","AI Mission","Semiconductor Mission","Startup India"]},
-    {"name":"Rural Development Schemes","weight":8,"emoji":"🌾","minors":["MGNREGA","PM Awas Yojana – Gramin","PM Gram Sadak Yojana","DAY-NRLM","SVAMITVA"]},
-    {"name":"Health Sector Schemes","weight":7,"emoji":"🏥","minors":["Ayushman Bharat PM-JAY","National Health Mission","PM-ABHIM","Mission Indradhanush","Health & Wellness Centres"]},
-    {"name":"Agriculture Schemes","weight":7,"emoji":"🚜","minors":["PM-KISAN","PM Fasal Bima Yojana","Kisan Credit Card","e-NAM","Soil Health Card"]},
-    {"name":"Women & Child Welfare Schemes","weight":7,"emoji":"👩‍👧","minors":["Beti Bachao Beti Padhao","Sukanya Samriddhi Yojana","Mission Shakti","Poshan Abhiyaan","PM Matru Vandana Yojana"]},
-    {"name":"Skill Development Schemes","weight":7,"emoji":"🛠️","minors":["Skill India Mission","PMKVY","PM Vishwakarma","DDU-GKY","National Apprenticeship Promotion Scheme"]}
-  ]},
-
-  {"code":"J","name":"National Current Affairs – Events & Governance","weight":10,"emoji":"🗞️","subs":[
-    {"name":"Major Government Initiatives","weight":11,"emoji":"🚩","minors":["Flagship Initiatives","Mission Mode Projects","Reform Announcements","Policy Frameworks"]},
-    {"name":"Important Bills & Acts","weight":11,"emoji":"⚖️","minors":["Bills Passed in Parliament","New Acts Enacted","Constitutional Amendments","Ordinances","Rules Notified"]},
-    {"name":"National Programs / Campaigns","weight":11,"emoji":"📣","minors":["Swachh Bharat Abhiyan","Awareness Campaigns","Har Ghar Tiranga","Fit India Movement","Theme-based Campaigns"]},
-    {"name":"Important National Events","weight":11,"emoji":"📅","minors":["Census & Surveys","National Days & Weeks","Festivals of National Importance","Major Inaugurations"]},
-    {"name":"Infrastructure Projects (National)","weight":11,"emoji":"🏗️","minors":["Expressways","Bullet Train","Airports","Railway Projects","Inland Waterways"]},
-    {"name":"Defence Exercises (India)","weight":11,"emoji":"🎖️","minors":["Joint Military Exercises","Naval Exercises","Air Force Exercises","Exercise Name & Partner Country","Exercise Venue"]},
-    {"name":"Government Portals & Apps","weight":11,"emoji":"📱","minors":["New Portals Launched","Mobile Apps","UMANG","DigiLocker","e-Governance Platforms"]},
-    {"name":"National Conferences / Summits","weight":11,"emoji":"🎤","minors":["Conference Host City","Theme of Summit","Inaugurated By","Investor Summits"]},
-    {"name":"Important Announcements by Government","weight":12,"emoji":"📢","minors":["Cabinet Decisions","PM Announcements","Union Budget Announcements","MSP Announcements","Policy Notifications"]}
-  ]},
-
-  {"code":"K","name":"International Current Affairs","weight":6,"emoji":"🌐","subs":[
-    {"name":"Global Summits & Meetings","weight":13,"emoji":"🧭","minors":["G20","G7","BRICS","SCO","UN General Assembly","COP Summits"]},
-    {"name":"International Agreements / MoUs","weight":13,"emoji":"📝","minors":["Bilateral MoUs","Trade Agreements","Defence Pacts","Energy Agreements","Treaties"]},
-    {"name":"Major Elections (President / PM)","weight":12,"emoji":"🗳️","minors":["Presidential Elections","Prime Minister Elections","Election Winners","New Heads of Government"]},
-    {"name":"International Organizations News","weight":12,"emoji":"🏢","minors":["UN & Agencies","WTO","NATO","ASEAN","New Members / Headquarters"]},
-    {"name":"Global Reports & Studies","weight":12,"emoji":"📑","minors":["UN Reports","World Bank Reports","IMF Outlooks","Think-tank Studies"]},
-    {"name":"Defence / Military Developments","weight":13,"emoji":"🪖","minors":["Global Military Exercises","Defence Deals","Weapon Systems","Military Alliances"]},
-    {"name":"International Conflicts & Diplomacy","weight":13,"emoji":"🕊️","minors":["Ongoing Conflicts","Peace Talks","Sanctions","Diplomatic Visits"]},
-    {"name":"India's International Partnerships","weight":12,"emoji":"🤝","minors":["Strategic Partnerships","Quad","I2U2","India–US / Russia / Japan Ties","Neighbourhood First Policy"]}
-  ]},
-
-  {"code":"L","name":"Appointments & Resignations","weight":6,"emoji":"🧑‍💼","subs":[
-    {"name":"Heads of International Organizations","weight":15,"emoji":"🌍","minors":["UN Secretary-General","IMF Managing Director","World Bank President","WHO Director-General","WTO Director-General"]},
-    {"name":"CEOs / Chairpersons of Companies","weight":15,"emoji":"💼","minors":["New CEO Appointments","Chairperson Appointments","Corporate Resignations","MD Appointments"]},
-    {"name":"Bank & Financial Institution Heads","weight":14,"emoji":"🏦","minors":["RBI Governor","SBI Chairman","SEBI Chairperson","NABARD Chairman","MD & CEO of Banks"]},
-    {"name":"Government Officials Appointments","weight":14,"emoji":"🏛️","minors":["Cabinet Secretary","Chief Election Commissioner","CAG","Governors","Chief Secretaries"]},
-    {"name":"Ambassadors & Diplomats","weight":14,"emoji":"🛂","minors":["Indian Ambassadors","High Commissioners","Foreign Secretary","Permanent Representative to UN"]},
-    {"name":"Defence Chiefs","weight":14,"emoji":"🎖️","minors":["Chief of Defence Staff","Army Chief","Navy Chief","Air Chief Marshal","DRDO Chairman"]},
-    {"name":"Committee / Commission Heads","weight":14,"emoji":"👥","minors":["Finance Commission Chairman","Law Commission","NITI Aayog","NHRC Chairperson","Expert Committee Heads"]}
-  ]},
-
-  {"code":"M","name":"Reports & Indices","weight":8,"emoji":"📈","subs":[
-    {"name":"Global Economic Reports","weight":13,"emoji":"💹","minors":["World Economic Outlook","Global Economic Prospects","Global Competitiveness","Trade & Development Report"]},
-    {"name":"Human Development Reports","weight":13,"emoji":"🧬","minors":["Human Development Index","Gender Inequality Index","Multidimensional Poverty Index","Global Gender Gap Report"]},
-    {"name":"Environment & Climate Reports","weight":13,"emoji":"🌡️","minors":["Climate Change Performance Index","Environmental Performance Index","Emissions Gap Report","Air Quality Index Reports"]},
-    {"name":"Banking / Financial Stability Reports","weight":13,"emoji":"🏦","minors":["Financial Stability Report (RBI)","Report on Trend & Progress of Banking","Global Financial Stability Report","Financial Inclusion Index"]},
-    {"name":"Education & University Rankings","weight":12,"emoji":"🎓","minors":["NIRF Rankings","QS World University Rankings","Times Higher Education Rankings","ASER Report"]},
-    {"name":"Happiness / Prosperity Indices","weight":12,"emoji":"😊","minors":["World Happiness Report","Legatum Prosperity Index","Global Hunger Index","Social Progress Index"]},
-    {"name":"Competitiveness Rankings","weight":12,"emoji":"🏁","minors":["Global Innovation Index","Ease of Doing Business","Logistics Performance Index","Global Competitiveness Index"]},
-    {"name":"Government Statistical Reports","weight":12,"emoji":"🗂️","minors":["Economic Survey","GDP / GVA Estimates","CPI / WPI Data","NFHS","PLFS"]}
-  ]},
-
-  {"code":"N","name":"Awards & Honours","weight":5,"emoji":"🥇","subs":[
-    {"name":"National Civilian Awards","weight":15,"emoji":"🎗️","minors":["Bharat Ratna","Padma Vibhushan","Padma Bhushan","Padma Shri"]},
-    {"name":"International Awards","weight":15,"emoji":"🌐","minors":["Nobel Prizes","Magsaysay Award","Oscars","Grammy Awards","Pritzker Prize"]},
-    {"name":"Science & Technology Awards","weight":14,"emoji":"🔬","minors":["Shanti Swarup Bhatnagar Prize","Vigyan Ratna","Breakthrough Prize","Turing Award"]},
-    {"name":"Literature Awards","weight":14,"emoji":"📖","minors":["Jnanpith Award","Sahitya Akademi Award","Booker Prize","Saraswati Samman"]},
-    {"name":"Film & Entertainment Awards","weight":14,"emoji":"🎬","minors":["National Film Awards","Dadasaheb Phalke Award","Filmfare Awards","IIFA Awards"]},
-    {"name":"Sports Awards","weight":14,"emoji":"🏅","minors":["Major Dhyan Chand Khel Ratna","Arjuna Award","Dronacharya Award","Dhyan Chand Award"]},
-    {"name":"Government Recognition Awards","weight":14,"emoji":"🏆","minors":["Swachh Survekshan Awards","National Panchayat Awards","Prime Minister's Awards for Excellence","Gallantry Awards"]}
-  ]},
-
-  {"code":"O","name":"Sports Current Affairs","weight":4,"emoji":"🏟️","subs":[
-    {"name":"Major Sports Tournaments","weight":15,"emoji":"🏆","minors":["Olympics","Asian Games","Commonwealth Games","FIFA World Cup","Cricket World Cup"]},
-    {"name":"International Championships","weight":15,"emoji":"🌍","minors":["World Athletics Championships","World Badminton Championships","Chess Olympiad","Wimbledon & Grand Slams"]},
-    {"name":"League Competitions","weight":14,"emoji":"⚽","minors":["IPL","ISL","Pro Kabaddi League","Premier League","Hockey India League"]},
-    {"name":"Medal Winners","weight":14,"emoji":"🥈","minors":["Gold Medalists","India's Medal Tally","Olympic / Paralympic Medalists","Host City & Year"]},
-    {"name":"Records & Achievements","weight":14,"emoji":"📊","minors":["World Records","National Records","Milestones","Youngest / Oldest Winners"]},
-    {"name":"Sports Associations / Governing Bodies","weight":14,"emoji":"🏢","minors":["BCCI","ICC","FIFA","IOA","Sports Authority of India"]},
-    {"name":"Sports Awards (Current Year)","weight":14,"emoji":"🎖️","minors":["Khel Ratna Winners","Arjuna Awardees","Dronacharya Awardees","Laureus Awards"]}
-  ]}
+  {
+    "code": "A",
+    "name": "Banking & Financial Awareness",
+    "weight": 28,
+    "emoji": "🏦",
+    "subs": [
+      {
+        "name": "RBI & Monetary Policy",
+        "weight": 25,
+        "emoji": "💰",
+        "minors": [
+          "RBI monetary policy decisions",
+          "Repo Rate",
+          "Reverse Repo Rate",
+          "Standing Deposit Facility (SDF) Rate",
+          "Marginal Standing Facility (MSF) Rate",
+          "Bank Rate",
+          "CRR",
+          "SLR",
+          "Monetary Policy Committee (MPC)",
+          "Policy stance",
+          "Inflation target",
+          "Liquidity adjustment measures",
+          "Open Market Operations",
+          "RBI master directions and circulars",
+          "RBI Annual Report",
+          "Financial Stability Report",
+          "Report on Trend and Progress of Banking",
+          "RBI committees and working groups"
+        ]
+      },
+      {
+        "name": "Banking Structure, Regulation & Reforms",
+        "weight": 20,
+        "emoji": "🏛️",
+        "minors": [
+          "Public Sector Banks",
+          "Private Sector Banks",
+          "Foreign Banks in India",
+          "Regional Rural Banks",
+          "Small Finance Banks",
+          "Payments Banks",
+          "Local Area Banks",
+          "Co-operative Banks",
+          "Scheduled and non-scheduled banks",
+          "Bank nationalisation",
+          "Bank mergers and amalgamations",
+          "Bank recapitalisation",
+          "Prompt Corrective Action framework",
+          "Basel norms",
+          "Capital Adequacy Ratio",
+          "Priority Sector Lending",
+          "Large Exposure Framework",
+          "Non-Performing Assets",
+          "Wilful defaulters",
+          "Deposit insurance and DICGC",
+          "Bank licences",
+          "RBI penalties and restrictions"
+        ]
+      },
+      {
+        "name": "Banking Schemes & Financial Inclusion",
+        "weight": 15,
+        "emoji": "📋",
+        "minors": [
+          "Pradhan Mantri Jan Dhan Yojana",
+          "Pradhan Mantri Mudra Yojana",
+          "Stand-Up India",
+          "Atal Pension Yojana",
+          "PMJJBY",
+          "PMSBY",
+          "Kisan Credit Card",
+          "SHG–Bank Linkage Programme",
+          "DAY-NRLM financial inclusion",
+          "Financial Inclusion Index",
+          "Lead Bank Scheme",
+          "Business Correspondents",
+          "JAM Trinity",
+          "Direct Benefit Transfer",
+          "Microfinance regulations",
+          "MSME credit guarantee schemes"
+        ]
+      },
+      {
+        "name": "Digital Banking & Payment Systems",
+        "weight": 15,
+        "emoji": "💳",
+        "minors": [
+          "UPI",
+          "UPI Lite",
+          "UPI 123PAY",
+          "RuPay",
+          "IMPS",
+          "NEFT",
+          "RTGS",
+          "Aadhaar Enabled Payment System",
+          "Bharat Bill Payment System",
+          "NACH",
+          "National Financial Switch",
+          "Central Bank Digital Currency / Digital Rupee",
+          "NPCI products and initiatives",
+          "Payment aggregators and gateways",
+          "Cross-border digital payments",
+          "UPI international linkage",
+          "Digital payment security",
+          "Tokenisation",
+          "FASTag",
+          "Mobile and internet banking"
+        ]
+      },
+      {
+        "name": "Financial Institutions, Markets & Instruments",
+        "weight": 15,
+        "emoji": "📈",
+        "minors": [
+          "NABARD",
+          "SIDBI",
+          "EXIM Bank",
+          "NHB",
+          "NaBFID",
+          "NPCI",
+          "DICGC",
+          "SEBI",
+          "IRDAI",
+          "PFRDA",
+          "IFSCA",
+          "Financial institutions and headquarters",
+          "Treasury Bills",
+          "Commercial Paper",
+          "Certificate of Deposit",
+          "Government securities",
+          "Sovereign Gold Bonds",
+          "Bonds and debentures",
+          "Mutual funds",
+          "REITs and InvITs",
+          "IPOs",
+          "Foreign Portfolio Investment",
+          "External Commercial Borrowings"
+        ]
+      },
+      {
+        "name": "Economy, Credit & Financial Sector Updates",
+        "weight": 10,
+        "emoji": "💹",
+        "minors": [
+          "GDP and GVA",
+          "Inflation and CPI",
+          "Wholesale Price Index",
+          "Fiscal deficit",
+          "Current Account Deficit",
+          "Balance of Payments",
+          "Foreign exchange reserves",
+          "Exchange rate movements",
+          "Bank credit growth",
+          "Deposit growth",
+          "Credit-deposit ratio",
+          "MSME finance",
+          "Agricultural credit",
+          "Housing finance",
+          "NBFC regulations",
+          "Infrastructure finance",
+          "Financial literacy initiatives",
+          "Insurance and pension sector updates"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "B",
+    "name": "National Current Affairs & Governance",
+    "weight": 24,
+    "emoji": "🇮🇳",
+    "subs": [
+      {
+        "name": "Central Government Schemes & Missions",
+        "weight": 30,
+        "emoji": "📜",
+        "minors": [
+          "Central Sector Schemes",
+          "Centrally Sponsored Schemes",
+          "Flagship government schemes",
+          "Scheme launch date and authority",
+          "Scheme objective and features",
+          "Nodal ministry and implementing agency",
+          "Target beneficiaries and eligibility",
+          "Budgetary outlay and funding pattern",
+          "Scheme duration and extension",
+          "Revised guidelines and new components",
+          "Phase II and scheme expansion",
+          "Scheme portals and mobile applications",
+          "Agriculture and farmers' schemes",
+          "Rural development schemes",
+          "Urban development and housing schemes",
+          "Health and nutrition schemes",
+          "Women and child welfare schemes",
+          "Education and scholarship schemes",
+          "Skill and employment schemes",
+          "MSME and entrepreneurship schemes",
+          "Social security and pension schemes",
+          "Renewable energy schemes",
+          "Financial inclusion-linked schemes"
+        ]
+      },
+      {
+        "name": "Government Initiatives, Bills, Acts & Policies",
+        "weight": 15,
+        "emoji": "⚖️",
+        "minors": [
+          "Bills introduced",
+          "Bills passed by Parliament",
+          "New Acts and commencement dates",
+          "Constitutional amendments",
+          "Ordinances",
+          "Rules and regulations notified",
+          "National missions and campaigns",
+          "Policy reforms and frameworks",
+          "Cabinet decisions",
+          "Union government announcements",
+          "MSP and procurement decisions",
+          "Ease of doing business initiatives",
+          "Digital governance initiatives",
+          "Public service delivery reforms",
+          "National targets and mission milestones"
+        ]
+      },
+      {
+        "name": "National Reports, Surveys & Rankings",
+        "weight": 20,
+        "emoji": "📊",
+        "minors": [
+          "Economic Survey",
+          "Union Budget statistics",
+          "NITI Aayog reports",
+          "National Family Health Survey",
+          "Periodic Labour Force Survey",
+          "Annual Survey of Industries",
+          "NSO releases",
+          "State ranking reports",
+          "Startup ranking of States and UTs",
+          "Swachh Survekshan",
+          "NHAI and infrastructure indices",
+          "Education and health rankings",
+          "Agriculture and rural development reports",
+          "Poverty and employment estimates",
+          "Report publisher",
+          "India's rank and top-performing State",
+          "Report reference period and key findings"
+        ]
+      },
+      {
+        "name": "National Appointments, Committees & Commissions",
+        "weight": 10,
+        "emoji": "👥",
+        "minors": [
+          "Constitutional authority appointments",
+          "Regulatory body appointments",
+          "Government department heads",
+          "Cabinet Secretary appointments",
+          "Election Commission appointments",
+          "Finance Commission",
+          "NITI Aayog governing bodies",
+          "Parliamentary committees",
+          "Expert committees and chairpersons",
+          "Commission recommendations",
+          "Committee mandate and report",
+          "New task forces"
+        ]
+      },
+      {
+        "name": "National Infrastructure & Development Projects",
+        "weight": 15,
+        "emoji": "🏗️",
+        "minors": [
+          "Expressways and national highways",
+          "Railway corridors and new trains",
+          "Dedicated Freight Corridors",
+          "Metro rail projects",
+          "Airports and aviation infrastructure",
+          "Ports and port-led development",
+          "Inland waterways",
+          "Bridges and tunnels",
+          "Bullet train projects",
+          "Industrial corridors",
+          "Logistics parks",
+          "Renewable energy parks",
+          "Power and transmission projects",
+          "Telecom and broadband infrastructure",
+          "Smart Cities projects",
+          "Project location, length, cost and agency"
+        ]
+      },
+      {
+        "name": "National Events, Campaigns & Government Platforms",
+        "weight": 10,
+        "emoji": "📣",
+        "minors": [
+          "National conferences",
+          "Government-hosted summits",
+          "Conference theme and venue",
+          "National campaigns",
+          "Government portals launched",
+          "Mobile applications launched",
+          "UMANG",
+          "DigiLocker",
+          "GeM platform updates",
+          "Public digital infrastructure",
+          "Major inaugurations",
+          "National festivals and commemorative events",
+          "Event organiser and chief guest"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C",
+    "name": "International Current Affairs",
+    "weight": 8,
+    "emoji": "🌍",
+    "subs": [
+      {
+        "name": "Global Summits & Multilateral Meetings",
+        "weight": 20,
+        "emoji": "🧭",
+        "minors": [
+          "G20",
+          "G7",
+          "BRICS",
+          "SCO",
+          "ASEAN",
+          "UN General Assembly",
+          "World Economic Forum",
+          "COP climate summits",
+          "Commonwealth Heads of Government Meeting",
+          "Summit host country and city",
+          "Chair country",
+          "Summit theme",
+          "Member countries and invitees",
+          "Joint declarations and outcomes",
+          "Next summit venue"
+        ]
+      },
+      {
+        "name": "International Organisations & Institutions",
+        "weight": 20,
+        "emoji": "🏢",
+        "minors": [
+          "United Nations and specialised agencies",
+          "IMF",
+          "World Bank Group",
+          "WTO",
+          "WHO",
+          "UNESCO",
+          "UNICEF",
+          "UNDP",
+          "UNEP",
+          "ILO",
+          "FAO",
+          "IMO",
+          "ICAO",
+          "IAEA",
+          "OECD",
+          "ADB",
+          "AIIB",
+          "New member countries",
+          "Headquarters",
+          "Heads and chief executives",
+          "Founding year and mandate"
+        ]
+      },
+      {
+        "name": "International Agreements, MoUs & Treaties",
+        "weight": 20,
+        "emoji": "🤝",
+        "minors": [
+          "Bilateral agreements",
+          "Trade and investment agreements",
+          "Defence cooperation agreements",
+          "Energy and critical minerals agreements",
+          "Technology and semiconductor partnerships",
+          "Space cooperation agreements",
+          "Education and research MoUs",
+          "Health cooperation agreements",
+          "Climate agreements",
+          "Signatory countries",
+          "Implementing agencies",
+          "Agreement duration and purpose"
+        ]
+      },
+      {
+        "name": "Global Elections & Political Developments",
+        "weight": 10,
+        "emoji": "🗳️",
+        "minors": [
+          "Presidential elections",
+          "Prime Minister and parliamentary elections",
+          "Election winners",
+          "New heads of state",
+          "New heads of government",
+          "Ruling parties and coalitions",
+          "Major political transitions"
+        ]
+      },
+      {
+        "name": "Global Reports, Economy & Trade Developments",
+        "weight": 10,
+        "emoji": "📑",
+        "minors": [
+          "IMF global outlooks",
+          "World Bank economic projections",
+          "Global trade reports",
+          "International labour reports",
+          "Global poverty estimates",
+          "Global debt updates",
+          "Major economic forecasts",
+          "Report issuer and publication"
+        ]
+      },
+      {
+        "name": "International Conflicts, Diplomacy & Visits",
+        "weight": 10,
+        "emoji": "🕊️",
+        "minors": [
+          "Major international conflicts",
+          "Ceasefire and peace agreements",
+          "Peace negotiations",
+          "International sanctions",
+          "Diplomatic visits",
+          "Bilateral and multilateral dialogues",
+          "Humanitarian assistance",
+          "Embassy developments"
+        ]
+      },
+      {
+        "name": "India's International Partnerships",
+        "weight": 10,
+        "emoji": "🌐",
+        "minors": [
+          "India–US relations",
+          "India–Russia relations",
+          "India–Japan relations",
+          "India–France relations",
+          "India–UAE relations",
+          "India–Mauritius relations",
+          "Neighbourhood First Policy",
+          "Act East Policy",
+          "Quad",
+          "I2U2",
+          "Strategic partnerships",
+          "Diaspora engagement"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "D",
+    "name": "Defence, Security & Space",
+    "weight": 7,
+    "emoji": "🚀",
+    "subs": [
+      {
+        "name": "Joint Military Exercises",
+        "weight": 25,
+        "emoji": "🎖️",
+        "minors": [
+          "Bilateral army exercises",
+          "Naval exercises",
+          "Air force exercises",
+          "Tri-service exercises",
+          "Exercise name and partner countries",
+          "Exercise venue",
+          "Edition number",
+          "Host and partner force",
+          "Special forces exercises",
+          "Multilateral military exercises"
+        ]
+      },
+      {
+        "name": "Missiles, Weapons & Defence Technology",
+        "weight": 20,
+        "emoji": "🛡️",
+        "minors": [
+          "DRDO missile tests",
+          "Ballistic missiles",
+          "Cruise missiles",
+          "Surface-to-air missile systems",
+          "Anti-tank guided missiles",
+          "Multiple-barrel rocket launcher systems",
+          "Pinaka MBRL",
+          "Indigenous fighter aircraft",
+          "Drones and unmanned systems",
+          "Radar and air-defence systems",
+          "Submarines and warships",
+          "Technology transfer",
+          "Developer and manufacturing agency"
+        ]
+      },
+      {
+        "name": "Defence Procurement, Deals & Indigenisation",
+        "weight": 15,
+        "emoji": "⚙️",
+        "minors": [
+          "Defence Acquisition Council approvals",
+          "Defence procurement deals",
+          "Aircraft and helicopter purchases",
+          "Naval platform acquisitions",
+          "Artillery procurement",
+          "Defence exports",
+          "Positive Indigenisation Lists",
+          "Make in India defence projects",
+          "Defence production corridors",
+          "Deal value and supplier country"
+        ]
+      },
+      {
+        "name": "Military Operations, Security & Appointments",
+        "weight": 10,
+        "emoji": "🪖",
+        "minors": [
+          "Military and naval operations",
+          "Rescue and evacuation missions",
+          "Anti-piracy operations",
+          "Border security developments",
+          "Counter-terror operations",
+          "Coast Guard initiatives",
+          "Defence chiefs and service chiefs",
+          "Chief of Defence Staff",
+          "DRDO leadership",
+          "Security force exercises"
+        ]
+      },
+      {
+        "name": "ISRO & Space Missions",
+        "weight": 20,
+        "emoji": "🛰️",
+        "minors": [
+          "ISRO launch missions",
+          "Aditya-L1",
+          "Chandrayaan missions",
+          "Gaganyaan programme",
+          "NavIC satellites",
+          "Earth observation satellites",
+          "Communication satellites",
+          "PSLV",
+          "GSLV",
+          "LVM3",
+          "Satellite launch locations",
+          "Mission objectives and payloads",
+          "Space docking and human spaceflight tests",
+          "International space collaborations",
+          "Private space sector developments"
+        ]
+      },
+      {
+        "name": "Science, Technology & Innovation in News",
+        "weight": 10,
+        "emoji": "🔬",
+        "minors": [
+          "Artificial Intelligence initiatives",
+          "Semiconductor technology",
+          "Quantum technology",
+          "Biotechnology developments",
+          "Medical and vaccine research",
+          "Robotics and automation",
+          "Cybersecurity initiatives",
+          "Supercomputers",
+          "Research institutions and discoveries"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "E",
+    "name": "Sports Current Affairs",
+    "weight": 6,
+    "emoji": "🏅",
+    "subs": [
+      {
+        "name": "Major Multi-Sport Events",
+        "weight": 25,
+        "emoji": "🏟️",
+        "minors": [
+          "Olympic Games",
+          "Paralympic Games",
+          "Asian Games",
+          "Asian Para Games",
+          "Commonwealth Games",
+          "National Games of India",
+          "Youth Olympic Games",
+          "Host city and country",
+          "India's medal tally",
+          "Flag bearer"
+        ]
+      },
+      {
+        "name": "International Championships & Tournaments",
+        "weight": 20,
+        "emoji": "🌍",
+        "minors": [
+          "ICC Cricket World Cup",
+          "ICC T20 World Cup",
+          "ICC Champions Trophy",
+          "World Test Championship",
+          "FIFA World Cup",
+          "FIFA Women's World Cup",
+          "Hockey World Cup",
+          "Badminton World Championships",
+          "World Athletics Championships",
+          "Chess Olympiad",
+          "Wimbledon",
+          "French Open",
+          "US Open",
+          "Australian Open",
+          "Winner and runner-up"
+        ]
+      },
+      {
+        "name": "Domestic Leagues & National Competitions",
+        "weight": 10,
+        "emoji": "🏆",
+        "minors": [
+          "IPL",
+          "Women's Premier League",
+          "Indian Super League",
+          "Pro Kabaddi League",
+          "Hockey India League",
+          "Ranji Trophy",
+          "Irani Cup",
+          "Vijay Hazare Trophy",
+          "Santosh Trophy",
+          "League winner and runner-up"
+        ]
+      },
+      {
+        "name": "Medal Winners & Indian Performances",
+        "weight": 15,
+        "emoji": "🥇",
+        "minors": [
+          "Indian gold medal winners",
+          "Silver and bronze medal winners",
+          "Olympic and Paralympic medalists",
+          "World championship medalists",
+          "India's medal-table position",
+          "First Indian to achieve a milestone",
+          "Athlete and sport matching"
+        ]
+      },
+      {
+        "name": "Records, Rankings & Milestones",
+        "weight": 10,
+        "emoji": "📈",
+        "minors": [
+          "World records",
+          "National records",
+          "Career milestones",
+          "Youngest and oldest achievers",
+          "Highest run-scorer and wicket-taker",
+          "World number one rankings",
+          "Grand Slam milestones",
+          "Historic firsts in Indian sports"
+        ]
+      },
+      {
+        "name": "Sports Federations & Governing Bodies",
+        "weight": 10,
+        "emoji": "🏢",
+        "minors": [
+          "BCCI",
+          "ICC",
+          "FIFA",
+          "International Olympic Committee",
+          "Indian Olympic Association",
+          "Sports Authority of India",
+          "Federation heads",
+          "Federation headquarters",
+          "Rules and governance updates"
+        ]
+      },
+      {
+        "name": "Sports Awards & Recognitions",
+        "weight": 10,
+        "emoji": "🎖️",
+        "minors": [
+          "Major Dhyan Chand Khel Ratna",
+          "Arjuna Awards",
+          "Dronacharya Awards",
+          "Dhyan Chand Award",
+          "National Sports Awards",
+          "Laureus Awards",
+          "Sportsperson of the Year",
+          "Award category and recipient"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "F",
+    "name": "Environment, Ecology & Geography in News",
+    "weight": 7,
+    "emoji": "🌿",
+    "subs": [
+      {
+        "name": "Ramsar Sites & Wetlands",
+        "weight": 15,
+        "emoji": "💧",
+        "minors": [
+          "New Ramsar sites in India",
+          "Ramsar site name and State",
+          "Total Ramsar sites in India",
+          "Largest and smallest Ramsar sites",
+          "Wetland conservation initiatives",
+          "Montreux Record",
+          "Ramsar Convention and secretariat"
+        ]
+      },
+      {
+        "name": "National Parks, Wildlife Sanctuaries & Reserves",
+        "weight": 25,
+        "emoji": "🐅",
+        "minors": [
+          "National parks and States",
+          "Wildlife sanctuaries",
+          "Tiger reserves",
+          "Biosphere reserves",
+          "Elephant reserves",
+          "Conservation reserves",
+          "Community reserves",
+          "New protected areas",
+          "UNESCO natural heritage sites",
+          "Dark Sky Reserves",
+          "Pench Tiger Reserve and other prominent reserves"
+        ]
+      },
+      {
+        "name": "Climate Change & Environmental Agreements",
+        "weight": 15,
+        "emoji": "🌡️",
+        "minors": [
+          "UNFCCC",
+          "Paris Agreement",
+          "Kyoto Protocol",
+          "Convention on Biological Diversity",
+          "CITES",
+          "Convention on Wetlands",
+          "COP decisions",
+          "Net-zero commitments",
+          "Climate finance",
+          "Carbon markets and credits",
+          "International Solar Alliance",
+          "Global Biofuel Alliance"
+        ]
+      },
+      {
+        "name": "Wildlife, Species & Conservation Projects",
+        "weight": 15,
+        "emoji": "🐘",
+        "minors": [
+          "Project Tiger",
+          "Project Elephant",
+          "Project Cheetah",
+          "Species in news",
+          "IUCN status",
+          "Endangered and endemic species",
+          "Tiger and elephant population estimates",
+          "Vulture conservation",
+          "Marine conservation",
+          "New species discoveries",
+          "Species reintroduction programmes"
+        ]
+      },
+      {
+        "name": "Environment Reports, Indices & Initiatives",
+        "weight": 10,
+        "emoji": "📊",
+        "minors": [
+          "Climate Change Performance Index",
+          "Environmental Performance Index",
+          "Emissions Gap Report",
+          "India State of Forest Report",
+          "Air quality reports",
+          "Global biodiversity reports",
+          "Green energy targets",
+          "Afforestation initiatives",
+          "Pollution control programmes"
+        ]
+      },
+      {
+        "name": "Indian & World Geography in News",
+        "weight": 20,
+        "emoji": "🗺️",
+        "minors": [
+          "Rivers and tributaries in news",
+          "Dams and reservoirs",
+          "Mountain ranges and peaks",
+          "Passes and valleys",
+          "Lakes and lagoons",
+          "Islands and archipelagos",
+          "Coasts and ports",
+          "Glaciers in news",
+          "Deserts and plateaus",
+          "Straits, seas and gulfs",
+          "Geographical locations of projects and events"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "G",
+    "name": "Culture, Heritage & Awards",
+    "weight": 5,
+    "emoji": "🎭",
+    "subs": [
+      {
+        "name": "Indian Art, Culture & Festivals",
+        "weight": 20,
+        "emoji": "🪔",
+        "minors": [
+          "Classical dances",
+          "Folk dances",
+          "Classical music traditions",
+          "Folk music and instruments",
+          "Painting and handicraft traditions",
+          "Cultural festivals",
+          "State festivals and fairs",
+          "GI-tagged cultural products",
+          "Tribal culture and traditions",
+          "UNESCO intangible cultural heritage"
+        ]
+      },
+      {
+        "name": "Historical Monuments & Heritage Sites",
+        "weight": 15,
+        "emoji": "🏛️",
+        "minors": [
+          "UNESCO World Heritage Sites in India",
+          "Newly added heritage sites",
+          "Historical monuments",
+          "Temples and architectural styles",
+          "Fort complexes",
+          "Caves and rock-cut architecture",
+          "Heritage cities",
+          "Archaeological discoveries",
+          "UNESCO tentative list"
+        ]
+      },
+      {
+        "name": "National Civilian & Government Awards",
+        "weight": 20,
+        "emoji": "🎖️",
+        "minors": [
+          "Bharat Ratna",
+          "Padma Vibhushan",
+          "Padma Bhushan",
+          "Padma Shri",
+          "Gallantry awards",
+          "National honours",
+          "Prime Minister's Awards for Excellence",
+          "National Panchayat Awards",
+          "Swachh Survekshan Awards",
+          "Award recipient and field"
+        ]
+      },
+      {
+        "name": "International Awards & Honours",
+        "weight": 20,
+        "emoji": "🌐",
+        "minors": [
+          "Nobel Prizes",
+          "Ramon Magsaysay Award",
+          "Oscars",
+          "Grammy Awards",
+          "Pulitzer Prize",
+          "Pritzker Prize",
+          "International Booker Prize",
+          "UN and international organisation awards",
+          "Award category and winner"
+        ]
+      },
+      {
+        "name": "Literature, Film & Performing Arts Awards",
+        "weight": 15,
+        "emoji": "📚",
+        "minors": [
+          "Jnanpith Award",
+          "Sahitya Akademi Award",
+          "Saraswati Samman",
+          "Booker Prize",
+          "International Booker Prize",
+          "National Film Awards",
+          "Dadasaheb Phalke Award",
+          "Filmfare Awards",
+          "IIFA Awards",
+          "Sangeet Natak Akademi Awards",
+          "Winners and works"
+        ]
+      },
+      {
+        "name": "Books, Authors & Cultural Personalities",
+        "weight": 10,
+        "emoji": "✍️",
+        "minors": [
+          "Books released in news",
+          "Authors and books matching",
+          "Memoirs and biographies",
+          "Important cultural personalities",
+          "Birth and death anniversaries of eminent personalities",
+          "Literary festivals"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "H",
+    "name": "Static General Knowledge",
+    "weight": 15,
+    "emoji": "📚",
+    "subs": [
+      {
+        "name": "Countries, Capitals, Currencies & Locations",
+        "weight": 15,
+        "emoji": "🌐",
+        "minors": [
+          "Countries and capitals",
+          "Countries and currencies",
+          "Country calling codes",
+          "Neighbouring countries of India",
+          "Border-sharing States",
+          "Countries bordering major seas",
+          "National flags",
+          "Important straits and channels",
+          "Largest and smallest countries"
+        ]
+      },
+      {
+        "name": "Indian & World Geography (Static)",
+        "weight": 20,
+        "emoji": "🗺️",
+        "minors": [
+          "Indian States and Union Territories",
+          "State capitals",
+          "Physical divisions of India",
+          "Major rivers and tributaries",
+          "Mountain ranges and peaks",
+          "Passes and plateaus",
+          "Lakes and waterfalls",
+          "Soils and crops",
+          "Climate and monsoon",
+          "World continents and oceans",
+          "Deserts, grasslands and geographical features"
+        ]
+      },
+      {
+        "name": "National Parks, Sanctuaries & Biosphere Reserves (Static)",
+        "weight": 10,
+        "emoji": "🐾",
+        "minors": [
+          "National parks and States",
+          "Wildlife sanctuaries and States",
+          "Tiger reserves and States",
+          "Biosphere reserves",
+          "Conservation landscapes",
+          "First, largest and oldest protected areas"
+        ]
+      },
+      {
+        "name": "Important Institutions, Organisations & Headquarters",
+        "weight": 15,
+        "emoji": "🏢",
+        "minors": [
+          "National institutions and headquarters",
+          "International organisations and headquarters",
+          "Banking and financial institutions",
+          "Research and scientific institutions",
+          "Defence establishments",
+          "Sports federations and headquarters",
+          "Museums and cultural institutions",
+          "Established year and founding bodies"
+        ]
+      },
+      {
+        "name": "Important Days, Dates & Themes",
+        "weight": 15,
+        "emoji": "📅",
+        "minors": [
+          "National days",
+          "International days",
+          "United Nations observances",
+          "Banking and financial awareness days",
+          "Environment-related days",
+          "Health-related days",
+          "Science and technology days",
+          "Important weeks and campaign dates",
+          "Annual themes"
+        ]
+      },
+      {
+        "name": "Indian Polity, Constitution & Governance (Static)",
+        "weight": 15,
+        "emoji": "⚖️",
+        "minors": [
+          "Constitutional articles",
+          "Constitutional schedules",
+          "Fundamental Rights and Duties",
+          "Directive Principles of State Policy",
+          "Constitutional bodies",
+          "Statutory bodies",
+          "Parliament and state legislatures",
+          "Lok Sabha and Rajya Sabha",
+          "Constitutional offices",
+          "Union Territories and legislative assemblies",
+          "Panchayati Raj and municipalities"
+        ]
+      },
+      {
+        "name": "Rivers, Dams, Power Projects & Transport (Static)",
+        "weight": 10,
+        "emoji": "🌊",
+        "minors": [
+          "Major dams and rivers",
+          "Hydroelectric power projects",
+          "Thermal and nuclear power stations",
+          "Major seaports",
+          "International airports",
+          "Railway zones and headquarters",
+          "Important bridges and tunnels",
+          "National highways and corridors"
+        ]
+      }
+    ]
+  }
 ]
