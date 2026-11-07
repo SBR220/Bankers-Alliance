@@ -1,5 +1,5 @@
 {
- "built": "2026-11-07T17:14:36+00:00",
+ "built": "2026-11-07T17:19:03+00:00",
  "questions": [
   {
    "month": 0,
@@ -222,107 +222,6 @@
    "answer": "A",
    "solution": "<p>IMF - Washington, D.C.; WHO - Geneva; UNESCO - Paris; IMO - London.</p>",
    "id": "8803955556"
-  },
-  {
-   "month": 1,
-   "main": "A",
-   "sub": "Digital Banking & Payment Systems",
-   "minor": "UPI",
-   "cats": [
-    {
-     "main": "A",
-     "sub": "Digital Banking & Payment Systems",
-     "minor": "UPI"
-    },
-    {
-     "main": "A",
-     "sub": "General",
-     "minor": "Banking news"
-    }
-   ],
-   "types": [
-    "Oneliner"
-   ],
-   "tag": "UPI, Banking news/Oneliner",
-   "question": "The Unified Payments Interface (UPI), which allows instant 24x7 bank-to-bank money transfer through a single mobile app, was developed by which organisation?",
-   "options": {
-    "A": "Reserve Bank of India (RBI)",
-    "B": "National Payments Corporation of India (NPCI)",
-    "C": "Securities and Exchange Board of India (SEBI)",
-    "D": "National Bank for Agriculture and Rural Development (NABARD)",
-    "E": "Indian Banks' Association (IBA)"
-   },
-   "answer": "B",
-   "solution": "<p><b>✅ Correct answer: B – National Payments Corporation of India (NPCI)</b></p><p>UPI is a real-time payment system built and operated by <b>NPCI</b>. Users send or receive money instantly, <mark>24x7 – even on bank holidays</mark>, using a <b>Virtual Payment Address (VPA)</b> such as <i>name@bank</i>, without sharing bank account details. Every payment is approved with a secret <b>UPI PIN</b>.</p><p><b>📌 Key pointers</b><br><ul><li><b>NPCI</b> is the umbrella organisation for retail payments in India – set up in <u>2008</u> by the <b>RBI</b> with the support of the <b>Indian Banks' Association (IBA)</b>.</li><li>It is a <b>not-for-profit company</b> (Section 8, Companies Act 2013) with its headquarters in <b>Mumbai</b>.</li><li>UPI was launched in <mark>2016</mark>; the <b>BHIM</b> app (NPCI's own UPI app) followed in December 2016.</li><li><b>UPI 123PAY</b> lets feature-phone users make UPI payments without internet.</li></ul></p><p><b>🧠 Why not the other options?</b><br><ul><li><b>RBI</b> – the <i>regulator</i> of payment systems (Payment and Settlement Systems Act, 2007). It promoted NPCI but did not build UPI itself.</li><li><b>SEBI</b> – regulates the securities (share) market, not payments.</li><li><b>NABARD</b> – apex development bank for agriculture and rural development.</li><li><b>IBA</b> – an association of banks; it supported the creation of NPCI but does not run UPI.</li></ul></p><p><b>📊 NPCI products at a glance</b><br><table><tr><th>Product</th><th>Full form</th><th>What it does</th></tr><tr><td><b>UPI</b></td><td>Unified Payments Interface</td><td>Instant bank-to-bank transfer using a VPA, 24x7</td></tr><tr><td><b>IMPS</b></td><td>Immediate Payment Service</td><td>Instant inter-bank transfer, 24x7</td></tr><tr><td><b>RuPay</b></td><td>Rupee + Payment</td><td>India's own domestic card network (alternative to Visa / Mastercard)</td></tr><tr><td><b>NACH</b></td><td>National Automated Clearing House</td><td>Bulk and recurring payments – salaries, EMIs, subsidies</td></tr><tr><td><b>BBPS</b></td><td>Bharat Bill Payment System</td><td>One platform to pay electricity, water, DTH and other bills</td></tr><tr><td><b>AePS</b></td><td>Aadhaar Enabled Payment System</td><td>Basic banking using Aadhaar + fingerprint</td></tr><tr><td><b>NETC FASTag</b></td><td>National Electronic Toll Collection</td><td>Automatic toll payment on highways</td></tr></table></p><p><b>⚡ Quick memory trick:</b> <mark>RBI = Regulator, NPCI = Operator.</mark> If a question asks who runs or developed UPI, RuPay, IMPS or BBPS, the answer is <b>NPCI</b>.</p>",
-   "id": "f0a2b4a1c7"
-  },
-  {
-   "month": 1,
-   "main": "A",
-   "sub": "Banking Structure, Regulation & Reforms",
-   "minor": "Regional Rural Banks",
-   "cats": [
-    {
-     "main": "A",
-     "sub": "Banking Structure, Regulation & Reforms",
-     "minor": "Regional Rural Banks"
-    },
-    {
-     "main": "A",
-     "sub": "General",
-     "minor": "Banking news"
-    }
-   ],
-   "types": [
-    "Statement Based"
-   ],
-   "tag": "Regional Rural Banks, Banking news/Statement Based",
-   "passage": "<p><b>Consider the following statements about Regional Rural Banks (RRBs) in India:</b></p><p>I. RRBs were established under the Regional Rural Banks Act, 1976.<br>II. The ownership of an RRB is shared among the Central Government, the State Government and the Sponsor Bank in the ratio 50 : 15 : 35.<br>III. The setting up of RRBs was recommended by the Narasimham Working Group (1975).<br>IV. RRBs are regulated and supervised by SEBI.</p>",
-   "question": "Which of the statements given above are correct?",
-   "options": {
-    "A": "Only I and II",
-    "B": "Only I, II and III",
-    "C": "Only II, III and IV",
-    "D": "All of I, II, III and IV",
-    "E": "Only I and IV"
-   },
-   "answer": "B",
-   "solution": "<p><b>✅ Correct answer: B – Only I, II and III</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>I</b></td><td>✅ True</td><td>RRBs were set up under the <b>Regional Rural Banks Act, 1976</b> (the first five began on <b>2 October 1975</b> through an Ordinance).</td></tr><tr><td><b>II</b></td><td>✅ True</td><td>Ownership is <b>Central Government 50% : State Government 15% : Sponsor Bank 35%</b>.</td></tr><tr><td><b>III</b></td><td>✅ True</td><td>The <b>Narasimham Working Group (1975)</b> recommended creating RRBs.</td></tr><tr><td><b>IV</b></td><td>❌ False</td><td>RRBs are <b>regulated by the RBI</b> and <b>supervised by NABARD</b>. SEBI regulates the securities market, not banks.</td></tr></table></p><p><b>📌 Key pointers</b><br><ul><li><b>Objective:</b> credit and banking services for <u>small and marginal farmers, agricultural labourers, artisans and small entrepreneurs</u> in rural areas.</li><li><b>Idea:</b> combine the <i>local feel</i> of cooperative banks with the <i>professionalism</i> of commercial banks.</li><li>The <b>first RRB</b> was <b>Prathama Bank</b> (Moradabad, Uttar Pradesh), sponsored by Syndicate Bank – <mark>2 October 1975</mark>.</li><li>RRBs have been merged (amalgamated) over the years – from about <b>196 in 2005</b> to far fewer today under the <i>\"One State – One RRB\"</i> approach. Check the latest count in current affairs.</li></ul></p><p><b>📊 Ownership of an RRB</b><br><table><tr><th>Owner</th><th>Share</th></tr><tr><td>Central Government</td><td><b>50%</b></td></tr><tr><td>State Government</td><td><b>15%</b></td></tr><tr><td>Sponsor Bank (a commercial bank)</td><td><b>35%</b></td></tr></table></p><p><b>⚠️ Don't get confused!</b> The <i>Narasimham Working Group (1975)</i> is about <b>RRBs</b>. The <i>Narasimham Committees (1991 and 1998)</i> are about <b>banking-sector reforms</b>. The chairman, <b>M. Narasimham</b>, was the same person, but the subjects are different.</p><p><b>⚡ Memory trick:</b> <mark>50 – 15 – 35 = Centre – State – Sponsor bank.</mark> Regulator = <b>RBI</b>, Supervisor = <b>NABARD</b>.</p>",
-   "id": "cece727b32"
-  },
-  {
-   "month": 1,
-   "main": "A",
-   "sub": "General",
-   "minor": "Banking news",
-   "cats": [
-    {
-     "main": "A",
-     "sub": "General",
-     "minor": "Banking news"
-    },
-    {
-     "main": "B",
-     "sub": "General",
-     "minor": "National news"
-    }
-   ],
-   "types": [
-    "Match the Column"
-   ],
-   "tag": "Banking news, National news/Match the Column",
-   "passage": "<p><b>Match the financial institutions in Column I with the location of their headquarters in Column II:</b></p><p><b>Column I</b><br>(a) NABARD<br>(b) SIDBI<br>(c) NHB<br>(d) IRDAI</p><p><b>Column II</b><br>(1) Hyderabad<br>(2) Lucknow<br>(3) New Delhi<br>(4) Mumbai</p>",
-   "question": "Choose the option that gives the correct match.",
-   "options": {
-    "A": "a-4, b-2, c-3, d-1",
-    "B": "a-4, b-3, c-2, d-1",
-    "C": "a-1, b-2, c-3, d-4",
-    "D": "a-2, b-4, c-1, d-3",
-    "E": "a-3, b-2, c-4, d-1"
-   },
-   "answer": "A",
-   "solution": "<p><b>✅ Correct answer: A – a-4, b-2, c-3, d-1</b></p><p><b>🔗 Correct matching</b><br><table><tr><th>Institution</th><th>Match</th><th>HQ</th><th>Role</th></tr><tr><td><b>NABARD</b></td><td>a – 4</td><td>Mumbai</td><td>Apex development bank for agriculture and rural development; supervises RRBs and cooperative banks</td></tr><tr><td><b>SIDBI</b></td><td>b – 2</td><td>Lucknow</td><td>Principal financial institution for the MSME sector</td></tr><tr><td><b>NHB</b></td><td>c – 3</td><td>New Delhi</td><td>Apex institution for housing finance (refinance and promotion)</td></tr><tr><td><b>IRDAI</b></td><td>d – 1</td><td>Hyderabad</td><td>Regulator of the insurance sector</td></tr></table></p><p><b>📌 Key pointers</b><br><ul><li><b>NABARD</b> was set up on <mark>12 July 1982</mark> on the recommendation of the <b>B. Sivaraman Committee (CRAFICARD, 1979)</b>.</li><li><b>SIDBI</b> was set up under the <b>SIDBI Act, 1989</b> and started operations in <u>April 1990</u>.</li><li><b>NHB</b> was set up under the <b>National Housing Bank Act, 1987</b>. Since <b>August 2019</b> the <b>RBI</b> regulates Housing Finance Companies; NHB continues as a refinancing and promotional institution.</li><li><b>IRDAI</b> was created under the <b>IRDA Act, 1999</b>; its headquarters moved from Delhi to <b>Hyderabad</b> in 2001.</li></ul></p><p><b>⚠️ Common traps</b><br><ul><li><b>NABARD</b> is in <b>Mumbai</b>, not New Delhi.</li><li><b>SIDBI</b> is in <b>Lucknow</b>, not Mumbai.</li><li><b>IRDAI</b> is in <b>Hyderabad</b>, not Delhi or Mumbai.</li></ul></p><p><b>📍 More headquarters to remember</b><br><table><tr><th>Institution</th><th>Headquarters</th></tr><tr><td>RBI, SEBI, EXIM Bank, SBI</td><td>Mumbai</td></tr><tr><td>PFRDA, NHB</td><td>New Delhi</td></tr><tr><td>SIDBI</td><td>Lucknow</td></tr><tr><td>IRDAI</td><td>Hyderabad</td></tr></table></p><p><b>⚡ Memory trick:</b> <mark>Insurance → Hyderabad · Small industries → Lucknow · Housing → Delhi · Agriculture and rural → Mumbai.</mark></p>",
-   "id": "6f307bb46b"
   },
   {
    "month": 5,
@@ -5524,7 +5423,7 @@
     "invalid": 0
    },
    "2": {
-    "valid": 3,
+    "valid": 0,
     "invalid": 0
    },
    "3": {
@@ -5573,12 +5472,12 @@
    }
   },
   "types": {
-   "Oneliner": 177,
+   "Oneliner": 176,
    "Data Based": 1,
-   "Statement Based": 10,
-   "Match the Column": 7
+   "Statement Based": 9,
+   "Match the Column": 6
   },
-  "valid": 195,
+  "valid": 192,
   "invalid": 1,
   "duplicates": 0,
   "invalidList": [
