@@ -3,23 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1c1a2b">
+<meta name="theme-color" content="#FFFFFF">
 <title>Bankers Alliance — GA MCQ Practice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#1c1a2b; --paper:#f0feff; --paper-2:#ffffff; --line:#e7e2d8; --muted:#726d80;
-    --gold:#e2a339; --gold-deep:#b9822a;
-    --ok:#16a34a; --ok-soft:#e7f7ec; --bad:#dc2626; --bad-soft:#fdeaea;
-    --info:#2f5fdc; --info-soft:#eef3ff;
-    --A:#2f5fdc; --A-soft:#e8edff;  --B:#1f9d55; --B-soft:#e5f7ec;
-    --C:#8b3fd6; --C-soft:#f2e9fb;  --D:#d64545; --D-soft:#fdeaea;
-    --E:#e07b1a; --E-soft:#fdf0e0;  --F:#0e9488; --F-soft:#e2f6f4;
-    --G:#d6318a; --G-soft:#fbe6f1;  --H:#a6791f; --H-soft:#f7f0dd;
-    --Z:#6b7280; --Z-soft:#eef0f3;
-  }
+:root {
+    /* Main Theme */
+    --ink: #172554;
+    --paper: #F3F7FC;
+    --paper-2: #FFFFFF;
+    --line: #E2E8F0;
+    --muted: #64748B;
+
+    /* Premium Teal Accent */
+    --gold: #0F766E;
+    --gold-deep: #0B625B;
+
+    /* Status Colours */
+    --ok: #15803D;
+    --ok-soft: #E8F5EC;
+    --bad: #DC2626;
+    --bad-soft: #FDECEC;
+
+    /* Information */
+    --info: #1E40AF;
+    --info-soft: #EAF1FF;
+
+    /* Question Categories - Preserve */
+    --A: #2F5FDC; --A-soft: #E8EDFF;
+    --B: #1F9D55; --B-soft: #E5F7EC;
+    --C: #8B3FD6; --C-soft: #F2E9FB;
+    --D: #D64545; --D-soft: #FDEAEA;
+    --E: #E07B1A; --E-soft: #FDF0E0;
+    --F: #0E9488; --F-soft: #E2F6F4;
+    --G: #D6318A; --G-soft: #FBE6F1;
+    --H: #A6791F; --H-soft: #F7F0DD;
+    --Z: #6B7280; --Z-soft: #EEF0F3;
+}
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{margin:0;padding:0;}
   body{
@@ -461,6 +483,328 @@
   }
   .sol-b ul,.passage ul{padding-left:22px;margin:6px 0;}
   .sol-b li{margin:4px 0;}
+  /* ==========================================
+   BANKERS ALLIANCE - PREMIUM NAVY TEAL THEME
+   ========================================== */
+
+/* Main Background */
+
+body {
+    background: linear-gradient(
+        135deg,
+        #F4F8FF 0%,
+        #EDF4FA 50%,
+        #EFF8F7 100%
+    );
+    color: #172554;
+}
+
+/* Header */
+
+.topbar {
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #E2E8F0;
+    box-shadow: 0 3px 16px rgba(23,37,84,0.05);
+}
+
+/* Brand */
+
+.brand .dot {
+    background: conic-gradient(
+        from 90deg,
+        #1E40AF,
+        #0F766E,
+        #38BDF8,
+        #1E40AF
+    );
+}
+
+/* Navigation Buttons */
+
+.nav-btn {
+    border: 1.5px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #172554;
+    transition: all .2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+    border-color: #0F766E;
+    color: #0F766E;
+}
+
+.nav-btn.back-btn {
+    background: linear-gradient(
+        110deg,
+        #172554,
+        #1E40AF
+    );
+    color: #FFFFFF;
+    border-color: transparent;
+}
+
+.nav-btn.back-btn:hover:not(:disabled) {
+    background: linear-gradient(
+        110deg,
+        #0F766E,
+        #0D9488
+    );
+    border-color: transparent;
+}
+
+/* Primary Buttons */
+
+.btn.primary {
+    background: linear-gradient(
+        110deg,
+        #172554,
+        #1E40AF,
+        #0F766E
+    );
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 8px 20px rgba(30,64,175,0.18);
+}
+
+.btn.primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(30,64,175,0.22);
+}
+
+/* Wide Buttons */
+
+.wide-btn {
+    background: linear-gradient(
+        110deg,
+        #172554,
+        #1E40AF,
+        #0F766E
+    );
+    color: #FFFFFF;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(30,64,175,0.16);
+}
+
+.wide-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(30,64,175,0.23);
+}
+
+/* Cards */
+
+.month-btn,
+.rev-tile,
+.topic-card,
+.panel,
+.welcome,
+.stat,
+.kpi,
+.palette {
+    background: #FFFFFF;
+    border-color: #E2E8F0;
+}
+
+/* Card Hover */
+
+.month-btn:hover:not(:disabled),
+.rev-tile:hover:not(:disabled),
+.topic-card:hover:not(:disabled) {
+    box-shadow: 0 8px 22px rgba(23,37,84,0.07);
+}
+
+/* Continue Button */
+
+.continue {
+    background: linear-gradient(
+        115deg,
+        #172554,
+        #1E40AF,
+        #0F766E
+    );
+    box-shadow: 0 12px 25px rgba(23,37,84,0.16);
+}
+
+/* Quiz Settings */
+
+.seg {
+    border-color: #CBD5E1;
+}
+
+.seg button {
+    background: #FFFFFF;
+    color: #172554;
+}
+
+.seg button + button {
+    border-left-color: #CBD5E1;
+}
+
+.seg button.on,
+.tabs button.on {
+    background: linear-gradient(
+        110deg,
+        #172554,
+        #0F766E
+    );
+    color: #FFFFFF;
+    border-color: transparent;
+}
+
+/* Dropdowns */
+
+.sel {
+    border-color: #CBD5E1;
+    background-color: #FFFFFF;
+    color: #172554;
+}
+
+/* Progress Bar */
+
+.progress > i {
+    background: linear-gradient(
+        90deg,
+        #1E40AF,
+        #0F766E
+    );
+}
+
+/* Quiz Question Header */
+
+.qhead {
+    background: linear-gradient(
+        120deg,
+        #172554,
+        #1E40AF,
+        #0F766E
+    );
+}
+
+.qhead::after {
+    background: linear-gradient(
+        90deg,
+        #38BDF8,
+        #FFFFFF,
+        #0F766E
+    );
+}
+
+/* Question Options */
+
+.opt {
+    border-color: #E2E8F0;
+    background: #FFFFFF;
+}
+
+.opt:hover:not(:disabled) {
+    border-color: #0F766E;
+    background: #F0FDFA;
+}
+
+.opt.selected {
+    border-color: #1E40AF;
+    background: #EEF3FF;
+}
+
+/* Login Page */
+
+.login-card {
+    border: 1px solid #DCE7F0;
+    box-shadow: 0 25px 60px rgba(23,37,84,0.12);
+}
+
+.login-card::before {
+    background: linear-gradient(
+        90deg,
+        #172554,
+        #1E40AF,
+        #0F766E,
+        #38BDF8
+    );
+}
+
+.login-logo {
+    background: linear-gradient(
+        135deg,
+        #172554,
+        #0F766E
+    );
+}
+
+/* Input Fields */
+
+.field input[type=text],
+.field input[type=password],
+.field input[type=search] {
+    border-color: #DCE5EF;
+    background: #FFFFFF;
+}
+
+.field input:focus {
+    border-color: #0F766E;
+    box-shadow: 0 0 0 4px rgba(15,118,110,0.09);
+}
+
+/* Result Dashboard */
+
+.result-hero {
+    background:
+        radial-gradient(
+            circle at 18px 18px,
+            rgba(255,255,255,.08) 1.5px,
+            transparent 1.6px
+        ) 0 0/26px 26px,
+        linear-gradient(
+            125deg,
+            #172554,
+            #1E40AF 55%,
+            #0F766E
+        );
+
+    box-shadow: 0 20px 45px rgba(23,37,84,0.18);
+}
+
+/* Tables */
+
+.tbl th {
+    background: #EFF4FA;
+}
+
+.tbl tr.click:hover td {
+    background: #F0FDFA;
+}
+
+/* Bottom Navigation */
+
+.qnav {
+    background: linear-gradient(
+        to top,
+        #F3F7FC 72%,
+        rgba(243,247,252,0)
+    );
+}
+
+/* Toast Notifications */
+
+.toast {
+    background: linear-gradient(
+        110deg,
+        #172554,
+        #0F766E
+    );
+}
+
+/* Smooth Transitions */
+
+.month-btn,
+.topic-card,
+.rev-tile,
+.btn,
+.nav-btn,
+.wide-btn,
+.opt {
+    transition: all .2s ease;
+}
 </style>
 </head>
 <body class="guest">
