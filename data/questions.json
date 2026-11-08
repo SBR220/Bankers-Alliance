@@ -311,7 +311,7 @@
     "Match the Column"
    ],
    "tag": "Banking news, National news/Match the Column",
-   "passage": "<p><b>Match the financial institutions in Column I with the location of their headquarters in Column II:</b></p><p><b>Column I</b><br>(a) NABARD<br>(b) SIDBI<br>(c) NHB<br>(d) IRDAI</p><p><b>Column II</b><br>(1) Hyderabad<br>(2) Lucknow<br>(3) New Delhi<br>(4) Mumbai</p>",
+   "passage": "<p><b>Match the financial institutions in Column I with the location of their headquarters in Column II:</b><br><table><tr><th>Column I (Institution)</th><th>Column II (Headquarters)</th></tr><tr><td>(a) NABARD</td><td>(1) Hyderabad</td></tr><tr><td>(b) SIDBI</td><td>(2) Lucknow</td></tr><tr><td>(c) NHB</td><td>(3) New Delhi</td></tr><tr><td>(d) IRDAI</td><td>(4) Mumbai</td></tr></table></p><p>Which of the following options correctly matches the institutions with their headquarters?</p>",
    "question": "Choose the option that gives the correct match.",
    "options": {
     "A": "a-4, b-2, c-3, d-1",
