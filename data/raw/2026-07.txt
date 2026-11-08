@@ -1,4 +1,3 @@
-[
 QUESTION: Which two countries were recently removed from the FATF grey list after an Anti-Money Laundering and Combating the Financing of Terrorism (AML/CFT) compliance review?
 A. Algeria and Angola
 B. Namibia and Kenya
@@ -1209,4 +1208,958 @@ SOLUTION: <b>✅ Correct answer: A – 3-year; 4,000</b>
 <b>📌 Key pointers</b>
 <ul><li><b>Objective:</b> support the creation of sustainable rural businesses by identifying, training, financing and mentoring rural youth.</li><li><b>Implemented in collaboration with:</b> National Skill Development Corporation (NSDC), under the Ministry of Skill Development and Entrepreneurship (MSDE).</li><li><b>Implementation partner:</b> Institute for Industrial Development (IID).</li></ul>
 TAG: NABARD, Banking news/Fill in the blanks
-]
+
+QUESTION: FIFA (Fédération Internationale de Football Association) was established on:
+A. 21 May 1904
+B. 25 May 1924
+C. 15 June 1930
+D. 1 January 1900
+E. 21 May 1924
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – 21 May 1904</b>
+
+FIFA was established in <b>Paris, France</b>.
+
+<b>📌 Key pointers</b>
+<ul><li><b>Founding members:</b> France, Belgium, Denmark, Netherlands, Spain, Sweden and Switzerland.</li><li><b>HQ:</b> FIFA House, Zürich, Switzerland; <b>President:</b> Gianni Infantino (9th President, Swiss-Italian).</li><li><b>Members:</b> 211 countries and territories; <b>6</b> continental confederations.</li></ul>
+TAG: FIFA, Sports/Static GK
+
+QUESTION: Who was the defending champion at the FIFA World Cup 2026, having won the 2022 edition?
+A. Argentina
+B. France
+C. Croatia
+D. Brazil
+E. Morocco
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Argentina</b>
+
+Argentina lost the 2026 final 0-1 to Spain after extra time.
+
+<b>📌 Payout increase (2022 → 2026):</b> Champions $42m → <b>$50m</b>; Runners-up $30m → <b>$33m</b>; Third $27m → <b>$29m</b>; Fourth $25m → <b>$27m</b>.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: Cricket's first and previous Olympic appearance was at Paris 1900. Which team won the gold medal?
+A. France
+B. Netherlands
+C. Great Britain
+D. Australia
+E. United States
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Great Britain</b>
+
+Olympic cricket returns in <b>2028</b> after more than a century, with the first and previous appearance in <b>Paris 1900</b>, won by Great Britain.
+TAG: LA 2028, Sports/Static GK
+
+QUESTION: Who is the Union Minister of Housing and Urban Affairs who stated that the term 'Central Vista' should be replaced by 'Kartavya Bhawan Area' in all official documents?
+A. Manohar Lal
+B. Hardeep Singh Puri
+C. Kiren Rijiju
+D. Piyush Goyal
+E. Jitendra Singh
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Manohar Lal</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Central Vista redevelopment area is now the <b>Kartavya Bhawan Area / Complex</b>; Rajpath was renamed <b>Kartavya Path</b> in 2022.</li><li>The new complex housing the PMO, Cabinet Secretariat and NSA has been named <b>Seva Teerth</b>.</li></ul>
+TAG: Kartavya Bhawan, National news/Oneliner
+
+QUESTION: Which of the following pairs of host country and FIFA World Cup 2026 mascot is correctly matched?
+A. Canada – Clutch the Bald Eagle
+B. Mexico – Zayu the Jaguar
+C. USA – Maple the Moose
+D. Canada – Zayu the Jaguar
+E. Mexico – Maple the Moose
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Mexico – Zayu the Jaguar</b>
+
+<b>🔗 Correct pairs:</b> Canada – <b>Maple the Moose</b>; Mexico – <b>Zayu the Jaguar</b>; USA – <b>Clutch the Bald Eagle</b>.
+
+<b>📌 Other facts:</b> Official match ball – <b>Trionda</b> (Adidas).
+TAG: FIFA World Cup 2026, Sports/Pair Based
+
+QUESTION: Who won the Australian Open 2026 women's singles title?
+A. Elena Rybakina (Kazakhstan)
+B. Aryna Sabalenka (Belarus)
+C. Mirra Andreeva (Russia)
+D. Maja Chwalińska (Poland)
+E. Linda Nosková (Czech Republic)
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Elena Rybakina (Kazakhstan)</b>
+
+<b>📌 Australian Open 2026</b>
+<ul><li><b>Women's:</b> Elena Rybakina beat <b>Aryna Sabalenka</b> (Belarus).</li><li><b>Men's:</b> Carlos Alcaraz (Spain) beat <b>Novak Djokovic</b> (Serbia).</li></ul>
+TAG: Australian Open 2026, Sports/Oneliner
+
+QUESTION: The PRAGATI (Promoting Regenerative Agriculture Through Agri-Entrepreneurship Initiative) programme launched in New Delhi aims to empower how many agri-entrepreneurs and directly support how many smallholder farmers?
+A. 2,000 agri-entrepreneurs and 2 lakh farmers
+B. 10,000 agri-entrepreneurs and 10 lakh farmers
+C. 20,000 agri-entrepreneurs and 20 lakh farmers
+D. 50,000 agri-entrepreneurs and 20 lakh farmers
+E. 20,000 agri-entrepreneurs and 50 lakh farmers
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 20,000 agri-entrepreneurs and 20 lakh farmers</b>
+
+PRAGATI was launched by <b>Union Agriculture Minister Shivraj Singh Chouhan</b> (MoA&amp;FW and MoRD) to promote sustainable and climate-resilient agriculture.
+
+<b>📌 Key pointers</b>
+<ul><li><b>Coverage:</b> 8 States.</li><li><b>Key targets:</b> 30% increase in farmer income; 15-20% increase in crop yield; 20% adoption of regenerative agriculture; 50% financial inclusion.</li></ul>
+TAG: PRAGATI, Agriculture/Numerical
+
+QUESTION: Which of the following is NOT among the teams confirmed for the Los Angeles 2028 Olympics women's cricket competition as of 26 July 2026?
+A. New Zealand
+B. India
+C. Australia
+D. South Africa
+E. Great Britain
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – New Zealand</b>
+
+India (led by <b>Harmanpreet Kaur</b>) secured Asia's only automatic qualification spot. Confirmed women's teams: <b>Australia, Great Britain, India and South Africa</b>; 2 places remain.
+
+<b>📌 Key pointers</b>
+<ul><li>Men's competition: 6 places, <b>no team</b> officially qualified; principal cut-off is <b>31 December 2026</b>.</li><li>Format: <b>T20</b>; 6 men's and 6 women's teams; 15 players per team; total quota <b>180</b> cricketers.</li></ul>
+TAG: LA 2028, Sports/List Based
+
+QUESTION: The world's tallest Lionel Messi statue unveiled in Argentina is how tall?
+A. 21 metres
+B. 26 metres
+C. 30 metres
+D. 18 metres
+E. 35 metres
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – 26 metres</b>
+
+The statue (about <b>85 feet</b>, roughly <b>70 tonnes</b>, steel and iron) depicts Messi kneeling and was made by local sculptor <b>Aldo Beroisa</b> of Neuquén.
+
+<b>📌 Key pointer:</b> The previous record was a <b>21-metre</b> Messi statue in <b>Kolkata, West Bengal</b>.
+TAG: Messi statue, International news/Numerical
+
+QUESTION: Who was the runner-up in the men's singles of the French Open (Roland Garros) 2026?
+A. Novak Djokovic
+B. Carlos Alcaraz
+C. Jannik Sinner
+D. Flavio Cobolli
+E. Alexander Zverev
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Flavio Cobolli (Italy)</b>
+
+<b>Alexander Zverev (Germany)</b> won the French Open 2026 men's singles.
+
+<b>📌 Key pointers</b>
+<ul><li><b>Women's:</b> Mirra Andreeva (Russia) beat Maja Chwalińska (Poland).</li><li>The French Open is played on <b>clay</b> in Paris.</li></ul>
+TAG: French Open 2026, Sports/Oneliner
+
+QUESTION: India's national football team is ranked 138th globally. What is India's highest-ever FIFA ranking, achieved in February 1996?
+A. 76
+B. 94
+C. 105
+D. 84
+E. 99
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – 94</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Nickname: <b>Blue Tigers</b>; governing body: <b>AIFF</b>; head coach: <b>Manolo Márquez</b>.</li><li>Captains: <b>Gurpreet Singh Sandhu</b> (men), <b>Loitongbam Ashalata Devi</b> (women).</li></ul>
+TAG: Indian football, Sports/Numerical
+
+QUESTION: Gianni Infantino, the current President of FIFA, is the ______ President of the organisation.
+A. 7th
+B. 8th
+C. 10th
+D. 11th
+E. 9th
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 9th</b>
+
+Gianni Infantino is <b>Swiss-Italian</b>. FIFA has <b>211</b> member associations across <b>6 continental confederations</b> (AFC, CAF, CONCACAF, CONMEBOL, OFC, UEFA).
+TAG: FIFA, Sports/Static GK
+
+QUESTION: Who won the Golden Boot at the FIFA World Cup 2026, scoring 10 goals in 8 matches?
+A. Kylian Mbappé
+B. Lionel Messi
+C. Harry Kane
+D. Cristiano Ronaldo
+E. Ferran Torres
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Kylian Mbappé (France)</b>
+
+He became the <b>first player since 1970</b> to score 10 goals in a single tournament.
+
+<b>📌 Other awards:</b> Golden Glove – <b>Unai Simón</b> (Spain; 7 clean sheets, conceded 1 goal); Best Young Player – <b>Pau Cubarsí</b> (Spain, 19); Silver Ball – <b>Lionel Messi</b> (8 goals, 4 assists).
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: According to the country-wise distribution of ICC Hall of Famers, which country ranks third with 21 inductees?
+A. India
+B. South Africa
+C. Pakistan
+D. West Indies
+E. New Zealand
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – West Indies</b>
+
+<b>📌 Ranking:</b> England (35) → Australia (30) → West Indies (21) → India (13). Total: <b>125</b>.
+TAG: ICC Hall of Fame, Sports/Numerical
+
+QUESTION: Which of the following Indian cricketers was inducted into the ICC Hall of Fame in 2025?
+A. Virender Sehwag
+B. MS Dhoni
+C. Rahul Dravid
+D. Anil Kumble
+E. Neetu David
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – MS Dhoni</b>
+
+<b>🧠 Why not the others?</b> Sehwag – 2023; Dravid – 2018; Kumble – 2015; Neetu David – 2024.
+TAG: ICC Hall of Fame, Sports/Pair Based
+
+QUESTION: Kamarajar Port (Tamil Nadu) became India's second major port with an 18-metre operational draft after completing a capital dredging project costing:
+A. Rs.140 crore
+B. Rs.440 crore
+C. Rs.1,440 crore
+D. Rs.544 crore
+E. Rs.4,400 crore
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Rs.440 crore</b>
+
+The <b>Capital Dredging Phase VI</b> project (Rs.440 crore) enables <b>Capesize vessel</b> operations and handling of larger ships at Kamarajar Port.
+TAG: Ports, Economy/Numerical
+
+QUESTION: Who took the most wickets (14) in the ICC Women's T20 World Cup 2026?
+A. Shree Charani (India)
+B. Deepti Sharma (India)
+C. Sophie Ecclestone (England)
+D. Megan Schutt (Australia)
+E. Nonkululeko Mlaba (South Africa)
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Shree Charani (India)</b>
+
+<b>📌 Tournament summary</b>
+<ul><li><b>Champion:</b> Australia; <b>Runner-up:</b> England.</li><li><b>Most runs:</b> Danni Wyatt-Hodge (302).</li><li>10th edition; first with <b>12 teams</b> (earlier 10).</li></ul>
+TAG: Women's T20 World Cup 2026, Sports/Oneliner
+
+QUESTION: Which of the following was NOT a founding member of FIFA?
+A. Italy
+B. Belgium
+C. Denmark
+D. Sweden
+E. Switzerland
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Italy</b>
+
+FIFA's founding members were <b>France, Belgium, Denmark, Netherlands, Spain, Sweden and Switzerland</b>.
+TAG: FIFA, Sports/List Based
+
+QUESTION: As per FIFA World Cup 2026 regulations, a team's final squad must include a minimum of how many goalkeepers?
+A. 1
+B. 2
+C. 4
+D. 3
+E. 5
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – 3</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Final roster limit: <b>23-26</b> players per team.</li><li>Total: <b>1,248 players</b> from <b>48 qualified nations</b> – the largest roster in tournament history.</li><li>Maximum <b>5 substitutions</b> per match; minimum <b>7 players</b> needed for a match to continue.</li></ul>
+TAG: FIFA World Cup 2026, Sports/Numerical
+
+QUESTION: Who scored the only goal in the FIFA World Cup 2026 final between Spain and Argentina, and in which minute?
+A. Ferran Torres – 106th minute of extra time
+B. Lamine Yamal – 90th minute
+C. Pau Cubarsí – 112th minute
+D. Rodri – 106th minute of extra time
+E. Ferran Torres – 90th minute
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Ferran Torres – 106th minute of extra time</b>
+
+Spain's substitute forward <b>Ferran Torres</b> scored the decisive goal to give Spain a <mark>1-0</mark> win over defending champions Argentina at the <b>New York New Jersey Stadium (MetLife Stadium), East Rutherford</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Spain's first title came in <b>2010</b> (beat the Netherlands 1-0 in extra time in South Africa); the second came <b>16 years later</b>.</li><li><b>Final referee:</b> Slavko Vinčić (Slovenia).</li></ul>
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: Sourav Ganguly, Anjum Chopra and Kevin Pietersen were inducted into the ICC Hall of Fame at a ceremony held in which city?
+A. London
+B. Dubai
+C. Mumbai
+D. Edinburgh
+E. Melbourne
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Edinburgh (Scotland)</b>
+
+The induction took place on <mark>11 July 2026</mark> during the ICC Annual Conference – on Ganguly's <b>54th birthday</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Ganguly became the <b>10th Indian male cricketer</b> and 13th Indian overall in the Hall of Fame.</li></ul>
+TAG: ICC Hall of Fame, Sports/Oneliner
+
+QUESTION: The FIFA World Cup 2026 has 48 teams, divided into how many groups, each with 4 teams?
+A. 12 (Group A to L)
+B. 8 (Group A to H)
+C. 16 (Group A to P)
+D. 10 (Group A to J)
+E. 6 (Group A to F)
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – 12 (Group A to L)</b>
+
+This is the <b>first World Cup with 48 teams</b> and the <b>first hosted by 3 countries</b> (Canada, Mexico, United States).
+
+<b>📌 Key pointers</b>
+<ul><li>Total matches: <b>104</b>; dates: <b>11 June – 19 July 2026</b>.</li></ul>
+TAG: FIFA World Cup 2026, Sports/Numerical
+
+QUESTION: Linda Nosková won the Wimbledon 2026 women's singles title. Who was the runner-up?
+A. Aryna Sabalenka
+B. Karolína Muchová
+C. Maja Chwalińska
+D. Elena Rybakina
+E. Mirra Andreeva
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Karolína Muchová (Czech Republic)</b>
+
+Both finalists were from the <b>Czech Republic</b>.
+
+<b>📌 Wimbledon 2026</b>
+<ul><li><b>Men's:</b> Jannik Sinner (Italy) beat Alexander Zverev (Germany).</li><li><b>Women's:</b> Linda Nosková beat Karolína Muchová.</li></ul>
+TAG: Wimbledon 2026, Sports/Oneliner
+
+QUESTION: Cricket at the Los Angeles 2028 Olympics will be played at which venue?
+A. Dodger Stadium, Los Angeles
+B. Rose Bowl, Pasadena
+C. Fairgrounds Cricket Stadium, Pomona
+D. SoFi Stadium, Inglewood
+E. Pacific Coliseum, San Diego
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Fairgrounds Cricket Stadium, Pomona, California</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Cricket competition: <b>12-29 July 2028</b>; women's medal day <b>20 July</b>; men's medal day <b>29 July</b>.</li></ul>
+TAG: LA 2028, Sports/Oneliner
+
+QUESTION: As of July 2026, the 13 Indian cricketers in the ICC Hall of Fame comprise:
+A. 11 men and 2 women
+B. 9 men and 4 women
+C. 10 men and 3 women
+D. 12 men and 1 woman
+E. 8 men and 5 women
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 10 men and 3 women</b>
+
+<b>📌 Indian inductees</b>
+<table><tr><th>Year</th><th>Inductee</th></tr><tr><td>2009</td><td>Bishan Singh Bedi, Kapil Dev, Sunil Gavaskar</td></tr><tr><td>2015</td><td>Anil Kumble</td></tr><tr><td>2018</td><td>Rahul Dravid</td></tr><tr><td>2019</td><td>Sachin Tendulkar</td></tr><tr><td>2021</td><td>Vinoo Mankad</td></tr><tr><td>2023</td><td>Virender Sehwag; Diana Edulji (first Indian woman)</td></tr><tr><td>2024</td><td>Neetu David</td></tr><tr><td>2025</td><td>MS Dhoni</td></tr><tr><td>2026</td><td>Sourav Ganguly, Anjum Chopra</td></tr></table>
+TAG: ICC Hall of Fame, Sports/Numerical
+
+QUESTION: Anjum Chopra became the 3rd Indian woman in the ICC Hall of Fame after:
+A. Mithali Raj and Jhulan Goswami
+B. Diana Edulji and Jhulan Goswami
+C. Mithali Raj and Neetu David
+D. Neetu David and Smriti Mandhana
+E. Diana Edulji and Neetu David
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Diana Edulji and Neetu David</b>
+
+Anjum Chopra, a former India women's captain, was the <b>first Indian woman to score 1,000 ODI runs</b> and the <b>first Indian woman to play 100 ODIs</b>. Diana Edulji (2023) was the first Indian woman inductee; Neetu David followed in 2024.
+TAG: ICC Hall of Fame, Sports/Oneliner
+
+QUESTION: The United States celebrated its 250th Independence Day on 4 July 2026. The day commemorates the declaration of independence from British rule by how many colonies?
+A. 11
+B. 13
+C. 15
+D. 9
+E. 50
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – 13</b>
+
+The <b>Declaration of Independence</b> was adopted on <b>4 July 1776</b> by the <b>13 American colonies</b>.
+TAG: US Independence Day, International news/Numerical
+
+QUESTION: The Khelo India Programme, under the Ministry of Youth Affairs & Sports, was launched in:
+A. 2014
+B. 2016
+C. 2015
+D. 2020
+E. 2018
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 2018</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Telangana will host the <b>8th Khelo India Youth Games</b> in November 2026.</li><li>The 7th edition was hosted by <b>Bihar</b>.</li></ul>
+TAG: Khelo India, Sports/Static GK
+
+QUESTION: With the 2026 inductees, the ICC Hall of Fame now comprises how many members?
+A. 117
+B. 125
+C. 120
+D. 130
+E. 113
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – 125</b>
+
+<b>📌 Country-wise Hall of Famers:</b> England 35, Australia 30, West Indies 21, India 13, South Africa 9, Pakistan 8, New Zealand 4, Sri Lanka 4, Zimbabwe 1.
+TAG: ICC Hall of Fame, Sports/Numerical
+
+QUESTION: Along with Germany, which country has won the FIFA World Cup 4 times?
+A. Argentina
+B. France
+C. Spain
+D. Italy
+E. Uruguay
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Italy</b>
+
+<b>📌 Winners and titles</b>
+<table><tr><th>Team</th><th>Titles</th></tr><tr><td>Brazil</td><td>5</td></tr><tr><td>Germany, Italy</td><td>4 each</td></tr><tr><td>Argentina</td><td>3</td></tr><tr><td>Spain, France, Uruguay</td><td>2 each</td></tr><tr><td>England</td><td>1</td></tr></table>
+TAG: FIFA World Cup, Sports/Numerical
+
+QUESTION: Nine Asian (AFC) teams qualified for the FIFA World Cup 2026. Which of these entered via the inter-confederation play-off?
+A. Jordan
+B. Uzbekistan
+C. Qatar
+D. Iraq
+E. Saudi Arabia
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Iraq</b>
+
+<b>📌 AFC qualifiers:</b> 8 automatic – Australia, Iran, Japan, Jordan, Qatar, Saudi Arabia, South Korea, Uzbekistan; 1 via play-off – <b>Iraq</b>.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+TEXT: <b>Match the ports in Column I with their distinction in Column II:</b><br><table><tr><th>Column I (Port)</th><th>Column II (Distinction)</th></tr><tr><td>(a) Mundra Port</td><td>(1) Largest container port</td></tr><tr><td>(b) Jawaharlal Nehru Port</td><td>(2) Largest natural port</td></tr><tr><td>(c) Paradip Port</td><td>(3) Highest cargo capacity among major ports</td></tr><tr><td>(d) Mumbai Port</td><td>(4) Largest commercial port</td></tr></table>
+QUESTION: Choose the option that gives the correct match.
+A. a-1, b-4, c-3, d-2
+B. a-4, b-1, c-2, d-3
+C. a-3, b-1, c-4, d-2
+D. a-4, b-2, c-3, d-1
+E. a-4, b-1, c-3, d-2
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – a-4, b-1, c-3, d-2</b>
+
+<b>🔗 Correct matching</b>
+<table><tr><th>Port</th><th>Distinction</th></tr><tr><td>Mundra (Gujarat)</td><td>Largest commercial port – cargo, coal and oil</td></tr><tr><td>JNPT (Navi Mumbai)</td><td>Largest container port</td></tr><tr><td>Paradip (Odisha)</td><td>Highest cargo capacity among major ports (150 MMT+)</td></tr><tr><td>Mumbai Port</td><td>Largest natural port</td></tr></table>
+TAG: Ports, Economy/Match the Column
+
+QUESTION: Who captained England, the third-placed team at the FIFA World Cup 2026?
+A. Jude Bellingham
+B. Harry Kane
+C. Declan Rice
+D. Jordan Pickford
+E. Kyle Walker
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Harry Kane</b>
+
+<b>📌 Final standings and captains:</b> Spain (Rodri) – champion; Argentina (Lionel Messi) – runner-up; England (Harry Kane) – third; France (Kylian Mbappé) – fourth.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: The FIFA World Cup trophy (current version first awarded in 1974) was designed by:
+A. Cesare Rubini
+B. Pelé Nogueira
+C. Silvio Gazzaniga
+D. Giovanni Mancini
+E. Aldo Beroisa
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Silvio Gazzaniga</b>
+
+<b>📌 Trophy facts:</b> 18-carat gold; height 36.8 cm; weight 6.175 kg; design – two human figures supporting a globe.
+TAG: FIFA, Sports/Static GK
+
+QUESTION: The National Commission for Women (NCW) introduced a 24x7 helpline for women in distress. What is the helpline number?
+A. 181
+B. 1091
+C. 112
+D. 1098
+E. 14490
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 14490</b>
+
+The NCW helpline provides <b>immediate support, complaint registration and psychological counselling</b> and is operated by the NCW.
+TAG: NCW, Government schemes/Numerical
+
+QUESTION: Sunil Chhetri, India's all-time top scorer and most-capped player, has how many goals and appearances respectively?
+A. 84 goals and 150 appearances
+B. 95 goals and 145 appearances
+C. 95 goals and 157 appearances
+D. 100 goals and 157 appearances
+E. 90 goals and 160 appearances
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 95 goals and 157 appearances</b>
+TAG: Indian football, Sports/Numerical
+
+QUESTION: Kevin Pietersen, inducted into the ICC Hall of Fame 2026, was the Player of the Tournament in which event?
+A. ICC Men's T20 World Cup 2010
+B. ICC Men's T20 World Cup 2007
+C. ICC Champions Trophy 2004
+D. ICC Men's ODI World Cup 2011
+E. ICC Men's T20 World Cup 2009
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – ICC Men's T20 World Cup 2010</b>
+
+Pietersen is the former <b>England</b> batter and the lone international inductee of the 2026 class.
+TAG: ICC Hall of Fame, Sports/Oneliner
+
+QUESTION: As of May 2026, India has 14 major ports under the Central Government, of which 12 are operational. Which two have been notified as major ports but are still in stages of development?
+A. Vizhinjam Port and Tuna Tekra Port
+B. Kamarajar Port and Paradip Port
+C. Mundra Port and Kandla Port
+D. Vadhavan Port and Kamarajar Port
+E. Vadhavan Port and Galathea Bay Port
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Vadhavan Port and Galathea Bay Port</b>
+
+<b>📌 Key pointers</b>
+<ul><li><b>Largest commercial port:</b> Mundra, Gujarat (privately owned, not among the government-administered major ports).</li><li><b>Largest container port:</b> Jawaharlal Nehru Port (JNPT), Navi Mumbai.</li><li><b>Largest natural port:</b> Mumbai Port.</li></ul>
+TAG: Ports, Economy/List Based
+
+QUESTION: Where is the headquarters of FIFA located?
+A. Paris, France
+B. Geneva, Switzerland
+C. Lausanne, Switzerland
+D. Zürich, Switzerland
+E. Brussels, Belgium
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Zürich, Switzerland (FIFA House)</b>
+
+FIFA was founded in <b>Paris</b> in 1904, but its HQ is in <b>Zürich</b>. (Geneva/Lausanne are common traps – the IOC is in Lausanne.)
+TAG: FIFA, Sports/Static GK
+
+QUESTION: Cristiano Ronaldo (Portugal) scored how many goals in the 2018 FIFA World Cup (Russia)?
+A. 4
+B. 1
+C. 3
+D. 2
+E. 5
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – 4 goals</b>
+
+<b>📌 Ronaldo's World Cup goals (11 across 6 editions):</b> 2006 – 1; 2010 – 1; 2014 – 1; <b>2018 – 4</b>; 2022 – 1; 2026 – 3. He became the <b>first male player</b> to score in six World Cups.
+TAG: Cristiano Ronaldo, Sports/Numerical
+
+QUESTION: Who was named Best Young Player at the FIFA World Cup 2026?
+A. Lamine Yamal
+B. Nico Williams
+C. Warren Zaïre-Emery
+D. Jude Bellingham
+E. Pau Cubarsí
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Pau Cubarsí (Spain)</b>
+
+The <b>19-year-old</b> anchored Spain's defence and dominated the tournament's defensive charts.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: How many different nations have won the FIFA World Cup so far (after the 23 editions)?
+A. 6
+B. 7
+C. 8
+D. 9
+E. 10
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 8</b>
+
+Brazil, Germany, Italy, Argentina, Spain, France, Uruguay and England. <b>Brazil</b> holds the record with <mark>5 titles</mark>.
+TAG: FIFA World Cup, Sports/Numerical
+
+TEXT: <b>Match the Grand Slam 2026 titles in Column I with the winners in Column II:</b><br><table><tr><th>Column I (Title)</th><th>Column II (Winner)</th></tr><tr><td>(a) Australian Open 2026 – Men's Singles</td><td>(1) Jannik Sinner</td></tr><tr><td>(b) French Open 2026 – Men's Singles</td><td>(2) Carlos Alcaraz</td></tr><tr><td>(c) Wimbledon 2026 – Men's Singles</td><td>(3) Alexander Zverev</td></tr><tr><td>(d) French Open 2026 – Women's Singles</td><td>(4) Mirra Andreeva</td></tr></table>
+QUESTION: Choose the option that gives the correct match.
+A. a-1, b-3, c-2, d-4
+B. a-2, b-1, c-3, d-4
+C. a-3, b-2, c-1, d-4
+D. a-2, b-3, c-4, d-1
+E. a-2, b-3, c-1, d-4
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – a-2, b-3, c-1, d-4</b>
+
+<b>🔗 Correct matching</b>
+<table><tr><th>Title</th><th>Winner</th><th>Runner-up</th></tr><tr><td>AO 2026 Men's</td><td>Carlos Alcaraz (Spain)</td><td>Novak Djokovic</td></tr><tr><td>French Open 2026 Men's</td><td>Alexander Zverev (Germany)</td><td>Flavio Cobolli</td></tr><tr><td>Wimbledon 2026 Men's</td><td>Jannik Sinner (Italy)</td><td>Alexander Zverev</td></tr><tr><td>French Open 2026 Women's</td><td>Mirra Andreeva (Russia)</td><td>Maja Chwalińska</td></tr></table>
+TAG: Grand Slams 2026, Sports/Match the Column
+
+QUESTION: Which of the following Indian states did NOT declare a holiday for educational institutions on account of the FIFA World Cup 2026 final?
+A. Kerala
+B. Manipur
+C. Maharashtra
+D. Meghalaya
+E. Mizoram
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Maharashtra</b>
+
+<b>Kerala, Manipur, Meghalaya and Mizoram</b> declared the holiday so students could watch the late-night Argentina vs Spain final; pre-scheduled examinations proceeded as planned.
+TAG: FIFA World Cup 2026, National news/List Based
+
+QUESTION: Which team won the FIFA Fair Play Award at the 2026 FIFA World Cup?
+A. Spain
+B. Japan
+C. England
+D. Netherlands
+E. Morocco
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Netherlands</b>
+
+The award, presented by <b>McDonald's</b>, goes to the team with the best disciplinary record and exemplary fair play on and off the pitch.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: Who ranks third in the all-time World Cup goalscorers list with 16 goals?
+A. Ronaldo Nazário
+B. Miroslav Klose
+C. Gerd Müller
+D. Just Fontaine
+E. Cristiano Ronaldo
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Miroslav Klose (Germany)</b>
+
+He played in 2002, 2006, 2010 and 2014. Ronaldo Nazário (15) and Gerd Müller (14) follow.
+TAG: FIFA World Cup, Sports/Numerical
+
+QUESTION: FIFA matches feature mandatory three-minute hydration breaks. In the second half, the break is called at approximately which minute?
+A. 55th
+B. 67th
+C. 75th
+D. 60th
+E. 70th
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – 67th minute</b>
+
+The first-half break is around the <b>22nd minute</b>; each break lasts exactly <b>3 minutes</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Regulation time: two 45-minute periods; extra time: 30 minutes (two 15-minute halves).</li></ul>
+TAG: Football rules, Sports/Numerical
+
+QUESTION: The Golden Glove at the FIFA World Cup 2026 (7 clean sheets, conceded just one goal) was awarded to:
+A. Emiliano Martínez
+B. Thibaut Courtois
+C. Jordan Pickford
+D. Mike Maignan
+E. Unai Simón
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Unai Simón (Spain)</b>
+
+Golden Ball – Rodri; Golden Boot – Mbappé; Best Young Player – Pau Cubarsí.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: The opening match of the FIFA World Cup 2026 was held at which venue?
+A. MetLife Stadium, New Jersey
+B. BMO Field, Toronto
+C. Estadio Azteca, Mexico City
+D. SoFi Stadium, Los Angeles
+E. Estadio BBVA, Monterrey
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Estadio Azteca, Mexico City</b>
+
+The final was held at the <b>New York New Jersey Stadium / MetLife Stadium, East Rutherford</b>.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: The next edition of the ICC Women's T20 World Cup (2028) will be hosted by:
+A. Sri Lanka
+B. England
+C. Bangladesh
+D. Pakistan
+E. UAE
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Pakistan</b>
+
+<b>📌 Key pointers</b>
+<ul><li><b>Previous edition (2024):</b> hosted by UAE; New Zealand beat South Africa.</li><li>The first-ever <b>Women's Champions Trophy (T20 format)</b> will be held in <b>Sri Lanka</b> (February 2027).</li></ul>
+TAG: Women's T20 World Cup, Sports/Oneliner
+
+QUESTION: Which artists performed the official song 'Dai Dai' of the FIFA World Cup 2026?
+A. Shakira and Bad Bunny
+B. Burna Boy and Rihanna
+C. Maluma and Burna Boy
+D. Shakira and Burna Boy
+E. Jennifer Lopez and Pitbull
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Shakira and Burna Boy</b>
+
+The song was announced by <b>FIFA</b>.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: The FIFA World Cup was cancelled in which years due to the outbreak and aftermath of World War II?
+A. 1934 and 1938
+B. 1938 and 1942
+C. 1946 and 1950
+D. 1940 and 1944
+E. 1942 and 1946
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 1942 and 1946</b>
+
+The tournament has been cancelled only <b>twice</b> in its history.
+TAG: FIFA World Cup, Sports/Static GK
+
+QUESTION: Who is the all-time top goalscorer in the men's FIFA World Cup, with 22 goals including 10 in the 2026 edition?
+A. Kylian Mbappé
+B. Lionel Messi
+C. Miroslav Klose
+D. Ronaldo Nazário
+E. Gerd Müller
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Kylian Mbappé (France)</b>
+
+<b>📌 Top scorers</b>
+<table><tr><th>Rank</th><th>Player</th><th>Goals</th></tr><tr><td>1</td><td>Kylian Mbappé (France)</td><td>22</td></tr><tr><td>2</td><td>Lionel Messi (Argentina)</td><td>21</td></tr><tr><td>3</td><td>Miroslav Klose (Germany)</td><td>16</td></tr><tr><td>4</td><td>Ronaldo Nazário (Brazil)</td><td>15</td></tr><tr><td>5</td><td>Gerd Müller (West Germany)</td><td>14</td></tr></table>
+TAG: FIFA World Cup, Sports/Numerical
+
+QUESTION: SUMAN Roadmap 2030, launched by the Union Health Minister during the 16th Conference of the Central Council of Health and Family Welfare, stands for:
+A. Sustainable Maternal and Newborn Care
+B. Surakshit Matritva Aashwasan
+C. Suraksha Matru Abhiyan Network
+D. Swasthya Matritva Aashirwad
+E. Safe Motherhood and Newborn Assurance
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Surakshit Matritva Aashwasan</b>
+
+The roadmap is a strategic framework to transform maternal and newborn healthcare and <mark>aligns India's health policies with Sustainable Development Goal 3</mark>.
+
+<b>📌 Key pointers</b>
+<ul><li><b>Launched by:</b> Union Health Minister Jagat Prakash Nadda.</li><li><b>Vision:</b> reduce the Maternal Mortality Ratio (MMR) to below <b>70 per 1,00,000 live births by 2030</b>.</li></ul>
+TAG: SUMAN, Government schemes/Full Form
+
+QUESTION: World Football Day, observed on 25 May, was declared by which body in 2024?
+A. FIFA Council
+B. International Olympic Committee
+C. UNESCO
+D. UEFA
+E. United Nations General Assembly
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – United Nations General Assembly</b>
+
+<b>📌 Why 25 May?</b> It commemorates the <b>100th anniversary</b> of the first international football tournament with teams from all regions, which began on <mark>25 May 1924</mark> at the <b>Paris Summer Olympics</b>.
+TAG: World Football Day, International news/Static GK
+
+QUESTION: Which country won the inaugural FIFA World Cup in 1930, defeating Argentina 4-2 in the final at the Estadio Centenario?
+A. Brazil
+B. Italy
+C. Uruguay
+D. Germany
+E. Spain
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Uruguay</b>
+
+Uruguay, the host nation, defeated Argentina <b>4-2</b> at the <b>Estadio Centenario in Montevideo</b> to become football's first-ever world champions.
+
+<b>📌 Key pointers</b>
+<ul><li>The 2026 edition is the <b>23rd</b> edition.</li><li>The FIFA World Cup was cancelled only twice – <b>1942</b> and <b>1946</b> – due to World War II.</li></ul>
+TAG: FIFA World Cup, Sports/Static GK
+
+QUESTION: The date of World Football Day (25 May) commemorates the centenary of the football tournament held at which event?
+A. 1930 FIFA World Cup, Uruguay
+B. 1904 FIFA founding congress, Paris
+C. 1924 Summer Olympics, Paris
+D. 1900 Paris Olympics
+E. 1950 FIFA World Cup, Brazil
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 1924 Summer Olympics in Paris</b>
+
+The centenary in 2024 became the basis for establishing World Football Day.
+TAG: World Football Day, International news/Static GK
+
+QUESTION: Which of the following pairs about the ICC Women's T20 World Cup finals is correctly matched?
+A. 2016 – Australia beat West Indies in India
+B. 2009 – Australia beat England in England
+C. 2012 – West Indies beat England in Sri Lanka
+D. 2020 – England beat India in Australia
+E. 2023 – Australia beat South Africa in South Africa
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 2023 – Australia beat South Africa in South Africa</b>
+
+<b>🧠 Why not the others?</b>
+<ul><li><b>2016</b> – West Indies won their maiden title by beating Australia in India.</li><li><b>2009</b> – England won the first title by beating New Zealand.</li><li><b>2012</b> – Australia beat England in Sri Lanka.</li><li><b>2020</b> – Australia beat India in Australia.</li></ul>
+<b>📌 Others:</b> 2024 – New Zealand's first-ever title; 2026 – Australia (7th title).
+TAG: Women's T20 World Cup, Sports/Pair Based
+
+TEXT: <b>Consider the following statements about the SUMAN Roadmap 2030:</b>
+&#8203;
+1. It was unveiled during the 15th Conference of the Central Council of Health and Family Welfare.
+&#8203;
+2. It aims to reduce the Maternal Mortality Ratio (MMR) to below 70 per 1,00,000 live births by 2030.
+&#8203;
+3. It aligns India's health policies with Sustainable Development Goal 3.
+QUESTION: Which of the statements given above is/are correct?
+A. Only 1
+B. Only 1 and 2
+C. Only 1 and 3
+D. Only 2 and 3
+E. All 1, 2 and 3
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Only 2 and 3</b>
+
+<b>🔎 Statement-wise analysis</b>
+<table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>1</b></td><td>❌ False</td><td>The roadmap was unveiled during the <b>16th</b> Conference of the CCHFW.</td></tr><tr><td><b>2</b></td><td>✅ True</td><td>Target: MMR <b>below 70</b> per 1,00,000 live births by <b>2030</b>.</td></tr><tr><td><b>3</b></td><td>✅ True</td><td>Aligned with <b>SDG 3</b> (Good Health and Well-being).</td></tr></table>
+
+<b>📌 Current statistics:</b> MMR – <b>88</b> per 1 lakh live births (SRS 2021-23), improved from 93 and 130 in earlier cycles; IMR – <b>24-25</b> per 1,000; NMR – around <b>18-19</b> per 1,000.
+TAG: SUMAN, Government schemes/Statement Based
+
+QUESTION: Who was the runner-up in the women's singles at the Australian Open 2026?
+A. Karolína Muchová
+B. Maja Chwalińska
+C. Aryna Sabalenka
+D. Elena Rybakina
+E. Mirra Andreeva
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Aryna Sabalenka (Belarus)</b>
+
+Elena Rybakina (Kazakhstan) won the title.
+TAG: Australian Open 2026, Sports/Oneliner
+
+QUESTION: What was the prize money for the FIFA World Cup 2026 champions, increased from $42 million in 2022?
+A. $45 million
+B. $50 million
+C. $55 million
+D. $60 million
+E. $48 million
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – $50 million</b>
+
+<b>📌 Payouts (2026):</b> Runners-up – $33m; third – $29m; fourth – $27m. The <b>official song</b> is <b>'Dai Dai'</b> (Shakira and Burna Boy).
+TAG: FIFA World Cup 2026, Sports/Numerical
+
+QUESTION: India launched its campaign for a non-permanent UNSC seat for the 2028-29 term. Which country will contest the sole seat in the Asia-Pacific Group category against India in the elections to be held in June next year?
+A. Kazakhstan
+B. Uzbekistan
+C. Kyrgyzstan
+D. Tajikistan
+E. Turkmenistan
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Tajikistan</b>
+
+Elections for the 2028-29 term will be held in <mark>June next year</mark>, when <b>India and Tajikistan</b> will contest the sole seat in the Asia-Pacific Group.
+
+<b>📌 Key pointers</b>
+<ul><li>External Affairs Minister <b>S. Jaishankar</b> unveiled the campaign and India's <b>SHANTI</b> vision at the <b>UN Headquarters, New York</b>.</li><li>India last served on the UNSC during <b>2021-22</b>.</li></ul>
+TAG: UNSC, International news/Oneliner
+
+QUESTION: The DAANVEER initiative of the Ministry of Panchayati Raj, launched on 29 July 2026, carries which tagline?
+A. Digital Gaon, Digital Bharat
+B. Connect Every Panchayat
+C. Donate for Development
+D. Technology for Every Village
+E. Give Back to Your Village
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Give Back to Your Village</b>
+
+DAANVEER enables citizens, organisations and people living abroad to <b>voluntarily donate computers</b> to eligible Gram Panchayats to strengthen digital infrastructure.
+
+<b>📌 Key pointers</b>
+<ul><li><b>Launched by:</b> Vivek Bharadwaj, Secretary, Ministry of Panchayati Raj.</li><li><b>Platform:</b> Meri Panchayat App.</li><li><b>Partners:</b> National Informatics Centre (NIC) and DigiHaat.</li></ul>
+TAG: DAANVEER, Government schemes/Oneliner
+
+TEXT: <b>Consider the following statements about Grand Slam tennis 2026:</b>
+&#8203;
+1. Linda Nosková (Czech Republic) won the Wimbledon 2026 women's singles.
+&#8203;
+2. Karolína Muchová (Czech Republic) was the Wimbledon 2026 women's runner-up.
+&#8203;
+3. Flavio Cobolli won the French Open 2026 men's singles.
+QUESTION: Which of the statements given above is/are correct?
+A. Only 1 and 2
+B. Only 2 and 3
+C. Only 1 and 3
+D. Only 3
+E. All 1, 2 and 3
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Only 1 and 2</b>
+
+<b>🔎 Statement-wise analysis</b>
+<table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>1</b></td><td>✅ True</td><td>Nosková won Wimbledon 2026 women's singles.</td></tr><tr><td><b>2</b></td><td>✅ True</td><td>Muchová was the runner-up.</td></tr><tr><td><b>3</b></td><td>❌ False</td><td>Cobolli was the <b>runner-up</b>; Alexander Zverev won.</td></tr></table>
+TAG: Grand Slams 2026, Sports/Statement Based
+
+QUESTION: Before the 2028-29 bid, during which term did India last serve on the UN Security Council?
+A. 2021-22
+B. 2011-12
+C. 2019-20
+D. 2017-18
+E. 2015-16
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – 2021-22</b>
+
+India's last non-permanent membership was in the <b>2021-22</b> term. India is now campaigning for <b>2028-29</b> under the <b>SHANTI</b> vision.
+TAG: UNSC, International news/Static GK
+
+QUESTION: Who won the Golden Ball (Best Player) at the FIFA World Cup 2026?
+A. Lionel Messi
+B. Rodri
+C. Kylian Mbappé
+D. Pau Cubarsí
+E. Harry Kane
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Rodri (Spain)</b>
+
+Rodri completed the <b>most passes</b> and covered the <b>most distance</b> in the tournament; he also captained Spain.
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
+QUESTION: Who became the first player to win the ICC Women's T20 World Cup Player of the Tournament award twice (2020 and 2026)?
+A. Ellyse Perry
+B. Sophie Molineux
+C. Beth Mooney
+D. Danni Wyatt-Hodge
+E. Shree Charani
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Beth Mooney</b>
+
+Beth Mooney was also the <b>first player to win Player of the Final twice</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Australia beat England by <b>7 wickets</b> at <b>Lord's</b> for a record <b>7th title</b>; captain – <b>Sophie Molineux</b>.</li><li>Including ODI World Cups, Australia has <b>14</b> Women's World titles.</li></ul>
+TAG: Women's T20 World Cup 2026, Sports/Oneliner
+
+QUESTION: Which major port has the highest cargo capacity (150 MMT+ capacity) among India's major ports?
+A. Kamarajar Port, Tamil Nadu
+B. Jawaharlal Nehru Port, Maharashtra
+C. Paradip Port, Odisha
+D. Mundra Port, Gujarat
+E. Mumbai Port, Maharashtra
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Paradip Port, Odisha</b>
+
+Paradip is India's largest major port by cargo volume, with <mark>150 MMT+</mark> capacity.
+
+<b>🧠 Why not the others?</b>
+<ul><li><b>Mundra</b> – largest overall commercial port, but privately owned.</li><li><b>JNPT</b> – largest <i>container</i> port.</li><li><b>Mumbai</b> – largest <i>natural</i> port.</li></ul>
+TAG: Ports, Economy/Oneliner
+
+QUESTION: In India's UNSC campaign, SHANTI stands for:
+A. Strengthening Harmony and Nations Through Integrity
+B. Securing Holistic Advancement through Norms, Trust and Integrity
+C. Supporting Humanity and Nations Through Inclusion
+D. Securing Harmony, Alliance, Norms, Trust and Integrity
+E. Strategic Holistic Advancement through Negotiation, Trade and Innovation
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Securing Holistic Advancement through Norms, Trust and Integrity</b>
+
+<b>📌 Key pointers</b>
+<ul><li>The campaign is for a <b>non-permanent seat</b> on the <b>United Nations Security Council</b> for <b>2028-29</b>.</li><li>Unveiled by EAM <b>S. Jaishankar</b> at the UN HQ in New York.</li></ul>
+TAG: UNSC, International news/Full Form
+
+QUESTION: Lionel Messi won the Silver Ball at the FIFA World Cup 2026. What was his return in the tournament?
+A. 6 goals and 3 assists
+B. 10 goals and 4 assists
+C. 8 goals and 4 assists
+D. 8 goals and 2 assists
+E. 5 goals and 6 assists
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 8 goals and 4 assists</b>
+
+Messi captained runners-up <b>Argentina</b>. All-time World Cup scorers: Mbappé 22 and Messi 21.
+TAG: FIFA World Cup 2026, Sports/Numerical
+
+QUESTION: Telangana will host the 8th Khelo India Youth Games in November 2026. Which state hosted the 7th edition?
+A. Madhya Pradesh
+B. Tamil Nadu
+C. Bihar
+D. Assam
+E. Haryana
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Bihar</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Announced by <b>Mansukh Mandaviya</b>, Union Minister for Youth Affairs &amp; Sports; around <b>8,000</b> participants (athletes, officials, support staff).</li><li>Overall champions (previous editions): <b>Maharashtra, Haryana, Rajasthan</b>.</li><li>The Khelo India Programme was launched in <b>2018</b> under the Ministry of Youth Affairs &amp; Sports.</li></ul>
+TAG: Khelo India, Sports/Oneliner
+
+QUESTION: The final of the FIFA World Cup 2026 was held at:
+A. Estadio Azteca, Mexico City
+B. SoFi Stadium, Los Angeles
+C. AT&amp;T Stadium, Dallas
+D. Hard Rock Stadium, Miami
+E. New York New Jersey Stadium (MetLife Stadium), East Rutherford
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – New York New Jersey Stadium (MetLife Stadium), East Rutherford</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Total host cities: <b>16</b> – USA 11, Mexico 3 (Guadalajara, Mexico City, Monterrey), Canada 2 (Toronto, Vancouver).</li></ul>
+TAG: FIFA World Cup 2026, Sports/Oneliner
+
