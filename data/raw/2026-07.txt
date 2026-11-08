@@ -1,4 +1,4 @@
-QUESTION: Which two countries were recently removed from the FATF grey list after an Anti-Money Laundering and Combating the Financing of Terrorism (AML/CFT) compliance review?
+inQUESTION: Which two countries were recently removed from the FATF grey list after an Anti-Money Laundering and Combating the Financing of Terrorism (AML/CFT) compliance review?
 A. Algeria and Angola
 B. Namibia and Kenya
 C. Algeria and Namibia
@@ -2163,3 +2163,1062 @@ SOLUTION: <b>✅ Correct answer: E – New York New Jersey Stadium (MetLife Stad
 <ul><li>Total host cities: <b>16</b> – USA 11, Mexico 3 (Guadalajara, Mexico City, Monterrey), Canada 2 (Toronto, Vancouver).</li></ul>
 TAG: FIFA World Cup 2026, Sports/Oneliner
 
+[
+QUESTION: Under the revamped RBI Integrated Ombudsman Scheme effective 1 July 2026, a complaint can be escalated to the RBI Ombudsman within how many days if the regulated entity fails to respond or the customer is dissatisfied?
+A. 30 days
+B. 60 days
+C. 90 days
+D. 120 days
+E. 1 year
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 90 days</b>
+
+Under RB-IOS 2026, a customer first complains to the regulated entity. If there is no reply within <b>30 days</b> (or any longer RBI/NPCI/card-network timeline) or the customer is unhappy, the complaint can be escalated to the Ombudsman.
+
+<b>📌 Key pointers</b>
+<ul><li>Time limit to approach the Ombudsman was cut from <mark>1 year to 90 days</mark>.</li><li>The scheme continues the idea of <b>"One Nation, One Ombudsman"</b>.</li><li>Filing and resolving a complaint is <b>completely free of charge</b>.</li></ul>
+TAG: RBI master directions and circulars, Banking news/Oneliner
+
+QUESTION: PV Sindhu won her first BWF Super 750 title at the Japan Open 2026 by defeating which player in straight games in the final?
+A. Akane Yamaguchi
+B. Tai Tzu-ying
+C. Nozomi Okuhara
+D. Ratchanok Intanon
+E. Carolina Marin
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Akane Yamaguchi</b>
+
+PV Sindhu beat Japan's <b>Akane Yamaguchi</b> 21-16, 21-13 at the Tokyo Metropolitan Gymnasium on <mark>19 July 2026</mark> and became the <b>first Indian to win the Japan Open</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Event category: <b>BWF Super 750</b>.</li><li>Men's singles title at the same event went to <b>Christo Popov (France)</b>.</li></ul>
+TAG: Winner and runner-up, Sports news/Oneliner
+
+QUESTION: Cristiano Ronaldo scored his first-ever FIFA World Cup knockout goal, a 68th-minute penalty in the Round of 32, against which team?
+A. Spain
+B. Uruguay
+C. Morocco
+D. Switzerland
+E. Croatia
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Croatia</b>
+
+Ronaldo's penalty against <b>Croatia</b> made him the <mark>oldest player ever to score in a men's FIFA World Cup knockout match</mark>.
+
+<b>📌 Key pointers</b>
+<ul><li>Age at the time: <b>41 years and 147 days</b>.</li><li>It was his first goal in the knockout stages of the tournament.</li></ul>
+TAG: Youngest and oldest achievers, Sports news/Oneliner
+
+TEXT: <b>Match the Indian athletes in List-I with their achievements in List-II:</b><br><table><tr><th>List-I</th><th>List-II</th></tr><tr><td>(a) Neeru Dhanda</td><td>(1) Gold in men's 57 kg freestyle at Budapest Ranking Series 2026</td></tr><tr><td>(b) Aman Sehrawat</td><td>(2) First Indian to win an international gold in women's trap shooting</td></tr><tr><td>(c) Animesh Kujur</td><td>(3) 10.14 seconds in men's 100m final in Germany</td></tr><tr><td>(d) Esha Singh</td><td>(4) Gold in women's 25m pistol at ISSF World Cup 2026</td></tr></table>
+QUESTION: Choose the correct match.
+A. a-1, b-2, c-3, d-4
+B. a-2, b-1, c-3, d-4
+C. a-2, b-3, c-1, d-4
+D. a-3, b-1, c-2, d-4
+E. a-4, b-1, c-3, d-2
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – a-2, b-1, c-3, d-4</b>
+
+<table><tr><th>Athlete</th><th>Achievement</th></tr><tr><td><b>Neeru Dhanda</b></td><td>First Indian to win international gold in women's trap, ISSF Shotgun World Cup 2026, Lonato (Italy)</td></tr><tr><td><b>Aman Sehrawat</b></td><td>Beat Georgia's Roberti Dingashvili 13-3 by technical superiority</td></tr><tr><td><b>Animesh Kujur</b></td><td>Fastest 100m by an Indian on foreign soil, 11 July 2026</td></tr><tr><td><b>Esha Singh</b></td><td>40 hits in the final; Manu Bhaker took bronze with 28 hits after a shoot-off</td></tr></table>
+TAG: Athlete and sport matching, Sports news/Match the Column
+
+TEXT: <b>Consider the following statements about the International Cricket Council (ICC):</b><br>I. Jay Shah is the Chairman of the ICC.<br>II. Imran Khwaja is the Deputy Chairman.<br>III. Sanjog Gupta is the Chief Executive Officer.<br>IV. The headquarters of the ICC is in Mumbai.
+QUESTION: Which of the statements given above are correct?
+A. Only I and II
+B. Only II and III
+C. Only I and IV
+D. Only I, II and III
+E. All I, II, III and IV
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Only I, II and III</b>
+
+<table><tr><th>Statement</th><th>Verdict</th></tr><tr><td>I</td><td>✅ True – Chairman: Jay Shah</td></tr><tr><td>II</td><td>✅ True – Deputy Chairman: Imran Khwaja</td></tr><tr><td>III</td><td>✅ True – CEO: Sanjog Gupta</td></tr><tr><td>IV</td><td>❌ False – HQ is <b>Dubai, UAE</b></td></tr></table>
+
+<b>📌 Key pointers</b>
+<ul><li>ICC was founded on <mark>15 June 1909</mark>.</li><li>It now has <b>111</b> national governing bodies.</li></ul>
+TAG: Federation heads, Sports news/Statement Based
+
+QUESTION: After Mauritius became the 111th member of the ICC, how many Full Members and Associate Members does the ICC have respectively?
+A. 10 Full and 101 Associate
+B. 12 Full and 99 Associate
+C. 11 Full and 100 Associate
+D. 14 Full and 97 Associate
+E. 13 Full and 98 Associate
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – 12 Full and 99 Associate</b>
+
+The ICC approved Mauritius at its Annual Conference in <b>Edinburgh on 15 July 2026</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Mauritius is the <mark>23rd African country</mark> to join the ICC.</li><li>The move supports expansion of cricket in emerging markets.</li></ul>
+TAG: Federation headquarters, Sports news/Number-Data
+
+QUESTION: Dharmendra Pradhan's resignation was accepted by the President of India acting on the advice of the PM under clause (2) of which Article of the Constitution?
+A. Article 74
+B. Article 76
+C. Article 75
+D. Article 77
+E. Article 78
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Article 75</b>
+
+Education Minister Dharmendra Pradhan sent his resignation to PM Narendra Modi on <mark>25 July 2026</mark>; the President accepted it.
+
+<b>📌 Key pointers</b>
+<ul><li>Pralhad Joshi was given additional charge of the Ministry of Education.</li><li>Minister of State (Education): <b>Jayant Chaudhary</b>.</li></ul>
+TAG: Constitutional authority appointments, National news/Oneliner
+
+QUESTION: Pralhad Joshi, who has been given the additional charge of the Ministry of Education, is already the Union Minister of:
+A. Consumer Affairs; Food and Public Distribution; Health
+B. Consumer Affairs; Textiles; New and Renewable Energy
+C. Food Processing; Food and Public Distribution; Power
+D. Consumer Affairs; Coal; New and Renewable Energy
+E. Consumer Affairs; Food and Public Distribution; New and Renewable Energy
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E</b>
+
+Pralhad Joshi's existing portfolios are <b>Consumer Affairs, Food and Public Distribution, and New and Renewable Energy</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>He took over Education after the President accepted Dharmendra Pradhan's resignation on 25 July 2026.</li><li>The Union Education Minister post is now held by him as additional charge.</li></ul>
+TAG: Government department heads, National news/Oneliner
+
+QUESTION: Ravi Shankar, appointed Executive Director of the RBI with effect from 1 July 2026, will oversee which department?
+A. Department of Statistics and Information Management
+B. Department of Payment and Settlement Systems
+C. Department of Economic and Policy Research
+D. Department of Regulation
+E. Financial Markets Regulation Department
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Department of Statistics and Information Management (DSIM)</b>
+
+Before promotion he was <b>Adviser-In-Charge of DSIM</b>. He is a central banker and statistician with over three decades of experience at the RBI.
+
+<b>📌 Key pointers</b>
+<ul><li>Appointment effective <mark>1 July 2026</mark>.</li><li>DSIM = Department of Statistics and Information Management.</li></ul>
+TAG: Regulatory body appointments, Banking news/Appointment
+
+QUESTION: Andy Burnham secured nearly ______ of the vote in the Labour Party leadership election, which recorded a record voter turnout of ______.
+A. 45%; 49%
+B. 50%; 59%
+C. 55%; 49%
+D. 55%; 59%
+E. 59%; 55%
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – 55%; 59%</b>
+
+Andy Burnham became the <b>59th Prime Minister of the UK</b> after Keir Starmer resigned.
+
+<b>📌 Key pointers</b>
+<ul><li>He defeated Reform UK's Robert Kenyon by a margin of more than <b>9,000 votes</b>.</li><li>King Charles III invited him to Buckingham Palace through the traditional <i>"kissing hands"</i> ceremony.</li></ul>
+TAG: New heads of government, International news/Number-Data
+
+QUESTION: SWIFT, on whose Global Supervisory Board NPCI's Dilip Asbe was appointed, has its headquarters at:
+A. Basel, Switzerland
+B. London, United Kingdom
+C. La Hulpe, Belgium
+D. Frankfurt, Germany
+E. Paris, France
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – La Hulpe, Belgium</b>
+
+<b>SWIFT</b> (Society for Worldwide Interbank Financial Telecommunication) is a member-owned cooperative and a leading provider of secure financial messaging services.
+
+<b>📌 Key pointers</b>
+<ul><li>Founded in <mark>1973</mark>.</li><li>Connects 11,000+ financial institutions in more than 200 countries and territories.</li><li>Dilip Asbe is MD &amp; CEO of NPCI.</li></ul>
+TAG: Financial institutions and headquarters, Banking news/Static GK
+
+QUESTION: SWIFT's new Global Supervisory Board will have 12 members and, in exceptional circumstances, can expand to a maximum of how many members?
+A. 15
+B. 14
+C. 16
+D. 13
+E. 18
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – 15 members</b>
+
+NPCI MD &amp; CEO <b>Dilip Asbe</b> joined the Global Supervisory Board of SWIFT.
+
+<b>📌 Key pointers</b>
+<ul><li>Base strength: <b>12</b>; expandable to <b>15</b> in exceptional circumstances.</li><li>The board oversees SWIFT's strategy, risk management and organisational governance.</li></ul>
+TAG: NPCI, Banking news/Number-Data
+
+QUESTION: Anurag Jain, appointed CEO of NITI Aayog in July 2026, previously held which major post?
+A. Cabinet Secretary
+B. Finance Secretary
+C. Chief Secretary of Maharashtra
+D. Chief Secretary of Madhya Pradesh
+E. Home Secretary
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Chief Secretary of Madhya Pradesh</b>
+
+Anurag Jain is a senior IAS officer of the <b>1989 batch, Madhya Pradesh cadre</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Appointed on <mark>22 July 2026</mark> for 2 years or until further orders, whichever is earlier.</li></ul>
+TAG: Government department heads, National news/Appointment
+
+QUESTION: The appointment of Anurag Jain as NITI Aayog CEO was approved by which authority?
+A. Union Public Service Commission
+B. Appointments Committee of the Cabinet
+C. Finance Commission
+D. Cabinet Secretariat
+E. Election Commission
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Appointments Committee of the Cabinet (ACC)</b>
+
+The <b>ACC</b> approved his appointment for an overall period of <b>2 years</b> or until further orders.
+
+<b>📌 Key pointers</b>
+<ul><li>New post: CEO, NITI Aayog.</li><li>NITI Aayog Chairperson: <b>Prime Minister</b>.</li></ul>
+TAG: NITI Aayog governing bodies, National news/Appointment
+
+QUESTION: NITI Aayog, which replaced the Planning Commission, was established on:
+A. 1 January 2014
+B. 15 August 2015
+C. 26 January 2015
+D. 15 August 2014
+E. 1 January 2015
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 1 January 2015</b>
+
+NITI Aayog (National Institution for Transforming India) is India's premier policy think tank.
+
+<b>📌 Key pointers</b>
+<ul><li>It <b>replaced the Planning Commission</b>.</li><li>Chairperson: PM; CEO: Anurag Jain.</li><li>It monitors SDG progress through the <b>SDG India Index</b>.</li></ul>
+TAG: NITI Aayog reports, National news/Static GK
+
+QUESTION: Who is the Vice Chairperson of NITI Aayog as per the news?
+A. Ashok Kumar Lahiri
+B. V.K. Saraswat
+C. Ramesh Chand
+D. V.K. Paul
+E. Arvind Virmani
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Ashok Kumar Lahiri</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Full-time members listed: <b>Dr. V.K. Saraswat, Prof. Ramesh Chand, Dr. V.K. Paul and Dr. Arvind Virmani</b> (typically four).</li><li>Chairperson: PM Narendra Modi.</li></ul>
+TAG: NITI Aayog governing bodies, National news/Oneliner
+
+QUESTION: Who was named Interim Chairman of HDFC Bank, as mentioned in the news on the appointment of Rajiv Kumar?
+A. Atanu Chakraborty
+B. Rajiv Kumar
+C. Keki Mistry
+D. Sashidhar Jagdishan
+E. Ravi Agrawal
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Keki Mistry</b>
+
+Former CEC <b>Rajiv Kumar</b> was appointed Part-Time Chairman of HDFC Bank, replacing <b>Atanu Chakraborty</b>; Keki Mistry is the Interim Chairman.
+
+<b>📌 Key pointers</b>
+<ul><li>Tenure of the new chairman: <mark>3 years</mark>.</li></ul>
+TAG: Private Sector Banks, Banking news/Appointment
+
+QUESTION: Rajiv Kumar, appointed Part-Time Chairman of HDFC Bank for a tenure of 3 years, previously served as the:
+A. Finance Secretary
+B. Revenue Secretary
+C. Cabinet Secretary
+D. Chief Election Commissioner
+E. Comptroller and Auditor General
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Chief Election Commissioner</b>
+
+He is the <b>former Chief Election Commissioner (CEC)</b> of India.
+
+<b>📌 Key pointers</b>
+<ul><li>He replaces Atanu Chakraborty.</li><li>The post is <b>part-time</b> and the tenure is 3 years.</li></ul>
+TAG: Private Sector Banks, Banking news/Appointment
+
+QUESTION: Ravi Agrawal was reappointed as Chairman of the Central Board of Direct Taxes (CBDT) from 1 July 2026 to 31 December 2026, i.e. for a period of:
+A. 3 months
+B. 1 year
+C. 2 years
+D. 9 months
+E. 6 months
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 6 months</b>
+
+<b>📌 Key pointers</b>
+<ul><li>CBDT is the apex body for direct tax administration in India.</li><li>Ravi Agrawal was first appointed in <mark>June 2024</mark>.</li></ul>
+TAG: Regulatory body appointments, National news/Appointment
+
+QUESTION: Ravi Agrawal was first appointed as CBDT Chairman in June 2024 for a term of:
+A. 1 year
+B. 2 years
+C. 3 years
+D. 4 years
+E. 5 years
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – 2 years</b>
+
+His 2-year term was followed by a short reappointment of 6 months (1 July 2026 – 31 December 2026).
+
+<b>📌 Key pointers</b>
+<ul><li>CBDT = Central Board of Direct Taxes.</li></ul>
+TAG: Government department heads, National news/Number-Data
+
+QUESTION: South Indian Bank, which got Mahesh Muralidhar Pai as its new MD &amp; CEO, has its headquarters in ______ and was established in ______.
+A. Kochi; 1929
+B. Thrissur; 1935
+C. Kozhikode; 1929
+D. Thrissur; 1929
+E. Thiruvananthapuram; 1938
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Thrissur; 1929</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Tagline: <i>"Experience Next Generation Banking"</i>.</li><li>Pai was appointed for <b>3 years</b>.</li></ul>
+TAG: Private Sector Banks, Banking news/Static GK
+
+QUESTION: Mahesh Muralidhar Pai was appointed MD &amp; CEO of South Indian Bank for 3 years, replacing:
+A. P.R. Seshadri
+B. Shyam Srinivasan
+C. Sashidhar Jagdishan
+D. Amitabh Chaudhry
+E. Uday Kotak
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – P.R. Seshadri</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Position: Managing Director &amp; Chief Executive Officer of South Indian Bank (SIB).</li><li>The appointment is made through the RBI as the banking regulator.</li></ul>
+TAG: Private Sector Banks, Banking news/Appointment
+
+QUESTION: Air Marshal Ashutosh Dixit assumed charge on 1 July 2026 as which numbered Vice Chief of the Air Staff of the IAF?
+A. 49th
+B. 50th
+C. 51st
+D. 52nd
+E. 53rd
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 51st</b>
+
+He succeeded <b>Air Marshal Nagesh Kapoor</b>, who superannuated on <mark>30 June 2026</mark> after nearly four decades of service in the IAF.
+
+<b>📌 Key pointers</b>
+<ul><li>Date of assumption: 1 July 2026.</li></ul>
+TAG: Defence chiefs and service chiefs, Defence news/Appointment
+
+QUESTION: Viswanathan Anand became FIDE Interim President on 24 July 2026 after Arkady Dvorkovich suspended his duties due to:
+A. UN sanctions
+B. US and UK sanctions
+C. Health reasons
+D. A court order
+E. EU and Swiss sanctions
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – EU and Swiss sanctions</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Anand is a <b>five-time World Chess Champion</b>.</li><li>FIDE = International Chess Federation.</li></ul>
+TAG: Federation heads, Sports news/Oneliner
+
+QUESTION: According to the news, FIDE stands for:
+A. International Chess Foundation
+B. International Chess Federation
+C. International Federation of Draughts
+D. International Federation of Chess Associations
+E. International Board of Chess
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – International Chess Federation</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Viswanathan Anand replaced Arkady Dvorkovich as interim head on 24 July 2026.</li><li>Anand is a five-time World Chess Champion.</li></ul>
+TAG: Sports federations and governing bodies, Sports news/Full Form
+
+TEXT: <b>Match the Indian-origin experts with the US Federal Reserve task forces they were named to lead in July 2026:</b><br><table><tr><th>Expert</th><th>Task Force</th></tr><tr><td>(a) Raghuram Rajan</td><td>(1) Workforce, Labor Markets &amp; Economic Outcomes</td></tr><tr><td>(b) Raj Chetty</td><td>(2) Financial Stability &amp; Regulation</td></tr><tr><td>(c) Asha Sharma</td><td>(3) Economic &amp; Monetary Analysis</td></tr></table>
+QUESTION: Choose the correct match.
+A. a-1, b-2, c-3
+B. a-2, b-3, c-1
+C. a-1, b-3, c-2
+D. a-3, b-2, c-1
+E. a-3, b-1, c-2
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – a-3, b-1, c-2</b>
+
+<table><tr><th>Expert</th><th>Task Force</th></tr><tr><td><b>Raghuram Rajan</b></td><td>Economic &amp; Monetary Analysis</td></tr><tr><td><b>Raj Chetty</b></td><td>Workforce, Labor Markets &amp; Economic Outcomes</td></tr><tr><td><b>Asha Sharma</b></td><td>Financial Stability &amp; Regulation</td></tr></table>
+
+<b>📌 Key pointers</b>
+<ul><li>The task forces review the Fed's monetary policy framework under Chair <b>Kevin Warsh</b>.</li></ul>
+TAG: New task forces, International news/Match the Column
+
+QUESTION: In July 2026, three Indian-origin experts were appointed to lead three of the ______ task forces reviewing the US Federal Reserve's monetary policy framework announced by Fed Chair ______.
+A. Four; Jerome Powell
+B. Three; Kevin Warsh
+C. Six; Kevin Warsh
+D. Five; Kevin Warsh
+E. Five; Jerome Powell
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Five; Kevin Warsh</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Experts: <b>Raghuram Rajan, Raj Chetty and Asha Sharma</b>.</li><li>Purpose: to review the Fed's monetary policy framework.</li></ul>
+TAG: New task forces, International news/Fill-in-the-Blank
+
+QUESTION: Under the Sashastra Seema Bal (SSB) Recruitment Rules, 2026, what percentage of Constable (General Duty) vacancies is reserved for ex-Agniveers?
+A. 50%
+B. 10%
+C. 25%
+D. 33%
+E. 75%
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – 50%</b>
+
+The rules also provide relaxations, including exemption from certain recruitment tests and age relaxation, for former Agniveers.
+
+<b>📌 Key pointers</b>
+<ul><li>Separate reservation: <b>10%</b> in CAPFs, Assam Rifles and MoD civilian posts.</li></ul>
+TAG: Defence procurement deals, Defence news/Number-Data
+
+QUESTION: The Sashastra Seema Bal (SSB) is one of India's Central Armed Police Forces functioning under which ministry?
+A. Ministry of Defence
+B. Ministry of Finance
+C. Ministry of Home Affairs
+D. Ministry of Labour and Employment
+E. Ministry of External Affairs
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Ministry of Home Affairs (MHA)</b>
+
+<b>📌 Key pointers</b>
+<ul><li>SSB is one of the CAPFs; other CAPFs listed in the news are CRPF, BSF, CISF and ITBP.</li><li>Ex-Agniveers get 50% of Constable (GD) posts in SSB.</li></ul>
+TAG: Security force exercises, Defence news/Static GK
+
+TEXT: <b>Consider the following statements about the Agnipath Scheme:</b><br>1. The eligible age group is 17.5 to 21 years.<br>2. The age limit of up to 23 years was a one-time waiver for the first batch.<br>3. Around 75% of Agniveers are retained permanently after four years.<br>4. Approximately 46,000 Agniveers are recruited every year across the three services.
+QUESTION: Which of the statements given above are correct?
+A. Only 1 and 2
+B. Only 1, 2 and 4
+C. Only 2 and 3
+D. Only 3 and 4
+E. All 1, 2, 3 and 4
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Only 1, 2 and 4</b>
+
+<b>📌 Statement analysis</b>
+<ul><li>1 ✅ True – age 17.5 to 21 years.</li><li>2 ✅ True – up to 23 years for the first batch only.</li><li>3 ❌ False – only <b>25%</b> are retained; <b>75%</b> leave with the Seva Nidhi package.</li><li>4 ✅ True – approx. 46,000 vacancies yearly.</li></ul>
+TAG: Defence Acquisition Council approvals, Defence news/Statement Based
+
+QUESTION: The total Seva Nidhi package received by an Agniveer after 4 years, including interest and the equal government contribution, is approximately:
+A. ₹11.71 lakh
+B. ₹11.17 lakh
+C. ₹10.04 lakh
+D. ₹12.50 lakh
+E. ₹13.71 lakh
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – ₹11.71 lakh</b>
+
+It is a lump sum, <b>free from income tax</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Agniveer contribution: ₹41,850; Government contribution: equal amount ₹41,850.</li><li>Insurance cover: ₹48 lakh.</li></ul>
+TAG: Defence procurement deals, Defence news/Number-Data
+
+QUESTION: An Agniveer's total contribution to the Seva Nidhi over four years (₹9,000 + ₹9,900 + ₹10,950 + ₹12,000) amounts to:
+A. ₹40,850
+B. ₹41,580
+C. ₹42,850
+D. ₹43,500
+E. ₹41,850
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – ₹41,850</b>
+
+The Government contributes an equal amount, ₹41,850.
+
+<b>📌 Key pointers</b>
+<ul><li>Monthly salary rises ₹30,000 → ₹33,000 → ₹36,500 → ₹40,000 across the four years.</li><li>Total package approx. ₹11.71 lakh including interest.</li></ul>
+TAG: Defence procurement deals, Defence news/Number-Data
+
+QUESTION: What is the insurance cover (life and accident protection) mentioned for Agniveers under the post-service package?
+A. ₹10 lakh
+B. ₹25 lakh
+C. ₹48 lakh
+D. ₹50 lakh
+E. ₹1 crore
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – ₹48 lakh</b>
+
+<b>📌 Key pointers</b>
+<ul><li>The package also includes a Skill Certificate, an Experience Letter and priority in government jobs.</li><li>Seva Nidhi: ₹11.71 lakh tax-free.</li></ul>
+TAG: Defence procurement deals, Defence news/Number-Data
+
+QUESTION: The remaining 75% of Agniveers get a 10% job reservation in which of the following?
+A. State police forces, Railways and banks
+B. Indian Army, Navy and Air Force
+C. CAPFs and Assam Rifles only
+D. CAPFs, Assam Rifles and Ministry of Defence civilian posts
+E. SSB and Ministry of Home Affairs posts only
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D</b>
+
+<b>📌 Key pointers</b>
+<ul><li>10% reservation each in CAPFs (CRPF, BSF, CISF, ITBP, SSB), Assam Rifles and MoD civilian posts.</li><li>Assam Rifles is described as India's oldest paramilitary force.</li></ul>
+TAG: Defence procurement deals, Defence news/List Based
+
+QUESTION: In the third year of service, an Agniveer's monthly salary and Seva Nidhi contribution are respectively:
+A. ₹33,000 and ₹9,900
+B. ₹36,500 and ₹10,950
+C. ₹30,000 and ₹9,000
+D. ₹40,000 and ₹12,000
+E. ₹36,500 and ₹9,900
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – ₹36,500 and ₹10,950</b>
+
+<table><tr><th>Year</th><th>Monthly salary</th><th>Seva Nidhi contribution</th></tr><tr><td>1st</td><td>₹30,000</td><td>₹9,000</td></tr><tr><td>2nd</td><td>₹33,000</td><td>₹9,900</td></tr><tr><td>3rd</td><td>₹36,500</td><td>₹10,950</td></tr><tr><td>4th</td><td>₹40,000</td><td>₹12,000</td></tr></table>
+TAG: Defence procurement deals, Defence news/Number-Data
+
+QUESTION: General Dhiraj Seth assumed charge as the 31st Chief of the Army Staff, replacing:
+A. General Manoj Pande
+B. General Anil Chauhan
+C. General Upendra Dwivedi
+D. General Bipin Rawat
+E. General M.M. Naravane
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – General Upendra Dwivedi</b>
+
+General Dhiraj Seth unveiled the <b>'VIJAY' vision</b>, a roadmap for a technology-driven, future-ready and self-reliant force.
+
+<b>📌 Key pointers</b>
+<ul><li>Post: 31st Chief of the Army Staff (COAS).</li></ul>
+TAG: Defence chiefs and service chiefs, Defence news/Appointment
+
+QUESTION: In the Army Chief's 'VIJAY' vision, the letters 'J' and 'Y' stand for respectively:
+A. Jointness and Innovation; Yoddha Force
+B. Jointness and Integration; Yoddha First
+C. Justice and Integrity; Yoddha First
+D. Jointness and Integration; Youth First
+E. Jawan First; Yoddha Force
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Jointness and Integration; Yoddha First</b>
+
+<table><tr><th>Letter</th><th>Meaning</th></tr><tr><td>V</td><td>Vigilance and Readiness</td></tr><tr><td>I</td><td>Innovation and Transformation</td></tr><tr><td>J</td><td>Jointness and Integration</td></tr><tr><td>A</td><td>Aatmanirbharta</td></tr><tr><td>Y</td><td>Yoddha First</td></tr></table>
+TAG: Defence chiefs and service chiefs, Defence news/Pair Based
+
+QUESTION: The Indian Navy participated in which edition of RIMPAC in June 2026, hosted at Joint Base Pearl Harbor-Hickam?
+A. 28th edition; Pearl Harbor-Hickam
+B. 29th edition; San Diego
+C. 31st edition; Guam
+D. 30th edition; San Diego
+E. 30th edition; Hawaii (USA)
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 30th edition, Hawaii</b>
+
+RIMPAC (Rim of the Pacific) is the <b>world's largest multinational maritime warfare exercise</b>, hosted by the US Navy under the US Pacific Fleet at <b>JBPHH, Hawaii</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Dates: 24 June to 31 July 2026 (five weeks).</li></ul>
+TAG: Naval exercises, Defence news/Oneliner
+
+TEXT: <b>Consider the following statements about RIMPAC 2026:</b><br>1. It is hosted by the US Navy under the US Pacific Fleet.<br>2. It is held from 24 June to 31 July 2026.<br>3. The venue is Joint Base Pearl Harbor-Hickam, Hawaii.<br>4. It is hosted by the Royal Australian Navy.
+QUESTION: Which of the statements given above are correct?
+A. Only 1, 2 and 3
+B. Only 1 and 4
+C. Only 2 and 4
+D. Only 3 and 4
+E. All 1, 2, 3 and 4
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Only 1, 2 and 3</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Participants: 30 nations, 30+ warships, 5 submarines, 206+ aircraft and 30,000 personnel.</li><li>Statement 4 is false: the host is the <b>US Navy</b>.</li></ul>
+TAG: Naval exercises, Defence news/Statement Based
+
+QUESTION: The IAF participated in Exercise Pitch Black 2026, hosted by the Royal Australian Air Force at which base?
+A. RAAF Base Amberley
+B. RAAF Base Williamtown
+C. RAAF Base Pearce
+D. RAAF Base Darwin
+E. RAAF Base Tindal
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – RAAF Base Darwin</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Edition: <b>45th</b>.</li><li>Dates: <mark>20 July to 7 August 2026</mark> in northern Australia.</li></ul>
+TAG: Air force exercises, Defence news/Oneliner
+
+QUESTION: The Sustainable Development Report (SDR) 2026 was published by:
+A. World Bank
+B. UNDP
+C. UNICEF
+D. World Economic Forum
+E. UN Sustainable Development Solutions Network
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – UNSDSN</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Edition: <b>11th</b>; countries covered: <b>167</b>.</li><li>Top 5: Finland (87.40), Sweden (86.26), Denmark (85.68), Norway (84.08), Germany (84.02).</li></ul>
+TAG: Report publisher, National news/Oneliner
+
+QUESTION: In the Sustainable Development Report 2026, India's rank and its improvement are:
+A. 90th, up from 94th
+B. 94th, up from 105th
+C. 94th, up from 99th
+D. 99th, up from 94th
+E. 100th, up from 105th
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 94th, up from 99th (2025)</b>
+
+<b>📌 Key pointers</b>
+<ul><li>India's score: <b>68.3/100</b> – its highest-ever rank.</li><li>Best ranking since the SDGs were adopted in 2015.</li><li>Only <b>33.3%</b> of India's SDG targets are on track for 2030.</li></ul>
+TAG: India's rank and top-performing State, National news/Number-Data
+
+QUESTION: Which country is the last-ranked (167th) country in the Sustainable Development Report 2026?
+A. South Sudan
+B. Afghanistan
+C. Somalia
+D. Chad
+E. Yemen
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – South Sudan</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Top-ranked: <b>Finland</b> (87.40).</li><li>India ranked 94th.</li></ul>
+TAG: Report reference period and key findings, National news/Oneliner
+
+TEXT: <b>Consider the following statements about the Sustainable Development Goals (SDGs):</b><br>1. They were adopted by the United Nations on 25 September 2015.<br>2. There are 17 goals and 169 targets.<br>3. The target period is 2016-2030.<br>4. The main principle is 'Growth for All'.
+QUESTION: Which of the statements given above are correct?
+A. Only 1 and 2
+B. Only 2 and 4
+C. Only 3 and 4
+D. Only 1, 2 and 3
+E. All 1, 2, 3 and 4
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Only 1, 2 and 3</b>
+
+Statement 4 is false: the main principle is <b>"Leave No One Behind"</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Core agenda: 2030 Agenda for Sustainable Development.</li><li>NITI Aayog monitors progress via the SDG India Index.</li></ul>
+TAG: NITI Aayog reports, National news/Statement Based
+
+QUESTION: Which institution monitors India's progress on the SDGs through the SDG India Index?
+A. Finance Commission
+B. NITI Aayog
+C. Reserve Bank of India
+D. SEBI
+E. National Statistical Office
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – NITI Aayog</b>
+
+<b>📌 Key pointers</b>
+<ul><li>SDGs: 17 goals, 169 targets, adopted on 25 September 2015.</li><li>Target year: 2030.</li></ul>
+TAG: NITI Aayog reports, National news/Oneliner
+
+QUESTION: In the Henley Passport Index 2026, India's passport gives visa-free or visa-on-arrival access to how many destinations?
+A. 55
+B. 59
+C. 62
+D. 75
+E. 81
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – 55 destinations</b>
+
+India's rank fell to <b>81st</b> (from 75th earlier in the year), sharing the rank with Mauritania and Algeria.
+
+<b>📌 Key pointers</b>
+<ul><li>Singapore is 1st with 192 destinations.</li><li>Weakest passport: Afghanistan (22 destinations).</li><li>Global average visa-free access: 108.</li></ul>
+TAG: Report publisher, National news/Number-Data
+
+QUESTION: Which countries share second place in the Henley Passport Index 2026 with access to 188 destinations?
+A. Sweden, Switzerland and Finland
+B. Germany, France and Italy
+C. United States, UK and Canada
+D. Japan, South Korea and UAE
+E. Singapore, Japan and South Korea
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Japan, South Korea and UAE</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Singapore retained the top position with 192 destinations.</li><li>2026 marks 20 years of the Henley Passport Index; the 2006 global average was only 58 destinations.</li></ul>
+TAG: Global trade reports, International news/List Based
+
+QUESTION: Indian citizens can travel to which two countries without a passport?
+A. Nepal and Sri Lanka
+B. Bhutan and Maldives
+C. Nepal and Myanmar
+D. Bhutan and Bangladesh
+E. Nepal and Bhutan
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Nepal and Bhutan</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Adults can use a valid Indian passport or Voter ID card.</li><li>Ordinary Indian passports come in two booklet sizes: <b>36 pages</b> and <b>60 pages</b>.</li></ul>
+TAG: Diaspora engagement, National news/Oneliner
+
+QUESTION: From 1 July 2026, the new fee for fresh/reissue of a 60-page ordinary passport is:
+A. ₹2,500
+B. ₹3,000
+C. ₹3,500
+D. ₹5,000
+E. ₹6,000
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – ₹3,500 (old fee ₹2,000)</b>
+
+<table><tr><th>Service</th><th>Old fee</th><th>New fee from 1 July 2026</th></tr><tr><td>36-page ordinary</td><td>₹1,500</td><td>₹2,500</td></tr><tr><td>36-page Tatkal</td><td>₹3,500</td><td>₹5,000</td></tr><tr><td>60-page ordinary</td><td>₹2,000</td><td>₹3,500</td></tr><tr><td>60-page Tatkal</td><td>₹4,000</td><td>₹6,000</td></tr><tr><td>Lost/damaged (36 / 60 pages)</td><td>—</td><td>₹5,000 / ₹6,000</td></tr></table>
+TAG: Rules and regulations notified, National news/Number-Data
+
+TEXT: <b>Consider the following statements about passports in India:</b><br>1. Adult passports are generally valid for 10 years.<br>2. Passports for minors (below 18 years) are valid for 10 years.<br>3. Ordinary passports are available in 36-page and 60-page booklet sizes.<br>4. Indian citizens can travel to Nepal and Bhutan without a passport.
+QUESTION: Which of the statements given above are correct?
+A. Only 1 and 2
+B. Only 1, 3 and 4
+C. Only 2, 3 and 4
+D. Only 1 and 4
+E. All 1, 2, 3 and 4
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Only 1, 3 and 4</b>
+
+Statement 2 is false: passports for minors are valid for <b>5 years</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Adult validity: 10 years.</li><li>Passport = identity document issued by your country; Visa = permission to enter a foreign country.</li></ul>
+TAG: Rules and regulations notified, National news/Statement Based
+
+QUESTION: The Global Passport Index (GPI) 2026 was published by ______ and covered ______ countries.
+A. Henley &amp; Partners; 199
+B. Time Out; 173
+C. Economist Intelligence Unit; 197
+D. Global Citizen Solutions; 197
+E. UNSDSN; 167
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Global Citizen Solutions (GCS); 197 countries</b>
+
+<b>📌 Key pointers</b>
+<ul><li>5th edition of the GPI.</li><li>Sweden ranked 1st (score 96.05); Switzerland 2nd; Finland 3rd.</li><li>Afghanistan ranked 197th (last).</li></ul>
+TAG: Report publisher, International news/Number-Data
+
+QUESTION: Which parameter carries the highest weightage in the Global Passport Index 2026?
+A. Investment Index – 50%
+B. Mobility Index – 50%
+C. Quality of Life Index – 50%
+D. Mobility Index – 25%
+E. Investment Index – 25%
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Mobility Index – 50%</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Investment Index: 25%; Quality of Life Index: 25%.</li><li>India ranked 125th with a composite score of 45.1.</li></ul>
+TAG: Report publisher, International news/Number-Data
+
+TEXT: <b>Match India's sub-index rankings in the Global Passport Index 2026:</b><br><table><tr><th>Index</th><th>India's Rank</th></tr><tr><td>(a) Mobility Index</td><td>(1) 94th</td></tr><tr><td>(b) Quality of Life Index</td><td>(2) 118th</td></tr><tr><td>(c) Investment Index</td><td>(3) 136th</td></tr></table>
+QUESTION: Choose the correct match.
+A. a-3, b-2, c-1
+B. a-1, b-2, c-3
+C. a-2, b-3, c-1
+D. a-3, b-1, c-2
+E. a-2, b-1, c-3
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – a-3, b-2, c-1</b>
+
+<b>📌 Key pointers</b>
+<ul><li>India's overall rank: <b>125th</b> (down from 124th in 2025).</li><li>India improved only two places in five years (127th to 125th).</li></ul>
+TAG: India's rank and top-performing State, National news/Match the Column
+
+QUESTION: In the World's Happiest Cities 2026 report, which Indian city is the only one in the Top 10, and at which rank?
+A. Mumbai – 4th
+B. Jaipur – 9th
+C. Delhi – 6th
+D. Udaipur – 6th
+E. Jaipur – 6th
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Jaipur, 6th</b>
+
+The report is published by <b>Time Out</b>; <b>Bath (England)</b> ranks 1st.
+
+<b>📌 Key pointers</b>
+<ul><li>Top 3: Bath, Panama City, Guadalajara.</li><li>International Day of Happiness: <b>20 March</b>.</li></ul>
+TAG: Report publisher, International news/Oneliner
+
+QUESTION: For how many consecutive years has the Indian Air Force secured the 3rd position in the World Directory of Modern Military Aircraft (WDMMA) 2026 ranking?
+A. 3rd consecutive year
+B. 4th consecutive year
+C. 5th consecutive year
+D. 6th consecutive year
+E. 2nd consecutive year
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – 5th consecutive year</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Top air forces: USAF, Russian Air Force, IAF, PLA Air Force (China).</li><li>IAF fleet: 1,716 aircraft (542 fighters, 498 helicopters, 374 trainers, 20 special mission).</li></ul>
+TAG: Air force exercises, Defence news/Number-Data
+
+QUESTION: Which country ranks second to China among the top militaries by active personnel, with about 1,475,750 personnel?
+A. United States
+B. North Korea
+C. Russia
+D. Pakistan
+E. India
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – India</b>
+
+<b>📌 Key pointers</b>
+<ul><li>China (PLA): ~2,035,000; India: ~1,475,750; United States: ~1,315,600; North Korea: ~1,280,000; Russia: ~1,134,000.</li></ul>
+TAG: Defence chiefs and service chiefs, Defence news/List Based
+
+QUESTION: In the Global Liveability Index 2026 (EIU), which parameter carries the lowest weightage?
+A. Education – 10%
+B. Healthcare – 20%
+C. Infrastructure – 20%
+D. Stability – 25%
+E. Culture &amp; Environment – 25%
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Education (10%)</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Published by Economist Intelligence Unit (EIU), London; 173 cities covered.</li><li>Copenhagen retained rank 1 for the 2nd year; Damascus was last (173rd).</li></ul>
+TAG: Report publisher, International news/Number-Data
+
+TEXT: <b>Match the Indian cities with their ranks in the Global Liveability Index 2026:</b><br><table><tr><th>City</th><th>Rank</th></tr><tr><td>(a) Delhi</td><td>(1) 120</td></tr><tr><td>(b) Mumbai</td><td>(2) 121</td></tr><tr><td>(c) Chennai</td><td>(3) 123</td></tr><tr><td>(d) Bengaluru</td><td>(4) 127</td></tr></table>
+QUESTION: Choose the correct match.
+A. a-2, b-1, c-3, d-4
+B. a-1, b-2, c-4, d-3
+C. a-1, b-2, c-3, d-4
+D. a-4, b-3, c-2, d-1
+E. a-1, b-3, c-2, d-4
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – a-1, b-2, c-3, d-4</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Delhi (120th, score 48.1) is the best Indian city.</li><li>Top 5: Copenhagen, Vienna, Melbourne, Sydney, Zurich.</li></ul>
+TAG: India's rank and top-performing State, National news/Match the Column
+
+QUESTION: According to a ranking reported in July 2026, India secured which position among the world's most influential countries?
+A. 12th
+B. 16th
+C. 18th
+D. 20th
+E. 11th
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – 16th</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Top 5: USA, UK, Germany, France, Japan.</li><li>India's influence is supported by its large economy, large population and market, military and nuclear capabilities, Global South leadership, and membership of G20, BRICS, SCO and Quad.</li></ul>
+TAG: India–US relations, International news/Oneliner
+
+QUESTION: As per the UNCTAD World Investment Report 2026, India became the ______ largest recipient of FDI globally, attracting $38.89 billion in 2025.
+A. 9th
+B. 10th
+C. 12th
+D. 11th
+E. 13th
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – 11th</b>
+
+India moved up <b>two places</b>.
+
+<b>📌 Key pointers</b>
+<ul><li>Top 3 global recipients: USA ($277 bn), Singapore ($151 bn), UK ($74 bn).</li><li>Largest source of FDI into India (FY 2025-26): Singapore – US$ 19.80 bn (33.65%).</li></ul>
+TAG: Foreign Portfolio Investment, International news/Fill-in-the-Blank
+
+QUESTION: Which country is the second-largest destination for India's cumulative outward direct investment (April 2000 – March 2026) after Singapore?
+A. United States
+B. Mauritius
+C. United Kingdom
+D. UAE
+E. Netherlands
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Mauritius (US$ 47.38 billion)</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Singapore – US$ 72.69 bn; Mauritius – US$ 47.38 bn; USA – US$ 44.99 bn.</li><li>FDI inflow FY 2025-26: Singapore (33.65%), USA (18.98%), Mauritius (11.18%).</li></ul>
+TAG: External Commercial Borrowings, Banking news/Number-Data
+
+QUESTION: In the Fortune India Most Powerful Women 2026 list, the Reddy Sisters ranked 3rd as promoter directors and executives of which organisation?
+A. HCLTech
+B. Reliance Foundation
+C. OP Jindal Group
+D. Adani Foundation
+E. Apollo Hospitals Enterprise
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Apollo Hospitals Enterprise</b>
+
+<b>📌 Key pointers</b>
+<ul><li>16th edition; 100 influential women leaders.</li><li>Rank 1: Nita Ambani; Rank 2: Roshni Nadar Malhotra (HCLTech); Rank 4: Savitri Jindal; Rank 5: Dr. Priti Adani.</li></ul>
+TAG: Winner and runner-up, National news/Oneliner
+
+QUESTION: Which country ranks third in cotton consumption/domestic use, as per the news on India's cotton ('White Gold')?
+A. Brazil
+B. Bangladesh
+C. United States
+D. Pakistan
+E. Vietnam
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – Pakistan (9.70 million bales)</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Consumption: China 41.00, India 25.50, Pakistan 9.70 million bales.</li><li>Production: China 35.80, India 23.80, Brazil 18.75 million bales.</li><li>India ranks 1st in cotton cultivation area.</li></ul>
+TAG: Agriculture and rural development reports, National news/List Based
+
+QUESTION: In NITI Aayog's Investment Friendliness Index (IFI) 2026, which state ranked 4th with a score of 53.1?
+A. Odisha
+B. Tamil Nadu
+C. Goa
+D. Maharashtra
+E. Gujarat
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Goa</b>
+
+<b>📌 Key pointers</b>
+<ul><li>1st Gujarat (56.6); 2nd Maharashtra (53.7); 3rd Tamil Nadu (53.3); 4th Goa (53.1); 5th Odisha (52.4).</li><li>Highest pillar weight: Infrastructure – 25%; Business Climate – 20%.</li></ul>
+TAG: State ranking reports, National news/Pair Based
+
+QUESTION: India's Purchasing Power Parity (PPP) GDP, which ranks 3rd in the world, is:
+A. $19.14 trillion
+B. $4.15 trillion
+C. $31.82 trillion
+D. $43.49 trillion
+E. $7.34 trillion
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – $19.14 trillion</b>
+
+<b>📌 Key pointers</b>
+<ul><li>PPP: 1st China ($43.49 tn), 2nd USA ($31.82 tn), 3rd India.</li><li>Nominal GDP: India is 6th with $4.15 tn.</li></ul>
+TAG: GDP and GVA, Banking news/Number-Data
+
+QUESTION: The RBI sent its proposal for polymer banknotes to the Central Government under which section of the RBI Act, 1934?
+A. Section 22
+B. Section 24
+C. Section 25
+D. Section 26
+E. Section 28
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – Section 25</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Initially <b>2 billion</b> polymer notes (1 billion each of ₹10 and ₹20) for field trials.</li><li>MoS Finance <b>Pankaj Chaudhary</b> informed the Lok Sabha.</li><li>First country to introduce polymer banknotes: Australia (from 1988).</li></ul>
+TAG: RBI master directions and circulars, Banking news/Oneliner
+
+TEXT: <b>Match the type of damaged note with its description:</b><br><table><tr><th>Type</th><th>Description</th></tr><tr><td>(a) Soiled Note</td><td>(1) Printing defects, misalignment, blank area</td></tr><tr><td>(b) Mutilated Note</td><td>(2) Dirty, worn, discoloured</td></tr><tr><td>(c) Imperfect Note</td><td>(3) Ink marks, chemical stains, water damage</td></tr><tr><td>(d) Stain Note</td><td>(4) Torn, cut, missing part</td></tr></table>
+QUESTION: Choose the correct match.
+A. a-1, b-4, c-2, d-3
+B. a-2, b-1, c-4, d-3
+C. a-2, b-4, c-3, d-1
+D. a-2, b-4, c-1, d-3
+E. a-4, b-2, c-1, d-3
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – a-2, b-4, c-1, d-3</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Counterfeit/Fake notes are not genuine and cannot be exchanged.</li><li>Damaged notes can be exchanged/deposited as per RBI rules.</li></ul>
+TAG: RBI master directions and circulars, Banking news/Match the Column
+
+TEXT: <b>Consider the following statements about RBI's July 2026 household surveys:</b><br>1. The Inflation Expectations Survey of Households covers 19 cities.<br>2. The Rural Consumer Confidence Survey covers rural and semi-urban areas across 31 States and UTs.<br>3. The Urban Consumer Confidence Survey covers 31 cities.<br>4. The surveys are used as inputs for monetary policy formulation.
+QUESTION: Which of the statements given above are correct?
+A. Only 1 and 3
+B. Only 1, 2 and 4
+C. Only 2 and 3
+D. Only 3 and 4
+E. All 1, 2, 3 and 4
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Only 1, 2 and 4</b>
+
+Statement 3 is false: the Urban Consumer Confidence Survey covers <b>19 cities</b>, including Ahmedabad, Bengaluru, Chennai, Delhi and Mumbai.
+
+<b>📌 Key pointers</b>
+<ul><li>Inflation survey: price changes 3 months and 1 year ahead.</li></ul>
+TAG: RBI master directions and circulars, Banking news/Statement Based
+
+QUESTION: The joint venture granted the final R3 certificate of registration by IRDAI to become India's eighth standalone health insurer is owned ______ by the UK's Prudential Group and ______ by HCL Group.
+A. 51%; 49%
+B. 60%; 40%
+C. 49%; 51%
+D. 30%; 70%
+E. 70%; 30%
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 70%; 30%</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Name: Prudential HCL Health Insurance Ltd.</li><li>R1 – promoter and business-plan assessment; R2 – operational readiness; R3 – final certificate required to begin operations.</li></ul>
+TAG: IRDAI, Banking news/Fill-in-the-Blank
+
+QUESTION: How many Government companies are there in the General/Non-Life insurance segment (NIACL, NICL, OICL, UIIC, AIC, ECGC)?
+A. 6
+B. 4
+C. 5
+D. 7
+E. 3
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – 6</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Life insurance: 1 (LIC); Standalone health: 0; Reinsurance: 1 (GIC Re).</li><li>Company counts: Life 26, General 30, Standalone health 8, Domestic reinsurers 3.</li></ul>
+TAG: IRDAI, Banking news/Number-Data
+
+QUESTION: IRDAI consists of 10 members: 1 Chairperson plus ______ whole-time members and ______ part-time members.
+A. 4; 5
+B. 3; 6
+C. 6; 3
+D. 5; 4
+E. 2; 7
+ANSWER: D
+SOLUTION: <b>✅ Correct answer: D – 5; 4</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Established under the IRDA Act, 1999; HQ: <b>Hyderabad</b>.</li><li>Current Chairperson (August 2026): <b>Ajay Seth</b>.</li><li>All members are appointed by the Government of India.</li></ul>
+TAG: IRDAI, Banking news/Fill-in-the-Blank
+
+TEXT: <b>Match the events in the history of life insurance in India:</b><br><table><tr><th>Event</th><th>Year/Date</th></tr><tr><td>(a) Oriental Life Insurance Company</td><td>(1) 1818</td></tr><tr><td>(b) Bombay Mutual Life Assurance Society</td><td>(2) 1870</td></tr><tr><td>(c) LIC Act passed</td><td>(3) 19 June 1956</td></tr><tr><td>(d) LIC created</td><td>(4) 1 September 1956</td></tr></table>
+QUESTION: Choose the correct match.
+A. a-2, b-1, c-3, d-4
+B. a-1, b-2, c-4, d-3
+C. a-1, b-2, c-3, d-4
+D. a-1, b-3, c-2, d-4
+E. a-2, b-1, c-4, d-3
+ANSWER: C
+SOLUTION: <b>✅ Correct answer: C – a-1, b-2, c-3, d-4</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Oriental Life Insurance Company – earliest life insurer in India; Bombay Mutual – first Indian life insurer.</li><li>245 life insurance companies were merged into LIC with capital of ₹5 crore from the Government.</li></ul>
+TAG: IRDAI, Banking news/Match the Column
+
+QUESTION: In the history of general insurance in India, 107 general insurance companies were merged and grouped into how many companies?
+A. 2
+B. 3
+C. 5
+D. 6
+E. 4
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – 4</b>
+
+<b>📌 Key pointers</b>
+<ul><li>The four companies: National Insurance Company Ltd., The New India Assurance Company Ltd., The Oriental Insurance Company Ltd. and The United India Insurance Company Ltd.</li><li>Triton Insurance Company Ltd (1850) was among the earliest; Indian Mercantile Insurance Ltd (1907) was the first Indian general insurer.</li></ul>
+TAG: IRDAI, Banking news/Number-Data
+
+QUESTION: The Centralised Receipt and Processing Centre (CRPC) of the RBI Integrated Ombudsman Scheme is located at:
+A. Chandigarh
+B. Mumbai
+C. New Delhi
+D. Hyderabad
+E. Lucknow
+ANSWER: A
+SOLUTION: <b>✅ Correct answer: A – Chandigarh</b>
+
+<b>📌 Key pointers</b>
+<ul><li>RBI Ombudsman offices (ORBIOs): <b>24</b>, overseen by RBI's Consumer Education and Protection Department.</li><li>Toll-free number: <b>14448</b>.</li><li>RB-IOS = Reserve Bank – Integrated Ombudsman Scheme.</li></ul>
+TAG: RBI master directions and circulars, Banking news/Static GK
+
+TEXT: <b>Consider the following statements about the RBI Integrated Ombudsman Scheme (RB-IOS) 2026:</b><br>1. It covers complaints against banks, certain NBFCs, PPI issuers and Credit Information Companies.<br>2. A monetary ceiling applies on the dispute value that can be taken up.<br>3. Filing and resolving a complaint is free of charge.
+QUESTION: Which of the statements given above are correct?
+A. Only 1
+B. Only 1 and 3
+C. Only 2 and 3
+D. Only 2
+E. All 1, 2 and 3
+ANSWER: B
+SOLUTION: <b>✅ Correct answer: B – Only 1 and 3</b>
+
+Statement 2 is false: there is <b>no monetary ceiling</b> on the dispute value.
+
+<b>📌 Key pointers</b>
+<ul><li>It replaces the 2021 Ombudsman Framework and came into effect on 1 July 2026.</li><li>Mechanism is faster, cost-free and non-adversarial.</li></ul>
+TAG: RBI master directions and circulars, Banking news/Statement Based
+
+QUESTION: Under RB-IOS 2026, compensation of up to ₹3 lakh can be awarded for which type of loss?
+A. Consequential losses
+B. Loss of interest on deposits
+C. Penal charges levied by banks
+D. Loss of deposit principal
+E. Loss of time, expenses, harassment and mental anguish
+ANSWER: E
+SOLUTION: <b>✅ Correct answer: E – Loss of time, expenses, harassment and mental anguish</b>
+
+<b>📌 Key pointers</b>
+<ul><li>Consequential-loss compensation limit raised from ₹20 lakh to <b>₹30 lakh</b>.</li><li>Mental agony/harassment limit raised from ₹1 lakh to <b>₹3 lakh</b>.</li><li>RBI Ombudsman offices increased from 22 to 24.</li></ul>
+TAG: RBI master directions and circulars, Banking news/Oneliner
