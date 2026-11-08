@@ -1,5 +1,5 @@
 {
- "built": "2026-11-08T04:41:18+00:00",
+ "built": "2026-11-08T07:14:38+00:00",
  "questions": [
   {
    "month": 0,
@@ -311,7 +311,7 @@
     "Match the Column"
    ],
    "tag": "Banking news, National news/Match the Column",
-   "passage": "<p><b>Match the financial institutions in Column I with the location of their headquarters in Column II:</b><br><table><tr><th>Column I (Institution)</th><th>Column II (Headquarters)</th></tr><tr><td>(a) NABARD</td><td>(1) Hyderabad</td></tr><tr><td>(b) SIDBI</td><td>(2) Lucknow</td></tr><tr><td>(c) NHB</td><td>(3) New Delhi</td></tr><tr><td>(d) IRDAI</td><td>(4) Mumbai</td></tr></table></p><p>Which of the following options correctly matches the institutions with their headquarters?</p>",
+   "passage": "<p><b>Match the financial institutions in Column I with the location of their headquarters in Column II:</b></p><p><b>Column I</b><br>(a) NABARD<br>(b) SIDBI<br>(c) NHB<br>(d) IRDAI</p><p><b>Column II</b><br>(1) Hyderabad<br>(2) Lucknow<br>(3) New Delhi<br>(4) Mumbai</p>",
    "question": "Choose the option that gives the correct match.",
    "options": {
     "A": "a-4, b-2, c-3, d-1",
@@ -5515,6 +5515,2257 @@
    "answer": "B",
    "solution": "<p>As of July 2026, 68 individuals have served as RBI Deputy Governors.</p>",
    "id": "37e4a2d496"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "General",
+   "minor": "International news",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FATF, International news/Oneliner",
+   "question": "Which two countries were recently removed from the FATF grey list after an Anti-Money Laundering and Combating the Financing of Terrorism (AML/CFT) compliance review?",
+   "options": {
+    "A": "Algeria and Angola",
+    "B": "Namibia and Kenya",
+    "C": "Algeria and Namibia",
+    "D": "Namibia and South Africa",
+    "E": "Algeria and Kenya"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Algeria and Namibia</b></p><p>Both countries were removed from the FATF grey list after addressing their strategic AML/CFT deficiencies. With this, the grey list now stands at <mark>22 jurisdictions</mark>.</p><p><b>📌 Key pointers</b><br><ul><li>Grey list = <b>Jurisdictions Under Increased Monitoring</b> – countries working with FATF to strengthen their AML/CFT regimes.</li><li>Black list = <b>High-Risk Jurisdictions subject to a Call for Action</b> – <b>North Korea (DPRK), Iran and Myanmar</b> remain on it.</li><li><b>FATF</b> develops and promotes policies against money laundering, terrorist financing and financing of weapons of mass destruction.</li></ul></p>",
+   "id": "ab1ca16a85"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Economy, Credit & Financial Sector Updates",
+   "minor": "Infrastructure finance",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Economy, Credit & Financial Sector Updates",
+     "minor": "Infrastructure finance"
+    },
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Infrastructure, National news/Oneliner",
+   "question": "Which body approved the construction of India's first underwater twin-tube road-cum-rail tunnel beneath the Brahmaputra River in Assam?",
+   "options": {
+    "A": "Cabinet Committee on Economic Affairs (CCEA)",
+    "B": "NITI Aayog",
+    "C": "Ministry of Road Transport and Highways",
+    "D": "Railway Board",
+    "E": "National Highways Authority of India"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Cabinet Committee on Economic Affairs (CCEA)</b></p><p>The CCEA approved this landmark project aimed at transforming connectivity in Northeast India.</p><p><b>📌 Key pointers</b><br><ul><li><b>Total capital cost:</b> <mark>Rs.18,662.02 crore</mark>.</li><li><b>Construction technology:</b> Tunnel Boring Machine (TBM).</li><li><b>Implementation model:</b> Engineering, Procurement and Construction (EPC).</li><li><b>Road configuration:</b> four-lane access-controlled greenfield corridor; two lanes in each tube; railway in one of the tubes.</li><li>Assam – Capital: <b>Dispur</b>; CM: <b>Himanta Biswa Sarma</b>; Governor: <b>Lakshman Prasad Acharya</b>.</li></ul></p>",
+   "id": "81f11b89a6"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    },
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "UNESCO, National news/Statement Based",
+   "passage": "<p><b>Consider the following statements about India and UNESCO World Heritage Sites:</b></p><p>1. India has 45 World Heritage Sites, comprising 37 cultural, 7 natural and 1 mixed site.</p><p>2. Maharashtra has the highest number of World Heritage Sites (7) among Indian states, followed by Tamil Nadu (5).</p><p>3. India ranks 6th globally and 2nd in the Asia-Pacific region in terms of the number of World Heritage properties.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only 1",
+    "B": "Only 2",
+    "C": "Only 1 and 2",
+    "D": "Only 2 and 3",
+    "E": "All 1, 2 and 3"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – All 1, 2 and 3</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>1</b></td><td>✅ True</td><td>India's 45 sites = <b>37 cultural + 7 natural + 1 mixed</b>.</td></tr><tr><td><b>2</b></td><td>✅ True</td><td>Maharashtra – <b>7</b>; Tamil Nadu – <b>5</b>; Gujarat, Karnataka, Rajasthan and Uttar Pradesh – <b>4 each</b>.</td></tr><tr><td><b>3</b></td><td>✅ True</td><td>India is <b>6th globally</b> and <b>2nd in Asia-Pacific</b>.</td></tr></table></p><p><b>📌 Key pointers</b><br><ul><li>Top countries: <b>Italy 62, China 61, France 56, Germany 55, Spain 50, India 45</b>.</li></ul></p>",
+   "id": "9b2b9667a3"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "NABARD",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "NABARD"
+    },
+    {
+     "main": "A",
+     "sub": "General",
+     "minor": "Banking news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "NABARD, Banking news/Oneliner",
+   "question": "NABARD launched its rural entrepreneurship development programme 'Gramodyam' on which occasion?",
+   "options": {
+    "A": "Its 44th Foundation Day",
+    "B": "Its 45th Foundation Day",
+    "C": "Its 46th Foundation Day",
+    "D": "Its 40th Foundation Day",
+    "E": "Its 50th Foundation Day"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Its 45th Foundation Day</b></p><p>NABARD was established on <mark>12 July 1982</mark>, so its 45th Foundation Day fell in July 2026, when Gramodyam was launched.</p><p><b>📌 Key pointers</b><br><ul><li><b>Aim:</b> identify, train, finance and mentor rural youth to set up sustainable businesses in villages and small towns.</li><li><b>Duration:</b> 3-year pilot programme; <b>Target:</b> around 4,000 rural entrepreneurs.</li><li>Implemented in collaboration with <b>NSDC</b> (under the <b>Ministry of Skill Development and Entrepreneurship</b>); implementation partner – <b>Institute for Industrial Development (IID)</b>.</li></ul></p>",
+   "id": "fd21d83c15"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Legislation",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Legislation"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Legislation, National news/Numerical",
+   "question": "Under the amended anti-paper leak framework, the maximum financial penalty for individual offenders has been raised from Rs.10 lakh to:",
+   "options": {
+    "A": "Rs.25 lakh",
+    "B": "Rs.1 crore",
+    "C": "Rs.5 crore",
+    "D": "Rs.50 lakh",
+    "E": "Rs.10 crore"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Rs.50 lakh</b></p><p>For individual actors leaking papers or manipulating results, the maximum fine jumps from <b>Rs.10 lakh to Rs.50 lakh</b>, and the minimum prison term rises from 3 to 5 years (up to 10 years).</p><p><b>📌 Key pointers</b><br><ul><li>The Union Cabinet approved amendments to the <b>Public Examinations (Prevention of Unfair Means) Act, 2024</b>; <b>Lok Sabha passed</b> the Bill on <mark>29 July 2026</mark>.</li><li><b>Service providers:</b> maximum fine raised from Rs.1 crore to Rs.5 crore; debarment from 4 to 8 years.</li></ul></p>",
+   "id": "f35637a5c2"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Economy, Credit & Financial Sector Updates",
+   "minor": "Economy",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Economy, Credit & Financial Sector Updates",
+     "minor": "Economy"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "CPSE, Economy/Oneliner",
+   "question": "Which ministry granted Miniratna Category-I status to MECON Limited?",
+   "options": {
+    "A": "Ministry of Heavy Industries",
+    "B": "Ministry of Steel",
+    "C": "Ministry of Mines",
+    "D": "Ministry of Coal",
+    "E": "Ministry of Power"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Ministry of Steel</b></p><p>MECON is a <b>Schedule 'A' Central Public Sector Enterprise (CPSE)</b> and now holds Miniratna Category-I status.</p><p><b>📌 Key pointers</b><br><ul><li><b>Eligibility (Cat-I):</b> profit for 3 consecutive years; pre-tax profit of <mark>Rs.30 crore or more</mark> in at least one of the previous three years; positive net worth.</li><li><b>Benefit:</b> the Board can approve capital expenditure up to <b>Rs.500 crore or the company's net worth, whichever is lower</b>, without prior Government approval.</li></ul></p>",
+   "id": "1aabc07ccd"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "GI Tag, National news/Oneliner",
+   "question": "Which product was the first to receive a Geographical Indication (GI) tag in India?",
+   "options": {
+    "A": "Kancheepuram Silk",
+    "B": "Pochampally Ikat",
+    "C": "Basmati Rice",
+    "D": "Mysore Silk",
+    "E": "Darjeeling Tea"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Darjeeling Tea</b></p><p>Darjeeling Tea from <b>West Bengal</b> was India's first GI-tagged product (agricultural category), registered in <mark>2004-05</mark>.</p><p><b>📌 Key pointers</b><br><ul><li>A GI is a sign used for products from a specific geographical region with a special quality, reputation or characteristic linked to the place of origin.</li><li><b>GI Registry:</b> Chennai, Tamil Nadu; administered by the <b>Ministry of Commerce and Industry</b>.</li><li>A GI registration is valid for <b>10 years</b>.</li><li>West Bengal received <b>23 new GI tags</b> (total 59) – the 3rd highest among states.</li></ul></p>",
+   "id": "10f15dcd4e"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "General",
+   "minor": "International news",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "NATO, International news/Oneliner",
+   "question": "The 36th NATO Summit 2026 was held in which city?",
+   "options": {
+    "A": "Ankara",
+    "B": "The Hague",
+    "C": "Vilnius",
+    "D": "Brussels",
+    "E": "Washington D.C."
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Ankara</b></p><p>The summit was held in <b>Ankara, Türkiye</b> on <mark>7-8 July 2026</mark> at the Bestepe Presidential Compound and was chaired by NATO Secretary General <b>Mark Rutte</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Leaders of NATO's <b>32 member countries</b> reviewed progress since the <b>2025 Hague Summit</b>.</li><li>Focus: collective defence, military production, emerging technologies and assistance to Ukraine.</li><li>NATO was founded in <b>1949</b> and is headquartered in <b>Brussels, Belgium</b>.</li></ul></p>",
+   "id": "7f62498d0c"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Uttar Pradesh",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Uttar Pradesh"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Uttar Pradesh, National news/Numerical",
+   "question": "The Kukrail Night Safari and Day Zoo project in Lucknow, which received final Supreme Court approval on 16 July 2026, has an estimated cost of:",
+   "options": {
+    "A": "Rs.500 crore",
+    "B": "Rs.1,000 crore",
+    "C": "Rs.750 crore",
+    "D": "Rs.1,500 crore",
+    "E": "Rs.2,500 crore"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Rs.1,500 crore</b></p><p>The project is planned as <b>India's first urban night safari</b> and the <b>world's fifth</b> such facility, after Singapore, Thailand, China and Indonesia.</p><p><b>📌 Key pointers</b><br><ul><li><b>Location:</b> Lucknow, Uttar Pradesh.</li><li>Uttar Pradesh – CM: <b>Yogi Adityanath</b>; Governor: <b>Anandiben Patel</b>; National Parks: <b>Dudhwa and Pilibhit</b>; Dances: <b>Kathak, Raslila</b>; Nuclear plant: <b>Narora Atomic Power Station</b>.</li></ul></p>",
+   "id": "5dae56d1f3"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "World records",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "World records"
+    },
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Records, National news/Oneliner",
+   "question": "Ahmedabad's Miyawaki plantation drive of 3.61 lakh saplings in one hour broke the earlier Guinness World Record held by which body?",
+   "options": {
+    "A": "Surat Municipal Corporation",
+    "B": "Gujarat Forest Department",
+    "C": "Assam Forest Department",
+    "D": "Indore Municipal Corporation",
+    "E": "Maharashtra Forest Development Corporation"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Assam Forest Department</b></p><p>The earlier record of <b>331,929 trees</b> had been set by the Assam Forest Department in <mark>2023</mark>.</p><p><b>📌 Key pointers</b><br><ul><li><b>Organised by:</b> Ahmedabad Municipal Corporation (AMC); venue: Bhadaj, near the Gota-Godhavi Canal.</li><li><b>Saplings planted:</b> 361,000 of <b>35 indigenous species</b>.</li><li>Conducted under the guidance of Union Home Minister <b>Amit Shah</b>.</li></ul></p>",
+   "id": "bdef0b2321"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    },
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, National news/Oneliner",
+   "question": "Which Ancient Buddhist Site in Uttar Pradesh has been inscribed as India's 45th UNESCO World Heritage Site?",
+   "options": {
+    "A": "Kushinagar",
+    "B": "Sarnath",
+    "C": "Sanchi",
+    "D": "Bodh Gaya",
+    "E": "Nalanda"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Sarnath</b></p><p>The Ancient Buddhist Site of Sarnath (near Varanasi) was inscribed during the <b>48th Session of the World Heritage Committee</b> in Busan, South Korea.</p><p><b>📌 Key pointers</b><br><ul><li>Sarnath is where Gautama Buddha delivered his <b>first sermon (Dharmachakra Pravartana)</b>.</li><li>The <b>Ashokan Lion Capital</b>, discovered at Sarnath, was adopted as the <b>National Emblem of India</b>.</li><li>Uttar Pradesh now has <b>4 sites</b>: Taj Mahal, Agra Fort, Fatehpur Sikri and Sarnath.</li></ul></p>",
+   "id": "5fd65777b2"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Railways, National news/Oneliner",
+   "question": "India's first indigenously built hydrogen-powered passenger train 'NaMo Green Rail' operates on which route?",
+   "options": {
+    "A": "Jind – Rohtak",
+    "B": "Delhi – Panipat",
+    "C": "Ambala – Chandigarh",
+    "D": "Jind – Sonipat",
+    "E": "Hisar – Bhiwani"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Jind – Sonipat</b></p><p>The train covers an <mark>89-km</mark> route under the <b>Northern Railway</b> zone in Haryana and was flagged off from <b>Jind Railway Station</b> by Prime Minister Narendra Modi.</p><p><b>📌 Key pointers</b><br><ul><li>Launched on <b>17 July 2026</b>.</li><li>Uses <b>Proton Exchange Membrane (PEM) fuel cell technology</b>; hydrogen stored in high-pressure cylinders reacts with oxygen to generate electricity.</li><li>Developed by <b>Integral Coach Factory (ICF), Chennai</b>.</li></ul></p>",
+   "id": "82423db5ab"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UCC, National news/Oneliner",
+   "question": "Which state was the third in India to pass the Uniform Civil Code (UCC) Bill?",
+   "options": {
+    "A": "Gujarat",
+    "B": "Uttarakhand",
+    "C": "Assam",
+    "D": "Madhya Pradesh",
+    "E": "Rajasthan"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Assam</b></p><p>Madhya Pradesh became the <b>fourth</b> state when its Legislative Assembly passed the UCC Bill on <mark>21 July 2026</mark>.</p><p><b>📌 Key pointers</b><br><ul><li><b>Order:</b> Uttarakhand (1st) → Gujarat (2nd) → Assam (3rd) → Madhya Pradesh (4th).</li><li>UCC = a common set of civil laws for all citizens covering marriage, divorce, inheritance, adoption and maintenance.</li><li>It deals with <b>civil matters</b>, not criminal law.</li></ul></p>",
+   "id": "7b68dfa20f"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "Global Summits & Multilateral Meetings",
+   "minor": "BRICS",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "Global Summits & Multilateral Meetings",
+     "minor": "BRICS"
+    },
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Match the Column"
+   ],
+   "tag": "BRICS, International news/Match the Column",
+   "passage": "<p><b>Match the BRICS 2026 ministerial meetings in Column I with their host cities in Column II:</b><br><table><tr><th>Column I (Meeting)</th><th>Column II (Host city)</th></tr><tr><td>(a) Women</td><td>(1) Chandigarh</td></tr><tr><td>(b) Health</td><td>(2) Indore</td></tr><tr><td>(c) Education</td><td>(3) Kochi</td></tr><tr><td>(d) Agriculture</td><td>(4) Bhubaneswar</td></tr></table></p>",
+   "question": "Choose the option that gives the correct match.",
+   "options": {
+    "A": "a-3, b-1, c-2, d-4",
+    "B": "a-3, b-1, c-4, d-2",
+    "C": "a-1, b-3, c-4, d-2",
+    "D": "a-3, b-4, c-1, d-2",
+    "E": "a-4, b-1, c-3, d-2"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – a-3, b-1, c-4, d-2</b></p><p><b>🔗 Correct matching</b><br><table><tr><th>Meeting</th><th>Host city</th></tr><tr><td>Women</td><td>Kochi</td></tr><tr><td>Health</td><td>Chandigarh</td></tr><tr><td>Education</td><td>Bhubaneswar</td></tr><tr><td>Agriculture</td><td>Indore</td></tr></table></p><p><b>📌 Other meetings:</b> Energy – Gurugram; Transport – Nagpur; Labour and Employment – Hyderabad; Justice – Gandhinagar; Culture – Varanasi; Standardisation – Bengaluru; Tourism – Jaipur; Urbanisation, Disaster Risk Reduction, Foreign Ministers and the <b>18th BRICS Summit</b> – New Delhi.</p>",
+   "id": "bf63283cd1"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "DIKSHA",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "DIKSHA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "DIKSHA, Education/Full Form",
+   "question": "What does DIKSHA, India's \"One Nation, One Digital Platform\" for school education, stand for?",
+   "options": {
+    "A": "Digital Initiative for Knowledge, Skills and Higher Academics",
+    "B": "Directorate of Information for Knowledge Sharing in Higher Education",
+    "C": "Digital Interface for Knowledge and School Help Access",
+    "D": "Department Initiative for Knowledge Sharing and Holistic Advancement",
+    "E": "Digital Infrastructure for Knowledge Sharing"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Digital Infrastructure for Knowledge Sharing</b></p><p>DIKSHA is a national digital platform for school education in India, launched in <mark>2017</mark>.</p><p><b>📌 Key pointers</b><br><ul><li><b>Managed by:</b> NCERT with support from the Central Institute of Educational Technology (CIET).</li><li>Provides curriculum-based digital resources from the foundational stage to <b>Class 12</b>.</li><li>Used for teacher professional development through programmes such as <b>NISHTHA</b>.</li></ul></p>",
+   "id": "38785cb2e6"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "I-2SEA",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "I-2SEA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "I-2SEA, Technology/Numerical",
+   "question": "The I-2SEA submarine cable system connecting Singapore to Machilipatnam in India is estimated to span about:",
+   "options": {
+    "A": "3,600 km",
+    "B": "2,800 km",
+    "C": "4,200 km",
+    "D": "5,000 km",
+    "E": "3,000 km"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 3,600 km</b></p><p>I-2SEA was unveiled on <mark>2 July 2026</mark> to provide connectivity between Singapore, India and Malaysia.</p><p><b>📌 Key pointers</b><br><ul><li><b>Consortium:</b> Lightstorm, Microsoft, Singtel and Tata Communications; <b>system supplier:</b> NEC Corporation.</li><li><b>Landing points in India:</b> Machilipatnam and a second one at South Chennai.</li><li><b>Target:</b> ready for service in the fourth quarter of 2029.</li></ul></p>",
+   "id": "42c39cf023"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Economy, Credit & Financial Sector Updates",
+   "minor": "Economy",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Economy, Credit & Financial Sector Updates",
+     "minor": "Economy"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "CPSE, Economy/Oneliner",
+   "question": "Which companies became the 28th and 29th Navratna CPSEs on 19 June 2026?",
+   "options": {
+    "A": "MECON and CPCL",
+    "B": "Oil India and GRSE",
+    "C": "CPCL and Cochin Shipyard",
+    "D": "BEML and GRSE",
+    "E": "CPCL and GRSE"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – CPCL and GRSE</b></p><p><b>Chennai Petroleum Corporation Limited (CPCL)</b> became the 28th and <b>Garden Reach Shipbuilders & Engineers Limited (GRSE)</b> became the 29th Navratna company, both upgraded from Miniratna Category-I.</p><p><b>📌 Key pointers</b><br><ul><li><b>CPCL</b> – Ministry of Petroleum and Natural Gas.</li><li><b>GRSE</b> – Ministry of Defence (Department of Defence Production).</li><li><b>Navratna criteria:</b> Miniratna Category-I status plus Schedule 'A' listing; at least 3 'Excellent' or 'Very Good' MoUs in the last five years; composite score of 60+ out of 100 in six performance parameters.</li></ul></p>",
+   "id": "dd9f09f85e"
+  },
+  {
+   "month": 6,
+   "main": "H",
+   "sub": "Important Days, Dates & Themes",
+   "minor": "Science and technology days",
+   "cats": [
+    {
+     "main": "H",
+     "sub": "Important Days, Dates & Themes",
+     "minor": "Science and technology days"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Bihar, Science/Oneliner",
+   "question": "The study confirming Bihar's Munger banyan tree as the world's oldest accurately dated banyan was led by Dr. Trina Bose of which institute?",
+   "options": {
+    "A": "Wadia Institute of Himalayan Geology",
+    "B": "Birbal Sahni Institute of Palaeosciences",
+    "C": "Indian Institute of Science",
+    "D": "National Institute of Oceanography",
+    "E": "Botanical Survey of India"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Birbal Sahni Institute of Palaeosciences</b></p><p>The institute is an <b>autonomous body under the Department of Science and Technology (DST)</b>, Government of India.</p><p><b>📌 Key pointers</b><br><ul><li>The banyan tree (<i>Ficus benghalensis</i>) is about <mark>700 years</mark> old, determined using advanced <b>radiocarbon dating</b>.</li><li>Bihar – Capital: Patna; CM: <b>Samrat Choudhary</b>; Governor: <b>Syed Ata Hasnain</b>; 38 districts; National Park: <b>Valmiki</b>.</li></ul></p>",
+   "id": "c9c372266b"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "General",
+   "minor": "International news",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "AI Summit, International news/Oneliner",
+   "question": "Switzerland will host a global AI summit in Geneva on:",
+   "options": {
+    "A": "11-12 June 2027",
+    "B": "21-22 July 2027",
+    "C": "21-22 June 2027",
+    "D": "1-2 June 2028",
+    "E": "21-22 June 2028"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 21-22 June 2027</b></p><p>The summit is linked to global discussions on AI governance, trustworthy AI and multilateral cooperation among governments, international organisations, scientists, businesses and civil society.</p><p><b>📌 Key pointers</b><br><ul><li><b>Global AI summit series:</b> India (2026) → Switzerland (2027) → United Arab Emirates (2028).</li></ul></p>",
+   "id": "8794e2c9f3"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Airport",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Airport"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Airport, Maharashtra/Oneliner",
+   "question": "India's first offshore airport, approved for Detailed Project Report (DPR) preparation, is proposed near which beach in Palghar district of Maharashtra?",
+   "options": {
+    "A": "Kore Beach",
+    "B": "Kelva Beach",
+    "C": "Dahanu Beach",
+    "D": "Bordi Beach",
+    "E": "Arnala Beach"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Kore Beach</b></p><p>The project is planned as the <b>third international airport</b> for the Mumbai Metropolitan Region.</p><p><b>📌 Key pointers</b><br><ul><li><b>Design capacity:</b> up to <mark>90 million passengers</mark> annually and about <b>3 million metric tonnes</b> of cargo each year.</li><li>An offshore airport is built on reclaimed land or artificial island in the sea.</li></ul></p>",
+   "id": "7e4d4a053c"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    },
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Match the Column"
+   ],
+   "tag": "UNESCO, International news/Match the Column",
+   "passage": "<p><b>Match the countries in Column I with the number of UNESCO World Heritage properties in Column II:</b><br><table><tr><th>Column I (Country)</th><th>Column II (Properties)</th></tr><tr><td>(a) Italy</td><td>(1) 45</td></tr><tr><td>(b) France</td><td>(2) 50</td></tr><tr><td>(c) Spain</td><td>(3) 56</td></tr><tr><td>(d) India</td><td>(4) 62</td></tr></table></p>",
+   "question": "Choose the option that gives the correct match.",
+   "options": {
+    "A": "a-4, b-2, c-3, d-1",
+    "B": "a-3, b-4, c-2, d-1",
+    "C": "a-4, b-3, c-1, d-2",
+    "D": "a-4, b-3, c-2, d-1",
+    "E": "a-2, b-3, c-4, d-1"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – a-4, b-3, c-2, d-1</b></p><p><b>🔗 Top 6 countries by World Heritage properties</b><br><table><tr><th>Rank</th><th>Country</th><th>Properties</th></tr><tr><td>1</td><td>Italy</td><td>62</td></tr><tr><td>2</td><td>China</td><td>61</td></tr><tr><td>3</td><td>France</td><td>56</td></tr><tr><td>4</td><td>Germany</td><td>55</td></tr><tr><td>5</td><td>Spain</td><td>50</td></tr><tr><td>6</td><td>India</td><td>45</td></tr></table></p><p><b>📌 Key pointers</b><br><ul><li>After the 48th Session, the list has <b>1,273 properties</b> across <b>173 countries</b>.</li></ul></p>",
+   "id": "6d98ef6276"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, International news/Static GK",
+   "question": "India accepted/ratified the UNESCO World Heritage Convention on:",
+   "options": {
+    "A": "16 November 1972",
+    "B": "17 December 1975",
+    "C": "14 November 1983",
+    "D": "14 November 1977",
+    "E": "12 July 1982"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – 14 November 1977</b></p><p><b>⚠️ Exam traps:</b> 16 Nov 1972 is the date the Convention was <i>adopted</i>; 17 Dec 1975 is when it <i>came into force</i>; 1983 is the year of India's <i>first inscriptions</i>.</p><p><b>📌 Key pointers</b><br><ul><li><b>India's first sites:</b> Ajanta Caves, Ellora Caves, Agra Fort and Taj Mahal.</li><li>The World Heritage List started in <b>1978</b> with 12 properties.</li></ul></p>",
+   "id": "06b9a410c5"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "NABARD",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "NABARD"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "NABARD, Banking news/Static GK",
+   "question": "NABARD was established on the recommendation of the CRAFICARD Committee, which was chaired by:",
+   "options": {
+    "A": "B. Sivaraman",
+    "B": "M. Narasimham",
+    "C": "Raghuram Rajan",
+    "D": "K. V. Shaji",
+    "E": "R. Gandhi"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – B. Sivaraman</b></p><p><b>CRAFICARD</b> = Committee to Review Arrangements for Institutional Credit for Agriculture and Rural Development.</p><p><b>📌 Key pointers</b><br><ul><li>NABARD – <b>National Bank for Agriculture and Rural Development</b>; established <mark>12 July 1982</mark>; HQ <b>Mumbai</b>.</li><li>Established under the <b>NABARD Act, 1981</b>; wholly owned by the Government of India.</li><li><b>Current Chairman:</b> Shaji K. V.</li><li><b>Tagline:</b> Development Bank of the Nation for Fostering Rural Prosperity.</li></ul></p>",
+   "id": "31ae6e475d"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "FATF",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "FATF"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FATF, International news/List Based",
+   "question": "Which of the following countries continue to remain on FATF's 'High-Risk Jurisdictions subject to a Call for Action' (black list)?",
+   "options": {
+    "A": "North Korea, Iran and Algeria",
+    "B": "Iran, Myanmar and Namibia",
+    "C": "North Korea, Algeria and Myanmar",
+    "D": "North Korea, Iran and Myanmar",
+    "E": "Iran, Algeria and Namibia"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – North Korea, Iran and Myanmar</b></p><p>The black list has <b>3 countries</b>: North Korea (DPRK), Iran and Myanmar. Algeria and Namibia were removed from the <b>grey list</b>, not the black list.</p><p><b>📌 Key pointers</b><br><ul><li>Grey list: <b>22</b> jurisdictions after the latest update.</li><li>FATF has <b>38 member countries</b> (plus the European Commission and Gulf Cooperation Council = 40 members in total); <b>India</b> has been a member since 2010; Russia's membership is suspended.</li></ul></p>",
+   "id": "6e7917e964"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Match the Column"
+   ],
+   "tag": "Legislation, National news/Match the Column",
+   "passage": "<p><b>Match the offender category in Column I with the penalty provision in Column II under the amended anti-paper leak law:</b><br><table><tr><th>Column I</th><th>Column II</th></tr><tr><td>(a) Organised paper-leak syndicates – minimum prison term</td><td>(1) 5 years</td></tr><tr><td>(b) Individual offenders – minimum prison term</td><td>(2) 7 years</td></tr><tr><td>(c) Service providers – maximum fine</td><td>(3) Rs.5 crore</td></tr><tr><td>(d) Service providers – debarment period</td><td>(4) 8 years</td></tr></table></p>",
+   "question": "Choose the option that gives the correct match.",
+   "options": {
+    "A": "a-1, b-2, c-3, d-4",
+    "B": "a-2, b-1, c-4, d-3",
+    "C": "a-2, b-1, c-3, d-4",
+    "D": "a-2, b-3, c-1, d-4",
+    "E": "a-1, b-2, c-4, d-3"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – a-2, b-1, c-3, d-4</b></p><p><b>🔗 Correct matching</b><br><table><tr><th>Category</th><th>Provision</th></tr><tr><td>Organised syndicates</td><td>Prison <b>7 to 10 years</b>; minimum fine scaled up to <b>Rs.10 crore</b></td></tr><tr><td>Individual offenders</td><td>Minimum prison term rises <b>3 → 5 years</b>; maximum fine <b>Rs.10 lakh → Rs.50 lakh</b></td></tr><tr><td>Service providers and tech vendors</td><td>Maximum fine <b>Rs.1 crore → Rs.5 crore</b>; debarment <b>4 → 8 years</b>; recovery of exam cancellation costs</td></tr></table></p>",
+   "id": "f963af54d6"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "GI Tag",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "GI Tag"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "GI Tag, Haryana/Fill in the blanks",
+   "question": "Sirsa Kinnow, which recently received a GI tag, became the first ______ from Haryana to receive GI recognition.",
+   "options": {
+    "A": "vegetable",
+    "B": "pulse",
+    "C": "handicraft",
+    "D": "spice",
+    "E": "fruit"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – fruit</b></p><p>Sirsa Kinnow became <b>Haryana's first fruit</b> to get a Geographical Indication (GI) tag.</p><p><b>📌 Key pointers</b><br><ul><li>A GI tag is registered with the GI Registry at <b>Chennai</b> under the <b>Ministry of Commerce and Industry</b> and is valid for <b>10 years</b>.</li><li>Uttar Pradesh leads in GI tags (<b>83</b>), followed by Tamil Nadu (<b>76</b>) and West Bengal (<b>59</b>).</li></ul></p>",
+   "id": "a4cb6b0161"
+  },
+  {
+   "month": 6,
+   "main": "F",
+   "sub": "Environment Reports, Indices & Initiatives",
+   "minor": "Global biodiversity reports",
+   "cats": [
+    {
+     "main": "F",
+     "sub": "Environment Reports, Indices & Initiatives",
+     "minor": "Global biodiversity reports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Biodiversity, National news/Fill in the blanks",
+   "question": "Mizoram Natural History Museum was notified as India's ______ designated repository under the Biological Diversity Act, 2002.",
+   "options": {
+    "A": "12th",
+    "B": "21st",
+    "C": "19th",
+    "D": "25th",
+    "E": "30th"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 21st</b></p><p>The museum was notified as a <b>designated repository</b> under the <b>Biological Diversity Act, 2002</b> to preserve <b>voucher specimens</b> of plants and animals.</p><p><b>📌 Key pointers</b><br><ul><li>Related news: <b>Borjuli Site</b> (Sonitpur, Assam) was notified as a Biodiversity Heritage Site by the <b>National Biodiversity Authority (NBA)</b>; India has <b>54 BHS</b> as of July 2026.</li></ul></p>",
+   "id": "07feacf9ab"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Agreements, MoUs & Treaties",
+   "minor": "Trade and investment agreements",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Agreements, MoUs & Treaties",
+     "minor": "Trade and investment agreements"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Trade, Economy/Numerical",
+   "question": "The India-UK Comprehensive Economic and Trade Agreement (CETA) became effective on 15 July 2026. It provides Indian exports zero-duty access to about what share of UK tariff lines?",
+   "options": {
+    "A": "75%",
+    "B": "85%",
+    "C": "99%",
+    "D": "90%",
+    "E": "95%"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 99%</b></p><p>Under CETA, Indian exports get <b>zero-duty access to about 99% of UK tariff lines</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Effective date: <mark>15 July 2026</mark>.</li><li>Full form: <b>C</b>omprehensive <b>E</b>conomic and <b>T</b>rade <b>A</b>greement.</li></ul></p>",
+   "id": "e5c71eebb2"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Economy, Credit & Financial Sector Updates",
+   "minor": "Economy",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Economy, Credit & Financial Sector Updates",
+     "minor": "Economy"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "CPSE, Economy/Statement Based",
+   "question": "Which of the following is a condition for a CPSE to get Miniratna Category-I status?",
+   "options": {
+    "A": "Pre-tax profit of Rs.100 crore in each of the last three years",
+    "B": "Net worth of more than Rs.15,000 crore",
+    "C": "Average annual turnover of more than Rs.25,000 crore",
+    "D": "At least 3 'Excellent' MoUs in the last five years",
+    "E": "Profit for 3 consecutive years and pre-tax profit of Rs.30 crore or more in at least one of the previous three years"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E</b></p><p>Miniratna Category-I requires <b>profit for 3 consecutive years</b>, <mark>pre-tax profit of Rs.30 crore or more</mark> in at least one of the previous three years, and <b>positive net worth</b>.</p><p><b>🧠 Why not the others?</b><br><ul><li><b>A</b> – not a Miniratna condition.</li><li><b>B and C</b> – these are <b>Maharatna</b> criteria (net worth above Rs.15,000 crore; turnover above Rs.25,000 crore).</li><li><b>D</b> – this is a <b>Navratna</b> criterion.</li></ul></p><p><b>📌 Key pointers</b><br><ul><li><b>Category-II:</b> profits continuously for the last three years and positive net worth (8 companies); <b>Category-I:</b> 50 companies.</li></ul></p>",
+   "id": "5b34d38312"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "CPSE",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "CPSE"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "CPSE, Economy/Numerical",
+   "question": "Up to what limit can the Board of a Miniratna Category-I CPSE approve capital expenditure without prior Government approval?",
+   "options": {
+    "A": "Rs.250 crore or net worth, whichever is lower",
+    "B": "Rs.500 crore or net worth, whichever is lower",
+    "C": "Rs.500 crore or net worth, whichever is higher",
+    "D": "Rs.1,000 crore or net worth, whichever is lower",
+    "E": "Rs.1,000 crore or 50% of net worth"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Rs.500 crore or net worth, whichever is lower</b></p><p>This financial autonomy is the <b>major benefit</b> of Miniratna Category-I status, recently granted to <b>MECON Limited</b> by the Ministry of Steel.</p><p><b>📌 Key pointers</b><br><ul><li>MECON is a <b>Schedule 'A' CPSE</b>.</li><li>CPSE hierarchy: <b>14 Maharatnas, 29 Navratnas, 58 Miniratnas</b> (Category-I: 50; Category-II: 8).</li></ul></p>",
+   "id": "86f56bb3df"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "CPSE",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "CPSE"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "CPSE, Economy/Fill in the blanks",
+   "question": "For Navratna status, a CPSE must score at least ______ out of 100 in six selected performance parameters.",
+   "options": {
+    "A": "40",
+    "B": "50",
+    "C": "55",
+    "D": "60",
+    "E": "75"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – 60</b></p><p><b>📌 Criteria for Navratna status</b><br><ul><li>Miniratna Category-I status along with a <b>Schedule 'A'</b> listing.</li><li>At least <b>3 'Excellent' or 'Very Good' MoUs</b> in the last five years.</li><li>Composite score of <mark>60 or above out of 100</mark> in six selected performance parameters.</li></ul><br><b>⚡ Memory trick:</b> <mark>Miniratna-I → Navratna → Maharatna.</mark></p>",
+   "id": "22decc3278"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "CPSE",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "CPSE"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "CPSE, Economy/Numerical",
+   "question": "For Maharatna status, a CPSE must have average annual turnover during the last 3 years of more than:",
+   "options": {
+    "A": "Rs.25,000 crore",
+    "B": "Rs.15,000 crore",
+    "C": "Rs.10,000 crore",
+    "D": "Rs.5,000 crore",
+    "E": "Rs.30,000 crore"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Rs.25,000 crore</b></p><p><b>📌 Criteria for Maharatna status</b><br><ul><li>The company already holds <b>Navratna</b> status.</li><li>Average annual turnover (last 3 years) above <mark>Rs.25,000 crore</mark>.</li><li>Average annual net worth (last 3 years) above <b>Rs.15,000 crore</b>.</li><li>Average annual net profit after tax (last 3 years) above <b>Rs.5,000 crore</b>.</li><li>Significant global presence or international operations.</li></ul></p>",
+   "id": "4d2ec1ce3b"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, National news/List Based",
+   "question": "Which of the following were among India's first UNESCO World Heritage Sites inscribed in 1983?<br>1. Ajanta Caves<br>2. Fatehpur Sikri<br>3. Agra Fort<br>4. Taj Mahal",
+   "options": {
+    "A": "Only 1 and 2",
+    "B": "Only 2, 3 and 4",
+    "C": "Only 1, 3 and 4",
+    "D": "Only 1, 2 and 4",
+    "E": "All 1, 2, 3 and 4"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Only 1, 3 and 4</b></p><p>India's first sites were <b>Ajanta Caves, Ellora Caves, Agra Fort and Taj Mahal</b> (1983). <b>Fatehpur Sikri</b> was inscribed later, in <mark>1986</mark>.</p><p><b>📌 Key pointers</b><br><ul><li>India has <b>45</b> sites: 37 cultural, 7 natural, 1 mixed.</li><li>Uttar Pradesh: Taj Mahal (1983), Agra Fort (1983), Fatehpur Sikri (1986), Sarnath (July 2026).</li></ul></p>",
+   "id": "be65e60cfb"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "CPSE",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "CPSE"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "CPSE, Economy/Numerical",
+   "question": "As per the news, how many Maharatna, Navratna and Miniratna CPSEs does India have, respectively?",
+   "options": {
+    "A": "14, 29 and 50",
+    "B": "14, 29 and 58",
+    "C": "13, 29 and 58",
+    "D": "14, 28 and 58",
+    "E": "12, 29 and 56"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 14, 29 and 58</b></p><p><b>📌 Key pointers</b><br><ul><li><b>Miniratna (58):</b> Category-I – 50; Category-II – 8.</li><li><b>14 Maharatnas:</b> BHEL, BPCL, Coal India, GAIL, HAL, HPCL, IOCL, NTPC, ONGC, Oil India, PFC, POWERGRID, REC and SAIL.</li><li><b>29th Navratna:</b> GRSE; <b>28th Navratna:</b> CPCL.</li></ul></p>",
+   "id": "2d51c728f1"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "CPSE",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "CPSE"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "CPSE, Economy/Pair Based",
+   "question": "Which of the following is NOT among the 14 Maharatna companies?",
+   "options": {
+    "A": "Chennai Petroleum Corporation Limited (CPCL)",
+    "B": "Hindustan Aeronautics Limited (HAL)",
+    "C": "GAIL (India) Limited",
+    "D": "Power Finance Corporation (PFC)",
+    "E": "Steel Authority of India Limited (SAIL)"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – CPCL</b></p><p>CPCL was recently upgraded to <b>Navratna</b> (28th Navratna company, 19 June 2026), not Maharatna.</p><p><b>📌 Key pointers</b><br><ul><li><b>Financial-sector Maharatnas:</b> <b>PFC</b> and <b>REC</b>.</li><li>Maharatna requires existing Navratna status plus high turnover, net worth and profit thresholds.</li></ul></p>",
+   "id": "ae23a74b32"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "GI Tag, National news/Statement Based",
+   "passage": "<p><b>Consider the following statements about the Geographical Indication (GI) Tag in India:</b></p><p>I. The GI Registry is located in Chennai, Tamil Nadu.</p><p>II. GI is administered by the Ministry of Commerce and Industry.</p><p>III. A GI registration is valid for 10 years.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only I",
+    "B": "Only II",
+    "C": "Only I and II",
+    "D": "Only II and III",
+    "E": "All I, II and III"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – All I, II and III</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>I</b></td><td>✅ True</td><td>GI Registry – <b>Chennai</b>.</td></tr><tr><td><b>II</b></td><td>✅ True</td><td>Administrative ministry – <b>Commerce and Industry</b>.</td></tr><tr><td><b>III</b></td><td>✅ True</td><td>Validity – <b>10 years</b>.</td></tr></table></p><p><b>📌 Key pointers</b><br><ul><li>First GI tag: <b>Darjeeling Tea</b> (West Bengal, 2004-05).</li><li>West Bengal announced <b>23 new GI tags</b> (announcement by Science &amp; Technology and Biotechnology Minister Kalyan Chakraborty).</li></ul></p>",
+   "id": "3ffa2e8688"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "General",
+   "minor": "International news",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "GI Tag, International news/Oneliner",
+   "question": "According to the WIPO World Intellectual Property Indicators 2025 (based on 2024 data), which country has the highest number of Geographical Indications?",
+   "options": {
+    "A": "Germany",
+    "B": "Hungary",
+    "C": "France",
+    "D": "China",
+    "E": "India"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – China</b></p><p><b>📌 Top 3 countries</b><br><table><tr><th>Rank</th><th>Country</th><th>GIs</th></tr><tr><td>1</td><td>China</td><td><b>9,946</b></td></tr><tr><td>2</td><td>Germany</td><td><b>7,661</b></td></tr><tr><td>3</td><td>Hungary</td><td><b>7,365</b></td></tr></table></p><p><b>📌 India:</b> 800+ GIs in force; rank approximately <b>46th</b> among countries.</p>",
+   "id": "215767d602"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "GI Tag",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "GI Tag"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "GI Tag, National news/Numerical",
+   "question": "Which state has the highest number of GI tags in India, as per the news?",
+   "options": {
+    "A": "Tamil Nadu",
+    "B": "West Bengal",
+    "C": "Uttar Pradesh",
+    "D": "Maharashtra",
+    "E": "Karnataka"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Uttar Pradesh</b></p><p><b>📌 Top states by GI tags</b><br><table><tr><th>Rank</th><th>State</th><th>GI tags</th></tr><tr><td>1</td><td>Uttar Pradesh</td><td><b>83</b></td></tr><tr><td>2</td><td>Tamil Nadu</td><td><b>76</b></td></tr><tr><td>3</td><td>West Bengal</td><td><b>59</b></td></tr></table></p><p><b>📌 West Bengal static GK:</b> CM – Suvendu Adhikari; Governor – R. N. Ravi; Capital – Kolkata (eastern bank of the Hooghly River); Dance – Kathi; National Parks – Sundarbans, Jaldapara, Gorumara, Singalila, Neora Valley and Buxa.</p>",
+   "id": "7bede0095a"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "GI Tag",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "GI Tag"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "GI Tag, International news/Numerical",
+   "question": "As per the news, India's rank among countries in terms of Geographical Indications in force is approximately:",
+   "options": {
+    "A": "10th",
+    "B": "21st",
+    "C": "32nd",
+    "D": "46th",
+    "E": "58th"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – 46th</b></p><p>India has <b>800+ GIs in force</b> and ranks approximately <mark>46th</mark> among countries, far behind China (9,946).</p><p><b>📌 Key pointers</b><br><ul><li>A GI identifies products originating from a specific place with qualities, reputation or characteristics essentially attributable to that place.</li></ul></p>",
+   "id": "22971667a1"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    },
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, International news/Oneliner",
+   "question": "The 48th session of the UNESCO World Heritage Committee, in which Sarnath was inscribed, was held in:",
+   "options": {
+    "A": "Paris, France",
+    "B": "Ankara, Türkiye",
+    "C": "Busan, Republic of Korea",
+    "D": "Tokyo, Japan",
+    "E": "Bonn, Germany"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Busan, Republic of Korea</b></p><p>The session was held from <mark>19-29 July 2026</mark>, and <b>25 new sites</b> were inscribed (19 cultural, 5 natural, 1 mixed).</p><p><b>📌 Key pointers</b><br><ul><li>UNESCO headquarters: <b>Paris, France</b>.</li><li>After the additions, the list has <b>1,273 properties</b> across <b>173 countries</b>.</li></ul></p>",
+   "id": "7c89959739"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Match the Column"
+   ],
+   "tag": "Static GK, National news/Match the Column",
+   "passage": "<p><b>Match the Indian states in Column I with their Governors in Column II:</b><br><table><tr><th>Column I (State)</th><th>Column II (Governor)</th></tr><tr><td>(a) Maharashtra</td><td>(1) Anandiben Patel</td></tr><tr><td>(b) West Bengal</td><td>(2) Lakshman Prasad Acharya</td></tr><tr><td>(c) Assam</td><td>(3) R. N. Ravi</td></tr><tr><td>(d) Uttar Pradesh</td><td>(4) Jishnu Dev Varma</td></tr></table></p>",
+   "question": "Choose the option that gives the correct match.",
+   "options": {
+    "A": "a-4, b-3, c-2, d-1",
+    "B": "a-3, b-4, c-2, d-1",
+    "C": "a-4, b-3, c-1, d-2",
+    "D": "a-2, b-3, c-4, d-1",
+    "E": "a-4, b-2, c-3, d-1"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – a-4, b-3, c-2, d-1</b></p><p><b>🔗 Correct matching</b><br><table><tr><th>State</th><th>Governor</th></tr><tr><td>Maharashtra</td><td>Jishnu Dev Varma</td></tr><tr><td>West Bengal</td><td>R. N. Ravi</td></tr><tr><td>Assam</td><td>Lakshman Prasad Acharya</td></tr><tr><td>Uttar Pradesh</td><td>Anandiben Patel</td></tr></table></p><p><b>📌 Also from the news:</b> Bihar's Governor is <b>Syed Ata Hasnain</b>.</p>",
+   "id": "96a4f16214"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Assam",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Assam"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Assam, National news/Pair Based",
+   "question": "Which of the following is NOT a national park of Assam?",
+   "options": {
+    "A": "Manas",
+    "B": "Valmiki",
+    "C": "Nameri",
+    "D": "Orang",
+    "E": "Dehing Patkai"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Valmiki</b></p><p><b>Valmiki National Park</b> is in <b>Bihar</b>. Assam has <mark>7 national parks</mark>.</p><p><b>📌 Assam's national parks</b><br><ul><li>Manas, Nameri, Kaziranga, Orang, Dibru-Saikhowa, Dehing Patkai and Raimona.</li><li><b>Capital:</b> Dispur; <b>classical dance:</b> Sattriya; <b>folk dance:</b> Bihu.</li></ul></p>",
+   "id": "4a51c88d20"
+  },
+  {
+   "month": 6,
+   "main": "F",
+   "sub": "Environment Reports, Indices & Initiatives",
+   "minor": "Global biodiversity reports",
+   "cats": [
+    {
+     "main": "F",
+     "sub": "Environment Reports, Indices & Initiatives",
+     "minor": "Global biodiversity reports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Biodiversity, National news/Numerical",
+   "question": "As of July 2026, how many Biodiversity Heritage Sites (BHS) have been notified in India by the National Biodiversity Authority (NBA)?",
+   "options": {
+    "A": "34",
+    "B": "41",
+    "C": "45",
+    "D": "50",
+    "E": "54"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – 54</b></p><p>The latest addition is the <b>Borjuli Site in Sonitpur district, Assam</b>.</p><p><b>📌 Key pointers</b><br><ul><li>BHS are ecologically significant areas rich in biodiversity, conservation value and cultural importance, conserved by local communities through traditional practices.</li><li>Notified by the <b>National Biodiversity Authority (NBA)</b>.</li></ul></p>",
+   "id": "5a83dd2dcb"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Economy, Credit & Financial Sector Updates",
+   "minor": "Infrastructure finance",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Economy, Credit & Financial Sector Updates",
+     "minor": "Infrastructure finance"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Infrastructure, National news/Numerical",
+   "question": "The Brahmaputra tunnel corridor is expected to cut travel time between Gohpur and Numaligarh from about 6 hours to around:",
+   "options": {
+    "A": "20 minutes",
+    "B": "45 minutes",
+    "C": "1 hour",
+    "D": "2 hours",
+    "E": "90 minutes"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 20 minutes</b></p><p><b>📌 Connectivity benefits</b><br><table><tr><th>Parameter</th><th>Present</th><th>New corridor</th></tr><tr><td>Distance</td><td>240 km</td><td>approx. <b>34 km</b></td></tr><tr><td>Travel time</td><td>around 6 hours</td><td>around <b>20 minutes</b></td></tr></table></p><p><b>📌 Key pointers</b><br><ul><li>Total project length: <b>33.7 km</b>; underwater twin-tube length: <b>15.79 km</b>.</li></ul></p>",
+   "id": "298c0f98d1"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "FATF",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "FATF"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FATF, International news/Fill in the blanks",
+   "question": "The Financial Action Task Force (FATF) was established in 1989 by the ______ Summit held in Paris.",
+   "options": {
+    "A": "G20",
+    "B": "G77",
+    "C": "BRICS",
+    "D": "OECD",
+    "E": "G7"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – G7</b></p><p>FATF is an <b>intergovernmental organisation</b> that sets international standards to combat <b>money laundering, terrorist financing and financing of weapons of mass destruction</b>.</p><p><b>📌 Key pointers</b><br><ul><li><b>Membership:</b> 38 member countries (+ European Commission and GCC = 40); India is a member since 2010; Russia's membership is suspended.</li><li>There are <b>9 FATF-style regional bodies</b>.</li></ul></p>",
+   "id": "ed71ff1048"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Match the Column"
+   ],
+   "tag": "Static GK, National news/Match the Column",
+   "passage": "<p><b>Match the states in Column I with their Chief Ministers in Column II:</b><br><table><tr><th>Column I (State)</th><th>Column II (Chief Minister)</th></tr><tr><td>(a) Maharashtra</td><td>(1) Himanta Biswa Sarma</td></tr><tr><td>(b) Uttar Pradesh</td><td>(2) Yogi Adityanath</td></tr><tr><td>(c) Assam</td><td>(3) Samrat Choudhary</td></tr><tr><td>(d) Bihar</td><td>(4) Devendra Fadnavis</td></tr></table></p>",
+   "question": "Choose the option that gives the correct match.",
+   "options": {
+    "A": "a-4, b-2, c-3, d-1",
+    "B": "a-2, b-4, c-1, d-3",
+    "C": "a-4, b-2, c-1, d-3",
+    "D": "a-4, b-1, c-2, d-3",
+    "E": "a-3, b-2, c-1, d-4"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – a-4, b-2, c-1, d-3</b></p><p><b>🔗 Correct matching</b><br><table><tr><th>State</th><th>Chief Minister</th></tr><tr><td>Maharashtra</td><td>Devendra Fadnavis</td></tr><tr><td>Uttar Pradesh</td><td>Yogi Adityanath</td></tr><tr><td>Assam</td><td>Himanta Biswa Sarma</td></tr><tr><td>Bihar</td><td>Samrat Choudhary</td></tr></table></p><p><b>📌 Also:</b> West Bengal's CM is <b>Suvendu Adhikari</b>.</p>",
+   "id": "18aa0db7bb"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Maharashtra",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Maharashtra"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Maharashtra, National news/Numerical",
+   "question": "The Bhandup Bird Park project, India's first AI-powered bird sanctuary, received administrative approval with an allocation of:",
+   "options": {
+    "A": "Rs.15 crore",
+    "B": "Rs.25 crore",
+    "C": "Rs.35 crore",
+    "D": "Rs.45 crore",
+    "E": "Rs.75 crore"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Rs.45 crore</b></p><p>The amount comes from the <b>District Planning Committee's special fund</b>.</p><p><b>📌 Key pointers</b><br><ul><li>The project is to be developed at the <b>Thane Creek Flamingo Sanctuary</b>, Mumbai, Maharashtra.</li><li>Maharashtra – National Parks: 6 (Tadoba, Sanjay Gandhi, Chandoli, Gugamal, Navegaon, Pench); Folk dances: Lavani, Koli, Lezim, Dhangari Gaja, Tamasha.</li></ul></p>",
+   "id": "f030412a4b"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Maharashtra, National news/Oneliner",
+   "question": "India's first AI-powered bird sanctuary, Bhandup Bird Park, is being developed at:",
+   "options": {
+    "A": "Thane Creek Flamingo Sanctuary",
+    "B": "Sanjay Gandhi National Park",
+    "C": "Chilika Lake",
+    "D": "Keoladeo National Park",
+    "E": "Sultanpur National Park"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Thane Creek Flamingo Sanctuary</b></p><p>The sanctuary is located in <b>Mumbai, Maharashtra</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Maharashtra – CM: <b>Devendra Fadnavis</b>; Governor: <b>Jishnu Dev Varma</b>.</li></ul></p>",
+   "id": "2867071b02"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Static GK",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Static GK"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Static GK, Maharashtra/Oneliner",
+   "question": "Which nuclear power station located in Palghar, Maharashtra (1,400 MW), is mentioned in the news?",
+   "options": {
+    "A": "Kakrapar Atomic Power Station",
+    "B": "Tarapur Atomic Power Station",
+    "C": "Narora Atomic Power Station",
+    "D": "Kudankulam Nuclear Power Plant",
+    "E": "Rawatbhata Atomic Power Station"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Tarapur Atomic Power Station</b></p><p><b>📌 Key pointers</b><br><ul><li><b>Narora Atomic Power Station</b> is in <b>Uttar Pradesh</b> (also mentioned in the news).</li><li>The proposed offshore airport near Kore Beach is also in <b>Palghar district</b>.</li></ul></p>",
+   "id": "1f7e8bf343"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "NATO",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "NATO"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "NATO, International news/Fill in the blanks",
+   "question": "Finland and Sweden are the ______ and ______ members of NATO, respectively.",
+   "options": {
+    "A": "29th and 30th",
+    "B": "31st and 32nd",
+    "C": "30th and 31st",
+    "D": "32nd and 33rd",
+    "E": "28th and 29th"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 31st and 32nd</b></p><p>NATO has <mark>32 members</mark> in 2026.</p><p><b>📌 Key pointers</b><br><ul><li><b>Founded:</b> 1949, with <b>12 founding members</b>; <b>HQ:</b> Brussels, Belgium.</li><li><b>Secretary General:</b> Mark Rutte (Netherlands).</li><li>36th Summit: <b>Ankara, Türkiye</b> (7-8 July 2026).</li></ul></p>",
+   "id": "f35079754b"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "General",
+   "minor": "International news",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "NATO, International news/Statement Based",
+   "passage": "<p><b>Consider the following statements about NATO:</b></p><p>I. NATO has 30 member countries in 2026.</p><p>II. NATO was founded in 1949 with 12 founding members.</p><p>III. NATO's headquarters is in Brussels, Belgium.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only I",
+    "B": "Only II",
+    "C": "Only I and II",
+    "D": "Only II and III",
+    "E": "All I, II and III"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Only II and III</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>I</b></td><td>❌ False</td><td>NATO has <b>32</b> members in 2026, not 30.</td></tr><tr><td><b>II</b></td><td>✅ True</td><td>Founded in <b>1949</b> with <b>12</b> founding members.</td></tr><tr><td><b>III</b></td><td>✅ True</td><td>HQ – <b>Brussels, Belgium</b>.</td></tr></table></p>",
+   "id": "2919e4fa21"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "Global Summits & Multilateral Meetings",
+   "minor": "BRICS",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "Global Summits & Multilateral Meetings",
+     "minor": "BRICS"
+    },
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "BRICS, International news/Oneliner",
+   "question": "Which of the following is the BRICS Chairship theme of India in 2026?",
+   "options": {
+    "A": "Stronger Together for a Shared Future",
+    "B": "Resilience, Growth and Global Partnership",
+    "C": "Inclusive Growth for a Sustainable World",
+    "D": "Partnership for Prosperity and Innovation",
+    "E": "Building for Resilience, Innovation, Cooperation and Sustainability"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Building for Resilience, Innovation, Cooperation and Sustainability</b></p><p>India holds the BRICS Chairship in 2026 and is hosting the <b>18th BRICS Summit in New Delhi</b>.</p><p><b>📌 Key pointers</b><br><ul><li><b>BRICS expansion timeline:</b> 2006 – Brazil, Russia, India, China; 2010 – South Africa; 2024 – Egypt, Ethiopia, Iran, UAE; 2025 – Indonesia.</li></ul></p>",
+   "id": "64bb74435f"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "Global Summits & Multilateral Meetings",
+   "minor": "BRICS",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "Global Summits & Multilateral Meetings",
+     "minor": "BRICS"
+    },
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "BRICS, International news/Oneliner",
+   "question": "Which country was added to BRICS in 2025, as per the BRICS expansion timeline?",
+   "options": {
+    "A": "Egypt",
+    "B": "Ethiopia",
+    "C": "Indonesia",
+    "D": "UAE",
+    "E": "Iran"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Indonesia</b></p><p><b>📌 BRICS expansion timeline</b><br><table><tr><th>Year</th><th>Members added</th></tr><tr><td>2006</td><td>Brazil, Russia, India, China (original founders – BRIC)</td></tr><tr><td>2010</td><td>South Africa</td></tr><tr><td>2024</td><td>Egypt, Ethiopia, Iran, UAE</td></tr><tr><td>2025</td><td>Indonesia</td></tr></table></p>",
+   "id": "2906fff3f2"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "UCC, National news/Statement Based",
+   "passage": "<p><b>Consider the following statements about the Uniform Civil Code (UCC) in India:</b></p><p>I. Uttarakhand was the first state to pass the UCC legislation.</p><p>II. Assam was the second state to adopt the UCC.</p><p>III. Madhya Pradesh became the third state to pass the UCC Bill.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only I",
+    "B": "Only II",
+    "C": "Only I and II",
+    "D": "Only II and III",
+    "E": "All I, II and III"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Only I</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>I</b></td><td>✅ True</td><td><b>Uttarakhand</b> was the first state to pass the UCC.</td></tr><tr><td><b>II</b></td><td>❌ False</td><td>The <b>second</b> state was <b>Gujarat</b>; Assam was the third.</td></tr><tr><td><b>III</b></td><td>❌ False</td><td>Madhya Pradesh became the <b>fourth</b> state (21 July 2026).</td></tr></table></p>",
+   "id": "99e8e540ae"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Bihar",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Bihar"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Bihar, Science/Numerical",
+   "question": "Scientists confirmed the Munger (Bihar) banyan tree as the world's oldest accurately dated banyan tree, with an age of about:",
+   "options": {
+    "A": "300 years",
+    "B": "450 years",
+    "C": "700 years",
+    "D": "1,000 years",
+    "E": "1,500 years"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 700 years</b></p><p>The age of the banyan tree (<i>Ficus benghalensis</i>) was determined using advanced <mark>radiocarbon dating</mark> techniques.</p><p><b>📌 Key pointers</b><br><ul><li>Study led by <b>Dr. Trina Bose</b> of the <b>Birbal Sahni Institute of Palaeosciences</b> (autonomous institute under DST).</li><li>Bihar: Capital – Patna; 38 districts; 3rd most populous state; National Park – Valmiki.</li></ul></p>",
+   "id": "3800beb719"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "NABARD",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "NABARD"
+    },
+    {
+     "main": "A",
+     "sub": "General",
+     "minor": "Banking news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "NABARD, Banking news/Statement Based",
+   "passage": "<p><b>Consider the following statements about NABARD:</b></p><p>I. NABARD was established under the NABARD Act, 1981.</p><p>II. NABARD is wholly owned by the Government of India.</p><p>III. NABARD was set up on the recommendations of the CRAFICARD Committee.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only I",
+    "B": "Only II",
+    "C": "Only I and II",
+    "D": "Only II and III",
+    "E": "All I, II and III"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – All I, II and III</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>I</b></td><td>✅ True</td><td>Act – <b>NABARD Act, 1981</b>.</td></tr><tr><td><b>II</b></td><td>✅ True</td><td>Ownership – <b>wholly owned by the Government of India</b>.</td></tr><tr><td><b>III</b></td><td>✅ True</td><td>Set up on the recommendations of <b>CRAFICARD</b> (chairman: B. Sivaraman).</td></tr></table></p><p><b>📌 Key pointers</b><br><ul><li>Established: <b>12 July 1982</b>; HQ: <b>Mumbai</b>; Chairman: <b>Shaji K. V.</b></li><li>Launched <b>Gramodyam</b> on its 45th Foundation Day.</li></ul></p>",
+   "id": "b588b2bf60"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "Uttar Pradesh, National news/Statement Based",
+   "passage": "<p><b>Consider the following statements about the Kukrail Night Safari and Day Zoo project:</b></p><p>I. The Supreme Court granted final approval for the project on 16 July 2026.</p><p>II. The project is located in Kanpur, Uttar Pradesh.</p><p>III. It is planned as the world's third such facility.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only I",
+    "B": "Only II",
+    "C": "Only I and II",
+    "D": "Only II and III",
+    "E": "All I, II and III"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Only I</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>I</b></td><td>✅ True</td><td>Final approval was granted on <b>16 July 2026</b>.</td></tr><tr><td><b>II</b></td><td>❌ False</td><td>The project is in <b>Lucknow</b>.</td></tr><tr><td><b>III</b></td><td>❌ False</td><td>It is India's <b>first</b> urban night safari and the world's <b>fifth</b> after Singapore, Thailand, China and Indonesia.</td></tr></table></p><p><b>📌 Estimated cost:</b> Rs.1,500 crore.</p>",
+   "id": "4e744f86e0"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Agreements, MoUs & Treaties",
+   "minor": "Technology and semiconductor partnerships",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Agreements, MoUs & Treaties",
+     "minor": "Technology and semiconductor partnerships"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "I-2SEA, Technology/Oneliner",
+   "question": "In the I-2SEA submarine cable project connecting Singapore, India and Malaysia, which company is the system supplier?",
+   "options": {
+    "A": "Lightstorm",
+    "B": "NEC Corporation",
+    "C": "Microsoft",
+    "D": "Singtel",
+    "E": "Tata Communications"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – NEC Corporation</b></p><p>Lightstorm, Microsoft, Singtel and Tata Communications form the <b>consortium</b>, while <b>NEC Corporation</b> is the <b>system supplier</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Unveiled on <b>2 July 2026</b>; estimated length <b>3,600 km</b>.</li><li>Two landing points in India: <b>Machilipatnam</b> and <b>South Chennai</b>.</li></ul></p>",
+   "id": "94d5e22ece"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "I-2SEA",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "I-2SEA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "I-2SEA, Technology/Fill in the blanks",
+   "question": "The I-2SEA submarine cable system is targeted for completion and readiness for service in:",
+   "options": {
+    "A": "Fourth quarter of 2027",
+    "B": "Second quarter of 2028",
+    "C": "First quarter of 2029",
+    "D": "Fourth quarter of 2029",
+    "E": "Second quarter of 2030"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Fourth quarter of 2029</b></p><p><b>📌 Key pointers</b><br><ul><li>The system will connect <b>Singapore to Machilipatnam</b> (India) and also land at <b>South Chennai</b>.</li><li>Purpose: faster digital connectivity and stronger regional data links.</li></ul></p>",
+   "id": "a12c6838ca"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "Legislation, National news/Statement Based",
+   "passage": "<p><b>Consider the following statements about the amended Public Examinations (Prevention of Unfair Means) Act:</b></p><p>I. Fast-track courts are proposed to finish investigations within 2 months.</p><p>II. Fast-track courts are proposed to conclude trials within 6 months.</p><p>III. Debarment of service providers from managing public exams is extended from 4 years to 8 years.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only I",
+    "B": "Only II",
+    "C": "Only II and III",
+    "D": "Only I and II",
+    "E": "Only I and III"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Only I and III</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>I</b></td><td>✅ True</td><td>Investigations within <b>2 months</b>.</td></tr><tr><td><b>II</b></td><td>❌ False</td><td>Trials are to conclude within <b>3 months</b>, not 6.</td></tr><tr><td><b>III</b></td><td>✅ True</td><td>Debarment extended from <b>4 to 8 years</b>.</td></tr></table></p><p><b>📌 Key pointers</b><br><ul><li>The Lok Sabha passed the Bill on <b>29 July 2026</b>.</li></ul></p>",
+   "id": "2a790dc16e"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "DIKSHA",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "DIKSHA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "DIKSHA, Education/Numerical",
+   "question": "DIKSHA, positioned as India's \"One Nation, One Digital Platform\" for school education, was launched in:",
+   "options": {
+    "A": "2017",
+    "B": "2014",
+    "C": "2019",
+    "D": "2020",
+    "E": "2015"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 2017</b></p><p>DIKSHA is managed by <b>NCERT</b> with support from the <b>Central Institute of Educational Technology (CIET)</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Content for the foundational stage up to <b>Class 12</b>.</li><li>Used for teacher training through programmes such as <b>NISHTHA</b>.</li></ul></p>",
+   "id": "d6d2addd3c"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "DIKSHA",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "DIKSHA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "DIKSHA, Education/Numerical",
+   "question": "DIKSHA offers content in how many Indian languages and foreign languages, respectively?",
+   "options": {
+    "A": "22 and 5",
+    "B": "36 and 7",
+    "C": "36 and 12",
+    "D": "22 and 7",
+    "E": "28 and 10"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 36 and 7</b></p><p>DIKSHA offers content in <mark>36 Indian languages and 7 foreign languages</mark>.</p><p><b>📌 Key pointers</b><br><ul><li>Full form: <b>Digital Infrastructure for Knowledge Sharing</b>.</li></ul></p>",
+   "id": "c8cf59b682"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Agreements, MoUs & Treaties",
+   "minor": "Technology and semiconductor partnerships",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Agreements, MoUs & Treaties",
+     "minor": "Technology and semiconductor partnerships"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Railways, Technology/Oneliner",
+   "question": "NaMo Green Rail, India's first indigenous hydrogen-powered train, uses which technology to generate electricity from hydrogen?",
+   "options": {
+    "A": "Solid Oxide Fuel Cell",
+    "B": "Alkaline Fuel Cell",
+    "C": "Lithium-ion Battery",
+    "D": "Proton Exchange Membrane (PEM) Fuel Cell",
+    "E": "Phosphoric Acid Fuel Cell"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Proton Exchange Membrane (PEM) Fuel Cell</b></p><p>Hydrogen stored in high-pressure cylinders reacts with oxygen to generate electricity.</p><p><b>📌 Key pointers</b><br><ul><li>Route: <b>Jind–Sonipat (89 km)</b>, Northern Railway, Haryana.</li><li>Zero-emission, clean-energy mobility.</li></ul></p>",
+   "id": "e12d629903"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Railways, National news/Oneliner",
+   "question": "NaMo Green Rail, India's first indigenous hydrogen-powered passenger train, was developed by:",
+   "options": {
+    "A": "Rail Coach Factory, Kapurthala",
+    "B": "Diesel Locomotive Works, Varanasi",
+    "C": "Modern Coach Factory, Raebareli",
+    "D": "Chittaranjan Locomotive Works",
+    "E": "Integral Coach Factory (ICF), Chennai"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Integral Coach Factory (ICF), Chennai</b></p><p><b>📌 Train features</b><br><ul><li><b>10 coaches:</b> 8 passenger coaches + 2 hydrogen driving power cars.</li><li><b>Passenger capacity:</b> around 2,600.</li><li>Launched on <b>17 July 2026</b> by Indian Railways.</li></ul></p>",
+   "id": "79ad1c4470"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Railways",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Railways"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Railways, National news/Numerical",
+   "question": "What are the operational speed and design speed of NaMo Green Rail, respectively?",
+   "options": {
+    "A": "60 km/h and 100 km/h",
+    "B": "100 km/h and 110 km/h",
+    "C": "75 km/h and 110 km/h",
+    "D": "75 km/h and 130 km/h",
+    "E": "80 km/h and 160 km/h"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 75 km/h and 110 km/h</b></p><p><b>📌 Key pointers</b><br><ul><li>Operational speed: <b>75 km/h</b>; design speed: <b>110 km/h</b>.</li><li>Technology: PEM fuel cell; route: Jind–Sonipat (89 km).</li></ul></p>",
+   "id": "a70e1665da"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Airport",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Airport"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Airport, Maharashtra/Numerical",
+   "question": "The proposed offshore airport near Kore Beach in Palghar district is designed for up to how many passengers annually?",
+   "options": {
+    "A": "30 million",
+    "B": "50 million",
+    "C": "65 million",
+    "D": "90 million",
+    "E": "120 million"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – 90 million</b></p><p>The airport also has a design capacity of about <b>3 million metric tonnes</b> of cargo each year.</p><p><b>📌 Key pointers</b><br><ul><li>It is planned as the <b>third international airport</b> for the Mumbai Metropolitan Region.</li><li>It is India's <b>first offshore airport</b> (approved for DPR preparation).</li></ul></p>",
+   "id": "8440db1bd1"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "AI, National news/Oneliner",
+   "question": "Which state announced plans to establish India's first government-driven Artificial Intelligence University along with an AI Hub for research, innovation and start-up incubation?",
+   "options": {
+    "A": "Maharashtra",
+    "B": "Telangana",
+    "C": "Tamil Nadu",
+    "D": "Kerala",
+    "E": "Karnataka"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Karnataka</b></p><p>Karnataka announced the <b>AI University</b> and an <b>AI Hub</b> to promote research, innovation and start-up incubation.</p><p><b>📌 Related news:</b> Global AI summit series – India (2026), Switzerland (2027, Geneva), UAE (2028).</p>",
+   "id": "65f595ec05"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "General",
+   "minor": "International news",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "AI Summit, International news/Oneliner",
+   "question": "In the global AI summit series, India hosted the summit in 2026 and Switzerland will host it in 2027. Which country will host it in 2028?",
+   "options": {
+    "A": "Singapore",
+    "B": "United Arab Emirates",
+    "C": "Japan",
+    "D": "United Kingdom",
+    "E": "South Korea"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – United Arab Emirates</b></p><p><b>📌 Key pointers</b><br><ul><li>The 2027 summit will be held in <b>Geneva</b> on <b>21-22 June 2027</b>.</li><li>It focuses on AI governance, trustworthy AI and multilateral cooperation.</li></ul></p>",
+   "id": "94498a0fe5"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "World records",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "World records"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Records, National news/Numerical",
+   "question": "Ahmedabad Municipal Corporation's record-setting Miyawaki drive at Bhadaj planted 3.61 lakh saplings of how many indigenous tree species?",
+   "options": {
+    "A": "35",
+    "B": "25",
+    "C": "45",
+    "D": "50",
+    "E": "60"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 35</b></p><p><b>361,000 saplings</b> of <b>35 indigenous species</b> were planted in one hour, setting a Guinness World Record for the largest Miyawaki plantation drive in one hour.</p><p><b>📌 Key pointers</b><br><ul><li>Venue: <b>Bhadaj</b>, near the Gota-Godhavi Canal.</li><li>It broke the earlier record of <b>331,929 trees</b> (Assam Forest Department, 2023).</li></ul></p>",
+   "id": "7676f14393"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Assam",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Assam"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Assam, National news/Pair Based",
+   "question": "Which of the following pairs about Assam is correctly matched?",
+   "options": {
+    "A": "Capital – Guwahati",
+    "B": "Classical dance – Sattriya",
+    "C": "Folk dance – Lavani",
+    "D": "Governor – Syed Ata Hasnain",
+    "E": "National Park – Dudhwa"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Classical dance – Sattriya</b></p><p><b>🧠 Why not the others?</b><br><ul><li><b>A</b> – Assam's capital is <b>Dispur</b>.</li><li><b>C</b> – Lavani is a folk dance of <b>Maharashtra</b>; Assam's folk dance is <b>Bihu</b>.</li><li><b>D</b> – Assam's Governor is <b>Lakshman Prasad Acharya</b>; Syed Ata Hasnain is Bihar's Governor.</li><li><b>E</b> – Dudhwa is in <b>Uttar Pradesh</b>.</li></ul></p>",
+   "id": "41fd093059"
+  },
+  {
+   "month": 6,
+   "main": "F",
+   "sub": "General",
+   "minor": "Environment",
+   "cats": [
+    {
+     "main": "F",
+     "sub": "General",
+     "minor": "Environment"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Environment, National news/Static GK",
+   "question": "The Miyawaki method of afforestation was developed in the 1970s by:",
+   "options": {
+    "A": "Dr. Masanobu Fukuoka",
+    "B": "Dr. Wangari Maathai",
+    "C": "Dr. Akira Miyawaki of Japan",
+    "D": "Dr. M. S. Swaminathan",
+    "E": "Dr. Norman Borlaug"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Dr. Akira Miyawaki of Japan</b></p><p>The method involves planting <b>multiple native species together</b> to develop forests similar to natural forests.</p><p><b>📌 Key pointers</b><br><ul><li>Dense plantation of native species grows faster and forms a mini forest, with high biodiversity.</li><li>Best for small spaces, urban areas and quick green cover.</li></ul></p>",
+   "id": "e58def4f63"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, International news/Numerical",
+   "question": "After the additions at the 48th Session of the World Heritage Committee, the UNESCO World Heritage List contains how many properties across how many countries?",
+   "options": {
+    "A": "1,248 properties across 168 countries",
+    "B": "1,273 properties across 194 countries",
+    "C": "1,273 properties across 173 countries",
+    "D": "1,298 properties across 173 countries",
+    "E": "1,223 properties across 165 countries"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 1,273 properties across 173 countries</b></p><p><b>📌 Global category-wise total</b><br><table><tr><th>Category</th><th>Properties</th></tr><tr><td>Cultural</td><td><b>991</b></td></tr><tr><td>Natural</td><td><b>240</b></td></tr><tr><td>Mixed</td><td><b>42</b></td></tr></table></p><p><b>⚠️ Trap:</b> 194 is the number of UNESCO <i>Member States</i> (plus 12 Associate Members), not the number of countries with heritage properties.</p>",
+   "id": "2298f9943f"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, National news/Numerical",
+   "question": "As of 5 August 2026, how many cultural sites are included in India's UNESCO World Heritage Tentative List of 69 sites?",
+   "options": {
+    "A": "49",
+    "B": "17",
+    "C": "3",
+    "D": "59",
+    "E": "37"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 49</b></p><p><b>📌 Tentative List breakup (69 sites)</b><br><table><tr><th>Category</th><th>Sites</th></tr><tr><td>Cultural</td><td><b>49</b></td></tr><tr><td>Natural</td><td><b>17</b></td></tr><tr><td>Mixed</td><td><b>3</b></td></tr></table></p><p><b>⚠️ Trap:</b> 37 is the number of <i>inscribed</i> cultural sites in India (out of 45), not the Tentative List figure.</p>",
+   "id": "5313fd01f9"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, National news/Static GK",
+   "question": "Which of the following sites was inscribed on the UNESCO World Heritage List in 1986?",
+   "options": {
+    "A": "Taj Mahal",
+    "B": "Agra Fort",
+    "C": "Ancient Buddhist Site, Sarnath",
+    "D": "Ajanta Caves",
+    "E": "Fatehpur Sikri"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Fatehpur Sikri</b></p><p>Fatehpur Sikri (near Agra) was inscribed in <mark>1986</mark>.</p><p><b>📌 Key pointers</b><br><ul><li>Taj Mahal and Agra Fort – <b>1983</b>; Sarnath – <b>July 2026</b> (near Varanasi).</li><li>India's first inscriptions came in <b>1983</b>.</li></ul></p>",
+   "id": "f1e9f878b9"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, International news/Pair Based",
+   "question": "Which of the following pairs related to the UNESCO World Heritage Convention is correctly matched?",
+   "options": {
+    "A": "Convention came into force – 16 November 1972",
+    "B": "Convention adopted – 17 December 1975",
+    "C": "World Heritage List started – 1983",
+    "D": "First inscriptions of 12 properties – 1978",
+    "E": "Total global natural properties – 991"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – First inscriptions of 12 properties – 1978</b></p><p><b>🔗 Correct facts</b><br><table><tr><th>Event</th><th>Date</th></tr><tr><td>Convention adopted</td><td><b>16 November 1972</b></td></tr><tr><td>Came into force</td><td><b>17 December 1975</b></td></tr><tr><td>World Heritage List started / first 12 properties</td><td><b>1978</b></td></tr></table></p><p><b>🧠 Why not the others?</b> A and B swap the two dates; 1983 is when <i>India's</i> first inscriptions occurred; <b>991</b> is the number of <i>cultural</i> properties (natural = 240).</p>",
+   "id": "1e9e75f566"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "International Organisations & Institutions",
+   "minor": "UNESCO",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "International Organisations & Institutions",
+     "minor": "UNESCO"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNESCO, International news/Static GK",
+   "question": "Who is the current Director-General of UNESCO, as per the news?",
+   "options": {
+    "A": "Audrey Azoulay",
+    "B": "Khaled El-Enany",
+    "C": "Irina Bokova",
+    "D": "Koïchirō Matsuura",
+    "E": "Federico Mayor"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Khaled El-Enany</b></p><p>Khaled El-Enany of <b>Egypt</b> is the <mark>12th Director-General</mark> of UNESCO, with a term of <b>four years</b>.</p><p><b>📌 Key pointers</b><br><ul><li><b>Full form:</b> United Nations Educational, Scientific and Cultural Organization; <b>HQ:</b> Paris, France.</li><li><b>Membership:</b> 194 Member States and 12 Associate Members.</li></ul></p>",
+   "id": "50fcf00490"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Economy, Credit & Financial Sector Updates",
+   "minor": "Infrastructure finance",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Economy, Credit & Financial Sector Updates",
+     "minor": "Infrastructure finance"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Infrastructure, National news/Numerical",
+   "question": "The underwater twin-tube section of India's first underwater road-cum-rail tunnel under the Brahmaputra River has a length of:",
+   "options": {
+    "A": "5.79 km",
+    "B": "33.7 km",
+    "C": "12.5 km",
+    "D": "18.66 km",
+    "E": "15.79 km"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – 15.79 km</b></p><p>The <b>total project length</b> is <b>33.7 km</b>; the underwater twin-tube tunnel is <mark>15.79 km</mark>.</p><p><b>🧠 Why not the others?</b> 33.7 km is the total project length; 18.66 resembles the cost figure (Rs.18,662.02 crore), not a length.</p><p><b>📌 Key pointers</b><br><ul><li>Two lanes in each tube; rail in one tube; built with <b>Tunnel Boring Machine (TBM)</b> under the <b>EPC</b> model.</li></ul></p>",
+   "id": "0a04f7ce9c"
+  },
+  {
+   "month": 6,
+   "main": "A",
+   "sub": "Financial Institutions, Markets & Instruments",
+   "minor": "NABARD",
+   "cats": [
+    {
+     "main": "A",
+     "sub": "Financial Institutions, Markets & Instruments",
+     "minor": "NABARD"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "NABARD, Banking news/Fill in the blanks",
+   "question": "NABARD's 'Gramodyam' is a ______ pilot programme that aims to support around ______ rural entrepreneurs.",
+   "options": {
+    "A": "3-year; 4,000",
+    "B": "5-year; 4,000",
+    "C": "3-year; 40,000",
+    "D": "2-year; 5,000",
+    "E": "5-year; 10,000"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 3-year; 4,000</b></p><p><b>📌 Key pointers</b><br><ul><li><b>Objective:</b> support the creation of sustainable rural businesses by identifying, training, financing and mentoring rural youth.</li><li><b>Implemented in collaboration with:</b> National Skill Development Corporation (NSDC), under the Ministry of Skill Development and Entrepreneurship (MSDE).</li><li><b>Implementation partner:</b> Institute for Industrial Development (IID).</li></ul></p>",
+   "id": "f8407354a6"
   }
  ],
  "report": {
@@ -5544,7 +7795,7 @@
     "invalid": 1
    },
    "7": {
-    "valid": 0,
+    "valid": 78,
     "invalid": 0
    },
    "8": {
@@ -5573,12 +7824,12 @@
    }
   },
   "types": {
-   "Oneliner": 177,
+   "Oneliner": 242,
    "Data Based": 1,
-   "Statement Based": 10,
-   "Match the Column": 7
+   "Statement Based": 18,
+   "Match the Column": 12
   },
-  "valid": 195,
+  "valid": 273,
   "invalid": 1,
   "duplicates": 0,
   "invalidList": [
@@ -5599,7 +7850,21 @@
    "Global Organizations": 15,
    "Ports & Corridors": 2,
    "Cricket tournaments": 4,
-   "Legislative assembly UTs": 1
+   "Legislative assembly UTs": 1,
+   "Legislation": 1,
+   "Uttar Pradesh": 1,
+   "DIKSHA": 3,
+   "I-2SEA": 2,
+   "Airport": 2,
+   "FATF": 2,
+   "GI Tag": 3,
+   "CPSE": 5,
+   "Assam": 2,
+   "Maharashtra": 1,
+   "Static GK": 1,
+   "NATO": 1,
+   "Bihar": 1,
+   "Railways": 1
   }
  }
 }
