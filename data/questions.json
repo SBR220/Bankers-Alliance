@@ -1,5 +1,5 @@
 {
- "built": "2026-11-08T07:14:38+00:00",
+ "built": "2026-11-08T11:42:25+00:00",
  "questions": [
   {
    "month": 0,
@@ -7766,6 +7766,2131 @@
    "answer": "A",
    "solution": "<p><b>✅ Correct answer: A – 3-year; 4,000</b></p><p><b>📌 Key pointers</b><br><ul><li><b>Objective:</b> support the creation of sustainable rural businesses by identifying, training, financing and mentoring rural youth.</li><li><b>Implemented in collaboration with:</b> National Skill Development Corporation (NSDC), under the Ministry of Skill Development and Entrepreneurship (MSDE).</li><li><b>Implementation partner:</b> Institute for Industrial Development (IID).</li></ul></p>",
    "id": "f8407354a6"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "FIFA",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "FIFA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA, Sports/Static GK",
+   "question": "FIFA (Fédération Internationale de Football Association) was established on:",
+   "options": {
+    "A": "21 May 1904",
+    "B": "25 May 1924",
+    "C": "15 June 1930",
+    "D": "1 January 1900",
+    "E": "21 May 1924"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 21 May 1904</b></p><p>FIFA was established in <b>Paris, France</b>.</p><p><b>📌 Key pointers</b><br><ul><li><b>Founding members:</b> France, Belgium, Denmark, Netherlands, Spain, Sweden and Switzerland.</li><li><b>HQ:</b> FIFA House, Zürich, Switzerland; <b>President:</b> Gianni Infantino (9th President, Swiss-Italian).</li><li><b>Members:</b> 211 countries and territories; <b>6</b> continental confederations.</li></ul></p>",
+   "id": "8bcaf1c5c2"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Who was the defending champion at the FIFA World Cup 2026, having won the 2022 edition?",
+   "options": {
+    "A": "Argentina",
+    "B": "France",
+    "C": "Croatia",
+    "D": "Brazil",
+    "E": "Morocco"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Argentina</b></p><p>Argentina lost the 2026 final 0-1 to Spain after extra time.</p><p><b>📌 Payout increase (2022 → 2026):</b> Champions $42m → <b>$50m</b>; Runners-up $30m → <b>$33m</b>; Third $27m → <b>$29m</b>; Fourth $25m → <b>$27m</b>.</p>",
+   "id": "5ee8a46783"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "LA 2028",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "LA 2028"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "LA 2028, Sports/Static GK",
+   "question": "Cricket's first and previous Olympic appearance was at Paris 1900. Which team won the gold medal?",
+   "options": {
+    "A": "France",
+    "B": "Netherlands",
+    "C": "Great Britain",
+    "D": "Australia",
+    "E": "United States"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Great Britain</b></p><p>Olympic cricket returns in <b>2028</b> after more than a century, with the first and previous appearance in <b>Paris 1900</b>, won by Great Britain.</p>",
+   "id": "bf2d1813ea"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "General",
+   "minor": "National news",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "General",
+     "minor": "National news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Kartavya Bhawan, National news/Oneliner",
+   "question": "Who is the Union Minister of Housing and Urban Affairs who stated that the term 'Central Vista' should be replaced by 'Kartavya Bhawan Area' in all official documents?",
+   "options": {
+    "A": "Manohar Lal",
+    "B": "Hardeep Singh Puri",
+    "C": "Kiren Rijiju",
+    "D": "Piyush Goyal",
+    "E": "Jitendra Singh"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Manohar Lal</b></p><p><b>📌 Key pointers</b><br><ul><li>Central Vista redevelopment area is now the <b>Kartavya Bhawan Area / Complex</b>; Rajpath was renamed <b>Kartavya Path</b> in 2022.</li><li>The new complex housing the PMO, Cabinet Secretariat and NSA has been named <b>Seva Teerth</b>.</li></ul></p>",
+   "id": "e9f46d6250"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Pair Based",
+   "question": "Which of the following pairs of host country and FIFA World Cup 2026 mascot is correctly matched?",
+   "options": {
+    "A": "Canada – Clutch the Bald Eagle",
+    "B": "Mexico – Zayu the Jaguar",
+    "C": "USA – Maple the Moose",
+    "D": "Canada – Zayu the Jaguar",
+    "E": "Mexico – Maple the Moose"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Mexico – Zayu the Jaguar</b></p><p><b>🔗 Correct pairs:</b> Canada – <b>Maple the Moose</b>; Mexico – <b>Zayu the Jaguar</b>; USA – <b>Clutch the Bald Eagle</b>.</p><p><b>📌 Other facts:</b> Official match ball – <b>Trionda</b> (Adidas).</p>",
+   "id": "48d34f828c"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "Australian Open",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "Australian Open"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Australian Open 2026, Sports/Oneliner",
+   "question": "Who won the Australian Open 2026 women's singles title?",
+   "options": {
+    "A": "Elena Rybakina (Kazakhstan)",
+    "B": "Aryna Sabalenka (Belarus)",
+    "C": "Mirra Andreeva (Russia)",
+    "D": "Maja Chwalińska (Poland)",
+    "E": "Linda Nosková (Czech Republic)"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Elena Rybakina (Kazakhstan)</b></p><p><b>📌 Australian Open 2026</b><br><ul><li><b>Women's:</b> Elena Rybakina beat <b>Aryna Sabalenka</b> (Belarus).</li><li><b>Men's:</b> Carlos Alcaraz (Spain) beat <b>Novak Djokovic</b> (Serbia).</li></ul></p>",
+   "id": "8b2d5ddb69"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "PRAGATI",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "PRAGATI"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "PRAGATI, Agriculture/Numerical",
+   "question": "The PRAGATI (Promoting Regenerative Agriculture Through Agri-Entrepreneurship Initiative) programme launched in New Delhi aims to empower how many agri-entrepreneurs and directly support how many smallholder farmers?",
+   "options": {
+    "A": "2,000 agri-entrepreneurs and 2 lakh farmers",
+    "B": "10,000 agri-entrepreneurs and 10 lakh farmers",
+    "C": "20,000 agri-entrepreneurs and 20 lakh farmers",
+    "D": "50,000 agri-entrepreneurs and 20 lakh farmers",
+    "E": "20,000 agri-entrepreneurs and 50 lakh farmers"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 20,000 agri-entrepreneurs and 20 lakh farmers</b></p><p>PRAGATI was launched by <b>Union Agriculture Minister Shivraj Singh Chouhan</b> (MoA&amp;FW and MoRD) to promote sustainable and climate-resilient agriculture.</p><p><b>📌 Key pointers</b><br><ul><li><b>Coverage:</b> 8 States.</li><li><b>Key targets:</b> 30% increase in farmer income; 15-20% increase in crop yield; 20% adoption of regenerative agriculture; 50% financial inclusion.</li></ul></p>",
+   "id": "a6a9cc114d"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "LA 2028",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "LA 2028"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "LA 2028, Sports/List Based",
+   "question": "Which of the following is NOT among the teams confirmed for the Los Angeles 2028 Olympics women's cricket competition as of 26 July 2026?",
+   "options": {
+    "A": "New Zealand",
+    "B": "India",
+    "C": "Australia",
+    "D": "South Africa",
+    "E": "Great Britain"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – New Zealand</b></p><p>India (led by <b>Harmanpreet Kaur</b>) secured Asia's only automatic qualification spot. Confirmed women's teams: <b>Australia, Great Britain, India and South Africa</b>; 2 places remain.</p><p><b>📌 Key pointers</b><br><ul><li>Men's competition: 6 places, <b>no team</b> officially qualified; principal cut-off is <b>31 December 2026</b>.</li><li>Format: <b>T20</b>; 6 men's and 6 women's teams; 15 players per team; total quota <b>180</b> cricketers.</li></ul></p>",
+   "id": "627c0fec37"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Messi statue",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Messi statue"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Messi statue, International news/Numerical",
+   "question": "The world's tallest Lionel Messi statue unveiled in Argentina is how tall?",
+   "options": {
+    "A": "21 metres",
+    "B": "26 metres",
+    "C": "30 metres",
+    "D": "18 metres",
+    "E": "35 metres"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 26 metres</b></p><p>The statue (about <b>85 feet</b>, roughly <b>70 tonnes</b>, steel and iron) depicts Messi kneeling and was made by local sculptor <b>Aldo Beroisa</b> of Neuquén.</p><p><b>📌 Key pointer:</b> The previous record was a <b>21-metre</b> Messi statue in <b>Kolkata, West Bengal</b>.</p>",
+   "id": "c8fed2150b"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "French Open",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "French Open"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "French Open 2026, Sports/Oneliner",
+   "question": "Who was the runner-up in the men's singles of the French Open (Roland Garros) 2026?",
+   "options": {
+    "A": "Novak Djokovic",
+    "B": "Carlos Alcaraz",
+    "C": "Jannik Sinner",
+    "D": "Flavio Cobolli",
+    "E": "Alexander Zverev"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Flavio Cobolli (Italy)</b></p><p><b>Alexander Zverev (Germany)</b> won the French Open 2026 men's singles.</p><p><b>📌 Key pointers</b><br><ul><li><b>Women's:</b> Mirra Andreeva (Russia) beat Maja Chwalińska (Poland).</li><li>The French Open is played on <b>clay</b> in Paris.</li></ul></p>",
+   "id": "b42574bb81"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Indian football",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Indian football"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Indian football, Sports/Numerical",
+   "question": "India's national football team is ranked 138th globally. What is India's highest-ever FIFA ranking, achieved in February 1996?",
+   "options": {
+    "A": "76",
+    "B": "94",
+    "C": "105",
+    "D": "84",
+    "E": "99"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 94</b></p><p><b>📌 Key pointers</b><br><ul><li>Nickname: <b>Blue Tigers</b>; governing body: <b>AIFF</b>; head coach: <b>Manolo Márquez</b>.</li><li>Captains: <b>Gurpreet Singh Sandhu</b> (men), <b>Loitongbam Ashalata Devi</b> (women).</li></ul></p>",
+   "id": "6807f37dbd"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "FIFA",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "FIFA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA, Sports/Static GK",
+   "question": "Gianni Infantino, the current President of FIFA, is the ______ President of the organisation.",
+   "options": {
+    "A": "7th",
+    "B": "8th",
+    "C": "10th",
+    "D": "11th",
+    "E": "9th"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – 9th</b></p><p>Gianni Infantino is <b>Swiss-Italian</b>. FIFA has <b>211</b> member associations across <b>6 continental confederations</b> (AFC, CAF, CONCACAF, CONMEBOL, OFC, UEFA).</p>",
+   "id": "d683130736"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Who won the Golden Boot at the FIFA World Cup 2026, scoring 10 goals in 8 matches?",
+   "options": {
+    "A": "Kylian Mbappé",
+    "B": "Lionel Messi",
+    "C": "Harry Kane",
+    "D": "Cristiano Ronaldo",
+    "E": "Ferran Torres"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Kylian Mbappé (France)</b></p><p>He became the <b>first player since 1970</b> to score 10 goals in a single tournament.</p><p><b>📌 Other awards:</b> Golden Glove – <b>Unai Simón</b> (Spain; 7 clean sheets, conceded 1 goal); Best Young Player – <b>Pau Cubarsí</b> (Spain, 19); Silver Ball – <b>Lionel Messi</b> (8 goals, 4 assists).</p>",
+   "id": "adafc014d9"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "ICC",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "ICC"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "ICC Hall of Fame, Sports/Numerical",
+   "question": "According to the country-wise distribution of ICC Hall of Famers, which country ranks third with 21 inductees?",
+   "options": {
+    "A": "India",
+    "B": "South Africa",
+    "C": "Pakistan",
+    "D": "West Indies",
+    "E": "New Zealand"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – West Indies</b></p><p><b>📌 Ranking:</b> England (35) → Australia (30) → West Indies (21) → India (13). Total: <b>125</b>.</p>",
+   "id": "ce2be77af1"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "ICC",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "ICC"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "ICC Hall of Fame, Sports/Pair Based",
+   "question": "Which of the following Indian cricketers was inducted into the ICC Hall of Fame in 2025?",
+   "options": {
+    "A": "Virender Sehwag",
+    "B": "MS Dhoni",
+    "C": "Rahul Dravid",
+    "D": "Anil Kumble",
+    "E": "Neetu David"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – MS Dhoni</b></p><p><b>🧠 Why not the others?</b> Sehwag – 2023; Dravid – 2018; Kumble – 2015; Neetu David – 2024.</p>",
+   "id": "4caeb24965"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "National Infrastructure & Development Projects",
+   "minor": "Ports and port-led development",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "National Infrastructure & Development Projects",
+     "minor": "Ports and port-led development"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Ports, Economy/Numerical",
+   "question": "Kamarajar Port (Tamil Nadu) became India's second major port with an 18-metre operational draft after completing a capital dredging project costing:",
+   "options": {
+    "A": "Rs.140 crore",
+    "B": "Rs.440 crore",
+    "C": "Rs.1,440 crore",
+    "D": "Rs.544 crore",
+    "E": "Rs.4,400 crore"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Rs.440 crore</b></p><p>The <b>Capital Dredging Phase VI</b> project (Rs.440 crore) enables <b>Capesize vessel</b> operations and handling of larger ships at Kamarajar Port.</p>",
+   "id": "81b19442f3"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "Historic firsts in Indian sports",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Women's T20 World Cup 2026, Sports/Oneliner",
+   "question": "Who took the most wickets (14) in the ICC Women's T20 World Cup 2026?",
+   "options": {
+    "A": "Shree Charani (India)",
+    "B": "Deepti Sharma (India)",
+    "C": "Sophie Ecclestone (England)",
+    "D": "Megan Schutt (Australia)",
+    "E": "Nonkululeko Mlaba (South Africa)"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Shree Charani (India)</b></p><p><b>📌 Tournament summary</b><br><ul><li><b>Champion:</b> Australia; <b>Runner-up:</b> England.</li><li><b>Most runs:</b> Danni Wyatt-Hodge (302).</li><li>10th edition; first with <b>12 teams</b> (earlier 10).</li></ul></p>",
+   "id": "d8fdc87c76"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "FIFA",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "FIFA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA, Sports/List Based",
+   "question": "Which of the following was NOT a founding member of FIFA?",
+   "options": {
+    "A": "Italy",
+    "B": "Belgium",
+    "C": "Denmark",
+    "D": "Sweden",
+    "E": "Switzerland"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Italy</b></p><p>FIFA's founding members were <b>France, Belgium, Denmark, Netherlands, Spain, Sweden and Switzerland</b>.</p>",
+   "id": "15db5554e7"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Numerical",
+   "question": "As per FIFA World Cup 2026 regulations, a team's final squad must include a minimum of how many goalkeepers?",
+   "options": {
+    "A": "1",
+    "B": "2",
+    "C": "4",
+    "D": "3",
+    "E": "5"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – 3</b></p><p><b>📌 Key pointers</b><br><ul><li>Final roster limit: <b>23-26</b> players per team.</li><li>Total: <b>1,248 players</b> from <b>48 qualified nations</b> – the largest roster in tournament history.</li><li>Maximum <b>5 substitutions</b> per match; minimum <b>7 players</b> needed for a match to continue.</li></ul></p>",
+   "id": "db43194e0c"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Who scored the only goal in the FIFA World Cup 2026 final between Spain and Argentina, and in which minute?",
+   "options": {
+    "A": "Ferran Torres – 106th minute of extra time",
+    "B": "Lamine Yamal – 90th minute",
+    "C": "Pau Cubarsí – 112th minute",
+    "D": "Rodri – 106th minute of extra time",
+    "E": "Ferran Torres – 90th minute"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Ferran Torres – 106th minute of extra time</b></p><p>Spain's substitute forward <b>Ferran Torres</b> scored the decisive goal to give Spain a <mark>1-0</mark> win over defending champions Argentina at the <b>New York New Jersey Stadium (MetLife Stadium), East Rutherford</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Spain's first title came in <b>2010</b> (beat the Netherlands 1-0 in extra time in South Africa); the second came <b>16 years later</b>.</li><li><b>Final referee:</b> Slavko Vinčić (Slovenia).</li></ul></p>",
+   "id": "4c2cdf3126"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "ICC",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "ICC"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "ICC Hall of Fame, Sports/Oneliner",
+   "question": "Sourav Ganguly, Anjum Chopra and Kevin Pietersen were inducted into the ICC Hall of Fame at a ceremony held in which city?",
+   "options": {
+    "A": "London",
+    "B": "Dubai",
+    "C": "Mumbai",
+    "D": "Edinburgh",
+    "E": "Melbourne"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Edinburgh (Scotland)</b></p><p>The induction took place on <mark>11 July 2026</mark> during the ICC Annual Conference – on Ganguly's <b>54th birthday</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Ganguly became the <b>10th Indian male cricketer</b> and 13th Indian overall in the Hall of Fame.</li></ul></p>",
+   "id": "a3fe97b2c6"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Numerical",
+   "question": "The FIFA World Cup 2026 has 48 teams, divided into how many groups, each with 4 teams?",
+   "options": {
+    "A": "12 (Group A to L)",
+    "B": "8 (Group A to H)",
+    "C": "16 (Group A to P)",
+    "D": "10 (Group A to J)",
+    "E": "6 (Group A to F)"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 12 (Group A to L)</b></p><p>This is the <b>first World Cup with 48 teams</b> and the <b>first hosted by 3 countries</b> (Canada, Mexico, United States).</p><p><b>📌 Key pointers</b><br><ul><li>Total matches: <b>104</b>; dates: <b>11 June – 19 July 2026</b>.</li></ul></p>",
+   "id": "5c5ca952f3"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "Wimbledon",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "Wimbledon"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Wimbledon 2026, Sports/Oneliner",
+   "question": "Linda Nosková won the Wimbledon 2026 women's singles title. Who was the runner-up?",
+   "options": {
+    "A": "Aryna Sabalenka",
+    "B": "Karolína Muchová",
+    "C": "Maja Chwalińska",
+    "D": "Elena Rybakina",
+    "E": "Mirra Andreeva"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Karolína Muchová (Czech Republic)</b></p><p>Both finalists were from the <b>Czech Republic</b>.</p><p><b>📌 Wimbledon 2026</b><br><ul><li><b>Men's:</b> Jannik Sinner (Italy) beat Alexander Zverev (Germany).</li><li><b>Women's:</b> Linda Nosková beat Karolína Muchová.</li></ul></p>",
+   "id": "2271446bbf"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "Historic firsts in Indian sports",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "LA 2028, Sports/Oneliner",
+   "question": "Cricket at the Los Angeles 2028 Olympics will be played at which venue?",
+   "options": {
+    "A": "Dodger Stadium, Los Angeles",
+    "B": "Rose Bowl, Pasadena",
+    "C": "Fairgrounds Cricket Stadium, Pomona",
+    "D": "SoFi Stadium, Inglewood",
+    "E": "Pacific Coliseum, San Diego"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Fairgrounds Cricket Stadium, Pomona, California</b></p><p><b>📌 Key pointers</b><br><ul><li>Cricket competition: <b>12-29 July 2028</b>; women's medal day <b>20 July</b>; men's medal day <b>29 July</b>.</li></ul></p>",
+   "id": "2fc209df8e"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "ICC",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "ICC"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "ICC Hall of Fame, Sports/Numerical",
+   "question": "As of July 2026, the 13 Indian cricketers in the ICC Hall of Fame comprise:",
+   "options": {
+    "A": "11 men and 2 women",
+    "B": "9 men and 4 women",
+    "C": "10 men and 3 women",
+    "D": "12 men and 1 woman",
+    "E": "8 men and 5 women"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 10 men and 3 women</b></p><p><b>📌 Indian inductees</b><br><table><tr><th>Year</th><th>Inductee</th></tr><tr><td>2009</td><td>Bishan Singh Bedi, Kapil Dev, Sunil Gavaskar</td></tr><tr><td>2015</td><td>Anil Kumble</td></tr><tr><td>2018</td><td>Rahul Dravid</td></tr><tr><td>2019</td><td>Sachin Tendulkar</td></tr><tr><td>2021</td><td>Vinoo Mankad</td></tr><tr><td>2023</td><td>Virender Sehwag; Diana Edulji (first Indian woman)</td></tr><tr><td>2024</td><td>Neetu David</td></tr><tr><td>2025</td><td>MS Dhoni</td></tr><tr><td>2026</td><td>Sourav Ganguly, Anjum Chopra</td></tr></table></p>",
+   "id": "9e424c8b8f"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "ICC",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "ICC"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "ICC Hall of Fame, Sports/Oneliner",
+   "question": "Anjum Chopra became the 3rd Indian woman in the ICC Hall of Fame after:",
+   "options": {
+    "A": "Mithali Raj and Jhulan Goswami",
+    "B": "Diana Edulji and Jhulan Goswami",
+    "C": "Mithali Raj and Neetu David",
+    "D": "Neetu David and Smriti Mandhana",
+    "E": "Diana Edulji and Neetu David"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Diana Edulji and Neetu David</b></p><p>Anjum Chopra, a former India women's captain, was the <b>first Indian woman to score 1,000 ODI runs</b> and the <b>first Indian woman to play 100 ODIs</b>. Diana Edulji (2023) was the first Indian woman inductee; Neetu David followed in 2024.</p>",
+   "id": "dcd95b36cb"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "US Independence Day",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "US Independence Day"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "US Independence Day, International news/Numerical",
+   "question": "The United States celebrated its 250th Independence Day on 4 July 2026. The day commemorates the declaration of independence from British rule by how many colonies?",
+   "options": {
+    "A": "11",
+    "B": "13",
+    "C": "15",
+    "D": "9",
+    "E": "50"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 13</b></p><p>The <b>Declaration of Independence</b> was adopted on <b>4 July 1776</b> by the <b>13 American colonies</b>.</p>",
+   "id": "312c52fadc"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Khelo India",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Khelo India"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Khelo India, Sports/Static GK",
+   "question": "The Khelo India Programme, under the Ministry of Youth Affairs & Sports, was launched in:",
+   "options": {
+    "A": "2014",
+    "B": "2016",
+    "C": "2015",
+    "D": "2020",
+    "E": "2018"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – 2018</b></p><p><b>📌 Key pointers</b><br><ul><li>Telangana will host the <b>8th Khelo India Youth Games</b> in November 2026.</li><li>The 7th edition was hosted by <b>Bihar</b>.</li></ul></p>",
+   "id": "2c4e898f6b"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "ICC",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "ICC"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "ICC Hall of Fame, Sports/Numerical",
+   "question": "With the 2026 inductees, the ICC Hall of Fame now comprises how many members?",
+   "options": {
+    "A": "117",
+    "B": "125",
+    "C": "120",
+    "D": "130",
+    "E": "113"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 125</b></p><p><b>📌 Country-wise Hall of Famers:</b> England 35, Australia 30, West Indies 21, India 13, South Africa 9, Pakistan 8, New Zealand 4, Sri Lanka 4, Zimbabwe 1.</p>",
+   "id": "88cc979c45"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup, Sports/Numerical",
+   "question": "Along with Germany, which country has won the FIFA World Cup 4 times?",
+   "options": {
+    "A": "Argentina",
+    "B": "France",
+    "C": "Spain",
+    "D": "Italy",
+    "E": "Uruguay"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Italy</b></p><p><b>📌 Winners and titles</b><br><table><tr><th>Team</th><th>Titles</th></tr><tr><td>Brazil</td><td>5</td></tr><tr><td>Germany, Italy</td><td>4 each</td></tr><tr><td>Argentina</td><td>3</td></tr><tr><td>Spain, France, Uruguay</td><td>2 each</td></tr><tr><td>England</td><td>1</td></tr></table></p>",
+   "id": "3497e04b8f"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Nine Asian (AFC) teams qualified for the FIFA World Cup 2026. Which of these entered via the inter-confederation play-off?",
+   "options": {
+    "A": "Jordan",
+    "B": "Uzbekistan",
+    "C": "Qatar",
+    "D": "Iraq",
+    "E": "Saudi Arabia"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Iraq</b></p><p><b>📌 AFC qualifiers:</b> 8 automatic – Australia, Iran, Japan, Jordan, Qatar, Saudi Arabia, South Korea, Uzbekistan; 1 via play-off – <b>Iraq</b>.</p>",
+   "id": "acd8a9661e"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "National Infrastructure & Development Projects",
+   "minor": "Ports and port-led development",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "National Infrastructure & Development Projects",
+     "minor": "Ports and port-led development"
+    },
+    {
+     "main": "A",
+     "sub": "Economy, Credit & Financial Sector Updates",
+     "minor": "Economy"
+    }
+   ],
+   "types": [
+    "Match the Column"
+   ],
+   "tag": "Ports, Economy/Match the Column",
+   "passage": "<p><b>Match the ports in Column I with their distinction in Column II:</b><br><table><tr><th>Column I (Port)</th><th>Column II (Distinction)</th></tr><tr><td>(a) Mundra Port</td><td>(1) Largest container port</td></tr><tr><td>(b) Jawaharlal Nehru Port</td><td>(2) Largest natural port</td></tr><tr><td>(c) Paradip Port</td><td>(3) Highest cargo capacity among major ports</td></tr><tr><td>(d) Mumbai Port</td><td>(4) Largest commercial port</td></tr></table></p>",
+   "question": "Choose the option that gives the correct match.",
+   "options": {
+    "A": "a-1, b-4, c-3, d-2",
+    "B": "a-4, b-1, c-2, d-3",
+    "C": "a-3, b-1, c-4, d-2",
+    "D": "a-4, b-2, c-3, d-1",
+    "E": "a-4, b-1, c-3, d-2"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – a-4, b-1, c-3, d-2</b></p><p><b>🔗 Correct matching</b><br><table><tr><th>Port</th><th>Distinction</th></tr><tr><td>Mundra (Gujarat)</td><td>Largest commercial port – cargo, coal and oil</td></tr><tr><td>JNPT (Navi Mumbai)</td><td>Largest container port</td></tr><tr><td>Paradip (Odisha)</td><td>Highest cargo capacity among major ports (150 MMT+)</td></tr><tr><td>Mumbai Port</td><td>Largest natural port</td></tr></table></p>",
+   "id": "00b387ac9e"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Who captained England, the third-placed team at the FIFA World Cup 2026?",
+   "options": {
+    "A": "Jude Bellingham",
+    "B": "Harry Kane",
+    "C": "Declan Rice",
+    "D": "Jordan Pickford",
+    "E": "Kyle Walker"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Harry Kane</b></p><p><b>📌 Final standings and captains:</b> Spain (Rodri) – champion; Argentina (Lionel Messi) – runner-up; England (Harry Kane) – third; France (Kylian Mbappé) – fourth.</p>",
+   "id": "1f07f2fadd"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "FIFA",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "FIFA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA, Sports/Static GK",
+   "question": "The FIFA World Cup trophy (current version first awarded in 1974) was designed by:",
+   "options": {
+    "A": "Cesare Rubini",
+    "B": "Pelé Nogueira",
+    "C": "Silvio Gazzaniga",
+    "D": "Giovanni Mancini",
+    "E": "Aldo Beroisa"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Silvio Gazzaniga</b></p><p><b>📌 Trophy facts:</b> 18-carat gold; height 36.8 cm; weight 6.175 kg; design – two human figures supporting a globe.</p>",
+   "id": "b0fcee0516"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "NCW",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "NCW"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "NCW, Government schemes/Numerical",
+   "question": "The National Commission for Women (NCW) introduced a 24x7 helpline for women in distress. What is the helpline number?",
+   "options": {
+    "A": "181",
+    "B": "1091",
+    "C": "112",
+    "D": "1098",
+    "E": "14490"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – 14490</b></p><p>The NCW helpline provides <b>immediate support, complaint registration and psychological counselling</b> and is operated by the NCW.</p>",
+   "id": "fde1a2e5cb"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Indian football",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Indian football"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Indian football, Sports/Numerical",
+   "question": "Sunil Chhetri, India's all-time top scorer and most-capped player, has how many goals and appearances respectively?",
+   "options": {
+    "A": "84 goals and 150 appearances",
+    "B": "95 goals and 145 appearances",
+    "C": "95 goals and 157 appearances",
+    "D": "100 goals and 157 appearances",
+    "E": "90 goals and 160 appearances"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 95 goals and 157 appearances</b></p>",
+   "id": "a73d303d1b"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "ICC",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "ICC"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "ICC Hall of Fame, Sports/Oneliner",
+   "question": "Kevin Pietersen, inducted into the ICC Hall of Fame 2026, was the Player of the Tournament in which event?",
+   "options": {
+    "A": "ICC Men's T20 World Cup 2010",
+    "B": "ICC Men's T20 World Cup 2007",
+    "C": "ICC Champions Trophy 2004",
+    "D": "ICC Men's ODI World Cup 2011",
+    "E": "ICC Men's T20 World Cup 2009"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – ICC Men's T20 World Cup 2010</b></p><p>Pietersen is the former <b>England</b> batter and the lone international inductee of the 2026 class.</p>",
+   "id": "876283693d"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "National Infrastructure & Development Projects",
+   "minor": "Ports and port-led development",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "National Infrastructure & Development Projects",
+     "minor": "Ports and port-led development"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Ports, Economy/List Based",
+   "question": "As of May 2026, India has 14 major ports under the Central Government, of which 12 are operational. Which two have been notified as major ports but are still in stages of development?",
+   "options": {
+    "A": "Vizhinjam Port and Tuna Tekra Port",
+    "B": "Kamarajar Port and Paradip Port",
+    "C": "Mundra Port and Kandla Port",
+    "D": "Vadhavan Port and Kamarajar Port",
+    "E": "Vadhavan Port and Galathea Bay Port"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Vadhavan Port and Galathea Bay Port</b></p><p><b>📌 Key pointers</b><br><ul><li><b>Largest commercial port:</b> Mundra, Gujarat (privately owned, not among the government-administered major ports).</li><li><b>Largest container port:</b> Jawaharlal Nehru Port (JNPT), Navi Mumbai.</li><li><b>Largest natural port:</b> Mumbai Port.</li></ul></p>",
+   "id": "8ca497a6fa"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Sports Federations & Governing Bodies",
+   "minor": "FIFA",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Sports Federations & Governing Bodies",
+     "minor": "FIFA"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA, Sports/Static GK",
+   "question": "Where is the headquarters of FIFA located?",
+   "options": {
+    "A": "Paris, France",
+    "B": "Geneva, Switzerland",
+    "C": "Lausanne, Switzerland",
+    "D": "Zürich, Switzerland",
+    "E": "Brussels, Belgium"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Zürich, Switzerland (FIFA House)</b></p><p>FIFA was founded in <b>Paris</b> in 1904, but its HQ is in <b>Zürich</b>. (Geneva/Lausanne are common traps – the IOC is in Lausanne.)</p>",
+   "id": "e6b28d1052"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Cristiano Ronaldo",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Cristiano Ronaldo"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Cristiano Ronaldo, Sports/Numerical",
+   "question": "Cristiano Ronaldo (Portugal) scored how many goals in the 2018 FIFA World Cup (Russia)?",
+   "options": {
+    "A": "4",
+    "B": "1",
+    "C": "3",
+    "D": "2",
+    "E": "5"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 4 goals</b></p><p><b>📌 Ronaldo's World Cup goals (11 across 6 editions):</b> 2006 – 1; 2010 – 1; 2014 – 1; <b>2018 – 4</b>; 2022 – 1; 2026 – 3. He became the <b>first male player</b> to score in six World Cups.</p>",
+   "id": "b078933bd8"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Who was named Best Young Player at the FIFA World Cup 2026?",
+   "options": {
+    "A": "Lamine Yamal",
+    "B": "Nico Williams",
+    "C": "Warren Zaïre-Emery",
+    "D": "Jude Bellingham",
+    "E": "Pau Cubarsí"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Pau Cubarsí (Spain)</b></p><p>The <b>19-year-old</b> anchored Spain's defence and dominated the tournament's defensive charts.</p>",
+   "id": "e27ff33c41"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup, Sports/Numerical",
+   "question": "How many different nations have won the FIFA World Cup so far (after the 23 editions)?",
+   "options": {
+    "A": "6",
+    "B": "7",
+    "C": "8",
+    "D": "9",
+    "E": "10"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 8</b></p><p>Brazil, Germany, Italy, Argentina, Spain, France, Uruguay and England. <b>Brazil</b> holds the record with <mark>5 titles</mark>.</p>",
+   "id": "ecd0d3438e"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "Historic firsts in Indian sports",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Match the Column"
+   ],
+   "tag": "Grand Slams 2026, Sports/Match the Column",
+   "passage": "<p><b>Match the Grand Slam 2026 titles in Column I with the winners in Column II:</b><br><table><tr><th>Column I (Title)</th><th>Column II (Winner)</th></tr><tr><td>(a) Australian Open 2026 – Men's Singles</td><td>(1) Jannik Sinner</td></tr><tr><td>(b) French Open 2026 – Men's Singles</td><td>(2) Carlos Alcaraz</td></tr><tr><td>(c) Wimbledon 2026 – Men's Singles</td><td>(3) Alexander Zverev</td></tr><tr><td>(d) French Open 2026 – Women's Singles</td><td>(4) Mirra Andreeva</td></tr></table></p>",
+   "question": "Choose the option that gives the correct match.",
+   "options": {
+    "A": "a-1, b-3, c-2, d-4",
+    "B": "a-2, b-1, c-3, d-4",
+    "C": "a-3, b-2, c-1, d-4",
+    "D": "a-2, b-3, c-4, d-1",
+    "E": "a-2, b-3, c-1, d-4"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – a-2, b-3, c-1, d-4</b></p><p><b>🔗 Correct matching</b><br><table><tr><th>Title</th><th>Winner</th><th>Runner-up</th></tr><tr><td>AO 2026 Men's</td><td>Carlos Alcaraz (Spain)</td><td>Novak Djokovic</td></tr><tr><td>French Open 2026 Men's</td><td>Alexander Zverev (Germany)</td><td>Flavio Cobolli</td></tr><tr><td>Wimbledon 2026 Men's</td><td>Jannik Sinner (Italy)</td><td>Alexander Zverev</td></tr><tr><td>French Open 2026 Women's</td><td>Mirra Andreeva (Russia)</td><td>Maja Chwalińska</td></tr></table></p>",
+   "id": "a25be5230d"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, National news/List Based",
+   "question": "Which of the following Indian states did NOT declare a holiday for educational institutions on account of the FIFA World Cup 2026 final?",
+   "options": {
+    "A": "Kerala",
+    "B": "Manipur",
+    "C": "Maharashtra",
+    "D": "Meghalaya",
+    "E": "Mizoram"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Maharashtra</b></p><p><b>Kerala, Manipur, Meghalaya and Mizoram</b> declared the holiday so students could watch the late-night Argentina vs Spain final; pre-scheduled examinations proceeded as planned.</p>",
+   "id": "412b715713"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Which team won the FIFA Fair Play Award at the 2026 FIFA World Cup?",
+   "options": {
+    "A": "Spain",
+    "B": "Japan",
+    "C": "England",
+    "D": "Netherlands",
+    "E": "Morocco"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Netherlands</b></p><p>The award, presented by <b>McDonald's</b>, goes to the team with the best disciplinary record and exemplary fair play on and off the pitch.</p>",
+   "id": "6c9b3c1433"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup, Sports/Numerical",
+   "question": "Who ranks third in the all-time World Cup goalscorers list with 16 goals?",
+   "options": {
+    "A": "Ronaldo Nazário",
+    "B": "Miroslav Klose",
+    "C": "Gerd Müller",
+    "D": "Just Fontaine",
+    "E": "Cristiano Ronaldo"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Miroslav Klose (Germany)</b></p><p>He played in 2002, 2006, 2010 and 2014. Ronaldo Nazário (15) and Gerd Müller (14) follow.</p>",
+   "id": "959966a281"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Football rules",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Football rules"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Football rules, Sports/Numerical",
+   "question": "FIFA matches feature mandatory three-minute hydration breaks. In the second half, the break is called at approximately which minute?",
+   "options": {
+    "A": "55th",
+    "B": "67th",
+    "C": "75th",
+    "D": "60th",
+    "E": "70th"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – 67th minute</b></p><p>The first-half break is around the <b>22nd minute</b>; each break lasts exactly <b>3 minutes</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Regulation time: two 45-minute periods; extra time: 30 minutes (two 15-minute halves).</li></ul></p>",
+   "id": "19089e0375"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "The Golden Glove at the FIFA World Cup 2026 (7 clean sheets, conceded just one goal) was awarded to:",
+   "options": {
+    "A": "Emiliano Martínez",
+    "B": "Thibaut Courtois",
+    "C": "Jordan Pickford",
+    "D": "Mike Maignan",
+    "E": "Unai Simón"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Unai Simón (Spain)</b></p><p>Golden Ball – Rodri; Golden Boot – Mbappé; Best Young Player – Pau Cubarsí.</p>",
+   "id": "3c0af66c8e"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "The opening match of the FIFA World Cup 2026 was held at which venue?",
+   "options": {
+    "A": "MetLife Stadium, New Jersey",
+    "B": "BMO Field, Toronto",
+    "C": "Estadio Azteca, Mexico City",
+    "D": "SoFi Stadium, Los Angeles",
+    "E": "Estadio BBVA, Monterrey"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Estadio Azteca, Mexico City</b></p><p>The final was held at the <b>New York New Jersey Stadium / MetLife Stadium, East Rutherford</b>.</p>",
+   "id": "cee1da5616"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "Historic firsts in Indian sports",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Women's T20 World Cup, Sports/Oneliner",
+   "question": "The next edition of the ICC Women's T20 World Cup (2028) will be hosted by:",
+   "options": {
+    "A": "Sri Lanka",
+    "B": "England",
+    "C": "Bangladesh",
+    "D": "Pakistan",
+    "E": "UAE"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Pakistan</b></p><p><b>📌 Key pointers</b><br><ul><li><b>Previous edition (2024):</b> hosted by UAE; New Zealand beat South Africa.</li><li>The first-ever <b>Women's Champions Trophy (T20 format)</b> will be held in <b>Sri Lanka</b> (February 2027).</li></ul></p>",
+   "id": "bcb808864b"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Which artists performed the official song 'Dai Dai' of the FIFA World Cup 2026?",
+   "options": {
+    "A": "Shakira and Bad Bunny",
+    "B": "Burna Boy and Rihanna",
+    "C": "Maluma and Burna Boy",
+    "D": "Shakira and Burna Boy",
+    "E": "Jennifer Lopez and Pitbull"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Shakira and Burna Boy</b></p><p>The song was announced by <b>FIFA</b>.</p>",
+   "id": "2daf68fb22"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup, Sports/Static GK",
+   "question": "The FIFA World Cup was cancelled in which years due to the outbreak and aftermath of World War II?",
+   "options": {
+    "A": "1934 and 1938",
+    "B": "1938 and 1942",
+    "C": "1946 and 1950",
+    "D": "1940 and 1944",
+    "E": "1942 and 1946"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – 1942 and 1946</b></p><p>The tournament has been cancelled only <b>twice</b> in its history.</p>",
+   "id": "437c286c3d"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup, Sports/Numerical",
+   "question": "Who is the all-time top goalscorer in the men's FIFA World Cup, with 22 goals including 10 in the 2026 edition?",
+   "options": {
+    "A": "Kylian Mbappé",
+    "B": "Lionel Messi",
+    "C": "Miroslav Klose",
+    "D": "Ronaldo Nazário",
+    "E": "Gerd Müller"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Kylian Mbappé (France)</b></p><p><b>📌 Top scorers</b><br><table><tr><th>Rank</th><th>Player</th><th>Goals</th></tr><tr><td>1</td><td>Kylian Mbappé (France)</td><td>22</td></tr><tr><td>2</td><td>Lionel Messi (Argentina)</td><td>21</td></tr><tr><td>3</td><td>Miroslav Klose (Germany)</td><td>16</td></tr><tr><td>4</td><td>Ronaldo Nazário (Brazil)</td><td>15</td></tr><tr><td>5</td><td>Gerd Müller (West Germany)</td><td>14</td></tr></table></p>",
+   "id": "b95cd6572a"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "SUMAN",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "SUMAN"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "SUMAN, Government schemes/Full Form",
+   "question": "SUMAN Roadmap 2030, launched by the Union Health Minister during the 16th Conference of the Central Council of Health and Family Welfare, stands for:",
+   "options": {
+    "A": "Sustainable Maternal and Newborn Care",
+    "B": "Surakshit Matritva Aashwasan",
+    "C": "Suraksha Matru Abhiyan Network",
+    "D": "Swasthya Matritva Aashirwad",
+    "E": "Safe Motherhood and Newborn Assurance"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Surakshit Matritva Aashwasan</b></p><p>The roadmap is a strategic framework to transform maternal and newborn healthcare and <mark>aligns India's health policies with Sustainable Development Goal 3</mark>.</p><p><b>📌 Key pointers</b><br><ul><li><b>Launched by:</b> Union Health Minister Jagat Prakash Nadda.</li><li><b>Vision:</b> reduce the Maternal Mortality Ratio (MMR) to below <b>70 per 1,00,000 live births by 2030</b>.</li></ul></p>",
+   "id": "7acf041284"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "World Football Day",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "World Football Day"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "World Football Day, International news/Static GK",
+   "question": "World Football Day, observed on 25 May, was declared by which body in 2024?",
+   "options": {
+    "A": "FIFA Council",
+    "B": "International Olympic Committee",
+    "C": "UNESCO",
+    "D": "UEFA",
+    "E": "United Nations General Assembly"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – United Nations General Assembly</b></p><p><b>📌 Why 25 May?</b> It commemorates the <b>100th anniversary</b> of the first international football tournament with teams from all regions, which began on <mark>25 May 1924</mark> at the <b>Paris Summer Olympics</b>.</p>",
+   "id": "fab29da463"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup, Sports/Static GK",
+   "question": "Which country won the inaugural FIFA World Cup in 1930, defeating Argentina 4-2 in the final at the Estadio Centenario?",
+   "options": {
+    "A": "Brazil",
+    "B": "Italy",
+    "C": "Uruguay",
+    "D": "Germany",
+    "E": "Spain"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Uruguay</b></p><p>Uruguay, the host nation, defeated Argentina <b>4-2</b> at the <b>Estadio Centenario in Montevideo</b> to become football's first-ever world champions.</p><p><b>📌 Key pointers</b><br><ul><li>The 2026 edition is the <b>23rd</b> edition.</li><li>The FIFA World Cup was cancelled only twice – <b>1942</b> and <b>1946</b> – due to World War II.</li></ul></p>",
+   "id": "2af78b5325"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "World Football Day",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "World Football Day"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "World Football Day, International news/Static GK",
+   "question": "The date of World Football Day (25 May) commemorates the centenary of the football tournament held at which event?",
+   "options": {
+    "A": "1930 FIFA World Cup, Uruguay",
+    "B": "1904 FIFA founding congress, Paris",
+    "C": "1924 Summer Olympics, Paris",
+    "D": "1900 Paris Olympics",
+    "E": "1950 FIFA World Cup, Brazil"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 1924 Summer Olympics in Paris</b></p><p>The centenary in 2024 became the basis for establishing World Football Day.</p>",
+   "id": "ed1f675727"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "Women's T20 World Cup",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "Women's T20 World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Women's T20 World Cup, Sports/Pair Based",
+   "question": "Which of the following pairs about the ICC Women's T20 World Cup finals is correctly matched?",
+   "options": {
+    "A": "2016 – Australia beat West Indies in India",
+    "B": "2009 – Australia beat England in England",
+    "C": "2012 – West Indies beat England in Sri Lanka",
+    "D": "2020 – England beat India in Australia",
+    "E": "2023 – Australia beat South Africa in South Africa"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – 2023 – Australia beat South Africa in South Africa</b></p><p><b>🧠 Why not the others?</b><br><ul><li><b>2016</b> – West Indies won their maiden title by beating Australia in India.</li><li><b>2009</b> – England won the first title by beating New Zealand.</li><li><b>2012</b> – Australia beat England in Sri Lanka.</li><li><b>2020</b> – Australia beat India in Australia.</li></ul><br><b>📌 Others:</b> 2024 – New Zealand's first-ever title; 2026 – Australia (7th title).</p>",
+   "id": "2aa5dbf786"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "SUMAN, Government schemes/Statement Based",
+   "passage": "<p><b>Consider the following statements about the SUMAN Roadmap 2030:</b></p><p>1. It was unveiled during the 15th Conference of the Central Council of Health and Family Welfare.</p><p>2. It aims to reduce the Maternal Mortality Ratio (MMR) to below 70 per 1,00,000 live births by 2030.</p><p>3. It aligns India's health policies with Sustainable Development Goal 3.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only 1",
+    "B": "Only 1 and 2",
+    "C": "Only 1 and 3",
+    "D": "Only 2 and 3",
+    "E": "All 1, 2 and 3"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Only 2 and 3</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>1</b></td><td>❌ False</td><td>The roadmap was unveiled during the <b>16th</b> Conference of the CCHFW.</td></tr><tr><td><b>2</b></td><td>✅ True</td><td>Target: MMR <b>below 70</b> per 1,00,000 live births by <b>2030</b>.</td></tr><tr><td><b>3</b></td><td>✅ True</td><td>Aligned with <b>SDG 3</b> (Good Health and Well-being).</td></tr></table></p><p><b>📌 Current statistics:</b> MMR – <b>88</b> per 1 lakh live births (SRS 2021-23), improved from 93 and 130 in earlier cycles; IMR – <b>24-25</b> per 1,000; NMR – around <b>18-19</b> per 1,000.</p>",
+   "id": "fe7748236d"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "Australian Open",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "Australian Open"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Australian Open 2026, Sports/Oneliner",
+   "question": "Who was the runner-up in the women's singles at the Australian Open 2026?",
+   "options": {
+    "A": "Karolína Muchová",
+    "B": "Maja Chwalińska",
+    "C": "Aryna Sabalenka",
+    "D": "Elena Rybakina",
+    "E": "Mirra Andreeva"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Aryna Sabalenka (Belarus)</b></p><p>Elena Rybakina (Kazakhstan) won the title.</p>",
+   "id": "bafa14d04e"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Numerical",
+   "question": "What was the prize money for the FIFA World Cup 2026 champions, increased from $42 million in 2022?",
+   "options": {
+    "A": "$45 million",
+    "B": "$50 million",
+    "C": "$55 million",
+    "D": "$60 million",
+    "E": "$48 million"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – $50 million</b></p><p><b>📌 Payouts (2026):</b> Runners-up – $33m; third – $29m; fourth – $27m. The <b>official song</b> is <b>'Dai Dai'</b> (Shakira and Burna Boy).</p>",
+   "id": "9e739e2b67"
+  },
+  {
+   "month": 6,
+   "main": "C",
+   "sub": "General",
+   "minor": "International news",
+   "cats": [
+    {
+     "main": "C",
+     "sub": "General",
+     "minor": "International news"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNSC, International news/Oneliner",
+   "question": "India launched its campaign for a non-permanent UNSC seat for the 2028-29 term. Which country will contest the sole seat in the Asia-Pacific Group category against India in the elections to be held in June next year?",
+   "options": {
+    "A": "Kazakhstan",
+    "B": "Uzbekistan",
+    "C": "Kyrgyzstan",
+    "D": "Tajikistan",
+    "E": "Turkmenistan"
+   },
+   "answer": "D",
+   "solution": "<p><b>✅ Correct answer: D – Tajikistan</b></p><p>Elections for the 2028-29 term will be held in <mark>June next year</mark>, when <b>India and Tajikistan</b> will contest the sole seat in the Asia-Pacific Group.</p><p><b>📌 Key pointers</b><br><ul><li>External Affairs Minister <b>S. Jaishankar</b> unveiled the campaign and India's <b>SHANTI</b> vision at the <b>UN Headquarters, New York</b>.</li><li>India last served on the UNSC during <b>2021-22</b>.</li></ul></p>",
+   "id": "fcdd722bf3"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "Central Government Schemes & Missions",
+   "minor": "Flagship government schemes",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "Central Government Schemes & Missions",
+     "minor": "Flagship government schemes"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "DAANVEER, Government schemes/Oneliner",
+   "question": "The DAANVEER initiative of the Ministry of Panchayati Raj, launched on 29 July 2026, carries which tagline?",
+   "options": {
+    "A": "Digital Gaon, Digital Bharat",
+    "B": "Connect Every Panchayat",
+    "C": "Donate for Development",
+    "D": "Technology for Every Village",
+    "E": "Give Back to Your Village"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – Give Back to Your Village</b></p><p>DAANVEER enables citizens, organisations and people living abroad to <b>voluntarily donate computers</b> to eligible Gram Panchayats to strengthen digital infrastructure.</p><p><b>📌 Key pointers</b><br><ul><li><b>Launched by:</b> Vivek Bharadwaj, Secretary, Ministry of Panchayati Raj.</li><li><b>Platform:</b> Meri Panchayat App.</li><li><b>Partners:</b> National Informatics Centre (NIC) and DigiHaat.</li></ul></p>",
+   "id": "9e22afec3a"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "Historic firsts in Indian sports",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Statement Based"
+   ],
+   "tag": "Grand Slams 2026, Sports/Statement Based",
+   "passage": "<p><b>Consider the following statements about Grand Slam tennis 2026:</b></p><p>1. Linda Nosková (Czech Republic) won the Wimbledon 2026 women's singles.</p><p>2. Karolína Muchová (Czech Republic) was the Wimbledon 2026 women's runner-up.</p><p>3. Flavio Cobolli won the French Open 2026 men's singles.</p>",
+   "question": "Which of the statements given above is/are correct?",
+   "options": {
+    "A": "Only 1 and 2",
+    "B": "Only 2 and 3",
+    "C": "Only 1 and 3",
+    "D": "Only 3",
+    "E": "All 1, 2 and 3"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – Only 1 and 2</b></p><p><b>🔎 Statement-wise analysis</b><br><table><tr><th>Statement</th><th>Verdict</th><th>Explanation</th></tr><tr><td><b>1</b></td><td>✅ True</td><td>Nosková won Wimbledon 2026 women's singles.</td></tr><tr><td><b>2</b></td><td>✅ True</td><td>Muchová was the runner-up.</td></tr><tr><td><b>3</b></td><td>❌ False</td><td>Cobolli was the <b>runner-up</b>; Alexander Zverev won.</td></tr></table></p>",
+   "id": "1363fad4a1"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "UNSC",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "UNSC"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNSC, International news/Static GK",
+   "question": "Before the 2028-29 bid, during which term did India last serve on the UN Security Council?",
+   "options": {
+    "A": "2021-22",
+    "B": "2011-12",
+    "C": "2019-20",
+    "D": "2017-18",
+    "E": "2015-16"
+   },
+   "answer": "A",
+   "solution": "<p><b>✅ Correct answer: A – 2021-22</b></p><p>India's last non-permanent membership was in the <b>2021-22</b> term. India is now campaigning for <b>2028-29</b> under the <b>SHANTI</b> vision.</p>",
+   "id": "748988d885"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "Who won the Golden Ball (Best Player) at the FIFA World Cup 2026?",
+   "options": {
+    "A": "Lionel Messi",
+    "B": "Rodri",
+    "C": "Kylian Mbappé",
+    "D": "Pau Cubarsí",
+    "E": "Harry Kane"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Rodri (Spain)</b></p><p>Rodri completed the <b>most passes</b> and covered the <b>most distance</b> in the tournament; he also captained Spain.</p>",
+   "id": "958a48315d"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "Historic firsts in Indian sports",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Women's T20 World Cup 2026, Sports/Oneliner",
+   "question": "Who became the first player to win the ICC Women's T20 World Cup Player of the Tournament award twice (2020 and 2026)?",
+   "options": {
+    "A": "Ellyse Perry",
+    "B": "Sophie Molineux",
+    "C": "Beth Mooney",
+    "D": "Danni Wyatt-Hodge",
+    "E": "Shree Charani"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Beth Mooney</b></p><p>Beth Mooney was also the <b>first player to win Player of the Final twice</b>.</p><p><b>📌 Key pointers</b><br><ul><li>Australia beat England by <b>7 wickets</b> at <b>Lord's</b> for a record <b>7th title</b>; captain – <b>Sophie Molineux</b>.</li><li>Including ODI World Cups, Australia has <b>14</b> Women's World titles.</li></ul></p>",
+   "id": "bc61d28021"
+  },
+  {
+   "month": 6,
+   "main": "B",
+   "sub": "National Infrastructure & Development Projects",
+   "minor": "Ports and port-led development",
+   "cats": [
+    {
+     "main": "B",
+     "sub": "National Infrastructure & Development Projects",
+     "minor": "Ports and port-led development"
+    },
+    {
+     "main": "A",
+     "sub": "Economy, Credit & Financial Sector Updates",
+     "minor": "Economy"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Ports, Economy/Oneliner",
+   "question": "Which major port has the highest cargo capacity (150 MMT+ capacity) among India's major ports?",
+   "options": {
+    "A": "Kamarajar Port, Tamil Nadu",
+    "B": "Jawaharlal Nehru Port, Maharashtra",
+    "C": "Paradip Port, Odisha",
+    "D": "Mundra Port, Gujarat",
+    "E": "Mumbai Port, Maharashtra"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Paradip Port, Odisha</b></p><p>Paradip is India's largest major port by cargo volume, with <mark>150 MMT+</mark> capacity.</p><p><b>🧠 Why not the others?</b><br><ul><li><b>Mundra</b> – largest overall commercial port, but privately owned.</li><li><b>JNPT</b> – largest <i>container</i> port.</li><li><b>Mumbai</b> – largest <i>natural</i> port.</li></ul></p>",
+   "id": "ce1c0e9f29"
+  },
+  {
+   "month": 6,
+   "main": "Z",
+   "sub": "Unsorted",
+   "minor": "UNSC",
+   "cats": [
+    {
+     "main": "Z",
+     "sub": "Unsorted",
+     "minor": "UNSC"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "UNSC, International news/Full Form",
+   "question": "In India's UNSC campaign, SHANTI stands for:",
+   "options": {
+    "A": "Strengthening Harmony and Nations Through Integrity",
+    "B": "Securing Holistic Advancement through Norms, Trust and Integrity",
+    "C": "Supporting Humanity and Nations Through Inclusion",
+    "D": "Securing Harmony, Alliance, Norms, Trust and Integrity",
+    "E": "Strategic Holistic Advancement through Negotiation, Trade and Innovation"
+   },
+   "answer": "B",
+   "solution": "<p><b>✅ Correct answer: B – Securing Holistic Advancement through Norms, Trust and Integrity</b></p><p><b>📌 Key pointers</b><br><ul><li>The campaign is for a <b>non-permanent seat</b> on the <b>United Nations Security Council</b> for <b>2028-29</b>.</li><li>Unveiled by EAM <b>S. Jaishankar</b> at the UN HQ in New York.</li></ul></p>",
+   "id": "5827fbe8e5"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Numerical",
+   "question": "Lionel Messi won the Silver Ball at the FIFA World Cup 2026. What was his return in the tournament?",
+   "options": {
+    "A": "6 goals and 3 assists",
+    "B": "10 goals and 4 assists",
+    "C": "8 goals and 4 assists",
+    "D": "8 goals and 2 assists",
+    "E": "5 goals and 6 assists"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – 8 goals and 4 assists</b></p><p>Messi captained runners-up <b>Argentina</b>. All-time World Cup scorers: Mbappé 22 and Messi 21.</p>",
+   "id": "db6ccbdac0"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "Records, Rankings & Milestones",
+   "minor": "Historic firsts in Indian sports",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "Khelo India, Sports/Oneliner",
+   "question": "Telangana will host the 8th Khelo India Youth Games in November 2026. Which state hosted the 7th edition?",
+   "options": {
+    "A": "Madhya Pradesh",
+    "B": "Tamil Nadu",
+    "C": "Bihar",
+    "D": "Assam",
+    "E": "Haryana"
+   },
+   "answer": "C",
+   "solution": "<p><b>✅ Correct answer: C – Bihar</b></p><p><b>📌 Key pointers</b><br><ul><li>Announced by <b>Mansukh Mandaviya</b>, Union Minister for Youth Affairs &amp; Sports; around <b>8,000</b> participants (athletes, officials, support staff).</li><li>Overall champions (previous editions): <b>Maharashtra, Haryana, Rajasthan</b>.</li><li>The Khelo India Programme was launched in <b>2018</b> under the Ministry of Youth Affairs &amp; Sports.</li></ul></p>",
+   "id": "4a436d0380"
+  },
+  {
+   "month": 6,
+   "main": "E",
+   "sub": "International Championships & Tournaments",
+   "minor": "FIFA World Cup",
+   "cats": [
+    {
+     "main": "E",
+     "sub": "International Championships & Tournaments",
+     "minor": "FIFA World Cup"
+    },
+    {
+     "main": "E",
+     "sub": "Records, Rankings & Milestones",
+     "minor": "Historic firsts in Indian sports"
+    }
+   ],
+   "types": [
+    "Oneliner"
+   ],
+   "tag": "FIFA World Cup 2026, Sports/Oneliner",
+   "question": "The final of the FIFA World Cup 2026 was held at:",
+   "options": {
+    "A": "Estadio Azteca, Mexico City",
+    "B": "SoFi Stadium, Los Angeles",
+    "C": "AT&amp;T Stadium, Dallas",
+    "D": "Hard Rock Stadium, Miami",
+    "E": "New York New Jersey Stadium (MetLife Stadium), East Rutherford"
+   },
+   "answer": "E",
+   "solution": "<p><b>✅ Correct answer: E – New York New Jersey Stadium (MetLife Stadium), East Rutherford</b></p><p><b>📌 Key pointers</b><br><ul><li>Total host cities: <b>16</b> – USA 11, Mexico 3 (Guadalajara, Mexico City, Monterrey), Canada 2 (Toronto, Vancouver).</li></ul></p>",
+   "id": "0128f5e1df"
   }
  ],
  "report": {
@@ -7795,7 +9920,7 @@
     "invalid": 1
    },
    "7": {
-    "valid": 78,
+    "valid": 150,
     "invalid": 0
    },
    "8": {
@@ -7824,12 +9949,12 @@
    }
   },
   "types": {
-   "Oneliner": 242,
+   "Oneliner": 310,
    "Data Based": 1,
-   "Statement Based": 18,
-   "Match the Column": 12
+   "Statement Based": 20,
+   "Match the Column": 14
   },
-  "valid": 273,
+  "valid": 345,
   "invalid": 1,
   "duplicates": 0,
   "invalidList": [
@@ -7864,7 +9989,20 @@
    "Static GK": 1,
    "NATO": 1,
    "Bihar": 1,
-   "Railways": 1
+   "Railways": 1,
+   "LA 2028": 2,
+   "PRAGATI": 1,
+   "Messi statue": 1,
+   "Indian football": 2,
+   "US Independence Day": 1,
+   "Khelo India": 1,
+   "NCW": 1,
+   "Cristiano Ronaldo": 1,
+   "Football rules": 1,
+   "SUMAN": 1,
+   "World Football Day": 2,
+   "Women's T20 World Cup": 1,
+   "UNSC": 2
   }
  }
 }
