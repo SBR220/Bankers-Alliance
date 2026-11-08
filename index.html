@@ -8,28 +8,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
+<style>:root {
     /* Main Theme */
-    --ink: #172554;
-    --paper: #F3F7FC;
-    --paper-2: #FFFFFF;
-    --line: #E2E8F0;
-    --muted: #64748B;
+    --ink: #1e293b;       /* Darker slate for crisp text readability */
+    --paper: #f8fafc;     /* Clean, modern cool-white background */
+    --paper-2: #ffffff;
+    --line: #e2e8f0;      /* Softer border line */
+    --muted: #64748b;
 
-    /* Premium Teal Accent */
-    --gold: #0F766E;
-    --gold-deep: #0B625B;
+    /* Premium Teal Accent (Updated to a more elegant teal gradient pairing) */
+    --gold: #0d9488;      
+    --gold-deep: #115e59;
 
-    /* Status Colours */
-    --ok: #15803D;
-    --ok-soft: #E8F5EC;
-    --bad: #DC2626;
-    --bad-soft: #FDECEC;
+    /* Status Colours - Softened for better text contrast */
+    --ok: #16a34a;
+    --ok-soft: #f0fdf4;   /* Light mint background */
+    --bad: #dc2626;
+    --bad-soft: #fef2f2;  /* Light coral-rose background */
 
-    /* Information */
-    --info: #1E40AF;
-    --info-soft: #EAF1FF;
+    /* Information / Solution Banner */
+    --info: #2563eb;
+    --info-soft: #eff6ff; /* Clean light blue background */
 
     /* Question Categories - Preserve */
     --A: #2F5FDC; --A-soft: #E8EDFF;
@@ -270,12 +269,34 @@
   .clear-row{margin-top:10px;text-align:right;}
 
   .fb{margin-top:16px;border-radius:14px;padding:12px 16px;font-weight:800;line-height:1.45;}
-  .fb.ok{background:var(--ok-soft);border:1.5px solid var(--ok);color:#0f6a31;}
-  .fb.bad{background:var(--bad-soft);border:1.5px solid var(--bad);color:#a31f1f;}
+  .fb.ok {
+    background: linear-gradient(90deg, var(--ok-soft) 0%, rgba(240, 253, 244, 0.3) 100%);
+    border: 1px solid #bbf7d0;
+    border-left: 5px solid var(--ok); /* Clean left strip accent */
+    color: #15803d; /* Darker text for legal contrast requirements */
+}
+
+.fb.bad {
+    background: linear-gradient(90deg, var(--bad-soft) 0%, rgba(254, 242, 242, 0.3) 100%);
+    border: 1px solid #fecaca;
+    border-left: 5px solid var(--bad); /* Clean left strip accent */
+    color: #991b1b; /* Darker text for legal contrast requirements */
+}
   .fb.skip{background:#f1f1ee;border:1.5px solid #cfcfc8;color:#55554f;}
-  .sol{margin-top:12px;border-radius:14px;border:1.5px solid #e3b23c;background:linear-gradient(175deg,#fdf1d2,#fff8e8);padding:12px 16px 14px;}
+  .sol {
+    margin-top: 12px;
+    border-radius: 14px;
+    border: 1px solid #fef08a;
+    /* Soft angled premium amber gradient */
+    background: linear-gradient(145deg, #fef9c3 0%, #fffdf5 100%); 
+    padding: 12px 16px;
+}
   .sol-h{font-family:'Fraunces',serif;font-weight:700;color:#7a5a10;margin-bottom:6px;}
-  .sol-b{font-size:.96rem;line-height:1.65;color:#41403a;}
+  .sol-b {
+    font-size: .96rem;
+    line-height: 1.65; /* Generous spacing between reading lines */
+    color: #334155;    /* Slightly darker slate for better visibility */
+}
 
   .palette{background:var(--paper-2);border:2px solid var(--line);border-radius:18px;padding:14px;}
   .pal-head{display:flex;justify-content:space-between;align-items:center;font-weight:800;margin-bottom:10px;}
