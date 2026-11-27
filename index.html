@@ -1142,7 +1142,7 @@ function viewLogin(msg){
       <label class="chk"><input type="checkbox" id="liRem" checked> Remember my ID on this device</label>
       <div class="err" id="liErr" role="alert">${esc(msg || "")}</div>
       <button class="btn primary wide" id="liBtn" type="submit">Sign in</button>
-      <p class="fine">🔒 Your password is checked securely on Google Sheets. It is never saved in this page or on this device.</p>
+      <p class="fine">🔒 Your password is checked securely. It is never saved in this page or on this device. 🟥 IMPORTANT: Never Share Password with anyone. In case Forgot, reach out on @I_SR_BOT on Telegram.</p>
     </form></div>`;
   const f = remembered ? $("#liPw") : $("#liId"); if(f && f.focus) f.focus();
 }
@@ -1177,7 +1177,7 @@ async function loadContent(){
   let raw, er = null;
   try{ er = await fetch("data/questions.enc.json", {cache:"no-store"}); }catch(e){ er = null; }
   if(er && er.ok){
-    if(!auth.contentKey) throw new Error("The question bank is locked but the server sent no key. Ask the admin to run “GA Tool › Show / create content key” in the Sheet.");
+    if(!auth.contentKey) throw new Error("The question bank is locked but the server sent no key. Ask the admin to run “GA Tool › Show / create content key”");
     raw = await decryptEnvelope(await er.json(), auth.contentKey);
   } else {
     const qr = await fetch("data/questions.json", {cache:"no-store"});
@@ -1802,7 +1802,7 @@ function viewDashboard(){
     return `<div class="bar-row"><div class="bar-h"><b>${esc(g.name)}</b><span>${Math.round(g.ok / n * 100)}% · ${n} attempted · avg ${fmtDur(g.t / n)}</span></div>
       <div class="bar-track"><i class="o" style="width:${g.ok / n * 100}%"></i><i class="b" style="width:${g.bad / n * 100}%"></i></div></div>`; }).join("");
   app.innerHTML = `
-    <div class="hero"><div class="eyebrow">📊 ${esc(auth.name)}</div><h1>My Dashboard</h1><p>Built from your own quiz history, stored on this device and mirrored to your Google Sheet.</p></div>
+    <div class="hero"><div class="eyebrow">📊 ${esc(auth.name)}</div><h1>My Dashboard</h1><p>Built from your own quiz history, stored on this device and mirrored to your Data</p></div>
     <div class="kpis">
       <div class="kpi"><b>${log.length}</b><span>QUIZZES</span></div><div class="kpi"><b>${ag.att}</b><span>QUESTIONS ATTEMPTED</span></div>
       <div class="kpi"><b>${ag.att ? Math.round(ag.right / ag.att * 100) : 0}%</b><span>OVERALL ACCURACY</span></div><div class="kpi"><b>${Math.round(avg)}%</b><span>AVERAGE SCORE</span></div>
@@ -1841,13 +1841,13 @@ const plainQ = id => {
 };
 function viewAdmin(){
   const A = ui.admin, tabs = [["overview","📈 Overview"],["members","👥 Members"],["log","🕘 Quiz log"],["content","🧪 Content health"]];
-  const head = `<div class="hero"><div class="eyebrow">🛡️ Admin Panel</div><h1>Monitor members &amp; content</h1><p>Live from your Google Sheet. Only visible to admin logins.</p></div>
+  const head = `<div class="hero"><div class="eyebrow">🛡️ Admin Panel</div><h1>Monitor members &amp; content</h1><p>Live from your Database. Only visible to admin logins.</p></div>
     <div class="tabs">${tabs.map(([k, t]) => `<button class="${A.tab === k ? "on" : ""}" data-action="admin-tab" data-tab="${k}">${t}</button>`).join("")}
       <button class="btn-sm" data-action="admin-refresh" style="margin-left:auto">🔄 Refresh</button></div>`;
   if(A.tab === "content"){ app.innerHTML = head + adminContent(); return; }
   if(!A.data){
     if(!A.loading && !A.error) adminLoad(false);
-    app.innerHTML = head + (A.error ? `<div class="empty"><div class="big">⚠️</div>${esc(A.error)}</div>` : `<div class="empty"><div class="big">⏳</div>Loading from Google Sheets…</div>`);
+    app.innerHTML = head + (A.error ? `<div class="empty"><div class="big">⚠️</div>${esc(A.error)}</div>` : `<div class="empty"><div class="big">⏳</div>Loading from Database…</div>`);
     return;
   }
   const d = A.data;
